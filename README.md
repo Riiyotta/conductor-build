@@ -31,5 +31,6 @@ node validate.mjs && node build.mjs
 ## Not in the IA
 
 - The clone's 404 route is not in the sitemap, so it is not counted.
+- `/blog` and its 4 posts (`/blog/sign-in-with-chatgpt`, `/blog/claude-subscription-update`, `/blog/cmd-joins-conductor`, `/blog/series-a`) exist on the original and are built here, but they are not in the sitemap, so they are not in `ia.json` (306 routes) or the design-repo yet. The footer's Blog link points to them.
 - The 5 GitHub images that 404 on the live site are kept as remote URLs and stay broken, as on the original.
 - The enterprise and team-plan forms are local-only replicas and never post to HubSpot.

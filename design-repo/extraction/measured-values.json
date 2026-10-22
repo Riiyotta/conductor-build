@@ -381,7 +381,7 @@
     },
     "notFoundOutOfIA": [
       {
-        "ref": "src/App.jsx:56",
+        "ref": "src/App.jsx:66",
         "quote": "<Route path=\"*\" element={<NotFound />} />"
       },
       {

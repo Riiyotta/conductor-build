@@ -1,0 +1,39 @@
+{
+  "slug": "sign-in-with-chatgpt",
+  "title": "Sign in with ChatGPT",
+  "description": "You can now sign in to Conductor with your ChatGPT account and run Codex on your ChatGPT plan.",
+  "date": "September 29, 2026",
+  "authors": [
+    "Conductor team"
+  ],
+  "hero": "/assets/blog/sign-in-with-chatgpt-og-light.png",
+  "heroSize": [
+    2400,
+    1260
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "html": "We're excited to be partnering with OpenAI on Sign in with ChatGPT."
+    },
+    {
+      "type": "p",
+      "html": "You can now bring your ChatGPT plan to Conductor in a few clicks. Go to <strong>Settings → Agents → Codex</strong> and click <strong>Continue with ChatGPT</strong> to start using your Codex plan in Conductor."
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/sign-in-with-chatgpt.png",
+      "alt": "Continue with ChatGPT on the Conductor sign-in page",
+      "width": 1056,
+      "height": 876
+    },
+    {
+      "type": "p",
+      "html": "For new users: when you create an account, choose \"Continue with ChatGPT\" to bring your ChatGPT identity and plan to Conductor. Codex will then use your plan with no API key or <code>codex login</code>. If you've already set up Codex another way, Conductor keeps your setup."
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"/\">Download Conductor</a> and give it a try."
+    }
+  ]
+}

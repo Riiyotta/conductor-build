@@ -17,6 +17,8 @@ import DocsRoute from './pages/docs/DocsRoute.jsx'
 
 // Changelog: own lazy chunk (index.json + routes); post bodies are further split per post.
 const ChangelogRoutes = lazy(() => import('./pages/changelog/ChangelogRoutes.jsx'))
+// Blog: own lazy chunk (index metadata + routes); post bodies are further split per post.
+const BlogRoutes = lazy(() => import('./pages/blog/BlogRoutes.jsx'))
 
 function HomeRoute() {
   usePageMeta(
@@ -50,6 +52,14 @@ export default function App() {
           element={
             <Suspense fallback={null}>
               <ChangelogRoutes />
+            </Suspense>
+          }
+        />
+        <Route
+          path="/blog/*"
+          element={
+            <Suspense fallback={null}>
+              <BlogRoutes />
             </Suspense>
           }
         />

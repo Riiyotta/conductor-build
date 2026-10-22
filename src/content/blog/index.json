@@ -1,0 +1,39 @@
+[
+  {
+    "slug": "sign-in-with-chatgpt",
+    "title": "Sign in with ChatGPT",
+    "description": "You can now sign in to Conductor with your ChatGPT account and run Codex on your ChatGPT plan.",
+    "date": "September 29, 2026",
+    "authors": [
+      "Conductor team"
+    ]
+  },
+  {
+    "slug": "claude-subscription-update",
+    "title": "Claude subscription update for Conductor",
+    "description": "Anthropic has delayed subscription billing changes for third-party Claude tools, so you can keep using your Claude plan in Conductor with no additional limitations.",
+    "date": "June 15, 2026",
+    "authors": [
+      "Conductor team"
+    ]
+  },
+  {
+    "slug": "cmd-joins-conductor",
+    "title": "cmd joins Conductor",
+    "description": "We're excited to announce that cmd is joining Conductor.",
+    "date": "April 2, 2026",
+    "authors": [
+      "Charlie Holtz"
+    ]
+  },
+  {
+    "slug": "series-a",
+    "title": "Conductor’s Series A",
+    "description": "We've raised a $22M Series A from Spark and Matrix.",
+    "date": "March 30, 2026",
+    "authors": [
+      "Charlie Holtz",
+      "Jackson de Campos"
+    ]
+  }
+]

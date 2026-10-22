@@ -1062,7 +1062,7 @@
           "quote": "// 404: replica of the original's `NotFoundTerminal`"
         },
         {
-          "ref": "src/App.jsx:56",
+          "ref": "src/App.jsx:66",
           "quote": "<Route path=\"*\" element={<NotFound />} />"
         }
       ]

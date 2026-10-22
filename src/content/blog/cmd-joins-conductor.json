@@ -1,0 +1,55 @@
+{
+  "slug": "cmd-joins-conductor",
+  "title": "cmd joins Conductor",
+  "description": "We're excited to announce that cmd is joining Conductor.",
+  "date": "April 2, 2026",
+  "authors": [
+    "Charlie Holtz"
+  ],
+  "hero": "/assets/blog/cmd-joins-header.png",
+  "heroSize": [
+    1024,
+    768
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "html": "I'm very excited to announce that <a href=\"https://getcmd.dev\" target=\"_blank\" rel=\"noopener noreferrer\">cmd</a> is joining Conductor!"
+    },
+    {
+      "type": "p",
+      "html": "<a href=\"https://www.linkedin.com/in/guillaume-sabran/?locale=en\" target=\"_blank\" rel=\"noopener noreferrer\">Guillaume Sabran</a> created cmd to bring AI into Xcode. He previously worked 6 years as a staff engineer at Airbnb, where he managed the iOS Platform team."
+    },
+    {
+      "type": "p",
+      "html": "We first encountered Gui in our feedback portal. He was one of our earliest power users, and wasn't afraid to let us know about our bugs :)"
+    },
+    {
+      "type": "image",
+      "src": "/assets/blog/cmd-joins-feedback.png",
+      "alt": "Gui's feedback in the Conductor portal",
+      "width": 1098,
+      "height": 776
+    },
+    {
+      "type": "p",
+      "html": "As we got to know each other I became increasingly impressed. Gui's got a special mix of deep technical expertise and startup scrappiness, and he's worked on dev tools for the past decade."
+    },
+    {
+      "type": "p",
+      "html": "But perhaps most importantly: working together was just <em>fun</em>. Gui is thoughtful, wise, and likes moving extremely fast."
+    },
+    {
+      "type": "p",
+      "html": "Conductor is quickly growing from a desktop app to a platform, available everywhere from your phone to your VPC, and joining forces with cmd will help us get there faster."
+    },
+    {
+      "type": "p",
+      "html": "Welcome to Conductor!"
+    },
+    {
+      "type": "p",
+      "html": "We're hiring product engineers and designers. <a href=\"/join-us\">Join us</a>!"
+    }
+  ]
+}

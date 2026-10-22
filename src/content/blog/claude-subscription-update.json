@@ -1,0 +1,51 @@
+{
+  "slug": "claude-subscription-update",
+  "title": "Claude subscription update for Conductor",
+  "description": "Anthropic has delayed subscription billing changes for third-party Claude tools, so you can keep using your Claude plan in Conductor with no additional limitations.",
+  "date": "June 15, 2026",
+  "authors": [
+    "Conductor team"
+  ],
+  "blocks": [
+    {
+      "type": "p",
+      "html": "<strong>TL;DR:</strong> Anthropic has delayed the subscription updates to Claude plans. You can keep using your Claude plan in Conductor with no additional limitations."
+    },
+    {
+      "type": "h2",
+      "text": "What happened"
+    },
+    {
+      "type": "p",
+      "html": "On May 13, Anthropic <a href=\"https://support.claude.com/en/articles/15036540-use-the-claude-agent-sdk-with-your-claude-plan\" target=\"_blank\" rel=\"noopener noreferrer\">announced subscription updates for Claude Agent SDK usage</a> in third-party tools like Conductor."
+    },
+    {
+      "type": "p",
+      "html": "Conductor uses native Claude Code, but we do so through the Claude Agent SDK, so that policy applied to us."
+    },
+    {
+      "type": "p",
+      "html": "On June 15, Anthropic announced that those changes are delayed indefinitely. You can continue to use your Claude plan with Conductor as normal."
+    },
+    {
+      "type": "h2",
+      "text": "What this means for you"
+    },
+    {
+      "type": "p",
+      "html": "No action is required."
+    },
+    {
+      "type": "ul",
+      "items": [
+        "You can keep using your Claude subscription in Conductor the same way you do today.",
+        "We will continue working with the Anthropic team.",
+        "We will notify you if anything changes."
+      ]
+    },
+    {
+      "type": "p",
+      "html": "Thank you for your support. We're excited to keep shipping improvements to Conductor."
+    }
+  ]
+}

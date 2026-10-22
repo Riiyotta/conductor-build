@@ -1,0 +1,35 @@
+/* /blog (original: Next.js; index uses next/font Geist, posts use the default sans stack). */
+@font-face {
+  font-family: geistSans;
+  src: url('/assets/fonts/Geist-VariableFont_wght.ttf') format('truetype');
+  font-display: swap;
+  font-weight: 100 900;
+}
+@font-face {
+  /* next/font fallback metrics */
+  font-family: 'geistSans Fallback';
+  src: local('Arial');
+  ascent-override: 94.47%;
+  descent-override: 27.73%;
+  line-gap-override: 0%;
+  size-adjust: 106.39%;
+}
+
+/* Original `.site-page` (index only): font-family from the Geist variable. */
+.blog-index {
+  font-family: geistSans, 'geistSans Fallback', ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Inline markup inside post paragraphs (original per-element utility classes). */
+.blog-inline a {
+  @apply text-foreground underline hover:no-underline;
+}
+.blog-inline strong {
+  @apply font-semibold text-foreground;
+}
+.blog-inline em {
+  @apply italic;
+}
+.blog-inline code {
+  @apply rounded bg-muted px-1.5 py-0.5 font-mono text-sm;
+}
