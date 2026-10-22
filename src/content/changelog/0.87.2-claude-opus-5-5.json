@@ -1,0 +1,23 @@
+{
+  "slug": "0.87.2-claude-opus-5-5",
+  "version": "0.87.2",
+  "versionSlug": "0.87.2",
+  "title": "Claude Opus 5.5",
+  "fullTitle": "0.87.2: Claude Opus 5.5",
+  "date": "September 22, 2026",
+  "dateISO": "2026-09-22",
+  "description": "Conductor 0.87.2 changelog - Claude Opus 5.5",
+  "summary": "Claude Opus 5.5 is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/opus-5-5-0.87.2.png",
+    "alt": "Claude Opus 5.5"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.87.2-claude-opus-5-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.87.2-claude-opus-5-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.87.2-claude-opus-5-5",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Claude Opus 5.5\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/opus-5-5-0.87.2.png\"/></figure>\n<p>Claude Opus 5.5 is now available in Conductor!</p>\n<p>Opus 5.5 performs at the level of Claude Fable 5.1 for most tasks and costs 40% less to run than Opus 5.</p>",
+  "markdown": "\n![Claude Opus 5.5](/assets/changelog/images/opus-5-5-0.87.2.png)\n\nClaude Opus 5.5 is now available in Conductor!\n\nOpus 5.5 performs at the level of Claude Fable 5.1 for most tasks and costs 40% less to run than Opus 5.\n"
+}

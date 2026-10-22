@@ -1,0 +1,668 @@
+{
+  "slug": "concepts/parallel-agents",
+  "url": "/docs/concepts/parallel-agents",
+  "title": "Parallel agents",
+  "description": "Choose when to split work across workspaces or inside one workspace",
+  "meta": {
+    "title": "Parallel agents | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/concepts/parallel-agents/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Concepts"
+    },
+    {
+      "name": "Parallel agents"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#use-multiple-workspaces-for-independent-work",
+      "title": "Use multiple workspaces for independent work"
+    },
+    {
+      "depth": 2,
+      "url": "#use-one-workspace-for-shared-work",
+      "title": "Use one workspace for shared work"
+    },
+    {
+      "depth": 2,
+      "url": "#decision-guide",
+      "title": "Decision guide"
+    },
+    {
+      "depth": 2,
+      "url": "#common-patterns",
+      "title": "Common patterns"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/concepts/workflow",
+    "title": "Workflow",
+    "description": "How Conductor turns isolated workspace streams into reviewed pull requests"
+  },
+  "next": {
+    "url": "/docs/concepts/testing",
+    "title": "Testing",
+    "description": "Automate testing in Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Parallel agent work starts with one decision: should these agents share a workspace, or should they move independently?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use multiple workspaces when tasks should land independently. Use multiple agents in one workspace when the work shares the same branch, code state, and context."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For agent-specific workflows, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Claude Code sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-cursor-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Cursor sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "UDlV5G0V0cM",
+      "title": "Managing multiple Claude Code sessions with Conductor",
+      "thumbnail": "/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "use-multiple-workspaces-for-independent-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Use multiple workspaces for independent work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create a new workspace with "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command N",
+          "keys": [
+            "⌘",
+            "N"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": " when work should have its own branch, files, running environment, and review path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This is the default choice for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Independent features."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Bug fixes that can ship separately."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GitHub issues, Linear issues, or pull requests."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Experiments you may discard."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Tasks that need separate app processes or test runs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each workspace gives the agent a separate branch and working tree. That lets you run, review, merge, or archive each stream of work on its own schedule."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "use-one-workspace-for-shared-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Use one workspace for shared work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Run multiple agents in one workspace when the work belongs on the same branch and should share the same files and context."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This works well for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "One agent implementing while another reviews the same diff."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "One agent fixing tests after another changes the code."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Frontend and backend changes that must land together."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Comparing approaches before choosing one path."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Multi-agent review of one branch before opening a pull request."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The tradeoff is that agents in the same workspace can edit the same files. Use this when shared context matters more than separation."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "decision-guide",
+      "children": [
+        {
+          "type": "text",
+          "value": "Decision guide"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Task shape"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Why"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Two features can ship separately"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Multiple workspaces"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Each gets its own branch, app state, and PR path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "One feature needs implementation and test repair"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "One workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The agents need the same branch and latest changes."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Several issues should be explored in parallel"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Multiple workspaces"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "You can archive, merge, or discard each result independently."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "One branch needs a second opinion"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "One workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Review comments should apply to the same diff."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "A risky experiment may be thrown away"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Multiple workspaces"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The experiment stays isolated from ongoing work."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "common-patterns",
+      "children": [
+        {
+          "type": "text",
+          "value": "Common patterns"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a review, fix, and test split, keep the agents in one workspace. They are collaborating on the same branch, so one agent can review the diff while another applies fixes and a third runs or repairs tests."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For issue fanout, use multiple workspaces. Create one workspace per GitHub or Linear issue, give each agent the relevant context, then review and merge the branches that are worth keeping."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For exploratory work, start with multiple workspaces if the branches may diverge. If you choose one path, archive the others or copy the useful context into the winning workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the underlying workspace model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workspaces-and-branches"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Isolated workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For hands-on setup, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Claude Code sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-cursor-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Cursor sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Parallel agent work starts with one decision: should these agents share a workspace, or should they move independently?</p><p>Use multiple workspaces when tasks should land independently. Use multiple agents in one workspace when the work shares the same branch, code state, and context.</p><p>For agent-specific workflows, see <a href=\"/docs/guides/parallel-agents/run-multiple-claude-code-sessions\">Run multiple Claude Code sessions in parallel</a>, <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>, and <a href=\"/docs/guides/parallel-agents/run-multiple-cursor-sessions\">Run multiple Cursor sessions in parallel</a>.</p><div data-youtube=\"UDlV5G0V0cM\" data-title=\"Managing multiple Claude Code sessions with Conductor\" data-thumbnail=\"/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp\"></div><h2 id=\"use-multiple-workspaces-for-independent-work\"><a href=\"#use-multiple-workspaces-for-independent-work\">Use multiple workspaces for independent work</a></h2><p>Create a new workspace with <span data-shortcut aria-label=\"Command N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>N</kbd></span> when work should have its own branch, files, running environment, and review path.</p><p>This is the default choice for:</p><ul><li>Independent features.</li><li>Bug fixes that can ship separately.</li><li>GitHub issues, Linear issues, or pull requests.</li><li>Experiments you may discard.</li><li>Tasks that need separate app processes or test runs.</li></ul><p>Each workspace gives the agent a separate branch and working tree. That lets you run, review, merge, or archive each stream of work on its own schedule.</p><h2 id=\"use-one-workspace-for-shared-work\"><a href=\"#use-one-workspace-for-shared-work\">Use one workspace for shared work</a></h2><p>Run multiple agents in one workspace when the work belongs on the same branch and should share the same files and context.</p><p>This works well for:</p><ul><li>One agent implementing while another reviews the same diff.</li><li>One agent fixing tests after another changes the code.</li><li>Frontend and backend changes that must land together.</li><li>Comparing approaches before choosing one path.</li><li>Multi-agent review of one branch before opening a pull request.</li></ul><p>The tradeoff is that agents in the same workspace can edit the same files. Use this when shared context matters more than separation.</p><h2 id=\"decision-guide\"><a href=\"#decision-guide\">Decision guide</a></h2><table><thead><tr><th>Task shape</th><th>Use</th><th>Why</th></tr></thead><tbody><tr><td>Two features can ship separately</td><td>Multiple workspaces</td><td>Each gets its own branch, app state, and PR path.</td></tr><tr><td>One feature needs implementation and test repair</td><td>One workspace</td><td>The agents need the same branch and latest changes.</td></tr><tr><td>Several issues should be explored in parallel</td><td>Multiple workspaces</td><td>You can archive, merge, or discard each result independently.</td></tr><tr><td>One branch needs a second opinion</td><td>One workspace</td><td>Review comments should apply to the same diff.</td></tr><tr><td>A risky experiment may be thrown away</td><td>Multiple workspaces</td><td>The experiment stays isolated from ongoing work.</td></tr></tbody></table><h2 id=\"common-patterns\"><a href=\"#common-patterns\">Common patterns</a></h2><p>For a review, fix, and test split, keep the agents in one workspace. They are collaborating on the same branch, so one agent can review the diff while another applies fixes and a third runs or repairs tests.</p><p>For issue fanout, use multiple workspaces. Create one workspace per GitHub or Linear issue, give each agent the relevant context, then review and merge the branches that are worth keeping.</p><p>For exploratory work, start with multiple workspaces if the branches may diverge. If you choose one path, archive the others or copy the useful context into the winning workspace.</p><p>For the underlying workspace model, see <a href=\"/docs/concepts/workspaces-and-branches\">Isolated workspaces</a>. For hands-on setup, use <a href=\"/docs/guides/parallel-agents/run-multiple-claude-code-sessions\">Run multiple Claude Code sessions in parallel</a>, <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>, or <a href=\"/docs/guides/parallel-agents/run-multiple-cursor-sessions\">Run multiple Cursor sessions in parallel</a>.</p>",
+  "text": "Parallel agent work starts with one decision: should these agents share a workspace, or should they move independently?\nUse multiple workspaces when tasks should land independently. Use multiple agents in one workspace when the work shares the same branch, code state, and context.\nFor agent-specific workflows, see Run multiple Claude Code sessions in parallel, Run multiple Codex sessions in parallel, and Run multiple Cursor sessions in parallel.\nUse multiple workspaces for independent work\nCreate a new workspace with ⌘N when work should have its own branch, files, running environment, and review path.\nThis is the default choice for:\nIndependent features.\nBug fixes that can ship separately.\nGitHub issues, Linear issues, or pull requests.\nExperiments you may discard.\nTasks that need separate app processes or test runs.\nEach workspace gives the agent a separate branch and working tree. That lets you run, review, merge, or archive each stream of work on its own schedule.\nUse one workspace for shared work\nRun multiple agents in one workspace when the work belongs on the same branch and should share the same files and context.\nThis works well for:\nOne agent implementing while another reviews the same diff.\nOne agent fixing tests after another changes the code.\nFrontend and backend changes that must land together.\nComparing approaches before choosing one path.\nMulti-agent review of one branch before opening a pull request.\nThe tradeoff is that agents in the same workspace can edit the same files. Use this when shared context matters more than separation.\nDecision guide\nTask shapeUseWhyTwo features can ship separatelyMultiple workspacesEach gets its own branch, app state, and PR path.One feature needs implementation and test repairOne workspaceThe agents need the same branch and latest changes.Several issues should be explored in parallelMultiple workspacesYou can archive, merge, or discard each result independently.One branch needs a second opinionOne workspaceReview comments should apply to the same diff.A risky experiment may be thrown awayMultiple workspacesThe experiment stays isolated from ongoing work.Common patterns\nFor a review, fix, and test split, keep the agents in one workspace. They are collaborating on the same branch, so one agent can review the diff while another applies fixes and a third runs or repairs tests.\nFor issue fanout, use multiple workspaces. Create one workspace per GitHub or Linear issue, give each agent the relevant context, then review and merge the branches that are worth keeping.\nFor exploratory work, start with multiple workspaces if the branches may diverge. If you choose one path, archive the others or copy the useful context into the winning workspace.\nFor the underlying workspace model, see Isolated workspaces. For hands-on setup, use Run multiple Claude Code sessions in parallel, Run multiple Codex sessions in parallel, or Run multiple Cursor sessions in parallel.",
+  "markdown": "\n# Parallel agents\n\n\n\nParallel agent work starts with one decision: should these agents share a workspace, or should they move independently?\n\nUse multiple workspaces when tasks should land independently. Use multiple agents in one workspace when the work shares the same branch, code state, and context.\n\nFor agent-specific workflows, see [Run multiple Claude Code sessions in parallel](/docs/guides/parallel-agents/run-multiple-claude-code-sessions), [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions), and [Run multiple Cursor sessions in parallel](/docs/guides/parallel-agents/run-multiple-cursor-sessions).\n\n\n\n\n## Use multiple workspaces for independent work [#use-multiple-workspaces-for-independent-work]\n\nCreate a new workspace with Command + N when work should have its own branch, files, running environment, and review path.\n\nThis is the default choice for:\n\n* Independent features.\n* Bug fixes that can ship separately.\n* GitHub issues, Linear issues, or pull requests.\n* Experiments you may discard.\n* Tasks that need separate app processes or test runs.\n\nEach workspace gives the agent a separate branch and working tree. That lets you run, review, merge, or archive each stream of work on its own schedule.\n\n## Use one workspace for shared work [#use-one-workspace-for-shared-work]\n\nRun multiple agents in one workspace when the work belongs on the same branch and should share the same files and context.\n\nThis works well for:\n\n* One agent implementing while another reviews the same diff.\n* One agent fixing tests after another changes the code.\n* Frontend and backend changes that must land together.\n* Comparing approaches before choosing one path.\n* Multi-agent review of one branch before opening a pull request.\n\nThe tradeoff is that agents in the same workspace can edit the same files. Use this when shared context matters more than separation.\n\n## Decision guide [#decision-guide]\n\n| Task shape                                       | Use                 | Why                                                           |\n| ------------------------------------------------ | ------------------- | ------------------------------------------------------------- |\n| Two features can ship separately                 | Multiple workspaces | Each gets its own branch, app state, and PR path.             |\n| One feature needs implementation and test repair | One workspace       | The agents need the same branch and latest changes.           |\n| Several issues should be explored in parallel    | Multiple workspaces | You can archive, merge, or discard each result independently. |\n| One branch needs a second opinion                | One workspace       | Review comments should apply to the same diff.                |\n| A risky experiment may be thrown away            | Multiple workspaces | The experiment stays isolated from ongoing work.              |\n\n## Common patterns [#common-patterns]\n\nFor a review, fix, and test split, keep the agents in one workspace. They are collaborating on the same branch, so one agent can review the diff while another applies fixes and a third runs or repairs tests.\n\nFor issue fanout, use multiple workspaces. Create one workspace per GitHub or Linear issue, give each agent the relevant context, then review and merge the branches that are worth keeping.\n\nFor exploratory work, start with multiple workspaces if the branches may diverge. If you choose one path, archive the others or copy the useful context into the winning workspace.\n\nFor the underlying workspace model, see [Isolated workspaces](/docs/concepts/workspaces-and-branches). For hands-on setup, use [Run multiple Claude Code sessions in parallel](/docs/guides/parallel-agents/run-multiple-claude-code-sessions), [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions), or [Run multiple Cursor sessions in parallel](/docs/guides/parallel-agents/run-multiple-cursor-sessions).\n"
+}

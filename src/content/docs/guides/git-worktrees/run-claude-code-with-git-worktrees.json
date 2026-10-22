@@ -1,0 +1,868 @@
+{
+  "slug": "guides/git-worktrees/run-claude-code-with-git-worktrees",
+  "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+  "title": "Run Claude Code with Git worktrees",
+  "description": "Use Claude Code in Conductor workspaces so parallel sessions get separate branches, files, and setup",
+  "meta": {
+    "title": "Run Claude Code with Git worktrees | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/git-worktrees/run-claude-code-with-git-worktrees/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Git"
+    },
+    {
+      "name": "Run Claude Code with Git worktrees"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#run-claude-code-in-a-conductor-workspace",
+      "title": "Run Claude Code in a Conductor workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#add-the-repository-to-conductor",
+      "title": "Add the repository to Conductor"
+    },
+    {
+      "depth": 3,
+      "url": "#create-a-new-workspace",
+      "title": "Create a new workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#prepare-the-workspace-before-claude-starts",
+      "title": "Prepare the workspace before Claude starts"
+    },
+    {
+      "depth": 3,
+      "url": "#start-a-claude-code-chat",
+      "title": "Start a Claude Code chat"
+    },
+    {
+      "depth": 3,
+      "url": "#run-the-project-from-the-workspace",
+      "title": "Run the project from the workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#why-use-conductor-instead-of-a-raw-claude-worktree",
+      "title": "Why use Conductor instead of a raw Claude worktree"
+    },
+    {
+      "depth": 2,
+      "url": "#caveats-that-matter",
+      "title": "Caveats that matter"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/review-and-merge",
+    "title": "Review and merge a workspace",
+    "description": "Use Conductor's review, checks, and PR tools before merging"
+  },
+  "next": {
+    "url": "/docs/guides/git-worktrees/run-codex-with-git-worktrees",
+    "title": "Run Codex with Git worktrees",
+    "description": "Use Codex in Conductor workspaces so each task gets its own branch, files, and run environment"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when you want two Claude Code tasks to run in parallel without sharing one checkout, one branch, or one run environment."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor solves that by creating a separate workspace for each task, then attaching the Claude chat, branch, setup, and review flow to that workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The workflow is:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create a new workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Let Conductor create the branch and git worktree."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Let Conductor run setup, copy local files, and keep the chat attached to that workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Start a Claude Code session inside the workspace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/git-worktrees-claude-code-workspace.png",
+      "alt": "Conductor workspace created for a Claude Code task, showing the new branch, copied files, and completed setup"
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full Conductor workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Claude Code sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the underlying Git model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/git-worktrees"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git Worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For Claude's upstream worktree behavior, see the official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/worktrees",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code worktrees docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-claude-code-in-a-conductor-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run Claude Code in a Conductor workspace"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "children": [
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "add-the-repository-to-conductor",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add the repository to Conductor"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open your project in Conductor if it is not already there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-a-new-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a new workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a workspace with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command N",
+                  "keys": [
+                    "⌘",
+                    "N"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " when the Claude task should have its own branch, files, and review path."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor creates the new workspace as its own git worktree and branch. It bases that workspace on the repository's configured base branch and fetches from "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "origin"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " first, so the workspace starts from the latest remote commit."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "prepare-the-workspace-before-claude-starts",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Prepare the workspace before Claude starts"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "A fresh Conductor workspace starts with tracked Git files only."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use one of these Conductor setup paths:"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "ul",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "a",
+                      "attrs": {
+                        "href": "/docs/reference/files-to-copy"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Files to copy"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " or "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": ".worktreeinclude"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " for static gitignored files such as "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": ".env.local"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " and local config."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use a "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "a",
+                      "attrs": {
+                        "href": "/docs/reference/scripts#setup-scripts"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "setup script"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " for dependency installs, generated files, symlinks, or per-workspace resources."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy currently runs for local Mac workspaces. If you need the same setup in cloud workspaces too, put the required steps in "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "scripts.setup"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "start-a-claude-code-chat",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start a Claude Code chat"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the workspace and start a new chat with Claude Code as the agent."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "This keeps the Claude session attached to the workspace's branch, terminal, diff, checks, and PR flow."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "run-the-project-from-the-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Run the project from the workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use the Run button or the terminal from inside the workspace."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If your app needs separate ports per workspace, use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_PORT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " in your action or setup script. If the project cannot run cleanly from a workspace directory, use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts/spotlight-testing"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Spotlight testing"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "why-use-conductor-instead-of-a-raw-claude-worktree",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why use Conductor instead of a raw Claude worktree"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor adds the parts around Claude Code that usually become manual:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Per-workspace branches and chats."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".worktreeinclude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "-style local files in local workspaces."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#setup-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Setup scripts"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#run-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "actions"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " per workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Review and PR flow attached to the same workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A repeatable path for running more than one Claude task in parallel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "caveats-that-matter",
+      "children": [
+        {
+          "type": "text",
+          "value": "Caveats that matter"
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "One branch still belongs to one worktree",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor uses Git worktrees under the hood, so the normal branch rule still applies: one checked-out branch can only belong to one worktree at a time. When work should move independently, create another workspace instead of reusing the same branch elsewhere."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Local file copy and setup are different tools",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use Files to copy for static gitignored files that already exist in your main checkout. Use a setup script when the workspace needs commands, generated files, symlinks, or per-workspace resources. Most projects need both only if they have both copied local files and command-based setup."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your main pain is missing env files in new workspaces, start with "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/use-files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Use Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If you are setting up Conductor for the first time, start with "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/first-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Your first workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the broader multi-session workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Claude Code sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when you want two Claude Code tasks to run in parallel without sharing one checkout, one branch, or one run environment.</p><p>Conductor solves that by creating a separate workspace for each task, then attaching the Claude chat, branch, setup, and review flow to that workspace.</p><p>The workflow is:</p><ul><li>Create a new workspace.</li><li>Let Conductor create the branch and git worktree.</li><li>Let Conductor run setup, copy local files, and keep the chat attached to that workspace.</li><li>Start a Claude Code session inside the workspace.</li></ul><figure data-asset=\"image\"><img src=\"/assets/docs/images/git-worktrees-claude-code-workspace.png\" alt=\"Conductor workspace created for a Claude Code task, showing the new branch, copied files, and completed setup\" /></figure><p>For the full Conductor workflow, see <a href=\"/docs/guides/parallel-agents/run-multiple-claude-code-sessions\">Run multiple Claude Code sessions in parallel</a>. For the underlying Git model, see <a href=\"/docs/concepts/git-worktrees\">Git Worktrees</a>. For Claude's upstream worktree behavior, see the official <a href=\"https://code.claude.com/docs/en/worktrees\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code worktrees docs</a>.</p><h2 id=\"run-claude-code-in-a-conductor-workspace\"><a href=\"#run-claude-code-in-a-conductor-workspace\">Run Claude Code in a Conductor workspace</a></h2><div data-steps><div data-step><h3 id=\"add-the-repository-to-conductor\"><a href=\"#add-the-repository-to-conductor\">Add the repository to Conductor</a></h3><p>Open your project in Conductor if it is not already there.</p></div><div data-step><h3 id=\"create-a-new-workspace\"><a href=\"#create-a-new-workspace\">Create a new workspace</a></h3><p>Create a workspace with <span data-shortcut aria-label=\"Command N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>N</kbd></span> when the Claude task should have its own branch, files, and review path.</p><p>Conductor creates the new workspace as its own git worktree and branch. It bases that workspace on the repository's configured base branch and fetches from <code>origin</code> first, so the workspace starts from the latest remote commit.</p></div><div data-step><h3 id=\"prepare-the-workspace-before-claude-starts\"><a href=\"#prepare-the-workspace-before-claude-starts\">Prepare the workspace before Claude starts</a></h3><p>A fresh Conductor workspace starts with tracked Git files only.</p><p>Use one of these Conductor setup paths:</p><ul><li>Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> or <code>.worktreeinclude</code> for static gitignored files such as <code>.env.local</code> and local config.</li><li>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> for dependency installs, generated files, symlinks, or per-workspace resources.</li></ul><p>Files to copy currently runs for local Mac workspaces. If you need the same setup in cloud workspaces too, put the required steps in <code>scripts.setup</code>.</p></div><div data-step><h3 id=\"start-a-claude-code-chat\"><a href=\"#start-a-claude-code-chat\">Start a Claude Code chat</a></h3><p>Open the workspace and start a new chat with Claude Code as the agent.</p><p>This keeps the Claude session attached to the workspace's branch, terminal, diff, checks, and PR flow.</p></div><div data-step><h3 id=\"run-the-project-from-the-workspace\"><a href=\"#run-the-project-from-the-workspace\">Run the project from the workspace</a></h3><p>Use the Run button or the terminal from inside the workspace.</p><p>If your app needs separate ports per workspace, use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_PORT</code></a> in your action or setup script. If the project cannot run cleanly from a workspace directory, use <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</p></div></div><h2 id=\"why-use-conductor-instead-of-a-raw-claude-worktree\"><a href=\"#why-use-conductor-instead-of-a-raw-claude-worktree\">Why use Conductor instead of a raw Claude worktree</a></h2><p>Conductor adds the parts around Claude Code that usually become manual:</p><ul><li>Per-workspace branches and chats.</li><li><a href=\"/docs/reference/files-to-copy\">Files to copy</a> for <code>.worktreeinclude</code>-style local files in local workspaces.</li><li><a href=\"/docs/reference/scripts#setup-scripts\">Setup scripts</a> and <a href=\"/docs/reference/scripts#run-scripts\">actions</a> per workspace.</li><li>Review and PR flow attached to the same workspace.</li><li>A repeatable path for running more than one Claude task in parallel.</li></ul><h2 id=\"caveats-that-matter\"><a href=\"#caveats-that-matter\">Caveats that matter</a></h2><div data-accordions=\"single\"><details data-accordion><summary>One branch still belongs to one worktree</summary><p>Conductor uses Git worktrees under the hood, so the normal branch rule still applies: one checked-out branch can only belong to one worktree at a time. When work should move independently, create another workspace instead of reusing the same branch elsewhere.</p></details><details data-accordion><summary>Local file copy and setup are different tools</summary><p>Use Files to copy for static gitignored files that already exist in your main checkout. Use a setup script when the workspace needs commands, generated files, symlinks, or per-workspace resources. Most projects need both only if they have both copied local files and command-based setup.</p></details></div><p>If your main pain is missing env files in new workspaces, start with <a href=\"/docs/guides/use-files-to-copy\">Use Files to copy</a>. If you are setting up Conductor for the first time, start with <a href=\"/docs/first-workspace\">Your first workspace</a>. For the broader multi-session workflow, see <a href=\"/docs/guides/parallel-agents/run-multiple-claude-code-sessions\">Run multiple Claude Code sessions in parallel</a>.</p>",
+  "text": "Use this guide when you want two Claude Code tasks to run in parallel without sharing one checkout, one branch, or one run environment.\nConductor solves that by creating a separate workspace for each task, then attaching the Claude chat, branch, setup, and review flow to that workspace.\nThe workflow is:\nCreate a new workspace.\nLet Conductor create the branch and git worktree.\nLet Conductor run setup, copy local files, and keep the chat attached to that workspace.\nStart a Claude Code session inside the workspace.\nFor the full Conductor workflow, see Run multiple Claude Code sessions in parallel. For the underlying Git model, see Git Worktrees. For Claude's upstream worktree behavior, see the official Claude Code worktrees docs.\nRun Claude Code in a Conductor workspace\nAdd the repository to Conductor\nOpen your project in Conductor if it is not already there.\nCreate a new workspace\nCreate a workspace with ⌘N when the Claude task should have its own branch, files, and review path.\nConductor creates the new workspace as its own git worktree and branch. It bases that workspace on the repository's configured base branch and fetches from origin first, so the workspace starts from the latest remote commit.\nPrepare the workspace before Claude starts\nA fresh Conductor workspace starts with tracked Git files only.\nUse one of these Conductor setup paths:\nUse Files to copy or .worktreeinclude for static gitignored files such as .env.local and local config.\nUse a setup script for dependency installs, generated files, symlinks, or per-workspace resources.\nFiles to copy currently runs for local Mac workspaces. If you need the same setup in cloud workspaces too, put the required steps in scripts.setup.\nStart a Claude Code chat\nOpen the workspace and start a new chat with Claude Code as the agent.\nThis keeps the Claude session attached to the workspace's branch, terminal, diff, checks, and PR flow.\nRun the project from the workspace\nUse the Run button or the terminal from inside the workspace.\nIf your app needs separate ports per workspace, use CONDUCTOR_PORT in your action or setup script. If the project cannot run cleanly from a workspace directory, use Spotlight testing.\nWhy use Conductor instead of a raw Claude worktree\nConductor adds the parts around Claude Code that usually become manual:\nPer-workspace branches and chats.\nFiles to copy for .worktreeinclude-style local files in local workspaces.\nSetup scripts and actions per workspace.\nReview and PR flow attached to the same workspace.\nA repeatable path for running more than one Claude task in parallel.\nCaveats that matter\nOne branch still belongs to one worktreeConductor uses Git worktrees under the hood, so the normal branch rule still applies: one checked-out branch can only belong to one worktree at a time. When work should move independently, create another workspace instead of reusing the same branch elsewhere.\nLocal file copy and setup are different toolsUse Files to copy for static gitignored files that already exist in your main checkout. Use a setup script when the workspace needs commands, generated files, symlinks, or per-workspace resources. Most projects need both only if they have both copied local files and command-based setup.\nIf your main pain is missing env files in new workspaces, start with Use Files to copy. If you are setting up Conductor for the first time, start with Your first workspace. For the broader multi-session workflow, see Run multiple Claude Code sessions in parallel.",
+  "markdown": "\n# Run Claude Code with Git worktrees\n\n\n\nUse this guide when you want two Claude Code tasks to run in parallel without sharing one checkout, one branch, or one run environment.\n\nConductor solves that by creating a separate workspace for each task, then attaching the Claude chat, branch, setup, and review flow to that workspace.\n\nThe workflow is:\n\n* Create a new workspace.\n* Let Conductor create the branch and git worktree.\n* Let Conductor run setup, copy local files, and keep the chat attached to that workspace.\n* Start a Claude Code session inside the workspace.\n\n\n\n\nFor the full Conductor workflow, see [Run multiple Claude Code sessions in parallel](/docs/guides/parallel-agents/run-multiple-claude-code-sessions). For the underlying Git model, see [Git Worktrees](/docs/concepts/git-worktrees). For Claude's upstream worktree behavior, see the official [Claude Code worktrees docs](https://code.claude.com/docs/en/worktrees).\n\n## Run Claude Code in a Conductor workspace [#run-claude-code-in-a-conductor-workspace]\n\n### Add the repository to Conductor [#add-the-repository-to-conductor]\n\nOpen your project in Conductor if it is not already there.\n\n### Create a new workspace [#create-a-new-workspace]\n\nCreate a workspace with Command + N when the Claude task should have its own branch, files, and review path.\n\nConductor creates the new workspace as its own git worktree and branch. It bases that workspace on the repository's configured base branch and fetches from `origin` first, so the workspace starts from the latest remote commit.\n\n### Prepare the workspace before Claude starts [#prepare-the-workspace-before-claude-starts]\n\nA fresh Conductor workspace starts with tracked Git files only.\n\nUse one of these Conductor setup paths:\n\n* Use [Files to copy](/docs/reference/files-to-copy) or `.worktreeinclude` for static gitignored files such as `.env.local` and local config.\n* Use a [setup script](/docs/reference/scripts#setup-scripts) for dependency installs, generated files, symlinks, or per-workspace resources.\n\nFiles to copy currently runs for local Mac workspaces. If you need the same setup in cloud workspaces too, put the required steps in `scripts.setup`.\n\n### Start a Claude Code chat [#start-a-claude-code-chat]\n\nOpen the workspace and start a new chat with Claude Code as the agent.\n\nThis keeps the Claude session attached to the workspace's branch, terminal, diff, checks, and PR flow.\n\n### Run the project from the workspace [#run-the-project-from-the-workspace]\n\nUse the Run button or the terminal from inside the workspace.\n\nIf your app needs separate ports per workspace, use [`CONDUCTOR_PORT`](/docs/reference/environment-variables) in your action or setup script. If the project cannot run cleanly from a workspace directory, use [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n\n## Why use Conductor instead of a raw Claude worktree [#why-use-conductor-instead-of-a-raw-claude-worktree]\n\nConductor adds the parts around Claude Code that usually become manual:\n\n* Per-workspace branches and chats.\n* [Files to copy](/docs/reference/files-to-copy) for `.worktreeinclude`-style local files in local workspaces.\n* [Setup scripts](/docs/reference/scripts#setup-scripts) and [actions](/docs/reference/scripts#run-scripts) per workspace.\n* Review and PR flow attached to the same workspace.\n* A repeatable path for running more than one Claude task in parallel.\n\n## Caveats that matter [#caveats-that-matter]\n\nConductor uses Git worktrees under the hood, so the normal branch rule still applies: one checked-out branch can only belong to one worktree at a time. When work should move independently, create another workspace instead of reusing the same branch elsewhere.\n\nUse Files to copy for static gitignored files that already exist in your main checkout. Use a setup script when the workspace needs commands, generated files, symlinks, or per-workspace resources. Most projects need both only if they have both copied local files and command-based setup.\n\nIf your main pain is missing env files in new workspaces, start with [Use Files to copy](/docs/guides/use-files-to-copy). If you are setting up Conductor for the first time, start with [Your first workspace](/docs/first-workspace). For the broader multi-session workflow, see [Run multiple Claude Code sessions in parallel](/docs/guides/parallel-agents/run-multiple-claude-code-sessions).\n"
+}

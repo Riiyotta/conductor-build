@@ -1,0 +1,28 @@
+{
+  "slug": "0.17.2-misc-fixes",
+  "version": "0.17.2",
+  "versionSlug": "0.17.2",
+  "title": "Misc Fixes",
+  "fullTitle": "0.17.2: Misc Fixes",
+  "date": "Oct 27th, 2025",
+  "dateISO": "2025-10-27",
+  "description": "Conductor 0.17.2 changelog - Misc Fixes",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.17.2-misc-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.2-misc-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.2-misc-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Added Haiku 4.5</li>\n<li>Compacting now goes through Anthropic&#x27;s native APIs</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Speed up message processing</li>\n<li>Reduce git queries ran from the workspace sidebar</li>\n<li>Fix diff viewer line number alignment</li>\n<li>Reset sessions in a <code>cancelling</code> state to idle on startup</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Added Haiku 4.5\n- Compacting now goes through Anthropic's native APIs\n\n## Fixes\n\n- Speed up message processing\n- Reduce git queries ran from the workspace sidebar\n- Fix diff viewer line number alignment\n- Reset sessions in a `cancelling` state to idle on startup\n"
+}

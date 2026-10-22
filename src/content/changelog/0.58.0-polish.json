@@ -1,0 +1,28 @@
+{
+  "slug": "0.58.0-polish",
+  "version": "0.58.0",
+  "versionSlug": "0.58.0",
+  "title": "Polish",
+  "fullTitle": "0.58.0: Polish",
+  "date": "May 25, 2026",
+  "dateISO": "2026-05-25",
+  "description": "Conductor 0.58.0 changelog - Polish",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.58.0-polish/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.58.0-polish",
+  "sourceUrl": "https://www.conductor.build/changelog/0.58.0-polish",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Adjusted animation format to reduce CPU load.</li>\n<li>You can now right-click on a link to copy its address.</li>\n<li>Polished chat tab wording, transcript button hover states, docs copy, and file pill sizing.</li>\n<li>Workspace results in the command palette are now sorted by most recently used, with a &quot;time ago&quot; label on each result.</li>\n<li>Clicking a comment in the Checks panel now jumps to the comment in the diff.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where messages could start sending while Conductor was restarting for an update.</li>\n<li>Fixed an issue where unusual file or branch names could break workspace git commands.</li>\n<li>Fixed an issue where revoked workspace collaborators could keep opening new live streams until reconnecting.</li>\n<li>Fixed an issue where Conductor could briefly show changes from another workspace.</li>\n<li>Fixed an issue where macOS could ask before opening Codex after installing Conductor.</li>\n<li>Fixed an issue where file sync could fail after workspace access refreshes.</li>\n<li>Fixed an issue where workspace changes could disappear after git status refreshes.</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Adjusted animation format to reduce CPU load.\n- You can now right-click on a link to copy its address.\n- Polished chat tab wording, transcript button hover states, docs copy, and file pill sizing.\n- Workspace results in the command palette are now sorted by most recently used, with a \"time ago\" label on each result.\n- Clicking a comment in the Checks panel now jumps to the comment in the diff.\n\n## Fixes\n\n- Fixed an issue where messages could start sending while Conductor was restarting for an update.\n- Fixed an issue where unusual file or branch names could break workspace git commands.\n- Fixed an issue where revoked workspace collaborators could keep opening new live streams until reconnecting.\n- Fixed an issue where Conductor could briefly show changes from another workspace.\n- Fixed an issue where macOS could ask before opening Codex after installing Conductor.\n- Fixed an issue where file sync could fail after workspace access refreshes.\n- Fixed an issue where workspace changes could disappear after git status refreshes.\n"
+}

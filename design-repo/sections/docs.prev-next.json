@@ -1,0 +1,98 @@
+{
+  "id": "docs.prev-next",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.prev-next"
+  ],
+  "purpose": "Continue reading: previous/next page cards (grid renders even when empty).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/docs/DocsPage.jsx:47",
+      "quote": "function PrevNext({ previous, next }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "src/pages/docs/DocsPage.jsx:48",
+      "quote": "Rendered even when empty"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.prev-next"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "items": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "direction": {
+            "type": "enum",
+            "values": [
+              "previous",
+              "next"
+            ],
+            "required": true
+          },
+          "title": {
+            "type": "text",
+            "maxWords": 10,
+            "required": true,
+            "observedMaxWords": 7
+          },
+          "description": {
+            "type": "text",
+            "maxWords": 26,
+            "required": false,
+            "observedMaxWords": 21
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 0,
+      "maxItems": 2,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "src/pages/docs/DocsPage.jsx:50",
+        "quote": "hover:bg-muted/80 hover:text-foreground"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "4 of 69 docs pages have neither previous nor next; the 0-height grid still renders."
+  ],
+  "assetRoles": []
+}

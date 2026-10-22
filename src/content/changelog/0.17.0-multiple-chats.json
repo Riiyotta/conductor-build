@@ -1,0 +1,36 @@
+{
+  "slug": "0.17.0-multiple-chats",
+  "version": "0.17.0",
+  "versionSlug": "0.17.0",
+  "title": "Multiple Chats",
+  "fullTitle": "0.17.0: Multiple Chats",
+  "date": "Oct 24th, 2025",
+  "dateISO": "2025-10-24",
+  "description": "Conductor 0.17.0 changelog - Multiple Chats",
+  "summary": "You can now launch multiple Claude Code chats in a workspace using ⌘T.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.17.0/a133a147-1e99-4080-a4b5-6738c77e4c58.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.17.0-multiple-chats/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.0-multiple-chats",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.0-multiple-chats",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>You can now launch multiple Claude Code chats in a workspace using <strong>⌘T.</strong></p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.17.0/a133a147-1e99-4080-a4b5-6738c77e4c58.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added line hover highlighting to the diff viewer</li>\n<li>Display the relative commit time in the changes dropdown filter</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed files not refreshing when not on the diff tab</li>\n<li>Branch names now update when a workspace is not selected</li>\n<li>Enable scrolling in the changes dropdown filter</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>We removed the compact button. You can still compact with the <code>/compact</code> command.</li>\n</ul>",
+  "markdown": "\nYou can now launch multiple Claude Code chats in a workspace using **⌘T.**\n\n<img\n    width=\"2048\"\n    height=\"1317\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.17.0/a133a147-1e99-4080-a4b5-6738c77e4c58.png\"\n/>\n\n## Improvements\n\n- Added line hover highlighting to the diff viewer\n- Display the relative commit time in the changes dropdown filter\n\n## Fixes\n\n- Fixed files not refreshing when not on the diff tab\n- Branch names now update when a workspace is not selected\n- Enable scrolling in the changes dropdown filter\n\n## Misc\n\n- We removed the compact button. You can still compact with the `/compact` command.\n"
+}

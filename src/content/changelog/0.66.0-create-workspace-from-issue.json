@@ -1,0 +1,31 @@
+{
+  "slug": "0.66.0-create-workspace-from-issue",
+  "version": "0.66.0",
+  "versionSlug": "0.66.0",
+  "title": "Create workspace from issue",
+  "fullTitle": "0.66.0: Create workspace from issue",
+  "date": "June 16, 2026",
+  "dateISO": "2026-06-16",
+  "description": "Conductor 0.66.0 changelog - Create workspace from issue",
+  "summary": "You can now create workspaces from Linear or GitHub issues through the \"Create from...\" dropdown (⌘I).",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.66.0/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.66.0-create-workspace-from-issue/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.66.0-create-workspace-from-issue",
+  "sourceUrl": "https://www.conductor.build/changelog/0.66.0-create-workspace-from-issue",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now create workspaces from Linear or GitHub issues through the &quot;Create from...&quot; dropdown (⌘I).</p>\n<p>The old ⌘⇧N dialog is gone.</p>\n<figure data-asset><video src=\"/assets/changelog/media/0.66.0/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4\" autoplay muted loop playsinline width=\"100%\"></video></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Built-in slash commands like <code>/compact</code>, <code>/clear</code>, and <code>/plan</code> now insert into the composer when selected from the autocomplete menu and send on a second Enter, matching custom commands and skills.</li>\n<li>Added a refresh button for Linear auth.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where the agent&#x27;s workspace diff could compare against the wrong base branch for PRs targeting a non-default branch.</li>\n<li>The Run and Setup tabs now pick up <code>.conductor/settings.toml</code> changes without an app restart.</li>\n<li>Fixed an <code>.internal/node_modules failed to start</code> error.</li>\n<li>Fixed an issue where a dialog would stay open after navigating away.</li>\n</ul>",
+  "markdown": "\nYou can now create workspaces from Linear or GitHub issues through the \"Create from...\" dropdown (⌘I).\n\nThe old ⌘⇧N dialog is gone.\n\n<video\n    src=\"/assets/changelog/media/0.66.0/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    width=\"100%\"\n/>\n\n## Improvements\n\n- Built-in slash commands like `/compact`, `/clear`, and `/plan` now insert into the composer when selected from the autocomplete menu and send on a second Enter, matching custom commands and skills.\n- Added a refresh button for Linear auth.\n\n## Fixes\n\n- Fixed an issue where the agent's workspace diff could compare against the wrong base branch for PRs targeting a non-default branch.\n- The Run and Setup tabs now pick up `.conductor/settings.toml` changes without an app restart.\n- Fixed an `.internal/node_modules failed to start` error.\n- Fixed an issue where a dialog would stay open after navigating away.\n"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "0.22.1-gpt-5-1",
+  "version": "0.22.1",
+  "versionSlug": "0.22.1",
+  "title": "GPT-5.1",
+  "fullTitle": "0.22.1: GPT-5.1",
+  "date": "Nov 14th, 2025",
+  "dateISO": "2025-11-14",
+  "description": "Conductor 0.22.1 changelog - GPT-5.1",
+  "summary": "OpenAI's latest model is now available in Conductor.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.1/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.1-gpt-5-1/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.1-gpt-5-1",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.1-gpt-5-1",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    }
+  ],
+  "html": "<p>OpenAI&#x27;s latest model is now available in Conductor.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.1/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6.png\"/></figure>\n<p>Sub-agent tool calls will now be neatly nested in the chat.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.1/55afad27-22b0-4c83-bec8-38a6523da614.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Close tabs with middle mouse click</li>\n</ul>",
+  "markdown": "\nOpenAI's latest model is now available in Conductor.\n\n<img\n    width=\"474\"\n    height=\"352\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.1/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6.png\"\n/>\n\nSub-agent tool calls will now be neatly nested in the chat.\n\n<img\n    width=\"1582\"\n    height=\"698\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.1/55afad27-22b0-4c83-bec8-38a6523da614.png\"\n/>\n\n## Improvements\n\n- Close tabs with middle mouse click\n"
+}

@@ -1,0 +1,38 @@
+{
+  "id": "text-link",
+  "kind": "primitive",
+  "purpose": "Inline or standalone text link: nav link, footer link, prose link, FAQ answer link, changelog body link.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Footer.jsx:64",
+      "quote": "className=\"text-sm text-foreground transition-colors hover:text-foreground/70\""
+    }
+  ],
+  "tokens": [
+    "{semantic.text.nav}",
+    "{semantic.text.primary}",
+    "{component.prose.link}"
+  ],
+  "variants": [
+    "nav",
+    "footer",
+    "prose",
+    "faq-answer",
+    "changelog-body"
+  ],
+  "states": [
+    "rest",
+    "hover (color 150ms or opacity .8 over 200ms for prose)",
+    "aria-current=page (nav)"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:36",
+      "quote": "**Active nav state** (new): the current route's link gets `aria-current=\"page\"`"
+    },
+    {
+      "ref": "CLONE_SPEC_PAGES.md:68",
+      "quote": "| a (not `[data-card]`) | **500**, #2c2826, underline 1px"
+    }
+  ]
+}

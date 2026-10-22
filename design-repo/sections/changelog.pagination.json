@@ -1,0 +1,85 @@
+{
+  "id": "changelog.pagination",
+  "category": "CHANGELOG",
+  "iaSections": [
+    "changelog.pagination"
+  ],
+  "purpose": "Move between the 21 changelog pages.",
+  "implementedBy": [
+    {
+      "ref": "src/components/changelog/ChangelogPager.jsx:39",
+      "quote": "export default function ChangelogPager({ page }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:478",
+      "quote": "### 5.3 Index pagination"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "changelog.pagination"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "currentPage": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 21,
+      "required": true
+    },
+    "totalPages": {
+      "type": "integer",
+      "minimum": 1,
+      "maximum": 21,
+      "required": true
+    },
+    "previousLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "nextLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollow": "changelog.entry-list",
+    "allowedTemplates": [
+      "template.changelog-index"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:484",
+        "quote": "Hover bg #fafaf9."
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

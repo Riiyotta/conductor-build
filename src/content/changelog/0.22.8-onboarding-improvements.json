@@ -1,0 +1,28 @@
+{
+  "slug": "0.22.8-onboarding-improvements",
+  "version": "0.22.8",
+  "versionSlug": "0.22.8",
+  "title": "Onboarding Improvements",
+  "fullTitle": "0.22.8: Onboarding Improvements",
+  "date": "Nov 22nd, 2025",
+  "dateISO": "2025-11-22",
+  "description": "Conductor 0.22.8 changelog - Onboarding Improvements",
+  "summary": "We've improved onboarding for new users to help reduce setup failures.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.8/5108e6f4-5401-48ef-80e9-2f3e6f3113ef.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.8-onboarding-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.8-onboarding-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.8-onboarding-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.8/5108e6f4-5401-48ef-80e9-2f3e6f3113ef.png\"/></figure>\n<p>We&#x27;ve improved onboarding for new users to help reduce setup failures.</p>\n<h3>Fixes</h3>\n<ul>\n<li>Improved logging</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"2048\"\n    height=\"1516\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.8/5108e6f4-5401-48ef-80e9-2f3e6f3113ef.png\"\n/>\n\nWe've improved onboarding for new users to help reduce setup failures.\n\n## Fixes\n\n- Improved logging\n"
+}

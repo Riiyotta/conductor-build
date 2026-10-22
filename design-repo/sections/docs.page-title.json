@@ -1,0 +1,72 @@
+{
+  "id": "docs.page-title",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.page-title"
+  ],
+  "purpose": "Docs page H1 and one-sentence description.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/docs/DocsPage.jsx:89",
+      "quote": "{page.description && ("
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:153",
+      "quote": "### 1.4 Article column (`article#nd-page.docs-page`)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.page-title"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 10,
+      "required": true,
+      "observedMaxWords": 7
+    },
+    "description": {
+      "type": "text",
+      "maxWords": 26,
+      "required": false,
+      "observedMaxWords": 21
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:153",
+        "quote": "### 1.4 Article column (`article#nd-page.docs-page`)"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

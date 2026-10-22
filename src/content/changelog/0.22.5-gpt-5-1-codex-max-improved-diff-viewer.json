@@ -1,0 +1,32 @@
+{
+  "slug": "0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+  "version": "0.22.5",
+  "versionSlug": "0.22.5",
+  "title": "GPT 5.1 Codex Max, Improved Diff Viewer",
+  "fullTitle": "0.22.5: GPT 5.1 Codex Max, Improved Diff Viewer",
+  "date": "Nov 19th, 2025",
+  "dateISO": "2025-11-19",
+  "description": "Conductor 0.22.5 changelog - GPT 5.1 Codex Max, Improved Diff Viewer",
+  "summary": "OpenAI's latest agentic coding model is now available in Conductor.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.5/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.5-gpt-5-1-codex-max-improved-diff-viewer/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>OpenAI&#x27;s latest agentic coding model is now available in Conductor.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.5/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9.png\"/></figure>\n<p>We&#x27;ve also given the diff viewer a face lift!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.5/4008e446-986f-4a57-abb9-7babf8fd142c.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Make cancellation more obvious in the Composer</li>\n<li>Show when third-party services (Anthropic, GitHub) are having outages in Conductor.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix parts of the Composer being unclickable</li>\n</ul>",
+  "markdown": "\nOpenAI's latest agentic coding model is now available in Conductor.\n\n<img\n    width=\"596\"\n    height=\"246\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.5/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9.png\"\n/>\n\nWe've also given the diff viewer a face lift!\n\n<img\n    width=\"2048\"\n    height=\"1593\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.5/4008e446-986f-4a57-abb9-7babf8fd142c.png\"\n/>\n\n## Improvements\n\n- Make cancellation more obvious in the Composer\n- Show when third-party services (Anthropic, GitHub) are having outages in Conductor.\n\n## Fixes\n\n- Fix parts of the Composer being unclickable\n"
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "0.73.2-grok-4-5",
+  "version": "0.73.2",
+  "versionSlug": "0.73.2",
+  "title": "Grok 4.5",
+  "fullTitle": "0.73.2: Grok 4.5",
+  "date": "July 8, 2026",
+  "dateISO": "2026-07-08",
+  "description": "Conductor 0.73.2 changelog - Grok 4.5",
+  "summary": "Grok 4.5 is now available in Conductor! We've also added Cursor's Auto model.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/grok-4.5-0.73.2.png",
+    "alt": "Auto and Cursor Grok 4.5 in the Cursor model picker"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.73.2-grok-4-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.73.2-grok-4-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.73.2-grok-4-5",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Auto and Cursor Grok 4.5 in the Cursor model picker\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/grok-4.5-0.73.2.png\"/></figure>\n<p>Grok 4.5 is now available in Conductor! We&#x27;ve also added Cursor&#x27;s Auto model.</p>\n<p>To use Grok 4.5, set up Cursor in Settings → Harnesses → Cursor, then pick it from the model picker in any chat.</p>",
+  "markdown": "\n![Auto and Cursor Grok 4.5 in the Cursor model picker](/assets/changelog/images/grok-4.5-0.73.2.png)\n\nGrok 4.5 is now available in Conductor! We've also added Cursor's Auto model.\n\nTo use Grok 4.5, set up Cursor in Settings → Harnesses → Cursor, then pick it from the model picker in any chat.\n"
+}

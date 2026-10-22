@@ -1,0 +1,32 @@
+{
+  "slug": "0.67.0-fixes-and-improvements",
+  "version": "0.67.0",
+  "versionSlug": "0.67.0",
+  "title": "Fixes and improvements",
+  "fullTitle": "0.67.0: Fixes and improvements",
+  "date": "June 17, 2026",
+  "dateISO": "2026-06-17",
+  "description": "Conductor 0.67.0 changelog - Fixes and improvements",
+  "summary": "Minor fixes and improvements.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.67.0-fixes-and-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.67.0-fixes-and-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.67.0-fixes-and-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Minor fixes and improvements.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Styling improvements to the Dispatcher (⌘N dialog)</li>\n<li>UI improvements for cloud setup</li>\n<li>Added an &quot;Add your first project&quot; button in the sidebar during onboarding. It opens the add-repository menu and disappears after the user adds a project.</li>\n<li>Repo-scoped settings now take effect as soon as they&#x27;re loaded into your workspace. (They don&#x27;t need to be in the repository root/main worktree.)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where run script tabs appeared in workspaces that had not run that script.</li>\n<li>Fixed an issue where error details in expanded recoverable errors, banners, and inline error notices could not be selected for copying.</li>\n<li>Fixed an issue where error notifications could appear behind a dialog&#x27;s dimmed background, making clone and setup error toasts visible over the Quick start and Clone GitHub repo dialogs.</li>\n<li>Fixed a delay before code comments appeared in the composer for cloud workspaces.</li>\n<li>Fixed an issue where archiving a workspace could ignore its <code>delete_branch_on_archive</code> setting.</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Renamed the onboarding sample project from &quot;Quickstart&quot; to &quot;Starter project&quot; in the sidebar and local clone folder name. The cloned remote is unchanged.</li>\n</ul>",
+  "markdown": "\nMinor fixes and improvements.\n\n## Improvements\n\n- Styling improvements to the Dispatcher (⌘N dialog)\n- UI improvements for cloud setup\n- Added an \"Add your first project\" button in the sidebar during onboarding. It opens the add-repository menu and disappears after the user adds a project.\n- Repo-scoped settings now take effect as soon as they're loaded into your workspace. (They don't need to be in the repository root/main worktree.)\n\n## Fixes\n\n- Fixed an issue where run script tabs appeared in workspaces that had not run that script.\n- Fixed an issue where error details in expanded recoverable errors, banners, and inline error notices could not be selected for copying.\n- Fixed an issue where error notifications could appear behind a dialog's dimmed background, making clone and setup error toasts visible over the Quick start and Clone GitHub repo dialogs.\n- Fixed a delay before code comments appeared in the composer for cloud workspaces.\n- Fixed an issue where archiving a workspace could ignore its `delete_branch_on_archive` setting.\n\n## Misc\n\n- Renamed the onboarding sample project from \"Quickstart\" to \"Starter project\" in the sidebar and local clone folder name. The cloned remote is unchanged.\n"
+}

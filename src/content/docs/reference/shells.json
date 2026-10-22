@@ -1,0 +1,467 @@
+{
+  "slug": "reference/shells",
+  "url": "/docs/reference/shells",
+  "title": "Shell configuration",
+  "description": "Configure shell setup",
+  "meta": {
+    "title": "Shell configuration | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/shells/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Shell configuration"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#common-issues",
+      "title": "Common issues"
+    },
+    {
+      "depth": 2,
+      "url": "#put-setup-directly-in-your-script",
+      "title": "Put setup directly in your script"
+    },
+    {
+      "depth": 2,
+      "url": "#put-minimal-shared-setup-in-zshenv",
+      "title": "Put minimal shared setup in .zshenv"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/environment-variables",
+    "title": "Conductor variables",
+    "description": "Variables available to workspace terminals, agents, and scripts"
+  },
+  "next": {
+    "url": "/docs/reference/scripts/spotlight-testing",
+    "title": "Spotlight testing",
+    "description": "Test one workspace from the repository root"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor uses your login shell environment to run setup scripts, actions, terminals, and agents. We try to make your environment work out of the box, the same way it would work in your terminal."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To do this, Conductor launches an interactive login shell in each workspace to capture environment variables which will be reused later. (We use the workspace directory because tools like "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "mise"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " can change their behavior depending on the current directory.)"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Although Conductor captures your shell environment using your login shell ("
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$SHELL"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "), it runs most commands—including your setup scripts and actions—using "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "zsh"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "common-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Common issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your shell configuration (e.g., "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".zshrc"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".zshenv"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ") is slow or contains errors, Conductor may fail to launch agents or run commands."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Possible causes include"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Interactivity: if shell startup tries to read input, it will hang inside Conductor's non-interactive environment"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Slowness: Conductor gives your shell configuration 5 seconds to load. If it doesn't load within that time, it will abort."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To check how long the shell takes to start, run:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "time \"$SHELL\" -ilc env",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "time",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$SHELL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -ilc env",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "put-setup-directly-in-your-script",
+      "children": [
+        {
+          "type": "text",
+          "value": "Put setup directly in your script"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Where possible, add required setup to your Conductor setup script or action so the command does not depend on interactive shell configuration."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "export PATH=\"$HOME/.local/bin:/opt/homebrew/bin:$PATH\"\neval \"$(mise activate zsh)\"\npnpm install",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "export",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$HOME",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/.local/bin:/opt/homebrew/bin:",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "eval",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"$(",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "mise",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " activate zsh)\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "pnpm",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " install",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This makes the script easier to understand, share, and debug because the required environment setup lives next to the command that needs it."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "put-minimal-shared-setup-in-zshenv",
+      "children": [
+        {
+          "type": "text",
+          "value": "Put minimal shared setup in .zshenv"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".zshenv"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when configuration must be available to every zsh script, including non-interactive scripts."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Keep "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".zshenv"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " minimal. Avoid prompts, slow commands, terminal UI setup, or anything that assumes an interactive terminal."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When reliability matters most, put setup directly into your scripts. Conductor tries to capture your interactive shell environment, but that capture can fail, time out, or become stale."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor uses your login shell environment to run setup scripts, actions, terminals, and agents. We try to make your environment work out of the box, the same way it would work in your terminal.</p><p>To do this, Conductor launches an interactive login shell in each workspace to capture environment variables which will be reused later. (We use the workspace directory because tools like <code>mise</code> can change their behavior depending on the current directory.)</p><p>Although Conductor captures your shell environment using your login shell (<code>$SHELL</code>), it runs most commands—including your setup scripts and actions—using <code>zsh</code>.</p><h2 id=\"common-issues\"><a href=\"#common-issues\">Common issues</a></h2><p>If your shell configuration (e.g., <code>.zshrc</code> or <code>.zshenv</code>) is slow or contains errors, Conductor may fail to launch agents or run commands.</p><p>Possible causes include</p><ul><li>Interactivity: if shell startup tries to read input, it will hang inside Conductor's non-interactive environment</li><li>Slowness: Conductor gives your shell configuration 5 seconds to load. If it doesn't load within that time, it will abort.</li></ul><p>To check how long the shell takes to start, run:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#D73A49\">time</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$SHELL</span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\"> -ilc env</span></span></code></pre></figure><h2 id=\"put-setup-directly-in-your-script\"><a href=\"#put-setup-directly-in-your-script\">Put setup directly in your script</a></h2><p>Where possible, add required setup to your Conductor setup script or action so the command does not depend on interactive shell configuration.</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#D73A49\">export</span><span style=\"color:#24292E\"> PATH</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\">$HOME</span><span style=\"color:#032F62\">/.local/bin:/opt/homebrew/bin:</span><span style=\"color:#24292E\">$PATH</span><span style=\"color:#032F62\">\"</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">eval</span><span style=\"color:#032F62\"> \"$(</span><span style=\"color:#6F42C1\">mise</span><span style=\"color:#032F62\"> activate zsh)\"</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">pnpm</span><span style=\"color:#032F62\"> install</span></span></code></pre></figure><p>This makes the script easier to understand, share, and debug because the required environment setup lives next to the command that needs it.</p><h2 id=\"put-minimal-shared-setup-in-zshenv\"><a href=\"#put-minimal-shared-setup-in-zshenv\">Put minimal shared setup in .zshenv</a></h2><p>Use <code>.zshenv</code> when configuration must be available to every zsh script, including non-interactive scripts.</p><p>Keep <code>.zshenv</code> minimal. Avoid prompts, slow commands, terminal UI setup, or anything that assumes an interactive terminal.</p><p>When reliability matters most, put setup directly into your scripts. Conductor tries to capture your interactive shell environment, but that capture can fail, time out, or become stale.</p>",
+  "text": "Conductor uses your login shell environment to run setup scripts, actions, terminals, and agents. We try to make your environment work out of the box, the same way it would work in your terminal.\nTo do this, Conductor launches an interactive login shell in each workspace to capture environment variables which will be reused later. (We use the workspace directory because tools like mise can change their behavior depending on the current directory.)\nAlthough Conductor captures your shell environment using your login shell ($SHELL), it runs most commands—including your setup scripts and actions—using zsh.\nCommon issues\nIf your shell configuration (e.g., .zshrc or .zshenv) is slow or contains errors, Conductor may fail to launch agents or run commands.\nPossible causes include\nInteractivity: if shell startup tries to read input, it will hang inside Conductor's non-interactive environment\nSlowness: Conductor gives your shell configuration 5 seconds to load. If it doesn't load within that time, it will abort.\nTo check how long the shell takes to start, run:\ntime \"$SHELL\" -ilc envPut setup directly in your script\nWhere possible, add required setup to your Conductor setup script or action so the command does not depend on interactive shell configuration.\nexport PATH=\"$HOME/.local/bin:/opt/homebrew/bin:$PATH\"\neval \"$(mise activate zsh)\"\npnpm installThis makes the script easier to understand, share, and debug because the required environment setup lives next to the command that needs it.\nPut minimal shared setup in .zshenv\nUse .zshenv when configuration must be available to every zsh script, including non-interactive scripts.\nKeep .zshenv minimal. Avoid prompts, slow commands, terminal UI setup, or anything that assumes an interactive terminal.\nWhen reliability matters most, put setup directly into your scripts. Conductor tries to capture your interactive shell environment, but that capture can fail, time out, or become stale.",
+  "markdown": "\n# Shell configuration\n\n\n\nConductor uses your login shell environment to run setup scripts, actions, terminals, and agents. We try to make your environment work out of the box, the same way it would work in your terminal.\n\nTo do this, Conductor launches an interactive login shell in each workspace to capture environment variables which will be reused later. (We use the workspace directory because tools like `mise` can change their behavior depending on the current directory.)\n\nAlthough Conductor captures your shell environment using your login shell (`$SHELL`), it runs most commands—including your setup scripts and actions—using `zsh`.\n\n## Common issues [#common-issues]\n\nIf your shell configuration (e.g., `.zshrc` or `.zshenv`) is slow or contains errors, Conductor may fail to launch agents or run commands.\n\nPossible causes include\n\n* Interactivity: if shell startup tries to read input, it will hang inside Conductor's non-interactive environment\n* Slowness: Conductor gives your shell configuration 5 seconds to load. If it doesn't load within that time, it will abort.\n\nTo check how long the shell takes to start, run:\n\n```bash\ntime \"$SHELL\" -ilc env\n```\n\n## Put setup directly in your script [#put-setup-directly-in-your-script]\n\nWhere possible, add required setup to your Conductor setup script or action so the command does not depend on interactive shell configuration.\n\n```bash\nexport PATH=\"$HOME/.local/bin:/opt/homebrew/bin:$PATH\"\neval \"$(mise activate zsh)\"\npnpm install\n```\n\nThis makes the script easier to understand, share, and debug because the required environment setup lives next to the command that needs it.\n\n## Put minimal shared setup in .zshenv [#put-minimal-shared-setup-in-zshenv]\n\nUse `.zshenv` when configuration must be available to every zsh script, including non-interactive scripts.\n\nKeep `.zshenv` minimal. Avoid prompts, slow commands, terminal UI setup, or anything that assumes an interactive terminal.\n\nWhen reliability matters most, put setup directly into your scripts. Conductor tries to capture your interactive shell environment, but that capture can fail, time out, or become stale.\n"
+}

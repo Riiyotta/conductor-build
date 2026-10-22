@@ -1,0 +1,36 @@
+{
+  "slug": "0.23.0-opus-4-5-and-better-scrolling",
+  "version": "0.23.0",
+  "versionSlug": "0.23.0",
+  "title": "Opus 4.5 and Better Scrolling",
+  "fullTitle": "0.23.0: Opus 4.5 and Better Scrolling",
+  "date": "Nov 24th, 2025",
+  "dateISO": "2025-11-24",
+  "description": "Conductor 0.23.0 changelog - Opus 4.5 and Better Scrolling",
+  "summary": "Opus 4.5 is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.23.0/64c98865-795b-4ff0-8a26-48725051b727.png",
+    "alt": "CleanShot 2025-11-24 at 12 23 23@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.23.0-opus-4-5-and-better-scrolling/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.23.0-opus-4-5-and-better-scrolling",
+  "sourceUrl": "https://www.conductor.build/changelog/0.23.0-opus-4-5-and-better-scrolling",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Opus 4.5 is now available in Conductor!</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-24 at 12 23 23@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.23.0/64c98865-795b-4ff0-8a26-48725051b727.png\"/></figure>\n<p>We&#x27;ve also made scrolling much smoother and more reliable.</p>\n<figure data-asset><img alt=\"scrolling\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.23.0/b069d0ab-1a9f-4aa5-bbe4-934d54aa9229.gif\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Subagent calls now show the prompt given to the subagent</li>\n<li>The shortcuts help menu (cmd+?) now has more shortcuts</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix a bug where Codex struggled to read attachments</li>\n<li>Remove broken terminal shortcuts (cmd+t, cmd+w)</li>\n<li>Fixed a bug where the thinking button would hide the MCP button</li>\n<li>Fix an issue where switching between workspaces would not reset the commits shown in the sidebar</li>\n<li>Removed lines no longer show inline highlights in the diff viewer</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Visual cleanups in the diff viewer, left sidebar, chat input, thinking menu, and elsewhere</li>\n</ul>",
+  "markdown": "\nOpus 4.5 is now available in Conductor!\n\n<img\n    width=\"584\"\n    height=\"340\"\n    alt=\"CleanShot 2025-11-24 at 12 23 23@2x\"\n    src=\"/assets/changelog/media/0.23.0/64c98865-795b-4ff0-8a26-48725051b727.png\"\n/>\n\nWe've also made scrolling much smoother and more reliable.\n\n![scrolling](/assets/changelog/media/0.23.0/b069d0ab-1a9f-4aa5-bbe4-934d54aa9229.gif)\n\n## Improvements\n\n- Subagent calls now show the prompt given to the subagent\n- The shortcuts help menu (cmd+?) now has more shortcuts\n\n## Fixes\n\n- Fix a bug where Codex struggled to read attachments\n- Remove broken terminal shortcuts (cmd+t, cmd+w)\n- Fixed a bug where the thinking button would hide the MCP button\n- Fix an issue where switching between workspaces would not reset the commits shown in the sidebar\n- Removed lines no longer show inline highlights in the diff viewer\n\n## Misc\n\n- Visual cleanups in the diff viewer, left sidebar, chat input, thinking menu, and elsewhere\n"
+}

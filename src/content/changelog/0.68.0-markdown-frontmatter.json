@@ -1,0 +1,36 @@
+{
+  "slug": "0.68.0-markdown-frontmatter",
+  "version": "0.68.0",
+  "versionSlug": "0.68.0",
+  "title": "Markdown frontmatter",
+  "fullTitle": "0.68.0: Markdown frontmatter",
+  "date": "June 19, 2026",
+  "dateISO": "2026-06-19",
+  "description": "Conductor 0.68.0 changelog - Markdown frontmatter",
+  "summary": "Markdown previews now separate YAML & TOML frontmatter from the rest of the body for your viewing pleasure.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.68.0/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png",
+    "alt": "CleanShot 2026-06-19 at 13.13.09@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.68.0-markdown-frontmatter/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.68.0-markdown-frontmatter",
+  "sourceUrl": "https://www.conductor.build/changelog/0.68.0-markdown-frontmatter",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Markdown frontmatter"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Markdown frontmatter</h3>\n<figure data-asset><img alt=\"CleanShot 2026-06-19 at 13.13.09@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.68.0/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png\"/></figure>\n<p>Markdown previews now separate YAML &amp; TOML frontmatter from the rest of the body for your viewing pleasure.</p>\n<h3>Improvements</h3>\n<ul>\n<li>When creating a workspace, press Alt+Enter to create a workspace with your prompt pre-filled instead of sent.</li>\n<li>Added an Experimental setting to enable OpenCode.</li>\n<li>You can now press Cmd+E to edit markdown and HTML files while viewing their preview.</li>\n<li>The &quot;Create PR&quot; button and a few other buttons now show up even while the agent is working.</li>\n<li>You can now press Cmd+U to open the attachment picker when creating a new workspace.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where Conductor could incorrectly report a GitHub API rate limit.</li>\n<li>Fixed an issue where the new workspace dialog could close unexpectedly after creating a workspace.</li>\n<li>Fixed an issue where terminal presets could ignore custom Claude Code and Codex executable paths.</li>\n<li>Fixed an issue where run script terminals could start at the wrong size until resized.</li>\n<li>Fixed an issue where the terminal panel could appear blank while settings were still loading.</li>\n<li>Fixed the @-mention and /-command suggestion popup so it no longer clips near the top of the viewport.</li>\n</ul>",
+  "markdown": "\n## Markdown frontmatter\n\n![CleanShot 2026-06-19 at 13.13.09@2x.png](/assets/changelog/media/0.68.0/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png)\n\nMarkdown previews now separate YAML & TOML frontmatter from the rest of the body for your viewing pleasure.\n\n## Improvements\n\n- When creating a workspace, press Alt+Enter to create a workspace with your prompt pre-filled instead of sent.\n- Added an Experimental setting to enable OpenCode.\n- You can now press Cmd+E to edit markdown and HTML files while viewing their preview.\n- The \"Create PR\" button and a few other buttons now show up even while the agent is working.\n- You can now press Cmd+U to open the attachment picker when creating a new workspace.\n\n## Fixes\n\n- Fixed an issue where Conductor could incorrectly report a GitHub API rate limit.\n- Fixed an issue where the new workspace dialog could close unexpectedly after creating a workspace.\n- Fixed an issue where terminal presets could ignore custom Claude Code and Codex executable paths.\n- Fixed an issue where run script terminals could start at the wrong size until resized.\n- Fixed an issue where the terminal panel could appear blank while settings were still loading.\n- Fixed the @-mention and /-command suggestion popup so it no longer clips near the top of the viewport.\n"
+}

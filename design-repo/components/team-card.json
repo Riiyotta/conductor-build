@@ -1,0 +1,27 @@
+{
+  "id": "team-card",
+  "kind": "component",
+  "purpose": "Dashed person card: avatar, name, role, X link, short bio.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/JoinUs.jsx:114",
+      "quote": "function TeamCard({ person }) {"
+    }
+  ],
+  "tokens": [
+    "{component.card.dashed}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "rest",
+    "X button hover bg muted"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:295",
+      "quote": "### 5.2 Team card"
+    }
+  ]
+}

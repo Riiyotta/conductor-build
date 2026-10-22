@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.1-conductor-wrapped",
+  "version": "0.25.1",
+  "versionSlug": "0.25.1",
+  "title": "Conductor Wrapped",
+  "fullTitle": "0.25.1: Conductor Wrapped",
+  "date": "Dec 4th, 2025",
+  "dateISO": "2025-12-04",
+  "description": "Conductor 0.25.1 changelog - Conductor Wrapped",
+  "summary": "Introducing Conductor Wrapped! See a summary of how you used Conductor throughout the year.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.1/c2f0d4a3-68d7-44f0-9517-203c64ea20e7.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.1-conductor-wrapped/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.1-conductor-wrapped",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.1-conductor-wrapped",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Introducing Conductor Wrapped! See a summary of how you used Conductor throughout the year.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.1/c2f0d4a3-68d7-44f0-9517-203c64ea20e7.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added Codex Extra High reasoning</li>\n<li>Improved error message for Claude Code login failures</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where Claude Code slash commands would appear in Codex chats</li>\n<li>Fixed a bug where slash command auto-complete suggestions could be duplicated</li>\n<li>Removed noisy typing animation for branch names</li>\n<li>Fixed a broken link in the MCP status dropdown</li>\n</ul>",
+  "markdown": "\nIntroducing Conductor Wrapped! See a summary of how you used Conductor throughout the year.\n\n<img\n    width=\"634\"\n    height=\"660\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.1/c2f0d4a3-68d7-44f0-9517-203c64ea20e7.png\"\n/>\n\n## Improvements\n\n- Added Codex Extra High reasoning\n- Improved error message for Claude Code login failures\n\n## Fixes\n\n- Fixed a bug where Claude Code slash commands would appear in Codex chats\n- Fixed a bug where slash command auto-complete suggestions could be duplicated\n- Removed noisy typing animation for branch names\n- Fixed a broken link in the MCP status dropdown\n"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "0.37.1-polish-and-bug-fixes",
+  "version": "0.37.1",
+  "versionSlug": "0.37.1",
+  "title": "Polish and bug fixes",
+  "fullTitle": "0.37.1: Polish and bug fixes",
+  "date": "Mar 3, 2026",
+  "dateISO": "2026-03-03",
+  "description": "Conductor 0.37.1 changelog - Polish and bug fixes",
+  "summary": "You can now use the number keys to quickly switch between models:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.37.1/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png",
+    "alt": "image.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.37.1-polish-and-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.37.1-polish-and-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.37.1-polish-and-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>You can now use the number keys to quickly switch between models:</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.37.1/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>More intuitive back/forward navigation</li>\n<li>You can now right-click on a workspace to quickly navigate to repo settings</li>\n<li>Simplified the “Next unread” button</li>\n<li>You can now see a workspace&#x27;s city name on the history page</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a UI issue with the slash commands autocomplete menu</li>\n<li>Fixed a transparent background on the scroll-to-button button</li>\n<li>Fixed flickering in the file picker (Cmd+P)</li>\n<li>Fixed several layout shifts</li>\n<li>Fixed issues with cmd+O opening the wrong directory in some apps</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Disabled autocomplete and hints when editing files</li>\n<li>Standardized the two help menus and added an option to open the debug tools</li>\n<li>Improved help text when Conductor can&#x27;t compute the git status</li>\n<li>Added an experimental option to show CPU and memory usage</li>\n</ul>",
+  "markdown": "\nYou can now use the number keys to quickly switch between models:\n\n<img\n    src=\"/assets/changelog/media/0.37.1/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png\"\n    alt=\"image.png\"\n/>\n\n## Improvements\n\n- More intuitive back/forward navigation\n- You can now right-click on a workspace to quickly navigate to repo settings\n- Simplified the “Next unread” button\n- You can now see a workspace's city name on the history page\n\n## Fixes\n\n- Fixed a UI issue with the slash commands autocomplete menu\n- Fixed a transparent background on the scroll-to-button button\n- Fixed flickering in the file picker (Cmd+P)\n- Fixed several layout shifts\n- Fixed issues with cmd+O opening the wrong directory in some apps\n\n## Misc\n\n- Disabled autocomplete and hints when editing files\n- Standardized the two help menus and added an option to open the debug tools\n- Improved help text when Conductor can't compute the git status\n- Added an experimental option to show CPU and memory usage\n"
+}

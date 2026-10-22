@@ -1,0 +1,29 @@
+{
+  "id": "callout",
+  "kind": "component",
+  "purpose": "Info/warning callout box.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:224",
+      "quote": "function Callout({ node }) {"
+    }
+  ],
+  "tokens": [
+    "{semantic.surface.docs-callout}",
+    "{semantic.border.docs-callout}",
+    "{semantic.accent.docs-callout}"
+  ],
+  "variants": [
+    "info",
+    "warning"
+  ],
+  "states": [
+    "static"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:314",
+      "quote": "### 3.3 Callout (`node: callout`, `calloutType: info | warning`; 13 on the site: 11 info, 2 warning)"
+    }
+  ]
+}

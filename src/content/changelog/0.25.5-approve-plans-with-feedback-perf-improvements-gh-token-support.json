@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+  "version": "0.25.5",
+  "versionSlug": "0.25.5",
+  "title": "Approve Plans with Feedback, Perf Improvements, GH_TOKEN Support",
+  "fullTitle": "0.25.5: Approve Plans with Feedback, Perf Improvements, GH_TOKEN Support",
+  "date": "Dec 9th, 2025",
+  "dateISO": "2025-12-09",
+  "description": "Conductor 0.25.5 changelog - Approve Plans with Feedback, Perf Improvements, GH_TOKEN Support",
+  "summary": "You can now approve a plan with feedback for Claude:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.5/91e73804-4c34-48b7-8959-b7089220cecf.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now approve a plan with feedback for Claude:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.5/91e73804-4c34-48b7-8959-b7089220cecf.png\"/></figure>\n<p>We&#x27;ve also improved performance for repos with large file trees.</p>\n<p>We&#x27;ve also added login with <code>GH_TOKEN</code>. If Conductor has had trouble detecting your <code>gh</code> status, try pasting your <code>GH_TOKEN</code>:</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-09 at 11 22 37@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.5/6b2bc5e6-04a8-44c7-a3f1-2fb37183e009.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Improved archiving from the command palette (try <code>⌘K!</code>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed layout issues on the settings page</li>\n</ul>",
+  "markdown": "\nYou can now approve a plan with feedback for Claude:\n\n<img\n    width=\"1140\"\n    height=\"720\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.5/91e73804-4c34-48b7-8959-b7089220cecf.png\"\n/>\n\nWe've also improved performance for repos with large file trees.\n\nWe've also added login with `GH_TOKEN`. If Conductor has had trouble detecting your `gh` status, try pasting your `GH_TOKEN`:\n\n<img\n    width=\"1428\"\n    height=\"516\"\n    alt=\"CleanShot 2025-12-09 at 11 22 37@2x\"\n    src=\"/assets/changelog/media/0.25.5/6b2bc5e6-04a8-44c7-a3f1-2fb37183e009.png\"\n/>\n\n## Improvements\n\n- Improved archiving from the command palette (try `⌘K!`)\n\n## Fixes\n\n- Fixed layout issues on the settings page\n"
+}

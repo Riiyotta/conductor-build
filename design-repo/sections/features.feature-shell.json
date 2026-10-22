@@ -1,0 +1,274 @@
+{
+  "id": "features.feature-shell",
+  "category": "FEATURES",
+  "iaSections": [
+    "features.multiplayer",
+    "features.cloud-sandbox",
+    "features.byok",
+    "features.anywhere"
+  ],
+  "purpose": "One product capability: title, short body and a live demo or image. Grouped as one type because all four homepage feature sections render through the same FeatureShell component with identical geometry.",
+  "implementedBy": [
+    {
+      "ref": "src/components/FeatureShell.jsx:2",
+      "quote": "export default function FeatureShell({ title, titleExtra, body, demo, children }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:148",
+      "quote": "## 4–7. Feature sections (4 identical shells)"
+    },
+    {
+      "ref": "src/components/Multiplayer.jsx:2",
+      "quote": "import FeatureShell from './FeatureShell.jsx'"
+    },
+    {
+      "ref": "src/components/Sandbox.jsx:2",
+      "quote": "import FeatureShell from './FeatureShell.jsx'"
+    },
+    {
+      "ref": "src/components/Orchestration.jsx:2",
+      "quote": "import FeatureShell from './FeatureShell.jsx'"
+    },
+    {
+      "ref": "src/components/Anywhere.jsx:1",
+      "quote": "import FeatureShell from './FeatureShell.jsx'"
+    }
+  ],
+  "variants": {
+    "multiplayer": {
+      "iaSection": "features.multiplayer",
+      "demoKind": "multiplayer-chat",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Multiplayer.jsx:188",
+          "quote": "title=\"Ludwig has entered the chat.\""
+        }
+      ]
+    },
+    "cloud-sandbox": {
+      "iaSection": "features.cloud-sandbox",
+      "demoKind": "sandbox-phases",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Sandbox.jsx:249",
+          "quote": "title=\"A cloud sandbox for every agent.\""
+        }
+      ]
+    },
+    "byok": {
+      "iaSection": "features.byok",
+      "demoKind": "orchestration-steps",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Orchestration.jsx:134",
+          "quote": "title=\"Bring your own subscriptions and keys.\""
+        }
+      ]
+    },
+    "anywhere": {
+      "iaSection": "features.anywhere",
+      "demoKind": "static-image",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Anywhere.jsx:12",
+          "quote": "title=\"Conduct from anywhere.\""
+        }
+      ]
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 6
+    },
+    "body": {
+      "type": "text",
+      "maxWords": 32,
+      "required": true,
+      "observedMaxWords": 26
+    },
+    "titleAvatars": {
+      "type": "list",
+      "items": {
+        "type": "media",
+        "roles": [
+          "person-avatar"
+        ],
+        "required": true
+      },
+      "minItems": 0,
+      "maxItems": 3,
+      "required": false
+    },
+    "demo": {
+      "type": "object",
+      "fields": {
+        "kind": {
+          "type": "enum",
+          "values": [
+            "multiplayer-chat",
+            "sandbox-phases",
+            "orchestration-steps",
+            "static-image"
+          ],
+          "required": true
+        },
+        "media": {
+          "type": "media",
+          "roles": [
+            "product-screenshot",
+            "demo-video"
+          ],
+          "required": false
+        }
+      },
+      "required": true
+    },
+    "link": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 6,
+          "required": true,
+          "observedMaxWords": 4
+        },
+        "href": {
+          "type": "url",
+          "required": true
+        }
+      },
+      "required": false
+    },
+    "platformButtons": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 2,
+        "required": true,
+        "observedMaxWords": 1
+      },
+      "minItems": 0,
+      "maxItems": 3,
+      "required": false
+    }
+  },
+  "constraints": {
+    "maxPerPage": 4,
+    "uniqueVariantPerPage": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "demo-loop-on-view",
+      "tooltip-hover",
+      "shimmer-loader",
+      "arrow-nudge-hover",
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:323",
+        "quote": "| M6 | Multiplayer demo |"
+      },
+      {
+        "ref": "CLONE_SPEC.md:324",
+        "quote": "| M7 | Cloud sandbox demo |"
+      },
+      {
+        "ref": "CLONE_SPEC.md:326",
+        "quote": "| M9 | Orchestration demo |"
+      }
+    ],
+    "variantPatterns": {
+      "multiplayer": [
+        "demo-loop-on-view",
+        "tooltip-hover"
+      ],
+      "cloud-sandbox": [
+        "demo-loop-on-view",
+        "shimmer-loader",
+        "arrow-nudge-hover"
+      ],
+      "byok": [
+        "demo-loop-on-view"
+      ],
+      "anywhere": [
+        "none"
+      ]
+    }
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "padding",
+          "value": "48px 16px"
+        },
+        {
+          "property": "title",
+          "value": "20px/28px"
+        },
+        {
+          "property": "body",
+          "value": "14px/20px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "padding",
+          "value": "64px 24px"
+        },
+        {
+          "property": "title",
+          "value": "24px/32px"
+        },
+        {
+          "property": "body",
+          "value": "16px/24px"
+        }
+      ]
+    },
+    {
+      "minWidth": 1024,
+      "changes": [
+        {
+          "property": "padding",
+          "value": "64px 32px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "Orchestration demo LOOPS forever once started (phase 7 -> 0); 'starts once and never resets' refers only to its IntersectionObserver trigger.",
+    "Multiplayer and sandbox demos reset when they leave the viewport; inert animate-in classes are not motion."
+  ],
+  "assetRoles": [
+    "demo-video",
+    "person-avatar",
+    "product-screenshot"
+  ]
+}

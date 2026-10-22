@@ -1,0 +1,32 @@
+{
+  "slug": "0.7.2-add-terminal-context-to-chat",
+  "version": "0.7.2",
+  "versionSlug": "0.7.2",
+  "title": "Add terminal context to chat",
+  "fullTitle": "0.7.2: Add terminal context to chat",
+  "date": "August 19th, 2025",
+  "dateISO": "2025-08-19",
+  "description": "Conductor 0.7.2 changelog - Add terminal context to chat",
+  "summary": "You can now send terminal context to chat by highlighting output and ⌘L to add it to chat.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.7.2/a87ce9aa-0cc1-4d34-a556-7ed36792a46a.png",
+    "alt": "CleanShot 2025-08-18 at 11 38 01@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.7.2-add-terminal-context-to-chat/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.7.2-add-terminal-context-to-chat",
+  "sourceUrl": "https://www.conductor.build/changelog/0.7.2-add-terminal-context-to-chat",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now send terminal context to chat by highlighting output and ⌘L to add it to chat.</p>\n<p>Also, creating a workspace is now much faster.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-18 at 11 38 01@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.7.2/a87ce9aa-0cc1-4d34-a556-7ed36792a46a.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Select text in terminal and press ⌘L to send it to chat</li>\n<li>Workspace creation is faster</li>\n<li>Clicking a file in the diff panel now auto-scrolls to the diff</li>\n<li>You can now press ⌘W to close a focused terminal window</li>\n<li>Button styling is more consistent throughout the app</li>\n<li>There&#x27;s now a … icon in the sidebar that points to the repository settings page</li>\n<li>Added more apps to the Open In button</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue with positioning of the <code>@</code> file picker</li>\n<li>Fixed an issue where <code>@</code> file picker highlights wouldn&#x27;t scroll with the text</li>\n<li>Fixed an issue where some items wouldn&#x27;t appear in command palette search results</li>\n<li>Fixed an issue with scroll-to-bottom when switching workspaces</li>\n<li>Fixed the background color of the Conductor logo on the login page</li>\n</ul>",
+  "markdown": "\nYou can now send terminal context to chat by highlighting output and ⌘L to add it to chat.\n\nAlso, creating a workspace is now much faster.\n\n<img\n    width=\"1474\"\n    height=\"686\"\n    alt=\"CleanShot 2025-08-18 at 11 38 01@2x\"\n    src=\"/assets/changelog/media/0.7.2/a87ce9aa-0cc1-4d34-a556-7ed36792a46a.png\"\n/>\n\n## Improvements\n\n- Select text in terminal and press ⌘L to send it to chat\n- Workspace creation is faster\n- Clicking a file in the diff panel now auto-scrolls to the diff\n- You can now press ⌘W to close a focused terminal window\n- Button styling is more consistent throughout the app\n- There's now a … icon in the sidebar that points to the repository settings page\n- Added more apps to the Open In button\n\n## Fixes\n\n- Fixed an issue with positioning of the `@` file picker\n- Fixed an issue where `@` file picker highlights wouldn't scroll with the text\n- Fixed an issue where some items wouldn't appear in command palette search results\n- Fixed an issue with scroll-to-bottom when switching workspaces\n- Fixed the background color of the Conductor logo on the login page\n"
+}

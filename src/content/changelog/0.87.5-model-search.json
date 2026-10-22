@@ -1,0 +1,19 @@
+{
+  "slug": "0.87.5-model-search",
+  "version": "0.87.5",
+  "versionSlug": "0.87.5",
+  "title": "Model search",
+  "fullTitle": "0.87.5: Model search",
+  "date": "September 25, 2026",
+  "dateISO": "2026-09-25",
+  "description": "Conductor 0.87.5 changelog - Model search",
+  "summary": "You can now search all available models from the model picker in chats, new workspaces, and Routines.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.87.5-model-search/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.87.5-model-search",
+  "sourceUrl": "https://www.conductor.build/changelog/0.87.5-model-search",
+  "headings": [],
+  "html": "<p>You can now search all available models from the model picker in chats, new workspaces, and Routines.</p>\n<p>Also in this release: the bundled Codex is updated to 0.156.1.</p>",
+  "markdown": "\nYou can now search all available models from the model picker in chats, new workspaces, and Routines.\n\nAlso in this release: the bundled Codex is updated to 0.156.1.\n"
+}

@@ -1,0 +1,317 @@
+{
+  "slug": "reference/security-and-permissions",
+  "url": "/docs/reference/security-and-permissions",
+  "title": "Security and permissions",
+  "description": "How execution, tool approvals, macOS permissions, and network traffic work.",
+  "meta": {
+    "title": "Security and permissions | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/security-and-permissions/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Security"
+    },
+    {
+      "name": "Security and permissions"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#execution",
+      "title": "Execution"
+    },
+    {
+      "depth": 2,
+      "url": "#agent-permissions",
+      "title": "Agent permissions"
+    },
+    {
+      "depth": 2,
+      "url": "#macos-permission-prompts",
+      "title": "macOS permission prompts"
+    },
+    {
+      "depth": 2,
+      "url": "#network-traffic",
+      "title": "Network traffic"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/deep-links",
+    "title": "Deep links",
+    "description": "Open Conductor and trigger actions via conductor:// URLs"
+  },
+  "next": {
+    "url": "/docs/reference/privacy",
+    "title": "Privacy",
+    "description": "Next Page"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor runs agents in the cloud or on your mac. What an agent can access and where its data is stored depends on where the workspace runs."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "execution",
+      "children": [
+        {
+          "type": "text",
+          "value": "Execution"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " In Cloud workspaces, agents run in isolated Linux sandboxes hosted by Vercel. Repository files and session data are stored in Conductor-managed cloud infrastructure and synced to your local machine via our automated file sync."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " Agents use your local environment and can interact with files, terminals, and tools that your user account can access. Your workspaces, chats, and repository files are stored locally unless a connected provider or integration receives data as part of a request."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "agent-permissions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Agent permissions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " Agents can read and write files, run commands, and use configured tools inside the workspace sandbox. They can also access environment variables and secrets provided to that workspace. Through enabling permissions, cloud agents can also perform actions on your local machine."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " Agents can read and write files, run commands, and use configured tools with the same permissions as your user account. Some tool calls may ask for approval before the agent continues. Use approvals when you want to review actions such as shell commands, file changes, MCP tool use, web fetches, or other tool access before they run."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For MCP setup and transport details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/mcp"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For a setup workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/configure-mcp-servers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up MCP servers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "macos-permission-prompts",
+      "children": [
+        {
+          "type": "text",
+          "value": "macOS permission prompts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For local workspaces, macOS may show a permission prompt when an agent or shell command tries to access a protected folder such as Downloads, Desktop, or Reminders. The prompt may name Conductor because Conductor is the app launching the process."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Approve only access you expect the task to need."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "network-traffic",
+      "children": [
+        {
+          "type": "text",
+          "value": "Network traffic"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs to operate and synchronize the workspace, and model requests go to the provider you configure. Requests to MCP servers, GitHub, and other integrations go to those services."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In local workspaces, model requests go directly from your Mac to your model provider."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For provider setup, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor runs agents in the cloud or on your mac. What an agent can access and where its data is stored depends on where the workspace runs.</p><h2 id=\"execution\"><a href=\"#execution\">Execution</a></h2><p><strong>Cloud:</strong> In Cloud workspaces, agents run in isolated Linux sandboxes hosted by Vercel. Repository files and session data are stored in Conductor-managed cloud infrastructure and synced to your local machine via our automated file sync.</p><p><strong>Local:</strong> Agents use your local environment and can interact with files, terminals, and tools that your user account can access. Your workspaces, chats, and repository files are stored locally unless a connected provider or integration receives data as part of a request.</p><h2 id=\"agent-permissions\"><a href=\"#agent-permissions\">Agent permissions</a></h2><p><strong>Cloud:</strong> Agents can read and write files, run commands, and use configured tools inside the workspace sandbox. They can also access environment variables and secrets provided to that workspace. Through enabling permissions, cloud agents can also perform actions on your local machine.</p><p><strong>Local:</strong> Agents can read and write files, run commands, and use configured tools with the same permissions as your user account. Some tool calls may ask for approval before the agent continues. Use approvals when you want to review actions such as shell commands, file changes, MCP tool use, web fetches, or other tool access before they run.</p><p>For MCP setup and transport details, see <a href=\"/docs/reference/mcp\">MCP</a>. For a setup workflow, see <a href=\"/docs/guides/configure-mcp-servers\">Set up MCP servers</a>.</p><h2 id=\"macos-permission-prompts\"><a href=\"#macos-permission-prompts\">macOS permission prompts</a></h2><p>For local workspaces, macOS may show a permission prompt when an agent or shell command tries to access a protected folder such as Downloads, Desktop, or Reminders. The prompt may name Conductor because Conductor is the app launching the process.</p><p>Approve only access you expect the task to need.</p><h2 id=\"network-traffic\"><a href=\"#network-traffic\">Network traffic</a></h2><p>In Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs to operate and synchronize the workspace, and model requests go to the provider you configure. Requests to MCP servers, GitHub, and other integrations go to those services.</p><p>In local workspaces, model requests go directly from your Mac to your model provider.</p><p>For provider setup, see <a href=\"/docs/guides/providers\">Configure model providers</a>.</p>",
+  "text": "Conductor runs agents in the cloud or on your mac. What an agent can access and where its data is stored depends on where the workspace runs.\nExecution\nCloud: In Cloud workspaces, agents run in isolated Linux sandboxes hosted by Vercel. Repository files and session data are stored in Conductor-managed cloud infrastructure and synced to your local machine via our automated file sync.\nLocal: Agents use your local environment and can interact with files, terminals, and tools that your user account can access. Your workspaces, chats, and repository files are stored locally unless a connected provider or integration receives data as part of a request.\nAgent permissions\nCloud: Agents can read and write files, run commands, and use configured tools inside the workspace sandbox. They can also access environment variables and secrets provided to that workspace. Through enabling permissions, cloud agents can also perform actions on your local machine.\nLocal: Agents can read and write files, run commands, and use configured tools with the same permissions as your user account. Some tool calls may ask for approval before the agent continues. Use approvals when you want to review actions such as shell commands, file changes, MCP tool use, web fetches, or other tool access before they run.\nFor MCP setup and transport details, see MCP. For a setup workflow, see Set up MCP servers.\nmacOS permission prompts\nFor local workspaces, macOS may show a permission prompt when an agent or shell command tries to access a protected folder such as Downloads, Desktop, or Reminders. The prompt may name Conductor because Conductor is the app launching the process.\nApprove only access you expect the task to need.\nNetwork traffic\nIn Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs to operate and synchronize the workspace, and model requests go to the provider you configure. Requests to MCP servers, GitHub, and other integrations go to those services.\nIn local workspaces, model requests go directly from your Mac to your model provider.\nFor provider setup, see Configure model providers.",
+  "markdown": "\n# Security and permissions\n\n\n\nConductor runs agents in the cloud or on your mac. What an agent can access and where its data is stored depends on where the workspace runs.\n\n## Execution [#execution]\n\n**Cloud:** In Cloud workspaces, agents run in isolated Linux sandboxes hosted by Vercel. Repository files and session data are stored in Conductor-managed cloud infrastructure and synced to your local machine via our automated file sync.\n\n**Local:** Agents use your local environment and can interact with files, terminals, and tools that your user account can access. Your workspaces, chats, and repository files are stored locally unless a connected provider or integration receives data as part of a request.\n\n## Agent permissions [#agent-permissions]\n\n**Cloud:** Agents can read and write files, run commands, and use configured tools inside the workspace sandbox. They can also access environment variables and secrets provided to that workspace. Through enabling permissions, cloud agents can also perform actions on your local machine.\n\n**Local:** Agents can read and write files, run commands, and use configured tools with the same permissions as your user account. Some tool calls may ask for approval before the agent continues. Use approvals when you want to review actions such as shell commands, file changes, MCP tool use, web fetches, or other tool access before they run.\n\nFor MCP setup and transport details, see [MCP](/docs/reference/mcp). For a setup workflow, see [Set up MCP servers](/docs/guides/configure-mcp-servers).\n\n## macOS permission prompts [#macos-permission-prompts]\n\nFor local workspaces, macOS may show a permission prompt when an agent or shell command tries to access a protected folder such as Downloads, Desktop, or Reminders. The prompt may name Conductor because Conductor is the app launching the process.\n\nApprove only access you expect the task to need.\n\n## Network traffic [#network-traffic]\n\nIn Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs to operate and synchronize the workspace, and model requests go to the provider you configure. Requests to MCP servers, GitHub, and other integrations go to those services.\n\nIn local workspaces, model requests go directly from your Mac to your model provider.\n\nFor provider setup, see [Configure model providers](/docs/guides/providers).\n"
+}

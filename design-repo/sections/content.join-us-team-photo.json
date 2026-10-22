@@ -1,0 +1,69 @@
+{
+  "id": "content.join-us-team-photo",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.join-us-team-photo"
+  ],
+  "purpose": "Show the real team in one photo.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/JoinUs.jsx:214",
+      "quote": "/assets/pages/join-us/about.webp"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:289",
+      "quote": "6. **Team photo**"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.join-us-team-photo"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "photo": {
+      "type": "media",
+      "roles": [
+        "team-photo"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.join-us"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:96",
+        "quote": "There are no entrance or scroll animations"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real employees' likeness."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "team-photo"
+  ]
+}

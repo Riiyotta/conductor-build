@@ -1,0 +1,440 @@
+{
+ "url": "https://www.conductor.build/slack",
+ "title": "Conductor for Slack | Conductor",
+ "desc": "Let the coding agents in your Conductor cloud workspaces search Slack, read threads, and post updates, acting as you.",
+ "docH": 1922,
+ "docW": 390,
+ "vw": 390,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 57,
+   "top": 0,
+   "right": 390,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 1413.4,
+ "footerH": 509,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/slack/slack-search.png",
+  "https://www.conductor.build/about.webp"
+ ],
+ "anims": [],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    390,
+    1356.4
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    0,
+    57,
+    390,
+    1356.4
+   ],
+   "p": "64px 16px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.mb-4.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    16,
+    121,
+    358,
+    36
+   ],
+   "t": "Conductor for Slack",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p.max-w-2xl.text-sm.leading-6.text-muted-foreground.sm:text-base",
+   "b": [
+    16,
+    173,
+    358,
+    72
+   ],
+   "t": "Let the coding agents in your Conductor cloud workspaces search Slack, read threads, and post updates, acting as you.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "mw": "672px"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    285,
+    358,
+    168
+   ],
+   "t": "Conductor runs coding agents like Claude Code and Codex in parallel, each in its own isolated cloud workspace. Conductor for Slack connects Slack's MCP server t",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "img",
+   "b": [
+    16,
+    477,
+    358,
+    248.5
+   ],
+   "m": "24.0001px 0px",
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/slack/slack-search.png nat:1360x944 alt:An agent searching Slack from a Conductor chat"
+  },
+  {
+   "k": "h2.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    16,
+    757.5,
+    358,
+    28
+   ],
+   "f": "20px/28px 700 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "32px 0px 16px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "connect-slack"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    16,
+    757.5,
+    129.7,
+    28
+   ],
+   "t": "Connect Slack",
+   "f": "20px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#connect-slack"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    153.7,
+    764.5,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "ol",
+   "b": [
+    16,
+    801.5,
+    358,
+    176
+   ],
+   "p": "0px 0px 0px 22px",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "li",
+   "b": [
+    38,
+    801.5,
+    336,
+    24
+   ],
+   "t": "and sign in.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "p": "0px 0px 0px 5.99999px",
+   "m": "4px 0px",
+   "d": "list-item"
+  },
+  {
+   "k": "a",
+   "b": [
+    44,
+    804.5,
+    139.3,
+    17
+   ],
+   "t": "Download Conductor",
+   "f": "14px/24.0001px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.52px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "/"
+  },
+  {
+   "k": "li",
+   "b": [
+    38,
+    829.4,
+    336,
+    48
+   ],
+   "t": "Open , select , and click .",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "p": "0px 0px 0px 5.99999px",
+   "m": "4px 0px",
+   "d": "list-item"
+  },
+  {
+   "k": "strong",
+   "b": [
+    82.7,
+    832.4,
+    161.9,
+    17
+   ],
+   "t": "Settings → MCP servers",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    295.2,
+    832.4,
+    36.8,
+    17
+   ],
+   "t": "Slack",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    77.3,
+    856.4,
+    56.9,
+    17
+   ],
+   "t": "Connect",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "li",
+   "b": [
+    38,
+    881.4,
+    336,
+    96
+   ],
+   "t": "Authorize in your browser. Slack shows the permissions you're granting and confirms the connection, and Conductor shows Slack as .",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "p": "0px 0px 0px 5.99999px",
+   "m": "4px 0px",
+   "d": "list-item"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    956.4,
+    73.8,
+    17
+   ],
+   "t": "Connected",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    993.4,
+    358,
+    120
+   ],
+   "t": "Slack tools are picked up when a cloud workspace starts. Create or restart a cloud workspace, then ask an agent something like \"Search Slack for the latest disc",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    150.6,
+    1092.4,
+    161.9,
+    17
+   ],
+   "t": "Settings → MCP servers",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "h2.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    16,
+    1145.4,
+    358,
+    28
+   ],
+   "f": "20px/28px 700 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "32px 0px 16px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "privacy-and-support"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    16,
+    1145.4,
+    179.2,
+    28
+   ],
+   "t": "Privacy and support",
+   "f": "20px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#privacy-and-support"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    203.2,
+    1152.4,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    1189.4,
+    358,
+    120
+   ],
+   "t": "Conductor stores your Slack authorization only to make requests on your behalf, and disconnecting revokes it. Chats in cloud workspaces, including anything agen",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "a",
+   "b": [
+    68.9,
+    1288.4,
+    95.3,
+    17
+   ],
+   "t": "Privacy Notice",
+   "f": "14px/24.0001px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.52px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "/privacy"
+  },
+  {
+   "k": "a",
+   "b": [
+    195.8,
+    1288.4,
+    110.9,
+    17
+   ],
+   "t": "Terms of Service",
+   "f": "14px/24.0001px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.52px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "/terms"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    1325.4,
+    358,
+    24
+   ],
+   "t": "Questions? Email .",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px 0px"
+  },
+  {
+   "k": "a",
+   "b": [
+    130.3,
+    1328.4,
+    168.1,
+    17
+   ],
+   "t": "support@conductor.build",
+   "f": "14px/24.0001px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.52px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "mailto:support@conductor.build"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/slack",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "8760"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79833"
+  },
+  {
+   "url": "https://www.conductor.build/slack/slack-search.png",
+   "status": 200,
+   "type": "image/png",
+   "len": "121003"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.10.1-checkout-prs-in-conductor",
+  "version": "0.10.1",
+  "versionSlug": "0.10.1",
+  "title": "Checkout PRs in Conductor",
+  "fullTitle": "0.10.1: Checkout PRs in Conductor",
+  "date": "Sept 9th, 2025",
+  "dateISO": "2025-09-09",
+  "description": "Conductor 0.10.1 changelog - Checkout PRs in Conductor",
+  "summary": "You can now checkout an existing PR directly from the Dispatcher!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.10.1/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.10.1-checkout-prs-in-conductor/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.10.1-checkout-prs-in-conductor",
+  "sourceUrl": "https://www.conductor.build/changelog/0.10.1-checkout-prs-in-conductor",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now checkout an existing PR directly from the Dispatcher!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.10.1/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added support for file level comments in the diff viewer</li>\n<li>Added options to open a workspace in an external application to the command palette</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed inaccuracies in large diffs</li>\n<li>Fixed a bug where draft comments could get reset due to re-renders</li>\n<li>Fixed UI overflow in setup scripts</li>\n</ul>",
+  "markdown": "\nYou can now checkout an existing PR directly from the Dispatcher!\n\n<img\n    width=\"1216\"\n    height=\"1058\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.10.1/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a.png\"\n/>\n\n## Improvements\n\n- Added support for file level comments in the diff viewer\n- Added options to open a workspace in an external application to the command palette\n\n## Fixes\n\n- Fixed inaccuracies in large diffs\n- Fixed a bug where draft comments could get reset due to re-renders\n- Fixed UI overflow in setup scripts\n"
+}

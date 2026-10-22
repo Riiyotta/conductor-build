@@ -1,0 +1,214 @@
+{
+  "$description": "Approved applications of semantic tokens per component. Values are aliases or measured literals (heights/paddings).",
+  "component": {
+    "button": {
+      "primary": {
+        "background": "{semantic.surface.inverse}",
+        "backgroundHover": "{semantic.surface.inverse-hover}",
+        "text": "{semantic.text.inverse}",
+        "radius": "{radius.md}",
+        "height": "32px",
+        "fontWeight": "{typography.fontWeight.medium}",
+        "transition": "none",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:101",
+            "quote": "**Download** button: 90x32 at x=1234,y=12"
+          },
+          {
+            "ref": "src/components/Header.jsx:63",
+            "quote": "rounded-md bg-foreground px-3 py-3 text-sm font-medium text-background hover:bg-foreground/90"
+          }
+        ],
+        "note": "Header Download has NO transition class: hover is instant."
+      },
+      "on-image": {
+        "background": "{semantic.surface.page}",
+        "text": "{semantic.text.primary}",
+        "radius": "{radius.md}",
+        "height": "40px",
+        "fontWeight": "{typography.fontWeight.semibold}",
+        "transition": "none",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Hero.jsx:87",
+            "quote": "rounded-md bg-background px-3 py-4 text-sm font-semibold text-foreground hover:bg-background/90"
+          }
+        ],
+        "note": "Hero 'Get Conductor': no transition on the background; only the arrow nudges (200ms)."
+      },
+      "cta-white": {
+        "background": "{semantic.surface.page}",
+        "text": "{color.black}",
+        "radius": "{radius.md}",
+        "height": "40px",
+        "fontWeight": "{typography.fontWeight.bold}",
+        "shadow": "{elevation.lg}",
+        "iconSwap": "200ms {motion.easing.standard}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:276",
+            "quote": "Button `mt-8` (32px) \"Download now\": 164x40"
+          }
+        ]
+      },
+      "outline": {
+        "background": "{semantic.surface.page}",
+        "backgroundHover": "{semantic.surface.muted}",
+        "border": "{semantic.border.default}",
+        "radius": "{radius.md}",
+        "height": "36px",
+        "fontWeight": "{typography.fontWeight.bold}",
+        "transition": "none",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:141",
+            "quote": "**Outline** (Free \"Download\"): `<button>` 1px #eae8e6 border"
+          }
+        ]
+      }
+    },
+    "badge": {
+      "version": {
+        "background": "{semantic.surface.badge}",
+        "border": "{semantic.border.badge}",
+        "text": "{semantic.text.badge}",
+        "radius": "{radius.xs}",
+        "fontSize": "{typography.fontSize.xs}",
+        "letterSpacing": "{typography.letterSpacing.wider}",
+        "textTransform": "uppercase",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:260",
+            "quote": "Badge: 12px/16px uppercase tracking 0.6px, bg #f8f7f6"
+          }
+        ]
+      },
+      "most-popular": {
+        "background": "{semantic.surface.badge}",
+        "border": "{semantic.border.badge}",
+        "text": "{semantic.text.badge}",
+        "radius": "{radius.lg}",
+        "font": "{semantic.font.mono}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:146",
+            "quote": "Radius measured **8px**."
+          }
+        ]
+      }
+    },
+    "card": {
+      "demo": {
+        "radius": "{radius.xl}",
+        "border": "{semantic.border.default}",
+        "background": "{semantic.surface.page}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:152",
+            "quote": "Demo cards: `rounded-xl` 12px, `border 1px #eae8e6`, `bg #fff`, `overflow-hidden`."
+          }
+        ]
+      },
+      "plan": {
+        "radius": "{radius.xl}",
+        "border": "{semantic.border.default}",
+        "padding": "24px",
+        "shadow": "none",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:136",
+            "quote": "Radius 12, 1px #eae8e6 border, white, padding 24, **no shadow, no hover**."
+          }
+        ]
+      },
+      "changelog-preview": {
+        "radius": "0px",
+        "border": "{semantic.border.default}",
+        "borderHover": "{semantic.border.card-hover}",
+        "padding": "24px",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:258",
+            "quote": "Card: `<a>` with 1px #eae8e6 border, **no radius**, bg #fff, padding 24px."
+          }
+        ]
+      },
+      "dashed": {
+        "radius": "{radius.lg}",
+        "borderStyle": "dashed",
+        "border": "{semantic.border.default}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:282",
+            "quote": "Margin 32 0, padding 12, gap 12, **1px dashed #eae8e6**, radius 8."
+          }
+        ]
+      }
+    },
+    "dialog": {
+      "download": {
+        "radius": "{radius.lg}",
+        "border": "{semantic.border.default}",
+        "padding": "24px",
+        "shadow": "{elevation.lg}",
+        "maxWidth": "448px",
+        "backdrop": "{semantic.overlay.dialog}",
+        "enterExitAnimation": "none",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:296",
+            "quote": "`w-[calc(100%-2rem)] max-w-md` (448), radius 8px"
+          },
+          {
+            "ref": "src/components/DownloadDialog.jsx:19",
+            "quote": "Net effect: the dialog appears and disappears instantly"
+          }
+        ]
+      }
+    },
+    "prose": {
+      "link": {
+        "fontWeight": "{typography.fontWeight.medium}",
+        "underline": "{semantic.link.underline}",
+        "hoverOpacity": 0.8,
+        "transition": "opacity 200ms",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:266",
+            "quote": "All prose links: weight 500, rgba(44,40,38,.55) underline, hover opacity .8 over 200ms (measured)."
+          }
+        ]
+      }
+    },
+    "media": {
+      "asset-frame": {
+        "radius": "{radius.asset-frame}",
+        "padding": "8px",
+        "maxWidth": "{layout.media.assetMaxWidth}",
+        "maxHeightBase": "{layout.media.assetMaxHeightBase}",
+        "maxHeightMd": "{layout.media.assetMaxHeightMd}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:367",
+            "quote": "border 1px `rgba(234,232,230,.88)`, radius **20px**, padding **8px**"
+          }
+        ]
+      }
+    },
+    "tooltip": {
+      "avatar": {
+        "background": "{semantic.surface.inverse}",
+        "radius": "{radius.md}",
+        "shadow": "{elevation.md}",
+        "transition": "opacity, translate 150ms {motion.easing.standard}",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:168",
+            "quote": "Styling: bg #2c2826, radius 6px, `px-2.5 py-1.5` (10/6px), shadow-md"
+          }
+        ]
+      }
+    }
+  }
+}

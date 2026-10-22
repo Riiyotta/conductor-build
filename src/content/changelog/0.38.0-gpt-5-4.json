@@ -1,0 +1,32 @@
+{
+  "slug": "0.38.0-gpt-5-4",
+  "version": "0.38.0",
+  "versionSlug": "0.38.0",
+  "title": "GPT-5.4",
+  "fullTitle": "0.38.0: GPT-5.4",
+  "date": "Mar 5th, 2026",
+  "dateISO": "2026-03-05",
+  "description": "Conductor 0.38.0 changelog - GPT-5.4",
+  "summary": "GPT-5.4 is now available!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.38.0/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png",
+    "alt": "CleanShot 2026-03-05 at 14.48.20@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.38.0-gpt-5-4/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.38.0-gpt-5-4",
+  "sourceUrl": "https://www.conductor.build/changelog/0.38.0-gpt-5-4",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>GPT-5.4 is now available!</p>\n<figure data-asset><img alt=\"CleanShot 2026-03-05 at 14.48.20@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.38.0/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png\"/></figure>\n<p>You can now right-click the review button to edit your review before sending — change the reviewer agent or add custom instructions.</p>\n<figure data-asset><img alt=\"CleanShot 2026-03-05 at 12.09.12@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.38.0/1772741358744-CleanShot_2026-03-05_at_12.09.12_2x.png\"/></figure>\n<p>We&#x27;ve also upgraded the Claude Agent SDK to 0.2.64.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Search by chat title in the command palette (⌘K)</li>\n<li>Improve spacing and alignment in the model selector</li>\n<li>Cancel agent automatically when dismissing an ask-user question</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix edit button in diff view not navigating correctly</li>\n<li>Fix grep tool preview showing matches when there are none</li>\n<li>Fix viewed checkbox not appearing when opening diffs from tree view</li>\n<li>Fix markdown table copy button not appearing or working correctly</li>\n<li>Prevent navigation to archived workspaces</li>\n<li>Fix slash command dropdown descriptions not truncating</li>\n</ul>",
+  "markdown": "\nGPT-5.4 is now available!\n\n<img\n    src=\"/assets/changelog/media/0.38.0/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png\"\n    alt=\"CleanShot 2026-03-05 at 14.48.20@2x.png\"\n/>\n\nYou can now right-click the review button to edit your review before sending — change the reviewer agent or add custom instructions.\n\n<img\n    src=\"/assets/changelog/media/0.38.0/1772741358744-CleanShot_2026-03-05_at_12.09.12_2x.png\"\n    alt=\"CleanShot 2026-03-05 at 12.09.12@2x.png\"\n/>\n\nWe've also upgraded the Claude Agent SDK to 0.2.64.\n\n## Improvements\n\n- Search by chat title in the command palette (⌘K)\n- Improve spacing and alignment in the model selector\n- Cancel agent automatically when dismissing an ask-user question\n\n## Fixes\n\n- Fix edit button in diff view not navigating correctly\n- Fix grep tool preview showing matches when there are none\n- Fix viewed checkbox not appearing when opening diffs from tree view\n- Fix markdown table copy button not appearing or working correctly\n- Prevent navigation to archived workspaces\n- Fix slash command dropdown descriptions not truncating\n"
+}

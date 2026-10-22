@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.4-sync-pr-comments-from-github",
+  "version": "0.25.4",
+  "versionSlug": "0.25.4",
+  "title": "Sync PR Comments from GitHub",
+  "fullTitle": "0.25.4: Sync PR Comments from GitHub",
+  "date": "Dec 8th, 2025",
+  "dateISO": "2025-12-08",
+  "description": "Conductor 0.25.4 changelog - Sync PR Comments from GitHub",
+  "summary": "You can now sync PR comments from GitHub to Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.4/95838254-75d3-4254-b8bb-57e3f36fb7fc.png",
+    "alt": "CleanShot 2025-12-08 at 15 41 04@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.4-sync-pr-comments-from-github/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.4-sync-pr-comments-from-github",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.4-sync-pr-comments-from-github",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now sync PR comments from GitHub to Conductor!</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-08 at 15 41 04@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.4/95838254-75d3-4254-b8bb-57e3f36fb7fc.png\"/></figure>\n<p>You can also toggle Tufte markdown rendering:</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-09 at 10 45 05@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.4/b406113e-9e8e-4385-bdc8-7b68a5b1e95e.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added an &quot;Export to new chat&quot; button to recover chats from Claude Code errors</li>\n<li>We now prompt you to confirm before quitting the app if an agent is running</li>\n<li>Added a button to test notification sounds (Settings → Chat)</li>\n<li>New markdown rendering option (Settings → Chat)</li>\n<li>More cities for you to discover!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Improved performance when there are many file changes</li>\n<li>The &quot;refresh&quot; button is now more prominent for files</li>\n<li>Fixed messages incorrectly showing as revertible</li>\n</ul>",
+  "markdown": "\nYou can now sync PR comments from GitHub to Conductor!\n\n<img\n    width=\"922\"\n    height=\"230\"\n    alt=\"CleanShot 2025-12-08 at 15 41 04@2x\"\n    src=\"/assets/changelog/media/0.25.4/95838254-75d3-4254-b8bb-57e3f36fb7fc.png\"\n/>\n\nYou can also toggle Tufte markdown rendering:\n\n<img\n    width=\"3480\"\n    height=\"2464\"\n    alt=\"CleanShot 2025-12-09 at 10 45 05@2x\"\n    src=\"/assets/changelog/media/0.25.4/b406113e-9e8e-4385-bdc8-7b68a5b1e95e.png\"\n/>\n\n## Improvements\n\n- Added an \"Export to new chat\" button to recover chats from Claude Code errors\n- We now prompt you to confirm before quitting the app if an agent is running\n- Added a button to test notification sounds (Settings → Chat)\n- New markdown rendering option (Settings → Chat)\n- More cities for you to discover!\n\n## Fixes\n\n- Improved performance when there are many file changes\n- The \"refresh\" button is now more prominent for files\n- Fixed messages incorrectly showing as revertible\n"
+}

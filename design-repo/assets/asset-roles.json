@@ -1,0 +1,302 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed asset-role vocabulary, defined from real JSX usage sites (grep of /assets/ paths and live endpoints). Conductor (Melty Labs) is a real, live company: generated output must never reproduce its customer logos, real people's photos or likenesses, real testimonials, its trademarks, or its proprietary docs/changelog text.",
+  "mediaSources": [
+    "placeholder",
+    "rights-holder-supplied",
+    "generated-new",
+    "open-license-reuse"
+  ],
+  "endpointTargets": [
+    "local-only-no-submit",
+    "deployer-configured",
+    "opens-download-dialog"
+  ],
+  "policies": {
+    "may-generate-new": {
+      "meaning": "New original assets may be generated for the slot; the source files must not be copied.",
+      "allowedSources": [
+        "generated-new",
+        "placeholder",
+        "rights-holder-supplied"
+      ]
+    },
+    "may-reuse-open-license": {
+      "meaning": "Source files are openly licensed and may be reused with their notice.",
+      "allowedSources": [
+        "open-license-reuse",
+        "generated-new",
+        "placeholder"
+      ]
+    },
+    "placeholder-only": {
+      "meaning": "Reserve the slot with a neutral placeholder until the rights holder supplies an asset.",
+      "allowedSources": [
+        "placeholder",
+        "rights-holder-supplied"
+      ]
+    },
+    "must-not-reproduce": {
+      "meaning": "Real trademark, real person, real customer or proprietary content: never reproduce, imitate or fabricate.",
+      "allowedSources": [
+        "placeholder",
+        "rights-holder-supplied"
+      ]
+    },
+    "must-not-reuse-live-endpoint": {
+      "meaning": "A live third-party endpoint: never emit the original URL/ids.",
+      "allowedTargets": [
+        "local-only-no-submit",
+        "deployer-configured",
+        "opens-download-dialog"
+      ]
+    }
+  },
+  "roles": {
+    "brand-mark": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Conductor / Melty Labs trademarks (logomark, wordmark, app icon, brand-kit files).",
+      "guidance": "Never reproduce, redraw or imitate the Conductor marks. Use a neutral placeholder unless the rights holder supplies the mark for its own use.",
+      "usageSites": [
+        {
+          "ref": "src/components/Icon.jsx:21",
+          "quote": "/assets/svg/conductor-logomark.svg"
+        },
+        {
+          "ref": "src/components/Hero.jsx:68",
+          "quote": "/assets/img/animations/conductor-logo.webp"
+        },
+        {
+          "ref": "src/components/Sandbox.jsx:147",
+          "quote": "/assets/img/demos/conductor-app-icon.png"
+        }
+      ]
+    },
+    "customer-logo": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Third-party trademarks: Linear, Vercel, Notion, Ramp, Y Combinator, Square, PostHog, Spotify, Life360, Reducto, Instacart.",
+      "guidance": "Never reproduce real customer logos or invent logos implying endorsement. Placeholder slots only, or logos supplied with written permission.",
+      "usageSites": [
+        {
+          "ref": "src/components/Logos.jsx:68",
+          "quote": "/assets/img/logos/linear.svg"
+        },
+        {
+          "ref": "src/pages/Enterprise.jsx:17",
+          "quote": "/assets/pages/enterprise/reducto.svg"
+        },
+        {
+          "ref": "src/components/Testimonials.jsx:11",
+          "quote": "/assets/img/logos/yc.png"
+        }
+      ]
+    },
+    "vendor-mark": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Third-party marks used in UI: Apple logo, OpenAI mark, Anthropic/Claude mark, X logo, X-style verified badge (origin of the badge file not established).",
+      "guidance": "Do not reproduce third-party marks; use neutral icons.",
+      "usageSites": [
+        {
+          "ref": "src/components/Icon.jsx:17",
+          "quote": "/assets/svg/apple-logo.svg"
+        },
+        {
+          "ref": "src/components/Icon.jsx:18",
+          "quote": "/assets/svg/openai-mark.svg"
+        },
+        {
+          "ref": "src/components/Icon.jsx:19",
+          "quote": "/assets/svg/claude-fable-mark.svg"
+        },
+        {
+          "ref": "src/pages/JoinUs.jsx:136",
+          "quote": "/assets/pages/join-us/x-logo.svg"
+        },
+        {
+          "ref": "src/components/Icon.jsx:20",
+          "quote": "/assets/svg/verified-badge.svg"
+        }
+      ]
+    },
+    "person-avatar": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Real people's photos (testimonial authors, team members) and composer portraits used as demo avatars (file licensing not established).",
+      "guidance": "Never reproduce a real person's photo or likeness and never generate a photorealistic face attributed to a real name. Use abstract placeholders.",
+      "usageSites": [
+        {
+          "ref": "src/components/Testimonials.jsx:13",
+          "quote": "/assets/img/testimonials/"
+        },
+        {
+          "ref": "src/pages/JoinUs.jsx:56",
+          "quote": "/assets/pages/join-us/"
+        },
+        {
+          "ref": "src/components/Hero.jsx:99",
+          "quote": "/assets/img/testimonials/"
+        },
+        {
+          "ref": "src/components/Multiplayer.jsx:10",
+          "quote": "/assets/img/demos/"
+        }
+      ]
+    },
+    "team-photo": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Photo of real Conductor employees.",
+      "guidance": "Never reproduce or synthesize a team photo. Placeholder only.",
+      "usageSites": [
+        {
+          "ref": "src/pages/JoinUs.jsx:214",
+          "quote": "/assets/pages/join-us/about.webp"
+        }
+      ]
+    },
+    "product-screenshot": {
+      "kind": "media",
+      "generationPolicy": "must-not-reproduce",
+      "licensing": "Proprietary Conductor UI captures (hero app shot, mobile dock, Slack search, docs and changelog images).",
+      "guidance": "Do not copy Conductor screenshots; a deployer supplies their own product captures.",
+      "usageSites": [
+        {
+          "ref": "src/components/Hero.jsx:116",
+          "quote": "/assets/img/conductor-app-hero-light.webp"
+        },
+        {
+          "ref": "src/components/Anywhere.jsx:17",
+          "quote": "/assets/img/demos/conductor-mobile-dock.jpeg"
+        },
+        {
+          "ref": "src/pages/Slack.jsx:26",
+          "quote": "/assets/pages/slack/slack-search.png"
+        }
+      ]
+    },
+    "demo-video": {
+      "kind": "media",
+      "generationPolicy": "placeholder-only",
+      "licensing": "Proprietary product videos (cmdn.mp4; docs/changelog media ~1.1 GiB, incl. 735 MiB and 164 MiB files).",
+      "guidance": "Reserve the slot with a poster placeholder; never embed the original files. Delivery concern: never bundle large videos into a generated page.",
+      "usageSites": [
+        {
+          "ref": "src/components/Sandbox.jsx:238",
+          "quote": "/assets/video/cmdn.mp4"
+        }
+      ]
+    },
+    "decorative-background": {
+      "kind": "media",
+      "generationPolicy": "may-generate-new",
+      "licensing": "Hero sky illustration and the CTA orchestra photograph (source licensing not established).",
+      "guidance": "A generator may create NEW original artwork in the same spirit (soft sky / full-bleed photo with dark overlay). Never copy the existing files.",
+      "usageSites": [
+        {
+          "ref": "src/components/Hero.jsx:52",
+          "quote": "/assets/img/homepage-hero-background.webp"
+        },
+        {
+          "ref": "src/components/CTA.jsx:11",
+          "quote": "/assets/img/conductor-orchestra.webp"
+        }
+      ]
+    },
+    "ui-animation": {
+      "kind": "media",
+      "generationPolicy": "may-generate-new",
+      "licensing": "Animated WebP masks (typing, working spinner).",
+      "guidance": "Create new equivalent micro-animations; do not copy the files.",
+      "usageSites": [
+        {
+          "ref": "src/components/Icon.jsx:22",
+          "quote": "/assets/img/animations/typing.webp"
+        },
+        {
+          "ref": "src/components/Icon.jsx:23",
+          "quote": "/assets/img/animations/working.webp"
+        }
+      ]
+    },
+    "icon": {
+      "kind": "media",
+      "generationPolicy": "may-reuse-open-license",
+      "licensing": "lucide icons (ISC licence).",
+      "guidance": "lucide icons may be reused with the ISC notice; any other icon must be generated new.",
+      "usageSites": [
+        {
+          "ref": "src/components/Icon.jsx:4",
+          "quote": "/assets/svg/icon-arrow-right.svg"
+        },
+        {
+          "ref": "src/components/Icon.jsx:15",
+          "quote": "/assets/svg/icon-shield-check.svg"
+        },
+        {
+          "ref": "src/components/ArrowLink.jsx:2",
+          "quote": "lucide lucide-arrow-right"
+        }
+      ]
+    },
+    "form-endpoint": {
+      "kind": "endpoint",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "licensing": "Live third-party HubSpot portal (enterprise + team-plan forms) and a live Google Form (Windows/Linux waitlist).",
+      "guidance": "Never emit the original portal id, form ids, script URL or Google Form URL. Use local-only-no-submit or a deployer-configured endpoint.",
+      "usageSites": [
+        {
+          "ref": "src/pages/Enterprise.jsx:45",
+          "quote": "<HubSpotForm variant=\"enterprise\""
+        },
+        {
+          "ref": "src/pages/TeamPlan.jsx:23",
+          "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+        },
+        {
+          "ref": "src/components/DownloadDialog.jsx:183",
+          "quote": "Join Windows/Linux waitlist"
+        },
+        {
+          "ref": "CLONE_SPEC_PAGES.md:210",
+          "quote": "HubSpot injects a borderless"
+        }
+      ]
+    },
+    "download-endpoint": {
+      "kind": "endpoint",
+      "generationPolicy": "must-not-reuse-live-endpoint",
+      "licensing": "Live third-party vendor CDN serving Conductor builds (crabnebula).",
+      "guidance": "Never emit the CDN download URLs. Use opens-download-dialog or a deployer-configured endpoint.",
+      "usageSites": [
+        {
+          "ref": "src/components/DownloadDialog.jsx:10",
+          "quote": "const APPLE_SILICON_URL ="
+        },
+        {
+          "ref": "src/components/DownloadDialog.jsx:11",
+          "quote": "const INTEL_URL ="
+        }
+      ]
+    }
+  },
+  "compliancePinsDocumented": {
+    "brand-mark": "must-not-reproduce",
+    "customer-logo": "must-not-reproduce",
+    "vendor-mark": "must-not-reproduce",
+    "person-avatar": "must-not-reproduce",
+    "team-photo": "must-not-reproduce",
+    "product-screenshot": "must-not-reproduce",
+    "form-endpoint": "must-not-reuse-live-endpoint",
+    "download-endpoint": "must-not-reuse-live-endpoint"
+  },
+  "pinNote": "The authoritative pins live in code (COMPLIANCE_PINS in schema/semantic_validate.py and extraction/verify_all.py), not in this file, so editing this file alone cannot relax them. Membership in the policy enum is not enough: these roles must equal their pinned value.",
+  "contentRules": {
+    "testimonials": "Never fabricate a testimonial or attribute a quote to a real person without consent.",
+    "people": "Never fabricate team members or reuse real bios.",
+    "docsAndChangelog": "Never copy Conductor's docs or changelog text; never invent releases.",
+    "legal": "Legal text comes from counsel only."
+  }
+}

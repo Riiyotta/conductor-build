@@ -1,0 +1,36 @@
+{
+  "slug": "0.89.1-gpt-6-1-sol",
+  "version": "0.89.1",
+  "versionSlug": "0.89.1",
+  "title": "GPT-6.1 Sol",
+  "fullTitle": "0.89.1: GPT-6.1 Sol",
+  "date": "September 29, 2026",
+  "dateISO": "2026-09-29",
+  "description": "Conductor 0.89.1 changelog - GPT-6.1 Sol",
+  "summary": "GPT-6.1 Sol is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/gpt-6-1-sol-0.89.1.png",
+    "alt": "GPT-6.1 Sol"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.89.1-gpt-6-1-sol/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.89.1-gpt-6-1-sol",
+  "sourceUrl": "https://www.conductor.build/changelog/0.89.1-gpt-6-1-sol",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "New in 0.89.2"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.89.3"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.89.5"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"GPT-6.1 Sol\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/gpt-6-1-sol-0.89.1.png\"/></figure>\n<p>GPT-6.1 Sol is now available in Conductor!</p>\n<p>OpenAI&#x27;s upgrade to GPT-6 Sol nearly matches GPT-6 Astra on agentic coding at one-fifth of Astra&#x27;s price. It&#x27;s also the new default Codex model.</p>\n<h4>New in 0.89.2</h4>\n<ul>\n<li>Fixed PR info getting stuck on &quot;Loading PR info…&quot; for repositories on GitHub Enterprise Server 3.21 and earlier.</li>\n<li>Improved quality of life and edge cases for Sign in with ChatGPT.</li>\n</ul>\n<h4>New in 0.89.3</h4>\n<ul>\n<li>Fixed chats getting stuck in progress, Stop doing nothing, and model settings being locked on macOS versions before 14.4.</li>\n</ul>\n<h4>New in 0.89.5</h4>\n<ul>\n<li>Fixed GPT-6.1 Sol failing with &quot;not supported when using Codex with a ChatGPT account&quot; when you sign in to Codex with ChatGPT.</li>\n<li>Fixed long chats in local workspaces sometimes taking several seconds to open.</li>\n<li>Fixed new local workspace branches keeping their placeholder name when enterprise data privacy is on.</li>\n<li>Updated the bundled Codex to 0.159.3.</li>\n</ul>",
+  "markdown": "\n![GPT-6.1 Sol](/assets/changelog/images/gpt-6-1-sol-0.89.1.png)\n\nGPT-6.1 Sol is now available in Conductor!\n\nOpenAI's upgrade to GPT-6 Sol nearly matches GPT-6 Astra on agentic coding at one-fifth of Astra's price. It's also the new default Codex model.\n\n### New in 0.89.2\n\n- Fixed PR info getting stuck on \"Loading PR info…\" for repositories on GitHub Enterprise Server 3.21 and earlier.\n- Improved quality of life and edge cases for Sign in with ChatGPT.\n\n### New in 0.89.3\n\n- Fixed chats getting stuck in progress, Stop doing nothing, and model settings being locked on macOS versions before 14.4.\n\n### New in 0.89.5\n\n- Fixed GPT-6.1 Sol failing with \"not supported when using Codex with a ChatGPT account\" when you sign in to Codex with ChatGPT.\n- Fixed long chats in local workspaces sometimes taking several seconds to open.\n- Fixed new local workspace branches keeping their placeholder name when enterprise data privacy is on.\n- Updated the bundled Codex to 0.159.3.\n"
+}

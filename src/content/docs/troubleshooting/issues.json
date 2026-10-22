@@ -1,0 +1,2034 @@
+{
+  "slug": "troubleshooting/issues",
+  "url": "/docs/troubleshooting/issues",
+  "title": "Troubleshooting issues",
+  "description": "Fix common authentication, agent, script, workspace, review, and known product issues",
+  "meta": {
+    "title": "Troubleshooting issues | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/troubleshooting/issues/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Troubleshooting"
+    },
+    {
+      "name": "Troubleshooting issues"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#authentication-issues",
+      "title": "Authentication issues"
+    },
+    {
+      "depth": 3,
+      "url": "#github",
+      "title": "GitHub"
+    },
+    {
+      "depth": 3,
+      "url": "#claude-code",
+      "title": "Claude Code"
+    },
+    {
+      "depth": 3,
+      "url": "#codex",
+      "title": "Codex"
+    },
+    {
+      "depth": 3,
+      "url": "#custom-providers",
+      "title": "Custom providers"
+    },
+    {
+      "depth": 2,
+      "url": "#script-and-action-issues",
+      "title": "Script and action issues"
+    },
+    {
+      "depth": 3,
+      "url": "#setup-script-fails",
+      "title": "Setup script fails"
+    },
+    {
+      "depth": 3,
+      "url": "#action-fails",
+      "title": "Action fails"
+    },
+    {
+      "depth": 3,
+      "url": "#archive-script-fails",
+      "title": "Archive script fails"
+    },
+    {
+      "depth": 3,
+      "url": "#environment-variables-are-missing",
+      "title": "Environment variables are missing"
+    },
+    {
+      "depth": 2,
+      "url": "#agent-issues",
+      "title": "Agent issues"
+    },
+    {
+      "depth": 3,
+      "url": "#the-agent-is-waiting-for-input",
+      "title": "The agent is waiting for input"
+    },
+    {
+      "depth": 3,
+      "url": "#the-agent-needs-permission",
+      "title": "The agent needs permission"
+    },
+    {
+      "depth": 3,
+      "url": "#claude-code-or-codex-cannot-find-a-command",
+      "title": "Claude Code or Codex cannot find a command"
+    },
+    {
+      "depth": 3,
+      "url": "#the-agent-is-in-the-wrong-mode",
+      "title": "The agent is in the wrong mode"
+    },
+    {
+      "depth": 3,
+      "url": "#the-agent-appears-stuck",
+      "title": "The agent appears stuck"
+    },
+    {
+      "depth": 2,
+      "url": "#workspace-issues",
+      "title": "Workspace issues"
+    },
+    {
+      "depth": 3,
+      "url": "#restore-an-archived-workspace",
+      "title": "Restore an archived workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#a-workspace-path-is-missing",
+      "title": "A workspace path is missing"
+    },
+    {
+      "depth": 3,
+      "url": "#a-branch-is-already-checked-out",
+      "title": "A branch is already checked out"
+    },
+    {
+      "depth": 3,
+      "url": "#old-nested-conductor-workspaces",
+      "title": "Old nested .conductor workspaces"
+    },
+    {
+      "depth": 2,
+      "url": "#review-and-merge-issues",
+      "title": "Review and merge issues"
+    },
+    {
+      "depth": 3,
+      "url": "#checks-are-failing",
+      "title": "Checks are failing"
+    },
+    {
+      "depth": 3,
+      "url": "#comments-are-unresolved",
+      "title": "Comments are unresolved"
+    },
+    {
+      "depth": 3,
+      "url": "#todos-are-blocking-merge",
+      "title": "Todos are blocking merge"
+    },
+    {
+      "depth": 3,
+      "url": "#merge-conflicts",
+      "title": "Merge conflicts"
+    },
+    {
+      "depth": 2,
+      "url": "#known-issues",
+      "title": "Known issues"
+    },
+    {
+      "depth": 3,
+      "url": "#why-doesnt-undo-cmdz-work-when-im-writing-a-message",
+      "title": "Why doesn't undo (cmd+z) work when I'm writing a message?"
+    },
+    {
+      "depth": 3,
+      "url": "#why-do-i-see-garbage-when-i-switch-between-terminal-windows",
+      "title": "Why do I see garbage when I switch between terminal windows?"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/faq",
+    "title": "FAQ",
+    "description": "Frequently asked questions about Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this page when Conductor cannot start work, run a project, restore a workspace, or merge a finished branch."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "authentication-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Authentication issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this section when Conductor cannot create workspaces, start agents, fetch GitHub data, or call a model provider."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "github",
+      "children": [
+        {
+          "type": "text",
+          "value": "GitHub"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor expects GitHub authentication to work in your terminal environment."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Run:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "gh auth status",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "gh",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " auth",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " status",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the command fails, sign in again:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "gh auth login",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "gh",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " auth",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " login",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Then restart Conductor and try the action again."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "claude-code",
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If Claude Code cannot start or authenticate, run:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "claude /login",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "claude",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " /login",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor uses the Claude Code authentication available on your machine unless you configure provider-specific environment variables."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "codex",
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If Codex cannot start, check the model picker and your OpenAI authentication or subscription setup. If you configured an API key, confirm it is available in Conductor's environment settings."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "custom-providers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Custom providers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If a custom provider fails:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the provider environment variables are set in "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/environment",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Environment"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the provider supports the model you selected."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Restart the affected chat after changing provider variables."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For provider examples, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "script-and-action-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Script and action issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this section when setup scripts, actions, or archive scripts fail."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "setup-script-fails",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup script fails"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The setup script runs inside the newly created workspace. It should only depend on files that exist in the workspace or paths exposed through Conductor environment variables."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Check these common causes:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The script expects ignored files such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to be copied automatically."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Dependencies are installed in the repository root but not in the workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The script assumes a fixed absolute path."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A command needs authentication that is not available in the workspace shell."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$CONDUCTOR_ROOT_PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the script needs to read from the repository root."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "action-fails",
+      "children": [
+        {
+          "type": "text",
+          "value": "Action fails"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "An action runs when you click the Run button."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Check these common causes:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The app uses a fixed port that is already in use."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Multiple workspaces are trying to use the same database, cache, or external service."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The action starts a background process with "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "&"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " instead of running the foreground process."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The command works in your root checkout but not in a workspace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for workspace-specific ports."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "archive-script-fails",
+      "children": [
+        {
+          "type": "text",
+          "value": "Archive script fails"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The archive script runs before Conductor archives a workspace. Keep it focused on cleanup for resources outside the workspace directory."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the script fails, archive may not complete. Fix the command and try again."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "environment-variables-are-missing",
+      "children": [
+        {
+          "type": "text",
+          "value": "Environment variables are missing"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor exposes variables such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_WORKSPACE_PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_ROOT_PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to terminals and scripts."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full list, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor environment variables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "agent-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Agent issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this section when a chat is not progressing as expected."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "the-agent-is-waiting-for-input",
+      "children": [
+        {
+          "type": "text",
+          "value": "The agent is waiting for input"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the sidebar shows that a session needs input, open the workspace and answer the agent's question. The agent may be blocked on a product decision, missing context, or a requested approval."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "the-agent-needs-permission",
+      "children": [
+        {
+          "type": "text",
+          "value": "The agent needs permission"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Review the requested action before approving it. If the action is not needed, deny it or ask the agent to use a different approach."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Permission prompts can appear for shell commands, tool use, MCP access, web access, or file changes."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "claude-code-or-codex-cannot-find-a-command",
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code or Codex cannot find a command"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor bundles specific versions of Claude Code and Codex with the app to maximize compatibility. If your Claude Code or Codex setup depends on custom shell configuration, MCP configuration, or tools installed in your system "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", use your system-installed agent executable instead."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions do not use a Cursor executable path. If Cursor cannot start, confirm that "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is configured in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Try these steps:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/advanced",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Advanced"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Find the "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Claude Code executable path"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Codex executable path"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " setting."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Click "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use system Claude Code (from PATH)"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use system Codex (from PATH)"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " if the button is available."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "If the button is not available, enter the path returned by "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "which claude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "which codex"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " in your terminal."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Restart the affected chat."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "the-agent-is-in-the-wrong-mode",
+      "children": [
+        {
+          "type": "text",
+          "value": "The agent is in the wrong mode"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the agent keeps planning instead of editing, exit Plan Mode. If it starts editing before you want it to, enter Plan Mode and ask for a plan first."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For mode details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/agent-modes"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Agent modes"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "the-agent-appears-stuck",
+      "children": [
+        {
+          "type": "text",
+          "value": "The agent appears stuck"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Try these steps:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Wait for any running command to finish."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Check whether the agent is waiting for approval or user input."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cancel the current response if it is no longer useful."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Start a new message with the exact next action you want."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "If the chat state is confused, start a new chat or use a checkpoint if available."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/checkpoints"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Checkpoints"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when you need to revert both code changes and later chat state."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "workspace-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspace issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this section when a workspace cannot open, cannot be restored, or conflicts with another workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "restore-an-archived-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Restore an archived workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the History pane from the sidebar. Find the archived workspace and restore it. Conductor restores the chat history and workspace state it has saved."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "a-workspace-path-is-missing",
+      "children": [
+        {
+          "type": "text",
+          "value": "A workspace path is missing"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If a workspace directory was moved or deleted outside Conductor, Conductor may not be able to open it."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the History pane to inspect the workspace. If restore fails, create a new workspace from the branch or pull request and continue from there."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "a-branch-is-already-checked-out",
+      "children": [
+        {
+          "type": "text",
+          "value": "A branch is already checked out"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A Git branch can only be checked out in one worktree at a time. If Conductor cannot create or switch to a branch, another workspace or local checkout may already be using it."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use one of these fixes:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Switch the other workspace to a different branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create a new branch based on the existing one."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Archive the old workspace if you no longer need it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "old-nested-conductor-workspaces",
+      "children": [
+        {
+          "type": "text",
+          "value": "Old nested "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " workspaces"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Older Conductor repositories may still have workspaces inside a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " folder under the repository root. Newer workspaces live under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/conductor/workspaces/"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If nested source directories confuse your build tools, remove and re-add the repository:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Find the workspace name in the sidebar."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Next to the name, click the \"Repository details\" button."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Click \"Remove\". This deletes all workspaces and chats for that repository."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add the repository again."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you still run into issues, contact "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "mailto:support@conductor.build"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "support@conductor.build"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "review-and-merge-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Review and merge issues"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this section when a workspace is close to merge but Conductor still shows blockers."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "checks-are-failing",
+      "children": [
+        {
+          "type": "text",
+          "value": "Checks are failing"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the Checks tab and inspect the failing item. If the failure includes logs or enough context, send it to the agent and ask for a fix."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Run the relevant test locally before trying to merge again."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "comments-are-unresolved",
+      "children": [
+        {
+          "type": "text",
+          "value": "Comments are unresolved"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "GitHub review comments and local review comments may appear in the Diff Viewer or Checks tab."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For each comment:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Send it to the agent or fix it yourself."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the diff changed as expected."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Resolve the thread when the issue no longer applies."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "todos-are-blocking-merge",
+      "children": [
+        {
+          "type": "text",
+          "value": "Todos are blocking merge"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the todos section and complete or remove each todo. Conductor blocks unfinished work so a workspace does not merge while known tasks are still open."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "merge-conflicts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Merge conflicts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Pull the latest changes from the target branch, inspect conflicts, and ask the agent to resolve them if needed. Give the agent the conflict context and the intended behavior, not only the command output."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After conflicts are resolved, rerun tests and review the diff before merging."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "known-issues",
+      "children": [
+        {
+          "type": "text",
+          "value": "Known issues"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "why-doesnt-undo-cmdz-work-when-im-writing-a-message",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why doesn't undo (cmd+z) work when I'm writing a message?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The library we use to do @-mentions breaks the undo history. We're looking into other solutions."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "why-do-i-see-garbage-when-i-switch-between-terminal-windows",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why do I see garbage when I switch between terminal windows?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "We're streaming output from your shell along to the UI, and at some point along the way, the stream is probably getting corrupted. We're still working to track down this bug."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this page when Conductor cannot start work, run a project, restore a workspace, or merge a finished branch.</p><h2 id=\"authentication-issues\"><a href=\"#authentication-issues\">Authentication issues</a></h2><p>Use this section when Conductor cannot create workspaces, start agents, fetch GitHub data, or call a model provider.</p><h3 id=\"github\"><a href=\"#github\">GitHub</a></h3><p>Conductor expects GitHub authentication to work in your terminal environment.</p><p>Run:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">gh</span><span style=\"color:#032F62\"> auth</span><span style=\"color:#032F62\"> status</span></span></code></pre></figure><p>If the command fails, sign in again:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">gh</span><span style=\"color:#032F62\"> auth</span><span style=\"color:#032F62\"> login</span></span></code></pre></figure><p>Then restart Conductor and try the action again.</p><h3 id=\"claude-code\"><a href=\"#claude-code\">Claude Code</a></h3><p>If Claude Code cannot start or authenticate, run:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">claude</span><span style=\"color:#032F62\"> /login</span></span></code></pre></figure><p>Conductor uses the Claude Code authentication available on your machine unless you configure provider-specific environment variables.</p><h3 id=\"codex\"><a href=\"#codex\">Codex</a></h3><p>If Codex cannot start, check the model picker and your OpenAI authentication or subscription setup. If you configured an API key, confirm it is available in Conductor's environment settings.</p><h3 id=\"custom-providers\"><a href=\"#custom-providers\">Custom providers</a></h3><p>If a custom provider fails:</p><ol><li>Confirm the provider environment variables are set in <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>.</li><li>Confirm the provider supports the model you selected.</li><li>Restart the affected chat after changing provider variables.</li></ol><p>For provider examples, see <a href=\"/docs/guides/providers\">Configure model providers</a>.</p><h2 id=\"script-and-action-issues\"><a href=\"#script-and-action-issues\">Script and action issues</a></h2><p>Use this section when setup scripts, actions, or archive scripts fail.</p><h3 id=\"setup-script-fails\"><a href=\"#setup-script-fails\">Setup script fails</a></h3><p>The setup script runs inside the newly created workspace. It should only depend on files that exist in the workspace or paths exposed through Conductor environment variables.</p><p>Check these common causes:</p><ul><li>The script expects ignored files such as <code>.env</code> to be copied automatically.</li><li>Dependencies are installed in the repository root but not in the workspace.</li><li>The script assumes a fixed absolute path.</li><li>A command needs authentication that is not available in the workspace shell.</li></ul><p>Use <code>$CONDUCTOR_ROOT_PATH</code> when the script needs to read from the repository root.</p><h3 id=\"action-fails\"><a href=\"#action-fails\">Action fails</a></h3><p>An action runs when you click the Run button.</p><p>Check these common causes:</p><ul><li>The app uses a fixed port that is already in use.</li><li>Multiple workspaces are trying to use the same database, cache, or external service.</li><li>The action starts a background process with <code>&amp;</code> instead of running the foreground process.</li><li>The command works in your root checkout but not in a workspace.</li></ul><p>Use <code>$CONDUCTOR_PORT</code> for workspace-specific ports.</p><h3 id=\"archive-script-fails\"><a href=\"#archive-script-fails\">Archive script fails</a></h3><p>The archive script runs before Conductor archives a workspace. Keep it focused on cleanup for resources outside the workspace directory.</p><p>If the script fails, archive may not complete. Fix the command and try again.</p><h3 id=\"environment-variables-are-missing\"><a href=\"#environment-variables-are-missing\">Environment variables are missing</a></h3><p>Conductor exposes variables such as <code>CONDUCTOR_WORKSPACE_PATH</code>, <code>CONDUCTOR_ROOT_PATH</code>, and <code>CONDUCTOR_PORT</code> to terminals and scripts.</p><p>For the full list, see <a href=\"/docs/reference/environment-variables\">Conductor environment variables</a>.</p><h2 id=\"agent-issues\"><a href=\"#agent-issues\">Agent issues</a></h2><p>Use this section when a chat is not progressing as expected.</p><h3 id=\"the-agent-is-waiting-for-input\"><a href=\"#the-agent-is-waiting-for-input\">The agent is waiting for input</a></h3><p>If the sidebar shows that a session needs input, open the workspace and answer the agent's question. The agent may be blocked on a product decision, missing context, or a requested approval.</p><h3 id=\"the-agent-needs-permission\"><a href=\"#the-agent-needs-permission\">The agent needs permission</a></h3><p>Review the requested action before approving it. If the action is not needed, deny it or ask the agent to use a different approach.</p><p>Permission prompts can appear for shell commands, tool use, MCP access, web access, or file changes.</p><h3 id=\"claude-code-or-codex-cannot-find-a-command\"><a href=\"#claude-code-or-codex-cannot-find-a-command\">Claude Code or Codex cannot find a command</a></h3><p>Conductor bundles specific versions of Claude Code and Codex with the app to maximize compatibility. If your Claude Code or Codex setup depends on custom shell configuration, MCP configuration, or tools installed in your system <code>PATH</code>, use your system-installed agent executable instead.</p><p>Cursor sessions do not use a Cursor executable path. If Cursor cannot start, confirm that <code>CURSOR_API_KEY</code> is configured in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>.</p><p>Try these steps:</p><ol><li>Open <a href=\"https://app.conductor.build/settings/user/advanced\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Advanced</code></a>.</li><li>Find the <code>Claude Code executable path</code> or <code>Codex executable path</code> setting.</li><li>Click <code>Use system Claude Code (from PATH)</code> or <code>Use system Codex (from PATH)</code> if the button is available.</li><li>If the button is not available, enter the path returned by <code>which claude</code> or <code>which codex</code> in your terminal.</li><li>Restart the affected chat.</li></ol><h3 id=\"the-agent-is-in-the-wrong-mode\"><a href=\"#the-agent-is-in-the-wrong-mode\">The agent is in the wrong mode</a></h3><p>If the agent keeps planning instead of editing, exit Plan Mode. If it starts editing before you want it to, enter Plan Mode and ask for a plan first.</p><p>For mode details, see <a href=\"/docs/concepts/agent-modes\">Agent modes</a>.</p><h3 id=\"the-agent-appears-stuck\"><a href=\"#the-agent-appears-stuck\">The agent appears stuck</a></h3><p>Try these steps:</p><ol><li>Wait for any running command to finish.</li><li>Check whether the agent is waiting for approval or user input.</li><li>Cancel the current response if it is no longer useful.</li><li>Start a new message with the exact next action you want.</li><li>If the chat state is confused, start a new chat or use a checkpoint if available.</li></ol><p>Use <a href=\"/docs/reference/checkpoints\">Checkpoints</a> when you need to revert both code changes and later chat state.</p><h2 id=\"workspace-issues\"><a href=\"#workspace-issues\">Workspace issues</a></h2><p>Use this section when a workspace cannot open, cannot be restored, or conflicts with another workspace.</p><h3 id=\"restore-an-archived-workspace\"><a href=\"#restore-an-archived-workspace\">Restore an archived workspace</a></h3><p>Open the History pane from the sidebar. Find the archived workspace and restore it. Conductor restores the chat history and workspace state it has saved.</p><h3 id=\"a-workspace-path-is-missing\"><a href=\"#a-workspace-path-is-missing\">A workspace path is missing</a></h3><p>If a workspace directory was moved or deleted outside Conductor, Conductor may not be able to open it.</p><p>Use the History pane to inspect the workspace. If restore fails, create a new workspace from the branch or pull request and continue from there.</p><h3 id=\"a-branch-is-already-checked-out\"><a href=\"#a-branch-is-already-checked-out\">A branch is already checked out</a></h3><p>A Git branch can only be checked out in one worktree at a time. If Conductor cannot create or switch to a branch, another workspace or local checkout may already be using it.</p><p>Use one of these fixes:</p><ul><li>Switch the other workspace to a different branch.</li><li>Create a new branch based on the existing one.</li><li>Archive the old workspace if you no longer need it.</li></ul><h3 id=\"old-nested-conductor-workspaces\"><a href=\"#old-nested-conductor-workspaces\">Old nested <code>.conductor</code> workspaces</a></h3><p>Older Conductor repositories may still have workspaces inside a <code>.conductor</code> folder under the repository root. Newer workspaces live under <code>~/conductor/workspaces/</code>.</p><p>If nested source directories confuse your build tools, remove and re-add the repository:</p><ol><li>Find the workspace name in the sidebar.</li><li>Next to the name, click the \"Repository details\" button.</li><li>Click \"Remove\". This deletes all workspaces and chats for that repository.</li><li>Add the repository again.</li></ol><p>If you still run into issues, contact <a href=\"mailto:support@conductor.build\">support@conductor.build</a>.</p><h2 id=\"review-and-merge-issues\"><a href=\"#review-and-merge-issues\">Review and merge issues</a></h2><p>Use this section when a workspace is close to merge but Conductor still shows blockers.</p><h3 id=\"checks-are-failing\"><a href=\"#checks-are-failing\">Checks are failing</a></h3><p>Open the Checks tab and inspect the failing item. If the failure includes logs or enough context, send it to the agent and ask for a fix.</p><p>Run the relevant test locally before trying to merge again.</p><h3 id=\"comments-are-unresolved\"><a href=\"#comments-are-unresolved\">Comments are unresolved</a></h3><p>GitHub review comments and local review comments may appear in the Diff Viewer or Checks tab.</p><p>For each comment:</p><ol><li>Send it to the agent or fix it yourself.</li><li>Confirm the diff changed as expected.</li><li>Resolve the thread when the issue no longer applies.</li></ol><h3 id=\"todos-are-blocking-merge\"><a href=\"#todos-are-blocking-merge\">Todos are blocking merge</a></h3><p>Open the todos section and complete or remove each todo. Conductor blocks unfinished work so a workspace does not merge while known tasks are still open.</p><h3 id=\"merge-conflicts\"><a href=\"#merge-conflicts\">Merge conflicts</a></h3><p>Pull the latest changes from the target branch, inspect conflicts, and ask the agent to resolve them if needed. Give the agent the conflict context and the intended behavior, not only the command output.</p><p>After conflicts are resolved, rerun tests and review the diff before merging.</p><h2 id=\"known-issues\"><a href=\"#known-issues\">Known issues</a></h2><h3 id=\"why-doesnt-undo-cmdz-work-when-im-writing-a-message\"><a href=\"#why-doesnt-undo-cmdz-work-when-im-writing-a-message\">Why doesn't undo (cmd+z) work when I'm writing a message?</a></h3><p>The library we use to do @-mentions breaks the undo history. We're looking into other solutions.</p><h3 id=\"why-do-i-see-garbage-when-i-switch-between-terminal-windows\"><a href=\"#why-do-i-see-garbage-when-i-switch-between-terminal-windows\">Why do I see garbage when I switch between terminal windows?</a></h3><p>We're streaming output from your shell along to the UI, and at some point along the way, the stream is probably getting corrupted. We're still working to track down this bug.</p>",
+  "text": "Use this page when Conductor cannot start work, run a project, restore a workspace, or merge a finished branch.\nAuthentication issues\nUse this section when Conductor cannot create workspaces, start agents, fetch GitHub data, or call a model provider.\nGitHub\nConductor expects GitHub authentication to work in your terminal environment.\nRun:\ngh auth statusIf the command fails, sign in again:\ngh auth loginThen restart Conductor and try the action again.\nClaude Code\nIf Claude Code cannot start or authenticate, run:\nclaude /loginConductor uses the Claude Code authentication available on your machine unless you configure provider-specific environment variables.\nCodex\nIf Codex cannot start, check the model picker and your OpenAI authentication or subscription setup. If you configured an API key, confirm it is available in Conductor's environment settings.\nCustom providers\nIf a custom provider fails:\nConfirm the provider environment variables are set in Settings -> Environment.\nConfirm the provider supports the model you selected.\nRestart the affected chat after changing provider variables.\nFor provider examples, see Configure model providers.\nScript and action issues\nUse this section when setup scripts, actions, or archive scripts fail.\nSetup script fails\nThe setup script runs inside the newly created workspace. It should only depend on files that exist in the workspace or paths exposed through Conductor environment variables.\nCheck these common causes:\nThe script expects ignored files such as .env to be copied automatically.\nDependencies are installed in the repository root but not in the workspace.\nThe script assumes a fixed absolute path.\nA command needs authentication that is not available in the workspace shell.\nUse $CONDUCTOR_ROOT_PATH when the script needs to read from the repository root.\nAction fails\nAn action runs when you click the Run button.\nCheck these common causes:\nThe app uses a fixed port that is already in use.\nMultiple workspaces are trying to use the same database, cache, or external service.\nThe action starts a background process with & instead of running the foreground process.\nThe command works in your root checkout but not in a workspace.\nUse $CONDUCTOR_PORT for workspace-specific ports.\nArchive script fails\nThe archive script runs before Conductor archives a workspace. Keep it focused on cleanup for resources outside the workspace directory.\nIf the script fails, archive may not complete. Fix the command and try again.\nEnvironment variables are missing\nConductor exposes variables such as CONDUCTOR_WORKSPACE_PATH, CONDUCTOR_ROOT_PATH, and CONDUCTOR_PORT to terminals and scripts.\nFor the full list, see Conductor environment variables.\nAgent issues\nUse this section when a chat is not progressing as expected.\nThe agent is waiting for input\nIf the sidebar shows that a session needs input, open the workspace and answer the agent's question. The agent may be blocked on a product decision, missing context, or a requested approval.\nThe agent needs permission\nReview the requested action before approving it. If the action is not needed, deny it or ask the agent to use a different approach.\nPermission prompts can appear for shell commands, tool use, MCP access, web access, or file changes.\nClaude Code or Codex cannot find a command\nConductor bundles specific versions of Claude Code and Codex with the app to maximize compatibility. If your Claude Code or Codex setup depends on custom shell configuration, MCP configuration, or tools installed in your system PATH, use your system-installed agent executable instead.\nCursor sessions do not use a Cursor executable path. If Cursor cannot start, confirm that CURSOR_API_KEY is configured in Settings -> Agents -> Cursor.\nTry these steps:\nOpen Settings -> Advanced.\nFind the Claude Code executable path or Codex executable path setting.\nClick Use system Claude Code (from PATH) or Use system Codex (from PATH) if the button is available.\nIf the button is not available, enter the path returned by which claude or which codex in your terminal.\nRestart the affected chat.\nThe agent is in the wrong mode\nIf the agent keeps planning instead of editing, exit Plan Mode. If it starts editing before you want it to, enter Plan Mode and ask for a plan first.\nFor mode details, see Agent modes.\nThe agent appears stuck\nTry these steps:\nWait for any running command to finish.\nCheck whether the agent is waiting for approval or user input.\nCancel the current response if it is no longer useful.\nStart a new message with the exact next action you want.\nIf the chat state is confused, start a new chat or use a checkpoint if available.\nUse Checkpoints when you need to revert both code changes and later chat state.\nWorkspace issues\nUse this section when a workspace cannot open, cannot be restored, or conflicts with another workspace.\nRestore an archived workspace\nOpen the History pane from the sidebar. Find the archived workspace and restore it. Conductor restores the chat history and workspace state it has saved.\nA workspace path is missing\nIf a workspace directory was moved or deleted outside Conductor, Conductor may not be able to open it.\nUse the History pane to inspect the workspace. If restore fails, create a new workspace from the branch or pull request and continue from there.\nA branch is already checked out\nA Git branch can only be checked out in one worktree at a time. If Conductor cannot create or switch to a branch, another workspace or local checkout may already be using it.\nUse one of these fixes:\nSwitch the other workspace to a different branch.\nCreate a new branch based on the existing one.\nArchive the old workspace if you no longer need it.\nOld nested .conductor workspaces\nOlder Conductor repositories may still have workspaces inside a .conductor folder under the repository root. Newer workspaces live under ~/conductor/workspaces/.\nIf nested source directories confuse your build tools, remove and re-add the repository:\nFind the workspace name in the sidebar.\nNext to the name, click the \"Repository details\" button.\nClick \"Remove\". This deletes all workspaces and chats for that repository.\nAdd the repository again.\nIf you still run into issues, contact support@conductor.build.\nReview and merge issues\nUse this section when a workspace is close to merge but Conductor still shows blockers.\nChecks are failing\nOpen the Checks tab and inspect the failing item. If the failure includes logs or enough context, send it to the agent and ask for a fix.\nRun the relevant test locally before trying to merge again.\nComments are unresolved\nGitHub review comments and local review comments may appear in the Diff Viewer or Checks tab.\nFor each comment:\nSend it to the agent or fix it yourself.\nConfirm the diff changed as expected.\nResolve the thread when the issue no longer applies.\nTodos are blocking merge\nOpen the todos section and complete or remove each todo. Conductor blocks unfinished work so a workspace does not merge while known tasks are still open.\nMerge conflicts\nPull the latest changes from the target branch, inspect conflicts, and ask the agent to resolve them if needed. Give the agent the conflict context and the intended behavior, not only the command output.\nAfter conflicts are resolved, rerun tests and review the diff before merging.\nKnown issues\nWhy doesn't undo (cmd+z) work when I'm writing a message?\nThe library we use to do @-mentions breaks the undo history. We're looking into other solutions.\nWhy do I see garbage when I switch between terminal windows?\nWe're streaming output from your shell along to the UI, and at some point along the way, the stream is probably getting corrupted. We're still working to track down this bug.",
+  "markdown": "\n# Troubleshooting issues\n\n\n\nUse this page when Conductor cannot start work, run a project, restore a workspace, or merge a finished branch.\n\n## Authentication issues [#authentication-issues]\n\nUse this section when Conductor cannot create workspaces, start agents, fetch GitHub data, or call a model provider.\n\n### GitHub [#github]\n\nConductor expects GitHub authentication to work in your terminal environment.\n\nRun:\n\n```bash\ngh auth status\n```\n\nIf the command fails, sign in again:\n\n```bash\ngh auth login\n```\n\nThen restart Conductor and try the action again.\n\n### Claude Code [#claude-code]\n\nIf Claude Code cannot start or authenticate, run:\n\n```bash\nclaude /login\n```\n\nConductor uses the Claude Code authentication available on your machine unless you configure provider-specific environment variables.\n\n### Codex [#codex]\n\nIf Codex cannot start, check the model picker and your OpenAI authentication or subscription setup. If you configured an API key, confirm it is available in Conductor's environment settings.\n\n### Custom providers [#custom-providers]\n\nIf a custom provider fails:\n\n1. Confirm the provider environment variables are set in [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment).\n2. Confirm the provider supports the model you selected.\n3. Restart the affected chat after changing provider variables.\n\nFor provider examples, see [Configure model providers](/docs/guides/providers).\n\n## Script and action issues [#script-and-action-issues]\n\nUse this section when setup scripts, actions, or archive scripts fail.\n\n### Setup script fails [#setup-script-fails]\n\nThe setup script runs inside the newly created workspace. It should only depend on files that exist in the workspace or paths exposed through Conductor environment variables.\n\nCheck these common causes:\n\n* The script expects ignored files such as `.env` to be copied automatically.\n* Dependencies are installed in the repository root but not in the workspace.\n* The script assumes a fixed absolute path.\n* A command needs authentication that is not available in the workspace shell.\n\nUse `$CONDUCTOR_ROOT_PATH` when the script needs to read from the repository root.\n\n### Action fails [#action-fails]\n\nAn action runs when you click the Run button.\n\nCheck these common causes:\n\n* The app uses a fixed port that is already in use.\n* Multiple workspaces are trying to use the same database, cache, or external service.\n* The action starts a background process with `&` instead of running the foreground process.\n* The command works in your root checkout but not in a workspace.\n\nUse `$CONDUCTOR_PORT` for workspace-specific ports.\n\n### Archive script fails [#archive-script-fails]\n\nThe archive script runs before Conductor archives a workspace. Keep it focused on cleanup for resources outside the workspace directory.\n\nIf the script fails, archive may not complete. Fix the command and try again.\n\n### Environment variables are missing [#environment-variables-are-missing]\n\nConductor exposes variables such as `CONDUCTOR_WORKSPACE_PATH`, `CONDUCTOR_ROOT_PATH`, and `CONDUCTOR_PORT` to terminals and scripts.\n\nFor the full list, see [Conductor environment variables](/docs/reference/environment-variables).\n\n## Agent issues [#agent-issues]\n\nUse this section when a chat is not progressing as expected.\n\n### The agent is waiting for input [#the-agent-is-waiting-for-input]\n\nIf the sidebar shows that a session needs input, open the workspace and answer the agent's question. The agent may be blocked on a product decision, missing context, or a requested approval.\n\n### The agent needs permission [#the-agent-needs-permission]\n\nReview the requested action before approving it. If the action is not needed, deny it or ask the agent to use a different approach.\n\nPermission prompts can appear for shell commands, tool use, MCP access, web access, or file changes.\n\n### Claude Code or Codex cannot find a command [#claude-code-or-codex-cannot-find-a-command]\n\nConductor bundles specific versions of Claude Code and Codex with the app to maximize compatibility. If your Claude Code or Codex setup depends on custom shell configuration, MCP configuration, or tools installed in your system `PATH`, use your system-installed agent executable instead.\n\nCursor sessions do not use a Cursor executable path. If Cursor cannot start, confirm that `CURSOR_API_KEY` is configured in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor).\n\nTry these steps:\n\n1. Open [`Settings` -> `Advanced`](https://app.conductor.build/settings/user/advanced).\n2. Find the `Claude Code executable path` or `Codex executable path` setting.\n3. Click `Use system Claude Code (from PATH)` or `Use system Codex (from PATH)` if the button is available.\n4. If the button is not available, enter the path returned by `which claude` or `which codex` in your terminal.\n5. Restart the affected chat.\n\n### The agent is in the wrong mode [#the-agent-is-in-the-wrong-mode]\n\nIf the agent keeps planning instead of editing, exit Plan Mode. If it starts editing before you want it to, enter Plan Mode and ask for a plan first.\n\nFor mode details, see [Agent modes](/docs/concepts/agent-modes).\n\n### The agent appears stuck [#the-agent-appears-stuck]\n\nTry these steps:\n\n1. Wait for any running command to finish.\n2. Check whether the agent is waiting for approval or user input.\n3. Cancel the current response if it is no longer useful.\n4. Start a new message with the exact next action you want.\n5. If the chat state is confused, start a new chat or use a checkpoint if available.\n\nUse [Checkpoints](/docs/reference/checkpoints) when you need to revert both code changes and later chat state.\n\n## Workspace issues [#workspace-issues]\n\nUse this section when a workspace cannot open, cannot be restored, or conflicts with another workspace.\n\n### Restore an archived workspace [#restore-an-archived-workspace]\n\nOpen the History pane from the sidebar. Find the archived workspace and restore it. Conductor restores the chat history and workspace state it has saved.\n\n### A workspace path is missing [#a-workspace-path-is-missing]\n\nIf a workspace directory was moved or deleted outside Conductor, Conductor may not be able to open it.\n\nUse the History pane to inspect the workspace. If restore fails, create a new workspace from the branch or pull request and continue from there.\n\n### A branch is already checked out [#a-branch-is-already-checked-out]\n\nA Git branch can only be checked out in one worktree at a time. If Conductor cannot create or switch to a branch, another workspace or local checkout may already be using it.\n\nUse one of these fixes:\n\n* Switch the other workspace to a different branch.\n* Create a new branch based on the existing one.\n* Archive the old workspace if you no longer need it.\n\n### Old nested `.conductor` workspaces [#old-nested-conductor-workspaces]\n\nOlder Conductor repositories may still have workspaces inside a `.conductor` folder under the repository root. Newer workspaces live under `~/conductor/workspaces/`.\n\nIf nested source directories confuse your build tools, remove and re-add the repository:\n\n1. Find the workspace name in the sidebar.\n2. Next to the name, click the \"Repository details\" button.\n3. Click \"Remove\". This deletes all workspaces and chats for that repository.\n4. Add the repository again.\n\nIf you still run into issues, contact [support@conductor.build](mailto:support@conductor.build).\n\n## Review and merge issues [#review-and-merge-issues]\n\nUse this section when a workspace is close to merge but Conductor still shows blockers.\n\n### Checks are failing [#checks-are-failing]\n\nOpen the Checks tab and inspect the failing item. If the failure includes logs or enough context, send it to the agent and ask for a fix.\n\nRun the relevant test locally before trying to merge again.\n\n### Comments are unresolved [#comments-are-unresolved]\n\nGitHub review comments and local review comments may appear in the Diff Viewer or Checks tab.\n\nFor each comment:\n\n1. Send it to the agent or fix it yourself.\n2. Confirm the diff changed as expected.\n3. Resolve the thread when the issue no longer applies.\n\n### Todos are blocking merge [#todos-are-blocking-merge]\n\nOpen the todos section and complete or remove each todo. Conductor blocks unfinished work so a workspace does not merge while known tasks are still open.\n\n### Merge conflicts [#merge-conflicts]\n\nPull the latest changes from the target branch, inspect conflicts, and ask the agent to resolve them if needed. Give the agent the conflict context and the intended behavior, not only the command output.\n\nAfter conflicts are resolved, rerun tests and review the diff before merging.\n\n## Known issues [#known-issues]\n\n### Why doesn't undo (cmd+z) work when I'm writing a message? [#why-doesnt-undo-cmdz-work-when-im-writing-a-message]\n\nThe library we use to do @-mentions breaks the undo history. We're looking into other solutions.\n\n### Why do I see garbage when I switch between terminal windows? [#why-do-i-see-garbage-when-i-switch-between-terminal-windows]\n\nWe're streaming output from your shell along to the UI, and at some point along the way, the stream is probably getting corrupted. We're still working to track down this bug.\n"
+}

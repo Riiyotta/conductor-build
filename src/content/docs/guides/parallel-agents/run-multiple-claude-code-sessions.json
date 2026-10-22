@@ -1,0 +1,918 @@
+{
+  "slug": "guides/parallel-agents/run-multiple-claude-code-sessions",
+  "url": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions",
+  "title": "Run multiple Claude Code sessions in parallel",
+  "description": "Use Conductor workspaces to run several Claude Code tasks at once without sharing one checkout, branch, or review path",
+  "meta": {
+    "title": "Run multiple Claude Code sessions in parallel | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/parallel-agents/run-multiple-claude-code-sessions/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Workspace"
+    },
+    {
+      "name": "Run multiple Claude Code sessions in parallel"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#choose-the-unit-of-parallel-work",
+      "title": "Choose the unit of parallel work"
+    },
+    {
+      "depth": 2,
+      "url": "#run-several-claude-code-tasks",
+      "title": "Run several Claude Code tasks"
+    },
+    {
+      "depth": 3,
+      "url": "#prepare-the-repository-once",
+      "title": "Prepare the repository once"
+    },
+    {
+      "depth": 3,
+      "url": "#create-one-workspace-per-independent-task",
+      "title": "Create one workspace per independent task"
+    },
+    {
+      "depth": 3,
+      "url": "#start-claude-code-in-each-workspace",
+      "title": "Start Claude Code in each workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#run-and-test-each-workspace-separately",
+      "title": "Run and test each workspace separately"
+    },
+    {
+      "depth": 3,
+      "url": "#review-and-merge-workspace-by-workspace",
+      "title": "Review and merge workspace by workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#keep-the-sessions-coordinated",
+      "title": "Keep the sessions coordinated"
+    },
+    {
+      "depth": 2,
+      "url": "#caveats",
+      "title": "Caveats"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/repositories/linking-multiple-directories",
+    "title": "Linking multiple directories",
+    "description": "Let one workspace read and edit code across related repositories"
+  },
+  "next": {
+    "url": "/docs/guides/parallel-agents/run-multiple-codex-sessions",
+    "title": "Run multiple Codex sessions in parallel",
+    "description": "Use Conductor workspaces to run several Codex tasks at once with separate branches, files, terminals, and review state"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when you want more than one Claude Code task moving at the same time."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In Conductor, the unit of independent Claude Code work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code also documents a native "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "claude --worktree"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " workflow for parallel CLI sessions. Use Conductor when you want that separation plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the decision model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For Claude Code's native worktree behavior, see the official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/worktrees",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code worktrees docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/overview",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code overview"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "UDlV5G0V0cM",
+      "title": "Managing multiple Claude Code sessions with Conductor",
+      "thumbnail": "/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "choose-the-unit-of-parallel-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose the unit of parallel work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you start more sessions, decide whether the work needs isolation or shared state."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use separate workspaces when each Claude Code task should become its own branch, review, or pull request. This is the common path for independent features, bug fixes, issue fanout, and experiments."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use multiple chats in one workspace when the agents need the same branch and current code state, such as one Claude Code session implementing while another reviews or fixes tests."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-several-claude-code-tasks",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run several Claude Code tasks"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "children": [
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "prepare-the-repository-once",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Prepare the repository once"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add the repository to Conductor and make sure a new workspace can run the project."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/files-to-copy"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Files to copy"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " for static gitignored files such as "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".env.local"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ". Use a "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts#setup-scripts"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "setup script"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-one-workspace-per-independent-task",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create one workspace per independent task"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a workspace with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command Shift N",
+                  "keys": [
+                    "⌘",
+                    "Shift",
+                    "N"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " or the "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "..."
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " button next to "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "New workspace"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch for the workspace, then keeps the Claude Code session attached to that workspace."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "src": "/assets/docs/images/git-worktrees-claude-code-workspace.png",
+              "alt": "Conductor workspace created for a Claude Code task, showing the new branch, copied files, and completed setup"
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "start-claude-code-in-each-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start Claude Code in each workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the workspace and start a Claude Code chat. Give each session a narrow prompt that names the task, expected outcome, constraints, and validation command."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Repeat this for each independent task you want running in parallel."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "run-and-test-each-workspace-separately",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Run and test each workspace separately"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use an "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts#run-scripts"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "action"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", terminal command, or "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts/spotlight-testing"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Spotlight testing"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " from the workspace that owns the change. Setup scripts and actions execute from the workspace directory."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If several workspaces need local servers at once, use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_PORT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " so each workspace gets a separate port range."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "review-and-merge-workspace-by-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Review and merge workspace by workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the Diff Viewer with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command Shift D",
+                  "keys": [
+                    "⌘",
+                    "Shift",
+                    "D"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " and inspect one workspace at a time."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use the "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/checks"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Checks tab"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "keep-the-sessions-coordinated",
+      "children": [
+        {
+          "type": "text",
+          "value": "Keep the sessions coordinated"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Give each Claude Code session a task that can finish independently."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Keep shared context in committed docs, repository instructions, or the workspace "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " directory, not only in one chat."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use one workspace when the agents need to see and edit the same in-progress branch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "caveats",
+      "children": [
+        {
+          "type": "text",
+          "value": "Caveats"
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Parallel Claude Code sessions still use your Claude account",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor runs Claude Code through the Claude Code setup available on your machine. Parallel work can still be limited by your account, model access, local resources, and Claude Code permissions."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Workspace isolation is not a security boundary",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Each workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/security-and-permissions"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Security and permissions"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Local setup and cloud setup can differ",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "scripts.setup"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " and use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_IS_LOCAL"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " for local-only steps."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Use Claude Code native worktrees when you want only the CLI workflow",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If you want to stay entirely in Claude Code's native surfaces, use Claude Code's "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "--worktree"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " workflow. Use Conductor when you want parallel Claude Code sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the lower-level Git model behind this workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run Claude Code with Git worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If you want the same workflow with OpenAI's agent, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when you want more than one Claude Code task moving at the same time.</p><p>In Conductor, the unit of independent Claude Code work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.</p><p>Claude Code also documents a native <code>claude --worktree</code> workflow for parallel CLI sessions. Use Conductor when you want that separation plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.</p><p>For the decision model, see <a href=\"/docs/concepts/parallel-agents\">Parallel agents</a>. For Claude Code's native worktree behavior, see the official <a href=\"https://code.claude.com/docs/en/worktrees\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code worktrees docs</a> and <a href=\"https://code.claude.com/docs/en/overview\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code overview</a>.</p><div data-youtube=\"UDlV5G0V0cM\" data-title=\"Managing multiple Claude Code sessions with Conductor\" data-thumbnail=\"/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp\"></div><h2 id=\"choose-the-unit-of-parallel-work\"><a href=\"#choose-the-unit-of-parallel-work\">Choose the unit of parallel work</a></h2><p>Before you start more sessions, decide whether the work needs isolation or shared state.</p><p>Use separate workspaces when each Claude Code task should become its own branch, review, or pull request. This is the common path for independent features, bug fixes, issue fanout, and experiments.</p><p>Use multiple chats in one workspace when the agents need the same branch and current code state, such as one Claude Code session implementing while another reviews or fixes tests.</p><h2 id=\"run-several-claude-code-tasks\"><a href=\"#run-several-claude-code-tasks\">Run several Claude Code tasks</a></h2><div data-steps><div data-step><h3 id=\"prepare-the-repository-once\"><a href=\"#prepare-the-repository-once\">Prepare the repository once</a></h3><p>Add the repository to Conductor and make sure a new workspace can run the project.</p><p>Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for static gitignored files such as <code>.env.local</code>. Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.</p></div><div data-step><h3 id=\"create-one-workspace-per-independent-task\"><a href=\"#create-one-workspace-per-independent-task\">Create one workspace per independent task</a></h3><p>Create a workspace with <span data-shortcut aria-label=\"Command Shift N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>N</kbd></span> or the <code>...</code> button next to <code>New workspace</code>.</p><p>Start from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch for the workspace, then keeps the Claude Code session attached to that workspace.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/git-worktrees-claude-code-workspace.png\" alt=\"Conductor workspace created for a Claude Code task, showing the new branch, copied files, and completed setup\" /></figure></div><div data-step><h3 id=\"start-claude-code-in-each-workspace\"><a href=\"#start-claude-code-in-each-workspace\">Start Claude Code in each workspace</a></h3><p>Open the workspace and start a Claude Code chat. Give each session a narrow prompt that names the task, expected outcome, constraints, and validation command.</p><p>Repeat this for each independent task you want running in parallel.</p></div><div data-step><h3 id=\"run-and-test-each-workspace-separately\"><a href=\"#run-and-test-each-workspace-separately\">Run and test each workspace separately</a></h3><p>Use an <a href=\"/docs/reference/scripts#run-scripts\">action</a>, terminal command, or <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a> from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.</p><p>If several workspaces need local servers at once, use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_PORT</code></a> so each workspace gets a separate port range.</p></div><div data-step><h3 id=\"review-and-merge-workspace-by-workspace\"><a href=\"#review-and-merge-workspace-by-workspace\">Review and merge workspace by workspace</a></h3><p>Open the Diff Viewer with <span data-shortcut aria-label=\"Command Shift D\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>D</kbd></span> and inspect one workspace at a time.</p><p>Use the <a href=\"/docs/reference/checks\">Checks tab</a> to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.</p></div></div><h2 id=\"keep-the-sessions-coordinated\"><a href=\"#keep-the-sessions-coordinated\">Keep the sessions coordinated</a></h2><ul><li>Give each Claude Code session a task that can finish independently.</li><li>Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.</li><li>Keep shared context in committed docs, repository instructions, or the workspace <code>.context</code> directory, not only in one chat.</li><li>Use one workspace when the agents need to see and edit the same in-progress branch.</li></ul><h2 id=\"caveats\"><a href=\"#caveats\">Caveats</a></h2><div data-accordions=\"single\"><details data-accordion><summary>Parallel Claude Code sessions still use your Claude account</summary><p>Conductor runs Claude Code through the Claude Code setup available on your machine. Parallel work can still be limited by your account, model access, local resources, and Claude Code permissions.</p></details><details data-accordion><summary>Workspace isolation is not a security boundary</summary><p>Each workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See <a href=\"/docs/reference/security-and-permissions\">Security and permissions</a>.</p></details><details data-accordion><summary>Local setup and cloud setup can differ</summary><p>Files to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in <code>scripts.setup</code> and use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_IS_LOCAL</code></a> for local-only steps.</p></details><details data-accordion><summary>Use Claude Code native worktrees when you want only the CLI workflow</summary><p>If you want to stay entirely in Claude Code's native surfaces, use Claude Code's <code>--worktree</code> workflow. Use Conductor when you want parallel Claude Code sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.</p></details></div><p>For the lower-level Git model behind this workflow, see <a href=\"/docs/guides/git-worktrees/run-claude-code-with-git-worktrees\">Run Claude Code with Git worktrees</a>. If you want the same workflow with OpenAI's agent, see <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>.</p>",
+  "text": "Use this guide when you want more than one Claude Code task moving at the same time.\nIn Conductor, the unit of independent Claude Code work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.\nClaude Code also documents a native claude --worktree workflow for parallel CLI sessions. Use Conductor when you want that separation plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\nFor the decision model, see Parallel agents. For Claude Code's native worktree behavior, see the official Claude Code worktrees docs and Claude Code overview.\nChoose the unit of parallel work\nBefore you start more sessions, decide whether the work needs isolation or shared state.\nUse separate workspaces when each Claude Code task should become its own branch, review, or pull request. This is the common path for independent features, bug fixes, issue fanout, and experiments.\nUse multiple chats in one workspace when the agents need the same branch and current code state, such as one Claude Code session implementing while another reviews or fixes tests.\nRun several Claude Code tasks\nPrepare the repository once\nAdd the repository to Conductor and make sure a new workspace can run the project.\nUse Files to copy for static gitignored files such as .env.local. Use a setup script for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.\nCreate one workspace per independent task\nCreate a workspace with ⌘ShiftN or the ... button next to New workspace.\nStart from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch for the workspace, then keeps the Claude Code session attached to that workspace.\nStart Claude Code in each workspace\nOpen the workspace and start a Claude Code chat. Give each session a narrow prompt that names the task, expected outcome, constraints, and validation command.\nRepeat this for each independent task you want running in parallel.\nRun and test each workspace separately\nUse an action, terminal command, or Spotlight testing from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.\nIf several workspaces need local servers at once, use CONDUCTOR_PORT so each workspace gets a separate port range.\nReview and merge workspace by workspace\nOpen the Diff Viewer with ⌘ShiftD and inspect one workspace at a time.\nUse the Checks tab to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.\nKeep the sessions coordinated\nGive each Claude Code session a task that can finish independently.\nAvoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.\nKeep shared context in committed docs, repository instructions, or the workspace .context directory, not only in one chat.\nUse one workspace when the agents need to see and edit the same in-progress branch.\nCaveats\nParallel Claude Code sessions still use your Claude accountConductor runs Claude Code through the Claude Code setup available on your machine. Parallel work can still be limited by your account, model access, local resources, and Claude Code permissions.\nWorkspace isolation is not a security boundaryEach workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See Security and permissions.\nLocal setup and cloud setup can differFiles to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in scripts.setup and use CONDUCTOR_IS_LOCAL for local-only steps.\nUse Claude Code native worktrees when you want only the CLI workflowIf you want to stay entirely in Claude Code's native surfaces, use Claude Code's --worktree workflow. Use Conductor when you want parallel Claude Code sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\nFor the lower-level Git model behind this workflow, see Run Claude Code with Git worktrees. If you want the same workflow with OpenAI's agent, see Run multiple Codex sessions in parallel.",
+  "markdown": "\n# Run multiple Claude Code sessions in parallel\n\n\n\nUse this guide when you want more than one Claude Code task moving at the same time.\n\nIn Conductor, the unit of independent Claude Code work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.\n\nClaude Code also documents a native `claude --worktree` workflow for parallel CLI sessions. Use Conductor when you want that separation plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\n\nFor the decision model, see [Parallel agents](/docs/concepts/parallel-agents). For Claude Code's native worktree behavior, see the official [Claude Code worktrees docs](https://code.claude.com/docs/en/worktrees) and [Claude Code overview](https://code.claude.com/docs/en/overview).\n\n\n\n\n## Choose the unit of parallel work [#choose-the-unit-of-parallel-work]\n\nBefore you start more sessions, decide whether the work needs isolation or shared state.\n\nUse separate workspaces when each Claude Code task should become its own branch, review, or pull request. This is the common path for independent features, bug fixes, issue fanout, and experiments.\n\nUse multiple chats in one workspace when the agents need the same branch and current code state, such as one Claude Code session implementing while another reviews or fixes tests.\n\n## Run several Claude Code tasks [#run-several-claude-code-tasks]\n\n### Prepare the repository once [#prepare-the-repository-once]\n\nAdd the repository to Conductor and make sure a new workspace can run the project.\n\nUse [Files to copy](/docs/reference/files-to-copy) for static gitignored files such as `.env.local`. Use a [setup script](/docs/reference/scripts#setup-scripts) for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.\n\n### Create one workspace per independent task [#create-one-workspace-per-independent-task]\n\nCreate a workspace with Command + Shift + N or the `...` button next to `New workspace`.\n\nStart from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch for the workspace, then keeps the Claude Code session attached to that workspace.\n\n\n\n\n### Start Claude Code in each workspace [#start-claude-code-in-each-workspace]\n\nOpen the workspace and start a Claude Code chat. Give each session a narrow prompt that names the task, expected outcome, constraints, and validation command.\n\nRepeat this for each independent task you want running in parallel.\n\n### Run and test each workspace separately [#run-and-test-each-workspace-separately]\n\nUse an [action](/docs/reference/scripts#run-scripts), terminal command, or [Spotlight testing](/docs/reference/scripts/spotlight-testing) from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.\n\nIf several workspaces need local servers at once, use [`CONDUCTOR_PORT`](/docs/reference/environment-variables) so each workspace gets a separate port range.\n\n### Review and merge workspace by workspace [#review-and-merge-workspace-by-workspace]\n\nOpen the Diff Viewer with Command + Shift + D and inspect one workspace at a time.\n\nUse the [Checks tab](/docs/reference/checks) to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.\n\n## Keep the sessions coordinated [#keep-the-sessions-coordinated]\n\n* Give each Claude Code session a task that can finish independently.\n* Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.\n* Keep shared context in committed docs, repository instructions, or the workspace `.context` directory, not only in one chat.\n* Use one workspace when the agents need to see and edit the same in-progress branch.\n\n## Caveats [#caveats]\n\nConductor runs Claude Code through the Claude Code setup available on your machine. Parallel work can still be limited by your account, model access, local resources, and Claude Code permissions.\n\nEach workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See [Security and permissions](/docs/reference/security-and-permissions).\n\nFiles to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in `scripts.setup` and use [`CONDUCTOR_IS_LOCAL`](/docs/reference/environment-variables) for local-only steps.\n\nIf you want to stay entirely in Claude Code's native surfaces, use Claude Code's `--worktree` workflow. Use Conductor when you want parallel Claude Code sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\n\nFor the lower-level Git model behind this workflow, see [Run Claude Code with Git worktrees](/docs/guides/git-worktrees/run-claude-code-with-git-worktrees). If you want the same workflow with OpenAI's agent, see [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions).\n"
+}

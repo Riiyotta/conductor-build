@@ -1,0 +1,36 @@
+{
+  "slug": "0.7.0-we-no-longer-burn-your-cpu-hopefully",
+  "version": "0.7.0",
+  "versionSlug": "0.7.0",
+  "title": "We no longer burn your CPU (hopefully)",
+  "fullTitle": "0.7.0: We no longer burn your CPU (hopefully)",
+  "date": "August 14th, 2025",
+  "dateISO": "2025-08-14",
+  "description": "Conductor 0.7.0 changelog - We no longer burn your CPU (hopefully)",
+  "summary": "Before",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.7.0/e81fcc29-eb0a-4f05-b628-826d8fa6db07.png",
+    "alt": "CleanShot 2025-08-14 at 13 39 03@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.7.0-we-no-longer-burn-your-cpu-hopefully/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.7.0-we-no-longer-burn-your-cpu-hopefully",
+  "sourceUrl": "https://www.conductor.build/changelog/0.7.0-we-no-longer-burn-your-cpu-hopefully",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Before</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-14 at 13 39 03@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.7.0/e81fcc29-eb0a-4f05-b628-826d8fa6db07.png\"/></figure>\n<p>After</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-14 at 13 40 03@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.7.0/fd98b248-2271-445a-8f45-187c368f765f.png\"/></figure>\n<p>We&#x27;ve also standardized our color palette for rendering code diffs.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-14 at 14 51 20@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.7.0/968733c0-f68e-4016-a688-190864c2d901.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added a close button to the git diff dialog</li>\n<li>Consistent syntax highlighting colors for diffs</li>\n<li>New sound effect: Choo-Choo!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a resource leak that would happen when a terminal shut down</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Clicking a file name in the chat will now open the file in your preferred editor</li>\n<li>Improved error message when the same repository is imported twice to Conductor</li>\n<li>Improved error message for repositories that don&#x27;t have a remote named <code>origin</code></li>\n</ul>",
+  "markdown": "\nBefore\n\n<img\n    width=\"756\"\n    height=\"108\"\n    alt=\"CleanShot 2025-08-14 at 13 39 03@2x\"\n    src=\"/assets/changelog/media/0.7.0/e81fcc29-eb0a-4f05-b628-826d8fa6db07.png\"\n/>\n\nAfter\n\n<img\n    width=\"748\"\n    height=\"106\"\n    alt=\"CleanShot 2025-08-14 at 13 40 03@2x\"\n    src=\"/assets/changelog/media/0.7.0/fd98b248-2271-445a-8f45-187c368f765f.png\"\n/>\n\nWe've also standardized our color palette for rendering code diffs.\n\n<img\n    width=\"1290\"\n    height=\"816\"\n    alt=\"CleanShot 2025-08-14 at 14 51 20@2x\"\n    src=\"/assets/changelog/media/0.7.0/968733c0-f68e-4016-a688-190864c2d901.png\"\n/>\n\n## Improvements\n\n- Added a close button to the git diff dialog\n- Consistent syntax highlighting colors for diffs\n- New sound effect: Choo-Choo!\n\n## Fixes\n\n- Fixed a resource leak that would happen when a terminal shut down\n\n## Misc\n\n- Clicking a file name in the chat will now open the file in your preferred editor\n- Improved error message when the same repository is imported twice to Conductor\n- Improved error message for repositories that don't have a remote named `origin`\n"
+}

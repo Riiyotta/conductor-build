@@ -1,0 +1,32 @@
+{
+  "slug": "0.36.2-model-picker-bug-fixes",
+  "version": "0.36.2",
+  "versionSlug": "0.36.2",
+  "title": "Model Picker, Bug Fixes",
+  "fullTitle": "0.36.2: Model Picker, Bug Fixes",
+  "date": "Feb 18th, 2026",
+  "dateISO": "2026-02-18",
+  "description": "Conductor 0.36.2 changelog - Model Picker, Bug Fixes",
+  "summary": "You can now change your default model directly from the model picker: Anthropic broke context usage info in the latest SDK release, so we've temporarily removed it.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.36.2/1771480180909-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.2-model-picker-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.2-model-picker-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.2-model-picker-bug-fixes",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now change your default model directly from the model picker:\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.2/1771480180909-image.png\"/></figure>\nAnthropic <a href=\"https://github.com/anthropics/claude-agent-sdk-typescript/issues/186\" target=\"_blank\" rel=\"noopener noreferrer\">broke context usage info</a> in the latest SDK release, so we&#x27;ve temporarily removed it.</p>\n<h4>Improvements</h4>\n<ul>\n<li>Added a button to copy the logs from a GitHub check</li>\n<li>Switching to a different agent type (e.g., from Claude to Codex) now immediately switches to a new tab, instead of waiting to generate a summary</li>\n<li>Clearer instructions for Claude’s ask-a-question tool</li>\n<li>More small rendering optimizations</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Fixed markdown preview scroll in file and diff viewers</li>\n<li>Fixed a crash that would occur when archiving workspaces</li>\n<li>Fixed layout shift when creating workspaces from PRs</li>\n</ul>\n<p>Lastly, a recommendation: please do not move or delete workspace or repo directories outside Conductor. It will get confused and have a bad time. We’ve added reminders about this in repo settings.</p>",
+  "markdown": "\nYou can now change your default model directly from the model picker:\n![image](/assets/changelog/media/0.36.2/1771480180909-image.png)\nAnthropic [broke context usage info](https://github.com/anthropics/claude-agent-sdk-typescript/issues/186) in the latest SDK release, so we've temporarily removed it.\n\n### Improvements\n\n- Added a button to copy the logs from a GitHub check\n- Switching to a different agent type (e.g., from Claude to Codex) now immediately switches to a new tab, instead of waiting to generate a summary\n- Clearer instructions for Claude’s ask-a-question tool\n- More small rendering optimizations\n\n### Fixes\n\n- Fixed markdown preview scroll in file and diff viewers\n- Fixed a crash that would occur when archiving workspaces\n- Fixed layout shift when creating workspaces from PRs\n\nLastly, a recommendation: please do not move or delete workspace or repo directories outside Conductor. It will get confused and have a bad time. We’ve added reminders about this in repo settings.\n"
+}

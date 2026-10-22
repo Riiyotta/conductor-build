@@ -1,0 +1,1046 @@
+{
+  "slug": "reference/harnesses",
+  "url": "/docs/reference/harnesses",
+  "title": "Overview",
+  "description": "Compare the harnesses Conductor can run and where each one is configured",
+  "meta": {
+    "title": "Overview | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/harnesses/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Overview"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#session-behavior",
+      "title": "Session behavior"
+    },
+    {
+      "depth": 2,
+      "url": "#provider-references",
+      "title": "Provider references"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/mcp",
+    "title": "MCP",
+    "description": "Configure Model Context Protocol servers for Claude Code, Codex, and Cursor Composer workflows"
+  },
+  "next": {
+    "url": "/docs/reference/harnesses/claude-code",
+    "title": "Claude Code",
+    "description": "Details for running Claude Code inside Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor can run Claude Code, Codex, Cursor, and OpenCode sessions in isolated workspaces. A harness is the agent runtime that writes code; Conductor is the workspace layer around it."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code, Codex, and OpenCode come bundled in Conductor. You do not need to install them separately. Cursor sessions use Cursor Agent through the Cursor API."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor is free to use. We do not bill or resell model usage. Harness usage is billed through the provider account or API key."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "div",
+      "attrs": {
+        "data-class": "not-prose my-8 space-y-10"
+      },
+      "children": [
+        {
+          "type": "element",
+          "tag": "section",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "h2",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "How the layers fit"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor sits above the agent runtimes. Each session chooses a harness, and each harness exposes models."
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "head": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Layer"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Role"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Example"
+                    }
+                  ]
+                }
+              ],
+              "rows": [
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Orchestrates repositories, workspaces, sessions, terminals, diffs, checks, and pull requests."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "One Mac app coordinating many isolated workspaces."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Harness"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Runs the agent loop and tool calls that expose a model to the workspace."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude Code, Codex, Cursor, OpenCode."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Agent session"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "A running chat attached to one workspace, one harness, and one selected model."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "One Codex tab on a branch."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Model"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Provides the language and coding capability used by the harness."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude, GPT, Composer, or an OpenCode provider model."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "section",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "h2",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Harness comparison"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The harness decides the agent runtime, setup path, model access, and billing owner."
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "head": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Harness"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Availability"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Setup"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Billing"
+                    }
+                  ]
+                }
+              ],
+              "rows": [
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/docs/reference/harnesses/claude-code"
+                        },
+                        "children": [
+                          {
+                            "type": "element",
+                            "tag": "svg",
+                            "attrs": {
+                              "role": "img",
+                              "viewBox": "0 0 24 24",
+                              "fill": "currentColor",
+                              "focusable": "false",
+                              "aria-hidden": "true"
+                            },
+                            "children": [
+                              {
+                                "type": "element",
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "element",
+                            "tag": "span",
+                            "attrs": {
+                              "data-class": "flex items-center gap-1.5 font-medium text-foreground"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "Claude Code"
+                              },
+                              {
+                                "type": "element",
+                                "tag": "svg",
+                                "attrs": {
+                                  "xmlns": "http://www.w3.org/2000/svg",
+                                  "width": 24,
+                                  "height": 24,
+                                  "viewBox": "0 0 24 24",
+                                  "fill": "none",
+                                  "stroke": "currentColor",
+                                  "stroke-width": 2,
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "aria-hidden": "true"
+                                },
+                                "children": [
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 7h10v10"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 17 17 7"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor includes a managed Claude Code executable. You can use your own Claude Code install instead."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude Code auth, Claude subscription access, API billing, or provider environment variables."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude subscription, Claude Console or API credits, or provider billing."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/docs/reference/harnesses/codex"
+                        },
+                        "children": [
+                          {
+                            "type": "element",
+                            "tag": "svg",
+                            "attrs": {
+                              "role": "img",
+                              "viewBox": "0 0 24 24",
+                              "fill": "currentColor",
+                              "focusable": "false",
+                              "aria-hidden": "true"
+                            },
+                            "children": [
+                              {
+                                "type": "element",
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654 2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "element",
+                            "tag": "span",
+                            "attrs": {
+                              "data-class": "flex items-center gap-1.5 font-medium text-foreground"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "Codex"
+                              },
+                              {
+                                "type": "element",
+                                "tag": "svg",
+                                "attrs": {
+                                  "xmlns": "http://www.w3.org/2000/svg",
+                                  "width": 24,
+                                  "height": 24,
+                                  "viewBox": "0 0 24 24",
+                                  "fill": "none",
+                                  "stroke": "currentColor",
+                                  "stroke-width": 2,
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "aria-hidden": "true"
+                                },
+                                "children": [
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 7h10v10"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 17 17 7"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor includes a managed Codex executable. You can use your own Codex install instead."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "OpenAI or Codex sign-in, API-key configuration, model access, and local Codex settings."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "OpenAI subscription, ChatGPT credits, or API-key billing."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/docs/reference/harnesses/cursor"
+                        },
+                        "children": [
+                          {
+                            "type": "element",
+                            "tag": "svg",
+                            "attrs": {
+                              "role": "img",
+                              "viewBox": "0 0 24 24",
+                              "fill": "currentColor",
+                              "focusable": "false",
+                              "aria-hidden": "true"
+                            },
+                            "children": [
+                              {
+                                "type": "element",
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "element",
+                            "tag": "span",
+                            "attrs": {
+                              "data-class": "flex items-center gap-1.5 font-medium text-foreground"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "Cursor"
+                              },
+                              {
+                                "type": "element",
+                                "tag": "svg",
+                                "attrs": {
+                                  "xmlns": "http://www.w3.org/2000/svg",
+                                  "width": 24,
+                                  "height": 24,
+                                  "viewBox": "0 0 24 24",
+                                  "fill": "none",
+                                  "stroke": "currentColor",
+                                  "stroke-width": 2,
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "aria-hidden": "true"
+                                },
+                                "children": [
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 7h10v10"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 17 17 7"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor Agent sessions through the Cursor API. Requires a Cursor API key."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "CURSOR_API_KEY"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " in "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " ->"
+                      },
+                      {
+                        "type": "text",
+                        "value": " "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Harnesses"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " -> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Cursor"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": ", or Conductor environment settings."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor plan, API usage pools, API key, and on-demand usage."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "a",
+                        "attrs": {
+                          "href": "/docs/reference/harnesses/opencode"
+                        },
+                        "children": [
+                          {
+                            "type": "element",
+                            "tag": "svg",
+                            "attrs": {
+                              "viewBox": "0 0 16 20",
+                              "fill": "currentColor",
+                              "focusable": "false",
+                              "aria-hidden": "true"
+                            },
+                            "children": [
+                              {
+                                "type": "element",
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "M12 16H4V8H12V16Z",
+                                  "opacity": "0.45"
+                                },
+                                "children": []
+                              },
+                              {
+                                "type": "element",
+                                "tag": "path",
+                                "attrs": {
+                                  "d": "M12 4H4V16H12V4ZM16 20H0V0H16V20Z"
+                                },
+                                "children": []
+                              }
+                            ]
+                          },
+                          {
+                            "type": "element",
+                            "tag": "span",
+                            "attrs": {
+                              "data-class": "flex items-center gap-1.5 font-medium text-foreground"
+                            },
+                            "children": [
+                              {
+                                "type": "text",
+                                "value": "OpenCode"
+                              },
+                              {
+                                "type": "element",
+                                "tag": "svg",
+                                "attrs": {
+                                  "xmlns": "http://www.w3.org/2000/svg",
+                                  "width": 24,
+                                  "height": 24,
+                                  "viewBox": "0 0 24 24",
+                                  "fill": "none",
+                                  "stroke": "currentColor",
+                                  "stroke-width": 2,
+                                  "stroke-linecap": "round",
+                                  "stroke-linejoin": "round",
+                                  "aria-hidden": "true"
+                                },
+                                "children": [
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 7h10v10"
+                                    },
+                                    "children": []
+                                  },
+                                  {
+                                    "type": "element",
+                                    "tag": "path",
+                                    "attrs": {
+                                      "d": "M7 17 17 7"
+                                    },
+                                    "children": []
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor includes a managed OpenCode executable. You can use your own OpenCode install instead."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " -> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Harnesses"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " ->"
+                      },
+                      {
+                        "type": "text",
+                        "value": " "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "OpenCode"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " for provider keys, visible models, and the OpenCode executable path."
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "The selected OpenCode provider, such as OpenCode Zen or Go, OpenRouter, Baseten, Cerebras, Vercel AI Gateway, ChatGPT, Copilot, or a local model."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "session-behavior",
+      "children": [
+        {
+          "type": "text",
+          "value": "Session behavior"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each chat tab uses one harness and one selected model."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Separate workspaces have separate branches and pull requests. Multiple chats in one workspace share the same branch and current code state."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For session controls, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/agent-modes"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Agent modes"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For setup examples, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "provider-references",
+      "children": [
+        {
+          "type": "text",
+          "value": "Provider references"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://support.claude.com/en/articles/11940350-claude-code-model-configuration",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Claude Code model configuration"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://developers.openai.com/codex/models",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Codex models"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://cursor.com/docs/api",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor API docs"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://opencode.ai/docs/",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "OpenCode docs"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor can run Claude Code, Codex, Cursor, and OpenCode sessions in isolated workspaces. A harness is the agent runtime that writes code; Conductor is the workspace layer around it.</p><p>Claude Code, Codex, and OpenCode come bundled in Conductor. You do not need to install them separately. Cursor sessions use Cursor Agent through the Cursor API.</p><p>Conductor is free to use. We do not bill or resell model usage. Harness usage is billed through the provider account or API key.</p><div data-class=\"not-prose my-8 space-y-10\"><section><h2>How the layers fit</h2><p>Conductor sits above the agent runtimes. Each session chooses a harness, and each harness exposes models.</p><table><thead><tr><th>Layer</th><th>Role</th><th>Example</th></tr></thead><tbody><tr><td>Conductor</td><td>Orchestrates repositories, workspaces, sessions, terminals, diffs, checks, and pull requests.</td><td>One Mac app coordinating many isolated workspaces.</td></tr><tr><td>Harness</td><td>Runs the agent loop and tool calls that expose a model to the workspace.</td><td>Claude Code, Codex, Cursor, OpenCode.</td></tr><tr><td>Agent session</td><td>A running chat attached to one workspace, one harness, and one selected model.</td><td>One Codex tab on a branch.</td></tr><tr><td>Model</td><td>Provides the language and coding capability used by the harness.</td><td>Claude, GPT, Composer, or an OpenCode provider model.</td></tr></tbody></table></section><section><h2>Harness comparison</h2><p>The harness decides the agent runtime, setup path, model access, and billing owner.</p><table><thead><tr><th>Harness</th><th>Availability</th><th>Setup</th><th>Billing</th></tr></thead><tbody><tr><td><a href=\"/docs/reference/harnesses/claude-code\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z\"></path></svg><span data-class=\"flex items-center gap-1.5 font-medium text-foreground\">Claude Code<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></span></a></td><td>Conductor includes a managed Claude Code executable. You can use your own Claude Code install instead.</td><td>Claude Code auth, Claude subscription access, API billing, or provider environment variables.</td><td>Claude subscription, Claude Console or API credits, or provider billing.</td></tr><tr><td><a href=\"/docs/reference/harnesses/codex\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654 2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z\"></path></svg><span data-class=\"flex items-center gap-1.5 font-medium text-foreground\">Codex<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></span></a></td><td>Conductor includes a managed Codex executable. You can use your own Codex install instead.</td><td>OpenAI or Codex sign-in, API-key configuration, model access, and local Codex settings.</td><td>OpenAI subscription, ChatGPT credits, or API-key billing.</td></tr><tr><td><a href=\"/docs/reference/harnesses/cursor\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23\"></path></svg><span data-class=\"flex items-center gap-1.5 font-medium text-foreground\">Cursor<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></span></a></td><td>Cursor Agent sessions through the Cursor API. Requires a Cursor API key.</td><td><code>CURSOR_API_KEY</code> in <code>Settings</code> -&gt; <code>Harnesses</code> -&gt; <code>Cursor</code>, or Conductor environment settings.</td><td>Cursor plan, API usage pools, API key, and on-demand usage.</td></tr><tr><td><a href=\"/docs/reference/harnesses/opencode\"><svg viewBox=\"0 0 16 20\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M12 16H4V8H12V16Z\" opacity=\"0.45\"></path><path d=\"M12 4H4V16H12V4ZM16 20H0V0H16V20Z\"></path></svg><span data-class=\"flex items-center gap-1.5 font-medium text-foreground\">OpenCode<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></span></a></td><td>Conductor includes a managed OpenCode executable. You can use your own OpenCode install instead.</td><td><code>Settings</code> -&gt; <code>Harnesses</code> -&gt; <code>OpenCode</code> for provider keys, visible models, and the OpenCode executable path.</td><td>The selected OpenCode provider, such as OpenCode Zen or Go, OpenRouter, Baseten, Cerebras, Vercel AI Gateway, ChatGPT, Copilot, or a local model.</td></tr></tbody></table></section></div><h2 id=\"session-behavior\"><a href=\"#session-behavior\">Session behavior</a></h2><p>Each chat tab uses one harness and one selected model.</p><p>Separate workspaces have separate branches and pull requests. Multiple chats in one workspace share the same branch and current code state.</p><p>For session controls, see <a href=\"/docs/concepts/agent-modes\">Agent modes</a>. For setup examples, see <a href=\"/docs/guides/providers\">Configure model providers</a>.</p><h2 id=\"provider-references\"><a href=\"#provider-references\">Provider references</a></h2><ul><li><a href=\"https://support.claude.com/en/articles/11940350-claude-code-model-configuration\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code model configuration</a></li><li><a href=\"https://developers.openai.com/codex/models\" target=\"_blank\" rel=\"noopener noreferrer\">Codex models</a></li><li><a href=\"https://cursor.com/docs/api\" target=\"_blank\" rel=\"noopener noreferrer\">Cursor API docs</a></li><li><a href=\"https://opencode.ai/docs/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenCode docs</a></li></ul>",
+  "text": "Conductor can run Claude Code, Codex, Cursor, and OpenCode sessions in isolated workspaces. A harness is the agent runtime that writes code; Conductor is the workspace layer around it.\nClaude Code, Codex, and OpenCode come bundled in Conductor. You do not need to install them separately. Cursor sessions use Cursor Agent through the Cursor API.\nConductor is free to use. We do not bill or resell model usage. Harness usage is billed through the provider account or API key.\nHow the layers fit\nConductor sits above the agent runtimes. Each session chooses a harness, and each harness exposes models.\nLayerRoleExampleConductorOrchestrates repositories, workspaces, sessions, terminals, diffs, checks, and pull requests.One Mac app coordinating many isolated workspaces.HarnessRuns the agent loop and tool calls that expose a model to the workspace.Claude Code, Codex, Cursor, OpenCode.Agent sessionA running chat attached to one workspace, one harness, and one selected model.One Codex tab on a branch.ModelProvides the language and coding capability used by the harness.Claude, GPT, Composer, or an OpenCode provider model.Harness comparison\nThe harness decides the agent runtime, setup path, model access, and billing owner.\nHarnessAvailabilitySetupBillingClaude CodeConductor includes a managed Claude Code executable. You can use your own Claude Code install instead.Claude Code auth, Claude subscription access, API billing, or provider environment variables.Claude subscription, Claude Console or API credits, or provider billing.CodexConductor includes a managed Codex executable. You can use your own Codex install instead.OpenAI or Codex sign-in, API-key configuration, model access, and local Codex settings.OpenAI subscription, ChatGPT credits, or API-key billing.CursorCursor Agent sessions through the Cursor API. Requires a Cursor API key.CURSOR_API_KEY in Settings -> Harnesses -> Cursor, or Conductor environment settings.Cursor plan, API usage pools, API key, and on-demand usage.OpenCodeConductor includes a managed OpenCode executable. You can use your own OpenCode install instead.Settings -> Harnesses -> OpenCode for provider keys, visible models, and the OpenCode executable path.The selected OpenCode provider, such as OpenCode Zen or Go, OpenRouter, Baseten, Cerebras, Vercel AI Gateway, ChatGPT, Copilot, or a local model.Session behavior\nEach chat tab uses one harness and one selected model.\nSeparate workspaces have separate branches and pull requests. Multiple chats in one workspace share the same branch and current code state.\nFor session controls, see Agent modes. For setup examples, see Configure model providers.\nProvider references\nClaude Code model configuration\nCodex models\nCursor API docs\nOpenCode docs",
+  "markdown": "\n# Overview\n\n\n\nConductor can run Claude Code, Codex, Cursor, and OpenCode sessions in isolated workspaces. A harness is the agent runtime that writes code; Conductor is the workspace layer around it.\n\nClaude Code, Codex, and OpenCode come bundled in Conductor. You do not need to install them separately. Cursor sessions use Cursor Agent through the Cursor API.\n\nConductor is free to use. We do not bill or resell model usage. Harness usage is billed through the provider account or API key.\n\n\n\n\n## Session behavior [#session-behavior]\n\nEach chat tab uses one harness and one selected model.\n\nSeparate workspaces have separate branches and pull requests. Multiple chats in one workspace share the same branch and current code state.\n\nFor session controls, see [Agent modes](/docs/concepts/agent-modes). For setup examples, see [Configure model providers](/docs/guides/providers).\n\n## Provider references [#provider-references]\n\n* [Claude Code model configuration](https://support.claude.com/en/articles/11940350-claude-code-model-configuration)\n* [Codex models](https://developers.openai.com/codex/models)\n* [Cursor API docs](https://cursor.com/docs/api)\n* [OpenCode docs](https://opencode.ai/docs/)\n"
+}

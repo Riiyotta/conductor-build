@@ -1,0 +1,36 @@
+{
+  "slug": "0.28.3-bug-fixes",
+  "version": "0.28.3",
+  "versionSlug": "0.28.3",
+  "title": "Bug Fixes",
+  "fullTitle": "0.28.3: Bug Fixes",
+  "date": "Dec 27th, 2025",
+  "dateISO": "2025-12-27",
+  "description": "Conductor 0.28.3 changelog - Bug Fixes",
+  "summary": "You can now select a target branch in the GitPanel:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.28.3/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png",
+    "alt": "CleanShot 2025-12-27 at 09.23.13@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.28.3-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.3-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.3-bug-fixes",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Target branch"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h4>Target branch</h4>\n<p>You can now select a target branch in the GitPanel:</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-27 at 09.23.13@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.3/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Drag to resize composer</li>\n<li>Simplified notification title to only show branch name</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed forking bug</li>\n<li>GitHub MCP no longer shows &quot;disconnected&quot; on startup</li>\n<li>Fixed comments on read-only files</li>\n</ul>",
+  "markdown": "\n### Target branch\n\nYou can now select a target branch in the GitPanel:\n\n<img\n    src=\"/assets/changelog/media/0.28.3/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png\"\n    alt=\"CleanShot 2025-12-27 at 09.23.13@2x.png\"\n/>\n\n## Improvements\n\n- Drag to resize composer\n- Simplified notification title to only show branch name\n\n## Fixes\n\n- Fixed forking bug\n- GitHub MCP no longer shows \"disconnected\" on startup\n- Fixed comments on read-only files\n"
+}

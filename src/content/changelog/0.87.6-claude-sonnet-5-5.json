@@ -1,0 +1,23 @@
+{
+  "slug": "0.87.6-claude-sonnet-5-5",
+  "version": "0.87.6",
+  "versionSlug": "0.87.6",
+  "title": "Claude Sonnet 5.5",
+  "fullTitle": "0.87.6: Claude Sonnet 5.5",
+  "date": "September 28, 2026",
+  "dateISO": "2026-09-28",
+  "description": "Conductor 0.87.6 changelog - Claude Sonnet 5.5",
+  "summary": "Claude Sonnet 5.5 is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/sonnet-5-5-0.87.6.png",
+    "alt": "Claude Sonnet 5.5"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.87.6-claude-sonnet-5-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.87.6-claude-sonnet-5-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.87.6-claude-sonnet-5-5",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Claude Sonnet 5.5\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/sonnet-5-5-0.87.6.png\"/></figure>\n<p>Claude Sonnet 5.5 is now available in Conductor!</p>",
+  "markdown": "\n![Claude Sonnet 5.5](/assets/changelog/images/sonnet-5-5-0.87.6.png)\n\nClaude Sonnet 5.5 is now available in Conductor!\n"
+}

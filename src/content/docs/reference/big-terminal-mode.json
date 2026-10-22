@@ -1,0 +1,607 @@
+{
+  "slug": "reference/big-terminal-mode",
+  "url": "/docs/reference/big-terminal-mode",
+  "title": "Big Terminal Mode",
+  "description": "Use a full terminal in the center panel",
+  "meta": {
+    "title": "Big Terminal Mode | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/big-terminal-mode/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Big Terminal Mode"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#behavior",
+      "title": "Behavior"
+    },
+    {
+      "depth": 2,
+      "url": "#agent-presets",
+      "title": "Agent presets"
+    },
+    {
+      "depth": 2,
+      "url": "#demo",
+      "title": "Demo"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/concepts/agent-modes",
+    "title": "Agent modes",
+    "description": "Previous Page"
+  },
+  "next": {
+    "url": "/docs/reference/agent-behavior",
+    "title": "Agent behavior",
+    "description": "Reference for agent instructions, modes, permissions, and checkpoints"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Big Terminal Mode replaces the center panel with a full terminal. Use it when you want a terminal-first workflow inside Conductor instead of launching only saved actions."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open Big Terminal Mode with "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command Shift T",
+          "keys": [
+            "⌘",
+            "Shift",
+            "T"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Enable Big Terminal Mode in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/experimental?scrollTo=experimental_big_terminal_mode",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Experimental"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "behavior",
+      "children": [
+        {
+          "type": "text",
+          "value": "Behavior"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Terminal sessions restore after restart."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "New terminals can use presets to start common commands or tools."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Big Terminal Mode can run any agent or command available in your terminal environment."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "agent-presets",
+      "children": [
+        {
+          "type": "text",
+          "value": "Agent presets"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Big Terminal Mode is useful when you want to run an agent directly from a terminal. New terminal tabs can start from a preset so the agent command runs automatically."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When tool approvals are off, Claude and Codex presets start in full-access mode. When tool approvals are on, those presets use CLI defaults instead."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Preset"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Tool approvals off"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Tool approvals on"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Claude"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude --dangerously-skip-permissions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex -c model_reasoning_effort=\"high\" --ask-for-approval never --sandbox danger-full-access"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex -c model_reasoning_effort=\"high\""
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "OpenCode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "opencode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "opencode"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Amp"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "amp"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "amp"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Pi"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "pi"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "pi"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Copilot"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "copilot --allow-all"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "copilot --allow-all"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Gemini"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "gemini -y"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "gemini -y"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "None"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "No command"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "No command"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For saved commands attached to the Run button, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "actions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "demo",
+      "children": [
+        {
+          "type": "text",
+          "value": "Demo"
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "KSQaIFJvGQQ",
+      "title": "Big Terminal Support Has Landed",
+      "thumbnail": "/assets/docs/youtube/KSQaIFJvGQQ-sddefault.webp",
+      "framed": true
+    }
+  ],
+  "html": "<p>Big Terminal Mode replaces the center panel with a full terminal. Use it when you want a terminal-first workflow inside Conductor instead of launching only saved actions.</p><p>Open Big Terminal Mode with <span data-shortcut aria-label=\"Command Shift T\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>T</kbd></span>.</p><p>Enable Big Terminal Mode in <a href=\"https://app.conductor.build/settings/user/experimental?scrollTo=experimental_big_terminal_mode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Experimental</code></a>.</p><h2 id=\"behavior\"><a href=\"#behavior\">Behavior</a></h2><ul><li>Terminal sessions restore after restart.</li><li>New terminals can use presets to start common commands or tools.</li><li>Big Terminal Mode can run any agent or command available in your terminal environment.</li></ul><h2 id=\"agent-presets\"><a href=\"#agent-presets\">Agent presets</a></h2><p>Big Terminal Mode is useful when you want to run an agent directly from a terminal. New terminal tabs can start from a preset so the agent command runs automatically.</p><p>When tool approvals are off, Claude and Codex presets start in full-access mode. When tool approvals are on, those presets use CLI defaults instead.</p><table><thead><tr><th>Preset</th><th>Tool approvals off</th><th>Tool approvals on</th></tr></thead><tbody><tr><td>Claude</td><td><code>claude --dangerously-skip-permissions</code></td><td><code>claude</code></td></tr><tr><td>Codex</td><td><code>codex -c model_reasoning_effort=\"high\" --ask-for-approval never --sandbox danger-full-access</code></td><td><code>codex -c model_reasoning_effort=\"high\"</code></td></tr><tr><td>OpenCode</td><td><code>opencode</code></td><td><code>opencode</code></td></tr><tr><td>Amp</td><td><code>amp</code></td><td><code>amp</code></td></tr><tr><td>Pi</td><td><code>pi</code></td><td><code>pi</code></td></tr><tr><td>Copilot</td><td><code>copilot --allow-all</code></td><td><code>copilot --allow-all</code></td></tr><tr><td>Gemini</td><td><code>gemini -y</code></td><td><code>gemini -y</code></td></tr><tr><td>None</td><td>No command</td><td>No command</td></tr></tbody></table><p>For saved commands attached to the Run button, use <a href=\"/docs/reference/scripts#run-scripts\">actions</a>.</p><h2 id=\"demo\"><a href=\"#demo\">Demo</a></h2><div data-youtube=\"KSQaIFJvGQQ\" data-title=\"Big Terminal Support Has Landed\" data-thumbnail=\"/assets/docs/youtube/KSQaIFJvGQQ-sddefault.webp\"></div>",
+  "text": "Big Terminal Mode replaces the center panel with a full terminal. Use it when you want a terminal-first workflow inside Conductor instead of launching only saved actions.\nOpen Big Terminal Mode with ⌘ShiftT.\nEnable Big Terminal Mode in Settings -> Experimental.\nBehavior\nTerminal sessions restore after restart.\nNew terminals can use presets to start common commands or tools.\nBig Terminal Mode can run any agent or command available in your terminal environment.\nAgent presets\nBig Terminal Mode is useful when you want to run an agent directly from a terminal. New terminal tabs can start from a preset so the agent command runs automatically.\nWhen tool approvals are off, Claude and Codex presets start in full-access mode. When tool approvals are on, those presets use CLI defaults instead.\nPresetTool approvals offTool approvals onClaudeclaude --dangerously-skip-permissionsclaudeCodexcodex -c model_reasoning_effort=\"high\" --ask-for-approval never --sandbox danger-full-accesscodex -c model_reasoning_effort=\"high\"OpenCodeopencodeopencodeAmpampampPipipiCopilotcopilot --allow-allcopilot --allow-allGeminigemini -ygemini -yNoneNo commandNo commandFor saved commands attached to the Run button, use actions.\nDemo",
+  "markdown": "\n# Big Terminal Mode\n\n\n\nBig Terminal Mode replaces the center panel with a full terminal. Use it when you want a terminal-first workflow inside Conductor instead of launching only saved actions.\n\nOpen Big Terminal Mode with Command + Shift + T.\n\nEnable Big Terminal Mode in [`Settings` -> `Experimental`](https://app.conductor.build/settings/user/experimental?scrollTo=experimental_big_terminal_mode).\n\n## Behavior [#behavior]\n\n* Terminal sessions restore after restart.\n* New terminals can use presets to start common commands or tools.\n* Big Terminal Mode can run any agent or command available in your terminal environment.\n\n## Agent presets [#agent-presets]\n\nBig Terminal Mode is useful when you want to run an agent directly from a terminal. New terminal tabs can start from a preset so the agent command runs automatically.\n\nWhen tool approvals are off, Claude and Codex presets start in full-access mode. When tool approvals are on, those presets use CLI defaults instead.\n\n| Preset   | Tool approvals off                                                                             | Tool approvals on                        |\n| -------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------- |\n| Claude   | `claude --dangerously-skip-permissions`                                                        | `claude`                                 |\n| Codex    | `codex -c model_reasoning_effort=\"high\" --ask-for-approval never --sandbox danger-full-access` | `codex -c model_reasoning_effort=\"high\"` |\n| OpenCode | `opencode`                                                                                     | `opencode`                               |\n| Amp      | `amp`                                                                                          | `amp`                                    |\n| Pi       | `pi`                                                                                           | `pi`                                     |\n| Copilot  | `copilot --allow-all`                                                                          | `copilot --allow-all`                    |\n| Gemini   | `gemini -y`                                                                                    | `gemini -y`                              |\n| None     | No command                                                                                     | No command                               |\n\nFor saved commands attached to the Run button, use [actions](/docs/reference/scripts#run-scripts).\n\n## Demo [#demo]\n\n\n"
+}

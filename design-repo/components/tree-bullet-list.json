@@ -1,0 +1,27 @@
+{
+  "id": "tree-bullet-list",
+  "kind": "component",
+  "purpose": "`└` glyph + text two-column list used for plan features and FAQ answers.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Pricing.jsx:279",
+      "quote": "<dl className=\"space-y-6\">"
+    }
+  ],
+  "tokens": [
+    "{semantic.text.secondary}"
+  ],
+  "variants": [
+    "plan-features",
+    "faq-answer"
+  ],
+  "states": [
+    "static"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:114",
+      "quote": "| `└` tree-bullet list (`grid grid-cols-[auto_1fr] gap-x-2`) | pricing plan features and FAQ answers |"
+    }
+  ]
+}

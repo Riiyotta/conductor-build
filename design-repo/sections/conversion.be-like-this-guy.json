@@ -1,0 +1,124 @@
+{
+  "id": "conversion.be-like-this-guy",
+  "category": "CONVERSION",
+  "iaSections": [
+    "conversion.be-like-this-guy"
+  ],
+  "purpose": "Closing download CTA over a full-bleed image.",
+  "implementedBy": [
+    {
+      "ref": "src/components/CTA.jsx:11",
+      "quote": "/assets/img/conductor-orchestra.webp"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:268",
+      "quote": "## 10. CTA: \"Be like this guy.\""
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "conversion.be-like-this-guy"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "headingLines": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 5,
+        "required": true,
+        "observedMaxWords": 4
+      },
+      "minItems": 1,
+      "maxItems": 2,
+      "required": true
+    },
+    "buttonLabel": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "background": {
+      "type": "media",
+      "roles": [
+        "decorative-background"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "icon-swap-hover"
+    ],
+    "defaultPatterns": [
+      "icon-swap-hover"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:279",
+        "quote": "`transition: all 200ms cubic-bezier(.4,0,.2,1)`. Hover bg stays #fff."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "minHeight",
+          "value": "384px"
+        },
+        {
+          "property": "h2",
+          "value": "24px/32px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "minHeight",
+          "value": "512px"
+        },
+        {
+          "property": "h2",
+          "value": "36px/40px"
+        }
+      ]
+    },
+    {
+      "minWidth": 1280,
+      "changes": [
+        {
+          "property": "edgeFades",
+          "value": "96px white fades left and right"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": [
+    "decorative-background"
+  ]
+}

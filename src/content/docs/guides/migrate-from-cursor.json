@@ -1,0 +1,2202 @@
+{
+  "slug": "guides/migrate-from-cursor",
+  "url": "/docs/guides/migrate-from-cursor",
+  "title": "Work with Cursor",
+  "description": "Run Cursor sessions in Conductor, open workspaces in Cursor or VS Code, and bring Cursor MCP servers and rules into Conductor",
+  "meta": {
+    "title": "Work with Cursor | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/migrate-from-cursor/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Setup"
+    },
+    {
+      "name": "Work with Cursor"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#run-cursor-in-conductor",
+      "title": "Run Cursor in Conductor"
+    },
+    {
+      "depth": 2,
+      "url": "#open-workspaces-in-cursor-or-vs-code",
+      "title": "Open workspaces in Cursor or VS Code"
+    },
+    {
+      "depth": 2,
+      "url": "#name-cursor-windows-by-branch",
+      "title": "Name Cursor windows by branch"
+    },
+    {
+      "depth": 2,
+      "url": "#migrate-mcp-servers",
+      "title": "Migrate MCP servers"
+    },
+    {
+      "depth": 3,
+      "url": "#global-mcp-servers",
+      "title": "Global MCP servers"
+    },
+    {
+      "depth": 3,
+      "url": "#project-level-mcp-servers",
+      "title": "Project-level MCP servers"
+    },
+    {
+      "depth": 2,
+      "url": "#migrate-rules-and-instructions",
+      "title": "Migrate rules and instructions"
+    },
+    {
+      "depth": 3,
+      "url": "#cursorrules",
+      "title": ".cursorrules"
+    },
+    {
+      "depth": 3,
+      "url": "#cursorrulesmdc",
+      "title": ".cursor/rules/*.mdc"
+    },
+    {
+      "depth": 3,
+      "url": "#global-instructions",
+      "title": "Global instructions"
+    },
+    {
+      "depth": 2,
+      "url": "#use-the-migration-script",
+      "title": "Use the migration script"
+    },
+    {
+      "depth": 2,
+      "url": "#quick-reference",
+      "title": "Quick reference"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/configure-mcp-servers",
+    "title": "Set up MCP servers",
+    "description": "Add MCP servers for Claude Code, Codex, and Cursor Composer workflows so agents can use shared tools and context"
+  },
+  "next": {
+    "url": "/docs/guides/repositories/monorepos",
+    "title": "Work in monorepos",
+    "description": "Control which directories agents can see in a monorepo workspace"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when you want to run Cursor as a Conductor session, open Conductor workspaces in Cursor, keep Cursor windows easy to identify, or migrate Cursor MCP servers and rules into Conductor."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-cursor-in-conductor",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run Cursor in Conductor"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions run inside Conductor workspaces, so the chat, branch, terminal, diff, checks, pull request, and archive state stay tied to the workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor supports Cursor's Composer 2.5 for Cursor sessions."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before starting a Cursor chat, add your Cursor API key in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". You can also set "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor's environment settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For parallel work, use one workspace per independent Cursor task. See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-cursor-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Cursor sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "open-workspaces-in-cursor-or-vs-code",
+      "children": [
+        {
+          "type": "text",
+          "value": "Open workspaces in Cursor or VS Code"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "From a workspace, click "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open In"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or press "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command O",
+          "keys": [
+            "⌘",
+            "O"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": " to open the workspace directory in Cursor or VS Code."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the workspace is already open, Conductor focuses the existing editor window."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "name-cursor-windows-by-branch",
+      "children": [
+        {
+          "type": "text",
+          "value": "Name Cursor windows by branch"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When several workspaces are open in Cursor, use the window title to show the branch and workspace name."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In Cursor, open User Settings with "
+            },
+            {
+              "type": "shortcut",
+              "label": "Command Shift P",
+              "keys": [
+                "⌘",
+                "Shift",
+                "P"
+              ],
+              "separator": "+"
+            },
+            {
+              "type": "text",
+              "value": ", then choose "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Preferences: Open User Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Search for "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "window.title"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Set it to:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "${activeRepositoryBranchName}${separator}${rootName}${separator}${profileName}",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "${activeRepositoryBranchName}${separator}${rootName}${separator}${profileName}"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor will show the branch name in the title bar, like:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "my-feature — tokyo",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "my-feature — tokyo"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "migrate-mcp-servers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Migrate MCP servers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor stores MCP config in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " (global) and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " (project-level). Keep that config when you open Conductor workspaces in Cursor and want Cursor Composer MCP tools. For Claude Code and Codex sessions in Conductor, use Claude Code and Codex MCP config for those agents."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "global-mcp-servers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Global MCP servers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy your servers from "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " into "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.claude.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "codeTabs",
+      "defaultValue": "Cursor (~/.cursor/mcp.json)",
+      "tabs": [
+        {
+          "value": "Cursor (~/.cursor/mcp.json)",
+          "label": "Cursor (~/.cursor/mcp.json)",
+          "children": [
+            {
+              "type": "code",
+              "lang": "json",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "{",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    \"mcpServers\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        \"context7\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"command\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"npx\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ",",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"args\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": [",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"-y\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ", ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"@upstash/context7-mcp\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "}",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": "Conductor (~/.claude.json)",
+          "label": "Conductor (~/.claude.json)",
+          "children": [
+            {
+              "type": "code",
+              "lang": "json",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "{",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    \"mcpServers\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        \"context7\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"command\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"npx\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ",",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"args\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": [",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"-y\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ", ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"@upstash/context7-mcp\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "}",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The format is the same. Copy the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "mcpServers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " object into "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.claude.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "project-level-mcp-servers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Project-level MCP servers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy from "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in your project root:"
+        }
+      ]
+    },
+    {
+      "type": "codeTabs",
+      "defaultValue": "Cursor (.cursor/mcp.json)",
+      "tabs": [
+        {
+          "value": "Cursor (.cursor/mcp.json)",
+          "label": "Cursor (.cursor/mcp.json)",
+          "children": [
+            {
+              "type": "code",
+              "lang": "json",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "{",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    \"mcpServers\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        \"my-project-server\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"command\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"node\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ",",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"args\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": [",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"./tools/mcp-server.js\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "}",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "value": "Conductor (.mcp.json)",
+          "label": "Conductor (.mcp.json)",
+          "children": [
+            {
+              "type": "code",
+              "lang": "json",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "{",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    \"mcpServers\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        \"my-project-server\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": {",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"command\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"node\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": ",",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "            \"args\"",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": ": [",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"./tools/mcp-server.js\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "        }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "    }",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "}",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also add MCP servers for Claude Code, Codex, and Cursor Composer directly. See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/configure-mcp-servers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up MCP servers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the step-by-step flow and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/mcp"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for scopes, transports, and syntax."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "migrate-rules-and-instructions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Migrate rules and instructions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor uses "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursorrules"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/rules/*.mdc"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " files for custom instructions. In Conductor, use shared repository instructions such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CLAUDE.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or project prompts in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "cursorrules",
+      "children": [
+        {
+          "type": "text",
+          "value": ".cursorrules"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy the contents of your "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursorrules"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file into "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CLAUDE.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the root of your project:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "cp .cursorrules AGENTS.md",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "cp",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " .cursorrules",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " AGENTS.md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "cursorrulesmdc",
+      "children": [
+        {
+          "type": "text",
+          "value": ".cursor/rules/*.mdc"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".mdc"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " files have YAML frontmatter that you'll want to strip. Copy just the markdown body into "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CLAUDE.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "for f in .cursor/rules/*.mdc; do\n  echo \"\" >> AGENTS.md\n  # Strip frontmatter (content between --- markers)\n  sed '1{/^---$/!q;};1,/^---$/d' \"$f\" >> AGENTS.md\ndone",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "for",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " f ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "in",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " .cursor/rules/*.mdc",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "; ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "do",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  echo",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " AGENTS.md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  # Strip frontmatter (content between --- markers)",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  sed",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " '1{/^---$/!q;};1,/^---$/d'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$f",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " AGENTS.md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "done",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "global-instructions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Global instructions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor's global AI rules can move into user-level agent instructions. For Claude Code, that file is "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.claude/CLAUDE.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "# Create global instructions\nmkdir -p ~/.claude\necho \"Your global instructions here\" > ~/.claude/CLAUDE.md",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "# Create global instructions",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "mkdir",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -p",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " ~/.claude",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "echo",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Your global instructions here\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " ~/.claude/CLAUDE.md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "use-the-migration-script",
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the migration script"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "We've published a script that automates all of the above. It handles global and project-level MCP servers, "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursorrules"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".mdc"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " rule files."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh | bash",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -fsSL",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " |",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " bash",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Or to preview what it would do without making changes:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh -o migrate.sh\nchmod +x migrate.sh\n./migrate.sh --dry-run",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -fsSL",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -o",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " migrate.sh",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "chmod",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " +x",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " migrate.sh",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "./migrate.sh",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " --dry-run",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The script won't overwrite existing MCP servers or CLAUDE.md content — it\nonly appends."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "quick-reference",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quick reference"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Cursor"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor / Claude Code"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.cursor/mcp.json"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.claude.json"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.codex/config.toml"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".cursor/mcp.json"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".mcp.json"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".codex/config.toml"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".cursorrules"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "AGENTS.md"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CLAUDE.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "AGENTS.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".cursor/rules/*.mdc"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "AGENTS.md"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CLAUDE.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "AGENTS.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Global AI rules"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.claude/CLAUDE.md"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.codex/AGENTS.md"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when you want to run Cursor as a Conductor session, open Conductor workspaces in Cursor, keep Cursor windows easy to identify, or migrate Cursor MCP servers and rules into Conductor.</p><h2 id=\"run-cursor-in-conductor\"><a href=\"#run-cursor-in-conductor\">Run Cursor in Conductor</a></h2><p>Cursor sessions run inside Conductor workspaces, so the chat, branch, terminal, diff, checks, pull request, and archive state stay tied to the workspace.</p><p>Conductor supports Cursor's Composer 2.5 for Cursor sessions.</p><p>Before starting a Cursor chat, add your Cursor API key in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>. You can also set <code>CURSOR_API_KEY</code> in Conductor's environment settings.</p><p>For parallel work, use one workspace per independent Cursor task. See <a href=\"/docs/guides/parallel-agents/run-multiple-cursor-sessions\">Run multiple Cursor sessions in parallel</a>.</p><h2 id=\"open-workspaces-in-cursor-or-vs-code\"><a href=\"#open-workspaces-in-cursor-or-vs-code\">Open workspaces in Cursor or VS Code</a></h2><p>From a workspace, click <code>Open In</code> or press <span data-shortcut aria-label=\"Command O\"><kbd>⌘</kbd><span data-sep>+</span><kbd>O</kbd></span> to open the workspace directory in Cursor or VS Code.</p><p>If the workspace is already open, Conductor focuses the existing editor window.</p><h2 id=\"name-cursor-windows-by-branch\"><a href=\"#name-cursor-windows-by-branch\">Name Cursor windows by branch</a></h2><p>When several workspaces are open in Cursor, use the window title to show the branch and workspace name.</p><ol><li>In Cursor, open User Settings with <span data-shortcut aria-label=\"Command Shift P\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>P</kbd></span>, then choose <code>Preferences: Open User Settings</code>.</li><li>Search for <code>window.title</code>.</li><li>Set it to:</li></ol><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">${activeRepositoryBranchName}${separator}${rootName}${separator}${profileName}</span></code></pre></figure><p>Cursor will show the branch name in the title bar, like:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">my-feature — tokyo</span></code></pre></figure><h2 id=\"migrate-mcp-servers\"><a href=\"#migrate-mcp-servers\">Migrate MCP servers</a></h2><p>Cursor stores MCP config in <code>~/.cursor/mcp.json</code> (global) and <code>.cursor/mcp.json</code> (project-level). Keep that config when you open Conductor workspaces in Cursor and want Cursor Composer MCP tools. For Claude Code and Codex sessions in Conductor, use Claude Code and Codex MCP config for those agents.</p><h3 id=\"global-mcp-servers\"><a href=\"#global-mcp-servers\">Global MCP servers</a></h3><p>Copy your servers from <code>~/.cursor/mcp.json</code> into <code>~/.claude.json</code>:</p><div data-code-tabs data-default=\"Cursor (~/.cursor/mcp.json)\"><div data-tab=\"Cursor (~/.cursor/mcp.json)\"><figure data-code data-lang=\"json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"context7\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"command\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"npx\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"args\"</span><span style=\"color:#24292E\">: [</span><span style=\"color:#032F62\">\"-y\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"@upstash/context7-mcp\"</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure></div><div data-tab=\"Conductor (~/.claude.json)\"><figure data-code data-lang=\"json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"context7\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"command\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"npx\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"args\"</span><span style=\"color:#24292E\">: [</span><span style=\"color:#032F62\">\"-y\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"@upstash/context7-mcp\"</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure></div></div><p>The format is the same. Copy the <code>mcpServers</code> object into <code>~/.claude.json</code>.</p><h3 id=\"project-level-mcp-servers\"><a href=\"#project-level-mcp-servers\">Project-level MCP servers</a></h3><p>Copy from <code>.cursor/mcp.json</code> to <code>.mcp.json</code> in your project root:</p><div data-code-tabs data-default=\"Cursor (.cursor/mcp.json)\"><div data-tab=\"Cursor (.cursor/mcp.json)\"><figure data-code data-lang=\"json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"my-project-server\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"command\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"node\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"args\"</span><span style=\"color:#24292E\">: [</span><span style=\"color:#032F62\">\"./tools/mcp-server.js\"</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure></div><div data-tab=\"Conductor (.mcp.json)\"><figure data-code data-lang=\"json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"my-project-server\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"command\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"node\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"args\"</span><span style=\"color:#24292E\">: [</span><span style=\"color:#032F62\">\"./tools/mcp-server.js\"</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure></div></div><p>You can also add MCP servers for Claude Code, Codex, and Cursor Composer directly. See <a href=\"/docs/guides/configure-mcp-servers\">Set up MCP servers</a> for the step-by-step flow and <a href=\"/docs/reference/mcp\">MCP</a> for scopes, transports, and syntax.</p><h2 id=\"migrate-rules-and-instructions\"><a href=\"#migrate-rules-and-instructions\">Migrate rules and instructions</a></h2><p>Cursor uses <code>.cursorrules</code> or <code>.cursor/rules/*.mdc</code> files for custom instructions. In Conductor, use shared repository instructions such as <code>AGENTS.md</code>, <code>CLAUDE.md</code>, or project prompts in <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a>.</p><h3 id=\"cursorrules\"><a href=\"#cursorrules\">.cursorrules</a></h3><p>Copy the contents of your <code>.cursorrules</code> file into <code>AGENTS.md</code> or <code>CLAUDE.md</code> at the root of your project:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">cp</span><span style=\"color:#032F62\"> .cursorrules</span><span style=\"color:#032F62\"> AGENTS.md</span></span></code></pre></figure><h3 id=\"cursorrulesmdc\"><a href=\"#cursorrulesmdc\">.cursor/rules/*.mdc</a></h3><p><code>.mdc</code> files have YAML frontmatter that you'll want to strip. Copy just the markdown body into <code>AGENTS.md</code> or <code>CLAUDE.md</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#D73A49\">for</span><span style=\"color:#24292E\"> f </span><span style=\"color:#D73A49\">in</span><span style=\"color:#032F62\"> .cursor/rules/*.mdc</span><span style=\"color:#24292E\">; </span><span style=\"color:#D73A49\">do</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  echo</span><span style=\"color:#032F62\"> \"\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> AGENTS.md</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\">  # Strip frontmatter (content between --- markers)</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">  sed</span><span style=\"color:#032F62\"> '1{/^---$/!q;};1,/^---$/d'</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$f</span><span style=\"color:#032F62\">\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> AGENTS.md</span></span>\n<span class=\"line\"><span style=\"color:#D73A49\">done</span></span></code></pre></figure><h3 id=\"global-instructions\"><a href=\"#global-instructions\">Global instructions</a></h3><p>Cursor's global AI rules can move into user-level agent instructions. For Claude Code, that file is <code>~/.claude/CLAUDE.md</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6A737D\"># Create global instructions</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">mkdir</span><span style=\"color:#005CC5\"> -p</span><span style=\"color:#032F62\"> ~/.claude</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">echo</span><span style=\"color:#032F62\"> \"Your global instructions here\"</span><span style=\"color:#D73A49\"> &gt;</span><span style=\"color:#032F62\"> ~/.claude/CLAUDE.md</span></span></code></pre></figure><h2 id=\"use-the-migration-script\"><a href=\"#use-the-migration-script\">Use the migration script</a></h2><p>We've published a script that automates all of the above. It handles global and project-level MCP servers, <code>.cursorrules</code>, and <code>.mdc</code> rule files.</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -fsSL</span><span style=\"color:#032F62\"> https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh</span><span style=\"color:#D73A49\"> |</span><span style=\"color:#6F42C1\"> bash</span></span></code></pre></figure><p>Or to preview what it would do without making changes:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -fsSL</span><span style=\"color:#032F62\"> https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh</span><span style=\"color:#005CC5\"> -o</span><span style=\"color:#032F62\"> migrate.sh</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">chmod</span><span style=\"color:#032F62\"> +x</span><span style=\"color:#032F62\"> migrate.sh</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">./migrate.sh</span><span style=\"color:#005CC5\"> --dry-run</span></span></code></pre></figure><div role=\"note\" data-callout=\"info\"><p>The script won't overwrite existing MCP servers or CLAUDE.md content — it\nonly appends.</p></div><h2 id=\"quick-reference\"><a href=\"#quick-reference\">Quick reference</a></h2><table><thead><tr><th>Cursor</th><th>Conductor / Claude Code</th><th>Codex</th></tr></thead><tbody><tr><td><code>~/.cursor/mcp.json</code></td><td><code>~/.claude.json</code></td><td><code>~/.codex/config.toml</code></td></tr><tr><td><code>.cursor/mcp.json</code></td><td><code>.mcp.json</code></td><td><code>.codex/config.toml</code></td></tr><tr><td><code>.cursorrules</code></td><td><code>AGENTS.md</code> or <code>CLAUDE.md</code></td><td><code>AGENTS.md</code></td></tr><tr><td><code>.cursor/rules/*.mdc</code></td><td><code>AGENTS.md</code> or <code>CLAUDE.md</code></td><td><code>AGENTS.md</code></td></tr><tr><td>Global AI rules</td><td><code>~/.claude/CLAUDE.md</code></td><td><code>~/.codex/AGENTS.md</code></td></tr></tbody></table>",
+  "text": "Use this guide when you want to run Cursor as a Conductor session, open Conductor workspaces in Cursor, keep Cursor windows easy to identify, or migrate Cursor MCP servers and rules into Conductor.\nRun Cursor in Conductor\nCursor sessions run inside Conductor workspaces, so the chat, branch, terminal, diff, checks, pull request, and archive state stay tied to the workspace.\nConductor supports Cursor's Composer 2.5 for Cursor sessions.\nBefore starting a Cursor chat, add your Cursor API key in Settings -> Agents -> Cursor. You can also set CURSOR_API_KEY in Conductor's environment settings.\nFor parallel work, use one workspace per independent Cursor task. See Run multiple Cursor sessions in parallel.\nOpen workspaces in Cursor or VS Code\nFrom a workspace, click Open In or press ⌘O to open the workspace directory in Cursor or VS Code.\nIf the workspace is already open, Conductor focuses the existing editor window.\nName Cursor windows by branch\nWhen several workspaces are open in Cursor, use the window title to show the branch and workspace name.\nIn Cursor, open User Settings with ⌘ShiftP, then choose Preferences: Open User Settings.\nSearch for window.title.\nSet it to:\n${activeRepositoryBranchName}${separator}${rootName}${separator}${profileName}Cursor will show the branch name in the title bar, like:\nmy-feature — tokyoMigrate MCP servers\nCursor stores MCP config in ~/.cursor/mcp.json (global) and .cursor/mcp.json (project-level). Keep that config when you open Conductor workspaces in Cursor and want Cursor Composer MCP tools. For Claude Code and Codex sessions in Conductor, use Claude Code and Codex MCP config for those agents.\nGlobal MCP servers\nCopy your servers from ~/.cursor/mcp.json into ~/.claude.json:\n{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}The format is the same. Copy the mcpServers object into ~/.claude.json.\nProject-level MCP servers\nCopy from .cursor/mcp.json to .mcp.json in your project root:\n{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}You can also add MCP servers for Claude Code, Codex, and Cursor Composer directly. See Set up MCP servers for the step-by-step flow and MCP for scopes, transports, and syntax.\nMigrate rules and instructions\nCursor uses .cursorrules or .cursor/rules/*.mdc files for custom instructions. In Conductor, use shared repository instructions such as AGENTS.md, CLAUDE.md, or project prompts in Repository Settings.\n.cursorrules\nCopy the contents of your .cursorrules file into AGENTS.md or CLAUDE.md at the root of your project:\ncp .cursorrules AGENTS.md.cursor/rules/*.mdc\n.mdc files have YAML frontmatter that you'll want to strip. Copy just the markdown body into AGENTS.md or CLAUDE.md:\nfor f in .cursor/rules/*.mdc; do\n  echo \"\" >> AGENTS.md\n  # Strip frontmatter (content between --- markers)\n  sed '1{/^---$/!q;};1,/^---$/d' \"$f\" >> AGENTS.md\ndoneGlobal instructions\nCursor's global AI rules can move into user-level agent instructions. For Claude Code, that file is ~/.claude/CLAUDE.md:\n# Create global instructions\nmkdir -p ~/.claude\necho \"Your global instructions here\" > ~/.claude/CLAUDE.mdUse the migration script\nWe've published a script that automates all of the above. It handles global and project-level MCP servers, .cursorrules, and .mdc rule files.\ncurl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh | bashOr to preview what it would do without making changes:\ncurl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh -o migrate.sh\nchmod +x migrate.sh\n./migrate.sh --dry-runThe script won't overwrite existing MCP servers or CLAUDE.md content — it\nonly appends.\nQuick reference\nCursorConductor / Claude CodeCodex~/.cursor/mcp.json~/.claude.json~/.codex/config.toml.cursor/mcp.json.mcp.json.codex/config.toml.cursorrulesAGENTS.md or CLAUDE.mdAGENTS.md.cursor/rules/*.mdcAGENTS.md or CLAUDE.mdAGENTS.mdGlobal AI rules~/.claude/CLAUDE.md~/.codex/AGENTS.md",
+  "markdown": "\n# Work with Cursor\n\n\n\nUse this guide when you want to run Cursor as a Conductor session, open Conductor workspaces in Cursor, keep Cursor windows easy to identify, or migrate Cursor MCP servers and rules into Conductor.\n\n## Run Cursor in Conductor [#run-cursor-in-conductor]\n\nCursor sessions run inside Conductor workspaces, so the chat, branch, terminal, diff, checks, pull request, and archive state stay tied to the workspace.\n\nConductor supports Cursor's Composer 2.5 for Cursor sessions.\n\nBefore starting a Cursor chat, add your Cursor API key in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor). You can also set `CURSOR_API_KEY` in Conductor's environment settings.\n\nFor parallel work, use one workspace per independent Cursor task. See [Run multiple Cursor sessions in parallel](/docs/guides/parallel-agents/run-multiple-cursor-sessions).\n\n## Open workspaces in Cursor or VS Code [#open-workspaces-in-cursor-or-vs-code]\n\nFrom a workspace, click `Open In` or press Command + O to open the workspace directory in Cursor or VS Code.\n\nIf the workspace is already open, Conductor focuses the existing editor window.\n\n## Name Cursor windows by branch [#name-cursor-windows-by-branch]\n\nWhen several workspaces are open in Cursor, use the window title to show the branch and workspace name.\n\n1. In Cursor, open User Settings with Command + Shift + P, then choose `Preferences: Open User Settings`.\n2. Search for `window.title`.\n3. Set it to:\n\n```text\n${activeRepositoryBranchName}${separator}${rootName}${separator}${profileName}\n```\n\nCursor will show the branch name in the title bar, like:\n\n```text\nmy-feature — tokyo\n```\n\n## Migrate MCP servers [#migrate-mcp-servers]\n\nCursor stores MCP config in `~/.cursor/mcp.json` (global) and `.cursor/mcp.json` (project-level). Keep that config when you open Conductor workspaces in Cursor and want Cursor Composer MCP tools. For Claude Code and Codex sessions in Conductor, use Claude Code and Codex MCP config for those agents.\n\n### Global MCP servers [#global-mcp-servers]\n\nCopy your servers from `~/.cursor/mcp.json` into `~/.claude.json`:\n\nCursor (~/.cursor/mcp.json)\n\nConductor (~/.claude.json)\n\n```json\n{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}\n```\n\n```json\n{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}\n```\n\nThe format is the same. Copy the `mcpServers` object into `~/.claude.json`.\n\n### Project-level MCP servers [#project-level-mcp-servers]\n\nCopy from `.cursor/mcp.json` to `.mcp.json` in your project root:\n\nCursor (.cursor/mcp.json)\n\nConductor (.mcp.json)\n\n```json\n{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}\n```\n\n```json\n{\n    \"mcpServers\": {\n        \"my-project-server\": {\n            \"command\": \"node\",\n            \"args\": [\"./tools/mcp-server.js\"]\n        }\n    }\n}\n```\n\nYou can also add MCP servers for Claude Code, Codex, and Cursor Composer directly. See [Set up MCP servers](/docs/guides/configure-mcp-servers) for the step-by-step flow and [MCP](/docs/reference/mcp) for scopes, transports, and syntax.\n\n## Migrate rules and instructions [#migrate-rules-and-instructions]\n\nCursor uses `.cursorrules` or `.cursor/rules/*.mdc` files for custom instructions. In Conductor, use shared repository instructions such as `AGENTS.md`, `CLAUDE.md`, or project prompts in [Repository Settings](https://app.conductor.build/settings/repos?section=actions).\n\n### .cursorrules [#cursorrules]\n\nCopy the contents of your `.cursorrules` file into `AGENTS.md` or `CLAUDE.md` at the root of your project:\n\n```bash\ncp .cursorrules AGENTS.md\n```\n\n### .cursor/rules/\\*.mdc [#cursorrulesmdc]\n\n`.mdc` files have YAML frontmatter that you'll want to strip. Copy just the markdown body into `AGENTS.md` or `CLAUDE.md`:\n\n```bash\nfor f in .cursor/rules/*.mdc; do\n  echo \"\" >> AGENTS.md\n  # Strip frontmatter (content between --- markers)\n  sed '1{/^---$/!q;};1,/^---$/d' \"$f\" >> AGENTS.md\ndone\n```\n\n### Global instructions [#global-instructions]\n\nCursor's global AI rules can move into user-level agent instructions. For Claude Code, that file is `~/.claude/CLAUDE.md`:\n\n```bash\n# Create global instructions\nmkdir -p ~/.claude\necho \"Your global instructions here\" > ~/.claude/CLAUDE.md\n```\n\n## Use the migration script [#use-the-migration-script]\n\nWe've published a script that automates all of the above. It handles global and project-level MCP servers, `.cursorrules`, and `.mdc` rule files.\n\n```bash\ncurl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh | bash\n```\n\nOr to preview what it would do without making changes:\n\n```bash\ncurl -fsSL https://gist.githubusercontent.com/cbh123/4187d4c6774a557b26ed6bcf054f42e2/raw/migrate-cursor-to-conductor.sh -o migrate.sh\nchmod +x migrate.sh\n./migrate.sh --dry-run\n```\n\nThe script won't overwrite existing MCP servers or CLAUDE.md content — it\nonly appends.\n\n## Quick reference [#quick-reference]\n\n| Cursor                | Conductor / Claude Code    | Codex                  |\n| --------------------- | -------------------------- | ---------------------- |\n| `~/.cursor/mcp.json`  | `~/.claude.json`           | `~/.codex/config.toml` |\n| `.cursor/mcp.json`    | `.mcp.json`                | `.codex/config.toml`   |\n| `.cursorrules`        | `AGENTS.md` or `CLAUDE.md` | `AGENTS.md`            |\n| `.cursor/rules/*.mdc` | `AGENTS.md` or `CLAUDE.md` | `AGENTS.md`            |\n| Global AI rules       | `~/.claude/CLAUDE.md`      | `~/.codex/AGENTS.md`   |\n"
+}

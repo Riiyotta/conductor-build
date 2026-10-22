@@ -1,0 +1,32 @@
+{
+  "slug": "0.33.3-performance-improvements-file-context-menu",
+  "version": "0.33.3",
+  "versionSlug": "0.33.3",
+  "title": "Performance Improvements, File Context Menu",
+  "fullTitle": "0.33.3: Performance Improvements, File Context Menu",
+  "date": "Jan 29th, 2026",
+  "dateISO": "2026-01-29",
+  "description": "Conductor 0.33.3 changelog - Performance Improvements, File Context Menu",
+  "summary": "We’ve fixed a performance issue in long chats.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.33.3/1769733805582-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.33.3-performance-improvements-file-context-menu/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.3-performance-improvements-file-context-menu",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.3-performance-improvements-file-context-menu",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve fixed a performance issue in long chats.</p>\n<p>We’ve also added a new context menu when right clicking on files.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.3/1769733805582-image.png\"/></figure></p>\n<h4>Improvements</h4>\n<ul>\n<li>User comments will now appear in the Checks tab</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Fixed a bug where the comment input would frequently get de-focused</li>\n<li>Fixed branch rename instruction not being sent after clicking “Continue on new branch”</li>\n<li>We’ve fixed a 400 API error that could occur with Claude Code</li>\n<li>Fixed <code>⌥U</code> not un-toggling the uncommitted changes view</li>\n<li>The “Open” button will now open to the file you’re currently viewing in Conductor</li>\n</ul>",
+  "markdown": "\nWe’ve fixed a performance issue in long chats.\n\nWe’ve also added a new context menu when right clicking on files.\n![image](/assets/changelog/media/0.33.3/1769733805582-image.png)\n\n#### Improvements\n\n- User comments will now appear in the Checks tab\n\n#### Fixes\n\n- Fixed a bug where the comment input would frequently get de-focused\n- Fixed branch rename instruction not being sent after clicking “Continue on new branch”\n- We’ve fixed a 400 API error that could occur with Claude Code\n- Fixed `⌥U` not un-toggling the uncommitted changes view\n- The “Open” button will now open to the file you’re currently viewing in Conductor\n"
+}

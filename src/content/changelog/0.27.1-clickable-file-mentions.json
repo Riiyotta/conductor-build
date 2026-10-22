@@ -1,0 +1,23 @@
+{
+  "slug": "0.27.1-clickable-file-mentions",
+  "version": "0.27.1",
+  "versionSlug": "0.27.1",
+  "title": "Clickable File Mentions ",
+  "fullTitle": "0.27.1: Clickable File Mentions ",
+  "date": "Dec 19th, 2025",
+  "dateISO": "2025-12-19",
+  "description": "Conductor 0.27.1 changelog - Clickable File Mentions ",
+  "summary": "You can now open files tagged in messages.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.27.1/1766159277805-image.png",
+    "alt": "image.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.27.1-clickable-file-mentions/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.27.1-clickable-file-mentions",
+  "sourceUrl": "https://www.conductor.build/changelog/0.27.1-clickable-file-mentions",
+  "headings": [],
+  "html": "<p>You can now open files tagged in messages.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.27.1/1766159277805-image.png\"/></figure>\n<p>Improvements:</p>\n<ul>\n<li><code>⌘O</code> on a file page will now open that specific file</li>\n</ul>\n<p>Fixes:</p>\n<ul>\n<li>Fixed a bug that allowed Claude to make edits while in plan mode</li>\n<li>Fixed the archive button not appearing when a workspace’s remote branch was deleted</li>\n<li>Fixed a rare bug where Conductor could crash other apps using the wrong <code>pgrep</code></li>\n</ul>",
+  "markdown": "\nYou can now open files tagged in messages.\n\n<img\n    src=\"/assets/changelog/media/0.27.1/1766159277805-image.png\"\n    alt=\"image.png\"\n/>\n\nImprovements:\n\n- `⌘O` on a file page will now open that specific file\n\nFixes:\n\n- Fixed a bug that allowed Claude to make edits while in plan mode\n- Fixed the archive button not appearing when a workspace’s remote branch was deleted\n- Fixed a rare bug where Conductor could crash other apps using the wrong `pgrep`\n"
+}

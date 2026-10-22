@@ -1,0 +1,32 @@
+{
+  "slug": "0.34.2-chat-summaries-re-run-actions-latex",
+  "version": "0.34.2",
+  "versionSlug": "0.34.2",
+  "title": "Chat Summaries, Re-Run Actions, LaTeX",
+  "fullTitle": "0.34.2: Chat Summaries, Re-Run Actions, LaTeX",
+  "date": "Feb 10th, 2026",
+  "dateISO": "2026-02-10",
+  "description": "Conductor 0.34.2 changelog - Chat Summaries, Re-Run Actions, LaTeX",
+  "summary": "We’ve added chat summaries. Hover the table of contents to see a brief overview of your chat. Failed GitHub Actions checks now have a re-run button, so you can retry them without leaving Conductor.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.34.2/1770749325599-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.34.2-chat-summaries-re-run-actions-latex/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.34.2-chat-summaries-re-run-actions-latex",
+  "sourceUrl": "https://www.conductor.build/changelog/0.34.2-chat-summaries-re-run-actions-latex",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve added chat summaries. Hover the table of contents to see a brief overview of your chat.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.34.2/1770749325599-image.png\"/></figure>\nFailed GitHub Actions checks now have a re-run button, so you can retry them without leaving Conductor.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.34.2/1770749325912-image.png\"/></figure></p>\n<p>We’ve also added support for LaTeX.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.34.2/1770749326150-image.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Diagrams now use Conductor&#x27;s theme colors for better visual consistency</li>\n<li>Smoother experience opening files in IDEs like Cursor and VS Code</li>\n<li>Repo name is now included when searching for workspaces with /add-dir</li>\n<li>PR title is now shown in the sidebar in experimental mode</li>\n<li>&quot;Workspaces&quot; label changed to &quot;History&quot; in experimental mode</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix autoscroll not working correctly</li>\n<li>Fix image attachments not rendering properly</li>\n<li>Fix garbled escape codes in terminal on buffer replay</li>\n<li>Fix settings sidebar spacing not matching workspace sidebar</li>\n<li>Fix chat scrolling performance by removing a redundant cache subscriber</li>\n</ul>",
+  "markdown": "\nWe’ve added chat summaries. Hover the table of contents to see a brief overview of your chat.\n![image](/assets/changelog/media/0.34.2/1770749325599-image.png)\nFailed GitHub Actions checks now have a re-run button, so you can retry them without leaving Conductor.\n![image](/assets/changelog/media/0.34.2/1770749325912-image.png)\n\nWe’ve also added support for LaTeX.\n![image](/assets/changelog/media/0.34.2/1770749326150-image.png)\n\n## Improvements\n\n- Diagrams now use Conductor's theme colors for better visual consistency\n- Smoother experience opening files in IDEs like Cursor and VS Code\n- Repo name is now included when searching for workspaces with /add-dir\n- PR title is now shown in the sidebar in experimental mode\n- \"Workspaces\" label changed to \"History\" in experimental mode\n\n## Fixes\n\n- Fix autoscroll not working correctly\n- Fix image attachments not rendering properly\n- Fix garbled escape codes in terminal on buffer replay\n- Fix settings sidebar spacing not matching workspace sidebar\n- Fix chat scrolling performance by removing a redundant cache subscriber\n"
+}

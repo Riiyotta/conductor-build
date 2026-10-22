@@ -1,0 +1,645 @@
+{
+  "slug": "reference/harnesses/opencode",
+  "url": "/docs/reference/harnesses/opencode",
+  "title": "OpenCode",
+  "description": "Details for running the OpenCode harness inside Conductor",
+  "meta": {
+    "title": "OpenCode | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/harnesses/opencode/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "OpenCode"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#setup-notes",
+      "title": "Setup notes"
+    },
+    {
+      "depth": 2,
+      "url": "#model-access",
+      "title": "Model access"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/harnesses/cursor",
+    "title": "Cursor",
+    "description": "Details for running the Cursor Agent harness inside Conductor"
+  },
+  "next": {
+    "url": "/docs/reference/diff-viewer",
+    "title": "Diff viewer",
+    "description": "Review workspace changes, comments, and PR-ready diffs"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode is an open source AI coding harness. It supports many LLM providers, including OpenRouter, Baseten, Cerebras, and Vercel AI Gateway. These providers give OpenCode access to open-source and frontier models."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "vMfDRck174s",
+      "title": "Conductor Now Supports OpenCode!",
+      "thumbnail": "/assets/docs/youtube/vMfDRck174s-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "element",
+      "tag": "div",
+      "attrs": {
+        "data-class": "not-prose my-8 space-y-10"
+      },
+      "children": [
+        {
+          "type": "element",
+          "tag": "section",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "div",
+              "attrs": {
+                "data-class": "flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "div",
+                  "attrs": {
+                    "data-class": "flex min-w-0 items-center gap-2"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "viewBox": "0 0 16 20",
+                        "fill": "currentColor",
+                        "focusable": "false",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M12 16H4V8H12V16Z",
+                            "opacity": "0.45"
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M12 4H4V16H12V4ZM16 20H0V0H16V20Z"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tag": "h2",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "OpenCode"
+                        },
+                        {
+                          "type": "text",
+                          "value": " quick facts"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://opencode.ai/docs/",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "OpenCode docs"
+                    },
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "xmlns": "http://www.w3.org/2000/svg",
+                        "width": 24,
+                        "height": 24,
+                        "viewBox": "0 0 24 24",
+                        "fill": "none",
+                        "stroke": "currentColor",
+                        "stroke-width": 2,
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 7h10v10"
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 17 17 7"
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "head": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Topic"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "span",
+                      "attrs": {
+                        "data-class": "flex items-center gap-2"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "svg",
+                          "attrs": {
+                            "viewBox": "0 0 16 20",
+                            "fill": "currentColor",
+                            "focusable": "false",
+                            "aria-hidden": "true"
+                          },
+                          "children": [
+                            {
+                              "type": "element",
+                              "tag": "path",
+                              "attrs": {
+                                "d": "M12 16H4V8H12V16Z",
+                                "opacity": "0.45"
+                              },
+                              "children": []
+                            },
+                            {
+                              "type": "element",
+                              "tag": "path",
+                              "attrs": {
+                                "d": "M12 4H4V16H12V4ZM16 20H0V0H16V20Z"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": "OpenCode"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "rows": [
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Availability"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor includes a managed OpenCode executable. You can use your own OpenCode install instead."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Setup"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " -> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Harnesses"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " ->"
+                      },
+                      {
+                        "type": "text",
+                        "value": " "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "OpenCode"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " for provider keys, visible models, and the OpenCode executable path."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Models"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Models returned by your OpenCode providers, including open-source and frontier models."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Billing"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "The selected OpenCode provider, local model, ChatGPT, or GitHub Copilot."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Controls"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Skills are supported. Plan Mode, Fast Mode, goals, and checkpoints are not supported today."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "setup-notes",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup notes"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor includes a managed OpenCode executable. To use your own OpenCode install instead, set a custom executable path in OpenCode settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=opencode",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "OpenCode"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " shows provider status, provider API keys, visible models, and the custom OpenCode executable path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor can use provider keys from:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "OpenCode provider API keys saved in Conductor, including keys for providers such as OpenRouter, Baseten, Cerebras, and Vercel AI Gateway"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "local environment variables detected from your shell or Conductor environment settings"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "OpenCode provider configuration outside Conductor"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "See the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://opencode.ai/docs/providers/",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "OpenCode provider"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " docs for providers or setup details that Conductor does not surface directly."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a setup walkthrough, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers#opencode"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers: OpenCode"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "model-access",
+      "children": [
+        {
+          "type": "text",
+          "value": "Model access"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor asks OpenCode for the models available to your provider configuration. If you are not seeing models you expect: start by checking your executable, provider credentials, and OpenCode config."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode model IDs are provider-qualified, such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "anthropic/claude-sonnet-4-5"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "openai/gpt-5.1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Conductor labels those as provider/model choices in the model picker."
+        }
+      ]
+    }
+  ],
+  "html": "<p>OpenCode is an open source AI coding harness. It supports many LLM providers, including OpenRouter, Baseten, Cerebras, and Vercel AI Gateway. These providers give OpenCode access to open-source and frontier models.</p><div data-youtube=\"vMfDRck174s\" data-title=\"Conductor Now Supports OpenCode!\" data-thumbnail=\"/assets/docs/youtube/vMfDRck174s-sddefault.webp\"></div><div data-class=\"not-prose my-8 space-y-10\"><section><div data-class=\"flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between\"><div data-class=\"flex min-w-0 items-center gap-2\"><svg viewBox=\"0 0 16 20\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M12 16H4V8H12V16Z\" opacity=\"0.45\"></path><path d=\"M12 4H4V16H12V4ZM16 20H0V0H16V20Z\"></path></svg><h2>OpenCode quick facts</h2></div><a href=\"https://opencode.ai/docs/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenCode docs<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div><table><thead><tr><th>Topic</th><th><span data-class=\"flex items-center gap-2\"><svg viewBox=\"0 0 16 20\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M12 16H4V8H12V16Z\" opacity=\"0.45\"></path><path d=\"M12 4H4V16H12V4ZM16 20H0V0H16V20Z\"></path></svg>OpenCode</span></th></tr></thead><tbody><tr><td>Availability</td><td>Conductor includes a managed OpenCode executable. You can use your own OpenCode install instead.</td></tr><tr><td>Setup</td><td><code>Settings</code> -&gt; <code>Harnesses</code> -&gt; <code>OpenCode</code> for provider keys, visible models, and the OpenCode executable path.</td></tr><tr><td>Models</td><td>Models returned by your OpenCode providers, including open-source and frontier models.</td></tr><tr><td>Billing</td><td>The selected OpenCode provider, local model, ChatGPT, or GitHub Copilot.</td></tr><tr><td>Controls</td><td>Skills are supported. Plan Mode, Fast Mode, goals, and checkpoints are not supported today.</td></tr></tbody></table></section></div><h2 id=\"setup-notes\"><a href=\"#setup-notes\">Setup notes</a></h2><p>Conductor includes a managed OpenCode executable. To use your own OpenCode install instead, set a custom executable path in OpenCode settings.</p><p><a href=\"https://app.conductor.build/settings/user/providers?providerTab=opencode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>OpenCode</code></a> shows provider status, provider API keys, visible models, and the custom OpenCode executable path.</p><p>Conductor can use provider keys from:</p><ul><li>OpenCode provider API keys saved in Conductor, including keys for providers such as OpenRouter, Baseten, Cerebras, and Vercel AI Gateway</li><li>local environment variables detected from your shell or Conductor environment settings</li><li>OpenCode provider configuration outside Conductor</li></ul><p>See the <a href=\"https://opencode.ai/docs/providers/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenCode provider</a> docs for providers or setup details that Conductor does not surface directly.</p><p>For a setup walkthrough, see <a href=\"/docs/guides/providers#opencode\">Configure model providers: OpenCode</a>.</p><h2 id=\"model-access\"><a href=\"#model-access\">Model access</a></h2><p>Conductor asks OpenCode for the models available to your provider configuration. If you are not seeing models you expect: start by checking your executable, provider credentials, and OpenCode config.</p><p>OpenCode model IDs are provider-qualified, such as <code>anthropic/claude-sonnet-4-5</code> or <code>openai/gpt-5.1</code>. Conductor labels those as provider/model choices in the model picker.</p>",
+  "text": "OpenCode is an open source AI coding harness. It supports many LLM providers, including OpenRouter, Baseten, Cerebras, and Vercel AI Gateway. These providers give OpenCode access to open-source and frontier models.\nOpenCode quick facts\nOpenCode docsTopicOpenCodeAvailabilityConductor includes a managed OpenCode executable. You can use your own OpenCode install instead.SetupSettings -> Harnesses -> OpenCode for provider keys, visible models, and the OpenCode executable path.ModelsModels returned by your OpenCode providers, including open-source and frontier models.BillingThe selected OpenCode provider, local model, ChatGPT, or GitHub Copilot.ControlsSkills are supported. Plan Mode, Fast Mode, goals, and checkpoints are not supported today.Setup notes\nConductor includes a managed OpenCode executable. To use your own OpenCode install instead, set a custom executable path in OpenCode settings.\nSettings -> Agents -> OpenCode shows provider status, provider API keys, visible models, and the custom OpenCode executable path.\nConductor can use provider keys from:\nOpenCode provider API keys saved in Conductor, including keys for providers such as OpenRouter, Baseten, Cerebras, and Vercel AI Gateway\nlocal environment variables detected from your shell or Conductor environment settings\nOpenCode provider configuration outside Conductor\nSee the OpenCode provider docs for providers or setup details that Conductor does not surface directly.\nFor a setup walkthrough, see Configure model providers: OpenCode.\nModel access\nConductor asks OpenCode for the models available to your provider configuration. If you are not seeing models you expect: start by checking your executable, provider credentials, and OpenCode config.\nOpenCode model IDs are provider-qualified, such as anthropic/claude-sonnet-4-5 or openai/gpt-5.1. Conductor labels those as provider/model choices in the model picker.",
+  "markdown": "\n# OpenCode\n\n\n\nOpenCode is an open source AI coding harness. It supports many LLM providers, including OpenRouter, Baseten, Cerebras, and Vercel AI Gateway. These providers give OpenCode access to open-source and frontier models.\n\n\n\n\n\n\n\n## Setup notes [#setup-notes]\n\nConductor includes a managed OpenCode executable. To use your own OpenCode install instead, set a custom executable path in OpenCode settings.\n\n[`Settings` -> `Agents` -> `OpenCode`](https://app.conductor.build/settings/user/providers?providerTab=opencode) shows provider status, provider API keys, visible models, and the custom OpenCode executable path.\n\nConductor can use provider keys from:\n\n* OpenCode provider API keys saved in Conductor, including keys for providers such as OpenRouter, Baseten, Cerebras, and Vercel AI Gateway\n* local environment variables detected from your shell or Conductor environment settings\n* OpenCode provider configuration outside Conductor\n\nSee the [OpenCode provider](https://opencode.ai/docs/providers/) docs for providers or setup details that Conductor does not surface directly.\n\nFor a setup walkthrough, see [Configure model providers: OpenCode](/docs/guides/providers#opencode).\n\n## Model access [#model-access]\n\nConductor asks OpenCode for the models available to your provider configuration. If you are not seeing models you expect: start by checking your executable, provider credentials, and OpenCode config.\n\nOpenCode model IDs are provider-qualified, such as `anthropic/claude-sonnet-4-5` or `openai/gpt-5.1`. Conductor labels those as provider/model choices in the model picker.\n"
+}

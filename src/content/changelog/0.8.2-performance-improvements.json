@@ -1,0 +1,32 @@
+{
+  "slug": "0.8.2-performance-improvements",
+  "version": "0.8.2",
+  "versionSlug": "0.8.2",
+  "title": "Performance Improvements",
+  "fullTitle": "0.8.2: Performance Improvements",
+  "date": "August 26th, 2025",
+  "dateISO": "2025-08-26",
+  "description": "Conductor 0.8.2 changelog - Performance Improvements",
+  "summary": "New in 0.8.3:",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.8.2-performance-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.8.2-performance-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.8.2-performance-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Linear issues are now sorted by status</li>\n<li>Searched Linear issues are now filtered by the teams you belong to</li>\n<li>Reduced letter spacing for smaller text sizes</li>\n<li>Increased the spacing of the git panel title</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where workspaces would fail to load and crash the app if the MultiEdit write tool had errors</li>\n<li>Fixed a bug where Bash tool calls could not be expanded</li>\n<li>Fixed a bug where the Read tool would show &quot;Read 0 lines&quot;</li>\n<li>Fixed part of the composer being unclickable</li>\n<li>Fixed part of the terminal being unclickable</li>\n<li>Fixed a performance issue in the git diff dialog that would crash the app</li>\n<li>Fixed a bug where the &quot;Merge&quot; button was inaccurately showing for GitHub repositories with multiple CI checks</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Increased the minimum width of the right sidebar</li>\n<li>cmd+A will no longer incorrectly select all of the visible text in the app</li>\n</ul>\n<p>New in 0.8.3:</p>\n<ul>\n<li>Support for slashes in Linear branch names</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Linear issues are now sorted by status\n- Searched Linear issues are now filtered by the teams you belong to\n- Reduced letter spacing for smaller text sizes\n- Increased the spacing of the git panel title\n\n## Fixes\n\n- Fixed a bug where workspaces would fail to load and crash the app if the MultiEdit write tool had errors\n- Fixed a bug where Bash tool calls could not be expanded\n- Fixed a bug where the Read tool would show \"Read 0 lines\"\n- Fixed part of the composer being unclickable\n- Fixed part of the terminal being unclickable\n- Fixed a performance issue in the git diff dialog that would crash the app\n- Fixed a bug where the \"Merge\" button was inaccurately showing for GitHub repositories with multiple CI checks\n\n## Misc\n\n- Increased the minimum width of the right sidebar\n- cmd+A will no longer incorrectly select all of the visible text in the app\n\nNew in 0.8.3:\n\n- Support for slashes in Linear branch names\n"
+}

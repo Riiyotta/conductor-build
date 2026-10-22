@@ -1,0 +1,29 @@
+{
+  "id": "copy-button",
+  "kind": "component",
+  "purpose": "Icon button that copies text. Brandkit variant gives no visual feedback (original quirk).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Brandkit.jsx:92",
+      "quote": "function CopyButton({ label, text }) {"
+    }
+  ],
+  "tokens": [
+    "{radius.md}",
+    "{semantic.border.default}"
+  ],
+  "variants": [
+    "brandkit-no-feedback",
+    "code-copied-state"
+  ],
+  "states": [
+    "rest",
+    "hover"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:397",
+      "quote": "**No visual feedback:** no icon swap, no \"Copied\" text, no toast"
+    }
+  ]
+}

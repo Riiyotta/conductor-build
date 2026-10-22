@@ -1,0 +1,36 @@
+{
+  "slug": "0.71.0-workspace-and-chat-links",
+  "version": "0.71.0",
+  "versionSlug": "0.71.0",
+  "title": "Workspace and Chat Links",
+  "fullTitle": "0.71.0: Workspace and Chat Links",
+  "date": "July 1, 2026",
+  "dateISO": "2026-07-01",
+  "description": "Conductor 0.71.0 changelog - Workspace and Chat Links",
+  "summary": "You can now right click to copy a link to a workspace or chat.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/workspace-links-0.71.0.png",
+    "alt": "Copy link in the workspace right-click menu"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.71.0-workspace-and-chat-links/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.71.0-workspace-and-chat-links",
+  "sourceUrl": "https://www.conductor.build/changelog/0.71.0-workspace-and-chat-links",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.71.1"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"Copy link in the workspace right-click menu\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/workspace-links-0.71.0.png\"/></figure>\n<p>You can now right click to copy a link to a workspace or chat.</p>\n<h3>Improvements</h3>\n<ul>\n<li>You can now copy a link to a workspace or chat with ⌘⇧C.</li>\n<li>In Settings → Git, you can now treat optional checks as blocking so the merge button only appears once every PR check passes.</li>\n<li>The command palette now shows each workspace name, with the branch shown as the subtitle.</li>\n<li>When you&#x27;re making a workspace, you can now click the three dots next to the repository to change the target branch.</li>\n<li>You can now select OpenCode models for code reviews.</li>\n<li>Command palette workspace search is faster for large workspace lists.</li>\n<li>In Settings → Environment, you can now paste a block of <code>KEY=VALUE</code> lines to add several variables at once.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where Composer 2.5 tool calls failed.</li>\n<li>Fixed an issue where &quot;Install and restart&quot; could fail on the database version warning screen.</li>\n<li>Fixed an issue where agents in local workspaces could stop responding.</li>\n<li>Fixed occasional jank when saving settings.</li>\n<li>Fixed typing lag in the command palette (⌘K) after repeated searches.</li>\n<li>Fixed cloud workspace names being overwritten with the git branch name.</li>\n<li>Fixed an issue where typing a new diff comment near the bottom of a long file would scroll the input out of view.</li>\n<li>Cmd+O now opens the local mirror of a synced cloud workspace, Cmd+Option+O opens it remotely, open-in buttons open the file you&#x27;re viewing, and the remote menu copies the SSH command.</li>\n</ul>\n<h4>New in 0.71.1</h4>\n<ul>\n<li>Fixed an issue where unrecognized models could fall back to Sonnet.</li>\n</ul>",
+  "markdown": "\n![Copy link in the workspace right-click menu](/assets/changelog/images/workspace-links-0.71.0.png)\n\nYou can now right click to copy a link to a workspace or chat.\n\n## Improvements\n\n- You can now copy a link to a workspace or chat with ⌘⇧C.\n- In Settings → Git, you can now treat optional checks as blocking so the merge button only appears once every PR check passes.\n- The command palette now shows each workspace name, with the branch shown as the subtitle.\n- When you're making a workspace, you can now click the three dots next to the repository to change the target branch.\n- You can now select OpenCode models for code reviews.\n- Command palette workspace search is faster for large workspace lists.\n- In Settings → Environment, you can now paste a block of `KEY=VALUE` lines to add several variables at once.\n\n## Fixes\n\n- Fixed an issue where Composer 2.5 tool calls failed.\n- Fixed an issue where \"Install and restart\" could fail on the database version warning screen.\n- Fixed an issue where agents in local workspaces could stop responding.\n- Fixed occasional jank when saving settings.\n- Fixed typing lag in the command palette (⌘K) after repeated searches.\n- Fixed cloud workspace names being overwritten with the git branch name.\n- Fixed an issue where typing a new diff comment near the bottom of a long file would scroll the input out of view.\n- Cmd+O now opens the local mirror of a synced cloud workspace, Cmd+Option+O opens it remotely, open-in buttons open the file you're viewing, and the remote menu copies the SSH command.\n\n### New in 0.71.1\n\n- Fixed an issue where unrecognized models could fall back to Sonnet.\n"
+}

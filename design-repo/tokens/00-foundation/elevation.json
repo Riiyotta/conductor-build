@@ -1,0 +1,85 @@
+{
+  "$description": "Every shadow in use. No backdrop-filter on marketing sections except the dialog waitlist button (blur 12px), docs subnav (8px) and changelog pager buttons (12px).",
+  "elevation": {
+    "md": {
+      "$value": "0 4px 6px -1px rgba(0,0,0,.1), 0 2px 4px -2px rgba(0,0,0,.1)",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:118",
+          "quote": "md: '0 4px 6px -1px rgba(0,0,0,.1)"
+        }
+      ]
+    },
+    "lg": {
+      "$value": "0 10px 15px -3px rgba(0,0,0,.1), 0 4px 6px -4px rgba(0,0,0,.1)",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:119",
+          "quote": "lg: '0 10px 15px -3px rgba(0,0,0,.1)"
+        }
+      ]
+    },
+    "traffic-inset": {
+      "$value": "inset 0 0 0 .5px rgba(0,0,0,.28)",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:120",
+          "quote": "traffic: 'inset 0 0 0 .5px rgba(0,0,0,.28)'"
+        }
+      ]
+    },
+    "avatar-ring": {
+      "$value": "0 0 0 1px rgba(0,0,0,.1)",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:56",
+          "quote": "Avatar ring (`ring-1 ring-black/10`): `0 0 0 1px rgba(0,0,0,.1)`."
+        }
+      ]
+    },
+    "presence-ring": {
+      "$value": "0 0 0 2px #fff",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:57",
+          "quote": "Presence-dot ring: `0 0 0 2px #fff`."
+        }
+      ]
+    },
+    "hubspot-hover": {
+      "$value": "0 0 2px 0 #959494",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:122",
+          "quote": "'hs-hover': '0 0 2px 0 #959494'"
+        }
+      ]
+    },
+    "hubspot-focus": {
+      "$value": "0 0 3px 0 #959494",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:123",
+          "quote": "'hs-focus': '0 0 3px 0 #959494'"
+        }
+      ]
+    },
+    "hubspot-active": {
+      "$value": "0 0 4px 0 #959494",
+      "$type": "shadow",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:124",
+          "quote": "'hs-active': '0 0 4px 0 #959494'"
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,1147 @@
+{
+  "slug": "concepts/agent-modes",
+  "url": "/docs/concepts/agent-modes",
+  "title": "Agent modes",
+  "description": "Understand Plan Mode, Fast Mode, reasoning controls, and agent-specific session controls",
+  "meta": {
+    "title": "Agent modes | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/concepts/agent-modes/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Agent modes"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#supported-controls",
+      "title": "Supported controls"
+    },
+    {
+      "depth": 2,
+      "url": "#plan-mode",
+      "title": "Plan Mode"
+    },
+    {
+      "depth": 2,
+      "url": "#fast-mode",
+      "title": "Fast Mode"
+    },
+    {
+      "depth": 2,
+      "url": "#thinking-and-reasoning-controls",
+      "title": "Thinking and reasoning controls"
+    },
+    {
+      "depth": 2,
+      "url": "#codex-personalities",
+      "title": "Codex personalities"
+    },
+    {
+      "depth": 2,
+      "url": "#codex-goals",
+      "title": "Codex goals"
+    },
+    {
+      "depth": 2,
+      "url": "#skills",
+      "title": "Skills"
+    },
+    {
+      "depth": 2,
+      "url": "#run-agents-together",
+      "title": "Run agents together"
+    },
+    {
+      "depth": 2,
+      "url": "#repository-guidance",
+      "title": "Repository guidance"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/scripts/share-with-teammates",
+    "title": "How to share settings",
+    "description": "Commit .conductor/settings.toml so a repository can share Conductor scripts and settings"
+  },
+  "next": {
+    "url": "/docs/reference/big-terminal-mode",
+    "title": "Big Terminal Mode",
+    "description": "Use a full terminal in the center panel"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor lets you change how an agent approaches a task before or during a chat. These controls affect the current session, not the repository itself."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Claude Code, Codex, Cursor, or OpenCode when you want a coding agent in a Conductor workspace. You can run one agent by itself, or run multiple agents in separate tabs or workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For setup, billing, and provider-specific limits, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/harnesses"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Harnesses"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "supported-controls",
+      "children": [
+        {
+          "type": "text",
+          "value": "Supported controls"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Control"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "element",
+              "tag": "span",
+              "attrs": {
+                "data-class": "flex items-center gap-2"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "svg",
+                  "attrs": {
+                    "role": "img",
+                    "viewBox": "0 0 24 24",
+                    "fill": "currentColor",
+                    "focusable": "false",
+                    "aria-hidden": "true"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "path",
+                      "attrs": {
+                        "d": "m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "Claude Code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "element",
+              "tag": "span",
+              "attrs": {
+                "data-class": "flex items-center gap-2"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "svg",
+                  "attrs": {
+                    "role": "img",
+                    "viewBox": "0 0 24 24",
+                    "fill": "currentColor",
+                    "focusable": "false",
+                    "aria-hidden": "true"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654 2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "Codex"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "element",
+              "tag": "span",
+              "attrs": {
+                "data-class": "flex items-center gap-2"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "svg",
+                  "attrs": {
+                    "role": "img",
+                    "viewBox": "0 0 24 24",
+                    "fill": "currentColor",
+                    "focusable": "false",
+                    "aria-hidden": "true"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "element",
+              "tag": "span",
+              "attrs": {
+                "data-class": "flex items-center gap-2"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "svg",
+                  "attrs": {
+                    "viewBox": "0 0 16 20",
+                    "fill": "currentColor",
+                    "focusable": "false",
+                    "aria-hidden": "true"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M12 16H4V8H12V16Z",
+                        "opacity": "0.45"
+                      },
+                      "children": []
+                    },
+                    {
+                      "type": "element",
+                      "tag": "path",
+                      "attrs": {
+                        "d": "M12 4H4V16H12V4ZM16 20H0V0H16V20Z"
+                      },
+                      "children": []
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "OpenCode"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Plan Mode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Fast Mode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Thinking or reasoning level"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Model-dependent"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Model-dependent"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Personalities"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Goals"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Local workspaces"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Checkpoints"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Skills"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Not supported"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Supported"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the model picker to choose a Claude Code, Codex, Cursor, or OpenCode model. If Cursor cannot start, check that "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is configured in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If OpenCode cannot start or has no models, check "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=opencode",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "OpenCode"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If Codex cannot start, check your OpenAI authentication or subscription setup."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions support Composer 2.5 in Conductor.\nOpenCode sessions use OpenCode models returned by your configured OpenCode providers."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "plan-mode",
+      "children": [
+        {
+          "type": "text",
+          "value": "Plan Mode"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Plan Mode asks the agent to make a plan before editing files. Use it when the task is ambiguous, risky, or broad enough that you want to review the approach first."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Plan Mode is useful for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Refactors with unclear boundaries"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Migrations"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Multi-file product changes"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Debugging where the root cause is not known yet"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Work that should be split across multiple agents or workspaces"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When the plan looks right, approve it or give feedback. If you exit Plan Mode, the agent can move from planning into implementation."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "fast-mode",
+      "children": [
+        {
+          "type": "text",
+          "value": "Fast Mode"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Fast Mode prioritizes speed. Use it for narrow edits, simple fixes, and quick follow-up work."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Avoid Fast Mode when the task needs careful codebase analysis, large refactors, or high-stakes reasoning."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "thinking-and-reasoning-controls",
+      "children": [
+        {
+          "type": "text",
+          "value": "Thinking and reasoning controls"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Some models expose thinking or reasoning controls. Higher settings give the agent more room to reason before answering, but may take longer or use more credits."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use higher reasoning for architecture, debugging, migrations, and code review. Use lower reasoning for straightforward edits and short questions."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "codex-personalities",
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex personalities"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex sessions can use personalities to change how Codex approaches work. Personalities are session-level controls. Use them when you want a different working style without changing repository instructions."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "codex-goals",
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex goals"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex sessions can work toward a goal: a standing objective that Codex keeps pursuing across turns instead of stopping after a single reply. Use a goal for longer tasks that should keep moving without a new prompt at every step."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To set a goal, type "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "/goal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " followed by the objective, or click the goal toggle in the composer to send your next message as a goal."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "While a goal is active, a goal bar above the composer shows the objective, its status, and its token usage when the goal has a token budget. Use the goal bar to pause, resume, edit, or clear the goal. Stopping a turn also pauses the goal, so Codex does not keep working after you ask it to stop."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Goals are available for Codex sessions in local workspaces. Cloud workspaces do not support goals yet."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "skills",
+      "children": [
+        {
+          "type": "text",
+          "value": "Skills"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex, Claude Code, and OpenCode can use skills in Conductor. If you already have repo or user skills for one agent, you can often reuse them so multiple agents follow the same project conventions."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "MjX10slErMM",
+      "title": "Re-use Claude skills in Conductor",
+      "thumbnail": "/assets/docs/youtube/MjX10slErMM-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-agents-together",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run agents together"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use separate tabs when you want Claude Code, Codex, Cursor, or OpenCode to work in the same workspace. Use separate workspaces when the work should happen on different branches."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repository-guidance",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository guidance"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Mode controls are temporary. For durable guidance, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or checked-in instruction files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "AGENTS.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CLAUDE.md"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or skills."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor lets you change how an agent approaches a task before or during a chat. These controls affect the current session, not the repository itself.</p><p>Use Claude Code, Codex, Cursor, or OpenCode when you want a coding agent in a Conductor workspace. You can run one agent by itself, or run multiple agents in separate tabs or workspaces.</p><p>For setup, billing, and provider-specific limits, see <a href=\"/docs/reference/harnesses\">Harnesses</a>.</p><h2 id=\"supported-controls\"><a href=\"#supported-controls\">Supported controls</a></h2><table><thead><tr><th>Control</th><th><span data-class=\"flex items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z\"></path></svg>Claude Code</span></th><th><span data-class=\"flex items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M22.2819 9.8211a5.9847 5.9847 0 0 0-.5157-4.9108 6.0462 6.0462 0 0 0-6.5098-2.9A6.0651 6.0651 0 0 0 4.9807 4.1818a5.9847 5.9847 0 0 0-3.9977 2.9 6.0462 6.0462 0 0 0 .7427 7.0966 5.98 5.98 0 0 0 .511 4.9107 6.051 6.051 0 0 0 6.5146 2.9001A5.9847 5.9847 0 0 0 13.2599 24a6.0557 6.0557 0 0 0 5.7718-4.2058 5.9894 5.9894 0 0 0 3.9977-2.9001 6.0557 6.0557 0 0 0-.7475-7.0729zm-9.022 12.6081a4.4755 4.4755 0 0 1-2.8764-1.0408l.1419-.0804 4.7783-2.7582a.7948.7948 0 0 0 .3927-.6813v-6.7369l2.02 1.1686a.071.071 0 0 1 .038.052v5.5826a4.504 4.504 0 0 1-4.4945 4.4944zm-9.6607-4.1254a4.4708 4.4708 0 0 1-.5346-3.0137l.142.0852 4.783 2.7582a.7712.7712 0 0 0 .7806 0l5.8428-3.3685v2.3324a.0804.0804 0 0 1-.0332.0615L9.74 19.9502a4.4992 4.4992 0 0 1-6.1408-1.6464zM2.3408 7.8956a4.485 4.485 0 0 1 2.3655-1.9728V11.6a.7664.7664 0 0 0 .3879.6765l5.8144 3.3543-2.0201 1.1685a.0757.0757 0 0 1-.071 0l-4.8303-2.7865A4.504 4.504 0 0 1 2.3408 7.872zm16.5963 3.8558L13.1038 8.364 15.1192 7.2a.0757.0757 0 0 1 .071 0l4.8303 2.7913a4.4944 4.4944 0 0 1-.6765 8.1042v-5.6772a.79.79 0 0 0-.407-.667zm2.0107-3.0231-.142-.0852-4.7735-2.7818a.7759.7759 0 0 0-.7854 0L9.409 9.2297V6.8974a.0662.0662 0 0 1 .0284-.0615l4.8303-2.7866a4.4992 4.4992 0 0 1 6.6802 4.66zM8.3065 12.863l-2.02-1.1638a.0804.0804 0 0 1-.038-.0567V6.0742a4.4992 4.4992 0 0 1 7.3757-3.4537l-.142.0805L8.704 5.459a.7948.7948 0 0 0-.3927.6813zm1.0976-2.3654 2.602-1.4998 2.6069 1.4998v2.9994l-2.5974 1.4997-2.6067-1.4997Z\"></path></svg>Codex</span></th><th><span data-class=\"flex items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23\"></path></svg>Cursor</span></th><th><span data-class=\"flex items-center gap-2\"><svg viewBox=\"0 0 16 20\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M12 16H4V8H12V16Z\" opacity=\"0.45\"></path><path d=\"M12 4H4V16H12V4ZM16 20H0V0H16V20Z\"></path></svg>OpenCode</span></th></tr></thead><tbody><tr><td>Plan Mode</td><td>Supported</td><td>Supported</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Fast Mode</td><td>Supported</td><td>Supported</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Thinking or reasoning level</td><td>Model-dependent</td><td>Model-dependent</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Personalities</td><td>Not supported</td><td>Supported</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Goals</td><td>Not supported</td><td>Local workspaces</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Checkpoints</td><td>Supported</td><td>Supported</td><td>Not supported</td><td>Not supported</td></tr><tr><td>Skills</td><td>Supported</td><td>Supported</td><td>Not supported</td><td>Supported</td></tr></tbody></table><p>Open the model picker to choose a Claude Code, Codex, Cursor, or OpenCode model. If Cursor cannot start, check that <code>CURSOR_API_KEY</code> is configured in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>. If OpenCode cannot start or has no models, check <a href=\"https://app.conductor.build/settings/user/providers?providerTab=opencode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>OpenCode</code></a>. If Codex cannot start, check your OpenAI authentication or subscription setup.</p><p>Cursor sessions support Composer 2.5 in Conductor.\nOpenCode sessions use OpenCode models returned by your configured OpenCode providers.</p><h2 id=\"plan-mode\"><a href=\"#plan-mode\">Plan Mode</a></h2><p>Plan Mode asks the agent to make a plan before editing files. Use it when the task is ambiguous, risky, or broad enough that you want to review the approach first.</p><p>Plan Mode is useful for:</p><ul><li>Refactors with unclear boundaries</li><li>Migrations</li><li>Multi-file product changes</li><li>Debugging where the root cause is not known yet</li><li>Work that should be split across multiple agents or workspaces</li></ul><p>When the plan looks right, approve it or give feedback. If you exit Plan Mode, the agent can move from planning into implementation.</p><h2 id=\"fast-mode\"><a href=\"#fast-mode\">Fast Mode</a></h2><p>Fast Mode prioritizes speed. Use it for narrow edits, simple fixes, and quick follow-up work.</p><p>Avoid Fast Mode when the task needs careful codebase analysis, large refactors, or high-stakes reasoning.</p><h2 id=\"thinking-and-reasoning-controls\"><a href=\"#thinking-and-reasoning-controls\">Thinking and reasoning controls</a></h2><p>Some models expose thinking or reasoning controls. Higher settings give the agent more room to reason before answering, but may take longer or use more credits.</p><p>Use higher reasoning for architecture, debugging, migrations, and code review. Use lower reasoning for straightforward edits and short questions.</p><h2 id=\"codex-personalities\"><a href=\"#codex-personalities\">Codex personalities</a></h2><p>Codex sessions can use personalities to change how Codex approaches work. Personalities are session-level controls. Use them when you want a different working style without changing repository instructions.</p><h2 id=\"codex-goals\"><a href=\"#codex-goals\">Codex goals</a></h2><p>Codex sessions can work toward a goal: a standing objective that Codex keeps pursuing across turns instead of stopping after a single reply. Use a goal for longer tasks that should keep moving without a new prompt at every step.</p><p>To set a goal, type <code>/goal</code> followed by the objective, or click the goal toggle in the composer to send your next message as a goal.</p><p>While a goal is active, a goal bar above the composer shows the objective, its status, and its token usage when the goal has a token budget. Use the goal bar to pause, resume, edit, or clear the goal. Stopping a turn also pauses the goal, so Codex does not keep working after you ask it to stop.</p><p>Goals are available for Codex sessions in local workspaces. Cloud workspaces do not support goals yet.</p><h2 id=\"skills\"><a href=\"#skills\">Skills</a></h2><p>Codex, Claude Code, and OpenCode can use skills in Conductor. If you already have repo or user skills for one agent, you can often reuse them so multiple agents follow the same project conventions.</p><div data-youtube=\"MjX10slErMM\" data-title=\"Re-use Claude skills in Conductor\" data-thumbnail=\"/assets/docs/youtube/MjX10slErMM-sddefault.webp\"></div><h2 id=\"run-agents-together\"><a href=\"#run-agents-together\">Run agents together</a></h2><p>Use separate tabs when you want Claude Code, Codex, Cursor, or OpenCode to work in the same workspace. Use separate workspaces when the work should happen on different branches.</p><h2 id=\"repository-guidance\"><a href=\"#repository-guidance\">Repository guidance</a></h2><p>Mode controls are temporary. For durable guidance, use <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> or checked-in instruction files such as <code>AGENTS.md</code>, <code>CLAUDE.md</code>, or skills.</p>",
+  "text": "Conductor lets you change how an agent approaches a task before or during a chat. These controls affect the current session, not the repository itself.\nUse Claude Code, Codex, Cursor, or OpenCode when you want a coding agent in a Conductor workspace. You can run one agent by itself, or run multiple agents in separate tabs or workspaces.\nFor setup, billing, and provider-specific limits, see Harnesses.\nSupported controls\nControlClaude CodeCodexCursorOpenCodePlan ModeSupportedSupportedNot supportedNot supportedFast ModeSupportedSupportedNot supportedNot supportedThinking or reasoning levelModel-dependentModel-dependentNot supportedNot supportedPersonalitiesNot supportedSupportedNot supportedNot supportedGoalsNot supportedLocal workspacesNot supportedNot supportedCheckpointsSupportedSupportedNot supportedNot supportedSkillsSupportedSupportedNot supportedSupportedOpen the model picker to choose a Claude Code, Codex, Cursor, or OpenCode model. If Cursor cannot start, check that CURSOR_API_KEY is configured in Settings -> Agents -> Cursor. If OpenCode cannot start or has no models, check Settings -> Agents -> OpenCode. If Codex cannot start, check your OpenAI authentication or subscription setup.\nCursor sessions support Composer 2.5 in Conductor.\nOpenCode sessions use OpenCode models returned by your configured OpenCode providers.\nPlan Mode\nPlan Mode asks the agent to make a plan before editing files. Use it when the task is ambiguous, risky, or broad enough that you want to review the approach first.\nPlan Mode is useful for:\nRefactors with unclear boundaries\nMigrations\nMulti-file product changes\nDebugging where the root cause is not known yet\nWork that should be split across multiple agents or workspaces\nWhen the plan looks right, approve it or give feedback. If you exit Plan Mode, the agent can move from planning into implementation.\nFast Mode\nFast Mode prioritizes speed. Use it for narrow edits, simple fixes, and quick follow-up work.\nAvoid Fast Mode when the task needs careful codebase analysis, large refactors, or high-stakes reasoning.\nThinking and reasoning controls\nSome models expose thinking or reasoning controls. Higher settings give the agent more room to reason before answering, but may take longer or use more credits.\nUse higher reasoning for architecture, debugging, migrations, and code review. Use lower reasoning for straightforward edits and short questions.\nCodex personalities\nCodex sessions can use personalities to change how Codex approaches work. Personalities are session-level controls. Use them when you want a different working style without changing repository instructions.\nCodex goals\nCodex sessions can work toward a goal: a standing objective that Codex keeps pursuing across turns instead of stopping after a single reply. Use a goal for longer tasks that should keep moving without a new prompt at every step.\nTo set a goal, type /goal followed by the objective, or click the goal toggle in the composer to send your next message as a goal.\nWhile a goal is active, a goal bar above the composer shows the objective, its status, and its token usage when the goal has a token budget. Use the goal bar to pause, resume, edit, or clear the goal. Stopping a turn also pauses the goal, so Codex does not keep working after you ask it to stop.\nGoals are available for Codex sessions in local workspaces. Cloud workspaces do not support goals yet.\nSkills\nCodex, Claude Code, and OpenCode can use skills in Conductor. If you already have repo or user skills for one agent, you can often reuse them so multiple agents follow the same project conventions.\nRun agents together\nUse separate tabs when you want Claude Code, Codex, Cursor, or OpenCode to work in the same workspace. Use separate workspaces when the work should happen on different branches.\nRepository guidance\nMode controls are temporary. For durable guidance, use Repository Settings or checked-in instruction files such as AGENTS.md, CLAUDE.md, or skills.",
+  "markdown": "\n# Agent modes\n\n\n\nConductor lets you change how an agent approaches a task before or during a chat. These controls affect the current session, not the repository itself.\n\nUse Claude Code, Codex, Cursor, or OpenCode when you want a coding agent in a Conductor workspace. You can run one agent by itself, or run multiple agents in separate tabs or workspaces.\n\nFor setup, billing, and provider-specific limits, see [Harnesses](/docs/reference/harnesses).\n\n## Supported controls [#supported-controls]\n\n\n\n\nOpen the model picker to choose a Claude Code, Codex, Cursor, or OpenCode model. If Cursor cannot start, check that `CURSOR_API_KEY` is configured in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor). If OpenCode cannot start or has no models, check [`Settings` -> `Agents` -> `OpenCode`](https://app.conductor.build/settings/user/providers?providerTab=opencode). If Codex cannot start, check your OpenAI authentication or subscription setup.\n\nCursor sessions support Composer 2.5 in Conductor.\nOpenCode sessions use OpenCode models returned by your configured OpenCode providers.\n\n## Plan Mode [#plan-mode]\n\nPlan Mode asks the agent to make a plan before editing files. Use it when the task is ambiguous, risky, or broad enough that you want to review the approach first.\n\nPlan Mode is useful for:\n\n* Refactors with unclear boundaries\n* Migrations\n* Multi-file product changes\n* Debugging where the root cause is not known yet\n* Work that should be split across multiple agents or workspaces\n\nWhen the plan looks right, approve it or give feedback. If you exit Plan Mode, the agent can move from planning into implementation.\n\n## Fast Mode [#fast-mode]\n\nFast Mode prioritizes speed. Use it for narrow edits, simple fixes, and quick follow-up work.\n\nAvoid Fast Mode when the task needs careful codebase analysis, large refactors, or high-stakes reasoning.\n\n## Thinking and reasoning controls [#thinking-and-reasoning-controls]\n\nSome models expose thinking or reasoning controls. Higher settings give the agent more room to reason before answering, but may take longer or use more credits.\n\nUse higher reasoning for architecture, debugging, migrations, and code review. Use lower reasoning for straightforward edits and short questions.\n\n## Codex personalities [#codex-personalities]\n\nCodex sessions can use personalities to change how Codex approaches work. Personalities are session-level controls. Use them when you want a different working style without changing repository instructions.\n\n## Codex goals [#codex-goals]\n\nCodex sessions can work toward a goal: a standing objective that Codex keeps pursuing across turns instead of stopping after a single reply. Use a goal for longer tasks that should keep moving without a new prompt at every step.\n\nTo set a goal, type `/goal` followed by the objective, or click the goal toggle in the composer to send your next message as a goal.\n\nWhile a goal is active, a goal bar above the composer shows the objective, its status, and its token usage when the goal has a token budget. Use the goal bar to pause, resume, edit, or clear the goal. Stopping a turn also pauses the goal, so Codex does not keep working after you ask it to stop.\n\nGoals are available for Codex sessions in local workspaces. Cloud workspaces do not support goals yet.\n\n## Skills [#skills]\n\nCodex, Claude Code, and OpenCode can use skills in Conductor. If you already have repo or user skills for one agent, you can often reuse them so multiple agents follow the same project conventions.\n\n\n\n\n## Run agents together [#run-agents-together]\n\nUse separate tabs when you want Claude Code, Codex, Cursor, or OpenCode to work in the same workspace. Use separate workspaces when the work should happen on different branches.\n\n## Repository guidance [#repository-guidance]\n\nMode controls are temporary. For durable guidance, use [Repository Settings](https://app.conductor.build/settings/repos?section=actions) or checked-in instruction files such as `AGENTS.md`, `CLAUDE.md`, or skills.\n"
+}

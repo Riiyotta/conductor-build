@@ -1,0 +1,3259 @@
+{
+  "slug": "reference/scripts",
+  "url": "/docs/reference/scripts",
+  "title": "Scripts",
+  "description": "Reference for setup scripts, archive scripts, and actions",
+  "meta": {
+    "title": "Scripts | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/scripts/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Scripts"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#script-types",
+      "title": "Script types"
+    },
+    {
+      "depth": 2,
+      "url": "#setup-scripts",
+      "title": "Setup scripts"
+    },
+    {
+      "depth": 2,
+      "url": "#run-scripts",
+      "title": "Actions"
+    },
+    {
+      "depth": 3,
+      "url": "#multiple-actions",
+      "title": "Multiple actions"
+    },
+    {
+      "depth": 3,
+      "url": "#action-fields",
+      "title": "Action fields"
+    },
+    {
+      "depth": 3,
+      "url": "#action-icons",
+      "title": "Action icons"
+    },
+    {
+      "depth": 3,
+      "url": "#legacy-single-action",
+      "title": "Legacy single action"
+    },
+    {
+      "depth": 3,
+      "url": "#where-changes-take-effect",
+      "title": "Where changes take effect"
+    },
+    {
+      "depth": 2,
+      "url": "#run-mode",
+      "title": "Run mode"
+    },
+    {
+      "depth": 2,
+      "url": "#archive-scripts",
+      "title": "Archive scripts"
+    },
+    {
+      "depth": 2,
+      "url": "#process-handling",
+      "title": "Process handling"
+    },
+    {
+      "depth": 2,
+      "url": "#related-references",
+      "title": "Related references"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/api/mcp",
+    "title": "Conductor MCP server",
+    "description": "Connect an MCP client to create and manage Conductor cloud workspaces"
+  },
+  "next": {
+    "url": "/docs/reference/files-to-copy",
+    "title": "Files to copy",
+    "description": "Configure gitignored files that Conductor copies into new workspaces"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Project scripts give every Conductor workspace the same project workflow: prepare the workspace, run the project, and clean up after archive."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure project scripts in Conductor or in a settings file:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the app, open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/repos?section=scripts",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", select the project, and edit the setup or archive script on the Scripts tab. Edit actions and Spotlight testing on the "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/repos?section=actions",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Actions tab"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the repository, add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "[scripts]"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the same workflow should be shared with teammates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "archive = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when teammates should use the same project workflow. For settings file locations and precedence, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the full key list, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "script-types",
+      "children": [
+        {
+          "type": "text",
+          "value": "Script types"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Script"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Setting"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "When it runs"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Setup"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.setup"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "After Conductor creates a workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Installing dependencies, generating files, creating symlinks"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Actions"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "When you click the Run button"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Starting apps, servers, workers, watchers, or test loops"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Archive"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.archive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Before Conductor archives a workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cleaning up resources outside the workspace directory"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Run mode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run_mode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "When an action starts"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Choosing whether actions can overlap"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup scripts, archive scripts, and actions run from the workspace directory, available as "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_WORKSPACE_PATH"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_ROOT_PATH"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when a script needs a file from the repository root."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "setup-scripts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup scripts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The setup script prepares a new workspace after Git checks out the tracked repository files. Use it when the workspace needs commands, generated files, symlinks, or workspace-specific resources."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nsetup = \"\"\"\npnpm install\ncp \"$CONDUCTOR_ROOT_PATH/.env\" .env\npnpm run build\n\"\"\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "pnpm install",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "cp \"$CONDUCTOR_ROOT_PATH/.env\" .env",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "pnpm run build",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If all you need is to copy gitignored local files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead."
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Create workspace-specific resources",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If your app stores local state, make the setup script create resources for each workspace instead of sharing one development instance."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_WORKSPACE_NAME"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " to name generated resources such as app identifiers, local data directories, application support folders, or development icons. Use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_PORT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " when each workspace needs its own server port."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Keep the root checkout up to date",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor creates new workspaces from the repository base branch, such as "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "origin/main"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", and fetches from "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "origin"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " first. That fetch updates Conductor's remote view, but it does not move the branch checked out in the repository root directory."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If you want the root checkout branch to stay current too, add a fast-forward pull to your setup script:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "bash",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+              "code": "git -C \"$CONDUCTOR_ROOT_PATH\" fetch --prune origin && git -C \"$CONDUCTOR_ROOT_PATH\" pull --ff-only || true",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "git",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " -C",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "$CONDUCTOR_ROOT_PATH",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " fetch",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " --prune",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " origin",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " && ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "git",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " -C",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "$CONDUCTOR_ROOT_PATH",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " pull",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " --ff-only",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " ||",
+                      "color": "#D73A49",
+                      "colorDark": "#F97583"
+                    },
+                    {
+                      "text": " true",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "|| true"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " keeps setup from failing when the branch cannot fast-forward, such as when the root checkout has local commits."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Watch the advanced setup walkthrough",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://gist.github.com/cbh123/10b4e522252eb9d900872921fbeb736d",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "advanced setup script walkthrough"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " shows the Conductor setup script creating workspace-specific development resources for the desktop app."
+                }
+              ]
+            },
+            {
+              "type": "video",
+              "src": "/assets/docs/media/ConductorAdvancedSetup.mp4",
+              "alt": "Advanced setup script walkthrough",
+              "controls": true,
+              "autoPlay": false,
+              "muted": false,
+              "loop": false,
+              "playsInline": true,
+              "summary": "Video summary: Advanced setup script walkthroughThe video shows a Conductor setup script creating workspace-specific development resources for the desktop app, including dependencies, app identifiers, data directories, ports, application support folders, and icons. It demonstrates running two workspaces at once so each workspace has its own app instance for testing agent changes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-scripts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions start your app, server, test watcher, worker, or another long-running command from the active workspace. A project can define one or more actions. Conductor shows them in the Run button menu, and you can edit them under Custom actions on the repository's "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Actions settings tab"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". In settings files, actions are defined under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_PORT"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when an action starts a local server. Conductor allocates ten ports to each workspace: "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " through "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT+9"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use shell arithmetic to select another port in that range:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts.run.api]\navailable_in = [ \"local\" ]\ncommand = \"pnpm api --port $((CONDUCTOR_PORT + 1))\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "api",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "available_in = [ ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm api --port $((CONDUCTOR_PORT + 1))\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is not set in cloud workspaces, so keep actions that depend on it local-only."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions use non-interactive shells. If a tool works in your normal terminal but fails in an action, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/shells"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Shell configuration"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "multiple-actions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Multiple actions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add one named action under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run.<id>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for each command. Conductor uses the action ID to match the same action across user, project, and local project settings."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.web]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[scripts.run.worker]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm worker:dev\"\nicon = \"server\"\n\n[scripts.run.test]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm test:watch\"\nicon = \"test-tube\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "web",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "available_in = [ ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ", ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"cloud\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "worker",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "available_in = [ ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ", ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"cloud\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm worker:dev\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"server\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "test",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "available_in = [ ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ", ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"cloud\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm test:watch\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"test-tube\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose an ID that describes the command, such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "web"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "worker"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "test"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use letters, numbers, spaces, or hyphens. Conductor normalizes repeated spaces and treats hyphens as spaces for display."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "action-fields",
+      "children": [
+        {
+          "type": "text",
+          "value": "Action fields"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Field"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "command"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Shell command to run from the active workspace. Required for a runnable action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "args"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "array of strings"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Optional arguments passed with the command."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "options.cwd"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Optional working directory relative to the workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "default"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Marks the action Conductor should select by default when more than one action exists."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "icon"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Lucide icon name shown with the action. Invalid icon names fall back to "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "play"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "hide"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Hides the action from the Run button. Set it in "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".conductor/settings.local.toml"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " to hide a shared action on your machine only."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "available_in"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "\"local\""
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "\"cloud\""
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or an array of both"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Limits where the action appears. Omit it when the action should be available locally and in cloud workspaces."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "action-icons",
+      "children": [
+        {
+          "type": "text",
+          "value": "Action icons"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "icon"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " accepts a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://lucide.dev/icons/",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Lucide icon"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " name written in lowercase kebab case. Common choices for actions include "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "play"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "terminal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "square-terminal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "server"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "globe"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "database"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "monitor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "rocket"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "code"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "braces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "package"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "test-tube"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "bug"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "wrench"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "cloud"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "folder"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "file-code"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "flame"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "legacy-single-action",
+      "children": [
+        {
+          "type": "text",
+          "value": "Legacy single action"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Older settings files may use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for a single action:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor still reads "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " as a string for a single action. New settings that need more than one command should define named actions under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "where-changes-take-effect",
+      "children": [
+        {
+          "type": "text",
+          "value": "Where changes take effect"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For where action changes apply, when to use local overrides, and how shared project settings reach teammates, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project#when-file-changes-apply"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-mode",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run mode"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.run_mode"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " controls whether multiple actions can run at once."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Mode"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Behavior"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "concurrent"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Actions can run in multiple workspaces at the same time."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "nonconcurrent"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Starting an action stops any other action first."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "nonconcurrent"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when your project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time."
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Run multiple processes",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If your action starts multiple processes, use a foreground supervisor that handles "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "SIGTERM"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", stops its children, and waits for them to exit. Avoid detached or daemon modes."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Backgrounding a command with "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "&"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " is cleaned up when it remains in Conductor's process group; actions only need to manage children that create a new process group or session, or that require application-level graceful cleanup. See "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "#process-handling"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Process handling"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " for what Conductor stops automatically."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "archive-scripts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Archive scripts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The archive script runs before Conductor archives a workspace. Use it to clean up project-specific resources outside the workspace directory."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\narchive = \"./script/workspace-archive.sh\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "archive = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For example, a desktop app might remove a workspace-specific application support directory:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "rm -rf \"$HOME/Library/Application Support/com.example.app.dev.$CONDUCTOR_WORKSPACE_NAME\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "rm",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -rf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$HOME",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/Library/Application Support/com.example.app.dev.",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_WORKSPACE_NAME",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "process-handling",
+      "children": [
+        {
+          "type": "text",
+          "value": "Process handling"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you click Stop for an action in a local workspace on macOS, Conductor sends "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "SIGTERM"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to the action's process group. After five seconds, it sends "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "SIGKILL"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to that group, even if the top-level process has already exited. The five-second grace period is not configurable."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor does not recursively walk the descendant process tree. Descendants that move into another process group or session can survive and keep ports open, so their launcher must stop them during the grace period."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "related-references",
+      "children": [
+        {
+          "type": "text",
+          "value": "Related references"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for static gitignored files that should appear in each workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/environment-variables"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor variables"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for workspace paths and allocated ports."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/shells"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Shell configuration"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for non-interactive shell behavior."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts/spotlight-testing"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Spotlight testing"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for projects that need to run from the repository root."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts/share-with-teammates"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Share project settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for committing "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " with teammates."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Project scripts give every Conductor workspace the same project workflow: prepare the workspace, run the project, and clean up after archive.</p><p>Configure project scripts in Conductor or in a settings file:</p><ul><li>In the app, open <a href=\"https://app.conductor.build/settings/repos?section=scripts\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a>, select the project, and edit the setup or archive script on the Scripts tab. Edit actions and Spotlight testing on the <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Actions tab</a>.</li><li>In the repository, add <code>[scripts]</code> to <code>.conductor/settings.toml</code> when the same workflow should be shared with teammates.</li></ul><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span></code></pre></figure><p>Commit <code>.conductor/settings.toml</code> when teammates should use the same project workflow. For settings file locations and precedence, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>. For the full key list, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>.</p><h2 id=\"script-types\"><a href=\"#script-types\">Script types</a></h2><table><thead><tr><th>Script</th><th>Setting</th><th>When it runs</th><th>Use it for</th></tr></thead><tbody><tr><td>Setup</td><td><code>scripts.setup</code></td><td>After Conductor creates a workspace</td><td>Installing dependencies, generating files, creating symlinks</td></tr><tr><td>Actions</td><td><code>scripts.run</code></td><td>When you click the Run button</td><td>Starting apps, servers, workers, watchers, or test loops</td></tr><tr><td>Archive</td><td><code>scripts.archive</code></td><td>Before Conductor archives a workspace</td><td>Cleaning up resources outside the workspace directory</td></tr><tr><td>Run mode</td><td><code>scripts.run_mode</code></td><td>When an action starts</td><td>Choosing whether actions can overlap</td></tr></tbody></table><p>Setup scripts, archive scripts, and actions run from the workspace directory, available as <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_WORKSPACE_PATH</code></a>. Use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_ROOT_PATH</code></a> when a script needs a file from the repository root.</p><h2 id=\"setup-scripts\"><a href=\"#setup-scripts\">Setup scripts</a></h2><p>The setup script prepares a new workspace after Git checks out the tracked repository files. Use it when the workspace needs commands, generated files, symlinks, or workspace-specific resources.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">pnpm install</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">cp \"$CONDUCTOR_ROOT_PATH/.env\" .env</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">pnpm run build</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">\"\"\"</span></span></code></pre></figure><p>If all you need is to copy gitignored local files such as <code>.env.local</code>, use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> instead.</p><div data-accordions=\"single\"><details data-accordion><summary>Create workspace-specific resources</summary><p>If your app stores local state, make the setup script create resources for each workspace instead of sharing one development instance.</p><p>Use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_WORKSPACE_NAME</code></a> to name generated resources such as app identifiers, local data directories, application support folders, or development icons. Use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_PORT</code></a> when each workspace needs its own server port.</p></details><details data-accordion><summary>Keep the root checkout up to date</summary><p>Conductor creates new workspaces from the repository base branch, such as <code>origin/main</code>, and fetches from <code>origin</code> first. That fetch updates Conductor's remote view, but it does not move the branch checked out in the repository root directory.</p><p>If you want the root checkout branch to stay current too, add a fast-forward pull to your setup script:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#005CC5\"> -C</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$CONDUCTOR_ROOT_PATH</span><span style=\"color:#032F62\">\"</span><span style=\"color:#032F62\"> fetch</span><span style=\"color:#005CC5\"> --prune</span><span style=\"color:#032F62\"> origin</span><span style=\"color:#24292E\"> &amp;&amp; </span><span style=\"color:#6F42C1\">git</span><span style=\"color:#005CC5\"> -C</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$CONDUCTOR_ROOT_PATH</span><span style=\"color:#032F62\">\"</span><span style=\"color:#032F62\"> pull</span><span style=\"color:#005CC5\"> --ff-only</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> true</span></span></code></pre></figure><p>The <code>|| true</code> keeps setup from failing when the branch cannot fast-forward, such as when the root checkout has local commits.</p></details><details data-accordion><summary>Watch the advanced setup walkthrough</summary><p>The <a href=\"https://gist.github.com/cbh123/10b4e522252eb9d900872921fbeb736d\" target=\"_blank\" rel=\"noopener noreferrer\">advanced setup script walkthrough</a> shows the Conductor setup script creating workspace-specific development resources for the desktop app.</p><figure data-asset=\"video\"><video src=\"/assets/docs/media/ConductorAdvancedSetup.mp4\" aria-label=\"Advanced setup script walkthrough\" controls playsinline></video><figcaption class=\"sr-only\">Video summary: Advanced setup script walkthroughThe video shows a Conductor setup script creating workspace-specific development resources for the desktop app, including dependencies, app identifiers, data directories, ports, application support folders, and icons. It demonstrates running two workspaces at once so each workspace has its own app instance for testing agent changes.</figcaption></figure></details></div><h2 id=\"run-scripts\"><a href=\"#run-scripts\">Actions</a></h2><p>Actions start your app, server, test watcher, worker, or another long-running command from the active workspace. A project can define one or more actions. Conductor shows them in the Run button menu, and you can edit them under Custom actions on the repository's <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Actions settings tab</a>. In settings files, actions are defined under <code>scripts.run</code>.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span></code></pre></figure><p>Use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_PORT</code></a> when an action starts a local server. Conductor allocates ten ports to each workspace: <code>CONDUCTOR_PORT</code> through <code>CONDUCTOR_PORT+9</code>. Use shell arithmetic to select another port in that range:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">api</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">available_in = [ </span><span style=\"color:#032F62\">\"local\"</span><span style=\"color:#24292E\"> ]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm api --port $((CONDUCTOR_PORT + 1))\"</span></span></code></pre></figure><p><code>CONDUCTOR_PORT</code> is not set in cloud workspaces, so keep actions that depend on it local-only.</p><p>Actions use non-interactive shells. If a tool works in your normal terminal but fails in an action, see <a href=\"/docs/reference/shells\">Shell configuration</a>.</p><h3 id=\"multiple-actions\"><a href=\"#multiple-actions\">Multiple actions</a></h3><p>Add one named action under <code>scripts.run.&lt;id&gt;</code> for each command. Conductor uses the action ID to match the same action across user, project, and local project settings.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">web</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">available_in = [ </span><span style=\"color:#032F62\">\"local\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"cloud\"</span><span style=\"color:#24292E\"> ]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">worker</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">available_in = [ </span><span style=\"color:#032F62\">\"local\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"cloud\"</span><span style=\"color:#24292E\"> ]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm worker:dev\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"server\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">test</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">available_in = [ </span><span style=\"color:#032F62\">\"local\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"cloud\"</span><span style=\"color:#24292E\"> ]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm test:watch\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"test-tube\"</span></span></code></pre></figure><p>Choose an ID that describes the command, such as <code>web</code>, <code>worker</code>, or <code>test</code>. Use letters, numbers, spaces, or hyphens. Conductor normalizes repeated spaces and treats hyphens as spaces for display.</p><h3 id=\"action-fields\"><a href=\"#action-fields\">Action fields</a></h3><table><thead><tr><th>Field</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>command</code></td><td>string</td><td>Shell command to run from the active workspace. Required for a runnable action.</td></tr><tr><td><code>args</code></td><td>array of strings</td><td>Optional arguments passed with the command.</td></tr><tr><td><code>options.cwd</code></td><td>string</td><td>Optional working directory relative to the workspace.</td></tr><tr><td><code>default</code></td><td>boolean</td><td>Marks the action Conductor should select by default when more than one action exists.</td></tr><tr><td><code>icon</code></td><td>string</td><td>Lucide icon name shown with the action. Invalid icon names fall back to <code>play</code>.</td></tr><tr><td><code>hide</code></td><td>boolean</td><td>Hides the action from the Run button. Set it in <code>.conductor/settings.local.toml</code> to hide a shared action on your machine only.</td></tr><tr><td><code>available_in</code></td><td><code>\"local\"</code>, <code>\"cloud\"</code>, or an array of both</td><td>Limits where the action appears. Omit it when the action should be available locally and in cloud workspaces.</td></tr></tbody></table><h3 id=\"action-icons\"><a href=\"#action-icons\">Action icons</a></h3><p><code>icon</code> accepts a <a href=\"https://lucide.dev/icons/\" target=\"_blank\" rel=\"noopener noreferrer\">Lucide icon</a> name written in lowercase kebab case. Common choices for actions include <code>play</code>, <code>terminal</code>, <code>square-terminal</code>, <code>server</code>, <code>globe</code>, <code>database</code>, <code>monitor</code>, <code>rocket</code>, <code>code</code>, <code>braces</code>, <code>package</code>, <code>test-tube</code>, <code>bug</code>, <code>wrench</code>, <code>settings</code>, <code>cloud</code>, <code>folder</code>, <code>file-code</code>, and <code>flame</code>.</p><h3 id=\"legacy-single-action\"><a href=\"#legacy-single-action\">Legacy single action</a></h3><p>Older settings files may use <code>scripts.run</code> for a single action:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span></code></pre></figure><p>Conductor still reads <code>scripts.run</code> as a string for a single action. New settings that need more than one command should define named actions under <code>scripts.run</code>.</p><h3 id=\"where-changes-take-effect\"><a href=\"#where-changes-take-effect\">Where changes take effect</a></h3><p>For where action changes apply, when to use local overrides, and how shared project settings reach teammates, see <a href=\"/docs/reference/settings/user-project#when-file-changes-apply\">User and project settings</a>.</p><h2 id=\"run-mode\"><a href=\"#run-mode\">Run mode</a></h2><p><code>scripts.run_mode</code> controls whether multiple actions can run at once.</p><table><thead><tr><th>Mode</th><th>Behavior</th></tr></thead><tbody><tr><td><code>concurrent</code></td><td>Actions can run in multiple workspaces at the same time.</td></tr><tr><td><code>nonconcurrent</code></td><td>Starting an action stops any other action first.</td></tr></tbody></table><p>Use <code>nonconcurrent</code> when your project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.</p><div data-accordions=\"single\"><details data-accordion><summary>Run multiple processes</summary><p>If your action starts multiple processes, use a foreground supervisor that handles <code>SIGTERM</code>, stops its children, and waits for them to exit. Avoid detached or daemon modes.</p><p>Backgrounding a command with <code>&amp;</code> is cleaned up when it remains in Conductor's process group; actions only need to manage children that create a new process group or session, or that require application-level graceful cleanup. See <a href=\"#process-handling\">Process handling</a> for what Conductor stops automatically.</p></details></div><h2 id=\"archive-scripts\"><a href=\"#archive-scripts\">Archive scripts</a></h2><p>The archive script runs before Conductor archives a workspace. Use it to clean up project-specific resources outside the workspace directory.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span></code></pre></figure><p>For example, a desktop app might remove a workspace-specific application support directory:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">rm</span><span style=\"color:#005CC5\"> -rf</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$HOME</span><span style=\"color:#032F62\">/Library/Application Support/com.example.app.dev.</span><span style=\"color:#24292E\">$CONDUCTOR_WORKSPACE_NAME</span><span style=\"color:#032F62\">\"</span></span></code></pre></figure><h2 id=\"process-handling\"><a href=\"#process-handling\">Process handling</a></h2><p>When you click Stop for an action in a local workspace on macOS, Conductor sends <code>SIGTERM</code> to the action's process group. After five seconds, it sends <code>SIGKILL</code> to that group, even if the top-level process has already exited. The five-second grace period is not configurable.</p><p>Conductor does not recursively walk the descendant process tree. Descendants that move into another process group or session can survive and keep ports open, so their launcher must stop them during the grace period.</p><h2 id=\"related-references\"><a href=\"#related-references\">Related references</a></h2><ul><li><a href=\"/docs/reference/files-to-copy\">Files to copy</a> for static gitignored files that should appear in each workspace.</li><li><a href=\"/docs/reference/environment-variables\">Conductor variables</a> for workspace paths and allocated ports.</li><li><a href=\"/docs/reference/shells\">Shell configuration</a> for non-interactive shell behavior.</li><li><a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a> for projects that need to run from the repository root.</li><li><a href=\"/docs/reference/scripts/share-with-teammates\">Share project settings</a> for committing <code>.conductor/settings.toml</code> with teammates.</li></ul>",
+  "text": "Project scripts give every Conductor workspace the same project workflow: prepare the workspace, run the project, and clean up after archive.\nConfigure project scripts in Conductor or in a settings file:\nIn the app, open Settings, select the project, and edit the setup or archive script on the Scripts tab. Edit actions and Spotlight testing on the Actions tab.\nIn the repository, add [scripts] to .conductor/settings.toml when the same workflow should be shared with teammates.\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nsetup = \"pnpm install\"\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"Commit .conductor/settings.toml when teammates should use the same project workflow. For settings file locations and precedence, see User and project settings. For the full key list, see Settings reference.\nScript types\nScriptSettingWhen it runsUse it forSetupscripts.setupAfter Conductor creates a workspaceInstalling dependencies, generating files, creating symlinksActionsscripts.runWhen you click the Run buttonStarting apps, servers, workers, watchers, or test loopsArchivescripts.archiveBefore Conductor archives a workspaceCleaning up resources outside the workspace directoryRun modescripts.run_modeWhen an action startsChoosing whether actions can overlapSetup scripts, archive scripts, and actions run from the workspace directory, available as CONDUCTOR_WORKSPACE_PATH. Use CONDUCTOR_ROOT_PATH when a script needs a file from the repository root.\nSetup scripts\nThe setup script prepares a new workspace after Git checks out the tracked repository files. Use it when the workspace needs commands, generated files, symlinks, or workspace-specific resources.\n[scripts]\nsetup = \"\"\"\npnpm install\ncp \"$CONDUCTOR_ROOT_PATH/.env\" .env\npnpm run build\n\"\"\"If all you need is to copy gitignored local files such as .env.local, use Files to copy instead.\nCreate workspace-specific resourcesIf your app stores local state, make the setup script create resources for each workspace instead of sharing one development instance.\nUse CONDUCTOR_WORKSPACE_NAME to name generated resources such as app identifiers, local data directories, application support folders, or development icons. Use CONDUCTOR_PORT when each workspace needs its own server port.\nKeep the root checkout up to dateConductor creates new workspaces from the repository base branch, such as origin/main, and fetches from origin first. That fetch updates Conductor's remote view, but it does not move the branch checked out in the repository root directory.\nIf you want the root checkout branch to stay current too, add a fast-forward pull to your setup script:\ngit -C \"$CONDUCTOR_ROOT_PATH\" fetch --prune origin && git -C \"$CONDUCTOR_ROOT_PATH\" pull --ff-only || trueThe || true keeps setup from failing when the branch cannot fast-forward, such as when the root checkout has local commits.\nWatch the advanced setup walkthroughThe advanced setup script walkthrough shows the Conductor setup script creating workspace-specific development resources for the desktop app.\nActions\nActions start your app, server, test watcher, worker, or another long-running command from the active workspace. A project can define one or more actions. Conductor shows them in the Run button menu, and you can edit them under Custom actions on the repository's Actions settings tab. In settings files, actions are defined under scripts.run.\n[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"Use CONDUCTOR_PORT when an action starts a local server. Conductor allocates ten ports to each workspace: CONDUCTOR_PORT through CONDUCTOR_PORT+9. Use shell arithmetic to select another port in that range:\n[scripts.run.api]\navailable_in = [ \"local\" ]\ncommand = \"pnpm api --port $((CONDUCTOR_PORT + 1))\"CONDUCTOR_PORT is not set in cloud workspaces, so keep actions that depend on it local-only.\nActions use non-interactive shells. If a tool works in your normal terminal but fails in an action, see Shell configuration.\nMultiple actions\nAdd one named action under scripts.run.<id> for each command. Conductor uses the action ID to match the same action across user, project, and local project settings.\n[scripts]\nrun_mode = \"concurrent\"\n[scripts.run.web]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n[scripts.run.worker]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm worker:dev\"\nicon = \"server\"\n[scripts.run.test]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm test:watch\"\nicon = \"test-tube\"Choose an ID that describes the command, such as web, worker, or test. Use letters, numbers, spaces, or hyphens. Conductor normalizes repeated spaces and treats hyphens as spaces for display.\nAction fields\nFieldTypeDescriptioncommandstringShell command to run from the active workspace. Required for a runnable action.argsarray of stringsOptional arguments passed with the command.options.cwdstringOptional working directory relative to the workspace.defaultbooleanMarks the action Conductor should select by default when more than one action exists.iconstringLucide icon name shown with the action. Invalid icon names fall back to play.hidebooleanHides the action from the Run button. Set it in .conductor/settings.local.toml to hide a shared action on your machine only.available_in\"local\", \"cloud\", or an array of bothLimits where the action appears. Omit it when the action should be available locally and in cloud workspaces.Action icons\nicon accepts a Lucide icon name written in lowercase kebab case. Common choices for actions include play, terminal, square-terminal, server, globe, database, monitor, rocket, code, braces, package, test-tube, bug, wrench, settings, cloud, folder, file-code, and flame.\nLegacy single action\nOlder settings files may use scripts.run for a single action:\n[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"Conductor still reads scripts.run as a string for a single action. New settings that need more than one command should define named actions under scripts.run.\nWhere changes take effect\nFor where action changes apply, when to use local overrides, and how shared project settings reach teammates, see User and project settings.\nRun mode\nscripts.run_mode controls whether multiple actions can run at once.\nModeBehaviorconcurrentActions can run in multiple workspaces at the same time.nonconcurrentStarting an action stops any other action first.Use nonconcurrent when your project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\nRun multiple processesIf your action starts multiple processes, use a foreground supervisor that handles SIGTERM, stops its children, and waits for them to exit. Avoid detached or daemon modes.\nBackgrounding a command with & is cleaned up when it remains in Conductor's process group; actions only need to manage children that create a new process group or session, or that require application-level graceful cleanup. See Process handling for what Conductor stops automatically.\nArchive scripts\nThe archive script runs before Conductor archives a workspace. Use it to clean up project-specific resources outside the workspace directory.\n[scripts]\narchive = \"./script/workspace-archive.sh\"For example, a desktop app might remove a workspace-specific application support directory:\nrm -rf \"$HOME/Library/Application Support/com.example.app.dev.$CONDUCTOR_WORKSPACE_NAME\"Process handling\nWhen you click Stop for an action in a local workspace on macOS, Conductor sends SIGTERM to the action's process group. After five seconds, it sends SIGKILL to that group, even if the top-level process has already exited. The five-second grace period is not configurable.\nConductor does not recursively walk the descendant process tree. Descendants that move into another process group or session can survive and keep ports open, so their launcher must stop them during the grace period.\nRelated references\nFiles to copy for static gitignored files that should appear in each workspace.\nConductor variables for workspace paths and allocated ports.\nShell configuration for non-interactive shell behavior.\nSpotlight testing for projects that need to run from the repository root.\nShare project settings for committing .conductor/settings.toml with teammates.",
+  "markdown": "\n# Scripts\n\n\n\nProject scripts give every Conductor workspace the same project workflow: prepare the workspace, run the project, and clean up after archive.\n\nConfigure project scripts in Conductor or in a settings file:\n\n* In the app, open [`Settings`](https://app.conductor.build/settings/repos?section=scripts), select the project, and edit the setup or archive script on the Scripts tab. Edit actions and Spotlight testing on the [Actions tab](https://app.conductor.build/settings/repos?section=actions).\n* In the repository, add `[scripts]` to `.conductor/settings.toml` when the same workflow should be shared with teammates.\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n```\n\nCommit `.conductor/settings.toml` when teammates should use the same project workflow. For settings file locations and precedence, see [User and project settings](/docs/reference/settings/user-project). For the full key list, see [Settings reference](/docs/reference/settings/reference).\n\n## Script types [#script-types]\n\n| Script   | Setting            | When it runs                          | Use it for                                                   |\n| -------- | ------------------ | ------------------------------------- | ------------------------------------------------------------ |\n| Setup    | `scripts.setup`    | After Conductor creates a workspace   | Installing dependencies, generating files, creating symlinks |\n| Actions  | `scripts.run`      | When you click the Run button         | Starting apps, servers, workers, watchers, or test loops     |\n| Archive  | `scripts.archive`  | Before Conductor archives a workspace | Cleaning up resources outside the workspace directory        |\n| Run mode | `scripts.run_mode` | When an action starts                 | Choosing whether actions can overlap                         |\n\nSetup scripts, archive scripts, and actions run from the workspace directory, available as [`CONDUCTOR_WORKSPACE_PATH`](/docs/reference/environment-variables). Use [`CONDUCTOR_ROOT_PATH`](/docs/reference/environment-variables) when a script needs a file from the repository root.\n\n## Setup scripts [#setup-scripts]\n\nThe setup script prepares a new workspace after Git checks out the tracked repository files. Use it when the workspace needs commands, generated files, symlinks, or workspace-specific resources.\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\nsetup = \"\"\"\npnpm install\ncp \"$CONDUCTOR_ROOT_PATH/.env\" .env\npnpm run build\n\"\"\"\n```\n\nIf all you need is to copy gitignored local files such as `.env.local`, use [Files to copy](/docs/reference/files-to-copy) instead.\n\nIf your app stores local state, make the setup script create resources for each workspace instead of sharing one development instance.\n\nUse [`CONDUCTOR_WORKSPACE_NAME`](/docs/reference/environment-variables) to name generated resources such as app identifiers, local data directories, application support folders, or development icons. Use [`CONDUCTOR_PORT`](/docs/reference/environment-variables) when each workspace needs its own server port.\n\nConductor creates new workspaces from the repository base branch, such as `origin/main`, and fetches from `origin` first. That fetch updates Conductor's remote view, but it does not move the branch checked out in the repository root directory.\n\nIf you want the root checkout branch to stay current too, add a fast-forward pull to your setup script:\n\n```bash\ngit -C \"$CONDUCTOR_ROOT_PATH\" fetch --prune origin && git -C \"$CONDUCTOR_ROOT_PATH\" pull --ff-only || true\n```\n\nThe `|| true` keeps setup from failing when the branch cannot fast-forward, such as when the root checkout has local commits.\n\nThe [advanced setup script walkthrough](https://gist.github.com/cbh123/10b4e522252eb9d900872921fbeb736d) shows the Conductor setup script creating workspace-specific development resources for the desktop app.\n\n\n\n\n## Actions [#run-scripts]\n\nActions start your app, server, test watcher, worker, or another long-running command from the active workspace. A project can define one or more actions. Conductor shows them in the Run button menu, and you can edit them under Custom actions on the repository's [Actions settings tab](https://app.conductor.build/settings/repos?section=actions). In settings files, actions are defined under `scripts.run`.\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"\n```\n\nUse [`CONDUCTOR_PORT`](/docs/reference/environment-variables) when an action starts a local server. Conductor allocates ten ports to each workspace: `CONDUCTOR_PORT` through `CONDUCTOR_PORT+9`. Use shell arithmetic to select another port in that range:\n\n```toml title=\".conductor/settings.toml\"\n[scripts.run.api]\navailable_in = [ \"local\" ]\ncommand = \"pnpm api --port $((CONDUCTOR_PORT + 1))\"\n```\n\n`CONDUCTOR_PORT` is not set in cloud workspaces, so keep actions that depend on it local-only.\n\nActions use non-interactive shells. If a tool works in your normal terminal but fails in an action, see [Shell configuration](/docs/reference/shells).\n\n### Multiple actions [#multiple-actions]\n\nAdd one named action under `scripts.run.<id>` for each command. Conductor uses the action ID to match the same action across user, project, and local project settings.\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.web]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[scripts.run.worker]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm worker:dev\"\nicon = \"server\"\n\n[scripts.run.test]\navailable_in = [ \"local\", \"cloud\" ]\ncommand = \"pnpm test:watch\"\nicon = \"test-tube\"\n```\n\nChoose an ID that describes the command, such as `web`, `worker`, or `test`. Use letters, numbers, spaces, or hyphens. Conductor normalizes repeated spaces and treats hyphens as spaces for display.\n\n### Action fields [#action-fields]\n\n| Field          | Type                                      | Description                                                                                                                    |\n| -------------- | ----------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------ |\n| `command`      | string                                    | Shell command to run from the active workspace. Required for a runnable action.                                                |\n| `args`         | array of strings                          | Optional arguments passed with the command.                                                                                    |\n| `options.cwd`  | string                                    | Optional working directory relative to the workspace.                                                                          |\n| `default`      | boolean                                   | Marks the action Conductor should select by default when more than one action exists.                                          |\n| `icon`         | string                                    | Lucide icon name shown with the action. Invalid icon names fall back to `play`.                                                |\n| `hide`         | boolean                                   | Hides the action from the Run button. Set it in `.conductor/settings.local.toml` to hide a shared action on your machine only. |\n| `available_in` | `\"local\"`, `\"cloud\"`, or an array of both | Limits where the action appears. Omit it when the action should be available locally and in cloud workspaces.                  |\n\n### Action icons [#action-icons]\n\n`icon` accepts a [Lucide icon](https://lucide.dev/icons/) name written in lowercase kebab case. Common choices for actions include `play`, `terminal`, `square-terminal`, `server`, `globe`, `database`, `monitor`, `rocket`, `code`, `braces`, `package`, `test-tube`, `bug`, `wrench`, `settings`, `cloud`, `folder`, `file-code`, and `flame`.\n\n### Legacy single action [#legacy-single-action]\n\nOlder settings files may use `scripts.run` for a single action:\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\nrun = \"pnpm dev --port $CONDUCTOR_PORT\"\nrun_mode = \"concurrent\"\n```\n\nConductor still reads `scripts.run` as a string for a single action. New settings that need more than one command should define named actions under `scripts.run`.\n\n### Where changes take effect [#where-changes-take-effect]\n\nFor where action changes apply, when to use local overrides, and how shared project settings reach teammates, see [User and project settings](/docs/reference/settings/user-project#when-file-changes-apply).\n\n## Run mode [#run-mode]\n\n`scripts.run_mode` controls whether multiple actions can run at once.\n\n| Mode            | Behavior                                                 |\n| --------------- | -------------------------------------------------------- |\n| `concurrent`    | Actions can run in multiple workspaces at the same time. |\n| `nonconcurrent` | Starting an action stops any other action first.         |\n\nUse `nonconcurrent` when your project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\n\nIf your action starts multiple processes, use a foreground supervisor that handles `SIGTERM`, stops its children, and waits for them to exit. Avoid detached or daemon modes.\n\nBackgrounding a command with `&` is cleaned up when it remains in Conductor's process group; actions only need to manage children that create a new process group or session, or that require application-level graceful cleanup. See [Process handling](#process-handling) for what Conductor stops automatically.\n\n## Archive scripts [#archive-scripts]\n\nThe archive script runs before Conductor archives a workspace. Use it to clean up project-specific resources outside the workspace directory.\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\narchive = \"./script/workspace-archive.sh\"\n```\n\nFor example, a desktop app might remove a workspace-specific application support directory:\n\n```bash\nrm -rf \"$HOME/Library/Application Support/com.example.app.dev.$CONDUCTOR_WORKSPACE_NAME\"\n```\n\n## Process handling [#process-handling]\n\nWhen you click Stop for an action in a local workspace on macOS, Conductor sends `SIGTERM` to the action's process group. After five seconds, it sends `SIGKILL` to that group, even if the top-level process has already exited. The five-second grace period is not configurable.\n\nConductor does not recursively walk the descendant process tree. Descendants that move into another process group or session can survive and keep ports open, so their launcher must stop them during the grace period.\n\n## Related references [#related-references]\n\n* [Files to copy](/docs/reference/files-to-copy) for static gitignored files that should appear in each workspace.\n* [Conductor variables](/docs/reference/environment-variables) for workspace paths and allocated ports.\n* [Shell configuration](/docs/reference/shells) for non-interactive shell behavior.\n* [Spotlight testing](/docs/reference/scripts/spotlight-testing) for projects that need to run from the repository root.\n* [Share project settings](/docs/reference/scripts/share-with-teammates) for committing `.conductor/settings.toml` with teammates.\n"
+}

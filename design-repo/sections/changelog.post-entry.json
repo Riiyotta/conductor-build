@@ -1,0 +1,119 @@
+{
+  "id": "changelog.post-entry",
+  "category": "CHANGELOG",
+  "iaSections": [
+    "changelog.post-entry"
+  ],
+  "purpose": "A single release note as its own page.",
+  "implementedBy": [
+    {
+      "ref": "src/components/changelog/ChangelogEntry.jsx:43",
+      "quote": "<h1 className=\"mb-6 text-3xl font-semibold text-foreground\">{post.title}</h1>"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:462",
+      "quote": "- Post: `h1.mb-6.text-3xl.font-semibold`"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "changelog.post-entry"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "version": {
+      "type": "pattern",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "required": true
+    },
+    "date": {
+      "type": "text",
+      "maxWords": 4,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "title": {
+      "type": "text",
+      "maxWords": 14,
+      "required": true,
+      "observedMaxWords": 12
+    },
+    "body": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "paragraph",
+              "heading",
+              "list-item",
+              "code",
+              "image",
+              "video"
+            ],
+            "required": true
+          },
+          "text": {
+            "type": "text",
+            "maxWords": 80,
+            "required": false,
+            "observedMaxWords": 75
+          },
+          "media": {
+            "type": "media",
+            "roles": [
+              "product-screenshot",
+              "demo-video"
+            ],
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 60,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.changelog-post"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "sticky-meta",
+      "video-autoplay-loop"
+    ],
+    "defaultPatterns": [
+      "sticky-meta"
+    ],
+    "reducedMotionFallback": "poster-or-first-frame",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:507",
+        "quote": "### 5.6 Motion (changelog)"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Release notes are factual claims about shipped software: never invent releases; never copy Conductor's changelog text."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "demo-video",
+    "product-screenshot"
+  ]
+}

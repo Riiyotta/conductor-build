@@ -1,0 +1,318 @@
+{
+  "slug": "reference/diff-viewer",
+  "url": "/docs/reference/diff-viewer",
+  "title": "Diff viewer",
+  "description": "Review workspace changes, comments, and PR-ready diffs",
+  "meta": {
+    "title": "Diff viewer | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/diff-viewer/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Diff viewer"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#what-to-review",
+      "title": "What to review"
+    },
+    {
+      "depth": 2,
+      "url": "#comments",
+      "title": "Comments"
+    },
+    {
+      "depth": 2,
+      "url": "#pr-actions",
+      "title": "PR actions"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/harnesses/opencode",
+    "title": "OpenCode",
+    "description": "Details for running the OpenCode harness inside Conductor"
+  },
+  "next": {
+    "url": "/docs/reference/checks",
+    "title": "Checks",
+    "description": "Reference for merge readiness signals in a workspace"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The Diff Viewer shows the code changes in a workspace. Use it before creating a pull request, after an agent makes changes, and whenever review comments need another pass."
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "src": "/assets/docs/media/ConductorDiffExplainer.mp4",
+      "alt": "Diff Viewer walkthrough",
+      "controls": true,
+      "autoPlay": false,
+      "muted": false,
+      "loop": false,
+      "playsInline": true,
+      "summary": "Video summary: Diff Viewer walkthroughThe video shows the Diff Viewer after an agent changes code. It opens changed files from the sidebar, jumps to a selected file, switches to a unified diff, filters diffs by commit, and follows the suggested Create PR action."
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-to-review",
+      "children": [
+        {
+          "type": "text",
+          "value": "What to review"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Check the diff for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Files changed by the agent."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Unrelated or accidental edits."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Missing tests or docs."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local comments and GitHub review comments."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conflicts or files that need manual inspection."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the file list to move between changed files. If you are reviewing from a summary, comment, or search result, jump directly to the file before leaving feedback."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Change the diff view when it helps review:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use unified diff when you want the old and new code in one column."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use commit filtering when you need to review one commit at a time."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "comments",
+      "children": [
+        {
+          "type": "text",
+          "value": "Comments"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use comments when you want to send specific feedback back to the agent. Comments can point at changed lines, so the agent gets more precise context than it would from a general chat message."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "GitHub review comments can also appear in Conductor. When a thread is handled, resolve it so the Checks tab reflects the current review state."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "pr-actions",
+      "children": [
+        {
+          "type": "text",
+          "value": "PR actions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor recommends actions as a workspace moves toward merge."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use those actions to create a pull request, respond to feedback, fix checks, and merge when the workspace is ready. When the suggested action is "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create PR"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", Conductor walks you through turning the current workspace changes into a pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a step-by-step review flow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/review-and-merge"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Review and merge a workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>The Diff Viewer shows the code changes in a workspace. Use it before creating a pull request, after an agent makes changes, and whenever review comments need another pass.</p><figure data-asset=\"video\"><video src=\"/assets/docs/media/ConductorDiffExplainer.mp4\" aria-label=\"Diff Viewer walkthrough\" controls playsinline></video><figcaption class=\"sr-only\">Video summary: Diff Viewer walkthroughThe video shows the Diff Viewer after an agent changes code. It opens changed files from the sidebar, jumps to a selected file, switches to a unified diff, filters diffs by commit, and follows the suggested Create PR action.</figcaption></figure><h2 id=\"what-to-review\"><a href=\"#what-to-review\">What to review</a></h2><p>Check the diff for:</p><ul><li>Files changed by the agent.</li><li>Unrelated or accidental edits.</li><li>Missing tests or docs.</li><li>Local comments and GitHub review comments.</li><li>Conflicts or files that need manual inspection.</li></ul><p>Use the file list to move between changed files. If you are reviewing from a summary, comment, or search result, jump directly to the file before leaving feedback.</p><p>Change the diff view when it helps review:</p><ul><li>Use unified diff when you want the old and new code in one column.</li><li>Use commit filtering when you need to review one commit at a time.</li></ul><h2 id=\"comments\"><a href=\"#comments\">Comments</a></h2><p>Use comments when you want to send specific feedback back to the agent. Comments can point at changed lines, so the agent gets more precise context than it would from a general chat message.</p><p>GitHub review comments can also appear in Conductor. When a thread is handled, resolve it so the Checks tab reflects the current review state.</p><h2 id=\"pr-actions\"><a href=\"#pr-actions\">PR actions</a></h2><p>Conductor recommends actions as a workspace moves toward merge.</p><p>Use those actions to create a pull request, respond to feedback, fix checks, and merge when the workspace is ready. When the suggested action is <code>Create PR</code>, Conductor walks you through turning the current workspace changes into a pull request.</p><p>For a step-by-step review flow, see <a href=\"/docs/guides/review-and-merge\">Review and merge a workspace</a>.</p>",
+  "text": "The Diff Viewer shows the code changes in a workspace. Use it before creating a pull request, after an agent makes changes, and whenever review comments need another pass.\nWhat to review\nCheck the diff for:\nFiles changed by the agent.\nUnrelated or accidental edits.\nMissing tests or docs.\nLocal comments and GitHub review comments.\nConflicts or files that need manual inspection.\nUse the file list to move between changed files. If you are reviewing from a summary, comment, or search result, jump directly to the file before leaving feedback.\nChange the diff view when it helps review:\nUse unified diff when you want the old and new code in one column.\nUse commit filtering when you need to review one commit at a time.\nComments\nUse comments when you want to send specific feedback back to the agent. Comments can point at changed lines, so the agent gets more precise context than it would from a general chat message.\nGitHub review comments can also appear in Conductor. When a thread is handled, resolve it so the Checks tab reflects the current review state.\nPR actions\nConductor recommends actions as a workspace moves toward merge.\nUse those actions to create a pull request, respond to feedback, fix checks, and merge when the workspace is ready. When the suggested action is Create PR, Conductor walks you through turning the current workspace changes into a pull request.\nFor a step-by-step review flow, see Review and merge a workspace.",
+  "markdown": "\n# Diff viewer\n\n\n\nThe Diff Viewer shows the code changes in a workspace. Use it before creating a pull request, after an agent makes changes, and whenever review comments need another pass.\n\n\n\n\n## What to review [#what-to-review]\n\nCheck the diff for:\n\n* Files changed by the agent.\n* Unrelated or accidental edits.\n* Missing tests or docs.\n* Local comments and GitHub review comments.\n* Conflicts or files that need manual inspection.\n\nUse the file list to move between changed files. If you are reviewing from a summary, comment, or search result, jump directly to the file before leaving feedback.\n\nChange the diff view when it helps review:\n\n* Use unified diff when you want the old and new code in one column.\n* Use commit filtering when you need to review one commit at a time.\n\n## Comments [#comments]\n\nUse comments when you want to send specific feedback back to the agent. Comments can point at changed lines, so the agent gets more precise context than it would from a general chat message.\n\nGitHub review comments can also appear in Conductor. When a thread is handled, resolve it so the Checks tab reflects the current review state.\n\n## PR actions [#pr-actions]\n\nConductor recommends actions as a workspace moves toward merge.\n\nUse those actions to create a pull request, respond to feedback, fix checks, and merge when the workspace is ready. When the suggested action is `Create PR`, Conductor walks you through turning the current workspace changes into a pull request.\n\nFor a step-by-step review flow, see [Review and merge a workspace](/docs/guides/review-and-merge).\n"
+}

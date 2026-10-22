@@ -1,0 +1,43 @@
+{
+  "slug": "0.64.0-claude-fable-5",
+  "version": "0.64.0",
+  "versionSlug": "0.64.0",
+  "title": "Claude Fable 5",
+  "fullTitle": "0.64.0: Claude Fable 5",
+  "date": "June 9, 2026",
+  "dateISO": "2026-06-09",
+  "description": "Conductor 0.64.0 changelog - Claude Fable 5",
+  "summary": "Claude Fable 5, Anthropic's newest and most powerful model, is now available in Conductor.",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.64.0/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.64.0-claude-fable-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.64.0-claude-fable-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.64.0-claude-fable-5",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Claude Fable 5"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.64.1"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.64.3"
+    }
+  ],
+  "html": "<h3>Claude Fable 5</h3>\n<figure data-asset><video src=\"/assets/changelog/media/0.64.0/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4\" autoplay muted loop playsinline width=\"100%\"></video></figure>\n<p>Claude Fable 5, Anthropic&#x27;s newest and most powerful model, is now available in Conductor.</p>\n<p>Give it a shot and let us know what you think!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added env file settings for loading agent environment variables from parsed env files at user, repository, and local repository scopes. Loaded variables appear in the environment variable list with env-file source indicators.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where reloading Conductor on a workspace page could show a blank screen.</li>\n</ul>\n<h4>New in 0.64.1</h4>\n<ul>\n<li>Fixed model picker row highlighting so only the selected model is marked as selected.</li>\n<li>Fixed wheel scrolling in the dispatcher model picker.</li>\n</ul>\n<h4>New in 0.64.3</h4>\n<ul>\n<li>Fixed Claude Fable 5 sessions showing a 200k context window instead of 1M.</li>\n<li>Added Ultracode effort to Claude Fable 5</li>\n</ul>",
+  "markdown": "\n## Claude Fable 5\n\n<video\n    src=\"/assets/changelog/media/0.64.0/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    width=\"100%\"\n/>\n\nClaude Fable 5, Anthropic's newest and most powerful model, is now available in Conductor.\n\nGive it a shot and let us know what you think!\n\n## Improvements\n\n- Added env file settings for loading agent environment variables from parsed env files at user, repository, and local repository scopes. Loaded variables appear in the environment variable list with env-file source indicators.\n\n## Fixes\n\n- Fixed an issue where reloading Conductor on a workspace page could show a blank screen.\n\n### New in 0.64.1\n\n- Fixed model picker row highlighting so only the selected model is marked as selected.\n- Fixed wheel scrolling in the dispatcher model picker.\n\n### New in 0.64.3\n\n- Fixed Claude Fable 5 sessions showing a 200k context window instead of 1M.\n- Added Ultracode effort to Claude Fable 5\n"
+}

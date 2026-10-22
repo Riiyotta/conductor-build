@@ -1,0 +1,17 @@
+# generated / regenerable
+node_modules/
+dist/
+
+# scratch from browser-testing agents
+.playwright-mcp/
+
+# macOS
+.DS_Store
+__MACOSX/
+
+# packaged design-repo is built fresh, never committed alongside the live folder
+design-repo.zip
+
+# videos over GitHub's 100 MB file limit (kept local only)
+public/assets/docs/media/workflow.mp4
+public/assets/docs/media/ConductorAdvancedSetup.mp4

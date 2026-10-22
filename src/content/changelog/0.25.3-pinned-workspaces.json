@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.3-pinned-workspaces",
+  "version": "0.25.3",
+  "versionSlug": "0.25.3",
+  "title": "Pinned Workspaces",
+  "fullTitle": "0.25.3: Pinned Workspaces",
+  "date": "Dec 5th, 2025",
+  "dateISO": "2025-12-05",
+  "description": "Conductor 0.25.3 changelog - Pinned Workspaces",
+  "summary": "You can now pin workspaces! Use pins to keep your most important workspaces at the top.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.3/29cab87f-d1ab-4b97-8695-704a2884693c.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.3-pinned-workspaces/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.3-pinned-workspaces",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.3-pinned-workspaces",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now pin workspaces! Use pins to keep your most important workspaces at the top.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.3/29cab87f-d1ab-4b97-8695-704a2884693c.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Upload images over 5mb</li>\n<li>Closed tabs can now be added as contexts in new sessions</li>\n<li>New DMG image</li>\n<li>Add Gwangju to cities list. If you have a city you&#x27;d like us to add, <a href=\"https://x.com/nbashaw/status/1997195238599995403\" target=\"_blank\" rel=\"noopener noreferrer\">tweet about it and tag @conductor_build</a>!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix git branch prefix not applying to new workspaces</li>\n<li>Plan mode rendering fixes</li>\n<li>Fix tiny icon shift in sidebar</li>\n<li>Remove phantom notifications from archived workspaces</li>\n</ul>",
+  "markdown": "\nYou can now pin workspaces! Use pins to keep your most important workspaces at the top.\n\n<img\n    width=\"736\"\n    height=\"214\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.3/29cab87f-d1ab-4b97-8695-704a2884693c.png\"\n/>\n\n## Improvements\n\n- Upload images over 5mb\n- Closed tabs can now be added as contexts in new sessions\n- New DMG image\n- Add Gwangju to cities list. If you have a city you'd like us to add, [tweet about it and tag @conductor_build](https://x.com/nbashaw/status/1997195238599995403)!\n\n## Fixes\n\n- Fix git branch prefix not applying to new workspaces\n- Plan mode rendering fixes\n- Fix tiny icon shift in sidebar\n- Remove phantom notifications from archived workspaces\n"
+}

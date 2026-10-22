@@ -1,0 +1,32 @@
+{
+  "slug": "0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+  "version": "0.32.0",
+  "versionSlug": "0.32.0",
+  "title": "GitHub issues, Graphite stacks, continue chats, table of contents",
+  "fullTitle": "0.32.0: GitHub issues, Graphite stacks, continue chats, table of contents",
+  "date": "Jan 22nd, 2026",
+  "dateISO": "2026-01-22",
+  "description": "Conductor 0.32.0 changelog - GitHub issues, Graphite stacks, continue chats, table of contents",
+  "summary": "You can now attach GitHub issues in the chat.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.32.0/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png",
+    "alt": "GitHub issues"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+  "sourceUrl": "https://www.conductor.build/changelog/0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now attach GitHub issues in the chat.</p>\n<figure data-asset><img alt=\"GitHub issues\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.32.0/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png\"/></figure>\n<p>When using Graphite to stack changes, your stack will appear in the right sidebar.</p>\n<figure data-asset><img alt=\"Graphite stacking\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.32.0/1769094176261-CleanShot_2026-01-22_at_07.01.53_2x.png\"/></figure>\n<p>We&#x27;ve added two new options after you merge a PR:</p>\n<ol>\n<li>\n<p>Click &quot;Update memory&quot; to ask Claude to learn from its mistakes and update its memory.</p>\n</li>\n<li>\n<p>Click &quot;Continue on new branch&quot; to start work on a new feature in the same workspace. Use this to keep your chats and ignored files, or if it takes a long time to create new workspaces.</p>\n</li>\n</ol>\n<figure data-asset><img alt=\"Continue on new branch\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.32.0/1769094177659-CleanShot_2026-01-22_at_06.45.43_2x.png\"/></figure>\n<p>We&#x27;ve also added a table of contents to easily navigate through the chat.</p>\n<figure data-asset><img alt=\"Table of contents\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.32.0/1769094177141-CleanShot_2026-01-22_at_06.56.46.gif\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Improved sub-agent rendering to match the rest of the chat</li>\n<li>When running scripts, redirect /dev/null to stdin to discourage interactive behaviors</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a race condition where messages sent right after cancelling would also get cancelled</li>\n<li>Truncated MCP output preview to 100k characters to prevent UI freezes</li>\n<li>The loader indicator is now aligned with chat messages and tool calls</li>\n<li>Fixed todos going off screen in the Checks tab</li>\n<li>Fixed a bug in the interactive question tool where the enter shortcut didn&#x27;t always work</li>\n<li>Fixed a layout shift when toggling between tabs in the right sidebar</li>\n<li>The &quot;Export to new chat&quot; button is now visible when Claude runs out of context</li>\n<li>Fixed the Composer losing focus after cancelling</li>\n</ul>",
+  "markdown": "\nYou can now attach GitHub issues in the chat.\n\n![GitHub issues](/assets/changelog/media/0.32.0/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png)\n\nWhen using Graphite to stack changes, your stack will appear in the right sidebar.\n\n![Graphite stacking](/assets/changelog/media/0.32.0/1769094176261-CleanShot_2026-01-22_at_07.01.53_2x.png)\n\nWe've added two new options after you merge a PR:\n\n1. Click \"Update memory\" to ask Claude to learn from its mistakes and update its memory.\n\n2. Click \"Continue on new branch\" to start work on a new feature in the same workspace. Use this to keep your chats and ignored files, or if it takes a long time to create new workspaces.\n\n![Continue on new branch](/assets/changelog/media/0.32.0/1769094177659-CleanShot_2026-01-22_at_06.45.43_2x.png)\n\nWe've also added a table of contents to easily navigate through the chat.\n\n![Table of contents](/assets/changelog/media/0.32.0/1769094177141-CleanShot_2026-01-22_at_06.56.46.gif)\n\n## Improvements\n\n- Improved sub-agent rendering to match the rest of the chat\n- When running scripts, redirect /dev/null to stdin to discourage interactive behaviors\n\n## Fixes\n\n- Fixed a race condition where messages sent right after cancelling would also get cancelled\n- Truncated MCP output preview to 100k characters to prevent UI freezes\n- The loader indicator is now aligned with chat messages and tool calls\n- Fixed todos going off screen in the Checks tab\n- Fixed a bug in the interactive question tool where the enter shortcut didn't always work\n- Fixed a layout shift when toggling between tabs in the right sidebar\n- The \"Export to new chat\" button is now visible when Claude runs out of context\n- Fixed the Composer losing focus after cancelling\n"
+}

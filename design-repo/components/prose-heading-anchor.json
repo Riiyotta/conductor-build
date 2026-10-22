@@ -1,0 +1,29 @@
+{
+  "id": "prose-heading-anchor",
+  "kind": "component",
+  "purpose": "Heading with self-link and a hover-revealed link icon.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/Prose.jsx:12",
+      "quote": "export function ProseHeading({ as: Tag = 'h2', id, children }) {"
+    }
+  ],
+  "tokens": [
+    "{iconSize.14}",
+    "{motion.duration.hover}"
+  ],
+  "variants": [
+    "h1",
+    "h2"
+  ],
+  "states": [
+    "rest",
+    "icon visible on anchor hover"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:76",
+      "quote": "- **Heading anchors:** each h1/h2 is"
+    }
+  ]
+}

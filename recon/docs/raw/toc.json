@@ -1,0 +1,91 @@
+{
+ "svgs": [
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-text-align-start size-4\" aria-hidden=\"true\"><path d=\"M21 5H3\"></path><path d=\"M15 12H3\"></path><path d=\"M17 19H3\"></path></svg>",
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 24.5 392\" class=\"absolute transition-[clip-path]\" style=\"width: 24.5px; height: 392px; clip-path: polygon(0 var(--track-top,0), 100% var(--track-top,0), 100% var(--track-bottom,0), 0 var(--track-bottom,0));\"><path d=\" M8.5 0 L8.5 20 C 8.5 28 8.5 24 8.5 32 L8.5 72 C 8.5 80 8.5 76 8.5 84 L8.5 104 C 8.5 112 8.5 108 8.5 116 L8.5 136 C 8.5 144 16.5 140 16.5 148 L16.5 168 C 16.5 176 16.5 172 16.5 180 L16.5 200 C 16.5 208 8.5 204 8.5 212 L8.5 232 C 8.5 240 16.5 236 16.5 244 L16.5 264 C 16.5 272 16.5 268 16.5 276 L16.5 296 C 16.5 304 16.5 300 16.5 308 L16.5 328 C 16.5 336 8.5 332 8.5 340 L8.5 360 C 8.5 368 8.5 364 8.5 372 L8.5 392\" class=\"stroke-fd-primary\" stroke-width=\"1\" fill=\"none\"></path></svg>",
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"8 0 8 12\" class=\"absolute -top-1.5 -z-1\" style=\"width:9px;height:12px;inset-inline-start:8px\"><path d=\"M 8 0 C 8 8 16 4 16 12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" class=\"stroke-fd-foreground/10\"></path></svg>",
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"8 0 8 12\" class=\"absolute -top-1.5 -z-1\" style=\"width:9px;height:12px;inset-inline-start:8px\"><path d=\"M 16 0 C 16 8 8 4 8 12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" class=\"stroke-fd-foreground/10\"></path></svg>",
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"8 0 8 12\" class=\"absolute -top-1.5 -z-1\" style=\"width:9px;height:12px;inset-inline-start:8px\"><path d=\"M 8 0 C 8 8 16 4 16 12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" class=\"stroke-fd-foreground/10\"></path></svg>",
+  "<svg xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"8 0 8 12\" class=\"absolute -top-1.5 -z-1\" style=\"width:9px;height:12px;inset-inline-start:8px\"><path d=\"M 16 0 C 16 8 8 4 8 12\" stroke=\"black\" stroke-width=\"1\" fill=\"none\" class=\"stroke-fd-foreground/10\"></path></svg>"
+ ],
+ "links": [
+  {
+   "t": "Run Cursor in Conductor",
+   "pad": "20px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": "Open workspaces in Cursor or V",
+   "pad": "20px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": "Name Cursor windows by branch",
+   "pad": "20px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": "Migrate MCP servers",
+   "pad": "20px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": "Global MCP servers",
+   "pad": "32px",
+   "active": "true",
+   "color": "rgb(65, 48, 48)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": "Project-level MCP servers",
+   "pad": "32px",
+   "active": "true",
+   "color": "rgb(65, 48, 48)",
+   "lineLeft": "16px"
+  },
+  {
+   "t": "Migrate rules and instructions",
+   "pad": "20px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  },
+  {
+   "t": ".cursorrules",
+   "pad": "32px",
+   "active": "false",
+   "color": "rgb(117, 111, 108)",
+   "lineLeft": "8px"
+  }
+ ],
+ "thumb": {
+  "bg": "rgb(65, 48, 48)",
+  "w": "4px",
+  "op": "1",
+  "trans": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1), offset-distance 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  "offsetPath": "path(\"M 8.5 0 L 8.5 20 C 8.5 28 8.5 24 8.5 32 L 8.5 72 C 8.5 80 8.5 76 8.5 84 L 8.5 104 C 8.5 112 8.5 108 8.5 116 L 8.5 136 C 8.5 144 16.5 140 16.5 148 L 16.5 168 C 16.5 176 16.5 172 16.5 180 L 16.5 200 C 16.5 208 8.5 204 8.5 212 L 8.5 232 C 8.5 240 16.5 236 16.5 244 L 16.5 264 C 16.5 272 16.5 268 16.5 276 L 16.5 296 C 16.5 304 16.5 300 16.5 308 L 16.5 328 C 16.5 336 8.5 332 8.5 340 L 8.5 360 C 8.5 368 8.5 364 8.5 372 L 8.5 392\")",
+  "od": "204px"
+ },
+ "track": "<div class=\"absolute top-0 inset-s-0\" style=\"width: 24.5px; height: 392px; --track-top: 148px; --track-bottom: 200px; --offset-distance: 204px; --opacity: 1;\">[svg]<div class=\"absolute size-1 bg-fd-primary rounded-full [offset-distance:var(--offset-distance,0)] opacity-(--opacity,0) transition-[opacity,offset-distance]\" style=\"offset-path: path(&quot;M 8.5 0 L 8.5 20 C 8.5 28 8.5 24 8.5 32 L 8.5 72 C 8.5 80 8.5 76 8.5 84 L 8.5 104 C 8.5 112 8.5 108 8.5 116 L 8.5 136 C 8.5 144 16.5 140 16.5 148 L 16.5 168 C 16.5 176 16.5 172 16.5 180 L 16.5 200 C 16.5 208 8.5 204 8.5 212 L 8.5 232 C 8.5 240 16.5 236 16.5 244 L 16.5 264 C 16.5 272 16.5 268 16.5 276 L 16.5 296 C 16.5 304 16.5 300 16.5 308 L 16.5 328 C 16.5 336 8.5 332 8.5 340 L 8.5 360 C 8.5 368 8.5 364 8.5 372 L 8.5 392&quot;);\"></div></div>",
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/guides/migrate-from-cursor",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  }
+ ]
+}

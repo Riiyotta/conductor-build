@@ -1,0 +1,28 @@
+{
+  "slug": "0.14.7-git-diff-improvements",
+  "version": "0.14.7",
+  "versionSlug": "0.14.7",
+  "title": "Git Diff Improvements",
+  "fullTitle": "0.14.7: Git Diff Improvements",
+  "date": "Oct 11th, 2025",
+  "dateISO": "2025-10-11",
+  "description": "Conductor 0.14.7 changelog - Git Diff Improvements",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.14.7-git-diff-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.7-git-diff-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.7-git-diff-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Added an <code>Open In</code> button to files in the git diff</li>\n<li>Newly added markdown files will be rendered as markdown in the git diff by default</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed markdown text wrapping in git diff viewer</li>\n<li>Fixed git actions sharing loading state across workspaces</li>\n<li>Fixed the <code>escape</code> key not closing the git diff viewer after leaving a comment</li>\n<li>Fixed the comment button having an inaccurate click target</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Added an `Open In` button to files in the git diff\n- Newly added markdown files will be rendered as markdown in the git diff by default\n\n## Fixes\n\n- Fixed markdown text wrapping in git diff viewer\n- Fixed git actions sharing loading state across workspaces\n- Fixed the `escape` key not closing the git diff viewer after leaving a comment\n- Fixed the comment button having an inaccurate click target\n"
+}

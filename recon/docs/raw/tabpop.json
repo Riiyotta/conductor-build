@@ -1,0 +1,148 @@
+{
+ "pop": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "oklab(0.999994 0.0000455677 0.0000200868 / 0.6)",
+  "border-top": "1px solid rgb(234, 232, 230)",
+  "border-right": "1px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "border-radius": "12px",
+  "padding": "4px",
+  "gap": "4px",
+  "display": "flex",
+  "width": "240px",
+  "max-width": "1411.2px",
+  "height": "148.25px",
+  "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+  "animation": "0.1s fd-popover-in",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "z-index": "50",
+  "backdrop-filter": "blur(16px)",
+  "rect": [
+   94,
+   170,
+   240,
+   148.3
+  ],
+  "tag": "div",
+  "cls": "z-50 origin-(--radix-popover-content-transform-origin) overflow-y-auto max-h-(--radix-popover-content-available-height) min-w-[240px] max-w-[98vw] rounded-xl border bg-fd-popover/60 backdrop-blur-lg text-sm text-fd-popover-foreground shadow-lg focus-visible:outline-none data-[state=closed]:animate-f",
+  "text": "Reference\n\nConductor reference and concepts\n\nHow t"
+ },
+ "html": "<div data-side=\"bottom\" data-align=\"center\" data-state=\"open\" role=\"dialog\" id=\"radix-_R_diksnllb_\" class=\"z-50 origin-(--radix-popover-content-transform-origin) overflow-y-auto max-h-(--radix-popover-content-available-height) min-w-[240px] max-w-[98vw] rounded-xl border bg-fd-popover/60 backdrop-blur-lg text-sm text-fd-popover-foreground shadow-lg focus-visible:outline-none data-[state=closed]:animate-fd-popover-out data-[state=open]:animate-fd-popover-in flex flex-col gap-1 w-(--radix-popover-trigger-width) p-1 fd-scroll-container\" tabindex=\"-1\" style=\"--radix-popover-content-transform-origin: var(--radix-popper-transform-origin); --radix-popover-content-available-width: var(--radix-popper-available-width); --radix-popover-content-available-height: var(--radix-popper-available-height); --radix-popover-trigger-width: var(--radix-popper-anchor-width); --radix-popover-trigger-height: var(--radix-popper-anchor-height);\"><a class=\"flex items-center gap-2 rounded-lg p-1.5 hover:bg-fd-accent hover:text-fd-accent-foreground\" href=\"/docs\"><div class=\"shrink-0 size-9 md:mb-auto md:size-5 empty:hidden\"></div><div><p class=\"text-sm font-medium leading-none\">Reference</p><p class=\"text-[0.8125rem] text-fd-muted-foreground mt-1 empty:hidden\">Conductor reference and concepts</p></div>[svg]</a><a class=\"flex items-center gap-2 rounded-lg p-1.5 hover:bg-fd-accent hover:text-fd-accent-foreground\" href=\"/docs/guides/use-files-to-copy\"><div class=\"shrink-0 size-9 md:mb-auto md:size-5 empty:hidden\"></div><div><p class=\"text-sm font-medium leading-none\">How to</p><p class=\"text-[0.8125rem] text-fd-muted-foreground mt-1 empty:hidden\">Complete common tasks in Conductor</p></div>[svg]</a></div>",
+ "items": [
+  {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "14px",
+   "line-height": "20px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "border-top": "0px solid rgb(234, 232, 230)",
+   "border-right": "0px solid rgb(234, 232, 230)",
+   "border-bottom": "0px solid rgb(234, 232, 230)",
+   "border-left": "0px solid rgb(234, 232, 230)",
+   "border-radius": "8px",
+   "padding": "6px",
+   "gap": "8px",
+   "display": "flex",
+   "width": "230px",
+   "height": "67.125px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "tab-size": "4",
+   "cursor": "pointer",
+   "rect": [
+    99,
+    175,
+    230,
+    67.1
+   ],
+   "tag": "a",
+   "cls": "flex items-center gap-2 rounded-lg p-1.5 hover:bg-fd-accent hover:text-fd-accent-foreground",
+   "text": "Reference\n\nConductor reference and concepts"
+  },
+  {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "14px",
+   "line-height": "20px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "border-top": "0px solid rgb(234, 232, 230)",
+   "border-right": "0px solid rgb(234, 232, 230)",
+   "border-bottom": "0px solid rgb(234, 232, 230)",
+   "border-left": "0px solid rgb(234, 232, 230)",
+   "border-radius": "8px",
+   "padding": "6px",
+   "gap": "8px",
+   "display": "flex",
+   "width": "230px",
+   "height": "67.125px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "tab-size": "4",
+   "cursor": "pointer",
+   "rect": [
+    99,
+    246.1,
+    230,
+    67.1
+   ],
+   "tag": "a",
+   "cls": "flex items-center gap-2 rounded-lg p-1.5 hover:bg-fd-accent hover:text-fd-accent-foreground",
+   "text": "How to\n\nComplete common tasks in Conductor"
+  }
+ ],
+ "wrapper": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "24px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "block",
+  "width": "240px",
+  "height": "148.25px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "position": "fixed",
+  "tab-size": "4",
+  "z-index": "50",
+  "rect": [
+   94,
+   170,
+   240,
+   148.3
+  ],
+  "tag": "div",
+  "cls": "",
+  "text": "Reference\n\nConductor reference and concepts\n\nHow t"
+ },
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/installation",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  },
+  {
+   "url": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+   "status": 200,
+   "type": "image",
+   "ct": "image/png"
+  }
+ ]
+}

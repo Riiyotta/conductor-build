@@ -1,0 +1,32 @@
+{
+  "slug": "0.33.2-view-github-actions-in-conductor",
+  "version": "0.33.2",
+  "versionSlug": "0.33.2",
+  "title": "View GitHub Actions in Conductor",
+  "fullTitle": "0.33.2: View GitHub Actions in Conductor",
+  "date": "Jan 28th, 2026",
+  "dateISO": "2026-01-28",
+  "description": "Conductor 0.33.2 changelog - View GitHub Actions in Conductor",
+  "summary": "Click on a GitHub Action in the Checks tab to view its logs.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.33.2/1769636035709-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.33.2-view-github-actions-in-conductor/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.2-view-github-actions-in-conductor",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.2-view-github-actions-in-conductor",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Click on a GitHub Action in the Checks tab to view its logs.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.2/1769636035709-image.png\"/></figure></p>\n<h4>Improvements</h4>\n<ul>\n<li>We’ve replaced <code>ultrathink</code> with a max thinking budget to reduce Claude’s confusion.</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Fixed a regression where the right panel would overflow and not truncate properly on smaller screens</li>\n<li>Fixed a regression in Claude Code where Opus would sometimes output <code>(no content)</code>. We’ve made Anthropic aware <a href=\"https://github.com/anthropics/claude-agent-sdk-typescript/issues/153\" target=\"_blank\" rel=\"noopener noreferrer\">here</a>.</li>\n<li>Disabled Apple autocomplete in the Composer</li>\n</ul>",
+  "markdown": "\nClick on a GitHub Action in the Checks tab to view its logs.\n![image](/assets/changelog/media/0.33.2/1769636035709-image.png)\n\n#### Improvements\n\n- We’ve replaced `ultrathink` with a max thinking budget to reduce Claude’s confusion.\n\n#### Fixes\n\n- Fixed a regression where the right panel would overflow and not truncate properly on smaller screens\n- Fixed a regression in Claude Code where Opus would sometimes output `(no content)`. We’ve made Anthropic aware [here](https://github.com/anthropics/claude-agent-sdk-typescript/issues/153).\n- Disabled Apple autocomplete in the Composer\n"
+}

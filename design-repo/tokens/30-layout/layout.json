@@ -1,0 +1,327 @@
+{
+  "$description": "Containers, paddings, docs grid, changelog column, media caps and deliberately replicated layout quirks.",
+  "layout": {
+    "container": {
+      "site": {
+        "$value": "900px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:105",
+            "quote": "site: '900px',"
+          },
+          {
+            "ref": "CLONE_SPEC_PAGES.md:40",
+            "quote": "Default content width is **900px**"
+          }
+        ]
+      },
+      "pricing": {
+        "$value": "1280px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:41",
+            "quote": "Pricing overrides it with `[--site-content-width:80rem]`, which is **1280px**"
+          }
+        ]
+      },
+      "max-xl": {
+        "$value": "576px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:98",
+            "quote": "xl: '576px',"
+          }
+        ]
+      },
+      "max-2xl": {
+        "$value": "672px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:99",
+            "quote": "'2xl': '672px',"
+          }
+        ]
+      },
+      "max-3xl": {
+        "$value": "768px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:100",
+            "quote": "'3xl': '768px',"
+          }
+        ]
+      },
+      "max-6xl": {
+        "$value": "1152px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:101",
+            "quote": "'6xl': '1152px',"
+          }
+        ]
+      },
+      "max-7xl": {
+        "$value": "1280px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:102",
+            "quote": "'7xl': '1280px',"
+          }
+        ]
+      },
+      "hero-media": {
+        "$value": "1920px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:103",
+            "quote": "hero: '1920px',"
+          }
+        ]
+      },
+      "prose-measure": {
+        "$value": "65ch",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:107",
+            "quote": "prose: '65ch',"
+          }
+        ]
+      }
+    },
+    "containerPadding": {
+      "base": {
+        "$value": "16px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageContainer.jsx:3",
+            "quote": "(original CSS: .site-container{padding-inline:1rem} @768 1.5rem @1280 2rem)"
+          }
+        ]
+      },
+      "md": {
+        "$value": "24px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageContainer.jsx:3",
+            "quote": "(original CSS: .site-container{padding-inline:1rem} @768 1.5rem @1280 2rem)"
+          }
+        ]
+      },
+      "xl": {
+        "$value": "32px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageContainer.jsx:3",
+            "quote": "(original CSS: .site-container{padding-inline:1rem} @768 1.5rem @1280 2rem)"
+          }
+        ],
+        "note": "CORRECTED: CLONE_SPEC_PAGES.md §0.1 says 32px from md; the shipped CSS steps 16 -> 24 (768) -> 32 (1280)."
+      },
+      "blockBase": {
+        "$value": "64px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageContainer.jsx:2",
+            "quote": "padding-block 64 / md 96"
+          }
+        ]
+      },
+      "blockMd": {
+        "$value": "96px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageContainer.jsx:2",
+            "quote": "padding-block 64 / md 96"
+          }
+        ]
+      }
+    },
+    "header": {
+      "height": {
+        "$value": "57px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:95",
+            "quote": "height 57 (56 inner + 1px bottom border `#eae8e6`)"
+          }
+        ]
+      }
+    },
+    "docs": {
+      "sidebarWidth": {
+        "$value": "268px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:39",
+            "quote": "--fd-sidebar-width: 268px;"
+          }
+        ]
+      },
+      "tocWidth": {
+        "$value": "268px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:45",
+            "quote": "--fd-toc-width: 268px;"
+          }
+        ]
+      },
+      "layoutWidth": {
+        "$value": "80rem",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:34",
+            "quote": "minmax(0, calc(80rem - var(--fd-sidebar-width) - var(--fd-toc-width))) var(--fd-toc-width)"
+          }
+        ]
+      },
+      "stickyOffset": {
+        "$value": "64px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:40",
+            "quote": "--fd-banner-height: 4rem;"
+          }
+        ]
+      },
+      "subnavHeight": {
+        "$value": "56px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:103",
+            "quote": "sticky top 0, z-30, height 56px"
+          }
+        ]
+      }
+    },
+    "changelog": {
+      "gutterLeft": {
+        "$value": "208px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/changelog/changelog.css:17",
+            "quote": "padding-left: 13rem;"
+          }
+        ]
+      },
+      "maxWidthXl": {
+        "$value": "1076px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:440",
+            "quote": "`max-width: calc(900px + 11rem)` (**1076**)"
+          }
+        ]
+      },
+      "contentColumn": {
+        "$value": "836px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:441",
+            "quote": "The content column is **836px** wide at both"
+          }
+        ]
+      }
+    },
+    "media": {
+      "assetMaxHeightBase": {
+        "$value": "min(48vh, 24rem)",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:664",
+            "quote": "max-height: min(48vh, 24rem);"
+          }
+        ],
+        "note": "CORRECTED: CLONE_SPEC_DOCS.md §3.7 says min(56vh,30rem) wins everywhere; it only applies from 768px up."
+      },
+      "assetMaxHeightMd": {
+        "$value": "min(56vh, 30rem)",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:673",
+            "quote": "max-height: min(56vh, 30rem);"
+          }
+        ]
+      },
+      "assetMaxWidth": {
+        "$value": "736px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:15",
+            "quote": "--docs-asset-max-width: 46rem;"
+          }
+        ]
+      }
+    },
+    "quirks": {
+      "teamPlanFormScrollBox": {
+        "$value": "450px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "src/pages/TeamPlan.jsx:23",
+            "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+          }
+        ]
+      },
+      "homeScrollWidthAt390": {
+        "$value": "402px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:374",
+            "quote": "at 390 the document `scrollWidth` is **402px**"
+          }
+        ]
+      },
+      "brandkitScrollWidthAt390": {
+        "$value": "500px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:400",
+            "quote": "Document `scrollWidth` is **500**"
+          }
+        ]
+      }
+    },
+    "pageShell": {
+      "footerPlacement": {
+        "$value": "flex min-h-screen flex-col (footer pinned to viewport bottom on short pages)",
+        "$type": "layoutRule",
+        "measuredFrom": [
+          {
+            "ref": "src/components/pages/PageShell.jsx:15",
+            "quote": "<div className=\"flex min-h-screen flex-col font-mono\">"
+          }
+        ]
+      }
+    }
+  }
+}

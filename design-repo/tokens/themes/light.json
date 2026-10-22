@@ -1,0 +1,105 @@
+{
+  "$description": "The only rendered theme (html.light). Every semantic token resolved to its foundation value. verify_all.py recomputes this map and fails on drift.",
+  "theme": "light",
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:9",
+      "quote": "The site renders in **light theme**"
+    }
+  ],
+  "darkThemeStatus": "not-rendered: .dark tokens exist in the original CSS but no measured route activates them; no dark theme is shipped (see CLONE_SPEC.md §0.2).",
+  "resolved": {
+    "semantic.text.primary": "#2c2826",
+    "semantic.text.secondary": "#756f6c",
+    "semantic.text.nav": "rgba(44,40,38,0.7)",
+    "semantic.text.inverse": "#ffffff",
+    "semantic.text.badge": "#7d5e59",
+    "semantic.text.positive": "#16a249",
+    "semantic.text.highlight": "#594545",
+    "semantic.text.docs-active": "#413030",
+    "semantic.text.on-image": "#ffffff",
+    "semantic.text.form-label": "#212d3a",
+    "semantic.text.form-error": "#e51520",
+    "semantic.surface.page": "#ffffff",
+    "semantic.surface.muted": "#fafaf9",
+    "semantic.surface.muted-hover-soft": "rgba(250,250,249,0.5)",
+    "semantic.surface.muted-hover-lighter": "rgba(250,250,249,0.8)",
+    "semantic.surface.highlight": "#faf7f5",
+    "semantic.surface.inverse": "#2c2826",
+    "semantic.surface.inverse-hover": "rgba(44,40,38,0.9)",
+    "semantic.surface.badge": "#f8f7f6",
+    "semantic.surface.brand-dark-panel": "#282423",
+    "semantic.surface.apply-tile": "#F5F5F5",
+    "semantic.surface.docs-active": "rgba(65,48,48,0.10)",
+    "semantic.surface.docs-table": "#fdfcfc",
+    "semantic.surface.docs-table-header": "#f8f7f6",
+    "semantic.surface.docs-callout": "#f9f7f6",
+    "semantic.border.default": "#eae8e6",
+    "semantic.border.subtle": "rgba(234,232,230,0.4)",
+    "semantic.border.card": "rgba(234,232,230,0.8)",
+    "semantic.border.card-hover": "rgba(44,40,38,0.3)",
+    "semantic.border.badge": "#f3ece7",
+    "semantic.border.docs-table": "#e3e0de",
+    "semantic.border.docs-callout": "#ece4df",
+    "semantic.border.form-input": "#959494",
+    "semantic.overlay.dialog": "rgba(0,0,0,0.5)",
+    "semantic.overlay.image": "rgba(0,0,0,0.4)",
+    "semantic.overlay.search": "rgba(0,0,0,0.2)",
+    "semantic.link.underline": "rgba(44,40,38,0.55)",
+    "semantic.status.presence": "#00c950",
+    "semantic.accent.docs-callout": "#6e5149",
+    "semantic.accent.fable-mark": "#D97757",
+    "semantic.font.body": [
+      "ui-sans-serif",
+      "system-ui",
+      "sans-serif"
+    ],
+    "semantic.font.mono": [
+      "ui-monospace",
+      "SFMono-Regular",
+      "SF Mono",
+      "Menlo",
+      "Consolas",
+      "Liberation Mono",
+      "monospace"
+    ],
+    "semantic.font.prose": [
+      "Geist",
+      "-apple-system",
+      "BlinkMacSystemFont",
+      "Segoe UI",
+      "sans-serif",
+      "ui-sans-serif",
+      "system-ui",
+      "sans-serif"
+    ],
+    "semantic.font.footer-home": [
+      "ui-sans-serif",
+      "system-ui",
+      "sans-serif"
+    ],
+    "semantic.font.footer-other": [
+      "ui-monospace",
+      "SFMono-Regular",
+      "SF Mono",
+      "Menlo",
+      "Consolas",
+      "Liberation Mono",
+      "monospace"
+    ],
+    "semantic.font.version-badge-home": [
+      "ui-sans-serif",
+      "system-ui",
+      "sans-serif"
+    ],
+    "semantic.font.version-badge-changelog": [
+      "ui-monospace",
+      "SFMono-Regular",
+      "SF Mono",
+      "Menlo",
+      "Consolas",
+      "Liberation Mono",
+      "monospace"
+    ]
+  }
+}

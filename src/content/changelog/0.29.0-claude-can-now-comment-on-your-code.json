@@ -1,0 +1,32 @@
+{
+  "slug": "0.29.0-claude-can-now-comment-on-your-code",
+  "version": "0.29.0",
+  "versionSlug": "0.29.0",
+  "title": "Claude can now comment on your code",
+  "fullTitle": "0.29.0: Claude can now comment on your code",
+  "date": "Jan 7th, 2026",
+  "dateISO": "2026-01-07",
+  "description": "Conductor 0.29.0 changelog - Claude can now comment on your code",
+  "summary": "We’ve given Claude Code a tool to comment directly on your diff. Learn more here.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.0/1767806660570-image.png",
+    "alt": "commenting-on-diff.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.0-claude-can-now-comment-on-your-code/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.0-claude-can-now-comment-on-your-code",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.0-claude-can-now-comment-on-your-code",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve given Claude Code a tool to comment directly on your diff. <a href=\"/blog/diff-tools\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more here</a>.</p>\n<figure data-asset><img alt=\"commenting-on-diff.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.0/1767806660570-image.png\"/></figure>\n<p>Comments from GitHub will now automatically sync to the diff as well. Choose to add them to the chat or hide them.</p>\n<figure data-asset><img alt=\"syncing-comments.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.0/1767806660033-CleanShot_2026-01-07_at_09.21.20_2x.png\"/></figure>\n<p>You can also ask the AI to update its memory when addressing your comments.</p>\n<figure data-asset><img alt=\"updating-memory.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.0/1767806659277-CleanShot_2026-01-07_at_09.23.25_2x.png\"/></figure>\n<p>We’re also aware of a bug where slash commands aren’t populating before messages are sent. Please <a href=\"https://github.com/anthropics/claude-code/issues/16210\" target=\"_blank\" rel=\"noopener noreferrer\">upvote this issue for Anthropic to make a proper fix!</a></p>\n<h3>Improvements</h3>\n<ul>\n<li>Draft comments now persist across restarts</li>\n<li>Comments from previous messages can now be viewed in the UI</li>\n<li>Added help popover in the left sidebar</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed spotlight testing not working for fish users</li>\n<li>Vertex and Bedrock now use the latest Anthropic models</li>\n<li>Fixed the “New workspace from” button not working in the command palette</li>\n<li>Chat tab icons now reflect when awaiting user response</li>\n<li>Sending messages is now disabled during workspace initialization</li>\n<li>Terminal links are now openable with ⌘+Click</li>\n</ul>",
+  "markdown": "\nWe’ve given Claude Code a tool to comment directly on your diff. [Learn more here](/blog/diff-tools).\n\n<img\n    src=\"/assets/changelog/media/0.29.0/1767806660570-image.png\"\n    alt=\"commenting-on-diff.png\"\n/>\n\nComments from GitHub will now automatically sync to the diff as well. Choose to add them to the chat or hide them.\n\n<img\n    src=\"/assets/changelog/media/0.29.0/1767806660033-CleanShot_2026-01-07_at_09.21.20_2x.png\"\n    alt=\"syncing-comments.png\"\n/>\n\nYou can also ask the AI to update its memory when addressing your comments.\n\n<img\n    src=\"/assets/changelog/media/0.29.0/1767806659277-CleanShot_2026-01-07_at_09.23.25_2x.png\"\n    alt=\"updating-memory.png\"\n/>\n\nWe’re also aware of a bug where slash commands aren’t populating before messages are sent. Please [upvote this issue for Anthropic to make a proper fix!](https://github.com/anthropics/claude-code/issues/16210)\n\n## Improvements\n\n- Draft comments now persist across restarts\n- Comments from previous messages can now be viewed in the UI\n- Added help popover in the left sidebar\n\n## Fixes\n\n- Fixed spotlight testing not working for fish users\n- Vertex and Bedrock now use the latest Anthropic models\n- Fixed the “New workspace from” button not working in the command palette\n- Chat tab icons now reflect when awaiting user response\n- Sending messages is now disabled during workspace initialization\n- Terminal links are now openable with ⌘+Click\n"
+}

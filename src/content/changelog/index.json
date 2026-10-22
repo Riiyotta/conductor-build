@@ -1,0 +1,3888 @@
+{
+  "totalPages": 21,
+  "pageSize": 10,
+  "pages": [
+    {
+      "page": 1,
+      "url": "/changelog",
+      "slugs": [
+        "0.91.0-a-mostly-boring-update",
+        "0.90.0-conductor-for-ios",
+        "0.89.1-gpt-6-1-sol",
+        "0.89.0-sign-in-with-chatgpt",
+        "0.87.6-claude-sonnet-5-5",
+        "0.87.5-model-search",
+        "0.87.3-gpt-6-sol-and-gpt-6-luna",
+        "0.87.2-claude-opus-5-5",
+        "0.87.1-grok-4-7",
+        "0.87.0-search-across-files-opencode-2-0"
+      ]
+    },
+    {
+      "page": 2,
+      "url": "/changelog/page/2",
+      "slugs": [
+        "0.86.0-share-your-loadouts",
+        "0.85.0-sections-routines-and-a-new-model-picker",
+        "0.84.2-gpt-6-astra",
+        "0.84.0-edit-files-directly-in-diffs",
+        "0.83.2-claude-fable-5-1",
+        "0.83.0-auto-port-forwarding",
+        "0.82.0-conductor-mcp",
+        "0.81.0-cloud-polish-2",
+        "0.80.1-grok-4-6",
+        "0.80.0-stacks"
+      ]
+    },
+    {
+      "page": 3,
+      "url": "/changelog/page/3",
+      "slugs": [
+        "0.79.0-cloud-polish-1",
+        "0.78.0-introducing-conductor-cloud",
+        "0.77.2-claude-opus-5",
+        "0.77.0-early-access-multiplayer-api-background-tasks-performance",
+        "0.76.0-bug-squashathon",
+        "0.75.0-polish",
+        "0.74.0-lots-of-little-things",
+        "0.73.3-gpt-5-6",
+        "0.73.2-grok-4-5",
+        "0.73.0-pr-page"
+      ]
+    },
+    {
+      "page": 4,
+      "url": "/changelog/page/4",
+      "slugs": [
+        "0.72.0-polish-and-fixes",
+        "0.71.0-workspace-and-chat-links",
+        "0.70.1-claude-sonnet-5",
+        "0.70.0-multiple-run-scripts",
+        "0.69.0-opencode",
+        "0.68.0-markdown-frontmatter",
+        "0.67.0-fixes-and-improvements",
+        "0.66.0-create-workspace-from-issue",
+        "0.65.0-codex-goal-support",
+        "0.64.0-claude-fable-5"
+      ]
+    },
+    {
+      "page": 5,
+      "url": "/changelog/page/5",
+      "slugs": [
+        "0.63.0-cursor-support-dispatcher",
+        "0.62.0-repo-settings-browser-preview",
+        "0.61.0-ultracode-git-improve",
+        "0.59.0-bug-fixes",
+        "0.58.0-polish",
+        "0.57.0-sync-agent-configs",
+        "0.56.0-settings-scrolls",
+        "0.55.0-per-repo-spotlight-html-previews",
+        "0.54.0-new-queue-diff-diffs",
+        "0.52.0-sounds-colors"
+      ]
+    },
+    {
+      "page": 6,
+      "url": "/changelog/page/6",
+      "slugs": [
+        "0.51.0-codex-is-more-beautiful",
+        "0.50.0-steering",
+        "0.49.0-conductor-allegro-gpt-5-5",
+        "0.48.5-effort",
+        "0.48.2-claude-opus-4-7",
+        "0.48.0-big-terminal-mode",
+        "0.46.0-bug-fixes-instant-archiving-terminal",
+        "0.45.0-file-previews-codex-personalities",
+        "0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints",
+        "0.43.0-codex-skills-plan-mode-fast-mode"
+      ]
+    },
+    {
+      "page": 7,
+      "url": "/changelog/page/7",
+      "slugs": [
+        "0.41.0-tool-approval-codex-plan-mode-beta",
+        "0.40.1-fast-mode",
+        "0.39.0-insta-summarize-command-palette-opus-4-6",
+        "0.38.5-bug-fixes",
+        "0.38.4-direnv-support-opus-4-6-1m",
+        "0.38.3-multiline-comments",
+        "0.38.1-0.38.2-new-terminal-perf-issues",
+        "0.38.0-gpt-5-4",
+        "0.37.1-polish-and-bug-fixes",
+        "0.37.0-manual-mode"
+      ]
+    },
+    {
+      "page": 8,
+      "url": "/changelog/page/8",
+      "slugs": [
+        "0.36.9-performance-improvements",
+        "0.36.7-bug-fixes",
+        "0.36.6-bug-fixes",
+        "0.36.5-open-from-linear-bug-fixes",
+        "0.36.4-next-workspace",
+        "0.36.3-submit-a-prompt-sdk-memory-leaks",
+        "0.36.2-model-picker-bug-fixes",
+        "0.36.1-bug-fixes",
+        "0.36.0-sonnet-4-6-pierre-diffs",
+        "0.35.3-reliability-and-performance"
+      ]
+    },
+    {
+      "page": 9,
+      "url": "/changelog/page/9",
+      "slugs": [
+        "0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+        "0.35.1-bug-fixes",
+        "0.35.0-workspace-status",
+        "0.34.2-chat-summaries-re-run-actions-latex",
+        "0.34.1-editable-pr-titles-and-descriptions",
+        "0.34.0-opus-4-6-and-gpt-5-3-codex",
+        "0.33.5-better-archiving",
+        "0.33.4-git-panel-grouping-and-bug-fixes",
+        "0.33.3-performance-improvements-file-context-menu",
+        "0.33.2-view-github-actions-in-conductor"
+      ]
+    },
+    {
+      "page": 10,
+      "url": "/changelog/page/10",
+      "slugs": [
+        "0.33.1-slash-command-bug-fix",
+        "0.33.0-tasks-typography",
+        "0.32.2-bug-fixes",
+        "0.32.1-rerun-setup-scripts",
+        "0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+        "0.31.3-askuserquestion-improvements",
+        "0.31.2-general-agent-preferences",
+        "0.31.1-checks-tab",
+        "0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+        "0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans"
+      ]
+    },
+    {
+      "page": 11,
+      "url": "/changelog/page/11",
+      "slugs": [
+        "0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+        "0.29.4-pr-checks-new-shortcuts",
+        "0.29.3-composer-improvements-bug-fixes",
+        "0.29.2-vercel-deployments-simplified-thinking-levels",
+        "0.29.1-customize-prompts-mark-files-as-viewed",
+        "0.29.0-claude-can-now-comment-on-your-code",
+        "0.28.7-change-target-branch",
+        "0.28.6-bug-fix",
+        "0.28.5-bug-fix",
+        "0.28.4-todos"
+      ]
+    },
+    {
+      "page": 12,
+      "url": "/changelog/page/12",
+      "slugs": [
+        "0.28.3-bug-fixes",
+        "0.28.2-bug-fixes-legendary-cities-an-experiment",
+        "0.28.1-context-directory-set-working-directories",
+        "0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+        "0.27.2-onboarding-bug-fix",
+        "0.27.1-clickable-file-mentions",
+        "0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+        "0.26.0-search-workspaces-view-files-from-chat",
+        "0.25.13-performance-improvements",
+        "0.25.12-bug-fixes"
+      ]
+    },
+    {
+      "page": 13,
+      "url": "/changelog/page/13",
+      "slugs": [
+        "0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+        "0.25.10-bug-fixes",
+        "0.25.9-onboarding-bug-fixes",
+        "0.25.8-gpt-5-2",
+        "0.25.7-env-bug-fix-vercel-ci-status-checks",
+        "0.25.6-multiple-git-repos-fork-workspaces",
+        "0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+        "0.25.4-sync-pr-comments-from-github",
+        "0.25.3-pinned-workspaces",
+        "0.25.2-bug-fixes"
+      ]
+    },
+    {
+      "page": 14,
+      "url": "/changelog/page/14",
+      "slugs": [
+        "0.25.1-conductor-wrapped",
+        "0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+        "0.24.0-improved-codex-quick-start",
+        "0.23.3-repo-details",
+        "0.23.2-checkpointing-fixes",
+        "0.23.1-opus-4-5-bug-fixes",
+        "0.23.0-opus-4-5-and-better-scrolling",
+        "0.22.8-onboarding-improvements",
+        "0.22.7-send-plans-to-new-chats",
+        "0.22.6-conversation-summaries-codex-diffs-and-custom-review-models"
+      ]
+    },
+    {
+      "page": 15,
+      "url": "/changelog/page/15",
+      "slugs": [
+        "0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+        "0.22.4-expand-terminal-env-vars-and-github-enterprise",
+        "0.22.2-codex-cancellation",
+        "0.22.1-gpt-5-1",
+        "0.22.0-code-review-and-historical-diffs",
+        "0.21.0-plan-mode",
+        "0.20.0-file-picker-and-chat-titles",
+        "0.19.0-checkpoints",
+        "0.18.4-better-create-pr-prompt",
+        "0.18.3-bug-fixes"
+      ]
+    },
+    {
+      "page": 16,
+      "url": "/changelog/page/16",
+      "slugs": [
+        "0.18.0-codex",
+        "0.17.5-tab-beautification",
+        "0.17.4-git-status-in-sidebar",
+        "0.17.3-performance-improvements",
+        "0.17.2-misc-fixes",
+        "0.17.1-bug-fixes",
+        "0.17.0-multiple-chats",
+        "0.16.1-diff-viewer-bug-fixes",
+        "0.16.0-diff-viewer-file-explorer",
+        "0.15.2-create-workspace-from-pr"
+      ]
+    },
+    {
+      "page": 17,
+      "url": "/changelog/page/17",
+      "slugs": [
+        "0.15.1-claude-s-thinking",
+        "0.15.0-linear",
+        "0.14.7-git-diff-improvements",
+        "0.14.6-markdown-preview",
+        "0.14.5-zoom-improvements",
+        "0.14.3-performance-improvements",
+        "0.14.1-new-diff-viewer",
+        "0.14.0-command-palette",
+        "0.13.8-fixes-for-fish-users",
+        "0.13.6-run-on-bedrock-vertex-or-custom-provider"
+      ]
+    },
+    {
+      "page": 18,
+      "url": "/changelog/page/18",
+      "slugs": [
+        "0.13.2-sonnet-4-5-new-workspace-page",
+        "0.12.1-improved-plan-mode",
+        "0.12.0-forward-failing-checks-to-claude",
+        "0.11.6-improved-cancelling",
+        "0.11.4-the-return-of-big-terminal-mode",
+        "0.11.3-new-onboarding",
+        "0.11.0-conductor-json",
+        "0.10.5-terminal-performance-pt-2",
+        "0.10.3-terminal-performance",
+        "0.10.2-toggle-big-terminal-mode"
+      ]
+    },
+    {
+      "page": 19,
+      "url": "/changelog/page/19",
+      "slugs": [
+        "0.10.1-checkout-prs-in-conductor",
+        "0.10.0-code-review",
+        "0.9.3-new-diff-review-panel-faster-claude",
+        "0.9.2-bug-fixes",
+        "0.9.1-open-dev-scripts-and-more-performant-long-chats",
+        "0.9.0-run-script-hooks-and-custom-fonts",
+        "0.8.2-performance-improvements",
+        "0.8.1-suggested-git-actions",
+        "0.8.0-integrate-with-linear-faster-claude",
+        "0.7.3-plan-mode"
+      ]
+    },
+    {
+      "page": 20,
+      "url": "/changelog/page/20",
+      "slugs": [
+        "0.7.2-add-terminal-context-to-chat",
+        "0.7.0-we-no-longer-burn-your-cpu-hopefully",
+        "0.6.1-bug-fixes",
+        "0.6.0-a-new-look",
+        "0.5.0-gpt-5",
+        "0.3.2-opus-4-1",
+        "0.3.1-bug-fixes",
+        "0.3.0-git-diff-view",
+        "0.2.2-bugfixes",
+        "0.2.0-local-repositories-agents"
+      ]
+    },
+    {
+      "page": 21,
+      "url": "/changelog/page/21",
+      "slugs": [
+        "0.1.1-slash-commands-custom-providers",
+        "0.1.0-mcps-message-queues",
+        "0.0.21-fine-grained-github-permissions",
+        "0.0.20-attachments",
+        "0.0.19-misc-improvements",
+        "0.0.17-github-integration",
+        "0.0.16-terminal-improvements"
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "slug": "0.91.0-a-mostly-boring-update",
+      "version": "0.91.0",
+      "title": "A (mostly) boring update",
+      "fullTitle": "0.91.0: A (mostly) boring update",
+      "date": "October 15, 2026",
+      "dateISO": "2026-10-15",
+      "summary": "We spent this release polishing Conductor and fixing papercuts: dozens of fixes for chats, cloud workspaces, PRs, and file sync. Pages also have a refreshed layout that floats beside the sidebar, and you can now run shell snippets from agent replies with one click.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.91.0-a-mostly-boring-update",
+      "indexPage": 1,
+      "position": 0
+    },
+    {
+      "slug": "0.90.0-conductor-for-ios",
+      "version": "0.90.0",
+      "title": "Conductor for iOS",
+      "fullTitle": "0.90.0: Conductor for iOS",
+      "date": "October 2, 2026",
+      "dateISO": "2026-10-02",
+      "summary": "Download Conductor for iOS! You can now chat with agents and merge PRs from your phone. Works with cloud workspaces.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/conductor-mobile-0.90.0.png",
+        "alt": "Say hello to Conductor Mobile"
+      },
+      "authors": [],
+      "url": "/changelog/0.90.0-conductor-for-ios",
+      "indexPage": 1,
+      "position": 1
+    },
+    {
+      "slug": "0.89.1-gpt-6-1-sol",
+      "version": "0.89.1",
+      "title": "GPT-6.1 Sol",
+      "fullTitle": "0.89.1: GPT-6.1 Sol",
+      "date": "September 29, 2026",
+      "dateISO": "2026-09-29",
+      "summary": "GPT-6.1 Sol is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/gpt-6-1-sol-0.89.1.png",
+        "alt": "GPT-6.1 Sol"
+      },
+      "authors": [],
+      "url": "/changelog/0.89.1-gpt-6-1-sol",
+      "indexPage": 1,
+      "position": 2
+    },
+    {
+      "slug": "0.89.0-sign-in-with-chatgpt",
+      "version": "0.89.0",
+      "title": "Sign in with ChatGPT",
+      "fullTitle": "0.89.0: Sign in with ChatGPT",
+      "date": "September 29, 2026",
+      "dateISO": "2026-09-29",
+      "summary": "We're excited to be partnering with OpenAI on Sign in with ChatGPT.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/sign-in-with-chatgpt-0.89.0.png",
+        "alt": "Sign in with ChatGPT"
+      },
+      "authors": [],
+      "url": "/changelog/0.89.0-sign-in-with-chatgpt",
+      "indexPage": 1,
+      "position": 3
+    },
+    {
+      "slug": "0.87.6-claude-sonnet-5-5",
+      "version": "0.87.6",
+      "title": "Claude Sonnet 5.5",
+      "fullTitle": "0.87.6: Claude Sonnet 5.5",
+      "date": "September 28, 2026",
+      "dateISO": "2026-09-28",
+      "summary": "Claude Sonnet 5.5 is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/sonnet-5-5-0.87.6.png",
+        "alt": "Claude Sonnet 5.5"
+      },
+      "authors": [],
+      "url": "/changelog/0.87.6-claude-sonnet-5-5",
+      "indexPage": 1,
+      "position": 4
+    },
+    {
+      "slug": "0.87.5-model-search",
+      "version": "0.87.5",
+      "title": "Model search",
+      "fullTitle": "0.87.5: Model search",
+      "date": "September 25, 2026",
+      "dateISO": "2026-09-25",
+      "summary": "You can now search all available models from the model picker in chats, new workspaces, and Routines.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.87.5-model-search",
+      "indexPage": 1,
+      "position": 5
+    },
+    {
+      "slug": "0.87.3-gpt-6-sol-and-gpt-6-luna",
+      "version": "0.87.3",
+      "title": "GPT-6 Sol and GPT-6 Luna",
+      "fullTitle": "0.87.3: GPT-6 Sol and GPT-6 Luna",
+      "date": "September 22, 2026",
+      "dateISO": "2026-09-22",
+      "summary": "GPT-6 Sol and GPT-6 Luna are now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/gpt-6-sol-luna-0.87.3.png",
+        "alt": "GPT-6 Sol and GPT-6 Luna"
+      },
+      "authors": [],
+      "url": "/changelog/0.87.3-gpt-6-sol-and-gpt-6-luna",
+      "indexPage": 1,
+      "position": 6
+    },
+    {
+      "slug": "0.87.2-claude-opus-5-5",
+      "version": "0.87.2",
+      "title": "Claude Opus 5.5",
+      "fullTitle": "0.87.2: Claude Opus 5.5",
+      "date": "September 22, 2026",
+      "dateISO": "2026-09-22",
+      "summary": "Claude Opus 5.5 is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/opus-5-5-0.87.2.png",
+        "alt": "Claude Opus 5.5"
+      },
+      "authors": [],
+      "url": "/changelog/0.87.2-claude-opus-5-5",
+      "indexPage": 1,
+      "position": 7
+    },
+    {
+      "slug": "0.87.1-grok-4-7",
+      "version": "0.87.1",
+      "title": "Grok 4.7",
+      "fullTitle": "0.87.1: Grok 4.7",
+      "date": "September 21, 2026",
+      "dateISO": "2026-09-21",
+      "summary": "Grok 4.7 is now available in Conductor via Cursor. Give it a try!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/grok-4.7-0.87.1.png",
+        "alt": "Grok 4.7"
+      },
+      "authors": [],
+      "url": "/changelog/0.87.1-grok-4-7",
+      "indexPage": 1,
+      "position": 8
+    },
+    {
+      "slug": "0.87.0-search-across-files-opencode-2-0",
+      "version": "0.87.0",
+      "title": "Search across files, OpenCode 2.0",
+      "fullTitle": "0.87.0: Search across files, OpenCode 2.0",
+      "date": "September 18, 2026",
+      "dateISO": "2026-09-18",
+      "summary": "You can now search across files! Press ⌘⇧F in any local or cloud workspace to search file contents, with case, whole-word, and regex toggles.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/search-in-files-0.87.0.png",
+        "alt": "Search in files results for useQuery, grouped by file"
+      },
+      "authors": [],
+      "url": "/changelog/0.87.0-search-across-files-opencode-2-0",
+      "indexPage": 1,
+      "position": 9
+    },
+    {
+      "slug": "0.86.0-share-your-loadouts",
+      "version": "0.86.0",
+      "title": "Share your loadouts",
+      "fullTitle": "0.86.0: Share your loadouts",
+      "date": "September 16, 2026",
+      "dateISO": "2026-09-16",
+      "summary": "Go to Settings -> Default Models to share your loadout. Other Conductor users can import your loadout in one click.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/shared-loadout-0.86.0.png",
+        "alt": "A shared loadout page with an Equip button"
+      },
+      "authors": [],
+      "url": "/changelog/0.86.0-share-your-loadouts",
+      "indexPage": 2,
+      "position": 10
+    },
+    {
+      "slug": "0.85.0-sections-routines-and-a-new-model-picker",
+      "version": "0.85.0",
+      "title": "Sections, routines, and a new model picker",
+      "fullTitle": "0.85.0: Sections, routines, and a new model picker",
+      "date": "September 9, 2026",
+      "dateISO": "2026-09-09",
+      "summary": "We’ve added a new way to organize your sidebar: sections! Right click a section header to edit or create a new one.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/sidebar-sections-0.85.0.png",
+        "alt": "Sidebar sections with options to edit, create, or delete a section"
+      },
+      "authors": [],
+      "url": "/changelog/0.85.0-sections-routines-and-a-new-model-picker",
+      "indexPage": 2,
+      "position": 11
+    },
+    {
+      "slug": "0.84.2-gpt-6-astra",
+      "version": "0.84.2",
+      "title": "GPT-6 Astra",
+      "fullTitle": "0.84.2: GPT-6 Astra",
+      "date": "September 4, 2026",
+      "dateISO": "2026-09-04",
+      "summary": "GPT-6 Astra is now available in Conductor! It's OpenAI's new smartest model, best for long-running tasks.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/gpt-6-astra-0.84.2.png",
+        "alt": "GPT-6 Astra"
+      },
+      "authors": [],
+      "url": "/changelog/0.84.2-gpt-6-astra",
+      "indexPage": 2,
+      "position": 12
+    },
+    {
+      "slug": "0.84.0-edit-files-directly-in-diffs",
+      "version": "0.84.0",
+      "title": "Edit files directly in diffs",
+      "fullTitle": "0.84.0: Edit files directly in diffs",
+      "date": "September 2, 2026",
+      "dateISO": "2026-09-02",
+      "summary": "Changed files now open and edit directly in diffs by default. To return to the previous file preview and editor, turn on \"Use legacy file preview and editing\" in Settings → Experimental.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/diff-editor-comments-0.84.0.gif",
+        "alt": "Editing a file and adding a comment directly in a diff"
+      },
+      "authors": [],
+      "url": "/changelog/0.84.0-edit-files-directly-in-diffs",
+      "indexPage": 2,
+      "position": 13
+    },
+    {
+      "slug": "0.83.2-claude-fable-5-1",
+      "version": "0.83.2",
+      "title": "Claude Fable 5.1",
+      "fullTitle": "0.83.2: Claude Fable 5.1",
+      "date": "September 1, 2026",
+      "dateISO": "2026-09-01",
+      "summary": "Claude Fable 5.1 is now available in Conductor.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/fable-5-1-0.83.2.png",
+        "alt": "Fable 5.1 against a blue sky"
+      },
+      "authors": [],
+      "url": "/changelog/0.83.2-claude-fable-5-1",
+      "indexPage": 2,
+      "position": 14
+    },
+    {
+      "slug": "0.83.0-auto-port-forwarding",
+      "version": "0.83.0",
+      "title": "Auto port forwarding",
+      "fullTitle": "0.83.0: Auto port forwarding",
+      "date": "August 27, 2026",
+      "dateISO": "2026-08-27",
+      "summary": "Cloud workspaces can now auto-forward detected ports, controlled from a new ports popover in the top bar. Page loads and hot reloads over forwarded ports are faster.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/auto-port-forwarding-0.83.0.png",
+        "alt": "The ports popover with auto-forwarded ports"
+      },
+      "authors": [],
+      "url": "/changelog/0.83.0-auto-port-forwarding",
+      "indexPage": 2,
+      "position": 15
+    },
+    {
+      "slug": "0.82.0-conductor-mcp",
+      "version": "0.82.0",
+      "title": "Conductor MCP",
+      "fullTitle": "0.82.0: Conductor MCP",
+      "date": "August 20, 2026",
+      "dateISO": "2026-08-20",
+      "summary": "Introducing the Conductor MCP! Agents can use the Conductor MCP to create and manage cloud workspaces, read sessions, and more. Add the MCP anywhere you run your agents.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/conductor-mcp-0.82.0.png",
+        "alt": "Conductor MCP capabilities in an agent session"
+      },
+      "authors": [],
+      "url": "/changelog/0.82.0-conductor-mcp",
+      "indexPage": 2,
+      "position": 16
+    },
+    {
+      "slug": "0.81.0-cloud-polish-2",
+      "version": "0.81.0",
+      "title": "Cloud Polish #2",
+      "fullTitle": "0.81.0: Cloud Polish #2",
+      "date": "August 13, 2026",
+      "dateISO": "2026-08-13",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.81.0-cloud-polish-2",
+      "indexPage": 2,
+      "position": 17
+    },
+    {
+      "slug": "0.80.1-grok-4-6",
+      "version": "0.80.1",
+      "title": "Grok 4.6",
+      "fullTitle": "0.80.1: Grok 4.6",
+      "date": "August 12, 2026",
+      "dateISO": "2026-08-12",
+      "summary": "Grok 4.6 is now available in Conductor through Cursor. Give it a try!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/grok-4.6-0.80.1.png",
+        "alt": "Grok 4.6 selected in the Cursor model picker"
+      },
+      "authors": [],
+      "url": "/changelog/0.80.1-grok-4-6",
+      "indexPage": 2,
+      "position": 18
+    },
+    {
+      "slug": "0.80.0-stacks",
+      "version": "0.80.0",
+      "title": "Stacks",
+      "fullTitle": "0.80.0: Stacks",
+      "date": "August 10, 2026",
+      "dateISO": "2026-08-10",
+      "summary": "GitHub's new stacks are live in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/github-pr-stacks-0.80.0.png",
+        "alt": "A three-pull-request stack in Conductor, ready to merge"
+      },
+      "authors": [],
+      "url": "/changelog/0.80.0-stacks",
+      "indexPage": 2,
+      "position": 19
+    },
+    {
+      "slug": "0.79.0-cloud-polish-1",
+      "version": "0.79.0",
+      "title": "Cloud Polish #1",
+      "fullTitle": "0.79.0: Cloud Polish #1",
+      "date": "August 4, 2026",
+      "dateISO": "2026-08-04",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.79.0-cloud-polish-1",
+      "indexPage": 3,
+      "position": 20
+    },
+    {
+      "slug": "0.78.0-introducing-conductor-cloud",
+      "version": "0.78.0",
+      "title": "Introducing Conductor Cloud",
+      "fullTitle": "0.78.0: Introducing Conductor Cloud",
+      "date": "July 30, 2026",
+      "dateISO": "2026-07-30",
+      "summary": "Conductor Cloud is here!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/conductor-cloud-0.78.0.jpg",
+        "alt": "Clouds arranged in the shape of the Conductor logo against a blue sky"
+      },
+      "authors": [],
+      "url": "/changelog/0.78.0-introducing-conductor-cloud",
+      "indexPage": 3,
+      "position": 21
+    },
+    {
+      "slug": "0.77.2-claude-opus-5",
+      "version": "0.77.2",
+      "title": "Claude Opus 5",
+      "fullTitle": "0.77.2: Claude Opus 5",
+      "date": "July 24, 2026",
+      "dateISO": "2026-07-24",
+      "summary": "Claude Opus 5 is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/opus-5-0.77.2.png",
+        "alt": "Claude Opus 5"
+      },
+      "authors": [],
+      "url": "/changelog/0.77.2-claude-opus-5",
+      "indexPage": 3,
+      "position": 22
+    },
+    {
+      "slug": "0.77.0-early-access-multiplayer-api-background-tasks-performance",
+      "version": "0.77.0",
+      "title": "Early access multiplayer, API, background tasks, performance",
+      "fullTitle": "0.77.0: Early access multiplayer, API, background tasks, performance",
+      "date": "July 23, 2026",
+      "dateISO": "2026-07-23",
+      "summary": "We've got two big releases in alpha for our Conductor Pro users (sign up to join here). And two big features for everyone!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/cloud-collaboration-0.77.0.png",
+        "alt": "Conductor sidebar showing a teammate active in a shared workspace"
+      },
+      "authors": [],
+      "url": "/changelog/0.77.0-early-access-multiplayer-api-background-tasks-performance",
+      "indexPage": 3,
+      "position": 23
+    },
+    {
+      "slug": "0.76.0-bug-squashathon",
+      "version": "0.76.0",
+      "title": "Bug Squashathon",
+      "fullTitle": "0.76.0: Bug Squashathon",
+      "date": "July 16, 2026",
+      "dateISO": "2026-07-16",
+      "summary": "Yesterday we had our first annual bug squashathon. Here are the results!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/checks-tab-0.76.0.png",
+        "alt": "The Checks tab showing passing checks on a pull request"
+      },
+      "authors": [],
+      "url": "/changelog/0.76.0-bug-squashathon",
+      "indexPage": 3,
+      "position": 24
+    },
+    {
+      "slug": "0.75.0-polish",
+      "version": "0.75.0",
+      "title": "Polish",
+      "fullTitle": "0.75.0: Polish",
+      "date": "July 13, 2026",
+      "dateISO": "2026-07-13",
+      "summary": "Hover the context ring in a Codex chat to see account rate limits and reset times, session token usage, plan and login details, and a warning when you're close to a limit.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/codex-usage-0.75.0.png",
+        "alt": "Codex usage panel showing account limits, reset time, plan, and authentication method"
+      },
+      "authors": [],
+      "url": "/changelog/0.75.0-polish",
+      "indexPage": 3,
+      "position": 25
+    },
+    {
+      "slug": "0.74.0-lots-of-little-things",
+      "version": "0.74.0",
+      "title": "Lots of little things",
+      "fullTitle": "0.74.0: Lots of little things",
+      "date": "July 9, 2026",
+      "dateISO": "2026-07-09",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.74.0-lots-of-little-things",
+      "indexPage": 3,
+      "position": 26
+    },
+    {
+      "slug": "0.73.3-gpt-5-6",
+      "version": "0.73.3",
+      "title": "GPT-5.6",
+      "fullTitle": "0.73.3: GPT-5.6",
+      "date": "July 9, 2026",
+      "dateISO": "2026-07-09",
+      "summary": "GPT-5.6 is now available in Conductor! The GPT-5.6 family of models are Sol and Terra. Sol is OpenAI's new flagship model, and Terra is for balanced, everyday work.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/gpt-5.6-0.73.3.png",
+        "alt": "GPT-5.6 Sol and GPT-5.6 Terra in the Codex model picker"
+      },
+      "authors": [],
+      "url": "/changelog/0.73.3-gpt-5-6",
+      "indexPage": 3,
+      "position": 27
+    },
+    {
+      "slug": "0.73.2-grok-4-5",
+      "version": "0.73.2",
+      "title": "Grok 4.5",
+      "fullTitle": "0.73.2: Grok 4.5",
+      "date": "July 8, 2026",
+      "dateISO": "2026-07-08",
+      "summary": "Grok 4.5 is now available in Conductor! We've also added Cursor's Auto model.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/grok-4.5-0.73.2.png",
+        "alt": "Auto and Cursor Grok 4.5 in the Cursor model picker"
+      },
+      "authors": [],
+      "url": "/changelog/0.73.2-grok-4-5",
+      "indexPage": 3,
+      "position": 28
+    },
+    {
+      "slug": "0.73.0-pr-page",
+      "version": "0.73.0",
+      "title": "PR page",
+      "fullTitle": "0.73.0: PR page",
+      "date": "July 7, 2026",
+      "dateISO": "2026-07-07",
+      "summary": "You can now review a PR without leaving Conductor: view comments and checks, edit the title and description, and merge.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/pr-page-0.73.0.png",
+        "alt": "A pull request in Conductor's new PR page, with merge button, checks, and comments"
+      },
+      "authors": [],
+      "url": "/changelog/0.73.0-pr-page",
+      "indexPage": 3,
+      "position": 29
+    },
+    {
+      "slug": "0.72.0-polish-and-fixes",
+      "version": "0.72.0",
+      "title": "Polish and fixes",
+      "fullTitle": "0.72.0: Polish and fixes",
+      "date": "July 3, 2026",
+      "dateISO": "2026-07-03",
+      "summary": "Conductor figures out which agent messages are most important and collapses the rest. We have a new algorithm that is more accurate (especially with Claude Code background agents) and will more often highlight the most important messages.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.72.0-polish-and-fixes",
+      "indexPage": 4,
+      "position": 30
+    },
+    {
+      "slug": "0.71.0-workspace-and-chat-links",
+      "version": "0.71.0",
+      "title": "Workspace and Chat Links",
+      "fullTitle": "0.71.0: Workspace and Chat Links",
+      "date": "July 1, 2026",
+      "dateISO": "2026-07-01",
+      "summary": "You can now right click to copy a link to a workspace or chat.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/workspace-links-0.71.0.png",
+        "alt": "Copy link in the workspace right-click menu"
+      },
+      "authors": [],
+      "url": "/changelog/0.71.0-workspace-and-chat-links",
+      "indexPage": 4,
+      "position": 31
+    },
+    {
+      "slug": "0.70.1-claude-sonnet-5",
+      "version": "0.70.1",
+      "title": "Claude Sonnet 5",
+      "fullTitle": "0.70.1: Claude Sonnet 5",
+      "date": "June 30, 2026",
+      "dateISO": "2026-06-30",
+      "summary": "Introducing Claude Sonnet 5, Anthropic's newest model, now in Conductor. Performance is much closer to Opus 4.8 while being significantly cheaper. Give it a try!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/sonnet-5-0.70.1.png",
+        "alt": "Claude Sonnet 5 in the model picker"
+      },
+      "authors": [],
+      "url": "/changelog/0.70.1-claude-sonnet-5",
+      "indexPage": 4,
+      "position": 32
+    },
+    {
+      "slug": "0.70.0-multiple-run-scripts",
+      "version": "0.70.0",
+      "title": "Multiple Run Scripts",
+      "fullTitle": "0.70.0: Multiple Run Scripts",
+      "date": "June 26, 2026",
+      "dateISO": "2026-06-26",
+      "summary": "Your script is running? You'd better go catch it!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/multiple-run-scripts-menu-0.70.0.png",
+        "alt": "Run menu with multiple configured run scripts"
+      },
+      "authors": [],
+      "url": "/changelog/0.70.0-multiple-run-scripts",
+      "indexPage": 4,
+      "position": 33
+    },
+    {
+      "slug": "0.69.0-opencode",
+      "version": "0.69.0",
+      "title": "OpenCode",
+      "fullTitle": "0.69.0: OpenCode",
+      "date": "June 23, 2026",
+      "dateISO": "2026-06-23",
+      "summary": "OpenCode is now available in Conductor.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.69.0/1782241182948-2dab283a-463f-49d7-b36a-eaee4b274665-opencode.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.69.0-opencode",
+      "indexPage": 4,
+      "position": 34
+    },
+    {
+      "slug": "0.68.0-markdown-frontmatter",
+      "version": "0.68.0",
+      "title": "Markdown frontmatter",
+      "fullTitle": "0.68.0: Markdown frontmatter",
+      "date": "June 19, 2026",
+      "dateISO": "2026-06-19",
+      "summary": "Markdown previews now separate YAML & TOML frontmatter from the rest of the body for your viewing pleasure.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.68.0/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png",
+        "alt": "CleanShot 2026-06-19 at 13.13.09@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.68.0-markdown-frontmatter",
+      "indexPage": 4,
+      "position": 35
+    },
+    {
+      "slug": "0.67.0-fixes-and-improvements",
+      "version": "0.67.0",
+      "title": "Fixes and improvements",
+      "fullTitle": "0.67.0: Fixes and improvements",
+      "date": "June 17, 2026",
+      "dateISO": "2026-06-17",
+      "summary": "Minor fixes and improvements.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.67.0-fixes-and-improvements",
+      "indexPage": 4,
+      "position": 36
+    },
+    {
+      "slug": "0.66.0-create-workspace-from-issue",
+      "version": "0.66.0",
+      "title": "Create workspace from issue",
+      "fullTitle": "0.66.0: Create workspace from issue",
+      "date": "June 16, 2026",
+      "dateISO": "2026-06-16",
+      "summary": "You can now create workspaces from Linear or GitHub issues through the \"Create from...\" dropdown (⌘I).",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.66.0/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.66.0-create-workspace-from-issue",
+      "indexPage": 4,
+      "position": 37
+    },
+    {
+      "slug": "0.65.0-codex-goal-support",
+      "version": "0.65.0",
+      "title": "Codex goal support",
+      "fullTitle": "0.65.0: Codex goal support",
+      "date": "June 12, 2026",
+      "dateISO": "2026-06-12",
+      "summary": "/goal is now available for Codex sessions in Conductor - now you can run /goal in Conductor while you watch goals in the World Cup.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.65.0/1781286329427-9669f3d9-05ed-4540-96dd-f0d9db92a62d-CleanShot_2026-06-12_at_10.40.21.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.65.0-codex-goal-support",
+      "indexPage": 4,
+      "position": 38
+    },
+    {
+      "slug": "0.64.0-claude-fable-5",
+      "version": "0.64.0",
+      "title": "Claude Fable 5",
+      "fullTitle": "0.64.0: Claude Fable 5",
+      "date": "June 9, 2026",
+      "dateISO": "2026-06-09",
+      "summary": "Claude Fable 5, Anthropic's newest and most powerful model, is now available in Conductor.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.64.0/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.64.0-claude-fable-5",
+      "indexPage": 4,
+      "position": 39
+    },
+    {
+      "slug": "0.63.0-cursor-support-dispatcher",
+      "version": "0.63.0",
+      "title": "Cursor support & Dispatcher",
+      "fullTitle": "0.63.0: Cursor support & Dispatcher",
+      "date": "June 8, 2026",
+      "dateISO": "2026-06-08",
+      "summary": "Conductor now supports Cursor Composer 2.5! It's fast, precise, and cost-efficient. We're excited to see how it improves your workflow.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.63.0/1780951829667-e33e58c6-daef-43aa-86bc-87e7fc0d3bf5-Clipboard-20260608-204802-476.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.63.0-cursor-support-dispatcher",
+      "indexPage": 5,
+      "position": 40
+    },
+    {
+      "slug": "0.62.0-repo-settings-browser-preview",
+      "version": "0.62.0",
+      "title": "Repo settings, browser preview",
+      "fullTitle": "0.62.0: Repo settings, browser preview",
+      "date": "June 4, 2026",
+      "dateISO": "2026-06-04",
+      "summary": "Conductor now supports file-backed settings at user and repo scope. Repositories can use .conductor/settings.toml as the shared team config, while local user preferences stay in ~/.conductor/settings.toml or repo-local overrides. Learn more about how settings work here.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.62.0/1780691919611-image.png",
+        "alt": ""
+      },
+      "authors": [],
+      "url": "/changelog/0.62.0-repo-settings-browser-preview",
+      "indexPage": 5,
+      "position": 41
+    },
+    {
+      "slug": "0.61.0-ultracode-git-improve",
+      "version": "0.61.0",
+      "title": "ultracode && git --improve",
+      "fullTitle": "0.61.0: ultracode && git --improve",
+      "date": "May 29, 2026",
+      "dateISO": "2026-05-29",
+      "summary": "Ultracode effort is live in Conductor! Ultracode combines x-high effort and dynamic workflow orchestration to help Claude take on the hardest tasks. We don’t know if it’s better yet but it’s cool.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.61.0/1780099515800-image.png",
+        "alt": ""
+      },
+      "authors": [],
+      "url": "/changelog/0.61.0-ultracode-git-improve",
+      "indexPage": 5,
+      "position": 42
+    },
+    {
+      "slug": "0.59.0-bug-fixes",
+      "version": "0.59.0",
+      "title": "Bug fixes",
+      "fullTitle": "0.59.0: Bug fixes",
+      "date": "May 27, 2026",
+      "dateISO": "2026-05-27",
+      "summary": "Fixed bugs.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/opus-4-8-0.59.1.png",
+        "alt": "Claude Opus 4.8 in the model picker"
+      },
+      "authors": [],
+      "url": "/changelog/0.59.0-bug-fixes",
+      "indexPage": 5,
+      "position": 43
+    },
+    {
+      "slug": "0.58.0-polish",
+      "version": "0.58.0",
+      "title": "Polish",
+      "fullTitle": "0.58.0: Polish",
+      "date": "May 25, 2026",
+      "dateISO": "2026-05-25",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.58.0-polish",
+      "indexPage": 5,
+      "position": 44
+    },
+    {
+      "slug": "0.57.0-sync-agent-configs",
+      "version": "0.57.0",
+      "title": "Sync agent configs",
+      "fullTitle": "0.57.0: Sync agent configs",
+      "date": "May 22, 2026",
+      "dateISO": "2026-05-22",
+      "summary": "Added a Sync Agent Configs button in Settings → General to copy skills, slash commands, and MCP servers between Claude Code and Codex.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/sync-agent-configs-0.57.0.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.57.0-sync-agent-configs",
+      "indexPage": 5,
+      "position": 45
+    },
+    {
+      "slug": "0.56.0-settings-scrolls",
+      "version": "0.56.0",
+      "title": "Settings & scrolls",
+      "fullTitle": "0.56.0: Settings & scrolls",
+      "date": "May 21, 2026",
+      "dateISO": "2026-05-21",
+      "summary": "The side nav now has a nice mask on scroll for a smooth, continuous feel. Shout out to Tim Wilson for the inspo!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.56.0/1779475000000-scroll-masks-0.56.0.gif",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.56.0-settings-scrolls",
+      "indexPage": 5,
+      "position": 46
+    },
+    {
+      "slug": "0.55.0-per-repo-spotlight-html-previews",
+      "version": "0.55.0",
+      "title": "Per-repo Spotlight, HTML previews",
+      "fullTitle": "0.55.0: Per-repo Spotlight, HTML previews",
+      "date": "May 20, 2026",
+      "dateISO": "2026-05-20",
+      "summary": "Spotlight testing is now configured per repository instead of globally - that means you can control workspace isolation per-project. Spotlight is a useful feature for managing complex developer workflows - it allows you to run a single instance of your project and hot-swap branches, rather than running multiple branches in parallel.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.55.0/1779307966900-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.55.0-per-repo-spotlight-html-previews",
+      "indexPage": 5,
+      "position": 47
+    },
+    {
+      "slug": "0.54.0-new-queue-diff-diffs",
+      "version": "0.54.0",
+      "title": "New queue, diff diffs",
+      "fullTitle": "0.54.0: New queue, diff diffs",
+      "date": "May 18, 2026",
+      "dateISO": "2026-05-18",
+      "summary": "We’ve redesigned our message queue from the ground-up. Highlights:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.54.0/1779147467258-image.gif",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.54.0-new-queue-diff-diffs",
+      "indexPage": 5,
+      "position": 48
+    },
+    {
+      "slug": "0.52.0-sounds-colors",
+      "version": "0.52.0",
+      "title": "Sounds & colors",
+      "fullTitle": "0.52.0: Sounds & colors",
+      "date": "May 7, 2026",
+      "dateISO": "2026-05-07",
+      "summary": "New sounds",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.52.0/1778205509048-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.52.0-sounds-colors",
+      "indexPage": 5,
+      "position": 49
+    },
+    {
+      "slug": "0.51.0-codex-is-more-beautiful",
+      "version": "0.51.0",
+      "title": "Codex is more beautiful",
+      "fullTitle": "0.51.0: Codex is more beautiful",
+      "date": "May 5th, 2026",
+      "dateISO": "2026-05-05",
+      "summary": "Codex tool calls now show richer file, command, and search details. We also now render Codex subagents, and gpt-image-2 results. Files to copy We’ve added a new field in each repo’s settings for files to copy. Conductor will automatically copy these file paths in each new workspace. Learn more.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.51.0/1778020308529-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.51.0-codex-is-more-beautiful",
+      "indexPage": 6,
+      "position": 50
+    },
+    {
+      "slug": "0.50.0-steering",
+      "version": "0.50.0",
+      "title": "Steering",
+      "fullTitle": "0.50.0: Steering",
+      "date": "May 1st, 2026",
+      "dateISO": "2026-05-01",
+      "summary": "You can now steer your agents. Choose your preferred follow-up behavior in Settings → General.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.50.0/1777671232815-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.50.0-steering",
+      "indexPage": 6,
+      "position": 51
+    },
+    {
+      "slug": "0.49.0-conductor-allegro-gpt-5-5",
+      "version": "0.49.0",
+      "title": "Conductor Allegro, GPT-5.5",
+      "fullTitle": "0.49.0: Conductor Allegro, GPT-5.5",
+      "date": "Apr 22, 2026",
+      "dateISO": "2026-04-22",
+      "summary": "We've re-built the app from scratch to make it twice as fast. Creating tabs, switching workspaces, and rendering files are all 50% faster, memory usage is lower, and the app is 150 MB smaller.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.49.0/1776907036915-video.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.49.0-conductor-allegro-gpt-5-5",
+      "indexPage": 6,
+      "position": 52
+    },
+    {
+      "slug": "0.48.5-effort",
+      "version": "0.48.5",
+      "title": "Effort",
+      "fullTitle": "0.48.5: Effort",
+      "date": "Apr 18, 2026",
+      "dateISO": "2026-04-18",
+      "summary": "We've added a toggle for effort levels! (press ⌥T to toggle)",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.48.5/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png",
+        "alt": "Effort toggle for Claude models"
+      },
+      "authors": [],
+      "url": "/changelog/0.48.5-effort",
+      "indexPage": 6,
+      "position": 53
+    },
+    {
+      "slug": "0.48.2-claude-opus-4-7",
+      "version": "0.48.2",
+      "title": "Claude Opus 4.7",
+      "fullTitle": "0.48.2: Claude Opus 4.7",
+      "date": "Apr 16, 2026",
+      "dateISO": "2026-04-16",
+      "summary": "Conductor now supports Claude Opus 4.7, Anthropic's latest and most capable model.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.48.2/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png",
+        "alt": "Claude Opus 4.7"
+      },
+      "authors": [],
+      "url": "/changelog/0.48.2-claude-opus-4-7",
+      "indexPage": 6,
+      "position": 54
+    },
+    {
+      "slug": "0.48.0-big-terminal-mode",
+      "version": "0.48.0",
+      "title": "Big Terminal Mode",
+      "fullTitle": "0.48.0: Big Terminal Mode",
+      "date": "Apr 14, 2026",
+      "dateISO": "2026-04-14",
+      "summary": "We've brought back Big Terminal Mode! You can now run a full terminal in the center panel with ⌘⇧T and run any agent you'd like. Session history is restored on restart. Turn on Big Terminal Mode in Settings → Experimental.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.48.0/1776198032202-image.png",
+        "alt": "Big Terminal Mode"
+      },
+      "authors": [],
+      "url": "/changelog/0.48.0-big-terminal-mode",
+      "indexPage": 6,
+      "position": 55
+    },
+    {
+      "slug": "0.46.0-bug-fixes-instant-archiving-terminal",
+      "version": "0.46.0",
+      "title": "Bug Fixes, Instant Archiving, @terminal",
+      "fullTitle": "0.46.0: Bug Fixes, Instant Archiving, @terminal",
+      "date": "Apr 5, 2026",
+      "dateISO": "2026-04-05",
+      "summary": "Archiving is now instant! You can restore any archived workspace in the History tab in the sidebar.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.46.0/1775441947842-ConductorArchiving.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.46.0-bug-fixes-instant-archiving-terminal",
+      "indexPage": 6,
+      "position": 56
+    },
+    {
+      "slug": "0.45.0-file-previews-codex-personalities",
+      "version": "0.45.0",
+      "title": "File Previews, Codex Personalities",
+      "fullTitle": "0.45.0: File Previews, Codex Personalities",
+      "date": "Apr 1, 2026",
+      "dateISO": "2026-04-01",
+      "summary": "You can now hover on any diffs to see syntax-highlighted previews:",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.45.0/1775088337448-video.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.45.0-file-previews-codex-personalities",
+      "indexPage": 6,
+      "position": 57
+    },
+    {
+      "slug": "0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints",
+      "version": "0.44.0",
+      "title": "New Sidebar, Rebuilt Composer, Codex Checkpoints",
+      "fullTitle": "0.44.0: New Sidebar, Rebuilt Composer, Codex Checkpoints",
+      "date": "Mar 24, 2026",
+      "dateISO": "2026-03-24",
+      "summary": "Introducing our new, simplified sidebar. See GitHub status (merged, failing CI, conflicts, etc at a glance). Hover any workspace to see metadata and get easy access to next actions without leaving your current chat.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.44.0/1774395513472-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints",
+      "indexPage": 6,
+      "position": 58
+    },
+    {
+      "slug": "0.43.0-codex-skills-plan-mode-fast-mode",
+      "version": "0.43.0",
+      "title": "Codex: Skills, Plan Mode, Fast Mode",
+      "fullTitle": "0.43.0: Codex: Skills, Plan Mode, Fast Mode",
+      "date": "Mar 20th, 2026",
+      "dateISO": "2026-03-20",
+      "summary": "Codex in Conductor now has fast mode mode, plan mode, and skills!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.43.0/1774067154596-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.43.0-codex-skills-plan-mode-fast-mode",
+      "indexPage": 6,
+      "position": 59
+    },
+    {
+      "slug": "0.41.0-tool-approval-codex-plan-mode-beta",
+      "version": "0.41.0",
+      "title": "Tool Approval + Codex Plan Mode Beta",
+      "fullTitle": "0.41.0: Tool Approval + Codex Plan Mode Beta",
+      "date": "Mar 19, 2026",
+      "dateISO": "2026-03-19",
+      "summary": "We’ve added tool approval as a new enterprise setting. If you’d like to enable it, email us humans@conductor.build.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.41.0/1773956606308-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.41.0-tool-approval-codex-plan-mode-beta",
+      "indexPage": 7,
+      "position": 60
+    },
+    {
+      "slug": "0.40.1-fast-mode",
+      "version": "0.40.1",
+      "title": "Fast Mode",
+      "fullTitle": "0.40.1: Fast Mode",
+      "date": "Mar 16th, 2026",
+      "dateISO": "2026-03-16",
+      "summary": "Opus 4.6 fast mode is live in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.40.1/1773698681114-image.png",
+        "alt": "image.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.40.1-fast-mode",
+      "indexPage": 7,
+      "position": 61
+    },
+    {
+      "slug": "0.39.0-insta-summarize-command-palette-opus-4-6",
+      "version": "0.39.0",
+      "title": "Insta-Summarize, Command Palette, Opus 4.6",
+      "fullTitle": "0.39.0: Insta-Summarize, Command Palette, Opus 4.6",
+      "date": "Mar 13th, 2026",
+      "dateISO": "2026-03-13",
+      "summary": "Summarizing chats is now instant!",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.39.0/1773449853029-video.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.39.0-insta-summarize-command-palette-opus-4-6",
+      "indexPage": 7,
+      "position": 62
+    },
+    {
+      "slug": "0.38.5-bug-fixes",
+      "version": "0.38.5",
+      "title": "Bug Fixes",
+      "fullTitle": "0.38.5: Bug Fixes",
+      "date": "Mar 11th, 2026",
+      "dateISO": "2026-03-11",
+      "summary": "We've fixed a bug that would cause plan mode to exit early. We also added an experimental new sidebar mode—enable in Settings -> Experimental -> New sidebar and let us know what you think!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.38.5-bug-fixes",
+      "indexPage": 7,
+      "position": 63
+    },
+    {
+      "slug": "0.38.4-direnv-support-opus-4-6-1m",
+      "version": "0.38.4",
+      "title": "Direnv Support, Opus 4.6 1M",
+      "fullTitle": "0.38.4: Direnv Support, Opus 4.6 1M",
+      "date": "Mar 10th, 2026",
+      "dateISO": "2026-03-10",
+      "summary": "We now support directory-based shell tools like direnv, so your environment variables are automatically picked up per workspace.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.38.4/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png",
+        "alt": "CleanShot 2026-03-10 at 17.03.01@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.38.4-direnv-support-opus-4-6-1m",
+      "indexPage": 7,
+      "position": 64
+    },
+    {
+      "slug": "0.38.3-multiline-comments",
+      "version": "0.38.3",
+      "title": "Multiline comments",
+      "fullTitle": "0.38.3: Multiline comments",
+      "date": "Mar 10th, 2026",
+      "dateISO": "2026-03-10",
+      "summary": "You can now click and drag to add multiline comments. Also, comments now render with markdown formatting. Comments from GitHub show the author's avatar, and disappear when they become outdated or resolved.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.38.3/1773167427543-image.png",
+        "alt": "image.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.38.3-multiline-comments",
+      "indexPage": 7,
+      "position": 65
+    },
+    {
+      "slug": "0.38.1-0.38.2-new-terminal-perf-issues",
+      "version": "0.38.1-0.38.2",
+      "title": "New Terminal, Perf Issues",
+      "fullTitle": "0.38.1-0.38.2: New Terminal, Perf Issues",
+      "date": "Mar 6th, 2026",
+      "dateISO": "2026-03-06",
+      "summary": "We've rewritten the terminal from scratch for a faster, more reliable experience.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.38.1-0.38.2-new-terminal-perf-issues",
+      "indexPage": 7,
+      "position": 66
+    },
+    {
+      "slug": "0.38.0-gpt-5-4",
+      "version": "0.38.0",
+      "title": "GPT-5.4",
+      "fullTitle": "0.38.0: GPT-5.4",
+      "date": "Mar 5th, 2026",
+      "dateISO": "2026-03-05",
+      "summary": "GPT-5.4 is now available!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.38.0/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png",
+        "alt": "CleanShot 2026-03-05 at 14.48.20@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.38.0-gpt-5-4",
+      "indexPage": 7,
+      "position": 67
+    },
+    {
+      "slug": "0.37.1-polish-and-bug-fixes",
+      "version": "0.37.1",
+      "title": "Polish and bug fixes",
+      "fullTitle": "0.37.1: Polish and bug fixes",
+      "date": "Mar 3, 2026",
+      "dateISO": "2026-03-03",
+      "summary": "You can now use the number keys to quickly switch between models:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.37.1/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png",
+        "alt": "image.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.37.1-polish-and-bug-fixes",
+      "indexPage": 7,
+      "position": 68
+    },
+    {
+      "slug": "0.37.0-manual-mode",
+      "version": "0.37.0",
+      "title": "Manual Mode™",
+      "fullTitle": "0.37.0: Manual Mode™",
+      "date": "Mar 3rd, 2026",
+      "dateISO": "2026-03-03",
+      "summary": "Conductor now has a built-in file editor for when you want to edit files directly (like a caveman). It comes with full syntax highlighting and ⌘F. We use it for quick edits, like .env files, json configs, or tailwind classes. Otherwise, ask the AI.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.37.0/1772585344123-video.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.37.0-manual-mode",
+      "indexPage": 7,
+      "position": 69
+    },
+    {
+      "slug": "0.36.9-performance-improvements",
+      "version": "0.36.9",
+      "title": "Performance Improvements",
+      "fullTitle": "0.36.9: Performance Improvements",
+      "date": "Feb 27th, 2026",
+      "dateISO": "2026-02-27",
+      "summary": "We’ve removed some code that introduced performance issues. The app should feel snappier.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.36.9/1772243714830-Conductorsnappy.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.9-performance-improvements",
+      "indexPage": 8,
+      "position": 70
+    },
+    {
+      "slug": "0.36.7-bug-fixes",
+      "version": "0.36.7",
+      "title": "Bug Fixes",
+      "fullTitle": "0.36.7: Bug Fixes",
+      "date": "Feb 27th, 2026",
+      "dateISO": "2026-02-27",
+      "summary": "We now detect if your Xcode license is out of date on app startup to avoid gh commands silently failing.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.36.7-bug-fixes",
+      "indexPage": 8,
+      "position": 71
+    },
+    {
+      "slug": "0.36.6-bug-fixes",
+      "version": "0.36.6",
+      "title": "Bug Fixes",
+      "fullTitle": "0.36.6: Bug Fixes",
+      "date": "Feb 27th, 2026",
+      "dateISO": "2026-02-27",
+      "summary": "We’ve updated the Claude Agent SDK to 0.36.6 to fix a bug with prompt caching.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.36.6-bug-fixes",
+      "indexPage": 8,
+      "position": 72
+    },
+    {
+      "slug": "0.36.5-open-from-linear-bug-fixes",
+      "version": "0.36.5",
+      "title": "Open from Linear, Bug Fixes",
+      "fullTitle": "0.36.5: Open from Linear, Bug Fixes",
+      "date": "Feb 26th, 2026",
+      "dateISO": "2026-02-26",
+      "summary": "For Linear users: you can now open a Conductor workspace from a Linear issue! Check out Deeplink to AI Coding Tools to learn more.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.36.5/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png",
+        "alt": "Open from Linear"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.5-open-from-linear-bug-fixes",
+      "indexPage": 8,
+      "position": 73
+    },
+    {
+      "slug": "0.36.4-next-workspace",
+      "version": "0.36.4",
+      "title": "Next Workspace",
+      "fullTitle": "0.36.4: Next Workspace",
+      "date": "Feb 24th, 2026",
+      "dateISO": "2026-02-24",
+      "summary": "You can now quickly jump between chats that need your attention or have unread messages.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.36.4/1771974660429-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.4-next-workspace",
+      "indexPage": 8,
+      "position": 74
+    },
+    {
+      "slug": "0.36.3-submit-a-prompt-sdk-memory-leaks",
+      "version": "0.36.3",
+      "title": "Submit a Prompt, SDK Memory Leaks",
+      "fullTitle": "0.36.3: Submit a Prompt, SDK Memory Leaks",
+      "date": "Feb 23rd, 2026",
+      "dateISO": "2026-02-23",
+      "summary": "You can now prompt a coding agent to build what you want to see in Conductor. If we like your prompt, we'll run it and merge the result!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.36.3/1771877342199-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.3-submit-a-prompt-sdk-memory-leaks",
+      "indexPage": 8,
+      "position": 75
+    },
+    {
+      "slug": "0.36.2-model-picker-bug-fixes",
+      "version": "0.36.2",
+      "title": "Model Picker, Bug Fixes",
+      "fullTitle": "0.36.2: Model Picker, Bug Fixes",
+      "date": "Feb 18th, 2026",
+      "dateISO": "2026-02-18",
+      "summary": "You can now change your default model directly from the model picker: Anthropic broke context usage info in the latest SDK release, so we've temporarily removed it.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.36.2/1771480180909-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.2-model-picker-bug-fixes",
+      "indexPage": 8,
+      "position": 76
+    },
+    {
+      "slug": "0.36.1-bug-fixes",
+      "version": "0.36.1",
+      "title": " Bug Fixes",
+      "fullTitle": "0.36.1:  Bug Fixes",
+      "date": "Feb 17th, 2026",
+      "dateISO": "2026-02-17",
+      "summary": "We've fixed a bug that caused increased background resource usage. More performance improvements coming soon.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.36.1-bug-fixes",
+      "indexPage": 8,
+      "position": 77
+    },
+    {
+      "slug": "0.36.0-sonnet-4-6-pierre-diffs",
+      "version": "0.36.0",
+      "title": "Sonnet 4.6, Pierre Diffs",
+      "fullTitle": "0.36.0: Sonnet 4.6, Pierre Diffs",
+      "date": "Feb 17th, 2026",
+      "dateISO": "2026-02-17",
+      "summary": "Sonnet 4.6 is now live in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.36.0/1771359980844-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.36.0-sonnet-4-6-pierre-diffs",
+      "indexPage": 8,
+      "position": 78
+    },
+    {
+      "slug": "0.35.3-reliability-and-performance",
+      "version": "0.35.3",
+      "title": "Reliability and performance",
+      "fullTitle": "0.35.3: Reliability and performance",
+      "date": "Feb 14th, 2026",
+      "dateISO": "2026-02-14",
+      "summary": "We’ve fixed some rendering and performance issues, including removing animations that caused high idle CPU usage.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.35.3/1771097364174-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.35.3-reliability-and-performance",
+      "indexPage": 8,
+      "position": 79
+    },
+    {
+      "slug": "0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+      "version": "0.35.2",
+      "title": "Group workspaces by repo, GPT-5.3-Codex-Spark ",
+      "fullTitle": "0.35.2: Group workspaces by repo, GPT-5.3-Codex-Spark ",
+      "date": "Feb 12th, 2026",
+      "dateISO": "2026-02-12",
+      "summary": "You can now group workspaces by repository!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.35.2/1770929018501-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+      "indexPage": 9,
+      "position": 80
+    },
+    {
+      "slug": "0.35.1-bug-fixes",
+      "version": "0.35.1",
+      "title": "Bug Fixes",
+      "fullTitle": "0.35.1: Bug Fixes",
+      "date": "Feb 11th, 2026",
+      "dateISO": "2026-02-11",
+      "summary": "We fixed a bug that caused chats to intermittently disappear.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.35.1-bug-fixes",
+      "indexPage": 9,
+      "position": 81
+    },
+    {
+      "slug": "0.35.0-workspace-status",
+      "version": "0.35.0",
+      "title": "Workspace Status",
+      "fullTitle": "0.35.0: Workspace Status",
+      "date": "Feb 11th, 2026",
+      "dateISO": "2026-02-11",
+      "summary": "Workspaces are now organized by status: backlog, in progress, in review, and done. Workspaces are also labeled by PR title when available.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.35.0/1770849671156-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.35.0-workspace-status",
+      "indexPage": 9,
+      "position": 82
+    },
+    {
+      "slug": "0.34.2-chat-summaries-re-run-actions-latex",
+      "version": "0.34.2",
+      "title": "Chat Summaries, Re-Run Actions, LaTeX",
+      "fullTitle": "0.34.2: Chat Summaries, Re-Run Actions, LaTeX",
+      "date": "Feb 10th, 2026",
+      "dateISO": "2026-02-10",
+      "summary": "We’ve added chat summaries. Hover the table of contents to see a brief overview of your chat. Failed GitHub Actions checks now have a re-run button, so you can retry them without leaving Conductor.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.34.2/1770749325599-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.34.2-chat-summaries-re-run-actions-latex",
+      "indexPage": 9,
+      "position": 83
+    },
+    {
+      "slug": "0.34.1-editable-pr-titles-and-descriptions",
+      "version": "0.34.1",
+      "title": "Editable PR titles and descriptions ",
+      "fullTitle": "0.34.1: Editable PR titles and descriptions ",
+      "date": "Feb 6th, 2026",
+      "dateISO": "2026-02-06",
+      "summary": "You can now edit PR titles and descriptions in the Checks tab! When you ask the AI to create a PR it will use the values you provided.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.34.1/1770405777147-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.34.1-editable-pr-titles-and-descriptions",
+      "indexPage": 9,
+      "position": 84
+    },
+    {
+      "slug": "0.34.0-opus-4-6-and-gpt-5-3-codex",
+      "version": "0.34.0",
+      "title": "Opus 4.6 and GPT-5.3-Codex",
+      "fullTitle": "0.34.0: Opus 4.6 and GPT-5.3-Codex",
+      "date": "Feb 5th, 2026",
+      "dateISO": "2026-02-05",
+      "summary": "The smartest and fastest models from Anthropic and OpenAI are now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.34.0/1770319106128-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.34.0-opus-4-6-and-gpt-5-3-codex",
+      "indexPage": 9,
+      "position": 85
+    },
+    {
+      "slug": "0.33.5-better-archiving",
+      "version": "0.33.5",
+      "title": "Better archiving",
+      "fullTitle": "0.33.5: Better archiving",
+      "date": "Feb 3rd, 2026",
+      "dateISO": "2026-02-03",
+      "summary": "Conductor now automatically saves your git state when you archive, including uncommitted files.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.33.5/1770153556088-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.33.5-better-archiving",
+      "indexPage": 9,
+      "position": 86
+    },
+    {
+      "slug": "0.33.4-git-panel-grouping-and-bug-fixes",
+      "version": "0.33.4",
+      "title": " Git Panel Grouping and Bug Fixes",
+      "fullTitle": "0.33.4:  Git Panel Grouping and Bug Fixes",
+      "date": "Jan 31st, 2026",
+      "dateISO": "2026-01-31",
+      "summary": "The git panel changes tab now groups files into \"Uncommitted\" and \"Committed\" sections:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.33.4/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png",
+        "alt": "CleanShot 2026-01-30 at 10.31.26@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.33.4-git-panel-grouping-and-bug-fixes",
+      "indexPage": 9,
+      "position": 87
+    },
+    {
+      "slug": "0.33.3-performance-improvements-file-context-menu",
+      "version": "0.33.3",
+      "title": "Performance Improvements, File Context Menu",
+      "fullTitle": "0.33.3: Performance Improvements, File Context Menu",
+      "date": "Jan 29th, 2026",
+      "dateISO": "2026-01-29",
+      "summary": "We’ve fixed a performance issue in long chats.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.33.3/1769733805582-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.33.3-performance-improvements-file-context-menu",
+      "indexPage": 9,
+      "position": 88
+    },
+    {
+      "slug": "0.33.2-view-github-actions-in-conductor",
+      "version": "0.33.2",
+      "title": "View GitHub Actions in Conductor",
+      "fullTitle": "0.33.2: View GitHub Actions in Conductor",
+      "date": "Jan 28th, 2026",
+      "dateISO": "2026-01-28",
+      "summary": "Click on a GitHub Action in the Checks tab to view its logs.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.33.2/1769636035709-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.33.2-view-github-actions-in-conductor",
+      "indexPage": 9,
+      "position": 89
+    },
+    {
+      "slug": "0.33.1-slash-command-bug-fix",
+      "version": "0.33.1",
+      "title": "Slash command bug fix",
+      "fullTitle": "0.33.1: Slash command bug fix",
+      "date": "Jan 27th, 2026",
+      "dateISO": "2026-01-27",
+      "summary": "We’ve fixed a bug where certain slash commands wouldn’t be processed when thinking was enabled.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.33.1-slash-command-bug-fix",
+      "indexPage": 10,
+      "position": 90
+    },
+    {
+      "slug": "0.33.0-tasks-typography",
+      "version": "0.33.0",
+      "title": "Tasks & Typography",
+      "fullTitle": "0.33.0: Tasks & Typography",
+      "date": "Jan 27th, 2026",
+      "dateISO": "2026-01-27",
+      "summary": "Conductor now supports tasks, a way for Claude to organize its work better and complete longer projects.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.33.0/1769542581206-image.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.33.0-tasks-typography",
+      "indexPage": 10,
+      "position": 91
+    },
+    {
+      "slug": "0.32.2-bug-fixes",
+      "version": "0.32.2",
+      "title": "Bug Fixes",
+      "fullTitle": "0.32.2: Bug Fixes",
+      "date": "Jan 23rd, 2026",
+      "dateISO": "2026-01-23",
+      "summary": "We've fixed a bug where messages could not be sent in a chat tab after closing it. This bug also affected archived workspaces.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.32.2-bug-fixes",
+      "indexPage": 10,
+      "position": 92
+    },
+    {
+      "slug": "0.32.1-rerun-setup-scripts",
+      "version": "0.32.1",
+      "title": "Rerun setup scripts",
+      "fullTitle": "0.32.1: Rerun setup scripts",
+      "date": "Jan 22nd, 2026",
+      "dateISO": "2026-01-22",
+      "summary": "You can now rerun your setup script directly from the terminal panel.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.32.1/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png",
+        "alt": "Rerun setup script"
+      },
+      "authors": [],
+      "url": "/changelog/0.32.1-rerun-setup-scripts",
+      "indexPage": 10,
+      "position": 93
+    },
+    {
+      "slug": "0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+      "version": "0.32.0",
+      "title": "GitHub issues, Graphite stacks, continue chats, table of contents",
+      "fullTitle": "0.32.0: GitHub issues, Graphite stacks, continue chats, table of contents",
+      "date": "Jan 22nd, 2026",
+      "dateISO": "2026-01-22",
+      "summary": "You can now attach GitHub issues in the chat.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.32.0/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png",
+        "alt": "GitHub issues"
+      },
+      "authors": [],
+      "url": "/changelog/0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents",
+      "indexPage": 10,
+      "position": 94
+    },
+    {
+      "slug": "0.31.3-askuserquestion-improvements",
+      "version": "0.31.3",
+      "title": "AskUserQuestion improvements",
+      "fullTitle": "0.31.3: AskUserQuestion improvements",
+      "date": "Jan 19th, 2026",
+      "dateISO": "2026-01-19",
+      "summary": "We've cleaned up the UI for the AskUserQuestion tool to make it fully keyboard navigable.",
+      "hero": {
+        "type": "video",
+        "src": "/assets/changelog/media/0.31.3/1768852746133-Clipboard-20260117-203656-672.mp4"
+      },
+      "authors": [],
+      "url": "/changelog/0.31.3-askuserquestion-improvements",
+      "indexPage": 10,
+      "position": 95
+    },
+    {
+      "slug": "0.31.2-general-agent-preferences",
+      "version": "0.31.2",
+      "title": "General agent preferences",
+      "fullTitle": "0.31.2: General agent preferences",
+      "date": "Jan 17th, 2026",
+      "dateISO": "2026-01-17",
+      "summary": "You can now add instructions for Conductor to give to each agent when it starts up, similar to CLAUDE.md or AGENTS.md. Configure instructions in Repository Settings.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.31.2/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png",
+        "alt": "General agent preferences"
+      },
+      "authors": [],
+      "url": "/changelog/0.31.2-general-agent-preferences",
+      "indexPage": 10,
+      "position": 96
+    },
+    {
+      "slug": "0.31.1-checks-tab",
+      "version": "0.31.1",
+      "title": "Checks tab",
+      "fullTitle": "0.31.1: Checks tab",
+      "date": "Jan 16th, 2026",
+      "dateISO": "2026-01-16",
+      "summary": "The checks tab is one place to keep track of everything you need to do before merging. Track git status, deployments, CI actions, comments, and user todos all in one place.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.31.1/1768607997278-image.png",
+        "alt": "Checks tab"
+      },
+      "authors": [],
+      "url": "/changelog/0.31.1-checks-tab",
+      "indexPage": 10,
+      "position": 97
+    },
+    {
+      "slug": "0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+      "version": "0.31.0",
+      "title": "Search chats, add scripts in the UI, and view setup script logs",
+      "fullTitle": "0.31.0: Search chats, add scripts in the UI, and view setup script logs",
+      "date": "Jan 15th, 2026",
+      "dateISO": "2026-01-15",
+      "summary": "Use ⌘F to search within chats.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.31.0/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png",
+        "alt": "Search chats"
+      },
+      "authors": [],
+      "url": "/changelog/0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+      "indexPage": 10,
+      "position": 98
+    },
+    {
+      "slug": "0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans",
+      "version": "0.30.0",
+      "title": "Bug Fixes, Claude Code for Chrome, Hand off plans",
+      "fullTitle": "0.30.0: Bug Fixes, Claude Code for Chrome, Hand off plans",
+      "date": "Jan 13th, 2026",
+      "dateISO": "2026-01-13",
+      "summary": "We've fixed the increase in Error Code 1 and Unknown errors that would occur when using an async subagent or background task with Claude Code.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.30.0/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png",
+        "alt": "Claude Code for Chrome"
+      },
+      "authors": [],
+      "url": "/changelog/0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans",
+      "indexPage": 10,
+      "position": 99
+    },
+    {
+      "slug": "0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+      "version": "0.29.5",
+      "title": "Bug Fixes, Claude can now read your terminal",
+      "fullTitle": "0.29.5: Bug Fixes, Claude can now read your terminal",
+      "date": "Jan 12th, 2026",
+      "dateISO": "2026-01-12",
+      "summary": "We've identified a regression in the Claude Agent SDK when using async subagents that results in Error Code 1 and Unknown error responses. Please upvote this issue for Anthropic to make a proper fix!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.5/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png",
+        "alt": "Claude can now read your terminal"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+      "indexPage": 11,
+      "position": 100
+    },
+    {
+      "slug": "0.29.4-pr-checks-new-shortcuts",
+      "version": "0.29.4",
+      "title": "PR Checks, New Shortcuts",
+      "fullTitle": "0.29.4: PR Checks, New Shortcuts",
+      "date": "Jan 12th, 2026",
+      "dateISO": "2026-01-12",
+      "summary": "Each workspace now has a Checks tab. Use it to monitor GitHub actions, deployments, and user TODOs.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.4/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png",
+        "alt": "PR Checks"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.4-pr-checks-new-shortcuts",
+      "indexPage": 11,
+      "position": 101
+    },
+    {
+      "slug": "0.29.3-composer-improvements-bug-fixes",
+      "version": "0.29.3",
+      "title": "Composer Improvements, Bug Fixes ",
+      "fullTitle": "0.29.3: Composer Improvements, Bug Fixes ",
+      "date": "Jan 10th, 2026",
+      "dateISO": "2026-01-10",
+      "summary": "We’ve simplified the composer. Use the + icon to add attachments, linear issues, and more!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.3/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png",
+        "alt": "Composer improvements"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.3-composer-improvements-bug-fixes",
+      "indexPage": 11,
+      "position": 102
+    },
+    {
+      "slug": "0.29.2-vercel-deployments-simplified-thinking-levels",
+      "version": "0.29.2",
+      "title": "Vercel deployments, simplified thinking levels",
+      "fullTitle": "0.29.2: Vercel deployments, simplified thinking levels",
+      "date": "Jan 9th, 2026",
+      "dateISO": "2026-01-09",
+      "summary": "Use the Deployments tab to view Vercel and GitHub deployments associated with each PR.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.2/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png",
+        "alt": "Vercel deployments"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.2-vercel-deployments-simplified-thinking-levels",
+      "indexPage": 11,
+      "position": 103
+    },
+    {
+      "slug": "0.29.1-customize-prompts-mark-files-as-viewed",
+      "version": "0.29.1",
+      "title": "Customize prompts, mark files as viewed",
+      "fullTitle": "0.29.1: Customize prompts, mark files as viewed",
+      "date": "Jan 8th, 2026",
+      "dateISO": "2026-01-08",
+      "summary": "You can now customize the code review, create PR, and branch renaming prompts. Customize them for each repository in Settings (⌘,).",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.1/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png",
+        "alt": "Customize Prompts"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.1-customize-prompts-mark-files-as-viewed",
+      "indexPage": 11,
+      "position": 104
+    },
+    {
+      "slug": "0.29.0-claude-can-now-comment-on-your-code",
+      "version": "0.29.0",
+      "title": "Claude can now comment on your code",
+      "fullTitle": "0.29.0: Claude can now comment on your code",
+      "date": "Jan 7th, 2026",
+      "dateISO": "2026-01-07",
+      "summary": "We’ve given Claude Code a tool to comment directly on your diff. Learn more here.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.29.0/1767806660570-image.png",
+        "alt": "commenting-on-diff.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.29.0-claude-can-now-comment-on-your-code",
+      "indexPage": 11,
+      "position": 105
+    },
+    {
+      "slug": "0.28.7-change-target-branch",
+      "version": "0.28.7",
+      "title": "Change Target Branch",
+      "fullTitle": "0.28.7: Change Target Branch",
+      "date": "Jan 5th, 2026",
+      "dateISO": "2026-01-05",
+      "summary": "You can now change a workspace’s target branch at the top of the page!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.28.7/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png",
+        "alt": "CleanShot 2026-01-05 at 08.54.48@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.7-change-target-branch",
+      "indexPage": 11,
+      "position": 106
+    },
+    {
+      "slug": "0.28.6-bug-fix",
+      "version": "0.28.6",
+      "title": "Bug Fix",
+      "fullTitle": "0.28.6: Bug Fix",
+      "date": "Dec 31st, 2025",
+      "dateISO": "2025-12-31",
+      "summary": "We fixed a bug that caused Claude to use your ANTHROPICAPIKEY if one was set in your environment, even if you were on a Pro/Max/Team account.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.28.6-bug-fix",
+      "indexPage": 11,
+      "position": 107
+    },
+    {
+      "slug": "0.28.5-bug-fix",
+      "version": "0.28.5",
+      "title": "Bug Fix",
+      "fullTitle": "0.28.5: Bug Fix",
+      "date": "Dec 30th, 2025",
+      "dateISO": "2025-12-30",
+      "summary": "We fixed a bug causing slow startup times.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.28.5-bug-fix",
+      "indexPage": 11,
+      "position": 108
+    },
+    {
+      "slug": "0.28.4-todos",
+      "version": "0.28.4",
+      "title": "Todos",
+      "fullTitle": "0.28.4: Todos",
+      "date": "Dec 30th, 2025",
+      "dateISO": "2025-12-30",
+      "summary": "Introducing todos! Click the notes tab to see a list of what's necessary to merge your work.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.28.4/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png",
+        "alt": "CleanShot 2025-12-30 at 17.30.09@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.4-todos",
+      "indexPage": 11,
+      "position": 109
+    },
+    {
+      "slug": "0.28.3-bug-fixes",
+      "version": "0.28.3",
+      "title": "Bug Fixes",
+      "fullTitle": "0.28.3: Bug Fixes",
+      "date": "Dec 27th, 2025",
+      "dateISO": "2025-12-27",
+      "summary": "You can now select a target branch in the GitPanel:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.28.3/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png",
+        "alt": "CleanShot 2025-12-27 at 09.23.13@2x.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.3-bug-fixes",
+      "indexPage": 12,
+      "position": 110
+    },
+    {
+      "slug": "0.28.2-bug-fixes-legendary-cities-an-experiment",
+      "version": "0.28.2",
+      "title": "Bug Fixes, Legendary Cities, An Experiment",
+      "fullTitle": "0.28.2: Bug Fixes, Legendary Cities, An Experiment",
+      "date": "Dec 24th, 2025",
+      "dateISO": "2025-12-24",
+      "summary": "City Tiers",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.28.2/1766614762331-legendary-cities.png",
+        "alt": "Legendary Cities"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.2-bug-fixes-legendary-cities-an-experiment",
+      "indexPage": 12,
+      "position": 111
+    },
+    {
+      "slug": "0.28.1-context-directory-set-working-directories",
+      "version": "0.28.1",
+      "title": "Context Directory, Set Working Directories",
+      "fullTitle": "0.28.1: Context Directory, Set Working Directories",
+      "date": "Dec 23rd, 2025",
+      "dateISO": "2025-12-23",
+      "summary": "All new workspaces now have a .context directory. Attachments, plans, and notes are automatically stored here. Learn more here.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/images/context-dir-0.28.1.png",
+        "alt": "Context directory"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.1-context-directory-set-working-directories",
+      "indexPage": 12,
+      "position": 112
+    },
+    {
+      "slug": "0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+      "version": "0.28.0",
+      "title": "Workspaces Page, Claude’s Context, Interactive Planning, Keyboard Nav, and more!",
+      "fullTitle": "0.28.0: Workspaces Page, Claude’s Context, Interactive Planning, Keyboard Nav, and more!",
+      "date": "Dec 22nd, 2025",
+      "dateISO": "2025-12-22",
+      "summary": "Use the workspaces page to view a history of all of your workspaces. Open existing or un-archive old workspaces. Filter by repo, branch, or PR number.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.28.0/1766433104288-image.png",
+        "alt": "image.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+      "indexPage": 12,
+      "position": 113
+    },
+    {
+      "slug": "0.27.2-onboarding-bug-fix",
+      "version": "0.27.2",
+      "title": "Onboarding Bug Fix",
+      "fullTitle": "0.27.2: Onboarding Bug Fix",
+      "date": "Dec 19th, 2025",
+      "dateISO": "2025-12-19",
+      "summary": "We've fixed a bug that would cause Claude Code authentication to hang for some users during onboarding. This bug also resulted in slash commands not populating in new chats. Our apologies!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.27.2-onboarding-bug-fix",
+      "indexPage": 12,
+      "position": 114
+    },
+    {
+      "slug": "0.27.1-clickable-file-mentions",
+      "version": "0.27.1",
+      "title": "Clickable File Mentions ",
+      "fullTitle": "0.27.1: Clickable File Mentions ",
+      "date": "Dec 19th, 2025",
+      "dateISO": "2025-12-19",
+      "summary": "You can now open files tagged in messages.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.27.1/1766159277805-image.png",
+        "alt": "image.png"
+      },
+      "authors": [],
+      "url": "/changelog/0.27.1-clickable-file-mentions",
+      "indexPage": 12,
+      "position": 115
+    },
+    {
+      "slug": "0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+      "version": "0.27.0",
+      "title": "Notes Tab, GPT-5.2-Codex, More Fonts",
+      "fullTitle": "0.27.0: Notes Tab, GPT-5.2-Codex, More Fonts",
+      "date": "Dec 18th, 2025",
+      "dateISO": "2025-12-18",
+      "summary": "Each workspace now has a scratchpad. Share notes with agents using <notes>.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.27.0/f4b04768-fe04-4ccb-89f6-aa651df5dfc3.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+      "indexPage": 12,
+      "position": 116
+    },
+    {
+      "slug": "0.26.0-search-workspaces-view-files-from-chat",
+      "version": "0.26.0",
+      "title": "Search Workspaces, View Files from Chat",
+      "fullTitle": "0.26.0: Search Workspaces, View Files from Chat",
+      "date": "Dec 17th, 2025",
+      "dateISO": "2025-12-17",
+      "summary": "You can now search for workspaces by their branch name, repo, or PR number (⌘⇧F).",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.26.0/632ab731-231f-42f0-b0a2-120dfd0433ce.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.26.0-search-workspaces-view-files-from-chat",
+      "indexPage": 12,
+      "position": 117
+    },
+    {
+      "slug": "0.25.13-performance-improvements",
+      "version": "0.25.13",
+      "title": "Performance Improvements",
+      "fullTitle": "0.25.13: Performance Improvements",
+      "date": "Dec 16th, 2025",
+      "dateISO": "2025-12-16",
+      "summary": "We've made several performance improvements to the Composer to reduce input lag. We've also re-written fuzzy search. It should be up to 10x faster on larger codebases.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.25.13-performance-improvements",
+      "indexPage": 12,
+      "position": 118
+    },
+    {
+      "slug": "0.25.12-bug-fixes",
+      "version": "0.25.12",
+      "title": "Bug Fixes",
+      "fullTitle": "0.25.12: Bug Fixes",
+      "date": "Dec 15th, 2025",
+      "dateISO": "2025-12-15",
+      "summary": "We now bundle the GitHub CLI with Conductor. If you've had issues authenticating with GitHub in the past, this should help!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.25.12-bug-fixes",
+      "indexPage": 12,
+      "position": 119
+    },
+    {
+      "slug": "0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+      "version": "0.25.11",
+      "title": "Fetch Comments from GitHub, Mark Workspaces as Unread",
+      "fullTitle": "0.25.11: Fetch Comments from GitHub, Mark Workspaces as Unread",
+      "date": "Dec 13th, 2025",
+      "dateISO": "2025-12-13",
+      "summary": "Fetch comments from GitHub in one click when changes are requested on your PR!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.11/326a54db-735e-4591-b893-959cace0c218.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+      "indexPage": 13,
+      "position": 120
+    },
+    {
+      "slug": "0.25.10-bug-fixes",
+      "version": "0.25.10",
+      "title": "Bug Fixes",
+      "fullTitle": "0.25.10: Bug Fixes",
+      "date": "Dec 12th, 2025",
+      "dateISO": "2025-12-12",
+      "summary": "We've fixed a bug where agents would occasionally hang without responding.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.25.10-bug-fixes",
+      "indexPage": 13,
+      "position": 121
+    },
+    {
+      "slug": "0.25.9-onboarding-bug-fixes",
+      "version": "0.25.9",
+      "title": "Onboarding Bug Fixes",
+      "fullTitle": "0.25.9: Onboarding Bug Fixes",
+      "date": "Dec 11th, 2025",
+      "dateISO": "2025-12-11",
+      "summary": "We've fixed a bug that broke onboarding for users who weren't authenticated with Claude Code or Codex.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.25.9-onboarding-bug-fixes",
+      "indexPage": 13,
+      "position": 122
+    },
+    {
+      "slug": "0.25.8-gpt-5-2",
+      "version": "0.25.8",
+      "title": "GPT-5.2",
+      "fullTitle": "0.25.8: GPT-5.2",
+      "date": "Dec 11th, 2025",
+      "dateISO": "2025-12-11",
+      "summary": "OpenAI's latest frontier model is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.8/55c5394f-cfb6-44bd-87e8-ba27c3d7a023.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.8-gpt-5-2",
+      "indexPage": 13,
+      "position": 123
+    },
+    {
+      "slug": "0.25.7-env-bug-fix-vercel-ci-status-checks",
+      "version": "0.25.7",
+      "title": ".env Bug Fix, Vercel CI Status Checks",
+      "fullTitle": "0.25.7: .env Bug Fix, Vercel CI Status Checks",
+      "date": "Dec 11th, 2025",
+      "dateISO": "2025-12-11",
+      "summary": "Thanks to a fix this morning from Anthropic, environment variables stored in a workspace's .env file (such as ANTHROPICAPIKEY) will no longer be picked up by Claude.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.7/90109963-1ee9-4bd5-8f04-93c6fab628cd.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.7-env-bug-fix-vercel-ci-status-checks",
+      "indexPage": 13,
+      "position": 124
+    },
+    {
+      "slug": "0.25.6-multiple-git-repos-fork-workspaces",
+      "version": "0.25.6",
+      "title": "Multiple Git Repos, Fork Workspaces",
+      "fullTitle": "0.25.6: Multiple Git Repos, Fork Workspaces",
+      "date": "Dec 10th, 2025",
+      "dateISO": "2025-12-10",
+      "summary": "You can now run /add-dir to let Claude edit workspaces across multiple repositories.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.6/17c63402-f153-45b0-982f-08f923522203.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.6-multiple-git-repos-fork-workspaces",
+      "indexPage": 13,
+      "position": 125
+    },
+    {
+      "slug": "0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+      "version": "0.25.5",
+      "title": "Approve Plans with Feedback, Perf Improvements, GH_TOKEN Support",
+      "fullTitle": "0.25.5: Approve Plans with Feedback, Perf Improvements, GH_TOKEN Support",
+      "date": "Dec 9th, 2025",
+      "dateISO": "2025-12-09",
+      "summary": "You can now approve a plan with feedback for Claude:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.5/91e73804-4c34-48b7-8959-b7089220cecf.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support",
+      "indexPage": 13,
+      "position": 126
+    },
+    {
+      "slug": "0.25.4-sync-pr-comments-from-github",
+      "version": "0.25.4",
+      "title": "Sync PR Comments from GitHub",
+      "fullTitle": "0.25.4: Sync PR Comments from GitHub",
+      "date": "Dec 8th, 2025",
+      "dateISO": "2025-12-08",
+      "summary": "You can now sync PR comments from GitHub to Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.4/95838254-75d3-4254-b8bb-57e3f36fb7fc.png",
+        "alt": "CleanShot 2025-12-08 at 15 41 04@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.4-sync-pr-comments-from-github",
+      "indexPage": 13,
+      "position": 127
+    },
+    {
+      "slug": "0.25.3-pinned-workspaces",
+      "version": "0.25.3",
+      "title": "Pinned Workspaces",
+      "fullTitle": "0.25.3: Pinned Workspaces",
+      "date": "Dec 5th, 2025",
+      "dateISO": "2025-12-05",
+      "summary": "You can now pin workspaces! Use pins to keep your most important workspaces at the top.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.3/29cab87f-d1ab-4b97-8695-704a2884693c.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.3-pinned-workspaces",
+      "indexPage": 13,
+      "position": 128
+    },
+    {
+      "slug": "0.25.2-bug-fixes",
+      "version": "0.25.2",
+      "title": "Bug Fixes",
+      "fullTitle": "0.25.2: Bug Fixes",
+      "date": "Dec 4th, 2025",
+      "dateISO": "2025-12-04",
+      "summary": "We've discovered a bug in the Claude Agent SDK that prevents MCPs in .mcp.json from being picked up by Claude. Please upvote this issue for Anthropic to make a proper fix!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.25.2-bug-fixes",
+      "indexPage": 13,
+      "position": 129
+    },
+    {
+      "slug": "0.25.1-conductor-wrapped",
+      "version": "0.25.1",
+      "title": "Conductor Wrapped",
+      "fullTitle": "0.25.1: Conductor Wrapped",
+      "date": "Dec 4th, 2025",
+      "dateISO": "2025-12-04",
+      "summary": "Introducing Conductor Wrapped! See a summary of how you used Conductor throughout the year.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.1/c2f0d4a3-68d7-44f0-9517-203c64ea20e7.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.1-conductor-wrapped",
+      "indexPage": 14,
+      "position": 130
+    },
+    {
+      "slug": "0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+      "version": "0.25.0",
+      "title": "Workspace Storage Improvements, AI Response Metadata, and Slash Commands",
+      "fullTitle": "0.25.0: Workspace Storage Improvements, AI Response Metadata, and Slash Commands",
+      "date": "Dec 3rd, 2025",
+      "dateISO": "2025-12-03",
+      "summary": "Workspaces will now be created at ~/conductor/workspaces/ instead of .conductor. This means no more need to add .conductor to gitignore or exclude it from your build tools, and will help prevent the agents from getting confused about where to edit files.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.25.0/fb9f3af5-65da-416b-8122-61b1a5fa31e7.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+      "indexPage": 14,
+      "position": 131
+    },
+    {
+      "slug": "0.24.0-improved-codex-quick-start",
+      "version": "0.24.0",
+      "title": "Improved Codex, Quick Start",
+      "fullTitle": "0.24.0: Improved Codex, Quick Start",
+      "date": "Dec 2nd, 2025",
+      "dateISO": "2025-12-02",
+      "summary": "We've improved Codex in Conductor: bash command render live, web search is enabled, and MCPs appear in the UI.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.24.0/a6d19085-480a-454e-8eb1-5b45f03de6ae.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.24.0-improved-codex-quick-start",
+      "indexPage": 14,
+      "position": 132
+    },
+    {
+      "slug": "0.23.3-repo-details",
+      "version": "0.23.3",
+      "title": "Repo Details",
+      "fullTitle": "0.23.3: Repo Details",
+      "date": "Nov 26th, 2025",
+      "dateISO": "2025-11-26",
+      "summary": "We've revamped the repo details view. You can now browse and restore archived workspaces from there.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.23.3/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d.png",
+        "alt": "CleanShot 2025-11-26 at 12 11 14@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.23.3-repo-details",
+      "indexPage": 14,
+      "position": 133
+    },
+    {
+      "slug": "0.23.2-checkpointing-fixes",
+      "version": "0.23.2",
+      "title": "Checkpointing Fixes",
+      "fullTitle": "0.23.2: Checkpointing Fixes",
+      "date": "Nov 25th, 2025",
+      "dateISO": "2025-11-25",
+      "summary": "We've fixed a bug where reverting a chat would result in an error code 1. This was due to an undocumented breaking change in the Anthropic Agent SDK.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.23.2-checkpointing-fixes",
+      "indexPage": 14,
+      "position": 134
+    },
+    {
+      "slug": "0.23.1-opus-4-5-bug-fixes",
+      "version": "0.23.1",
+      "title": "Opus 4.5 Bug Fixes",
+      "fullTitle": "0.23.1: Opus 4.5 Bug Fixes",
+      "date": "Nov 24th, 2025",
+      "dateISO": "2025-11-24",
+      "summary": "Opus is now the default model in Conductor.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.23.1-opus-4-5-bug-fixes",
+      "indexPage": 14,
+      "position": 135
+    },
+    {
+      "slug": "0.23.0-opus-4-5-and-better-scrolling",
+      "version": "0.23.0",
+      "title": "Opus 4.5 and Better Scrolling",
+      "fullTitle": "0.23.0: Opus 4.5 and Better Scrolling",
+      "date": "Nov 24th, 2025",
+      "dateISO": "2025-11-24",
+      "summary": "Opus 4.5 is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.23.0/64c98865-795b-4ff0-8a26-48725051b727.png",
+        "alt": "CleanShot 2025-11-24 at 12 23 23@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.23.0-opus-4-5-and-better-scrolling",
+      "indexPage": 14,
+      "position": 136
+    },
+    {
+      "slug": "0.22.8-onboarding-improvements",
+      "version": "0.22.8",
+      "title": "Onboarding Improvements",
+      "fullTitle": "0.22.8: Onboarding Improvements",
+      "date": "Nov 22nd, 2025",
+      "dateISO": "2025-11-22",
+      "summary": "We've improved onboarding for new users to help reduce setup failures.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.8/5108e6f4-5401-48ef-80e9-2f3e6f3113ef.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.8-onboarding-improvements",
+      "indexPage": 14,
+      "position": 137
+    },
+    {
+      "slug": "0.22.7-send-plans-to-new-chats",
+      "version": "0.22.7",
+      "title": "Send Plans to New Chats",
+      "fullTitle": "0.22.7: Send Plans to New Chats",
+      "date": "Nov 21st, 2025",
+      "dateISO": "2025-11-21",
+      "summary": "You can now copy a plan from Claude Code or send it to a new chat for implementation.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.7/b20dea11-2f90-4cbd-88fa-30d16938fd50.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.7-send-plans-to-new-chats",
+      "indexPage": 14,
+      "position": 138
+    },
+    {
+      "slug": "0.22.6-conversation-summaries-codex-diffs-and-custom-review-models",
+      "version": "0.22.6",
+      "title": "Conversation Summaries, Codex Diffs, and Custom Review Models",
+      "fullTitle": "0.22.6: Conversation Summaries, Codex Diffs, and Custom Review Models",
+      "date": "Nov 20th, 2025",
+      "dateISO": "2025-11-20",
+      "summary": "You can now attach a summary of your previous chats in new tabs.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.6/6ebca22f-7ea4-4408-af65-a4d8d96477da.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.6-conversation-summaries-codex-diffs-and-custom-review-models",
+      "indexPage": 14,
+      "position": 139
+    },
+    {
+      "slug": "0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+      "version": "0.22.5",
+      "title": "GPT 5.1 Codex Max, Improved Diff Viewer",
+      "fullTitle": "0.22.5: GPT 5.1 Codex Max, Improved Diff Viewer",
+      "date": "Nov 19th, 2025",
+      "dateISO": "2025-11-19",
+      "summary": "OpenAI's latest agentic coding model is now available in Conductor.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.5/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.5-gpt-5-1-codex-max-improved-diff-viewer",
+      "indexPage": 15,
+      "position": 140
+    },
+    {
+      "slug": "0.22.4-expand-terminal-env-vars-and-github-enterprise",
+      "version": "0.22.4",
+      "title": "Expand Terminal, Env Vars, and GitHub Enterprise",
+      "fullTitle": "0.22.4: Expand Terminal, Env Vars, and GitHub Enterprise",
+      "date": "Nov 18th, 2025",
+      "dateISO": "2025-11-18",
+      "summary": "You can now expand the terminal to full height. Try Gemini 3 via the gemini cli:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.4/a070a527-3c35-4763-a58e-b75235882554.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.4-expand-terminal-env-vars-and-github-enterprise",
+      "indexPage": 15,
+      "position": 141
+    },
+    {
+      "slug": "0.22.2-codex-cancellation",
+      "version": "0.22.2",
+      "title": "Codex Cancellation",
+      "fullTitle": "0.22.2: Codex Cancellation",
+      "date": "Nov 17th, 2025",
+      "dateISO": "2025-11-17",
+      "summary": "You can now cancel Codex while it's working (ESC) and we've reduced bundle size from 225MB to ~124MB.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.2/653fafc8-d734-4850-a45a-d65ebebc6241.png",
+        "alt": "CleanShot 2025-11-17 at 13 38 41@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.2-codex-cancellation",
+      "indexPage": 15,
+      "position": 142
+    },
+    {
+      "slug": "0.22.1-gpt-5-1",
+      "version": "0.22.1",
+      "title": "GPT-5.1",
+      "fullTitle": "0.22.1: GPT-5.1",
+      "date": "Nov 14th, 2025",
+      "dateISO": "2025-11-14",
+      "summary": "OpenAI's latest model is now available in Conductor.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.1/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.1-gpt-5-1",
+      "indexPage": 15,
+      "position": 143
+    },
+    {
+      "slug": "0.22.0-code-review-and-historical-diffs",
+      "version": "0.22.0",
+      "title": "Code Review and Historical Diffs",
+      "fullTitle": "0.22.0: Code Review and Historical Diffs",
+      "date": "Nov 12th, 2025",
+      "dateISO": "2025-11-12",
+      "summary": "Click the \"Review\" button in the right sidebar to get the AI to review changes.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.22.0/2604e5a2-0a1b-4e44-be0d-49416fb19ee6.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.22.0-code-review-and-historical-diffs",
+      "indexPage": 15,
+      "position": 144
+    },
+    {
+      "slug": "0.21.0-plan-mode",
+      "version": "0.21.0",
+      "title": "Plan mode",
+      "fullTitle": "0.21.0: Plan mode",
+      "date": "Nov 10th, 2025",
+      "dateISO": "2025-11-10",
+      "summary": "We've also added GPT-5-Codex Mini, and brought back Opus 4.1.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.21.0/a021e5e6-ea79-48ce-926d-8d487a028f3b.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.21.0-plan-mode",
+      "indexPage": 15,
+      "position": 145
+    },
+    {
+      "slug": "0.20.0-file-picker-and-chat-titles",
+      "version": "0.20.0",
+      "title": "File picker and chat titles",
+      "fullTitle": "0.20.0: File picker and chat titles",
+      "date": "Nov 7th, 2025",
+      "dateISO": "2025-11-07",
+      "summary": "We've added a new file opener. Use ⌘P to search files across your workspace!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.20.0/010a79a1-2d66-40e5-bd7e-6eef5e3118d2.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.20.0-file-picker-and-chat-titles",
+      "indexPage": 15,
+      "position": 146
+    },
+    {
+      "slug": "0.19.0-checkpoints",
+      "version": "0.19.0",
+      "title": "Checkpoints",
+      "fullTitle": "0.19.0: Checkpoints",
+      "date": "Nov 5th, 2025",
+      "dateISO": "2025-11-05",
+      "summary": "Revert your chat to a previous turn, wiping the conversation history and changes.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.19.0/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f.png",
+        "alt": "CleanShot 2025-11-05 at 14 38 56@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.19.0-checkpoints",
+      "indexPage": 15,
+      "position": 147
+    },
+    {
+      "slug": "0.18.4-better-create-pr-prompt",
+      "version": "0.18.4",
+      "title": "Better Create PR Prompt",
+      "fullTitle": "0.18.4: Better Create PR Prompt",
+      "date": "Nov 4th, 2025",
+      "dateISO": "2025-11-04",
+      "summary": "Claude is faster and aware of the current git status when creating PRs.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.18.4/0b13492e-8736-4691-941f-47b1e64ca125.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.18.4-better-create-pr-prompt",
+      "indexPage": 15,
+      "position": 148
+    },
+    {
+      "slug": "0.18.3-bug-fixes",
+      "version": "0.18.3",
+      "title": "Bug Fixes",
+      "fullTitle": "0.18.3: Bug Fixes",
+      "date": "Nov 3rd, 2025",
+      "dateISO": "2025-11-03",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.18.3-bug-fixes",
+      "indexPage": 15,
+      "position": 149
+    },
+    {
+      "slug": "0.18.0-codex",
+      "version": "0.18.0",
+      "title": "Codex",
+      "fullTitle": "0.18.0: Codex",
+      "date": "Oct 31st, 2025",
+      "dateISO": "2025-10-31",
+      "summary": "You can now use Codex in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.18.0/13bc1acd-594f-4388-a551-bedce75917a9.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.18.0-codex",
+      "indexPage": 16,
+      "position": 150
+    },
+    {
+      "slug": "0.17.5-tab-beautification",
+      "version": "0.17.5",
+      "title": "Tab Beautification",
+      "fullTitle": "0.17.5: Tab Beautification",
+      "date": "Oct 28th, 2025",
+      "dateISO": "2025-10-28",
+      "summary": "We've improved the UI for chat tabs:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.17.5/8436493a-311b-4d6b-bd03-45174cd8dcc2.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.17.5-tab-beautification",
+      "indexPage": 16,
+      "position": 151
+    },
+    {
+      "slug": "0.17.4-git-status-in-sidebar",
+      "version": "0.17.4",
+      "title": "Git Status in Sidebar",
+      "fullTitle": "0.17.4: Git Status in Sidebar",
+      "date": "Oct 28th, 2025",
+      "dateISO": "2025-10-28",
+      "summary": "View git status in the sidebar at a glance.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.17.4/2db9f4de-93b8-45cc-9b63-1252d6139ba4.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.17.4-git-status-in-sidebar",
+      "indexPage": 16,
+      "position": 152
+    },
+    {
+      "slug": "0.17.3-performance-improvements",
+      "version": "0.17.3",
+      "title": "Performance Improvements",
+      "fullTitle": "0.17.3: Performance Improvements",
+      "date": "Oct 28th, 2025",
+      "dateISO": "2025-10-28",
+      "summary": "We've fixed a performance regression introduced in 0.17.0 related to session notifications. Our apologies!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.17.3-performance-improvements",
+      "indexPage": 16,
+      "position": 153
+    },
+    {
+      "slug": "0.17.2-misc-fixes",
+      "version": "0.17.2",
+      "title": "Misc Fixes",
+      "fullTitle": "0.17.2: Misc Fixes",
+      "date": "Oct 27th, 2025",
+      "dateISO": "2025-10-27",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.17.2-misc-fixes",
+      "indexPage": 16,
+      "position": 154
+    },
+    {
+      "slug": "0.17.1-bug-fixes",
+      "version": "0.17.1",
+      "title": "Bug Fixes",
+      "fullTitle": "0.17.1: Bug Fixes",
+      "date": "Oct 27th, 2025",
+      "dateISO": "2025-10-27",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.17.1-bug-fixes",
+      "indexPage": 16,
+      "position": 155
+    },
+    {
+      "slug": "0.17.0-multiple-chats",
+      "version": "0.17.0",
+      "title": "Multiple Chats",
+      "fullTitle": "0.17.0: Multiple Chats",
+      "date": "Oct 24th, 2025",
+      "dateISO": "2025-10-24",
+      "summary": "You can now launch multiple Claude Code chats in a workspace using ⌘T.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.17.0/a133a147-1e99-4080-a4b5-6738c77e4c58.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.17.0-multiple-chats",
+      "indexPage": 16,
+      "position": 156
+    },
+    {
+      "slug": "0.16.1-diff-viewer-bug-fixes",
+      "version": "0.16.1",
+      "title": "Diff Viewer Bug Fixes",
+      "fullTitle": "0.16.1: Diff Viewer Bug Fixes",
+      "date": "Oct 23rd, 2025",
+      "dateISO": "2025-10-23",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.16.1-diff-viewer-bug-fixes",
+      "indexPage": 16,
+      "position": 157
+    },
+    {
+      "slug": "0.16.0-diff-viewer-file-explorer",
+      "version": "0.16.0",
+      "title": "Diff Viewer + File Explorer",
+      "fullTitle": "0.16.0: Diff Viewer + File Explorer",
+      "date": "Oct 21st, 2025",
+      "dateISO": "2025-10-21",
+      "summary": "We've integrated the diff viewer into the main chat panel! See diffs faster in a more intuitive UI.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.16.0/4cbb91de-02ab-4e12-9cd0-bc087e15f91e.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.16.0-diff-viewer-file-explorer",
+      "indexPage": 16,
+      "position": 158
+    },
+    {
+      "slug": "0.15.2-create-workspace-from-pr",
+      "version": "0.15.2",
+      "title": "Create workspace from PR",
+      "fullTitle": "0.15.2: Create workspace from PR",
+      "date": "Oct 20th, 2025",
+      "dateISO": "2025-10-20",
+      "summary": "You can now create a workspace directly from a PR, existing branch, or Linear issue using ⌘⇧N.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.15.2-create-workspace-from-pr",
+      "indexPage": 16,
+      "position": 159
+    },
+    {
+      "slug": "0.15.1-claude-s-thinking",
+      "version": "0.15.1",
+      "title": "Claude's Thinking",
+      "fullTitle": "0.15.1: Claude's Thinking",
+      "date": "Oct 18th, 2025",
+      "dateISO": "2025-10-18",
+      "summary": "You can now see Claude's thinking. Press ⌘⇧. to toggle.",
+      "hero": {
+        "type": "image",
+        "src": "https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.15.1-claude-s-thinking",
+      "indexPage": 17,
+      "position": 160
+    },
+    {
+      "slug": "0.15.0-linear",
+      "version": "0.15.0",
+      "title": "Linear",
+      "fullTitle": "0.15.0: Linear",
+      "date": "Oct 17th, 2025",
+      "dateISO": "2025-10-17",
+      "summary": "You can now connect Linear to Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.15.0-linear",
+      "indexPage": 17,
+      "position": 161
+    },
+    {
+      "slug": "0.14.7-git-diff-improvements",
+      "version": "0.14.7",
+      "title": "Git Diff Improvements",
+      "fullTitle": "0.14.7: Git Diff Improvements",
+      "date": "Oct 11th, 2025",
+      "dateISO": "2025-10-11",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.14.7-git-diff-improvements",
+      "indexPage": 17,
+      "position": 162
+    },
+    {
+      "slug": "0.14.6-markdown-preview",
+      "version": "0.14.6",
+      "title": "Markdown Preview",
+      "fullTitle": "0.14.6: Markdown Preview",
+      "date": "Oct 10th, 2025",
+      "dateISO": "2025-10-10",
+      "summary": "We've added a markdown preview to the diff viewer!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.14.6/f6aa9573-8f77-48dd-992a-014c5f6a9215.png",
+        "alt": "CleanShot 2025-10-10 at 12 27 37@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.14.6-markdown-preview",
+      "indexPage": 17,
+      "position": 163
+    },
+    {
+      "slug": "0.14.5-zoom-improvements",
+      "version": "0.14.5",
+      "title": "Zoom Improvements",
+      "fullTitle": "0.14.5: Zoom Improvements",
+      "date": "Oct 9th, 2025",
+      "dateISO": "2025-10-09",
+      "summary": "We've fixed a bug with zoom controls (⌘-, ⌘+) that would cause dragging elements to break.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.14.5-zoom-improvements",
+      "indexPage": 17,
+      "position": 164
+    },
+    {
+      "slug": "0.14.3-performance-improvements",
+      "version": "0.14.3",
+      "title": "Performance Improvements",
+      "fullTitle": "0.14.3: Performance Improvements",
+      "date": "Oct 8th, 2025",
+      "dateISO": "2025-10-08",
+      "summary": "We've fixed a regression that could leave zombie claude processes on user systems.",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.14.3-performance-improvements",
+      "indexPage": 17,
+      "position": 165
+    },
+    {
+      "slug": "0.14.1-new-diff-viewer",
+      "version": "0.14.1",
+      "title": "New Diff Viewer",
+      "fullTitle": "0.14.1: New Diff Viewer",
+      "date": "Oct 7th, 2025",
+      "dateISO": "2025-10-07",
+      "summary": "We've revamped the diff UI!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.14.1/237c299b-87e3-4631-bd85-aa671a623827.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.14.1-new-diff-viewer",
+      "indexPage": 17,
+      "position": 166
+    },
+    {
+      "slug": "0.14.0-command-palette",
+      "version": "0.14.0",
+      "title": "Command Palette",
+      "fullTitle": "0.14.0: Command Palette",
+      "date": "Oct 14th, 2025",
+      "dateISO": "2025-10-14",
+      "summary": "Press ⌘K to open the command palette!",
+      "hero": {
+        "type": "image",
+        "src": "https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.14.0-command-palette",
+      "indexPage": 17,
+      "position": 167
+    },
+    {
+      "slug": "0.13.8-fixes-for-fish-users",
+      "version": "0.13.8",
+      "title": "Fixes for Fish Users",
+      "fullTitle": "0.13.8: Fixes for Fish Users",
+      "date": "Oct 1st, 2025",
+      "dateISO": "2025-10-01",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.13.8-fixes-for-fish-users",
+      "indexPage": 17,
+      "position": 168
+    },
+    {
+      "slug": "0.13.6-run-on-bedrock-vertex-or-custom-provider",
+      "version": "0.13.6",
+      "title": "Run on Bedrock, Vertex, or custom provider",
+      "fullTitle": "0.13.6: Run on Bedrock, Vertex, or custom provider",
+      "date": "Sept 30th, 2025",
+      "dateISO": "2025-09-30",
+      "summary": "You can now set up Claude Code to run via an alternate provider, like Bedrock, Vertex, or any Anthropic compatible URL.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.13.6/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.13.6-run-on-bedrock-vertex-or-custom-provider",
+      "indexPage": 17,
+      "position": 169
+    },
+    {
+      "slug": "0.13.2-sonnet-4-5-new-workspace-page",
+      "version": "0.13.2",
+      "title": "Sonnet 4.5 + new workspace page",
+      "fullTitle": "0.13.2: Sonnet 4.5 + new workspace page",
+      "date": "Sept 29th, 2025",
+      "dateISO": "2025-09-29",
+      "summary": "Sonnet 4.5, the best coding model in the world, is now live in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.13.2/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.13.2-sonnet-4-5-new-workspace-page",
+      "indexPage": 18,
+      "position": 170
+    },
+    {
+      "slug": "0.12.1-improved-plan-mode",
+      "version": "0.12.1",
+      "title": "Improved Plan Mode",
+      "fullTitle": "0.12.1: Improved Plan Mode",
+      "date": "Sept 27th, 2025",
+      "dateISO": "2025-09-27",
+      "summary": "We've improved plan mode! Claude no longer thinks it's still in plan mode when it's not. We've also updated the controls to respond to Claude's plans:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.12.1/2fedcbfa-dac9-4903-bd87-2766302876c6.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.12.1-improved-plan-mode",
+      "indexPage": 18,
+      "position": 171
+    },
+    {
+      "slug": "0.12.0-forward-failing-checks-to-claude",
+      "version": "0.12.0",
+      "title": "Forward Failing Checks to Claude",
+      "fullTitle": "0.12.0: Forward Failing Checks to Claude",
+      "date": "Sept 25th, 2025",
+      "dateISO": "2025-09-25",
+      "summary": "You can now forward your failing CI checks to Claude to fix!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.12.0/ef5e62cd-3e0e-4af2-9469-a308d38fb1bc.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.12.0-forward-failing-checks-to-claude",
+      "indexPage": 18,
+      "position": 172
+    },
+    {
+      "slug": "0.11.6-improved-cancelling",
+      "version": "0.11.6",
+      "title": "Improved Cancelling",
+      "fullTitle": "0.11.6: Improved Cancelling",
+      "date": "Sept 23rd, 2025",
+      "dateISO": "2025-09-23",
+      "summary": "Cancelling is now much more reliable in Conductor!",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.11.6-improved-cancelling",
+      "indexPage": 18,
+      "position": 173
+    },
+    {
+      "slug": "0.11.4-the-return-of-big-terminal-mode",
+      "version": "0.11.4",
+      "title": "The Return of Big Terminal Mode",
+      "fullTitle": "0.11.4: The Return of Big Terminal Mode",
+      "date": "Sept 23rd, 2025",
+      "dateISO": "2025-09-23",
+      "summary": "We've brought back big terminal mode! Enable it in Settings → Terminal",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.11.4/acf61848-1830-4c82-859f-ecbcda848e79.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.11.4-the-return-of-big-terminal-mode",
+      "indexPage": 18,
+      "position": 174
+    },
+    {
+      "slug": "0.11.3-new-onboarding",
+      "version": "0.11.3",
+      "title": "New Onboarding",
+      "fullTitle": "0.11.3: New Onboarding",
+      "date": "Sept 22nd, 2025",
+      "dateISO": "2025-09-22",
+      "summary": "We've revamped the onboarding flow in Conductor to make it easier and more beautiful to get started:",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.11.3/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.11.3-new-onboarding",
+      "indexPage": 18,
+      "position": 175
+    },
+    {
+      "slug": "0.11.0-conductor-json",
+      "version": "0.11.0",
+      "title": "conductor.json",
+      "fullTitle": "0.11.0: conductor.json",
+      "date": "Sept 19th, 2025",
+      "dateISO": "2025-09-19",
+      "summary": "To make it easier to share configurations, Conductor now stores your setup and run scripts in a conductor.json file.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.11.0/5db0d284-4d32-4cd6-b6fe-583f06ce5805.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.11.0-conductor-json",
+      "indexPage": 18,
+      "position": 176
+    },
+    {
+      "slug": "0.10.5-terminal-performance-pt-2",
+      "version": "0.10.5",
+      "title": "Terminal Performance Pt. 2",
+      "fullTitle": "0.10.5: Terminal Performance Pt. 2",
+      "date": "Sept 17th, 2025",
+      "dateISO": "2025-09-17",
+      "summary": "We've refactored the terminal. This should reduce crashing and lag, and improve performance for long running tasks.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.10.5/bef4ffcc-b72e-433a-bc9a-4034c2930821.gif",
+        "alt": "ConductorArchive"
+      },
+      "authors": [],
+      "url": "/changelog/0.10.5-terminal-performance-pt-2",
+      "indexPage": 18,
+      "position": 177
+    },
+    {
+      "slug": "0.10.3-terminal-performance",
+      "version": "0.10.3",
+      "title": "Terminal Performance",
+      "fullTitle": "0.10.3: Terminal Performance",
+      "date": "Sept 11th, 2025",
+      "dateISO": "2025-09-11",
+      "summary": "Terminal now uses WebGL rendering. It should be much snappier.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.10.3/c3253d2f-55a3-47ca-a9d8-fca8a194e231.gif",
+        "alt": "TerminalAmp"
+      },
+      "authors": [],
+      "url": "/changelog/0.10.3-terminal-performance",
+      "indexPage": 18,
+      "position": 178
+    },
+    {
+      "slug": "0.10.2-toggle-big-terminal-mode",
+      "version": "0.10.2",
+      "title": "Toggle Big Terminal Mode",
+      "fullTitle": "0.10.2: Toggle Big Terminal Mode",
+      "date": "Sept 10th, 2025",
+      "dateISO": "2025-09-10",
+      "summary": "",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.10.2/11177c6c-cdd8-4732-aa76-84e46cfae4bd.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.10.2-toggle-big-terminal-mode",
+      "indexPage": 18,
+      "position": 179
+    },
+    {
+      "slug": "0.10.1-checkout-prs-in-conductor",
+      "version": "0.10.1",
+      "title": "Checkout PRs in Conductor",
+      "fullTitle": "0.10.1: Checkout PRs in Conductor",
+      "date": "Sept 9th, 2025",
+      "dateISO": "2025-09-09",
+      "summary": "You can now checkout an existing PR directly from the Dispatcher!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.10.1/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.10.1-checkout-prs-in-conductor",
+      "indexPage": 19,
+      "position": 180
+    },
+    {
+      "slug": "0.10.0-code-review",
+      "version": "0.10.0",
+      "title": "Code Review",
+      "fullTitle": "0.10.0: Code Review",
+      "date": "Sept 8th, 2025",
+      "dateISO": "2025-09-08",
+      "summary": "You can now comment on a diff and we'll send your feedback straight to Claude!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.10.0/d1c0356a-eef2-41de-8de0-56c6a2cb5384.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.10.0-code-review",
+      "indexPage": 19,
+      "position": 181
+    },
+    {
+      "slug": "0.9.3-new-diff-review-panel-faster-claude",
+      "version": "0.9.3",
+      "title": "New Diff Review Panel, Faster Claude",
+      "fullTitle": "0.9.3: New Diff Review Panel, Faster Claude",
+      "date": "Sept 6th, 2025",
+      "dateISO": "2025-09-06",
+      "summary": "We've upgrade the diff review panel. It's now much more performant and easy to read.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.9.3/9dfeb99a-c08f-4930-8eb5-2f8844f72728.png",
+        "alt": "CleanShot 2025-09-06 at 14 08 23@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.9.3-new-diff-review-panel-faster-claude",
+      "indexPage": 19,
+      "position": 182
+    },
+    {
+      "slug": "0.9.2-bug-fixes",
+      "version": "0.9.2",
+      "title": "Bug Fixes!",
+      "fullTitle": "0.9.2: Bug Fixes!",
+      "date": "Sept 3rd, 2025",
+      "dateISO": "2025-09-03",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.9.2-bug-fixes",
+      "indexPage": 19,
+      "position": 183
+    },
+    {
+      "slug": "0.9.1-open-dev-scripts-and-more-performant-long-chats",
+      "version": "0.9.1",
+      "title": "Open dev scripts and more performant long chats",
+      "fullTitle": "0.9.1: Open dev scripts and more performant long chats",
+      "date": "Sept 2nd, 2025",
+      "dateISO": "2025-09-02",
+      "summary": "Conductor now detects when a localhost URL is running. Open it in your browser by clicking Open or ⌘+Shift+O.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.9.1/85d8953e-6136-495c-8b51-1be510cc75a2.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.9.1-open-dev-scripts-and-more-performant-long-chats",
+      "indexPage": 19,
+      "position": 184
+    },
+    {
+      "slug": "0.9.0-run-script-hooks-and-custom-fonts",
+      "version": "0.9.0",
+      "title": "Run script, hooks, and custom fonts",
+      "fullTitle": "0.9.0: Run script, hooks, and custom fonts",
+      "date": "Sept 1st, 2025",
+      "dateISO": "2025-09-01",
+      "summary": "Add a run script to create a one-click shortcut (or ⌘R) to your tests or development server.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.9.0/3869a0a7-535f-49d8-b00c-8e121893f11c.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.9.0-run-script-hooks-and-custom-fonts",
+      "indexPage": 19,
+      "position": 185
+    },
+    {
+      "slug": "0.8.2-performance-improvements",
+      "version": "0.8.2",
+      "title": "Performance Improvements",
+      "fullTitle": "0.8.2: Performance Improvements",
+      "date": "August 26th, 2025",
+      "dateISO": "2025-08-26",
+      "summary": "New in 0.8.3:",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.8.2-performance-improvements",
+      "indexPage": 19,
+      "position": 186
+    },
+    {
+      "slug": "0.8.1-suggested-git-actions",
+      "version": "0.8.1",
+      "title": "Suggested Git Actions",
+      "fullTitle": "0.8.1: Suggested Git Actions",
+      "date": "August 25th, 2025",
+      "dateISO": "2025-08-25",
+      "summary": "Conductor now recommends each step on the way to merging your PR. Click the button in the top right to take the next action.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.8.1/39c8081c-9827-4e2d-ad73-63eab3c81016.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.8.1-suggested-git-actions",
+      "indexPage": 19,
+      "position": 187
+    },
+    {
+      "slug": "0.8.0-integrate-with-linear-faster-claude",
+      "version": "0.8.0",
+      "title": "Integrate with Linear, Faster Claude",
+      "fullTitle": "0.8.0: Integrate with Linear, Faster Claude",
+      "date": "August 25th, 2025",
+      "dateISO": "2025-08-25",
+      "summary": "Introducing the Dispatcher, a new way to create workspaces. You can now choose a branch name when creating a new workspaces, or create a new workspace from one of your Linear issues.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.8.0/b3dac156-2096-4c38-af2c-8e31a1aed87f.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.8.0-integrate-with-linear-faster-claude",
+      "indexPage": 19,
+      "position": 188
+    },
+    {
+      "slug": "0.7.3-plan-mode",
+      "version": "0.7.3",
+      "title": "Plan Mode",
+      "fullTitle": "0.7.3: Plan Mode",
+      "date": "August 22nd, 2025",
+      "dateISO": "2025-08-22",
+      "summary": "Plan mode (⌘P) tells the AI to make a plan before editing files.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.7.3/08a3e637-9c21-403a-b523-b610328310ba.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.7.3-plan-mode",
+      "indexPage": 19,
+      "position": 189
+    },
+    {
+      "slug": "0.7.2-add-terminal-context-to-chat",
+      "version": "0.7.2",
+      "title": "Add terminal context to chat",
+      "fullTitle": "0.7.2: Add terminal context to chat",
+      "date": "August 19th, 2025",
+      "dateISO": "2025-08-19",
+      "summary": "You can now send terminal context to chat by highlighting output and ⌘L to add it to chat.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.7.2/a87ce9aa-0cc1-4d34-a556-7ed36792a46a.png",
+        "alt": "CleanShot 2025-08-18 at 11 38 01@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.7.2-add-terminal-context-to-chat",
+      "indexPage": 20,
+      "position": 190
+    },
+    {
+      "slug": "0.7.0-we-no-longer-burn-your-cpu-hopefully",
+      "version": "0.7.0",
+      "title": "We no longer burn your CPU (hopefully)",
+      "fullTitle": "0.7.0: We no longer burn your CPU (hopefully)",
+      "date": "August 14th, 2025",
+      "dateISO": "2025-08-14",
+      "summary": "Before",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.7.0/e81fcc29-eb0a-4f05-b628-826d8fa6db07.png",
+        "alt": "CleanShot 2025-08-14 at 13 39 03@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.7.0-we-no-longer-burn-your-cpu-hopefully",
+      "indexPage": 20,
+      "position": 191
+    },
+    {
+      "slug": "0.6.1-bug-fixes",
+      "version": "0.6.1",
+      "title": "Bug Fixes!",
+      "fullTitle": "0.6.1: Bug Fixes!",
+      "date": "August 12th, 2025",
+      "dateISO": "2025-08-12",
+      "summary": "New in 0.6.2:",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.6.1-bug-fixes",
+      "indexPage": 20,
+      "position": 192
+    },
+    {
+      "slug": "0.6.0-a-new-look",
+      "version": "0.6.0",
+      "title": "A New Look",
+      "fullTitle": "0.6.0: A New Look",
+      "date": "August 9th, 2025",
+      "dateISO": "2025-08-09",
+      "summary": "We've overhauled Conductor's design. It's now sleeker, more intuitive, and feels right at home on your Mac.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.6.0/036c1352-3d84-4989-95df-91edd3a22347.png",
+        "alt": "CleanShot 2025-08-09 at 13 49 21@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.6.0-a-new-look",
+      "indexPage": 20,
+      "position": 193
+    },
+    {
+      "slug": "0.5.0-gpt-5",
+      "version": "0.5.0",
+      "title": "GPT-5",
+      "fullTitle": "0.5.0: GPT-5",
+      "date": "August 7th, 2025",
+      "dateISO": "2025-08-07",
+      "summary": "GPT-5 is live in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.5.0/d39527bd-9a7b-4560-bca0-c1454708c0f1.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.5.0-gpt-5",
+      "indexPage": 20,
+      "position": 194
+    },
+    {
+      "slug": "0.3.2-opus-4-1",
+      "version": "0.3.2",
+      "title": "Opus 4.1",
+      "fullTitle": "0.3.2: Opus 4.1",
+      "date": "August 5th, 2025",
+      "dateISO": "2025-08-05",
+      "summary": "Claude Opus 4.1 is now available in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.3.2/762894c3-a0e6-4b5a-9685-e9047d365cc8.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.3.2-opus-4-1",
+      "indexPage": 20,
+      "position": 195
+    },
+    {
+      "slug": "0.3.1-bug-fixes",
+      "version": "0.3.1",
+      "title": "Bug Fixes!",
+      "fullTitle": "0.3.1: Bug Fixes!",
+      "date": "August 4th, 2025",
+      "dateISO": "2025-08-04",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.3.1-bug-fixes",
+      "indexPage": 20,
+      "position": 196
+    },
+    {
+      "slug": "0.3.0-git-diff-view",
+      "version": "0.3.0",
+      "title": "Git Diff View",
+      "fullTitle": "0.3.0: Git Diff View",
+      "date": "August 2nd, 2025",
+      "dateISO": "2025-08-02",
+      "summary": "You can now see your up-to-date git status directly in the sidebar!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.3.0/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9.png",
+        "alt": "CleanShot 2025-08-01 at 19 50 38@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.3.0-git-diff-view",
+      "indexPage": 20,
+      "position": 197
+    },
+    {
+      "slug": "0.2.2-bugfixes",
+      "version": "0.2.2",
+      "title": "Bugfixes",
+      "fullTitle": "0.2.2: Bugfixes",
+      "date": "July 31st, 2025",
+      "dateISO": "2025-07-31",
+      "summary": "We're experimenting with automatically collapsing Claude's responses. Long chats should also now be much more performant.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.2.2/78e57a8b-f6c3-4067-95ea-936092763df4.png",
+        "alt": "CleanShot 2025-07-31 at 22 53 50@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.2.2-bugfixes",
+      "indexPage": 20,
+      "position": 198
+    },
+    {
+      "slug": "0.2.0-local-repositories-agents",
+      "version": "0.2.0",
+      "title": "Local Repositories + Agents",
+      "fullTitle": "0.2.0: Local Repositories + Agents",
+      "date": "July 29th, 2025",
+      "dateISO": "2025-07-29",
+      "summary": "Conductor now supports local repositories! You can add a new repository from your local filesystem, GitHub, or any Git URL.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.2.0/7d7b21c1-3b16-4667-bbec-075d429da05b.png",
+        "alt": "CleanShot 2025-07-29 at 21 46 34@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.2.0-local-repositories-agents",
+      "indexPage": 20,
+      "position": 199
+    },
+    {
+      "slug": "0.1.1-slash-commands-custom-providers",
+      "version": "0.1.1",
+      "title": "Slash Commands + Custom Providers",
+      "fullTitle": "0.1.1: Slash Commands + Custom Providers",
+      "date": "July 25th, 2025",
+      "dateISO": "2025-07-25",
+      "summary": "Slash commands are live in Conductor! Manage your commands in Settings.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.1.1/d939180a-b086-4b57-8e4c-da5d770f30ca.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.1.1-slash-commands-custom-providers",
+      "indexPage": 21,
+      "position": 200
+    },
+    {
+      "slug": "0.1.0-mcps-message-queues",
+      "version": "0.1.0",
+      "title": "MCPs + Message Queues",
+      "fullTitle": "0.1.0: MCPs + Message Queues",
+      "date": "July 24th, 2025",
+      "dateISO": "2025-07-24",
+      "summary": "MCPs are live in Conductor! Add popular servers in one click from the MCP tab.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.1.0/9fad1f74-b5fb-4ed2-89cb-3c7bb94d7c0e.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.1.0-mcps-message-queues",
+      "indexPage": 21,
+      "position": 201
+    },
+    {
+      "slug": "0.0.21-fine-grained-github-permissions",
+      "version": "0.0.21",
+      "title": "Fine-grained GitHub permissions",
+      "fullTitle": "0.0.21: Fine-grained GitHub permissions",
+      "date": "July 22nd, 2025",
+      "dateISO": "2025-07-22",
+      "summary": "You can now give Conductor fine-grained GitHub repository access. You can also choose to skip the GitHub integration and add repositories using your SSH/HTTPs authentication.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.0.21/3d5d206d-1fac-41ae-a72a-44df85a059ec.png",
+        "alt": "CleanShot 2025-07-22 at 17 53 01@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.0.21-fine-grained-github-permissions",
+      "indexPage": 21,
+      "position": 202
+    },
+    {
+      "slug": "0.0.20-attachments",
+      "version": "0.0.20",
+      "title": "Attachments",
+      "fullTitle": "0.0.20: Attachments",
+      "date": "July 22nd, 2025",
+      "dateISO": "2025-07-22",
+      "summary": "Conductor now supports attachments!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.0.20/73322103-6874-4eac-a2d9-16da5692586e.png",
+        "alt": "image"
+      },
+      "authors": [],
+      "url": "/changelog/0.0.20-attachments",
+      "indexPage": 21,
+      "position": 203
+    },
+    {
+      "slug": "0.0.19-misc-improvements",
+      "version": "0.0.19",
+      "title": "Misc Improvements",
+      "fullTitle": "0.0.19: Misc Improvements",
+      "date": "July 21st, 2025",
+      "dateISO": "2025-07-21",
+      "summary": "",
+      "hero": null,
+      "authors": [],
+      "url": "/changelog/0.0.19-misc-improvements",
+      "indexPage": 21,
+      "position": 204
+    },
+    {
+      "slug": "0.0.17-github-integration",
+      "version": "0.0.17",
+      "title": "GitHub Integration",
+      "fullTitle": "0.0.17: GitHub Integration",
+      "date": "July 19th, 2025",
+      "dateISO": "2025-07-19",
+      "summary": "Conductor now integrates with your GitHub account. Start working on issues in one click, and easily add your private repositories.",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.0.17/1541d4ee-8efb-4050-9412-d7d10632b94e.png",
+        "alt": "CleanShot 2025-07-19 at 09 42 50@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.0.17-github-integration",
+      "indexPage": 21,
+      "position": 205
+    },
+    {
+      "slug": "0.0.16-terminal-improvements",
+      "version": "0.0.16",
+      "title": "Terminal Improvements",
+      "fullTitle": "0.0.16: Terminal Improvements",
+      "date": "July 18th, 2025",
+      "dateISO": "2025-07-18",
+      "summary": "We've upgraded the terminal in Conductor!",
+      "hero": {
+        "type": "image",
+        "src": "/assets/changelog/media/0.0.16/7ee30008-24d3-4b54-9567-812ff995cdab.png",
+        "alt": "CleanShot 2025-07-18 at 10 27 06@2x"
+      },
+      "authors": [],
+      "url": "/changelog/0.0.16-terminal-improvements",
+      "indexPage": 21,
+      "position": 206
+    }
+  ],
+  "notInIndex": []
+}

@@ -1,0 +1,1030 @@
+{
+  "slug": "reference/scripts/share-with-teammates",
+  "url": "/docs/reference/scripts/share-with-teammates",
+  "title": "Share repository settings with teammates",
+  "description": "Commit .conductor/settings.toml so a repository can share Conductor scripts and settings",
+  "meta": {
+    "title": "Share repository settings with teammates | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/scripts/share-with-teammates/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Share repository settings with teammates"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#step-1-create-the-file",
+      "title": "Step 1: Create the file"
+    },
+    {
+      "depth": 2,
+      "url": "#step-2-commit-it",
+      "title": "Step 2: Commit it"
+    },
+    {
+      "depth": 2,
+      "url": "#step-3-pull-it-in-other-workspaces",
+      "title": "Step 3: Pull it in other workspaces"
+    },
+    {
+      "depth": 2,
+      "url": "#example-scripts-and-privacy",
+      "title": "Example: scripts and privacy"
+    },
+    {
+      "depth": 2,
+      "url": "#legacy-conductorjson",
+      "title": "Legacy conductor.json"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/settings/example",
+    "title": "Sample configs",
+    "description": "Example repository settings files for Conductor"
+  },
+  "next": {
+    "url": "/docs/concepts/agent-modes",
+    "title": "Agent modes",
+    "description": "Next Page"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "By default, "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=scripts",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " apply only on your machine. To share scripts, actions, and other repository settings with teammates, commit a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file in the repository."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Shared repository settings are useful for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup and archive scripts."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Actions and run mode."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Enterprise data privacy."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Spotlight testing."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository action prompts."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Provider and Git behavior that should apply to the whole team."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "step-1-create-the-file",
+      "children": [
+        {
+          "type": "text",
+          "value": "Step 1: Create the file"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the repository root."
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Adjust the commands for your project. Setup scripts, archive scripts, and actions run from each workspace directory, not from the original repository checkout."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "step-2-commit-it",
+      "children": [
+        {
+          "type": "text",
+          "value": "Step 2: Commit it"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to the repository:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "git add .conductor/settings.toml\ngit commit -m \"Add Conductor repository settings\"\ngit push",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .conductor/settings.toml",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " commit",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -m",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Add Conductor repository settings\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " push",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you create "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for per-machine repository settings, add it to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".gitignore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " from the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "touch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "touch",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "grep",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -qxF",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \".conductor/settings.local.toml\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ||",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " printf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"\\n.conductor/settings.local.toml\\n\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "step-3-pull-it-in-other-workspaces",
+      "children": [
+        {
+          "type": "text",
+          "value": "Step 3: Pull it in other workspaces"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After teammates pull the commit, Conductor reads the shared settings for that repository. If a teammate has the same setting configured locally in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", their local value wins."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "example-scripts-and-privacy",
+      "children": [
+        {
+          "type": "text",
+          "value": "Example: scripts and privacy"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "enterprise_data_privacy = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "archive = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "run_mode = \"nonconcurrent\""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the project depends on a fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "legacy-conductorjson",
+      "children": [
+        {
+          "type": "text",
+          "value": "Legacy conductor.json"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Older repositories may still have "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the repository root. New shared settings should use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Once "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " exists for a repository, Conductor ignores repo-level "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For complete copyable files, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/example"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Sample settings configurations"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For precedence and file locations, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For supported keys, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For script behavior, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>By default, <a href=\"https://app.conductor.build/settings/repos?section=scripts\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> apply only on your machine. To share scripts, actions, and other repository settings with teammates, commit a <code>.conductor/settings.toml</code> file in the repository.</p><p>Shared repository settings are useful for:</p><ul><li>Setup and archive scripts.</li><li>Actions and run mode.</li><li>Enterprise data privacy.</li><li>Spotlight testing.</li><li>Repository action prompts.</li><li>Provider and Git behavior that should apply to the whole team.</li></ul><h2 id=\"step-1-create-the-file\"><a href=\"#step-1-create-the-file\">Step 1: Create the file</a></h2><p>Create <code>.conductor/settings.toml</code> at the repository root.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Adjust the commands for your project. Setup scripts, archive scripts, and actions run from each workspace directory, not from the original repository checkout.</p><h2 id=\"step-2-commit-it\"><a href=\"#step-2-commit-it\">Step 2: Commit it</a></h2><p>Commit <code>.conductor/settings.toml</code> to the repository:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> .conductor/settings.toml</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> commit</span><span style=\"color:#005CC5\"> -m</span><span style=\"color:#032F62\"> \"Add Conductor repository settings\"</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> push</span></span></code></pre></figure><p>If you create <code>.conductor/settings.local.toml</code> for per-machine repository settings, add it to <code>.gitignore</code> from the repository root:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">touch</span><span style=\"color:#032F62\"> .gitignore</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">grep</span><span style=\"color:#005CC5\"> -qxF</span><span style=\"color:#032F62\"> \".conductor/settings.local.toml\"</span><span style=\"color:#032F62\"> .gitignore</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> printf</span><span style=\"color:#032F62\"> \"\\n.conductor/settings.local.toml\\n\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> .gitignore</span></span></code></pre></figure><h2 id=\"step-3-pull-it-in-other-workspaces\"><a href=\"#step-3-pull-it-in-other-workspaces\">Step 3: Pull it in other workspaces</a></h2><p>After teammates pull the commit, Conductor reads the shared settings for that repository. If a teammate has the same setting configured locally in <code>.conductor/settings.local.toml</code>, their local value wins.</p><h2 id=\"example-scripts-and-privacy\"><a href=\"#example-scripts-and-privacy\">Example: scripts and privacy</a></h2><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Use <code>run_mode = \"nonconcurrent\"</code> when the project depends on a fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.</p><h2 id=\"legacy-conductorjson\"><a href=\"#legacy-conductorjson\">Legacy conductor.json</a></h2><p>Older repositories may still have <code>conductor.json</code> at the repository root. New shared settings should use <code>.conductor/settings.toml</code>. Once <code>.conductor/settings.toml</code> exists for a repository, Conductor ignores repo-level <code>conductor.json</code>.</p><p>For complete copyable files, see <a href=\"/docs/reference/settings/example\">Sample settings configurations</a>. For precedence and file locations, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>. For supported keys, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>. For script behavior, see <a href=\"/docs/reference/scripts\">Scripts</a>.</p>",
+  "text": "By default, Repository Settings apply only on your machine. To share scripts, actions, and other repository settings with teammates, commit a .conductor/settings.toml file in the repository.\nShared repository settings are useful for:\nSetup and archive scripts.\nActions and run mode.\nEnterprise data privacy.\nSpotlight testing.\nRepository action prompts.\nProvider and Git behavior that should apply to the whole team.\nStep 1: Create the file\nCreate .conductor/settings.toml at the repository root.\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"Adjust the commands for your project. Setup scripts, archive scripts, and actions run from each workspace directory, not from the original repository checkout.\nStep 2: Commit it\nCommit .conductor/settings.toml to the repository:\ngit add .conductor/settings.toml\ngit commit -m \"Add Conductor repository settings\"\ngit pushIf you create .conductor/settings.local.toml for per-machine repository settings, add it to .gitignore from the repository root:\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignoreStep 3: Pull it in other workspaces\nAfter teammates pull the commit, Conductor reads the shared settings for that repository. If a teammate has the same setting configured locally in .conductor/settings.local.toml, their local value wins.\nExample: scripts and privacy\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"Use run_mode = \"nonconcurrent\" when the project depends on a fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\nLegacy conductor.json\nOlder repositories may still have conductor.json at the repository root. New shared settings should use .conductor/settings.toml. Once .conductor/settings.toml exists for a repository, Conductor ignores repo-level conductor.json.\nFor complete copyable files, see Sample settings configurations. For precedence and file locations, see User and project settings. For supported keys, see Settings reference. For script behavior, see Scripts.",
+  "markdown": "\n# Share repository settings with teammates\n\n\n\nBy default, [Repository Settings](https://app.conductor.build/settings/repos?section=scripts) apply only on your machine. To share scripts, actions, and other repository settings with teammates, commit a `.conductor/settings.toml` file in the repository.\n\nShared repository settings are useful for:\n\n* Setup and archive scripts.\n* Actions and run mode.\n* Enterprise data privacy.\n* Spotlight testing.\n* Repository action prompts.\n* Provider and Git behavior that should apply to the whole team.\n\n## Step 1: Create the file [#step-1-create-the-file]\n\nCreate `.conductor/settings.toml` at the repository root.\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nAdjust the commands for your project. Setup scripts, archive scripts, and actions run from each workspace directory, not from the original repository checkout.\n\n## Step 2: Commit it [#step-2-commit-it]\n\nCommit `.conductor/settings.toml` to the repository:\n\n```bash\ngit add .conductor/settings.toml\ngit commit -m \"Add Conductor repository settings\"\ngit push\n```\n\nIf you create `.conductor/settings.local.toml` for per-machine repository settings, add it to `.gitignore` from the repository root:\n\n```bash\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\n```\n\n## Step 3: Pull it in other workspaces [#step-3-pull-it-in-other-workspaces]\n\nAfter teammates pull the commit, Conductor reads the shared settings for that repository. If a teammate has the same setting configured locally in `.conductor/settings.local.toml`, their local value wins.\n\n## Example: scripts and privacy [#example-scripts-and-privacy]\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nUse `run_mode = \"nonconcurrent\"` when the project depends on a fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\n\n## Legacy conductor.json [#legacy-conductorjson]\n\nOlder repositories may still have `conductor.json` at the repository root. New shared settings should use `.conductor/settings.toml`. Once `.conductor/settings.toml` exists for a repository, Conductor ignores repo-level `conductor.json`.\n\nFor complete copyable files, see [Sample settings configurations](/docs/reference/settings/example). For precedence and file locations, see [User and project settings](/docs/reference/settings/user-project). For supported keys, see [Settings reference](/docs/reference/settings/reference). For script behavior, see [Scripts](/docs/reference/scripts).\n"
+}

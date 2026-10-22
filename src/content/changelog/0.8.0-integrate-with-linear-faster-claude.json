@@ -1,0 +1,32 @@
+{
+  "slug": "0.8.0-integrate-with-linear-faster-claude",
+  "version": "0.8.0",
+  "versionSlug": "0.8.0",
+  "title": "Integrate with Linear, Faster Claude",
+  "fullTitle": "0.8.0: Integrate with Linear, Faster Claude",
+  "date": "August 25th, 2025",
+  "dateISO": "2025-08-25",
+  "description": "Conductor 0.8.0 changelog - Integrate with Linear, Faster Claude",
+  "summary": "Introducing the Dispatcher, a new way to create workspaces. You can now choose a branch name when creating a new workspaces, or create a new workspace from one of your Linear issues.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.8.0/b3dac156-2096-4c38-af2c-8e31a1aed87f.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.8.0-integrate-with-linear-faster-claude/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.8.0-integrate-with-linear-faster-claude",
+  "sourceUrl": "https://www.conductor.build/changelog/0.8.0-integrate-with-linear-faster-claude",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Introducing the Dispatcher, a new way to create workspaces. You can now choose a branch name when creating a new workspaces, or create a new workspace from one of your Linear issues.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.8.0/b3dac156-2096-4c38-af2c-8e31a1aed87f.png\"/></figure>\n<p>We&#x27;ve also added a new Auto mode, where Opus plans and Sonnet implements.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.8.0/4a6cf899-4093-4f41-ab9c-cc589ab54dac.png\"/></figure>\n<p>For CLI fans, we&#x27;ve added Big Terminal Mode™. Go to settings → Big Terminal Mode to change the center pane to a terminal. (Warning: not for the faint of heart. This will replace the chat interface!)</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.8.0/82e50dac-1129-42b3-82f5-81cd837880a0.png\"/></figure>\n<p>We&#x27;ve made some performance improvements. The app should run faster overall, and Claude will respond a few seconds faster to every message.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Opus plan mode</li>\n<li>⌘⇧[1-5] keyboard shortcut to change terminal tabs</li>\n<li>⌘W to close focused terminal tab</li>\n<li>⌘T to create a new terminal tab when focused on the terminal</li>\n<li>Refined tooltip + font rendering</li>\n<li>⇧Tab to toggle plan mode (replacing ⌘P)</li>\n<li>Big terminal mode</li>\n<li>Open in XCode</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Border styling</li>\n<li>Attachments no longer included in Create PR message</li>\n</ul>",
+  "markdown": "\nIntroducing the Dispatcher, a new way to create workspaces. You can now choose a branch name when creating a new workspaces, or create a new workspace from one of your Linear issues.\n\n<img\n    width=\"1324\"\n    height=\"962\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.8.0/b3dac156-2096-4c38-af2c-8e31a1aed87f.png\"\n/>\n\nWe've also added a new Auto mode, where Opus plans and Sonnet implements.\n\n<img\n    width=\"572\"\n    height=\"390\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.8.0/4a6cf899-4093-4f41-ab9c-cc589ab54dac.png\"\n/>\n\nFor CLI fans, we've added Big Terminal Mode™. Go to settings → Big Terminal Mode to change the center pane to a terminal. (Warning: not for the faint of heart. This will replace the chat interface!)\n\n<img\n    width=\"2048\"\n    height=\"1337\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.8.0/82e50dac-1129-42b3-82f5-81cd837880a0.png\"\n/>\n\nWe've made some performance improvements. The app should run faster overall, and Claude will respond a few seconds faster to every message.\n\n## Improvements\n\n- Opus plan mode\n- ⌘⇧[1-5] keyboard shortcut to change terminal tabs\n- ⌘W to close focused terminal tab\n- ⌘T to create a new terminal tab when focused on the terminal\n- Refined tooltip + font rendering\n- ⇧Tab to toggle plan mode (replacing ⌘P)\n- Big terminal mode\n- Open in XCode\n\n## Fixes\n\n- Border styling\n- Attachments no longer included in Create PR message\n"
+}

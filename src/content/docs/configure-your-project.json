@@ -1,0 +1,1406 @@
+{
+  "slug": "configure-your-project",
+  "url": "/docs/configure-your-project",
+  "title": "Configure your project",
+  "description": "Set up shared Conductor project settings for new workspaces",
+  "meta": {
+    "title": "Configure your project | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/configure-your-project/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Get Started"
+    },
+    {
+      "name": "Configure your project"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#quick-start-ask-conductor",
+      "title": "Quick start: ask Conductor"
+    },
+    {
+      "depth": 2,
+      "url": "#create-project-settings",
+      "title": "Create project settings"
+    },
+    {
+      "depth": 2,
+      "url": "#add-a-setup-script",
+      "title": "Add a setup script"
+    },
+    {
+      "depth": 2,
+      "url": "#add-an-action",
+      "title": "Add an action"
+    },
+    {
+      "depth": 2,
+      "url": "#copy-local-files-when-needed",
+      "title": "Copy local files when needed"
+    },
+    {
+      "depth": 2,
+      "url": "#add-project-overrides-to-gitignore",
+      "title": "Add project overrides to gitignore"
+    },
+    {
+      "depth": 2,
+      "url": "#know-where-settings-live",
+      "title": "Know where settings live"
+    },
+    {
+      "depth": 2,
+      "url": "#next-steps",
+      "title": "Next steps"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/first-workspace",
+    "title": "Your first workspace",
+    "description": "Import a repository, configure it, and start agent work in an isolated Conductor workspace"
+  },
+  "next": {
+    "url": "/docs/cloud",
+    "title": "What is Conductor Cloud?",
+    "description": "Run coding agents in shared cloud workspaces with your team"
+  },
+  "components": [
+    "ConfigureProjectPrompt"
+  ],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor can prepare every new workspace the same way, run your project from the Run button, and copy local files that Git does not track."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For most projects, start by asking Conductor to inspect the repository and create shared project settings. Use the rest of this page to review what changed or make manual edits."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "quick-start-ask-conductor",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quick start: ask Conductor"
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "ConfigureProjectPrompt",
+      "props": {},
+      "children": []
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you have more than one repository in Conductor, create a workspace in the project you want to configure, then paste this prompt there."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Review the diff before committing the settings file. The agent should explain why it chose each setup script, action, file copy pattern, or run mode."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure personal actions in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for team defaults that should be reviewed and merged before they apply to everyone."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-project-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create project settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the root of your repository when the settings should be shared after the change is merged:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "your-repo/\n├── .conductor/\n│   └── settings.toml\n├── package.json\n└── ...",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "your-repo/"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "├── .conductor/"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "│   └── settings.toml"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "├── package.json"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "└── ..."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To configure the project manually, add the commands your project needs:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit this file when teammates should use the same setup:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "git add .conductor/settings.toml\ngit commit -m \"Add Conductor project settings\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .conductor/settings.toml",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " commit",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -m",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Add Conductor project settings\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-a-setup-script",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a setup script"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The setup script runs when Conductor creates a workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use it for commands that prepare the workspace:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Install dependencies."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Generate files."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create symlinks."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Initialize local project state."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-an-action",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add an action"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "An action adds an app, server, test watcher, or other useful project command to the Run button."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the command starts a local server:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add more "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "[scripts.run.<id>]"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " tables when the project has several useful actions, such as starting a web app, starting a worker, or running a test watcher. Conductor gives each workspace its own port range, so multiple local servers can run at the same time. For details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Actions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor variables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "copy-local-files-when-needed",
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy local files when needed"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "New workspaces start with files tracked by Git. Gitignored files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", local certificates, and machine specific config appear only when Conductor copies them or your setup script creates them."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for static gitignored files that every local workspace needs."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use a setup script when the workspace needs commands, generated files, symlinks, or workspace specific values."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-project-overrides-to-gitignore",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add project overrides to gitignore"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for project settings that only apply on your machine."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add it to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".gitignore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "touch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "touch",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "grep",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -qxF",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \".conductor/settings.local.toml\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ||",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " printf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"\\n.conductor/settings.local.toml\\n\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "know-where-settings-live",
+      "children": [
+        {
+          "type": "text",
+          "value": "Know where settings live"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor layers settings from broad to specific:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Scope"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "File"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "User settings"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your defaults across projects"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Project overrides"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.local.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your local project overrides"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Project settings"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Shared project setup after the change is merged"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For precedence, schemas, managed settings, and supported keys, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "next-steps",
+      "children": [
+        {
+          "type": "text",
+          "value": "Next steps"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#setup-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Setup scripts"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", and "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/shells"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Shell configuration"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when you need workspace setup details."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#run-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Actions"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when you need to run the project from Conductor."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/reference"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings reference"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when you need the exact TOML keys Conductor supports."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor can prepare every new workspace the same way, run your project from the Run button, and copy local files that Git does not track.</p><p>For most projects, start by asking Conductor to inspect the repository and create shared project settings. Use the rest of this page to review what changed or make manual edits.</p><h2 id=\"quick-start-ask-conductor\"><a href=\"#quick-start-ask-conductor\">Quick start: ask Conductor</a></h2><div data-component=\"ConfigureProjectPrompt\" data-props=\"{}\"></div><p>If you have more than one repository in Conductor, create a workspace in the project you want to configure, then paste this prompt there.</p><p>Review the diff before committing the settings file. The agent should explain why it chose each setup script, action, file copy pattern, or run mode.</p><p>Configure personal actions in <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a> in Conductor or <code>.conductor/settings.local.toml</code>. Use <code>.conductor/settings.toml</code> for team defaults that should be reviewed and merged before they apply to everyone.</p><h2 id=\"create-project-settings\"><a href=\"#create-project-settings\">Create project settings</a></h2><p>Create <code>.conductor/settings.toml</code> at the root of your repository when the settings should be shared after the change is merged:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">your-repo/</span>\n<span class=\"line\">├── .conductor/</span>\n<span class=\"line\">│   └── settings.toml</span>\n<span class=\"line\">├── package.json</span>\n<span class=\"line\">└── ...</span></code></pre></figure><p>To configure the project manually, add the commands your project needs:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Commit this file when teammates should use the same setup:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> .conductor/settings.toml</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> commit</span><span style=\"color:#005CC5\"> -m</span><span style=\"color:#032F62\"> \"Add Conductor project settings\"</span></span></code></pre></figure><h2 id=\"add-a-setup-script\"><a href=\"#add-a-setup-script\">Add a setup script</a></h2><p>The setup script runs when Conductor creates a workspace.</p><p>Use it for commands that prepare the workspace:</p><ul><li>Install dependencies.</li><li>Generate files.</li><li>Create symlinks.</li><li>Initialize local project state.</li></ul><p>For details, see <a href=\"/docs/reference/scripts#setup-scripts\">Setup scripts</a>.</p><h2 id=\"add-an-action\"><a href=\"#add-an-action\">Add an action</a></h2><p>An action adds an app, server, test watcher, or other useful project command to the Run button.</p><p>Use <code>CONDUCTOR_PORT</code> when the command starts a local server:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Add more <code>[scripts.run.&lt;id&gt;]</code> tables when the project has several useful actions, such as starting a web app, starting a worker, or running a test watcher. Conductor gives each workspace its own port range, so multiple local servers can run at the same time. For details, see <a href=\"/docs/reference/scripts#run-scripts\">Actions</a> and <a href=\"/docs/reference/environment-variables\">Conductor variables</a>.</p><h2 id=\"copy-local-files-when-needed\"><a href=\"#copy-local-files-when-needed\">Copy local files when needed</a></h2><p>New workspaces start with files tracked by Git. Gitignored files such as <code>.env.local</code>, local certificates, and machine specific config appear only when Conductor copies them or your setup script creates them.</p><p>Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for static gitignored files that every local workspace needs.</p><p>Use a setup script when the workspace needs commands, generated files, symlinks, or workspace specific values.</p><h2 id=\"add-project-overrides-to-gitignore\"><a href=\"#add-project-overrides-to-gitignore\">Add project overrides to gitignore</a></h2><p>Use <code>.conductor/settings.local.toml</code> for project settings that only apply on your machine.</p><p>Add it to <code>.gitignore</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">touch</span><span style=\"color:#032F62\"> .gitignore</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">grep</span><span style=\"color:#005CC5\"> -qxF</span><span style=\"color:#032F62\"> \".conductor/settings.local.toml\"</span><span style=\"color:#032F62\"> .gitignore</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> printf</span><span style=\"color:#032F62\"> \"\\n.conductor/settings.local.toml\\n\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> .gitignore</span></span></code></pre></figure><h2 id=\"know-where-settings-live\"><a href=\"#know-where-settings-live\">Know where settings live</a></h2><p>Conductor layers settings from broad to specific:</p><table><thead><tr><th>Scope</th><th>File</th><th>Use it for</th></tr></thead><tbody><tr><td>User settings</td><td><code>~/.conductor/settings.toml</code></td><td>Your defaults across projects</td></tr><tr><td>Project overrides</td><td><code>&lt;repo&gt;/.conductor/settings.local.toml</code></td><td>Your local project overrides</td></tr><tr><td>Project settings</td><td><code>&lt;repo&gt;/.conductor/settings.toml</code></td><td>Shared project setup after the change is merged</td></tr></tbody></table><p>For precedence, schemas, managed settings, and supported keys, see <a href=\"/docs/reference/settings\">Settings</a> and <a href=\"/docs/reference/settings/user-project\">User and project settings</a>.</p><h2 id=\"next-steps\"><a href=\"#next-steps\">Next steps</a></h2><ul><li>Use <a href=\"/docs/reference/scripts#setup-scripts\">Setup scripts</a>, <a href=\"/docs/reference/files-to-copy\">Files to copy</a>, and <a href=\"/docs/reference/shells\">Shell configuration</a> when you need workspace setup details.</li><li>Use <a href=\"/docs/reference/scripts#run-scripts\">Actions</a> when you need to run the project from Conductor.</li><li>Use <a href=\"/docs/reference/settings/reference\">Settings reference</a> when you need the exact TOML keys Conductor supports.</li></ul>",
+  "text": "Conductor can prepare every new workspace the same way, run your project from the Run button, and copy local files that Git does not track.\nFor most projects, start by asking Conductor to inspect the repository and create shared project settings. Use the rest of this page to review what changed or make manual edits.\nQuick start: ask Conductor\nIf you have more than one repository in Conductor, create a workspace in the project you want to configure, then paste this prompt there.\nReview the diff before committing the settings file. The agent should explain why it chose each setup script, action, file copy pattern, or run mode.\nConfigure personal actions in Settings in Conductor or .conductor/settings.local.toml. Use .conductor/settings.toml for team defaults that should be reviewed and merged before they apply to everyone.\nCreate project settings\nCreate .conductor/settings.toml at the root of your repository when the settings should be shared after the change is merged:\nyour-repo/\n├── .conductor/\n│   └── settings.toml\n├── package.json\n└── ...To configure the project manually, add the commands your project needs:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"Commit this file when teammates should use the same setup:\ngit add .conductor/settings.toml\ngit commit -m \"Add Conductor project settings\"Add a setup script\nThe setup script runs when Conductor creates a workspace.\nUse it for commands that prepare the workspace:\nInstall dependencies.\nGenerate files.\nCreate symlinks.\nInitialize local project state.\nFor details, see Setup scripts.\nAdd an action\nAn action adds an app, server, test watcher, or other useful project command to the Run button.\nUse CONDUCTOR_PORT when the command starts a local server:\n[scripts]\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"Add more [scripts.run.<id>] tables when the project has several useful actions, such as starting a web app, starting a worker, or running a test watcher. Conductor gives each workspace its own port range, so multiple local servers can run at the same time. For details, see Actions and Conductor variables.\nCopy local files when needed\nNew workspaces start with files tracked by Git. Gitignored files such as .env.local, local certificates, and machine specific config appear only when Conductor copies them or your setup script creates them.\nUse Files to copy for static gitignored files that every local workspace needs.\nUse a setup script when the workspace needs commands, generated files, symlinks, or workspace specific values.\nAdd project overrides to gitignore\nUse .conductor/settings.local.toml for project settings that only apply on your machine.\nAdd it to .gitignore:\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignoreKnow where settings live\nConductor layers settings from broad to specific:\nScopeFileUse it forUser settings~/.conductor/settings.tomlYour defaults across projectsProject overrides<repo>/.conductor/settings.local.tomlYour local project overridesProject settings<repo>/.conductor/settings.tomlShared project setup after the change is mergedFor precedence, schemas, managed settings, and supported keys, see Settings and User and project settings.\nNext steps\nUse Setup scripts, Files to copy, and Shell configuration when you need workspace setup details.\nUse Actions when you need to run the project from Conductor.\nUse Settings reference when you need the exact TOML keys Conductor supports.",
+  "markdown": "\n# Configure your project\n\n\n\nConductor can prepare every new workspace the same way, run your project from the Run button, and copy local files that Git does not track.\n\nFor most projects, start by asking Conductor to inspect the repository and create shared project settings. Use the rest of this page to review what changed or make manual edits.\n\n## Quick start: ask Conductor [#quick-start-ask-conductor]\n\n\n\n\nIf you have more than one repository in Conductor, create a workspace in the project you want to configure, then paste this prompt there.\n\nReview the diff before committing the settings file. The agent should explain why it chose each setup script, action, file copy pattern, or run mode.\n\nConfigure personal actions in [`Settings`](https://app.conductor.build/settings/repos?section=actions) in Conductor or `.conductor/settings.local.toml`. Use `.conductor/settings.toml` for team defaults that should be reviewed and merged before they apply to everyone.\n\n## Create project settings [#create-project-settings]\n\nCreate `.conductor/settings.toml` at the root of your repository when the settings should be shared after the change is merged:\n\n```text\nyour-repo/\n├── .conductor/\n│   └── settings.toml\n├── package.json\n└── ...\n```\n\nTo configure the project manually, add the commands your project needs:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nCommit this file when teammates should use the same setup:\n\n```bash\ngit add .conductor/settings.toml\ngit commit -m \"Add Conductor project settings\"\n```\n\n## Add a setup script [#add-a-setup-script]\n\nThe setup script runs when Conductor creates a workspace.\n\nUse it for commands that prepare the workspace:\n\n* Install dependencies.\n* Generate files.\n* Create symlinks.\n* Initialize local project state.\n\nFor details, see [Setup scripts](/docs/reference/scripts#setup-scripts).\n\n## Add an action [#add-an-action]\n\nAn action adds an app, server, test watcher, or other useful project command to the Run button.\n\nUse `CONDUCTOR_PORT` when the command starts a local server:\n\n```toml title=\".conductor/settings.toml\"\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nAdd more `[scripts.run.<id>]` tables when the project has several useful actions, such as starting a web app, starting a worker, or running a test watcher. Conductor gives each workspace its own port range, so multiple local servers can run at the same time. For details, see [Actions](/docs/reference/scripts#run-scripts) and [Conductor variables](/docs/reference/environment-variables).\n\n## Copy local files when needed [#copy-local-files-when-needed]\n\nNew workspaces start with files tracked by Git. Gitignored files such as `.env.local`, local certificates, and machine specific config appear only when Conductor copies them or your setup script creates them.\n\nUse [Files to copy](/docs/reference/files-to-copy) for static gitignored files that every local workspace needs.\n\nUse a setup script when the workspace needs commands, generated files, symlinks, or workspace specific values.\n\n## Add project overrides to gitignore [#add-project-overrides-to-gitignore]\n\nUse `.conductor/settings.local.toml` for project settings that only apply on your machine.\n\nAdd it to `.gitignore`:\n\n```bash\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\n```\n\n## Know where settings live [#know-where-settings-live]\n\nConductor layers settings from broad to specific:\n\n| Scope             | File                                    | Use it for                                      |\n| ----------------- | --------------------------------------- | ----------------------------------------------- |\n| User settings     | `~/.conductor/settings.toml`            | Your defaults across projects                   |\n| Project overrides | `<repo>/.conductor/settings.local.toml` | Your local project overrides                    |\n| Project settings  | `<repo>/.conductor/settings.toml`       | Shared project setup after the change is merged |\n\nFor precedence, schemas, managed settings, and supported keys, see [Settings](/docs/reference/settings) and [User and project settings](/docs/reference/settings/user-project).\n\n## Next steps [#next-steps]\n\n* Use [Setup scripts](/docs/reference/scripts#setup-scripts), [Files to copy](/docs/reference/files-to-copy), and [Shell configuration](/docs/reference/shells) when you need workspace setup details.\n* Use [Actions](/docs/reference/scripts#run-scripts) when you need to run the project from Conductor.\n* Use [Settings reference](/docs/reference/settings/reference) when you need the exact TOML keys Conductor supports.\n"
+}

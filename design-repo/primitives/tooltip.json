@@ -1,0 +1,27 @@
+{
+  "id": "tooltip",
+  "kind": "primitive",
+  "purpose": "Avatar hover tooltip (name + local time).",
+  "implementedBy": [
+    {
+      "ref": "src/components/Multiplayer.jsx:86",
+      "quote": "className=\"pointer-events-none absolute bottom-full left-1/2 z-10 mb-2"
+    }
+  ],
+  "tokens": [
+    "{component.tooltip.avatar}"
+  ],
+  "variants": [
+    "avatar"
+  ],
+  "states": [
+    "hidden (translate 4px, opacity 0)",
+    "visible on hover/focus-visible"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:168",
+      "quote": "**Hover tooltip** (`role=tooltip`)"
+    }
+  ]
+}

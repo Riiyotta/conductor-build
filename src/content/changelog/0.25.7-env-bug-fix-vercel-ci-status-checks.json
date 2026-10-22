@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.7-env-bug-fix-vercel-ci-status-checks",
+  "version": "0.25.7",
+  "versionSlug": "0.25.7",
+  "title": ".env Bug Fix, Vercel CI Status Checks",
+  "fullTitle": "0.25.7: .env Bug Fix, Vercel CI Status Checks",
+  "date": "Dec 11th, 2025",
+  "dateISO": "2025-12-11",
+  "description": "Conductor 0.25.7 changelog - .env Bug Fix, Vercel CI Status Checks",
+  "summary": "Thanks to a fix this morning from Anthropic, environment variables stored in a workspace's .env file (such as ANTHROPICAPIKEY) will no longer be picked up by Claude.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.7/90109963-1ee9-4bd5-8f04-93c6fab628cd.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.7-env-bug-fix-vercel-ci-status-checks/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.7-env-bug-fix-vercel-ci-status-checks",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.7-env-bug-fix-vercel-ci-status-checks",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Thanks to a fix this morning from Anthropic, environment variables stored in a workspace&#x27;s <code>.env</code> file (such as <code>ANTHROPIC_API_KEY</code>) will no longer be picked up by Claude.</p>\n<p>Also, failing Vercel CI jobs will now appear in Conductor with a link to view the logs.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.7/90109963-1ee9-4bd5-8f04-93c6fab628cd.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Improved error suggestion for OAuth timeouts. If you run into an OAuth token expired issue, try running <code>claude setup-token</code>!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Workspace creation will succeed even if we can&#x27;t pull in latest changes from remote</li>\n<li>Fixed costs sometimes showing incorrectly in the top bar</li>\n</ul>",
+  "markdown": "\nThanks to a fix this morning from Anthropic, environment variables stored in a workspace's `.env` file (such as `ANTHROPIC_API_KEY`) will no longer be picked up by Claude.\n\nAlso, failing Vercel CI jobs will now appear in Conductor with a link to view the logs.\n\n<img\n    width=\"896\"\n    height=\"74\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.7/90109963-1ee9-4bd5-8f04-93c6fab628cd.png\"\n/>\n\n## Improvements\n\n- Improved error suggestion for OAuth timeouts. If you run into an OAuth token expired issue, try running `claude setup-token`!\n\n## Fixes\n\n- Workspace creation will succeed even if we can't pull in latest changes from remote\n- Fixed costs sometimes showing incorrectly in the top bar\n"
+}

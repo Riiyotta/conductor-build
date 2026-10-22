@@ -1,0 +1,28 @@
+{
+  "slug": "0.11.0-conductor-json",
+  "version": "0.11.0",
+  "versionSlug": "0.11.0",
+  "title": "conductor.json",
+  "fullTitle": "0.11.0: conductor.json",
+  "date": "Sept 19th, 2025",
+  "dateISO": "2025-09-19",
+  "description": "Conductor 0.11.0 changelog - conductor.json",
+  "summary": "To make it easier to share configurations, Conductor now stores your setup and run scripts in a conductor.json file.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.11.0/5db0d284-4d32-4cd6-b6fe-583f06ce5805.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.11.0-conductor-json/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.11.0-conductor-json",
+  "sourceUrl": "https://www.conductor.build/changelog/0.11.0-conductor-json",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    }
+  ],
+  "html": "<p>To make it easier to share configurations, Conductor now stores your setup and run scripts in a <code>conductor.json</code> file.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.11.0/5db0d284-4d32-4cd6-b6fe-583f06ce5805.png\"/></figure>\n<p>To learn more, <a href=\"/docs/reference/scripts\" target=\"_blank\" rel=\"noopener noreferrer\">check out our documentation</a>.</p>\n<p>If you have any issues migrating, reach out to us at <a href=\"mailto:humans@conductor.build\">humans@conductor.build</a>! We&#x27;re happy to help.</p>\n<h3>Improvements</h3>\n<ul>\n<li>New onboarding flow</li>\n<li>Default to terminal if no run script exists</li>\n<li>Added workspace lifecycle logs to the top bar of each workspace</li>\n</ul>\n<p>New in 0.11.2:</p>\n<ul>\n<li>Confirm before creating a conductor.json migration PR</li>\n</ul>",
+  "markdown": "\nTo make it easier to share configurations, Conductor now stores your setup and run scripts in a `conductor.json` file.\n\n<img\n    width=\"1387\"\n    height=\"893\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.11.0/5db0d284-4d32-4cd6-b6fe-583f06ce5805.png\"\n/>\n\nTo learn more, [check out our documentation](/docs/reference/scripts).\n\nIf you have any issues migrating, reach out to us at [humans@conductor.build](mailto:humans@conductor.build)! We're happy to help.\n\n## Improvements\n\n- New onboarding flow\n- Default to terminal if no run script exists\n- Added workspace lifecycle logs to the top bar of each workspace\n\nNew in 0.11.2:\n\n- Confirm before creating a conductor.json migration PR\n"
+}

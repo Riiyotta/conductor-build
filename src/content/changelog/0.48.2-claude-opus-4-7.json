@@ -1,0 +1,28 @@
+{
+  "slug": "0.48.2-claude-opus-4-7",
+  "version": "0.48.2",
+  "versionSlug": "0.48.2",
+  "title": "Claude Opus 4.7",
+  "fullTitle": "0.48.2: Claude Opus 4.7",
+  "date": "Apr 16, 2026",
+  "dateISO": "2026-04-16",
+  "description": "Conductor 0.48.2 changelog - Claude Opus 4.7",
+  "summary": "Conductor now supports Claude Opus 4.7, Anthropic's latest and most capable model.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.48.2/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png",
+    "alt": "Claude Opus 4.7"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.48.2-claude-opus-4-7/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.48.2-claude-opus-4-7",
+  "sourceUrl": "https://www.conductor.build/changelog/0.48.2-claude-opus-4-7",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "0.48.3 — Apr 16, 2026"
+    }
+  ],
+  "html": "<p>Conductor now supports Claude Opus 4.7, Anthropic&#x27;s latest and most capable model.</p>\n<figure data-asset><img alt=\"Claude Opus 4.7\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.48.2/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png\"/></figure>\n<h3>0.48.3 — Apr 16, 2026</h3>\n<ul>\n<li>Added Opus 4.7 1M</li>\n<li>Added back Opus 4.6 1M</li>\n<li>Updated Claude Code to 2.1.111</li>\n</ul>",
+  "markdown": "\nConductor now supports Claude Opus 4.7, Anthropic's latest and most capable model.\n\n<img\n    src=\"/assets/changelog/media/0.48.2/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png\"\n    alt=\"Claude Opus 4.7\"\n/>\n\n## 0.48.3 — Apr 16, 2026\n\n- Added Opus 4.7 1M\n- Added back Opus 4.6 1M\n- Updated Claude Code to 2.1.111\n"
+}

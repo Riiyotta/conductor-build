@@ -1,0 +1,114 @@
+{
+  "id": "hero.page-header",
+  "category": "HERO",
+  "iaSections": [
+    "hero.page-header"
+  ],
+  "purpose": "Left-aligned page title and lead paragraph for a standalone page.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/PageHeader.jsx:3",
+      "quote": "export default function PageHeader({ title, lead, width = 'max-w-3xl', eyebrow = null }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:45",
+      "quote": "### 0.2 Shared \"PageHeader\" block (enterprise, team-plan, slack, join-us, brandkit)"
+    }
+  ],
+  "variants": {
+    "max-w-3xl": {
+      "iaSection": "hero.page-header",
+      "note": "768px column (enterprise, slack, join-us)"
+    },
+    "max-w-2xl": {
+      "iaSection": "hero.page-header",
+      "note": "672px column (team-plan)",
+      "measuredFrom": [
+        {
+          "ref": "src/pages/TeamPlan.jsx:16",
+          "quote": "width=\"max-w-2xl\""
+        }
+      ]
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "heading": {
+      "type": "text",
+      "maxWords": 5,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "lead": {
+      "type": "text",
+      "maxWords": 30,
+      "required": true,
+      "observedMaxWords": 25
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.enterprise",
+      "template.join-us",
+      "template.prose-page",
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:96",
+        "quote": "There are no entrance or scroll animations"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "30px/36px, -0.75px"
+        },
+        {
+          "property": "lead",
+          "value": "14px/24px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "36px/40px, -0.9px"
+        },
+        {
+          "property": "lead",
+          "value": "16px/24px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

@@ -1,0 +1,23 @@
+{
+  "slug": "0.83.2-claude-fable-5-1",
+  "version": "0.83.2",
+  "versionSlug": "0.83.2",
+  "title": "Claude Fable 5.1",
+  "fullTitle": "0.83.2: Claude Fable 5.1",
+  "date": "September 1, 2026",
+  "dateISO": "2026-09-01",
+  "description": "Conductor 0.83.2 changelog - Claude Fable 5.1",
+  "summary": "Claude Fable 5.1 is now available in Conductor.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/fable-5-1-0.83.2.png",
+    "alt": "Fable 5.1 against a blue sky"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.83.2-claude-fable-5-1/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.83.2-claude-fable-5-1",
+  "sourceUrl": "https://www.conductor.build/changelog/0.83.2-claude-fable-5-1",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Fable 5.1 against a blue sky\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/fable-5-1-0.83.2.png\"/></figure>\n<p>Claude Fable 5.1 is now available in Conductor.</p>\n<p>Anthropic&#x27;s most capable model is built for ambitious, long-running coding and knowledge work. It improves on Fable 5 across coding, knowledge work, and long-running problem solving while costing ~25% less.</p>",
+  "markdown": "\n<img\n    width=\"1200\"\n    height=\"1200\"\n    alt=\"Fable 5.1 against a blue sky\"\n    src=\"/assets/changelog/images/fable-5-1-0.83.2.png\"\n/>\n\nClaude Fable 5.1 is now available in Conductor.\n\nAnthropic's most capable model is built for ambitious, long-running coding and knowledge work. It improves on Fable 5 across coding, knowledge work, and long-running problem solving while costing ~25% less.\n"
+}

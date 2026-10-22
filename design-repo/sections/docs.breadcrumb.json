@@ -1,0 +1,72 @@
+{
+  "id": "docs.breadcrumb",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.breadcrumb"
+  ],
+  "purpose": "Show where the page sits in the docs tree.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/docs/DocsPage.jsx:24",
+      "quote": "function Breadcrumb({ items }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "ia.json:229",
+      "quote": "Non-linked breadcrumb of folder names separated by chevrons"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.breadcrumb"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "items": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 8,
+        "required": true,
+        "observedMaxWords": 7
+      },
+      "minItems": 1,
+      "maxItems": 5,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:153",
+        "quote": "### 1.4 Article column (`article#nd-page.docs-page`)"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

@@ -1,0 +1,810 @@
+/* Docs shell + prose (CLONE_SPEC_DOCS.md). Light theme only.
+   Rules mirror the original's shipped CSS (recon/docs/docs-css-rules-excerpt.css) with the
+   CSS variables resolved to the light values listed in CLONE_SPEC_DOCS §0.2. */
+
+.docs-root {
+  --docs-table-shell: #fdfcfc;
+  --docs-table-header: #f8f7f6;
+  --docs-table-border: #e3e0de;
+  --docs-callout-surface: #f9f7f6;
+  --docs-callout-border: #ece4df;
+  --docs-callout-content: #2c2826;
+  --docs-callout-accent: #6e5149;
+  --docs-asset-frame-radius: 1.25rem;
+  --docs-asset-frame-padding: 0.5rem;
+  --docs-asset-max-width: 46rem;
+  --docs-font-geist: Geist, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif, ui-sans-serif, system-ui,
+    sans-serif;
+  --docs-font-mono: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace;
+}
+
+/* ---------- §1.1 grid ---------- */
+#nd-docs-layout {
+  --fd-sidebar-width: 0px;
+  --fd-toc-width: 0px;
+  --fd-banner-height: 0px;
+  display: grid;
+  overflow-x: clip;
+  min-height: 100dvh;
+  grid-template:
+    'sidebar sidebar header toc toc'
+    'sidebar sidebar toc-popover toc toc'
+    'sidebar sidebar main toc toc' 1fr /
+    minmax(min-content, 1fr) var(--fd-sidebar-width)
+    minmax(0, calc(80rem - var(--fd-sidebar-width) - var(--fd-toc-width))) var(--fd-toc-width)
+    minmax(min-content, 1fr);
+}
+@media (min-width: 768px) {
+  #nd-docs-layout {
+    --fd-sidebar-width: 268px;
+    --fd-banner-height: 4rem;
+  }
+}
+@media (min-width: 1280px) {
+  #nd-docs-layout {
+    --fd-toc-width: 268px;
+  }
+}
+
+.docs-sidebar-wrap {
+  grid-area: sidebar;
+  position: sticky;
+  top: var(--fd-banner-height);
+  height: calc(100dvh - var(--fd-banner-height));
+}
+.docs-toc-wrap {
+  grid-area: toc;
+  position: sticky;
+  top: var(--fd-banner-height);
+  height: calc(100dvh - var(--fd-banner-height));
+}
+
+/* Radix ScrollArea viewport fades (§1.3 / §1.5) */
+.docs-scroll-fade-12 {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, white 12px, white calc(100% - 12px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, white 12px, white calc(100% - 12px), transparent);
+}
+.docs-scroll-fade-16 {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, white 16px, white calc(100% - 16px), transparent);
+  mask-image: linear-gradient(to bottom, transparent, white 16px, white calc(100% - 16px), transparent);
+}
+.docs-no-scrollbar {
+  scrollbar-width: none;
+}
+.docs-no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* Sidebar link: instant hover-in, 150ms fade-out (`hover:transition-none`) */
+.docs-side-item {
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.docs-side-item:hover {
+  background-color: rgba(250, 250, 249, 0.5);
+  color: rgba(44, 40, 38, 0.8);
+  transition: none;
+}
+.docs-side-item[data-active='true'] {
+  background-color: rgba(65, 48, 48, 0.1);
+  color: #413030;
+}
+.docs-side-item[data-active='true']:hover {
+  transition: color 150ms cubic-bezier(0.4, 0, 0.2, 1), background-color 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.docs-side-item[data-active='true'][data-nested='true']::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  top: 10px;
+  bottom: 10px;
+  inset-inline-start: 10px;
+  background-color: #413030;
+}
+.docs-folder-content {
+  position: relative;
+  overflow: hidden;
+}
+.docs-folder-content::before {
+  content: '';
+  position: absolute;
+  width: 1px;
+  top: 4px;
+  bottom: 4px;
+  inset-inline-start: 10px;
+  background-color: #eae8e6;
+}
+
+/* ---------- keyframes (fumadocs) ---------- */
+@keyframes fd-fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes fd-fade-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+@keyframes fd-dialog-in {
+  from {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.06);
+  }
+  to {
+    transform: translateX(-50%) scale(1);
+  }
+}
+@keyframes fd-dialog-out {
+  from {
+    transform: translateX(-50%) scale(1);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-50%) scale(1.04);
+  }
+}
+@keyframes fd-popover-in {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes fd-popover-out {
+  to {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+}
+@keyframes fd-sidebar-in {
+  from {
+    transform: translateX(100%);
+  }
+}
+@keyframes fd-sidebar-out {
+  to {
+    transform: translateX(100%);
+  }
+}
+.animate-fd-fade-in {
+  animation: fd-fade-in 300ms ease;
+}
+.animate-fd-fade-out {
+  animation: fd-fade-out 300ms ease forwards;
+}
+.animate-fd-dialog-in {
+  animation: fd-dialog-in 300ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.animate-fd-dialog-out {
+  animation: fd-dialog-out 300ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+.animate-fd-popover-in {
+  animation: fd-popover-in 100ms ease;
+}
+.animate-fd-popover-out {
+  animation: fd-popover-out 100ms ease forwards;
+}
+.animate-fd-sidebar-in {
+  animation: fd-sidebar-in 250ms ease;
+}
+.animate-fd-sidebar-out {
+  animation: fd-sidebar-out 250ms ease forwards;
+}
+
+/* ---------- §1.4 article ---------- */
+.docs-breadcrumb {
+  white-space: nowrap;
+  scrollbar-width: none;
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+.docs-breadcrumb::-webkit-scrollbar {
+  display: none;
+}
+
+/* Prev/next cards: `@container` + `@max-lg:col-span-full` (container narrower than 32rem). */
+.docs-pager {
+  container-type: inline-size;
+}
+@container (max-width: 32rem) {
+  .docs-pager-item {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- §2 prose ---------- */
+.docs-prose {
+  font-family: var(--docs-font-geist);
+  color: #2c2826;
+  font-size: 1rem;
+  line-height: 1.75;
+  max-width: 65ch;
+}
+.docs-prose :where(p):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+}
+.docs-prose :where(a):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(44, 40, 38, 0.55);
+  transition: opacity 0.2s;
+}
+.docs-prose :where(a):not(:where(.not-prose, .not-prose *)):hover {
+  opacity: 0.8;
+}
+.docs-prose :where(h1, h2, h3, h4, h5, h6) :where(a):not(:where(.not-prose, .not-prose *)) {
+  text-decoration: none;
+}
+.docs-prose :where(h2, h3, h4) :where(a[data-card]):not(:where(.not-prose, .not-prose *)):hover {
+  opacity: 1;
+}
+.docs-prose :where(strong):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  font-weight: 600;
+}
+.docs-prose :where(a strong, blockquote strong):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+}
+.docs-prose :where(ol):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-inline-start: 1.625em;
+  list-style-type: decimal;
+}
+.docs-prose :where(ul):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 1.25em;
+  margin-bottom: 1.25em;
+  padding-inline-start: 1.625em;
+  list-style-type: disc;
+}
+.docs-prose :where(li):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+.docs-prose :where(ol > li, ul > li):not(:where(.not-prose, .not-prose *)) {
+  padding-inline-start: 0.375em;
+}
+.docs-prose :where(ol > li):not(:where(.not-prose, .not-prose *))::marker {
+  color: #756f6c;
+  font-weight: 400;
+}
+.docs-prose :where(ul > li):not(:where(.not-prose, .not-prose *))::marker {
+  color: #756f6c;
+}
+.docs-prose :where(.docs-prose > ul > li p, .docs-prose > ol > li p):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+.docs-prose :where(.docs-prose > ul > li > p:first-child, .docs-prose > ol > li > p:first-child):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 1.25em;
+}
+.docs-prose :where(.docs-prose > ul > li > p:last-child, .docs-prose > ol > li > p:last-child):not(:where(.not-prose, .not-prose *)) {
+  margin-bottom: 1.25em;
+}
+.docs-prose :where(ul ul, ul ol, ol ul, ol ol):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0.75em;
+  margin-bottom: 0.75em;
+}
+.docs-prose :where(hr):not(:where(.not-prose, .not-prose *)) {
+  border-color: #eae8e6;
+  border-top-width: 1px;
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+.docs-prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+  color: #756f6c;
+  border-inline-start-width: 0.25rem;
+  border-inline-start-color: #eae8e6;
+  quotes: '\201C' '\201D' '\2018' '\2019';
+  margin-top: 1.6em;
+  margin-bottom: 1.6em;
+  padding-inline-start: 1em;
+  font-style: italic;
+  font-weight: 500;
+}
+.docs-prose :where(blockquote p:first-of-type):not(:where(.not-prose, .not-prose *))::before {
+  content: open-quote;
+}
+.docs-prose :where(blockquote p:last-of-type):not(:where(.not-prose, .not-prose *))::after {
+  content: close-quote;
+}
+.docs-prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  font-size: 1.5em;
+  font-weight: 700;
+  line-height: 1.33333;
+}
+.docs-prose :where(h3):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  margin-top: 1.6em;
+  margin-bottom: 0.6em;
+  font-size: 1.25em;
+  font-weight: 600;
+  line-height: 1.6;
+}
+.docs-prose :where(h4):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  font-weight: 600;
+  line-height: 1.5;
+}
+.docs-prose :where(img, video):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.docs-prose :where(figure):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 2em;
+  margin-bottom: 2em;
+}
+.docs-prose :where(figure > *):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.docs-prose :where(figcaption):not(:where(.not-prose, .not-prose *)) {
+  color: #756f6c;
+  margin-top: 0.857143em;
+  font-size: 0.875em;
+  line-height: 1.42857;
+}
+.docs-prose :where(kbd):not(:where(.not-prose, .not-prose *)) {
+  color: #2c2826;
+  box-shadow: 0 0 0 1px rgba(44, 40, 38, 0.35), 0 3px 0 rgba(44, 40, 38, 0.35);
+  padding: 0.1875em 0.375em;
+  border-radius: 0.3125rem;
+  font-family: inherit;
+  font-size: 0.875em;
+  font-weight: 500;
+}
+.docs-prose :where(code):not(:where(pre code, .not-prose, .not-prose *)) {
+  font-family: var(--docs-font-mono);
+  color: #2c2826;
+  font-size: 0.875em;
+  font-weight: 600;
+  border: 1px solid #eae8e6;
+  background: #fafaf9;
+  border-radius: 5px;
+  padding: 3px;
+}
+.docs-prose :where(a code, h1 code, h4 code, blockquote code):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+}
+.docs-prose :where(h2 code):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+  font-size: 0.875em;
+}
+.docs-prose :where(h3 code):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+  font-size: 0.9em;
+}
+.docs-prose :where(hr + *, h2 + *, h3 + *, h4 + *):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0;
+}
+.docs-prose > :first-child:not(.not-prose) {
+  margin-top: 0;
+}
+.docs-prose > :last-child:not(.not-prose) {
+  margin-bottom: 0;
+}
+/* Unclassed inline SVG icons inside content (their size classes were stripped by the scraper). */
+.docs-content-svg {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  flex-shrink: 0;
+}
+
+/* Heading anchors (§2): text in `a.peer`, link icon fades in on hover */
+.docs-heading-icon {
+  opacity: 0;
+  transition: opacity 150ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+.docs-heading-anchor:hover + .docs-heading-icon {
+  opacity: 1;
+}
+
+/* Grouped "not-prose my-8 space-y-10" section blocks (harness / shortcut pages). Their inner
+   class lists were stripped by the scraper; headings are given the prose h2 metrics. */
+.docs-section-group > section > h2 {
+  margin-top: 0;
+}
+.docs-section-group > section > div h2 {
+  margin: 0;
+}
+/* Settings-precedence figure: numbered badges wrap their digit in a <p>. */
+.docs-prose span > p {
+  margin: 0;
+}
+.prose-no-margin > :first-child {
+  margin-top: 0;
+}
+.prose-no-margin > :last-child {
+  margin-bottom: 0;
+}
+/* Card body links render plain (inherit foreground/72, no underline) – screenshot docs-index-1440. */
+
+/* ---------- §3.1 code blocks ---------- */
+.docs-code {
+  font-family: var(--docs-font-geist);
+  color: #24292e;
+}
+.docs-code-region {
+  font-size: 0.8125rem;
+  line-height: calc(1.25 / 0.875);
+  padding-top: 14px;
+  padding-bottom: 14px;
+  overflow: auto;
+  max-height: 600px;
+}
+.docs-code-region::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+.docs-code-region::-webkit-scrollbar-thumb {
+  background: #eae8e6;
+  border-radius: 5px;
+}
+.docs-code-region::-webkit-scrollbar-track {
+  background: transparent;
+}
+.docs-code pre {
+  margin: 0;
+  font-family: var(--docs-font-mono);
+  white-space: pre;
+  min-width: 100%;
+  width: max-content;
+}
+.docs-code pre > code {
+  display: flex;
+  flex-direction: column;
+}
+.docs-code .line {
+  position: relative;
+  padding-left: 16px;
+  padding-right: var(--padding-right, 16px);
+}
+.docs-code .line:empty {
+  height: 1lh;
+}
+.docs-code code span {
+  color: var(--shiki-light);
+  font-style: var(--shiki-light-font-style);
+}
+
+/* ---------- §3.3 callout ---------- */
+.docs-callout {
+  background: var(--docs-callout-surface);
+  border-color: var(--docs-callout-border);
+  color: var(--docs-callout-content);
+}
+.docs-callout-icon {
+  background: color-mix(in srgb, #fff 92%, var(--docs-callout-surface));
+  border-color: color-mix(in srgb, var(--docs-callout-border) 80%, transparent);
+  color: var(--docs-callout-accent);
+}
+.docs-callout-description > :first-child {
+  margin-top: 0;
+}
+.docs-callout-description > :last-child {
+  margin-bottom: 0;
+}
+.docs-callout-description p + p,
+.docs-callout-description ul,
+.docs-callout-description ol {
+  margin-top: 0.65rem;
+}
+.docs-callout-description a {
+  color: #2c2826;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--docs-callout-accent) 72%, transparent);
+  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+  transition: opacity 0.2s, text-decoration-color 0.2s;
+}
+.docs-callout-description a:hover {
+  opacity: 0.8;
+  text-decoration-color: var(--docs-callout-accent);
+}
+.docs-callout-description :where(ul, ol) {
+  padding-left: 1.15rem;
+}
+.docs-callout-description ul {
+  list-style-type: disc;
+}
+.docs-callout-description ol {
+  list-style-type: decimal;
+}
+.docs-callout-description :where(li) {
+  margin-block: 0.2rem;
+}
+.docs-callout-description code {
+  font-family: var(--docs-font-mono);
+}
+
+/* ---------- §3.4 steps ---------- */
+.fd-steps {
+  counter-reset: step;
+  border-inline-start: 1px solid #eae8e6;
+  margin-inline-start: 8px;
+  padding-inline-start: 24px;
+  position: relative;
+}
+@media (min-width: 640px) {
+  .fd-steps {
+    margin-inline-start: 16px;
+    padding-inline-start: 28px;
+  }
+}
+/* Not positioned: the counter circle is absolutely positioned against .fd-steps (left -16px, i.e.
+   centred on the 1px border) and keeps its static vertical position at the top of each step. */
+.fd-step::before {
+  background-color: #fafaf9;
+  color: #2c2826;
+  content: counter(step);
+  counter-increment: step;
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  display: flex;
+  position: absolute;
+  inset-inline-start: -16px;
+}
+
+/* ---------- §3.6 table ---------- */
+.docs-table-shell {
+  background: var(--docs-table-shell);
+  border: 1px solid color-mix(in srgb, var(--docs-table-border) 92%, transparent);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7), 0 1px 2px rgba(44, 40, 38, 0.06);
+}
+.docs-table-scroll:focus-visible {
+  outline: 2px solid #413030;
+  outline-offset: -2px;
+}
+.docs-table {
+  color: #2c2826;
+}
+.docs-table caption {
+  color: #756f6c;
+  text-align: left;
+  padding: 0.85rem 1rem 0.25rem;
+  font-size: 0.875rem;
+}
+.docs-table thead th {
+  background: var(--docs-table-header);
+  color: #2c2826;
+  letter-spacing: 0.01em;
+  text-transform: none;
+  font-size: 0.78rem;
+  font-weight: 600;
+}
+.docs-table th,
+.docs-table td {
+  border-bottom: 1px solid color-mix(in srgb, var(--docs-table-border) 94%, transparent);
+  min-width: 0;
+  text-align: left;
+  vertical-align: top;
+  padding: 0.8rem 1rem;
+}
+.docs-table th + th,
+.docs-table td + td {
+  border-left: 1px solid color-mix(in srgb, var(--docs-table-border) 80%, transparent);
+}
+.docs-table th:first-child,
+.docs-table td:first-child {
+  padding-left: 1.25rem;
+}
+.docs-table th:last-child,
+.docs-table td:last-child {
+  padding-right: 1.25rem;
+}
+.docs-table tbody tr:last-child td {
+  border-bottom: none;
+}
+.docs-table :where(code) {
+  font-family: var(--docs-font-mono);
+  white-space: nowrap;
+  font-size: 0.85em;
+}
+.docs-table a {
+  font-weight: 500;
+  text-decoration: underline;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(44, 40, 38, 0.55);
+}
+@media (min-width: 768px) {
+  .docs-table th,
+  .docs-table td {
+    padding: 0.95rem 1.125rem;
+  }
+  .docs-table th:first-child,
+  .docs-table td:first-child {
+    padding-left: 1.4rem;
+  }
+  .docs-table th:last-child,
+  .docs-table td:last-child {
+    padding-right: 1.4rem;
+  }
+}
+
+/* ---------- §3.7 image / video frame ---------- */
+.docs-asset-frame {
+  display: flex;
+  justify-content: center;
+  margin-inline: auto;
+  width: fit-content;
+  max-width: min(100%, var(--docs-asset-max-width));
+  border: 1px solid rgba(234, 232, 230, 0.88);
+  border-radius: var(--docs-asset-frame-radius);
+  padding: var(--docs-asset-frame-padding);
+  overflow: hidden;
+  background: color-mix(in srgb, #fafaf9 86%, #fff);
+}
+.docs-asset-media {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: min(48vh, 24rem);
+  object-fit: contain;
+  margin-inline: auto;
+  border-radius: calc(var(--docs-asset-frame-radius) - var(--docs-asset-frame-padding));
+}
+
+/* Measured on live (changelog agent): the 56vh/30rem cap only applies from md up. */
+@media (min-width: 768px) {
+  .docs-asset-media {
+    max-height: min(56vh, 30rem);
+  }
+}
+
+/* ---------- §3.8 lite-youtube (lite-youtube-embed standard CSS) ---------- */
+lite-youtube {
+  background-color: #000;
+  position: relative;
+  display: block;
+  contain: content;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  max-width: 720px;
+  width: 100%;
+  overflow: hidden;
+  border-radius: 1rem;
+}
+lite-youtube::before {
+  content: attr(data-title);
+  display: block;
+  position: absolute;
+  top: 0;
+  background-image: linear-gradient(
+    180deg,
+    rgb(0 0 0 / 67%) 0%,
+    rgb(0 0 0 / 54%) 14%,
+    rgb(0 0 0 / 15%) 54%,
+    rgb(0 0 0 / 5%) 72%,
+    rgb(0 0 0 / 0%) 94%
+  );
+  height: 99px;
+  width: 100%;
+  font-family: 'YouTube Noto', Roboto, Arial, Helvetica, sans-serif;
+  color: hsl(0deg 0% 93.33%);
+  text-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  font-size: 18px;
+  padding: 25px 20px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  box-sizing: border-box;
+}
+lite-youtube::after {
+  content: '';
+  display: block;
+  padding-bottom: calc(100% / (16 / 9));
+}
+lite-youtube > iframe {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: 0;
+}
+lite-youtube > .lyt-playbtn {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background: no-repeat center/68px 48px;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 68 48"><path d="M66.52 7.74c-.78-2.93-2.49-5.41-5.42-6.19C55.79.13 34 0 34 0S12.21.13 6.9 1.55c-2.93.78-4.63 3.26-5.42 6.19C.06 13.05 0 24 0 24s.06 10.95 1.48 16.26c.78 2.93 2.49 5.41 5.42 6.19C12.21 47.87 34 48 34 48s21.79-.13 27.1-1.55c2.93-.78 4.64-3.26 5.42-6.19C67.94 34.95 68 24 68 24s-.06-10.95-1.48-16.26z" fill="red"/><path d="M45 24 27 14v20" fill="white"/></svg>');
+  position: absolute;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+  z-index: 1;
+  filter: grayscale(100%);
+  transition: filter 0.1s cubic-bezier(0, 0, 0.2, 1);
+  border: 0;
+}
+lite-youtube:hover > .lyt-playbtn,
+lite-youtube .lyt-playbtn:focus {
+  filter: none;
+}
+lite-youtube.lyt-activated {
+  cursor: unset;
+}
+lite-youtube.lyt-activated::before,
+lite-youtube.lyt-activated > .lyt-playbtn {
+  opacity: 0;
+  pointer-events: none;
+}
+.lyt-visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 1px;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+
+/* ---------- §3.10 keyboard shortcut ---------- */
+.docs-shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.24rem;
+  white-space: nowrap;
+  vertical-align: baseline;
+}
+.docs-shortcut-separator {
+  font-size: 0.8em;
+  color: #756f6c;
+}
+.docs-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 1.75em;
+  padding: 0.12rem 0.42rem;
+  border-radius: 6px;
+  border: 1px solid rgba(234, 232, 230, 0.92);
+  background: color-mix(in srgb, #fafaf9 88%, #fff);
+  box-shadow: inset 0 -1px 0 rgba(44, 40, 38, 0.14);
+  font-family: var(--docs-font-mono);
+  font-size: 0.78em;
+  line-height: 1.45;
+  font-weight: 600;
+  color: #2c2826;
+}
+
+/* Keyboard shortcuts cheatsheet trigger (computed values from recon/docs/raw/cap-reference_keyboard-shortcuts.json) */
+.keyboard-shortcuts-cheatsheet-overlay-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #413030;
+  font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.18em;
+  text-decoration-color: rgba(65, 48, 48, 0.55);
+  transition: opacity 0.2s;
+}
+.keyboard-shortcuts-cheatsheet-overlay-link:hover {
+  opacity: 0.8;
+}

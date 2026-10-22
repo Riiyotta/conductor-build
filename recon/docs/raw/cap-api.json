@@ -1,0 +1,91 @@
+{
+ "ApiKeyTester": {
+  "html": "<div class=\"not-prose my-6 rounded-lg border border-border/80 bg-muted/20 p-4\"><div class=\"flex flex-col gap-2 sm:flex-row\"><input type=\"password\" placeholder=\"Conductor API key\" autocomplete=\"off\" spellcheck=\"false\" class=\"h-9 min-w-0 flex-1 rounded-md border border-border bg-background px-3 font-mono text-sm text-foreground outline-none focus:border-ring\" aria-label=\"Conductor API key\" value=\"\"><button class=\"inline-flex items-center justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/35 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-foreground text-background hover:bg-foreground/90 font-medium px-3 py-4 text-sm gap-2 rounded-md h-9 shrink-0\" type=\"button\">Run test</button></div></div>",
+  "style": {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "16px",
+   "line-height": "28px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "background-color": "oklab(0.984819 -0.000328124 0.00128484 / 0.2)",
+   "border-top": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-right": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-bottom": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-left": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-radius": "8px",
+   "padding": "16px",
+   "margin": "24px 0px",
+   "display": "block",
+   "width": "655.078px",
+   "height": "70px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "tab-size": "4",
+   "rect": [
+    380,
+    763.8,
+    655.1,
+    70
+   ],
+   "tag": "div",
+   "cls": "not-prose my-6 rounded-lg border border-border/80 bg-muted/20 p-4",
+   "text": "Run test"
+  }
+ },
+ "ApiAgentPrompt": {
+  "html": "<figure dir=\"ltr\" tabindex=\"-1\" class=\"my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm\"><div class=\"empty:hidden absolute top-3 right-2 z-2 backdrop-blur-lg rounded-lg text-fd-muted-foreground\"><button type=\"button\" class=\"inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring p-1 [&amp;_svg]:size-4 hover:text-fd-accent-foreground data-checked:text-fd-accent-foreground\" aria-label=\"Copy Text\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clipboard\" aria-hidden=\"true\"><rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"></rect><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"></path></svg></button></div><div role=\"region\" tabindex=\"0\" class=\"text-[0.8125rem] py-3.5 overflow-auto max-h-[600px] fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring\" style=\"--padding-right:calc(var(--spacing) * 8)\"><pre class=\"min-w-full w-max *:flex *:flex-col m-0 px-4\"><code>Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \"Authorization: Bearer &lt;your API key&gt;\". If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes.\n\nFrom now on, when I send you a coding task for one of my repositories:\n\n1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns.\n2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request.\n3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;. The status reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" before treating \"idle\" as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message.\n4. When it settles, message me a short summary of what was done, the PR link, and the workspace's deepLink.\n\nWhen I ask what my agents are up to, query POST /v0/sql (read-only, over the view session_transcripts_view) for workspaces with recent transcript activity and summarize each one.\n\nConfirm you have saved this role and are ready for the first task.</code></pre></div></figure>",
+  "style": {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "14px",
+   "line-height": "20px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "background-color": "rgb(255, 255, 255)",
+   "border-top": "1px solid rgb(234, 232, 230)",
+   "border-right": "1px solid rgb(234, 232, 230)",
+   "border-bottom": "1px solid rgb(234, 232, 230)",
+   "border-left": "1px solid rgb(234, 232, 230)",
+   "border-radius": "12px",
+   "margin": "16px 0px",
+   "display": "block",
+   "width": "655.078px",
+   "height": "252.75px",
+   "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "position": "relative",
+   "overflow-x": "hidden",
+   "overflow-y": "hidden",
+   "tab-size": "4",
+   "rect": [
+    380,
+    1305.8,
+    655.1,
+    252.8
+   ],
+   "tag": "figure",
+   "cls": "my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm",
+   "text": "Add a new role to your memory: you are my Conducto"
+  }
+ },
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/api",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  },
+  {
+   "url": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+   "status": 200,
+   "type": "image",
+   "ct": "image/png"
+  }
+ ]
+}

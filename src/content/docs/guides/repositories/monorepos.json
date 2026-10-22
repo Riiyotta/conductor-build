@@ -1,0 +1,320 @@
+{
+  "slug": "guides/repositories/monorepos",
+  "url": "/docs/guides/repositories/monorepos",
+  "title": "Work in monorepos",
+  "description": "Control which directories agents can see in a monorepo workspace",
+  "meta": {
+    "title": "Work in monorepos | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/repositories/monorepos/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Repository"
+    },
+    {
+      "name": "Work in monorepos"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#adding-a-monorepo",
+      "title": "Adding a monorepo"
+    },
+    {
+      "depth": 2,
+      "url": "#working-with-specific-directories",
+      "title": "Working with specific directories"
+    },
+    {
+      "depth": 2,
+      "url": "#running-microservices-at-once",
+      "title": "Running microservices at once"
+    },
+    {
+      "depth": 2,
+      "url": "#using-git-submodules",
+      "title": "Using Git Submodules"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/migrate-from-cursor",
+    "title": "Work with Cursor",
+    "description": "Run Cursor sessions in Conductor, open workspaces in Cursor or VS Code, and bring Cursor MCP servers and rules into Conductor"
+  },
+  "next": {
+    "url": "/docs/guides/repositories/linking-multiple-directories",
+    "title": "Linking multiple directories",
+    "description": "Let one workspace read and edit code across related repositories"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor supports monorepos out of the box."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "adding-a-monorepo",
+      "children": [
+        {
+          "type": "text",
+          "value": "Adding a monorepo"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Adding a monorepo to Conductor is the same as "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/first-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "adding any other repository"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you add a monorepo to Conductor, workspaces are created at the repository's root level. That means agents have access to all packages and services in your monorepo by default."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "working-with-specific-directories",
+      "children": [
+        {
+          "type": "text",
+          "value": "Working with specific directories"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Frequently, you might want your agents to only work on a few directories in your monorepo. If you have multiple directories with similar file names, agents can get confused when grep'ing or glob'ing."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you create a workspace for your monorepo, you can select which working directories will be visible in the workspace."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/select-working-directories.png",
+      "alt": "Dialog for choosing which monorepo directories are visible in a Conductor workspace"
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Any directories not selected will be hidden in the workspace using "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git sparse checkout"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " ("
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://git-scm.com/docs/git-sparse-checkout",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git sparse checkout docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ")."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also add or remove directories from the workspace at any time by clicking \"Select working directories\" in the git panel."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "running-microservices-at-once",
+      "children": [
+        {
+          "type": "text",
+          "value": "Running microservices at once"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To run microservices at once in a workspace, create an "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "action"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " that launches "
+        },
+        {
+          "type": "element",
+          "tag": "em",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "all"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " of the services you need."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "using-git-submodules",
+      "children": [
+        {
+          "type": "text",
+          "value": "Using Git Submodules"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your monorepo uses git submodules, we recommend putting "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git submodule update --init --recursive"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in your\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". This will automatically initialize and clone all submodules on workspace creation."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor supports monorepos out of the box.</p><h2 id=\"adding-a-monorepo\"><a href=\"#adding-a-monorepo\">Adding a monorepo</a></h2><p>Adding a monorepo to Conductor is the same as <a href=\"/docs/first-workspace\">adding any other repository</a>.</p><p>When you add a monorepo to Conductor, workspaces are created at the repository's root level. That means agents have access to all packages and services in your monorepo by default.</p><h2 id=\"working-with-specific-directories\"><a href=\"#working-with-specific-directories\">Working with specific directories</a></h2><p>Frequently, you might want your agents to only work on a few directories in your monorepo. If you have multiple directories with similar file names, agents can get confused when grep'ing or glob'ing.</p><p>When you create a workspace for your monorepo, you can select which working directories will be visible in the workspace.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/select-working-directories.png\" alt=\"Dialog for choosing which monorepo directories are visible in a Conductor workspace\" /></figure><p>Any directories not selected will be hidden in the workspace using <code>git sparse checkout</code> (<a href=\"https://git-scm.com/docs/git-sparse-checkout\" target=\"_blank\" rel=\"noopener noreferrer\">Git sparse checkout docs</a>).</p><p>You can also add or remove directories from the workspace at any time by clicking \"Select working directories\" in the git panel.</p><h2 id=\"running-microservices-at-once\"><a href=\"#running-microservices-at-once\">Running microservices at once</a></h2><p>To run microservices at once in a workspace, create an <a href=\"/docs/reference/scripts#run-scripts\">action</a> that launches <em>all</em> of the services you need.</p><h2 id=\"using-git-submodules\"><a href=\"#using-git-submodules\">Using Git Submodules</a></h2><p>If your monorepo uses git submodules, we recommend putting <code>git submodule update --init --recursive</code> in your\n<a href=\"/docs/reference/scripts\">setup script</a>. This will automatically initialize and clone all submodules on workspace creation.</p>",
+  "text": "Conductor supports monorepos out of the box.\nAdding a monorepo\nAdding a monorepo to Conductor is the same as adding any other repository.\nWhen you add a monorepo to Conductor, workspaces are created at the repository's root level. That means agents have access to all packages and services in your monorepo by default.\nWorking with specific directories\nFrequently, you might want your agents to only work on a few directories in your monorepo. If you have multiple directories with similar file names, agents can get confused when grep'ing or glob'ing.\nWhen you create a workspace for your monorepo, you can select which working directories will be visible in the workspace.\nAny directories not selected will be hidden in the workspace using git sparse checkout (Git sparse checkout docs).\nYou can also add or remove directories from the workspace at any time by clicking \"Select working directories\" in the git panel.\nRunning microservices at once\nTo run microservices at once in a workspace, create an action that launches all of the services you need.\nUsing Git Submodules\nIf your monorepo uses git submodules, we recommend putting git submodule update --init --recursive in your\nsetup script. This will automatically initialize and clone all submodules on workspace creation.",
+  "markdown": "\n# Work in monorepos\n\n\n\nConductor supports monorepos out of the box.\n\n## Adding a monorepo [#adding-a-monorepo]\n\nAdding a monorepo to Conductor is the same as [adding any other repository](/docs/first-workspace).\n\nWhen you add a monorepo to Conductor, workspaces are created at the repository's root level. That means agents have access to all packages and services in your monorepo by default.\n\n## Working with specific directories [#working-with-specific-directories]\n\nFrequently, you might want your agents to only work on a few directories in your monorepo. If you have multiple directories with similar file names, agents can get confused when grep'ing or glob'ing.\n\nWhen you create a workspace for your monorepo, you can select which working directories will be visible in the workspace.\n\n\n\n\nAny directories not selected will be hidden in the workspace using `git sparse checkout` ([Git sparse checkout docs](https://git-scm.com/docs/git-sparse-checkout)).\n\nYou can also add or remove directories from the workspace at any time by clicking \"Select working directories\" in the git panel.\n\n## Running microservices at once [#running-microservices-at-once]\n\nTo run microservices at once in a workspace, create an [action](/docs/reference/scripts#run-scripts) that launches *all* of the services you need.\n\n## Using Git Submodules [#using-git-submodules]\n\nIf your monorepo uses git submodules, we recommend putting `git submodule update --init --recursive` in your\n[setup script](/docs/reference/scripts). This will automatically initialize and clone all submodules on workspace creation.\n"
+}

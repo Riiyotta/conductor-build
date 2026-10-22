@@ -1,0 +1,416 @@
+{
+  "slug": "index",
+  "url": "/docs",
+  "title": "Introduction",
+  "description": "Learn what Conductor is and where to start in the docs",
+  "meta": {
+    "title": "Introduction | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Get Started"
+    },
+    {
+      "name": "Introduction"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#get-started",
+      "title": "Get started"
+    },
+    {
+      "depth": 2,
+      "url": "#talk-to-us",
+      "title": "Talk to us"
+    },
+    {
+      "depth": 2,
+      "url": "#learn-more",
+      "title": "Learn more"
+    }
+  ],
+  "tocStyle": "clerk",
+  "next": {
+    "url": "/docs/installation",
+    "title": "Install",
+    "description": "Get Conductor running on your Mac"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor lets you run Claude Code, Codex, Cursor, and OpenCode in parallel."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each task gets its own workspace, branch, files, terminal, diff, and review path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When the work is ready, Conductor helps you review the diff, open a pull request, merge, and archive the workspace."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "VsWWy2kVpa8",
+      "title": "Introducing Conductor",
+      "thumbnail": "/assets/docs/youtube/VsWWy2kVpa8-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "get-started",
+      "children": [
+        {
+          "type": "text",
+          "value": "Get started"
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "columns": 2,
+      "children": [
+        {
+          "type": "card",
+          "title": "Download",
+          "href": "/docs/installation",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 15V3\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><path d=\"m7 10 5 5 5-5\"></path></svg>",
+          "trailingIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Get Conductor running on your Mac."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Your first workspace",
+          "href": "/docs/first-workspace",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path></svg>",
+          "trailingIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create an isolated workspace and start agent work."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "talk-to-us",
+      "children": [
+        {
+          "type": "text",
+          "value": "Talk to us"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Join the Conductor community and get support from the team."
+        }
+      ]
+    },
+    {
+      "type": "cards",
+      "columns": 3,
+      "children": [
+        {
+          "type": "card",
+          "title": "Message our team",
+          "href": "mailto:support@conductor.build",
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\"></path><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"></rect></svg>",
+          "trailingIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Send issues, ideas, and feedback to "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "mailto:support@conductor.build"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "support@conductor.build"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Discord",
+          "href": "https://discord.gg/RSrYmstWzy",
+          "external": true,
+          "icon": "<svg aria-hidden=\"true\" fill=\"currentColor\" viewBox=\"0 0 24 24\"><path d=\"M20.32 4.37A19.8 19.8 0 0 0 15.36 2.8a13.8 13.8 0 0 0-.64 1.34 18.34 18.34 0 0 0-5.44 0 13.8 13.8 0 0 0-.65-1.34 19.74 19.74 0 0 0-4.95 1.57C.55 9.08-.29 13.68.14 18.22a19.9 19.9 0 0 0 6.08 3.07 14.7 14.7 0 0 0 1.3-2.11 12.92 12.92 0 0 1-2.05-.98l.5-.39a14.2 14.2 0 0 0 12.08 0c.16.14.33.27.5.39-.65.39-1.34.72-2.06.98.37.74.8 1.45 1.3 2.1a19.86 19.86 0 0 0 6.08-3.06c.5-5.26-.83-9.82-3.55-13.85ZM8.02 15.43c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.94-2.4 2.14-2.4 1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Zm7.96 0c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.94-2.4 2.14-2.4 1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Z\"></path></svg>",
+          "trailingIcon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Join the Conductor Discord for community support and discussion."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "card",
+          "title": "Reddit community",
+          "href": "https://www.reddit.com/r/conductorbuild/",
+          "external": true,
+          "icon": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg>",
+          "iconText": "r",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Join the discussion on r/conductorbuild"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "learn-more",
+      "children": [
+        {
+          "type": "text",
+          "value": "Learn more"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Start with the workflow, then use the reference pages when you need exact behavior:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/concepts/workspaces-and-branches"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Isolated workspaces"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/concepts/workflow"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Workflow"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/concepts/parallel-agents"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Parallel agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/diff-viewer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Diff viewer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/checks"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Checks"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/concepts/agent-modes"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agent modes"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/api"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor API"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor lets you run Claude Code, Codex, Cursor, and OpenCode in parallel.</p><p>Each task gets its own workspace, branch, files, terminal, diff, and review path.</p><p>When the work is ready, Conductor helps you review the diff, open a pull request, merge, and archive the workspace.</p><div data-youtube=\"VsWWy2kVpa8\" data-title=\"Introducing Conductor\" data-thumbnail=\"/assets/docs/youtube/VsWWy2kVpa8-sddefault.webp\"></div><h2 id=\"get-started\"><a href=\"#get-started\">Get started</a></h2><div data-cards=\"2\"><article data-card><a href=\"/docs/installation\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M12 15V3\"></path><path d=\"M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4\"></path><path d=\"m7 10 5 5 5-5\"></path></svg><span>Download</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a><p>Get Conductor running on your Mac.</p></article><article data-card><a href=\"/docs/first-workspace\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719\"></path></svg><span>Your first workspace</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a><p>Create an isolated workspace and start agent work.</p></article></div><h2 id=\"talk-to-us\"><a href=\"#talk-to-us\">Talk to us</a></h2><p>Join the Conductor community and get support from the team.</p><div data-cards=\"3\"><article data-card><a href=\"mailto:support@conductor.build\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7\"></path><rect x=\"2\" y=\"4\" width=\"20\" height=\"16\" rx=\"2\"></rect></svg><span>Message our team</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a><p>Send issues, ideas, and feedback to <a href=\"mailto:support@conductor.build\">support@conductor.build</a></p></article><article data-card><a href=\"https://discord.gg/RSrYmstWzy\"><svg aria-hidden=\"true\" fill=\"currentColor\" viewBox=\"0 0 24 24\"><path d=\"M20.32 4.37A19.8 19.8 0 0 0 15.36 2.8a13.8 13.8 0 0 0-.64 1.34 18.34 18.34 0 0 0-5.44 0 13.8 13.8 0 0 0-.65-1.34 19.74 19.74 0 0 0-4.95 1.57C.55 9.08-.29 13.68.14 18.22a19.9 19.9 0 0 0 6.08 3.07 14.7 14.7 0 0 0 1.3-2.11 12.92 12.92 0 0 1-2.05-.98l.5-.39a14.2 14.2 0 0 0 12.08 0c.16.14.33.27.5.39-.65.39-1.34.72-2.06.98.37.74.8 1.45 1.3 2.1a19.86 19.86 0 0 0 6.08-3.06c.5-5.26-.83-9.82-3.55-13.85ZM8.02 15.43c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.94-2.4 2.14-2.4 1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Zm7.96 0c-1.18 0-2.14-1.08-2.14-2.4 0-1.33.94-2.4 2.14-2.4 1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Z\"></path></svg><span>Discord</span><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a><p>Join the Conductor Discord for community support and discussion.</p></article><article data-card><a href=\"https://www.reddit.com/r/conductorbuild/\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg><span>Reddit community</span></a><p>Join the discussion on r/conductorbuild</p></article></div><h2 id=\"learn-more\"><a href=\"#learn-more\">Learn more</a></h2><p>Start with the workflow, then use the reference pages when you need exact behavior:</p><ul><li><a href=\"/docs/concepts/workspaces-and-branches\">Isolated workspaces</a></li><li><a href=\"/docs/concepts/workflow\">Workflow</a></li><li><a href=\"/docs/concepts/parallel-agents\">Parallel agents</a></li><li><a href=\"/docs/reference/diff-viewer\">Diff viewer</a></li><li><a href=\"/docs/reference/checks\">Checks</a></li><li><a href=\"/docs/concepts/agent-modes\">Agent modes</a></li><li><a href=\"/docs/api\">Conductor API</a></li></ul>",
+  "text": "Conductor lets you run Claude Code, Codex, Cursor, and OpenCode in parallel.\nEach task gets its own workspace, branch, files, terminal, diff, and review path.\nWhen the work is ready, Conductor helps you review the diff, open a pull request, merge, and archive the workspace.\nGet started\nDownloadGet Conductor running on your Mac.\nYour first workspaceCreate an isolated workspace and start agent work.\nTalk to us\nJoin the Conductor community and get support from the team.\nMessage our teamSend issues, ideas, and feedback to support@conductor.build\nDiscordJoin the Conductor Discord for community support and discussion.\nReddit communityJoin the discussion on r/conductorbuild\nLearn more\nStart with the workflow, then use the reference pages when you need exact behavior:\nIsolated workspaces\nWorkflow\nParallel agents\nDiff viewer\nChecks\nAgent modes\nConductor API",
+  "markdown": "\n# Introduction\n\n\n\nConductor lets you run Claude Code, Codex, Cursor, and OpenCode in parallel.\n\nEach task gets its own workspace, branch, files, terminal, diff, and review path.\n\nWhen the work is ready, Conductor helps you review the diff, open a pull request, merge, and archive the workspace.\n\n\n\n\n## Get started [#get-started]\n\nGet Conductor running on your Mac.\n\nCreate an isolated workspace and start agent work.\n\n## Talk to us [#talk-to-us]\n\nJoin the Conductor community and get support from the team.\n\nSend issues, ideas, and feedback to [support@conductor.build](mailto:support@conductor.build)\n\nJoin the Conductor Discord for community support and discussion.\n\nJoin the discussion on r/conductorbuild\n\n## Learn more [#learn-more]\n\nStart with the workflow, then use the reference pages when you need exact behavior:\n\n* [Isolated workspaces](/docs/concepts/workspaces-and-branches)\n* [Workflow](/docs/concepts/workflow)\n* [Parallel agents](/docs/concepts/parallel-agents)\n* [Diff viewer](/docs/reference/diff-viewer)\n* [Checks](/docs/reference/checks)\n* [Agent modes](/docs/concepts/agent-modes)\n* [Conductor API](/docs/api)\n"
+}

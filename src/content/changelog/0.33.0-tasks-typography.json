@@ -1,0 +1,23 @@
+{
+  "slug": "0.33.0-tasks-typography",
+  "version": "0.33.0",
+  "versionSlug": "0.33.0",
+  "title": "Tasks & Typography",
+  "fullTitle": "0.33.0: Tasks & Typography",
+  "date": "Jan 27th, 2026",
+  "dateISO": "2026-01-27",
+  "description": "Conductor 0.33.0 changelog - Tasks & Typography",
+  "summary": "Conductor now supports tasks, a way for Claude to organize its work better and complete longer projects.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.33.0/1769542581206-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.33.0-tasks-typography/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.0-tasks-typography",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.0-tasks-typography",
+  "headings": [],
+  "html": "<p>Conductor now supports tasks, a way for Claude to organize its work better and complete longer projects.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.0/1769542581206-image.png\"/></figure></p>\n<p>We’ve also revamped our typography scale to make chats more readable. We’ve fixed vertical spacing, heading size, table proportions, and more. Here’s the before and after:\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.0/1769542581588-image.png\"/></figure></p>\n<p>We also now support multi-select questions from Claude:\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.0/1769542582144-image.png\"/></figure></p>\n<p>We now show a detailed breakdown of context usage when you hover over the context dial\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.0/1769542582282-image.png\"/></figure></p>\n<p>Fixes</p>\n<ul>\n<li>Disable autocorrect/spellcheck in Claude’s questions input field</li>\n<li>Changed add repository shortcut to ⌘⌥A to avoid a conflict with archiving shortcut (⌘⇧A)</li>\n<li>Fixed bug with cancellation in Codex</li>\n<li>Fixed attachments not being sent with slash commands</li>\n</ul>",
+  "markdown": "\nConductor now supports tasks, a way for Claude to organize its work better and complete longer projects.\n![image](/assets/changelog/media/0.33.0/1769542581206-image.png)\n\nWe’ve also revamped our typography scale to make chats more readable. We’ve fixed vertical spacing, heading size, table proportions, and more. Here’s the before and after:\n![image](/assets/changelog/media/0.33.0/1769542581588-image.png)\n\nWe also now support multi-select questions from Claude:\n![image](/assets/changelog/media/0.33.0/1769542582144-image.png)\n\nWe now show a detailed breakdown of context usage when you hover over the context dial\n![image](/assets/changelog/media/0.33.0/1769542582282-image.png)\n\nFixes\n\n- Disable autocorrect/spellcheck in Claude’s questions input field\n- Changed add repository shortcut to ⌘⌥A to avoid a conflict with archiving shortcut (⌘⇧A)\n- Fixed bug with cancellation in Codex\n- Fixed attachments not being sent with slash commands\n"
+}

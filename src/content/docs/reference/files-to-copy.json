@@ -1,0 +1,2129 @@
+{
+  "slug": "reference/files-to-copy",
+  "url": "/docs/reference/files-to-copy",
+  "title": "Files to copy",
+  "description": "Configure gitignored files that Conductor copies into new workspaces",
+  "meta": {
+    "title": "Files to copy | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/files-to-copy/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Files to copy"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#configure-files-to-copy",
+      "title": "Configure Files to copy"
+    },
+    {
+      "depth": 2,
+      "url": "#what-gets-copied",
+      "title": "What gets copied"
+    },
+    {
+      "depth": 2,
+      "url": "#resolution-order",
+      "title": "Resolution order"
+    },
+    {
+      "depth": 2,
+      "url": "#pattern-format",
+      "title": "Pattern format"
+    },
+    {
+      "depth": 2,
+      "url": "#examples",
+      "title": "Examples"
+    },
+    {
+      "depth": 2,
+      "url": "#related-pages",
+      "title": "Related pages"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/scripts",
+    "title": "Project scripts",
+    "description": "Reference for setup scripts, archive scripts, and actions"
+  },
+  "next": {
+    "url": "/docs/reference/worktreeinclude",
+    "title": ".worktreeinclude",
+    "description": "Next Page"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "New git worktrees start with tracked files only. That keeps workspaces clean, but it also means untracked files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", local service credentials, and machine-specific config do not appear in new Conductor workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Files to copy solves that problem by copying selected gitignored files from your main checkout into each new local workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For setup steps, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/use-files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Use Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the underlying worktree model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/git-worktrees"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git worktrees for coding agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "configure-files-to-copy",
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure Files to copy"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can configure Files to copy in Conductor or in a settings file:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the app, open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/repos?section=misc&scrollTo=file_include_globs",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", select the project, and edit Files to copy."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the repository, add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "file_include_globs"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the same patterns should be shared with teammates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this repository configuration when every new workspace should receive the same gitignored files:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\ncerts/local/**\n\"\"\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "file_include_globs = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": ".env.local",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "config/local.json",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "certs/local/**",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when every teammate should copy the same gitignored local files into new workspaces. For settings file locations and precedence, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also configure shared patterns with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": ".env.local\nconfig/local.json\ncerts/local/**",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": ".env.local"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "config/local.json"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "certs/local/**"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when your project already uses worktree tools that read that file, or when you want a small pattern-only project file. If both "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "file_include_globs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " exist, "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " wins."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "Uz6TfQWFdIg",
+      "title": "Automatically copy files in your worktrees",
+      "thumbnail": "/assets/docs/youtube/Uz6TfQWFdIg-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-gets-copied",
+      "children": [
+        {
+          "type": "text",
+          "value": "What gets copied"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Git worktrees do not copy untracked files from your main checkout. That includes:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Gitignored environment files such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env.local"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env.development.local"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", and "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env.test.local"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local config files such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "config/local.json"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "settings.local.json"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "*.local"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Credentials and tokens such as service account JSON files, API key files, and local certificate files."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local database files, seed data, or fixture files that are intentionally ignored by Git."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Dependency folders, cache directories, and generated build output such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "node_modules"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".next"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "dist"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "target"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor copies a gitignored file into a new local workspace when both of these are true:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The file is gitignored."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The file matches a Files to copy or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".worktreeinclude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " pattern."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Tracked files are already present in the new worktree, so Conductor does not copy them. Untracked files that are not gitignored are not eligible for Files to copy. Generated files, dependency folders, and files that need commands to create them usually belong in a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead."
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Why not copy dependency folders or build output?",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Dependency folders and build output are usually large, machine-specific, and easy to regenerate. Copying "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "node_modules"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".next"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "dist"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "target"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", or similar directories can make workspace creation slower and can carry stale state into a fresh workspace."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use a "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts#setup-scripts"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "setup script"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " when a workspace should install dependencies, generate build output, or prepare local state with commands."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Why not copy untracked files that are not gitignored?",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy only selects files that Git already ignores. That keeps the feature focused on local files that intentionally stay out of version control, such as secrets and machine-specific config."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If a file should be copied into every workspace but should not be committed, add it to "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".gitignore"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", then add a matching Files to copy or "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " pattern."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Files to copy currently runs for local Mac workspaces."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "resolution-order",
+      "children": [
+        {
+          "type": "text",
+          "value": "Resolution order"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The patterns used for a given repo come from the first source that exists:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " at the repo root. If present, the file's contents win and the settings UI shows a read-only preview."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Repo settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " ("
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/repos?section=misc&scrollTo=file_include_globs",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "{repo name}"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Files to copy"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "), stored as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "file_include_globs"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " in repository settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Default pattern"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env*"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For project-shared patterns, commit a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file at the repo root or set "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "file_include_globs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " wins when both exist."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you add "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or repo settings, those patterns replace the default "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env*"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " pattern. Include "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env*"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " yourself when you still want Conductor to copy environment files."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "pattern-format",
+      "children": [
+        {
+          "type": "text",
+          "value": "Pattern format"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " uses "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://git-scm.com/docs/gitignore",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".gitignore"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " syntax"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Anthropic documents the same behavior for "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Common pattern rules:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Blank lines are ignored."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "#"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " starts a comment. Escape it as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "\\#"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the pattern itself starts with "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "#"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "!"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " negates a previous match. Escape it as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "\\!"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the pattern itself starts with "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "!"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A trailing "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "/"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches a directory only."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A leading "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "/"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " anchors the pattern to the repo root."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A slash in the middle of a pattern makes the pattern relative to the repo root."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "*"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches anything except "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "/"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "?"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches one character except "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "/"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Character ranges such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "[0-9]"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " match one character in the range."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "**/name"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "name"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " at any depth."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "directory/**"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches everything inside "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "directory"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " at any depth."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a/**/b"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " matches "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a/b"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a/x/b"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "a/x/y/b"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", and deeper nested paths."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "examples",
+      "children": [
+        {
+          "type": "text",
+          "value": "Examples"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy common environment files:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": ".env\n.env.*",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": ".env"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": ".env.*"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy a root-only local file without copying files with the same name in packages:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "/config/local.json",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "/config/local.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy nested secrets config files:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "**/secrets.local.json\nconfig/**/local.json",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "**/secrets.local.json"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "config/**/local.json"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy a directory of ignored local data, except examples:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": ".local-secrets/**\n!.local-secrets/**/*.example",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": ".local-secrets/**"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "!.local-secrets/**/*.example"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "related-pages",
+      "children": [
+        {
+          "type": "text",
+          "value": "Related pages"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/guides/use-files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use Files to copy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for a guided setup flow."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/worktreeinclude"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for the shared project file format."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/concepts/git-worktrees"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Git worktrees for coding agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for the underlying worktree model."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Run Claude Code with Git worktrees"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/guides/git-worktrees/run-codex-with-git-worktrees"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Run Codex with Git worktrees"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for agent-specific worktree workflows."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>New git worktrees start with tracked files only. That keeps workspaces clean, but it also means untracked files such as <code>.env.local</code>, local service credentials, and machine-specific config do not appear in new Conductor workspaces.</p><p>Files to copy solves that problem by copying selected gitignored files from your main checkout into each new local workspace.</p><p>For setup steps, see <a href=\"/docs/guides/use-files-to-copy\">Use Files to copy</a>. For the underlying worktree model, see <a href=\"/docs/concepts/git-worktrees\">Git worktrees for coding agents</a>.</p><h2 id=\"configure-files-to-copy\"><a href=\"#configure-files-to-copy\">Configure Files to copy</a></h2><p>You can configure Files to copy in Conductor or in a settings file:</p><ul><li>In the app, open <a href=\"https://app.conductor.build/settings/repos?section=misc&amp;scrollTo=file_include_globs\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a>, select the project, and edit Files to copy.</li><li>In the repository, add <code>file_include_globs</code> to <code>.conductor/settings.toml</code> when the same patterns should be shared with teammates.</li></ul><p>Use this repository configuration when every new workspace should receive the same gitignored files:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">file_include_globs = </span><span style=\"color:#032F62\">\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">.env.local</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">config/local.json</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">certs/local/**</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">\"\"\"</span></span></code></pre></figure><p>Commit <code>.conductor/settings.toml</code> when every teammate should copy the same gitignored local files into new workspaces. For settings file locations and precedence, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>.</p><p>You can also configure shared patterns with <code>.worktreeinclude</code> at the repository root:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.env.local</span>\n<span class=\"line\">config/local.json</span>\n<span class=\"line\">certs/local/**</span></code></pre></figure><p>Use <code>.worktreeinclude</code> when your project already uses worktree tools that read that file, or when you want a small pattern-only project file. If both <code>.worktreeinclude</code> and <code>file_include_globs</code> exist, <code>.worktreeinclude</code> wins.</p><div data-youtube=\"Uz6TfQWFdIg\" data-title=\"Automatically copy files in your worktrees\" data-thumbnail=\"/assets/docs/youtube/Uz6TfQWFdIg-sddefault.webp\"></div><h2 id=\"what-gets-copied\"><a href=\"#what-gets-copied\">What gets copied</a></h2><p>Git worktrees do not copy untracked files from your main checkout. That includes:</p><ul><li>Gitignored environment files such as <code>.env.local</code>, <code>.env.development.local</code>, and <code>.env.test.local</code>.</li><li>Local config files such as <code>config/local.json</code>, <code>settings.local.json</code>, or <code>*.local</code>.</li><li>Credentials and tokens such as service account JSON files, API key files, and local certificate files.</li><li>Local database files, seed data, or fixture files that are intentionally ignored by Git.</li><li>Dependency folders, cache directories, and generated build output such as <code>node_modules</code>, <code>.next</code>, <code>dist</code>, or <code>target</code>.</li></ul><p>Conductor copies a gitignored file into a new local workspace when both of these are true:</p><ol><li>The file is gitignored.</li><li>The file matches a Files to copy or <code>.worktreeinclude</code> pattern.</li></ol><p>Tracked files are already present in the new worktree, so Conductor does not copy them. Untracked files that are not gitignored are not eligible for Files to copy. Generated files, dependency folders, and files that need commands to create them usually belong in a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> instead.</p><div data-accordions=\"single\"><details data-accordion><summary>Why not copy dependency folders or build output?</summary><p>Dependency folders and build output are usually large, machine-specific, and easy to regenerate. Copying <code>node_modules</code>, <code>.next</code>, <code>dist</code>, <code>target</code>, or similar directories can make workspace creation slower and can carry stale state into a fresh workspace.</p><p>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> when a workspace should install dependencies, generate build output, or prepare local state with commands.</p></details><details data-accordion><summary>Why not copy untracked files that are not gitignored?</summary><p>Files to copy only selects files that Git already ignores. That keeps the feature focused on local files that intentionally stay out of version control, such as secrets and machine-specific config.</p><p>If a file should be copied into every workspace but should not be committed, add it to <code>.gitignore</code>, then add a matching Files to copy or <code>.worktreeinclude</code> pattern.</p></details></div><p>Files to copy currently runs for local Mac workspaces.</p><h2 id=\"resolution-order\"><a href=\"#resolution-order\">Resolution order</a></h2><p>The patterns used for a given repo come from the first source that exists:</p><ol><li><strong><code>.worktreeinclude</code></strong> at the repo root. If present, the file's contents win and the settings UI shows a read-only preview.</li><li><strong>Repo settings</strong> (<a href=\"https://app.conductor.build/settings/repos?section=misc&amp;scrollTo=file_include_globs\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>{repo name}</code> -&gt; <code>Files to copy</code></a>), stored as <code>file_include_globs</code> in repository settings.</li><li><strong>Default pattern</strong> <code>.env*</code>.</li></ol><p>For project-shared patterns, commit a <code>.worktreeinclude</code> file at the repo root or set <code>file_include_globs</code> in <code>.conductor/settings.toml</code>. <code>.worktreeinclude</code> wins when both exist.</p><p>If you add <code>.worktreeinclude</code> or repo settings, those patterns replace the default <code>.env*</code> pattern. Include <code>.env*</code> yourself when you still want Conductor to copy environment files.</p><h2 id=\"pattern-format\"><a href=\"#pattern-format\">Pattern format</a></h2><p><code>.worktreeinclude</code> uses <a href=\"https://git-scm.com/docs/gitignore\" target=\"_blank\" rel=\"noopener noreferrer\"><code>.gitignore</code> syntax</a>. Anthropic documents the same behavior for <a href=\"https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code worktrees</a>.</p><p>Common pattern rules:</p><ul><li>Blank lines are ignored.</li><li><code>#</code> starts a comment. Escape it as <code>\\#</code> when the pattern itself starts with <code>#</code>.</li><li><code>!</code> negates a previous match. Escape it as <code>\\!</code> when the pattern itself starts with <code>!</code>.</li><li>A trailing <code>/</code> matches a directory only.</li><li>A leading <code>/</code> anchors the pattern to the repo root.</li><li>A slash in the middle of a pattern makes the pattern relative to the repo root.</li><li><code>*</code> matches anything except <code>/</code>.</li><li><code>?</code> matches one character except <code>/</code>.</li><li>Character ranges such as <code>[0-9]</code> match one character in the range.</li><li><code>**/name</code> matches <code>name</code> at any depth.</li><li><code>directory/**</code> matches everything inside <code>directory</code> at any depth.</li><li><code>a/**/b</code> matches <code>a/b</code>, <code>a/x/b</code>, <code>a/x/y/b</code>, and deeper nested paths.</li></ul><h2 id=\"examples\"><a href=\"#examples\">Examples</a></h2><p>Copy common environment files:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.env</span>\n<span class=\"line\">.env.*</span></code></pre></figure><p>Copy a root-only local file without copying files with the same name in packages:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">/config/local.json</span></code></pre></figure><p>Copy nested secrets config files:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">**/secrets.local.json</span>\n<span class=\"line\">config/**/local.json</span></code></pre></figure><p>Copy a directory of ignored local data, except examples:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.local-secrets/**</span>\n<span class=\"line\">!.local-secrets/**/*.example</span></code></pre></figure><h2 id=\"related-pages\"><a href=\"#related-pages\">Related pages</a></h2><ul><li><a href=\"/docs/guides/use-files-to-copy\">Use Files to copy</a> for a guided setup flow.</li><li><a href=\"/docs/reference/worktreeinclude\"><code>.worktreeinclude</code></a> for the shared project file format.</li><li><a href=\"/docs/concepts/git-worktrees\">Git worktrees for coding agents</a> for the underlying worktree model.</li><li><a href=\"/docs/guides/git-worktrees/run-claude-code-with-git-worktrees\">Run Claude Code with Git worktrees</a> and <a href=\"/docs/guides/git-worktrees/run-codex-with-git-worktrees\">Run Codex with Git worktrees</a> for agent-specific worktree workflows.</li></ul>",
+  "text": "New git worktrees start with tracked files only. That keeps workspaces clean, but it also means untracked files such as .env.local, local service credentials, and machine-specific config do not appear in new Conductor workspaces.\nFiles to copy solves that problem by copying selected gitignored files from your main checkout into each new local workspace.\nFor setup steps, see Use Files to copy. For the underlying worktree model, see Git worktrees for coding agents.\nConfigure Files to copy\nYou can configure Files to copy in Conductor or in a settings file:\nIn the app, open Settings, select the project, and edit Files to copy.\nIn the repository, add file_include_globs to .conductor/settings.toml when the same patterns should be shared with teammates.\nUse this repository configuration when every new workspace should receive the same gitignored files:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\ncerts/local/**\n\"\"\"Commit .conductor/settings.toml when every teammate should copy the same gitignored local files into new workspaces. For settings file locations and precedence, see User and project settings.\nYou can also configure shared patterns with .worktreeinclude at the repository root:\n.env.local\nconfig/local.json\ncerts/local/**Use .worktreeinclude when your project already uses worktree tools that read that file, or when you want a small pattern-only project file. If both .worktreeinclude and file_include_globs exist, .worktreeinclude wins.\nWhat gets copied\nGit worktrees do not copy untracked files from your main checkout. That includes:\nGitignored environment files such as .env.local, .env.development.local, and .env.test.local.\nLocal config files such as config/local.json, settings.local.json, or *.local.\nCredentials and tokens such as service account JSON files, API key files, and local certificate files.\nLocal database files, seed data, or fixture files that are intentionally ignored by Git.\nDependency folders, cache directories, and generated build output such as node_modules, .next, dist, or target.\nConductor copies a gitignored file into a new local workspace when both of these are true:\nThe file is gitignored.\nThe file matches a Files to copy or .worktreeinclude pattern.\nTracked files are already present in the new worktree, so Conductor does not copy them. Untracked files that are not gitignored are not eligible for Files to copy. Generated files, dependency folders, and files that need commands to create them usually belong in a setup script instead.\nWhy not copy dependency folders or build output?Dependency folders and build output are usually large, machine-specific, and easy to regenerate. Copying node_modules, .next, dist, target, or similar directories can make workspace creation slower and can carry stale state into a fresh workspace.\nUse a setup script when a workspace should install dependencies, generate build output, or prepare local state with commands.\nWhy not copy untracked files that are not gitignored?Files to copy only selects files that Git already ignores. That keeps the feature focused on local files that intentionally stay out of version control, such as secrets and machine-specific config.\nIf a file should be copied into every workspace but should not be committed, add it to .gitignore, then add a matching Files to copy or .worktreeinclude pattern.\nFiles to copy currently runs for local Mac workspaces.\nResolution order\nThe patterns used for a given repo come from the first source that exists:\n.worktreeinclude at the repo root. If present, the file's contents win and the settings UI shows a read-only preview.\nRepo settings (Settings -> {repo name} -> Files to copy), stored as file_include_globs in repository settings.\nDefault pattern .env*.\nFor project-shared patterns, commit a .worktreeinclude file at the repo root or set file_include_globs in .conductor/settings.toml. .worktreeinclude wins when both exist.\nIf you add .worktreeinclude or repo settings, those patterns replace the default .env* pattern. Include .env* yourself when you still want Conductor to copy environment files.\nPattern format\n.worktreeinclude uses .gitignore syntax. Anthropic documents the same behavior for Claude Code worktrees.\nCommon pattern rules:\nBlank lines are ignored.\n# starts a comment. Escape it as \\# when the pattern itself starts with #.\n! negates a previous match. Escape it as \\! when the pattern itself starts with !.\nA trailing / matches a directory only.\nA leading / anchors the pattern to the repo root.\nA slash in the middle of a pattern makes the pattern relative to the repo root.\n* matches anything except /.\n? matches one character except /.\nCharacter ranges such as [0-9] match one character in the range.\n**/name matches name at any depth.\ndirectory/** matches everything inside directory at any depth.\na/**/b matches a/b, a/x/b, a/x/y/b, and deeper nested paths.\nExamples\nCopy common environment files:\n.env\n.env.*Copy a root-only local file without copying files with the same name in packages:\n/config/local.jsonCopy nested secrets config files:\n**/secrets.local.json\nconfig/**/local.jsonCopy a directory of ignored local data, except examples:\n.local-secrets/**\n!.local-secrets/**/*.exampleRelated pages\nUse Files to copy for a guided setup flow.\n.worktreeinclude for the shared project file format.\nGit worktrees for coding agents for the underlying worktree model.\nRun Claude Code with Git worktrees and Run Codex with Git worktrees for agent-specific worktree workflows.",
+  "markdown": "\n# Files to copy\n\n\n\nNew git worktrees start with tracked files only. That keeps workspaces clean, but it also means untracked files such as `.env.local`, local service credentials, and machine-specific config do not appear in new Conductor workspaces.\n\nFiles to copy solves that problem by copying selected gitignored files from your main checkout into each new local workspace.\n\nFor setup steps, see [Use Files to copy](/docs/guides/use-files-to-copy). For the underlying worktree model, see [Git worktrees for coding agents](/docs/concepts/git-worktrees).\n\n## Configure Files to copy [#configure-files-to-copy]\n\nYou can configure Files to copy in Conductor or in a settings file:\n\n* In the app, open [`Settings`](https://app.conductor.build/settings/repos?section=misc\\&scrollTo=file_include_globs), select the project, and edit Files to copy.\n* In the repository, add `file_include_globs` to `.conductor/settings.toml` when the same patterns should be shared with teammates.\n\nUse this repository configuration when every new workspace should receive the same gitignored files:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\ncerts/local/**\n\"\"\"\n```\n\nCommit `.conductor/settings.toml` when every teammate should copy the same gitignored local files into new workspaces. For settings file locations and precedence, see [User and project settings](/docs/reference/settings/user-project).\n\nYou can also configure shared patterns with `.worktreeinclude` at the repository root:\n\n```txt title=\".worktreeinclude\"\n.env.local\nconfig/local.json\ncerts/local/**\n```\n\nUse `.worktreeinclude` when your project already uses worktree tools that read that file, or when you want a small pattern-only project file. If both `.worktreeinclude` and `file_include_globs` exist, `.worktreeinclude` wins.\n\n\n\n\n## What gets copied [#what-gets-copied]\n\nGit worktrees do not copy untracked files from your main checkout. That includes:\n\n* Gitignored environment files such as `.env.local`, `.env.development.local`, and `.env.test.local`.\n* Local config files such as `config/local.json`, `settings.local.json`, or `*.local`.\n* Credentials and tokens such as service account JSON files, API key files, and local certificate files.\n* Local database files, seed data, or fixture files that are intentionally ignored by Git.\n* Dependency folders, cache directories, and generated build output such as `node_modules`, `.next`, `dist`, or `target`.\n\nConductor copies a gitignored file into a new local workspace when both of these are true:\n\n1. The file is gitignored.\n2. The file matches a Files to copy or `.worktreeinclude` pattern.\n\nTracked files are already present in the new worktree, so Conductor does not copy them. Untracked files that are not gitignored are not eligible for Files to copy. Generated files, dependency folders, and files that need commands to create them usually belong in a [setup script](/docs/reference/scripts#setup-scripts) instead.\n\nDependency folders and build output are usually large, machine-specific, and easy to regenerate. Copying `node_modules`, `.next`, `dist`, `target`, or similar directories can make workspace creation slower and can carry stale state into a fresh workspace.\n\nUse a [setup script](/docs/reference/scripts#setup-scripts) when a workspace should install dependencies, generate build output, or prepare local state with commands.\n\nFiles to copy only selects files that Git already ignores. That keeps the feature focused on local files that intentionally stay out of version control, such as secrets and machine-specific config.\n\nIf a file should be copied into every workspace but should not be committed, add it to `.gitignore`, then add a matching Files to copy or `.worktreeinclude` pattern.\n\nFiles to copy currently runs for local Mac workspaces.\n\n## Resolution order [#resolution-order]\n\nThe patterns used for a given repo come from the first source that exists:\n\n1. **`.worktreeinclude`** at the repo root. If present, the file's contents win and the settings UI shows a read-only preview.\n2. **Repo settings** ([`Settings` -> `{repo name}` -> `Files to copy`](https://app.conductor.build/settings/repos?section=misc\\&scrollTo=file_include_globs)), stored as `file_include_globs` in repository settings.\n3. **Default pattern** `.env*`.\n\nFor project-shared patterns, commit a `.worktreeinclude` file at the repo root or set `file_include_globs` in `.conductor/settings.toml`. `.worktreeinclude` wins when both exist.\n\nIf you add `.worktreeinclude` or repo settings, those patterns replace the default `.env*` pattern. Include `.env*` yourself when you still want Conductor to copy environment files.\n\n## Pattern format [#pattern-format]\n\n`.worktreeinclude` uses [`.gitignore` syntax](https://git-scm.com/docs/gitignore). Anthropic documents the same behavior for [Claude Code worktrees](https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees).\n\nCommon pattern rules:\n\n* Blank lines are ignored.\n* `#` starts a comment. Escape it as `\\#` when the pattern itself starts with `#`.\n* `!` negates a previous match. Escape it as `\\!` when the pattern itself starts with `!`.\n* A trailing `/` matches a directory only.\n* A leading `/` anchors the pattern to the repo root.\n* A slash in the middle of a pattern makes the pattern relative to the repo root.\n* `*` matches anything except `/`.\n* `?` matches one character except `/`.\n* Character ranges such as `[0-9]` match one character in the range.\n* `**/name` matches `name` at any depth.\n* `directory/**` matches everything inside `directory` at any depth.\n* `a/**/b` matches `a/b`, `a/x/b`, `a/x/y/b`, and deeper nested paths.\n\n## Examples [#examples]\n\nCopy common environment files:\n\n```txt title=\".worktreeinclude\"\n.env\n.env.*\n```\n\nCopy a root-only local file without copying files with the same name in packages:\n\n```txt title=\".worktreeinclude\"\n/config/local.json\n```\n\nCopy nested secrets config files:\n\n```txt title=\".worktreeinclude\"\n**/secrets.local.json\nconfig/**/local.json\n```\n\nCopy a directory of ignored local data, except examples:\n\n```txt title=\".worktreeinclude\"\n.local-secrets/**\n!.local-secrets/**/*.example\n```\n\n## Related pages [#related-pages]\n\n* [Use Files to copy](/docs/guides/use-files-to-copy) for a guided setup flow.\n* [`.worktreeinclude`](/docs/reference/worktreeinclude) for the shared project file format.\n* [Git worktrees for coding agents](/docs/concepts/git-worktrees) for the underlying worktree model.\n* [Run Claude Code with Git worktrees](/docs/guides/git-worktrees/run-claude-code-with-git-worktrees) and [Run Codex with Git worktrees](/docs/guides/git-worktrees/run-codex-with-git-worktrees) for agent-specific worktree workflows.\n"
+}

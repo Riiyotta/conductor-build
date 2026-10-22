@@ -1,0 +1,32 @@
+{
+  "slug": "0.70.0-multiple-run-scripts",
+  "version": "0.70.0",
+  "versionSlug": "0.70.0",
+  "title": "Multiple Run Scripts",
+  "fullTitle": "0.70.0: Multiple Run Scripts",
+  "date": "June 26, 2026",
+  "dateISO": "2026-06-26",
+  "description": "Conductor 0.70.0 changelog - Multiple Run Scripts",
+  "summary": "Your script is running? You'd better go catch it!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/multiple-run-scripts-menu-0.70.0.png",
+    "alt": "Run menu with multiple configured run scripts"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.70.0-multiple-run-scripts/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.70.0-multiple-run-scripts",
+  "sourceUrl": "https://www.conductor.build/changelog/0.70.0-multiple-run-scripts",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Your script is running? You&#x27;d better go catch it!</p>\n<p>Conductor now supports multiple run scripts - that means you can control all of the commands for your monorepo, tests, and scripts with the &quot;Run&quot; button.</p>\n<figure data-asset><img alt=\"Run menu with multiple configured run scripts\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/multiple-run-scripts-menu-0.70.0.png\"/></figure>\n<p>Configure run scripts in Conductor settings (<code>Settings</code> &gt; <code>Repo</code> &gt; <code>Scripts</code>) or <code>.conductor/settings.local.toml</code>.</p>\n<p>See <a href=\"/docs/reference/scripts#run-scripts\" target=\"_blank\" rel=\"noopener noreferrer\">Run scripts</a> for setup details.</p>\n<h3>Improvements</h3>\n<ul>\n<li>The left sidebar now keeps its width across window resizing and app restarts.</li>\n<li>Added Preview URLs to Conductor settings files.</li>\n<li>The &quot;Create from&quot; picker now lets you clear a selected branch, PR, or issue.</li>\n<li>Moved &quot;Add project&quot; into the new-workspace dispatcher, next to the repo selector.</li>\n<li>Added an experimental &quot;Auto permission mode&quot; setting under Settings → Experimental that auto-approves safe actions and only prompts for risky ones when tool approvals are on.</li>\n<li>Added an experimental &quot;Sidebar last message time&quot; setting under Settings → Experimental that shows the time of the last message in the sidebar instead of diff line counts.</li>\n<li>Cursor Bugbot review comments now show their &quot;Fix in Cursor&quot; and &quot;Fix in Web&quot; buttons in a tight row instead of stacked.</li>\n<li>The side nav now includes a user switcher. Open it to log out or access settings.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue preventing editing your run scripts (we had a migration gone wrong, sorry!).</li>\n<li>&quot;Restart when idle&quot; now waits for workspace setup scripts to finish before relaunching.</li>\n<li>Fixed an issue where <code>@terminal</code> mentions did not include Run tab output.</li>\n<li>Fixed an issue where the terminal Open button could appear before the preview URL was ready.</li>\n<li>Fixed an issue where the terminal preview Open button could be replaced by a detected browser app.</li>\n<li>Fixed an issue where resending a message with a failed review comment attachment did not retry the upload.</li>\n</ul>",
+  "markdown": "\nYour script is running? You'd better go catch it!\n\nConductor now supports multiple run scripts - that means you can control all of the commands for your monorepo, tests, and scripts with the \"Run\" button.\n\n![Run menu with multiple configured run scripts](/assets/changelog/images/multiple-run-scripts-menu-0.70.0.png)\n\nConfigure run scripts in Conductor settings (`Settings` > `Repo` > `Scripts`) or `.conductor/settings.local.toml`.\n\nSee [Run scripts](/docs/reference/scripts#run-scripts) for setup details.\n\n## Improvements\n\n- The left sidebar now keeps its width across window resizing and app restarts.\n- Added Preview URLs to Conductor settings files.\n- The \"Create from\" picker now lets you clear a selected branch, PR, or issue.\n- Moved \"Add project\" into the new-workspace dispatcher, next to the repo selector.\n- Added an experimental \"Auto permission mode\" setting under Settings → Experimental that auto-approves safe actions and only prompts for risky ones when tool approvals are on.\n- Added an experimental \"Sidebar last message time\" setting under Settings → Experimental that shows the time of the last message in the sidebar instead of diff line counts.\n- Cursor Bugbot review comments now show their \"Fix in Cursor\" and \"Fix in Web\" buttons in a tight row instead of stacked.\n- The side nav now includes a user switcher. Open it to log out or access settings.\n\n## Fixes\n\n- Fixed an issue preventing editing your run scripts (we had a migration gone wrong, sorry!).\n- \"Restart when idle\" now waits for workspace setup scripts to finish before relaunching.\n- Fixed an issue where `@terminal` mentions did not include Run tab output.\n- Fixed an issue where the terminal Open button could appear before the preview URL was ready.\n- Fixed an issue where the terminal preview Open button could be replaced by a detected browser app.\n- Fixed an issue where resending a message with a failed review comment attachment did not retry the upload.\n"
+}

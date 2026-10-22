@@ -1,0 +1,32 @@
+{
+  "slug": "0.16.0-diff-viewer-file-explorer",
+  "version": "0.16.0",
+  "versionSlug": "0.16.0",
+  "title": "Diff Viewer + File Explorer",
+  "fullTitle": "0.16.0: Diff Viewer + File Explorer",
+  "date": "Oct 21st, 2025",
+  "dateISO": "2025-10-21",
+  "description": "Conductor 0.16.0 changelog - Diff Viewer + File Explorer",
+  "summary": "We've integrated the diff viewer into the main chat panel! See diffs faster in a more intuitive UI.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.16.0/4cbb91de-02ab-4e12-9cd0-bc087e15f91e.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.16.0-diff-viewer-file-explorer/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.16.0-diff-viewer-file-explorer",
+  "sourceUrl": "https://www.conductor.build/changelog/0.16.0-diff-viewer-file-explorer",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve integrated the diff viewer into the main chat panel! See diffs faster in a more intuitive UI.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.16.0/4cbb91de-02ab-4e12-9cd0-bc087e15f91e.png\"/></figure>\n<p>You can now view all of the files in your workspace in Conductor.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.16.0/79ca2508-ef92-42cf-bf84-1a4c80122e98.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Claude will now always commit for you - no more <code>Changes auto-committed by Conductor</code>!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Better binary file detection</li>\n<li>Prevent Linear issue IDs from wrapping</li>\n</ul>",
+  "markdown": "\nWe've integrated the diff viewer into the main chat panel! See diffs faster in a more intuitive UI.\n\n<img\n    width=\"2048\"\n    height=\"1235\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.16.0/4cbb91de-02ab-4e12-9cd0-bc087e15f91e.png\"\n/>\n\nYou can now view all of the files in your workspace in Conductor.\n\n<img\n    width=\"948\"\n    height=\"1242\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.16.0/79ca2508-ef92-42cf-bf84-1a4c80122e98.png\"\n/>\n\n## Improvements\n\n- Claude will now always commit for you - no more `Changes auto-committed by Conductor`!\n\n## Fixes\n\n- Better binary file detection\n- Prevent Linear issue IDs from wrapping\n"
+}

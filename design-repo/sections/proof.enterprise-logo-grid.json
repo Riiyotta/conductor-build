@@ -1,0 +1,108 @@
+{
+  "id": "proof.enterprise-logo-grid",
+  "category": "PROOF",
+  "iaSections": [
+    "proof.enterprise-logo-grid"
+  ],
+  "purpose": "Customer logo grid inside the enterprise pitch (no counter).",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Enterprise.jsx:15",
+      "quote": "/assets/pages/enterprise/life360.png"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:207",
+      "quote": "This grid differs from the homepage strip"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "proof.enterprise-logo-grid"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "leadIn": {
+      "type": "text",
+      "maxWords": 6,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "logos": {
+      "type": "list",
+      "items": {
+        "type": "media",
+        "roles": [
+          "customer-logo"
+        ],
+        "required": true
+      },
+      "minItems": 8,
+      "maxItems": 8,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.enterprise"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:96",
+        "quote": "There are no entrance or scroll animations"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "3"
+        },
+        {
+          "property": "gap",
+          "value": "16px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "4"
+        },
+        {
+          "property": "gap",
+          "value": "24px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real customer logos (adds Life360, Reducto)."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "customer-logo"
+  ]
+}

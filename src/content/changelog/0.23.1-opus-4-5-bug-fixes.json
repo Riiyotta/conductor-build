@@ -1,0 +1,19 @@
+{
+  "slug": "0.23.1-opus-4-5-bug-fixes",
+  "version": "0.23.1",
+  "versionSlug": "0.23.1",
+  "title": "Opus 4.5 Bug Fixes",
+  "fullTitle": "0.23.1: Opus 4.5 Bug Fixes",
+  "date": "Nov 24th, 2025",
+  "dateISO": "2025-11-24",
+  "description": "Conductor 0.23.1 changelog - Opus 4.5 Bug Fixes",
+  "summary": "Opus is now the default model in Conductor.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.23.1-opus-4-5-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.23.1-opus-4-5-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.23.1-opus-4-5-bug-fixes",
+  "headings": [],
+  "html": "<p>Opus is now the default model in Conductor.</p>\n<p>We&#x27;ve also fixed a bug where the plans Claude was generating weren&#x27;t populating in the UI.</p>\n<p>We&#x27;ve implemented a workaround, but the problem is a bug in the Claude Agent SDK. Please upvote this <a href=\"https://github.com/anthropics/claude-code/issues/12288\" target=\"_blank\" rel=\"noopener noreferrer\">issue for Anthropic to make a proper fix</a>!</p>",
+  "markdown": "\nOpus is now the default model in Conductor.\n\nWe've also fixed a bug where the plans Claude was generating weren't populating in the UI.\n\nWe've implemented a workaround, but the problem is a bug in the Claude Agent SDK. Please upvote this [issue for Anthropic to make a proper fix](https://github.com/anthropics/claude-code/issues/12288)!\n"
+}

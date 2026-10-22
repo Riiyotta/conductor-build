@@ -1,0 +1,119 @@
+{
+  "id": "content.prose-article",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.prose-article"
+  ],
+  "purpose": "Long-form explanatory copy in the shared typography article.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/Prose.jsx:6",
+      "quote": "export default function Prose({ as: Tag = 'article', maxWidth = '!max-w-3xl', className = '', children }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:55",
+      "quote": "### 0.3 Shared \"Prose\" article (slack, join-us, enterprise intro, brandkit intro, privacy, terms)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.prose-article"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "blocks": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "paragraph",
+              "heading",
+              "list-item",
+              "blockquote",
+              "image"
+            ],
+            "required": true
+          },
+          "text": {
+            "type": "text",
+            "maxWords": 95,
+            "required": false,
+            "observedMaxWords": 90
+          },
+          "image": {
+            "type": "media",
+            "roles": [
+              "product-screenshot"
+            ],
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 30,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.enterprise",
+      "template.join-us",
+      "template.prose-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:266",
+        "quote": "All prose links: weight 500, rgba(44,40,38,.55) underline, hover opacity .8 over 200ms (measured)."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "p",
+          "value": "14px/24px, margin 16px 0"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "p",
+          "value": "16px/28px, margin 20px 0"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": [
+    "product-screenshot"
+  ]
+}

@@ -1,0 +1,130 @@
+{
+  "id": "docs.sidebar",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.sidebar"
+  ],
+  "purpose": "Persistent docs navigation with root switcher and search entry.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Sidebar.jsx:256",
+      "quote": "export default function DocsSidebar({ root, activeUrl }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:110",
+      "quote": "### 1.3 Sidebar (desktop, `aside#nd-sidebar`)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.sidebar"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "roots": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 3,
+        "required": true,
+        "observedMaxWords": 2
+      },
+      "minItems": 1,
+      "maxItems": 2,
+      "required": true
+    },
+    "searchLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "tree": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "folder",
+              "page",
+              "separator"
+            ],
+            "required": true
+          },
+          "label": {
+            "type": "text",
+            "maxWords": 8,
+            "required": true,
+            "observedMaxWords": 7
+          },
+          "href": {
+            "type": "url",
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 80,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "folder-collapse",
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "folder-collapse",
+      "hover-color"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/docs/Collapsible.jsx:11",
+        "quote": "duration = 150,"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "display",
+          "value": "none (docs.mobile-drawer instead)"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "display",
+          "value": "sticky 268px column at top 64px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

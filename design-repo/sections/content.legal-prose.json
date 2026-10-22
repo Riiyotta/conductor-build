@@ -1,0 +1,105 @@
+{
+  "id": "content.legal-prose",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.legal-prose"
+  ],
+  "purpose": "Legal document body with its own H1; section titles are bold paragraphs, not headings.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/LegalLayout.jsx:6",
+      "quote": "export default function LegalLayout({ title, description, children }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:407",
+      "quote": "**Section titles are bold paragraphs (`<p><strong>…</strong></p>`), not headings.**"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.legal-prose"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 6,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "effectiveDate": {
+      "type": "text",
+      "maxWords": 6,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "sections": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "boldTitle": {
+            "type": "text",
+            "maxWords": 14,
+            "required": true,
+            "observedMaxWords": 12
+          },
+          "paragraphs": {
+            "type": "list",
+            "items": {
+              "type": "text",
+              "maxWords": 380,
+              "required": true,
+              "observedMaxWords": 375
+            },
+            "minItems": 1,
+            "maxItems": 40,
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 60,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.legal"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:408",
+        "quote": "The only interactive pieces are the h1 anchor icon"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Legal text must come from counsel; never generate or copy Conductor's legal terms."
+  },
+  "quirks": [
+    "No PageHeader and no top margin; titles are <p><strong>, never h2."
+  ],
+  "assetRoles": []
+}

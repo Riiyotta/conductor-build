@@ -1,0 +1,32 @@
+{
+  "slug": "0.29.1-customize-prompts-mark-files-as-viewed",
+  "version": "0.29.1",
+  "versionSlug": "0.29.1",
+  "title": "Customize prompts, mark files as viewed",
+  "fullTitle": "0.29.1: Customize prompts, mark files as viewed",
+  "date": "Jan 8th, 2026",
+  "dateISO": "2026-01-08",
+  "description": "Conductor 0.29.1 changelog - Customize prompts, mark files as viewed",
+  "summary": "You can now customize the code review, create PR, and branch renaming prompts. Customize them for each repository in Settings (⌘,).",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.1/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png",
+    "alt": "Customize Prompts"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.1-customize-prompts-mark-files-as-viewed/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.1-customize-prompts-mark-files-as-viewed",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.1-customize-prompts-mark-files-as-viewed",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now customize the code review, create PR, and branch renaming prompts. Customize them for each repository in Settings (<code>⌘,</code>).</p>\n<figure data-asset><img alt=\"Customize Prompts\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.1/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png\"/></figure>\n<p>You can now mark files as viewed when reviewing changes. When files change, they’ll automatically move back to “Ready for review”.</p>\n<figure data-asset><img alt=\"Mark files as viewed\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.1/1767892873190-CleanShot_2026-01-08_at_09.19.48_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Bumped to <a href=\"https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code 2.1.0</a></li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed broken hyperlinks</li>\n<li>Comments now respect user keybindings for sending messages</li>\n<li>Model and thinking selection now carry over when forking a workspace</li>\n<li>Fixed a bug where comments could be sent multiple times</li>\n<li>Changing the target branch in repositories with thousands of branches should now be instant</li>\n<li>Fixed <code>/clear</code> not working</li>\n</ul>",
+  "markdown": "\nYou can now customize the code review, create PR, and branch renaming prompts. Customize them for each repository in Settings (`⌘,`).\n\n![Customize Prompts](/assets/changelog/media/0.29.1/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png)\n\nYou can now mark files as viewed when reviewing changes. When files change, they’ll automatically move back to “Ready for review”.\n\n![Mark files as viewed](/assets/changelog/media/0.29.1/1767892873190-CleanShot_2026-01-08_at_09.19.48_2x.png)\n\n## Improvements\n\n- Bumped to [Claude Code 2.1.0](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#210)\n\n## Fixes\n\n- Fixed broken hyperlinks\n- Comments now respect user keybindings for sending messages\n- Model and thinking selection now carry over when forking a workspace\n- Fixed a bug where comments could be sent multiple times\n- Changing the target branch in repositories with thousands of branches should now be instant\n- Fixed `/clear` not working\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.21.0-plan-mode",
+  "version": "0.21.0",
+  "versionSlug": "0.21.0",
+  "title": "Plan mode",
+  "fullTitle": "0.21.0: Plan mode",
+  "date": "Nov 10th, 2025",
+  "dateISO": "2025-11-10",
+  "description": "Conductor 0.21.0 changelog - Plan mode",
+  "summary": "We've also added GPT-5-Codex Mini, and brought back Opus 4.1.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.21.0/a021e5e6-ea79-48ce-926d-8d487a028f3b.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.21.0-plan-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.21.0-plan-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.21.0-plan-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.21.0/a021e5e6-ea79-48ce-926d-8d487a028f3b.png\"/></figure>\n<p>We&#x27;ve also added GPT-5-Codex Mini, and brought back Opus 4.1.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.21.0/c948e4f7-c9e5-4483-8b72-dba1f5cf4f59.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Add animation for chat titles</li>\n<li>Add archive on merge setting</li>\n<li>Add a copy path button and <code>⌘⇧C</code> shortcut</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix Linear attachments being sent to the wrong chat</li>\n<li>Fix file paths with slugs not rendering properly</li>\n<li>Recent files in the file picker are now scoped to the repository</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"2048\"\n    height=\"1499\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.21.0/a021e5e6-ea79-48ce-926d-8d487a028f3b.png\"\n/>\n\nWe've also added GPT-5-Codex Mini, and brought back Opus 4.1.\n\n<img\n    width=\"560\"\n    height=\"616\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.21.0/c948e4f7-c9e5-4483-8b72-dba1f5cf4f59.png\"\n/>\n\n## Improvements\n\n- Add animation for chat titles\n- Add archive on merge setting\n- Add a copy path button and `⌘⇧C` shortcut\n\n## Fixes\n\n- Fix Linear attachments being sent to the wrong chat\n- Fix file paths with slugs not rendering properly\n- Recent files in the file picker are now scoped to the repository\n"
+}

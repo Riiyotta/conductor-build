@@ -1,0 +1,1246 @@
+{
+ "codeFig": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(255, 255, 255)",
+  "border-top": "1px solid rgb(234, 232, 230)",
+  "border-right": "1px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "border-radius": "12px",
+  "margin": "16px 0px",
+  "display": "block",
+  "width": "655.078px",
+  "height": "252.75px",
+  "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "position": "relative",
+  "overflow-x": "hidden",
+  "overflow-y": "hidden",
+  "tab-size": "4",
+  "rect": [
+   380,
+   1305.8,
+   655.1,
+   252.8
+  ],
+  "tag": "figure",
+  "cls": "my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm",
+  "text": "Add a new role to your memory: you are my Conducto"
+ },
+ "codeHeader": null,
+ "codeCaption": null,
+ "codeIconWrap": null,
+ "codeCopyAbs": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(117, 111, 108)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "border-radius": "8px",
+  "display": "block",
+  "width": "24px",
+  "height": "25px",
+  "text-decoration-color": "rgb(117, 111, 108)",
+  "opacity": "1",
+  "position": "absolute",
+  "top": "12px",
+  "tab-size": "4",
+  "z-index": "2",
+  "backdrop-filter": "blur(16px)",
+  "inset-inline-start": "621.078px",
+  "rect": [
+   1002.1,
+   1318.8,
+   24,
+   25
+  ],
+  "tag": "div",
+  "cls": "empty:hidden absolute top-3 right-2 z-2 backdrop-blur-lg rounded-lg text-fd-muted-foreground",
+  "text": ""
+ },
+ "codeCopyBtn": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "500",
+  "color": "rgb(117, 111, 108)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "border-radius": "6px",
+  "padding": "4px",
+  "display": "inline-flex",
+  "width": "24px",
+  "height": "24px",
+  "transition": "color 0.1s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.1s cubic-bezier(0.4, 0, 0.2, 1), fill 0.1s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.1s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.1s cubic-bezier(0.4, 0, 0.2, 1)",
+  "text-decoration-color": "rgb(117, 111, 108)",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "default",
+  "rect": [
+   1002.1,
+   1318.8,
+   24,
+   24
+  ],
+  "tag": "button",
+  "cls": "inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring p-1 [&_svg]:size-4 hover:text-fd-accent-foreground data-checked:text-fd-ac",
+  "text": ""
+ },
+ "codeRegion": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "13px",
+  "line-height": "18.5714px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "14px 0px",
+  "display": "block",
+  "width": "653.078px",
+  "height": "250.75px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   1306.8,
+   653.1,
+   250.8
+  ],
+  "tag": "div",
+  "cls": "text-[0.8125rem] py-3.5 overflow-auto max-h-[600px] fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring",
+  "text": "Add a new role to your memory: you are my Conducto"
+ },
+ "codePre": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "13px",
+  "line-height": "18.5714px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "0px 16px",
+  "display": "block",
+  "width": "5252.39px",
+  "height": "222.75px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "white-space": "pre",
+  "tab-size": "4",
+  "rect": [
+   381,
+   1320.8,
+   5252.4,
+   222.8
+  ],
+  "tag": "pre",
+  "cls": "min-w-full w-max *:flex *:flex-col m-0 px-4",
+  "text": "Add a new role to your memory: you are my Conducto"
+ },
+ "codeCode": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "13px",
+  "line-height": "18.5714px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "flex",
+  "width": "5220.39px",
+  "height": "222.75px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "white-space": "pre",
+  "tab-size": "4",
+  "rect": [
+   397,
+   1320.8,
+   5220.4,
+   222.8
+  ],
+  "tag": "code",
+  "cls": "",
+  "text": "Add a new role to your memory: you are my Conducto"
+ },
+ "codeLine": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "13px",
+  "line-height": "18.5714px",
+  "font-weight": "400",
+  "color": "rgb(36, 41, 46)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "0px 32px 0px 16px",
+  "display": "block",
+  "width": "653.078px",
+  "height": "18.5625px",
+  "text-decoration-color": "rgb(36, 41, 46)",
+  "opacity": "1",
+  "position": "relative",
+  "white-space": "pre",
+  "tab-size": "4",
+  "rect": [
+   381,
+   1725.5,
+   653.1,
+   18.6
+  ],
+  "tag": "span",
+  "cls": "line",
+  "text": "curl https://api.conductor.build/v0/projects \\"
+ },
+ "codeTok": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "13px",
+  "line-height": "18.5714px",
+  "font-weight": "400",
+  "color": "rgb(111, 66, 193)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "inline",
+  "text-decoration-color": "rgb(111, 66, 193)",
+  "opacity": "1",
+  "white-space": "pre",
+  "tab-size": "4",
+  "rect": [
+   397,
+   1726.5,
+   31.3,
+   15
+  ],
+  "tag": "span",
+  "cls": "",
+  "text": "curl"
+ },
+ "inlineCode": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "14px",
+  "line-height": "24.5px",
+  "font-weight": "600",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(250, 250, 249)",
+  "border-top": "1px solid rgb(234, 232, 230)",
+  "border-right": "1px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "border-radius": "5px",
+  "padding": "3px",
+  "display": "inline",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   531.4,
+   423.7,
+   260.9,
+   24
+  ],
+  "tag": "code",
+  "cls": "",
+  "text": "https://api.conductor.build/v0"
+ },
+ "linkCode": null,
+ "strong": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "600",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "inline",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   535.9,
+   716.8,
+   160.6,
+   18
+  ],
+  "tag": "strong",
+  "cls": "",
+  "text": "real cloud workspace"
+ },
+ "link": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "500",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "inline",
+  "transition": "opacity 0.2s",
+  "text-decoration-line": "underline",
+  "text-underline-offset": "2.88px",
+  "text-decoration-color": "color(srgb 0.172549 0.156863 0.14902 / 0.55)",
+  "text-decoration-thickness": "1px",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "pointer",
+  "rect": [
+   644.3,
+   229.7,
+   133.7,
+   18
+  ],
+  "tag": "a",
+  "cls": "",
+  "text": "cloud workspaces"
+ },
+ "h3": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "20px",
+  "line-height": "32px",
+  "font-weight": "600",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "margin": "32px 0px 12px",
+  "gap": "8px",
+  "display": "flex",
+  "width": "655.078px",
+  "height": "32px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "scroll-margin-top": "112px",
+  "rect": [
+   380,
+   4073,
+   655.1,
+   32
+  ],
+  "tag": "h3",
+  "cls": "flex scroll-m-28 flex-row items-center gap-2",
+  "text": "Routines"
+ },
+ "h4": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "24px",
+  "font-weight": "600",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "margin": "24px 0px 8px",
+  "gap": "8px",
+  "display": "flex",
+  "width": "655.078px",
+  "height": "24px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "scroll-margin-top": "112px",
+  "rect": [
+   380,
+   6818.1,
+   655.1,
+   24
+  ],
+  "tag": "h4",
+  "cls": "flex scroll-m-28 flex-row items-center gap-2",
+  "text": "Plan, Implement"
+ },
+ "ol": null,
+ "olLi": null,
+ "ulLi": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "0px 0px 0px 6px",
+  "margin": "8px 0px",
+  "display": "list-item",
+  "width": "629.078px",
+  "height": "28px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   406,
+   300.7,
+   629.1,
+   28
+  ],
+  "tag": "li",
+  "cls": "",
+  "text": "Create workspaces, send prompts to the coding agen"
+ },
+ "tableShell": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(253, 252, 252)",
+  "border-top": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.92)",
+  "border-right": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.92)",
+  "border-bottom": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.92)",
+  "border-left": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.92)",
+  "border-radius": "14.4px",
+  "margin": "32px 0px",
+  "display": "block",
+  "width": "655.078px",
+  "height": "1503.2px",
+  "box-shadow": "color(srgb 1 1 1 / 0.7) 0px 1px 0px 0px inset, color(srgb 0.172549 0.156863 0.14902 / 0.06) 0px 1px 2px 0px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "overflow-x": "hidden",
+  "overflow-y": "hidden",
+  "tab-size": "4",
+  "rect": [
+   380,
+   2289.8,
+   655.1,
+   1503.2
+  ],
+  "tag": "div",
+  "cls": "docs-table-shell not-prose my-8 overflow-hidden rounded-[0.9rem] border border-border/80",
+  "text": "Endpoint\tWhat it does\nGET /v0/projects\tList the re"
+ },
+ "tableScroll": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "block",
+  "width": "653.078px",
+  "height": "1501.2px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   2290.8,
+   653.1,
+   1501.2
+  ],
+  "tag": "div",
+  "cls": "docs-table-scroll overflow-x-auto",
+  "text": "Endpoint\tWhat it does\nGET /v0/projects\tList the re"
+ },
+ "table": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "table",
+  "width": "653.078px",
+  "height": "1501.2px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   2290.8,
+   653.1,
+   1501.2
+  ],
+  "tag": "table",
+  "cls": "docs-table w-full min-w-[38rem] border-separate border-spacing-0 text-sm",
+  "text": "Endpoint\tWhat it does\nGET /v0/projects\tList the re"
+ },
+ "th": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "12.48px",
+  "line-height": "17.8286px",
+  "font-weight": "600",
+  "letter-spacing": "0.1248px",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(248, 247, 246)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.94)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "15.2px 18px 15.2px 22.4px",
+  "display": "table-cell",
+  "width": "298.312px",
+  "height": "49.2031px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   2290.8,
+   298.3,
+   49.2
+  ],
+  "tag": "th",
+  "cls": "",
+  "text": "Endpoint"
+ },
+ "thFirst": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "12.48px",
+  "line-height": "17.8286px",
+  "font-weight": "600",
+  "letter-spacing": "0.1248px",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(248, 247, 246)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.94)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "15.2px 18px 15.2px 22.4px",
+  "display": "table-cell",
+  "width": "298.312px",
+  "height": "49.2031px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   2290.8,
+   298.3,
+   49.2
+  ],
+  "tag": "th",
+  "cls": "",
+  "text": "Endpoint"
+ },
+ "td": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.94)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "15.2px 18px 15.2px 22.4px",
+  "display": "table-cell",
+  "width": "298.312px",
+  "height": "71.375px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   381,
+   2340,
+   298.3,
+   71.4
+  ],
+  "tag": "td",
+  "cls": "",
+  "text": "GET /v0/projects"
+ },
+ "td2": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.94)",
+  "border-left": "1px solid color(srgb 0.890196 0.878431 0.870588 / 0.8)",
+  "padding": "15.2px 22.4px 15.2px 18px",
+  "display": "table-cell",
+  "width": "354.766px",
+  "height": "71.375px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   679.3,
+   2340,
+   354.8,
+   71.4
+  ],
+  "tag": "td",
+  "cls": "",
+  "text": "List the repositories you can create workspaces in"
+ },
+ "tdCode": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "11.9px",
+  "line-height": "17px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "inline",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "white-space": "nowrap",
+  "tab-size": "4",
+  "rect": [
+   403.4,
+   2359.2,
+   114.6,
+   14
+  ],
+  "tag": "code",
+  "cls": "",
+  "text": "GET /v0/projects"
+ },
+ "callout": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(249, 247, 246)",
+  "border-top": "1px solid rgb(236, 228, 223)",
+  "border-right": "1px solid rgb(236, 228, 223)",
+  "border-bottom": "1px solid rgb(236, 228, 223)",
+  "border-left": "1px solid rgb(236, 228, 223)",
+  "border-radius": "16px",
+  "padding": "12px 16px",
+  "margin": "24px 0px",
+  "gap": "6px 8px",
+  "display": "grid",
+  "grid-template-columns": "28px 585.078px",
+  "grid-template-rows": "53.1875px",
+  "width": "655.078px",
+  "height": "79.1875px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   380,
+   500.7,
+   655.1,
+   79.2
+  ],
+  "tag": "div",
+  "cls": "docs-callout not-prose my-6 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-2 gap-y-1.5 rounded-[1rem] border px-3.5 py-2.5 sm:px-4 sm:py-3",
+  "text": "Info:\n\nThe API is in beta. Request and response sh"
+ },
+ "calloutIcon": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "16px",
+  "line-height": "28px",
+  "font-weight": "400",
+  "color": "rgb(110, 81, 73)",
+  "background-color": "color(srgb 0.998118 0.99749 0.997176)",
+  "border-top": "1px solid color(srgb 0.92549 0.894118 0.87451 / 0.8)",
+  "border-right": "1px solid color(srgb 0.92549 0.894118 0.87451 / 0.8)",
+  "border-bottom": "1px solid color(srgb 0.92549 0.894118 0.87451 / 0.8)",
+  "border-left": "1px solid color(srgb 0.92549 0.894118 0.87451 / 0.8)",
+  "border-radius": "3.35544e+07px",
+  "margin": "2px 0px 0px",
+  "display": "flex",
+  "width": "28px",
+  "height": "28px",
+  "text-decoration-color": "rgb(110, 81, 73)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   397,
+   515.7,
+   28,
+   28
+  ],
+  "tag": "div",
+  "cls": "docs-callout-icon mt-0.5 flex size-7 items-center justify-center rounded-full border",
+  "text": ""
+ },
+ "calloutDesc": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15.2px",
+  "line-height": "26.6px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "block",
+  "width": "585.078px",
+  "height": "53.1875px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   433,
+   513.7,
+   585.1,
+   53.2
+  ],
+  "tag": "div",
+  "cls": "docs-callout-description empty:hidden text-[0.95rem] text-muted-foreground",
+  "text": "The API is in beta. Request and response shapes ma"
+ },
+ "calloutP": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15.2px",
+  "line-height": "26.6px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "block",
+  "width": "585.078px",
+  "height": "53.1875px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "rect": [
+   433,
+   513.7,
+   585.1,
+   53.2
+  ],
+  "tag": "p",
+  "cls": "",
+  "text": "The API is in beta. Request and response shapes ma"
+ },
+ "calloutA": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15.2px",
+  "line-height": "26.6px",
+  "font-weight": "500",
+  "color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "inline",
+  "transition": "opacity 0.2s, text-decoration-color 0.2s",
+  "text-decoration-line": "underline",
+  "text-underline-offset": "2.736px",
+  "text-decoration-color": "color(srgb 0.431373 0.317647 0.286275 / 0.72)",
+  "text-decoration-thickness": "1.5px",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "pointer",
+  "rect": [
+   433,
+   544.3,
+   181.1,
+   18
+  ],
+  "tag": "a",
+  "cls": "",
+  "text": "humans@conductor.build"
+ },
+ "steps": null,
+ "step": null,
+ "stepH3": null,
+ "acc": null,
+ "accItem": null,
+ "accH3": null,
+ "accBtn": null,
+ "tabs": null,
+ "tablist": null,
+ "tabActive": null,
+ "tabInactive": null,
+ "tabBar": null,
+ "tabPanel": null,
+ "tabFig": null,
+ "assetShell": null,
+ "assetFrame": null,
+ "assetImg": null,
+ "assetVideo": null,
+ "yt": null,
+ "ytWrap": null,
+ "shortcut": null,
+ "key": null,
+ "keySep": null,
+ "kbdPlain": null,
+ "blockquote": null,
+ "hr": null,
+ "details": null,
+ "summary": null,
+ "detailsPre": null,
+ "promptBox": null,
+ "input": {
+  "font-family": "ui-monospace, SFMono-Regular, \"SF Mono\", Menlo, Consolas, \"Liberation Mono\", monospace",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(255, 255, 255)",
+  "border-top": "1px solid rgb(234, 232, 230)",
+  "border-right": "1px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "border-radius": "6px",
+  "padding": "0px 12px",
+  "display": "block",
+  "width": "534.203px",
+  "height": "36px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "overflow-x": "clip",
+  "overflow-y": "clip",
+  "tab-size": "4",
+  "cursor": "text",
+  "rect": [
+   397,
+   780.8,
+   534.2,
+   36
+  ],
+  "tag": "input",
+  "cls": "h-9 min-w-0 flex-1 rounded-md border border-border bg-background px-3 font-mono text-sm text-foreground outline-none focus:border-ring",
+  "text": ""
+ },
+ "btn": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "500",
+  "color": "rgb(255, 255, 255)",
+  "background-color": "rgb(44, 40, 38)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "border-radius": "6px",
+  "padding": "16px 12px",
+  "gap": "8px",
+  "display": "flex",
+  "width": "78.875px",
+  "height": "36px",
+  "text-decoration-color": "rgb(255, 255, 255)",
+  "opacity": "1",
+  "white-space": "nowrap",
+  "tab-size": "4",
+  "cursor": "default",
+  "rect": [
+   939.2,
+   780.8,
+   78.9,
+   36
+  ],
+  "tag": "button",
+  "cls": "inline-flex items-center justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/35 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:shrink-0 bg-foreground te",
+  "text": "Run test"
+ },
+ "stepBefore": null,
+ "h2LinkIcon": {
+  "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+  "font-size": "24px",
+  "line-height": "31.9999px",
+  "font-weight": "700",
+  "color": "rgb(117, 111, 108)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "display": "block",
+  "width": "14px",
+  "height": "14px",
+  "transition": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  "text-decoration-color": "rgb(117, 111, 108)",
+  "opacity": "0",
+  "overflow-x": "hidden",
+  "overflow-y": "hidden",
+  "tab-size": "4",
+  "rect": [
+   439.9,
+   636.8,
+   14,
+   14
+  ],
+  "tag": "svg",
+  "cls": "",
+  "text": ""
+ },
+ "tokens": [
+  [
+   "curl",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " https://api.conductor.build/v0/projects",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Authorization: Bearer YOUR_API_KEY\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "curl",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " -X",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " POST",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " https://api.conductor.build/v0/workspaces",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Authorization: Bearer YOUR_API_KEY\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Content-Type: application/json\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -d",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " '{",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"projectId\": \"PROJECT_ID\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"name\": \"my-workspace\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"agent\": \"codex\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"model\": \"gpt-5.5\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "  }'",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "curl",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " https://api.conductor.build/v0/workspaces/WORKSPACE_ID",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Authorization: Bearer YOUR_API_KEY\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "curl",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " -X",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " POST",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " https://api.conductor.build/v0/routines",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Authorization: Bearer YOUR_API_KEY\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Content-Type: application/json\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -d",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " '{",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"name\": \"Triage customer report\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"projectId\": \"PROJECT_ID\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"agent\": \"codex\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"model\": \"gpt-5.6-sol\",",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "  }'",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "# → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }",
+   "--shiki-light:#6A737D;--shiki-dark:#6A737D",
+   "rgb(106, 115, 125)"
+  ],
+  [
+   "curl",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " -X",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " POST",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \"WEBHOOK_URL\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -H",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " \"Content-Type: application/json\"",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   " \\",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   "  -d",
+   "--shiki-light:#005CC5;--shiki-dark:#79B8FF",
+   "rgb(0, 92, 197)"
+  ],
+  [
+   " '{\"report\": \"Login fails with a 500 on Safari\"}'",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ],
+  [
+   "conductor",
+   "--shiki-light:#6F42C1;--shiki-dark:#B392F0",
+   "rgb(111, 66, 193)"
+  ],
+  [
+   " routine",
+   "--shiki-light:#032F62;--shiki-dark:#9ECBFF",
+   "rgb(3, 47, 98)"
+  ]
+ ],
+ "tokenColorsAll": [
+  "rgb(111, 66, 193)",
+  "rgb(3, 47, 98)",
+  "rgb(0, 92, 197)",
+  "rgb(106, 115, 125)",
+  "rgb(36, 41, 46)",
+  "rgb(215, 58, 73)"
+ ],
+ "html": {
+  "callout": "<div role=\"note\" aria-label=\"Info note\" class=\"docs-callout not-prose my-6 grid grid-cols-[auto_minmax(0,1fr)] items-start gap-x-2 gap-y-1.5 rounded-[1rem] border px-3.5 py-2.5 sm:px-4 sm:py-3\"><div aria-hidden=\"true\" class=\"docs-callout-icon mt-0.5 flex size-7 items-center justify-center rounded-full border\">[svg]</div><div class=\"min-w-0\"><span class=\"sr-only\">Info<!-- -->: </span><div class=\"docs-callout-description empty:hidden text-[0.95rem] text-muted-foreground\"><p>The API is in beta. Request and response shapes may change. Send feedback to <a href=\"mailto:humans@conductor.build\">humans@conductor.build</a>.</p></div></div></div>",
+  "calloutSvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-info size-5\" aria-hidden=\"true\"><circle cx=\"12\" cy=\"12\" r=\"10\"></circle><path d=\"M12 16v-4\"></path><path d=\"M12 8h.01\"></path></svg>",
+  "acc": null,
+  "tabs": null,
+  "asset": null,
+  "codeFig": "<figure dir=\"ltr\" tabindex=\"-1\" class=\"my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm\"><div class=\"empty:hidden absolute top-3 right-2 z-2 backdrop-blur-lg rounded-lg text-fd-muted-foreground\"><button type=\"button\" class=\"inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring p-1 [&amp;_svg]:size-4 hover:text-fd-accent-foreground data-checked:text-fd-accent-foreground\" aria-label=\"Copy Text\">[svg]</button></div><div role=\"region\" tabindex=\"0\" class=\"text-[0.8125rem] py-3.5 overflow-auto max-h-[600px] fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring\" style=\"--padding-right:calc(var(--spacing) * 8)\"><pre class=\"min-w-full w-max *:flex *:flex-col m-0 px-4\"><code>Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \"Authorization: Bearer &lt;your API key&gt;\". If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes. From now on, when I send you a coding task for one of my repositories: 1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns. 2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request. 3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;. The status reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" before treating \"idle\" as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message. 4. When it settles, message me a short summary of ",
+  "copySvg": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clipboard\" aria-hidden=\"true\"><rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"></rect><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"></path></svg>",
+  "shortcut": null,
+  "promptBox": null,
+  "yt": null,
+  "tableShell": "<div class=\"docs-table-shell not-prose my-8 overflow-hidden rounded-[0.9rem] border border-border/80\"><div class=\"docs-table-scroll overflow-x-auto\" role=\"region\" aria-label=\"Scrollable docs table _S_1_\" tabindex=\"0\"><table class=\"docs-table w-full min-w-[38rem] border-separate border-spacing-0 text-sm\"><thead><tr><th>Endpoint</th><th>What it does</th></tr></thead><tbody><tr><td><code>GET /v0/projects</code></td><td>List the repositories you can create workspaces in.</td></tr><tr><td><code>GET /v0/projects/{id}</code></td><td>Get a project.</td></tr><tr><td><code>GET /v0/projects/{id}/workspaces</code></td><td>List a project's workspaces.</td></tr><tr><td><code>POST /v0/workspaces</code></td><td>Create a workspace and its first session.</td></tr><tr><td><code>GET /v0/workspaces/{id}</code>"
+ },
+ "calloutTypes": [
+  "Info note"
+ ],
+ "calloutVars": [
+  "--docs-callout-surface:#f9f7f6",
+  "--docs-callout-border:#ece4df",
+  "--docs-callout-content:#2c2826",
+  "--docs-callout-accent:#6e5149"
+ ],
+ "docH": 9859,
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/api",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  },
+  {
+   "url": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+   "status": 200,
+   "type": "image",
+   "ct": "image/png"
+  }
+ ]
+}

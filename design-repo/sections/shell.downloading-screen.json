@@ -1,0 +1,91 @@
+{
+  "id": "shell.downloading-screen",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.downloading-screen"
+  ],
+  "purpose": "Full-screen terminal confirmation after a download click.",
+  "implementedBy": [
+    {
+      "ref": "src/components/DownloadDialog.jsx:221",
+      "quote": "'Downloading conductor.dmg...',"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "ia.json:61",
+      "quote": "Full-screen black terminal-style overlay shown after any download click"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.downloading-screen"
+    }
+  },
+  "slot": "overlay",
+  "content": {
+    "lines": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 12,
+        "required": true,
+        "observedMaxWords": 10
+      },
+      "minItems": 1,
+      "maxItems": 12,
+      "required": true
+    },
+    "brandMark": {
+      "type": "media",
+      "roles": [
+        "brand-mark"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit",
+      "template.changelog-index",
+      "template.changelog-post",
+      "template.docs-page",
+      "template.enterprise",
+      "template.home",
+      "template.join-us",
+      "template.legal",
+      "template.pricing",
+      "template.prose-page",
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "typewriter-terminal"
+    ],
+    "defaultPatterns": [
+      "typewriter-terminal"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/DownloadDialog.jsx:275",
+        "quote": "const cursor = <span className={cursorOn ? 'opacity-100' : 'opacity-0'}>{'█'}</span>"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": [
+    "brand-mark"
+  ]
+}

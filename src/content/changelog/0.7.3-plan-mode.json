@@ -1,0 +1,36 @@
+{
+  "slug": "0.7.3-plan-mode",
+  "version": "0.7.3",
+  "versionSlug": "0.7.3",
+  "title": "Plan Mode",
+  "fullTitle": "0.7.3: Plan Mode",
+  "date": "August 22nd, 2025",
+  "dateISO": "2025-08-22",
+  "description": "Conductor 0.7.3 changelog - Plan Mode",
+  "summary": "Plan mode (⌘P) tells the AI to make a plan before editing files.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.7.3/08a3e637-9c21-403a-b523-b610328310ba.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.7.3-plan-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.7.3-plan-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.7.3-plan-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.7.3/08a3e637-9c21-403a-b523-b610328310ba.png\"/></figure>\n<p>Plan mode (⌘P) tells the AI to make a plan before editing files.</p>\n<h3>Improvements</h3>\n<ul>\n<li>⌘O to open a repository from the repository page</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where the <code>@</code> file picker wouldn&#x27;t populate in new workspaces</li>\n<li>The loading indicator no longer jumps around in the chat</li>\n<li>Fixed a bug where the git panel and diff dialog used different sort orders for displaying files</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Feedback dialog now supports image uploads</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"1174\"\n    height=\"334\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.7.3/08a3e637-9c21-403a-b523-b610328310ba.png\"\n/>\n\nPlan mode (⌘P) tells the AI to make a plan before editing files.\n\n## Improvements\n\n- ⌘O to open a repository from the repository page\n\n## Fixes\n\n- Fixed a bug where the `@` file picker wouldn't populate in new workspaces\n- The loading indicator no longer jumps around in the chat\n- Fixed a bug where the git panel and diff dialog used different sort orders for displaying files\n\n## Misc\n\n- Feedback dialog now supports image uploads\n"
+}

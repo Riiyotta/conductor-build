@@ -1,0 +1,32 @@
+{
+  "slug": "0.5.0-gpt-5",
+  "version": "0.5.0",
+  "versionSlug": "0.5.0",
+  "title": "GPT-5",
+  "fullTitle": "0.5.0: GPT-5",
+  "date": "August 7th, 2025",
+  "dateISO": "2025-08-07",
+  "description": "Conductor 0.5.0 changelog - GPT-5",
+  "summary": "GPT-5 is live in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.5.0/d39527bd-9a7b-4560-bca0-c1454708c0f1.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.5.0-gpt-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.5.0-gpt-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.5.0-gpt-5",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>GPT-5 is live in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.5.0/d39527bd-9a7b-4560-bca0-c1454708c0f1.png\"/></figure>\n<p>To enable GPT-5, go to Settings → Provider → Select OpenAI as the provider, then add your API key.</p>\n<p>We&#x27;ve also refreshed the design of the sidebar! Each workspace now includes relevant Git status.</p>\n<figure data-asset><img alt=\"no-bg-CleanShot 2025-08-07 at 09 39 06@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.5.0/ec83a39f-e559-4bd3-9f8b-a7c7b16b3ad9.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added IntelliJ as an &quot;Open In IDE&quot; option</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Made several performance improvements to the main chat window to reduce lag</li>\n<li>Fixed the repository click area in the sidebar</li>\n<li>Fixed several performance issues with the git diff dialog</li>\n<li>Fixed the &quot;Add thinking&quot; popover from clipping off screen for some users</li>\n</ul>",
+  "markdown": "\nGPT-5 is live in Conductor!\n\n<img\n    width=\"686\"\n    height=\"386\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.5.0/d39527bd-9a7b-4560-bca0-c1454708c0f1.png\"\n/>\n\nTo enable GPT-5, go to Settings → Provider → Select OpenAI as the provider, then add your API key.\n\nWe've also refreshed the design of the sidebar! Each workspace now includes relevant Git status.\n\n<img\n    width=\"662\"\n    height=\"1834\"\n    alt=\"no-bg-CleanShot 2025-08-07 at 09 39 06@2x\"\n    src=\"/assets/changelog/media/0.5.0/ec83a39f-e559-4bd3-9f8b-a7c7b16b3ad9.png\"\n/>\n\n## Improvements\n\n- Added IntelliJ as an \"Open In IDE\" option\n\n## Fixes\n\n- Made several performance improvements to the main chat window to reduce lag\n- Fixed the repository click area in the sidebar\n- Fixed several performance issues with the git diff dialog\n- Fixed the \"Add thinking\" popover from clipping off screen for some users\n"
+}

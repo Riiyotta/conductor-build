@@ -1,0 +1,315 @@
+{
+  "$description": "Motion primitives. Techniques: CSS transitions/keyframes, setInterval timers, requestAnimationFrame, IntersectionObserver. No framer-motion, GSAP or Lottie. The animate-in/fade-in/slide-in-* classes are INERT on the original and are deliberately absent here.",
+  "motion": {
+    "duration": {
+      "hover": {
+        "$value": "150ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:133",
+            "quote": "DEFAULT: '150ms',"
+          },
+          {
+            "ref": "CLONE_SPEC.md:328",
+            "quote": "colors 150ms `cubic-bezier(.4,0,.2,1)`"
+          }
+        ]
+      },
+      "arrow-nudge": {
+        "$value": "200ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/ArrowLink.jsx:17",
+            "quote": "duration-200 group-hover:[translate:0.25rem_0]"
+          }
+        ]
+      },
+      "drawer": {
+        "$value": "250ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:193",
+            "quote": "animation: fd-sidebar-in 250ms ease;"
+          }
+        ]
+      },
+      "search-dialog": {
+        "$value": "300ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:181",
+            "quote": "animation: fd-dialog-in 300ms cubic-bezier(0.16, 1, 0.3, 1);"
+          }
+        ]
+      },
+      "folder-collapse": {
+        "$value": "150ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/Collapsible.jsx:11",
+            "quote": "duration = 150,"
+          }
+        ]
+      },
+      "reveal": {
+        "$value": "500ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Testimonials.jsx:64",
+            "quote": "M4: per-card IO threshold .1, fires once; 500ms ease-out, delay index*50ms."
+          }
+        ]
+      },
+      "reveal-stagger": {
+        "$value": "50ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Testimonials.jsx:111",
+            "quote": "style={{ transitionDelay: `${index * 50}ms` }}"
+          }
+        ]
+      },
+      "hero-fade": {
+        "$value": "500ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Hero.jsx:35",
+            "quote": "transition-opacity duration-500 ease-out"
+          }
+        ]
+      },
+      "scramble-cycle": {
+        "$value": "3000ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Hero.jsx:31",
+            "quote": "useInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 3000)"
+          }
+        ]
+      },
+      "count-up": {
+        "$value": "1400ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Logos.jsx:33",
+            "quote": "const p = Math.min((t - start) / 1400, 1)"
+          }
+        ]
+      },
+      "multiplayer-typing": {
+        "$value": "1400ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Multiplayer.jsx:148",
+            "quote": "visible ? (active === undefined ? 1400 : 2600) : null,"
+          }
+        ]
+      },
+      "multiplayer-bubble": {
+        "$value": "2600ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Multiplayer.jsx:148",
+            "quote": "visible ? (active === undefined ? 1400 : 2600) : null,"
+          }
+        ]
+      },
+      "sandbox-phases": {
+        "$value": [
+          350,
+          1400,
+          250,
+          900,
+          900,
+          2800
+        ],
+        "$type": "durationList",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Sandbox.jsx:70",
+            "quote": "const PHASE_MS = [350, 1400, 250, 900, 900, 2800]"
+          }
+        ]
+      },
+      "shimmer": {
+        "$value": "916.67ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/index.css:101",
+            "quote": "animation: cloud-loader-dot-shimmer 916.6666666666667ms"
+          }
+        ]
+      },
+      "orchestration-first": {
+        "$value": "450ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Orchestration.jsx:64",
+            "quote": "phase === 7 ? 2800 : phase === 0 ? 450 : 500"
+          }
+        ]
+      },
+      "orchestration-step": {
+        "$value": "500ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Orchestration.jsx:64",
+            "quote": "phase === 7 ? 2800 : phase === 0 ? 450 : 500"
+          }
+        ]
+      },
+      "orchestration-hold": {
+        "$value": "2800ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Orchestration.jsx:64",
+            "quote": "phase === 7 ? 2800 : phase === 0 ? 450 : 500"
+          }
+        ]
+      },
+      "dialog-first-reveal-delay": {
+        "$value": "300ms",
+        "$type": "duration",
+        "measuredFrom": [
+          {
+            "ref": "src/components/DownloadDialog.jsx:31",
+            "quote": "const FIRST_REVEAL_DELAY = 300"
+          }
+        ],
+        "note": "Not an animation: the first dialog open in a page load mounts ~300ms late (React 19 Suspense reveal throttle on the original). No enter/exit animation."
+      }
+    },
+    "easing": {
+      "standard": {
+        "$value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:128",
+            "quote": "DEFAULT: 'cubic-bezier(0.4, 0, 0.2, 1)',"
+          }
+        ]
+      },
+      "out": {
+        "$value": "cubic-bezier(0, 0, 0.2, 1)",
+        "$type": "cubicBezier",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:129",
+            "quote": "out: 'cubic-bezier(0, 0, 0.2, 1)',"
+          }
+        ]
+      },
+      "emphasized": {
+        "$value": "cubic-bezier(0.2, 0, 0, 1)",
+        "$type": "cubicBezier",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:130",
+            "quote": "emphasized: 'cubic-bezier(0.2, 0, 0, 1)',"
+          }
+        ]
+      },
+      "fd-dialog": {
+        "$value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "$type": "cubicBezier",
+        "measuredFrom": [
+          {
+            "ref": "src/components/docs/docs.css:181",
+            "quote": "animation: fd-dialog-in 300ms cubic-bezier(0.16, 1, 0.3, 1);"
+          }
+        ]
+      },
+      "shimmer": {
+        "$value": "cubic-bezier(0.333, 0, 0.667, 1)",
+        "$type": "cubicBezier",
+        "measuredFrom": [
+          {
+            "ref": "src/index.css:101",
+            "quote": "cubic-bezier(0.333, 0, 0.667, 1) infinite"
+          }
+        ]
+      }
+    },
+    "distance": {
+      "reveal-translate": {
+        "$value": "16px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:321",
+            "quote": "From `opacity:0; translate: 0 16px` (`translate-y-4`)"
+          }
+        ]
+      },
+      "arrow-nudge": {
+        "$value": "4px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:121",
+            "quote": "arrow `translate-x-1` (4px) over 200ms cubic-bezier(.4,0,.2,1)"
+          }
+        ]
+      },
+      "tooltip-rise": {
+        "$value": "4px",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:168",
+            "quote": "rest state `translate-y-1` (4px) + opacity 0"
+          }
+        ]
+      }
+    },
+    "threshold": {
+      "count-up": {
+        "$value": 0.4,
+        "$type": "number",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Logos.jsx:39",
+            "quote": "{ threshold: 0.4 },"
+          }
+        ]
+      },
+      "demo-loop": {
+        "$value": 0.3,
+        "$type": "number",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Sandbox.jsx:91",
+            "quote": "{ threshold: 0.3 },"
+          }
+        ]
+      },
+      "reveal": {
+        "$value": 0.1,
+        "$type": "number",
+        "measuredFrom": [
+          {
+            "ref": "src/components/Testimonials.jsx:75",
+            "quote": "{ threshold: 0.1 },"
+          }
+        ]
+      }
+    }
+  }
+}

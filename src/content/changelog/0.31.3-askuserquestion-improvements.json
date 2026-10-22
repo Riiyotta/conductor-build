@@ -1,0 +1,35 @@
+{
+  "slug": "0.31.3-askuserquestion-improvements",
+  "version": "0.31.3",
+  "versionSlug": "0.31.3",
+  "title": "AskUserQuestion improvements",
+  "fullTitle": "0.31.3: AskUserQuestion improvements",
+  "date": "Jan 19th, 2026",
+  "dateISO": "2026-01-19",
+  "description": "Conductor 0.31.3 changelog - AskUserQuestion improvements",
+  "summary": "We've cleaned up the UI for the AskUserQuestion tool to make it fully keyboard navigable.",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.31.3/1768852746133-Clipboard-20260117-203656-672.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.31.3-askuserquestion-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.31.3-askuserquestion-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.31.3-askuserquestion-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>We&#x27;ve cleaned up the UI for the <code>AskUserQuestion</code> tool to make it fully keyboard navigable.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/1768852746133-Clipboard-20260117-203656-672.mp4&quot;\nautoplay\nmuted\nloop\nplaysinline\nwidth=&quot;100%&quot;</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<h3>Improvements</h3>\n<ul>\n<li>You can now see GitHub comment edits in Conductor</li>\n<li>Drag and drop folders onto the Composer to mention them</li>\n<li>Add button to copy PR link</li>\n<li>You can now add a git prefix that doesn&#x27;t end in <code>/</code> in Settings → Git</li>\n<li>Updated Codex reasoning level default from minimal to low</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>We&#x27;ve made rebase detection more reliable in various parts of the app, including spotlight testing and archiving</li>\n<li>Review session now respects Codex thinking level</li>\n<li><code>⌃V</code> to mark a file as viewed now works when the chat is focused</li>\n<li>Updated Codex reasoning level default from minimal to low</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Various UI cleanup</li>\n</ul>",
+  "markdown": "\nWe've cleaned up the UI for the `AskUserQuestion` tool to make it fully keyboard navigable.\n\n<video\n    src=\"/assets/changelog/media/0.31.3/1768852746133-Clipboard-20260117-203656-672.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    width=\"100%\"\n></video>\n\n## Improvements\n\n- You can now see GitHub comment edits in Conductor\n- Drag and drop folders onto the Composer to mention them\n- Add button to copy PR link\n- You can now add a git prefix that doesn't end in `/` in Settings → Git\n- Updated Codex reasoning level default from minimal to low\n\n## Fixes\n\n- We've made rebase detection more reliable in various parts of the app, including spotlight testing and archiving\n- Review session now respects Codex thinking level\n- `⌃V` to mark a file as viewed now works when the chat is focused\n- Updated Codex reasoning level default from minimal to low\n\n## Misc\n\n- Various UI cleanup\n"
+}

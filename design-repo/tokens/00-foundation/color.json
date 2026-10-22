@@ -1,0 +1,490 @@
+{
+  "$description": "Foundation colours: only values present in tailwind.config.cjs, the docs/changelog CSS, or measured computed styles. Light theme only.",
+  "color": {
+    "background": {
+      "$value": "#ffffff",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:9",
+          "quote": "background: '#ffffff'"
+        },
+        {
+          "ref": "CLONE_SPEC.md:28",
+          "quote": "| --background | `#ffffff`"
+        }
+      ]
+    },
+    "foreground": {
+      "$value": "#2c2826",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:10",
+          "quote": "foreground: '#2c2826'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "rgb(44, 40, 38)"
+        }
+      ]
+    },
+    "muted": {
+      "$value": "#fafaf9",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:12",
+          "quote": "DEFAULT: '#fafaf9'"
+        }
+      ]
+    },
+    "muted-foreground": {
+      "$value": "#756f6c",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:13",
+          "quote": "foreground: '#756f6c'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "rgb(117, 111, 108)"
+        }
+      ]
+    },
+    "border": {
+      "$value": "#eae8e6",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:15",
+          "quote": "border: '#eae8e6'"
+        }
+      ]
+    },
+    "highlight": {
+      "$value": "#faf7f5",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:17",
+          "quote": "DEFAULT: '#faf7f5'"
+        }
+      ]
+    },
+    "highlight-foreground": {
+      "$value": "#594545",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:18",
+          "quote": "foreground: '#594545'"
+        }
+      ]
+    },
+    "positive": {
+      "$value": "#16a249",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:20",
+          "quote": "positive: '#16a249'"
+        }
+      ]
+    },
+    "primary": {
+      "$value": "#413030",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:21",
+          "quote": "primary: '#413030'"
+        },
+        {
+          "ref": "CLONE_SPEC_DOCS.md:46",
+          "quote": "| --color-fd-primary / --primary | `#413030`"
+        }
+      ]
+    },
+    "tip-secondary": {
+      "$value": "#f8f7f6",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:23",
+          "quote": "DEFAULT: '#f8f7f6'"
+        }
+      ]
+    },
+    "tip-secondary-border": {
+      "$value": "#f3ece7",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:24",
+          "quote": "border: '#f3ece7'"
+        }
+      ]
+    },
+    "tip-muted": {
+      "$value": "#7d5e59",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:26",
+          "quote": "'tip-muted': '#7d5e59'"
+        }
+      ]
+    },
+    "presence": {
+      "$value": "#00c950",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:28",
+          "quote": "presence: '#00c950'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "lab(70.5521 -66.5147 45.8073)"
+        }
+      ],
+      "note": "CORRECTED: CLONE_SPEC.md §0.2 says #00c758; the measured lab(70.5521 -66.5147 45.8073) converts to #00c950 (see extraction/measured-values.json corrections)."
+    },
+    "traffic-red": {
+      "$value": "#ff6467",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:31",
+          "quote": "red: '#ff6467'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "lab(63.7053 60.745 31.3109)"
+        }
+      ],
+      "note": "CORRECTED from spec #ff6568."
+    },
+    "traffic-amber": {
+      "$value": "#ffb900",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:32",
+          "quote": "amber: '#ffb900'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "lab(80.1641 16.6016 99.2089)"
+        }
+      ],
+      "note": "CORRECTED from spec #fcbb00."
+    },
+    "traffic-green": {
+      "$value": "#05df72",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:33",
+          "quote": "green: '#05df72'"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "lab(78.503 -64.9265 39.7492)"
+        }
+      ]
+    },
+    "fable": {
+      "$value": "#D97757",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:36",
+          "quote": "fable: '#D97757'"
+        }
+      ]
+    },
+    "apply-tile": {
+      "$value": "#F5F5F5",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:39",
+          "quote": "'apply-tile': '#F5F5F5'"
+        }
+      ]
+    },
+    "brand-dark": {
+      "$value": "#282423",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:40",
+          "quote": "'brand-dark': '#282423'"
+        }
+      ]
+    },
+    "black": {
+      "$value": "#000000",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:81",
+          "quote": "\"Download now\" | 14px/20px | 700 | normal | #000"
+        }
+      ]
+    },
+    "hubspot-label": {
+      "$value": "#212d3a",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:43",
+          "quote": "label: '#212d3a'"
+        }
+      ]
+    },
+    "hubspot-border": {
+      "$value": "#959494",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:44",
+          "quote": "border: '#959494'"
+        }
+      ]
+    },
+    "hubspot-error": {
+      "$value": "#e51520",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:45",
+          "quote": "error: '#e51520'"
+        }
+      ]
+    },
+    "hubspot-placeholder": {
+      "$value": "rgba(0,0,0,0.64)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:47",
+          "quote": "placeholder: 'rgba(0,0,0,0.64)'"
+        }
+      ]
+    },
+    "foreground-70": {
+      "$value": "rgba(44,40,38,0.7)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:30",
+          "quote": "| foreground/70 | rgba(44,40,38,0.7)"
+        }
+      ]
+    },
+    "foreground-90": {
+      "$value": "rgba(44,40,38,0.9)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:31",
+          "quote": "| foreground/90 | rgba(44,40,38,0.9)"
+        }
+      ]
+    },
+    "foreground-30": {
+      "$value": "rgba(44,40,38,0.3)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:32",
+          "quote": "| foreground/30 | rgba(44,40,38,0.3)"
+        }
+      ]
+    },
+    "foreground-55": {
+      "$value": "rgba(44,40,38,0.55)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:89",
+          "quote": "| foreground/55 = rgba(44,40,38,.55)"
+        }
+      ]
+    },
+    "foreground-72": {
+      "$value": "rgba(44,40,38,0.72)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:62",
+          "quote": "| foreground/72 | `rgba(44,40,38,.72)`"
+        }
+      ]
+    },
+    "foreground-10": {
+      "$value": "rgba(44,40,38,0.10)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:63",
+          "quote": "| foreground/10 | `rgba(44,40,38,.10)`"
+        }
+      ]
+    },
+    "border-80": {
+      "$value": "rgba(234,232,230,0.8)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:64",
+          "quote": "| border/80 | `rgba(234,232,230,.8)`"
+        }
+      ]
+    },
+    "border-40": {
+      "$value": "rgba(234,232,230,0.4)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:65",
+          "quote": "| border/40 | `rgba(234,232,230,.4)`"
+        }
+      ]
+    },
+    "muted-50": {
+      "$value": "rgba(250,250,249,0.5)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:85",
+          "quote": "| muted/50 = rgba(250,250,249,.5)"
+        }
+      ]
+    },
+    "muted-80": {
+      "$value": "rgba(250,250,249,0.8)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:86",
+          "quote": "| muted/80 = rgba(250,250,249,.8)"
+        }
+      ]
+    },
+    "primary-10": {
+      "$value": "rgba(65,48,48,0.10)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:47",
+          "quote": "| fd-primary/10 | `rgba(65,48,48,.10)`"
+        }
+      ]
+    },
+    "black-50": {
+      "$value": "rgba(0,0,0,0.5)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:47",
+          "quote": "| black/50 | rgba(0,0,0,0.5)"
+        }
+      ]
+    },
+    "black-40": {
+      "$value": "rgba(0,0,0,0.4)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:46",
+          "quote": "| black/40 | rgba(0,0,0,0.4)"
+        }
+      ]
+    },
+    "black-20": {
+      "$value": "rgba(0,0,0,0.2)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:50",
+          "quote": "| --color-fd-overlay | `#0003` = rgba(0,0,0,.2)"
+        }
+      ]
+    },
+    "white-60": {
+      "$value": "rgba(255,255,255,0.6)",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:168",
+          "quote": "rgba(255,255,255,.6), tabular-nums"
+        }
+      ]
+    },
+    "docs-table-shell": {
+      "$value": "#fdfcfc",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:6",
+          "quote": "--docs-table-shell: #fdfcfc;"
+        }
+      ]
+    },
+    "docs-table-header": {
+      "$value": "#f8f7f6",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:7",
+          "quote": "--docs-table-header: #f8f7f6;"
+        }
+      ]
+    },
+    "docs-table-border": {
+      "$value": "#e3e0de",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:8",
+          "quote": "--docs-table-border: #e3e0de;"
+        }
+      ]
+    },
+    "docs-callout-surface": {
+      "$value": "#f9f7f6",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:9",
+          "quote": "--docs-callout-surface: #f9f7f6;"
+        }
+      ]
+    },
+    "docs-callout-border": {
+      "$value": "#ece4df",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:10",
+          "quote": "--docs-callout-border: #ece4df;"
+        }
+      ]
+    },
+    "docs-callout-accent": {
+      "$value": "#6e5149",
+      "$type": "color",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:12",
+          "quote": "--docs-callout-accent: #6e5149;"
+        }
+      ]
+    }
+  }
+}

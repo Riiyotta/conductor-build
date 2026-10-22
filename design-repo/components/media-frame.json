@@ -1,0 +1,28 @@
+{
+  "id": "media-frame",
+  "kind": "component",
+  "purpose": "Framed image/video (20px frame, 12px media radius, responsive max-height).",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:329",
+      "quote": "function ImageFrame({ node }) {"
+    }
+  ],
+  "tokens": [
+    "{component.media.asset-frame}"
+  ],
+  "variants": [
+    "image",
+    "video"
+  ],
+  "states": [
+    "static"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:363",
+      "quote": "### 3.7 Image / video frame (`node: image | video`): `.docs-asset-shell` (9 images, 3 videos)"
+    }
+  ],
+  "note": "max-height is min(48vh,24rem) below 768px and min(56vh,30rem) from 768px (corrected; see measured-values)."
+}

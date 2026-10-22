@@ -1,0 +1,32 @@
+{
+  "slug": "0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+  "version": "0.31.0",
+  "versionSlug": "0.31.0",
+  "title": "Search chats, add scripts in the UI, and view setup script logs",
+  "fullTitle": "0.31.0: Search chats, add scripts in the UI, and view setup script logs",
+  "date": "Jan 15th, 2026",
+  "dateISO": "2026-01-15",
+  "description": "Conductor 0.31.0 changelog - Search chats, add scripts in the UI, and view setup script logs",
+  "summary": "Use ⌘F to search within chats.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.31.0/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png",
+    "alt": "Search chats"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+  "sourceUrl": "https://www.conductor.build/changelog/0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Use <code>⌘F</code> to search within chats.</p>\n<figure data-asset><img alt=\"Search chats\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.0/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png\"/></figure>\n<p>You can now edit <a href=\"/docs/reference/scripts\" target=\"_blank\" rel=\"noopener noreferrer\">scripts</a> directly in Settings.</p>\n<figure data-asset><img alt=\"Edit scripts in Settings\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.0/1768502805807-CleanShot_2026-01-15_at_10.33.25_2x.png\"/></figure>\n<p>Also, setup script logs are now visible in the UI.</p>\n<figure data-asset><img alt=\"Setup script logs\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.0/1768502806213-CleanShot_2026-01-15_at_10.35.17_2x.png\"/></figure>\n<p>Lastly, we&#x27;ve simplified the left sidebar. Use the <code>+</code> icon to create a new workspace. Conductor will automatically detect favicons in your repository to display in the sidebar.</p>\n<figure data-asset><img alt=\"Simplified left sidebar\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.0/1768502806850-CleanShot_2026-01-15_at_10.45.43_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added a toggle to render <code>.svg</code> files as images</li>\n<li>Added a <code>⌃V</code> shortcut to mark files as viewed</li>\n<li>Marking a file as viewed automatically navigates to the next file</li>\n<li>Conductor will now try to reset git state when changing a workspace&#x27;s target branch</li>\n<li>Added a setting to configure where workspaces are stored on disk</li>\n<li>Linear issues are now sorted chronologically by updated time, and new issues will be pulled in faster</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the attachments popover not closing after adding an attachment</li>\n<li>The &quot;Fix errors&quot; button will now appear in the Checks tab when PRs are blocked awaiting a review</li>\n<li>Fixed unnecessary chat tab switching when navigating between tabs in the right panel</li>\n<li>The &quot;hand off&quot; button will now always start new chats in default permission mode</li>\n<li>Fixed composer approval text on smaller screens</li>\n</ul>",
+  "markdown": "\nUse `⌘F` to search within chats.\n\n![Search chats](/assets/changelog/media/0.31.0/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png)\n\nYou can now edit [scripts](/docs/reference/scripts) directly in Settings.\n\n![Edit scripts in Settings](/assets/changelog/media/0.31.0/1768502805807-CleanShot_2026-01-15_at_10.33.25_2x.png)\n\nAlso, setup script logs are now visible in the UI.\n\n![Setup script logs](/assets/changelog/media/0.31.0/1768502806213-CleanShot_2026-01-15_at_10.35.17_2x.png)\n\nLastly, we've simplified the left sidebar. Use the `+` icon to create a new workspace. Conductor will automatically detect favicons in your repository to display in the sidebar.\n\n![Simplified left sidebar](/assets/changelog/media/0.31.0/1768502806850-CleanShot_2026-01-15_at_10.45.43_2x.png)\n\n## Improvements\n\n- Added a toggle to render `.svg` files as images\n- Added a `⌃V` shortcut to mark files as viewed\n- Marking a file as viewed automatically navigates to the next file\n- Conductor will now try to reset git state when changing a workspace's target branch\n- Added a setting to configure where workspaces are stored on disk\n- Linear issues are now sorted chronologically by updated time, and new issues will be pulled in faster\n\n## Fixes\n\n- Fixed the attachments popover not closing after adding an attachment\n- The \"Fix errors\" button will now appear in the Checks tab when PRs are blocked awaiting a review\n- Fixed unnecessary chat tab switching when navigating between tabs in the right panel\n- The \"hand off\" button will now always start new chats in default permission mode\n- Fixed composer approval text on smaller screens\n"
+}

@@ -1,0 +1,36 @@
+{
+  "slug": "0.28.7-change-target-branch",
+  "version": "0.28.7",
+  "versionSlug": "0.28.7",
+  "title": "Change Target Branch",
+  "fullTitle": "0.28.7: Change Target Branch",
+  "date": "Jan 5th, 2026",
+  "dateISO": "2026-01-05",
+  "description": "Conductor 0.28.7 changelog - Change Target Branch",
+  "summary": "You can now change a workspace’s target branch at the top of the page!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.28.7/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png",
+    "alt": "CleanShot 2026-01-05 at 08.54.48@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.28.7-change-target-branch/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.7-change-target-branch",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.7-change-target-branch",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>You can now change a workspace’s target branch at the top of the page!</p>\n<figure data-asset><img alt=\"CleanShot 2026-01-05 at 08.54.48@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.7/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png\"/></figure>\n<p>You can also view the tokens and cost below each AI response.</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-30 at 17.30.09@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.7/1767642386547-CleanShot_2026-01-05_at_08.55.13_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Claude code slash commands that aren’t supported in Conductor will now appear in auto-complete and take you to a terminal to run</li>\n<li>Switching agents mid-chat will now create a new chat tab with a summary of the conversation</li>\n<li>Added notifications when Claude has questions or is awaiting a plan review</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed spotlight rebase detection when using spotlight testing</li>\n<li>New review chats will bypass the default plan mode setting</li>\n<li>Fixed invisible loading indicator when forking</li>\n<li>Disabled autocorrect and spellcheck in todos and scratchpad</li>\n<li>Fixed <code>Enter</code> sending messages during IME composition</li>\n<li>Fixed the “Discard changes” dialog flickering while the AI was responding</li>\n<li>The file tree now updates as soon as a workspace’s setup script finishes</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Removed rare city notification toasts</li>\n</ul>",
+  "markdown": "\nYou can now change a workspace’s target branch at the top of the page!\n\n<img\n    src=\"/assets/changelog/media/0.28.7/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png\"\n    alt=\"CleanShot 2026-01-05 at 08.54.48@2x.png\"\n/>\n\nYou can also view the tokens and cost below each AI response.\n\n<img\n    src=\"/assets/changelog/media/0.28.7/1767642386547-CleanShot_2026-01-05_at_08.55.13_2x.png\"\n    alt=\"CleanShot 2025-12-30 at 17.30.09@2x.png\"\n/>\n\n## Improvements\n\n- Claude code slash commands that aren’t supported in Conductor will now appear in auto-complete and take you to a terminal to run\n- Switching agents mid-chat will now create a new chat tab with a summary of the conversation\n- Added notifications when Claude has questions or is awaiting a plan review\n\n## Fixes\n\n- Fixed spotlight rebase detection when using spotlight testing\n- New review chats will bypass the default plan mode setting\n- Fixed invisible loading indicator when forking\n- Disabled autocorrect and spellcheck in todos and scratchpad\n- Fixed `Enter` sending messages during IME composition\n- Fixed the “Discard changes” dialog flickering while the AI was responding\n- The file tree now updates as soon as a workspace’s setup script finishes\n\n## Misc\n\n- Removed rare city notification toasts\n"
+}

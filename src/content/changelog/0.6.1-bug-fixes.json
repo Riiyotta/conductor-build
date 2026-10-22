@@ -1,0 +1,32 @@
+{
+  "slug": "0.6.1-bug-fixes",
+  "version": "0.6.1",
+  "versionSlug": "0.6.1",
+  "title": "Bug Fixes!",
+  "fullTitle": "0.6.1: Bug Fixes!",
+  "date": "August 12th, 2025",
+  "dateISO": "2025-08-12",
+  "description": "Conductor 0.6.1 changelog - Bug Fixes!",
+  "summary": "New in 0.6.2:",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.6.1-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.6.1-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.6.1-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Added a sound effect that plays on workspace completion</li>\n<li>Added special styling for context7 and Linear MCPs</li>\n<li>Added an option to view only uncommitted changes in the git diff dialog</li>\n<li>Added the &quot;X&quot; icon to all terminals so they&#x27;re easier to quit</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where text could be inadvertently selected in the sidebar</li>\n<li>Fixed the system theme selection not being respected</li>\n<li>Fixed a bug where the model selection popover could go off screen</li>\n<li>Fixed a bug where the educational tooltip would appear briefly on startup for all users</li>\n<li>Fixed a resource leak when closing terminal tabs</li>\n<li>Fixed a case where Claude Code could make edits outside of your workspace&#x27;s directory</li>\n<li>Fixed a bug where typing a space would close the file suggestions popover in the composer</li>\n<li>Fixed an overflow issue in the &quot;Archive Anyway?&quot; dialog</li>\n<li>Disabled Git stats from updating while a workspace is archiving</li>\n<li>Fixed a bug where the &quot;Compact and Retry&quot; button would re-send the incorrect message</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Claude Code is now aware of your repository&#x27;s default branch</li>\n</ul>\n<p>New in 0.6.2:</p>\n<ul>\n<li>Fixed a bug causing new workspaces to fail</li>\n<li>Improved repository details page</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Added a sound effect that plays on workspace completion\n- Added special styling for context7 and Linear MCPs\n- Added an option to view only uncommitted changes in the git diff dialog\n- Added the \"X\" icon to all terminals so they're easier to quit\n\n## Fixes\n\n- Fixed a bug where text could be inadvertently selected in the sidebar\n- Fixed the system theme selection not being respected\n- Fixed a bug where the model selection popover could go off screen\n- Fixed a bug where the educational tooltip would appear briefly on startup for all users\n- Fixed a resource leak when closing terminal tabs\n- Fixed a case where Claude Code could make edits outside of your workspace's directory\n- Fixed a bug where typing a space would close the file suggestions popover in the composer\n- Fixed an overflow issue in the \"Archive Anyway?\" dialog\n- Disabled Git stats from updating while a workspace is archiving\n- Fixed a bug where the \"Compact and Retry\" button would re-send the incorrect message\n\n## Misc\n\n- Claude Code is now aware of your repository's default branch\n\nNew in 0.6.2:\n\n- Fixed a bug causing new workspaces to fail\n- Improved repository details page\n"
+}

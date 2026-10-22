@@ -1,0 +1,36 @@
+{
+  "slug": "0.28.1-context-directory-set-working-directories",
+  "version": "0.28.1",
+  "versionSlug": "0.28.1",
+  "title": "Context Directory, Set Working Directories",
+  "fullTitle": "0.28.1: Context Directory, Set Working Directories",
+  "date": "Dec 23rd, 2025",
+  "dateISO": "2025-12-23",
+  "description": "Conductor 0.28.1 changelog - Context Directory, Set Working Directories",
+  "summary": "All new workspaces now have a .context directory. Attachments, plans, and notes are automatically stored here. Learn more here.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/context-dir-0.28.1.png",
+    "alt": "Context directory"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.28.1-context-directory-set-working-directories/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.1-context-directory-set-working-directories",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.1-context-directory-set-working-directories",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Workspace context"
+    },
+    {
+      "depth": 4,
+      "title": "Set working directories"
+    },
+    {
+      "depth": 4,
+      "title": "Custom mono fonts"
+    }
+  ],
+  "html": "<h4>Workspace context</h4>\n<p>All new workspaces now have a <code>.context</code> directory. Attachments, plans, and notes are automatically stored here. <a href=\"/blog/context\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more here</a>.</p>\n<figure data-asset><img alt=\"Context directory\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/context-dir-0.28.1.png\"/></figure>\n<h4>Set working directories</h4>\n<p>You can now set which directories are checked out in a workspace. Use this to reduce agent confusion in large repos when searching for files. <a href=\"/docs/guides/repositories/monorepos#working-with-specific-directories\" target=\"_blank\" rel=\"noopener noreferrer\">Learn more here</a>.</p>\n<figure data-asset><img alt=\"Set working directories\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/set-working-dir-0.28.1.png\"/></figure>\n<h4>Custom mono fonts</h4>\n<p>You can now use your own custom mono fonts.</p>\n<figure data-asset><img alt=\"Custom mono fonts\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/custom-mono-fonts-0.28.1.png\"/></figure>\n<p>Improvements:</p>\n<ul>\n<li>Added sidebar notification when awaiting user input when planning</li>\n</ul>\n<p>Fixes:</p>\n<ul>\n<li>Summaries from forking chats are now stored in the new workspace’s directory</li>\n<li>Disabled command palette shortcut when the terminal is focused</li>\n<li>Fixed inaccurate branch names when searching for workspaces</li>\n<li>Fixed keyboard shortcut conflict between feedback and workspace search. Use <code>⌘⇧F</code> to search for workspaces, and <code>⌘⌥F</code> to send in-app feedback</li>\n<li>Fixed scroll to bottom button position in zen mode</li>\n<li>Fixed Codex not receiving <code>GH_TOKEN</code> when set</li>\n<li>Fixed text wrapping when awaiting user input when planning</li>\n</ul>",
+  "markdown": "\n### Workspace context\n\nAll new workspaces now have a `.context` directory. Attachments, plans, and notes are automatically stored here. [Learn more here](/blog/context).\n\n![Context directory](/assets/changelog/images/context-dir-0.28.1.png)\n\n### Set working directories\n\nYou can now set which directories are checked out in a workspace. Use this to reduce agent confusion in large repos when searching for files. [Learn more here](/docs/guides/repositories/monorepos#working-with-specific-directories).\n\n![Set working directories](/assets/changelog/images/set-working-dir-0.28.1.png)\n\n### Custom mono fonts\n\nYou can now use your own custom mono fonts.\n\n![Custom mono fonts](/assets/changelog/images/custom-mono-fonts-0.28.1.png)\n\nImprovements:\n\n- Added sidebar notification when awaiting user input when planning\n\nFixes:\n\n- Summaries from forking chats are now stored in the new workspace’s directory\n- Disabled command palette shortcut when the terminal is focused\n- Fixed inaccurate branch names when searching for workspaces\n- Fixed keyboard shortcut conflict between feedback and workspace search. Use `⌘⇧F` to search for workspaces, and `⌘⌥F` to send in-app feedback\n- Fixed scroll to bottom button position in zen mode\n- Fixed Codex not receiving `GH_TOKEN` when set\n- Fixed text wrapping when awaiting user input when planning\n"
+}

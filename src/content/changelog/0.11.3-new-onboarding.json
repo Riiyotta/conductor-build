@@ -1,0 +1,32 @@
+{
+  "slug": "0.11.3-new-onboarding",
+  "version": "0.11.3",
+  "versionSlug": "0.11.3",
+  "title": "New Onboarding",
+  "fullTitle": "0.11.3: New Onboarding",
+  "date": "Sept 22nd, 2025",
+  "dateISO": "2025-09-22",
+  "description": "Conductor 0.11.3 changelog - New Onboarding",
+  "summary": "We've revamped the onboarding flow in Conductor to make it easier and more beautiful to get started:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.11.3/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.11.3-new-onboarding/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.11.3-new-onboarding",
+  "sourceUrl": "https://www.conductor.build/changelog/0.11.3-new-onboarding",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve revamped the onboarding flow in Conductor to make it easier and more beautiful to get started:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.11.3/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d.png\"/></figure>\n<p>We&#x27;ve made it easier to set up your repo to work well with Conductor. You can now create your setup scripts with Claude:</p>\n<figure data-asset><img alt=\"CleanShot 2025-09-22 at 15 43 52@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.11.3/52beafc5-6802-45b3-9553-33ffc071a0f2.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added a <code>Report Bug</code> button when Claude Code returns errors</li>\n<li>Linear attachments are now rendered as markdown</li>\n<li>The <code>Open In</code> menu no longer defaults to Finder</li>\n<li>A new workspace will be automatically created when a repository is added</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Retrying an error&#x27;ed message will now retry with the failed message&#x27;s attachments</li>\n<li>The entire top bar is now draggable</li>\n</ul>",
+  "markdown": "\nWe've revamped the onboarding flow in Conductor to make it easier and more beautiful to get started:\n\n<img\n    width=\"1806\"\n    height=\"1020\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.11.3/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d.png\"\n/>\n\nWe've made it easier to set up your repo to work well with Conductor. You can now create your setup scripts with Claude:\n\n<img\n    width=\"1554\"\n    height=\"950\"\n    alt=\"CleanShot 2025-09-22 at 15 43 52@2x\"\n    src=\"/assets/changelog/media/0.11.3/52beafc5-6802-45b3-9553-33ffc071a0f2.png\"\n/>\n\n## Improvements\n\n- Added a `Report Bug` button when Claude Code returns errors\n- Linear attachments are now rendered as markdown\n- The `Open In` menu no longer defaults to Finder\n- A new workspace will be automatically created when a repository is added\n\n## Fixes\n\n- Retrying an error'ed message will now retry with the failed message's attachments\n- The entire top bar is now draggable\n"
+}

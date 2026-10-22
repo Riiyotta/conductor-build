@@ -1,0 +1,147 @@
+{
+  "id": "proof.trusted-logo-strip",
+  "category": "PROOF",
+  "iaSections": [
+    "proof.trusted-logo-strip"
+  ],
+  "purpose": "Scale proof: user count plus customer logos.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Logos.jsx:39",
+      "quote": "{ threshold: 0.4 },"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:133",
+      "quote": "## 3. \"Trusted by\" logo strip"
+    },
+    {
+      "ref": "CLONE_SPEC.md:322",
+      "quote": "| M5 | \"100k+\" counter |"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "proof.trusted-logo-strip"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "headingPrefix": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "count": {
+      "type": "object",
+      "fields": {
+        "value": {
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 100000,
+          "required": true
+        },
+        "suffix": {
+          "type": "pattern",
+          "pattern": "^[a-zA-Z+]{0,3}$",
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "headingSuffix": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "logos": {
+      "type": "list",
+      "items": {
+        "type": "media",
+        "roles": [
+          "customer-logo"
+        ],
+        "required": true
+      },
+      "minItems": 8,
+      "maxItems": 8,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.home",
+      "template.pricing"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "count-up-on-view"
+    ],
+    "defaultPatterns": [
+      "count-up-on-view"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/Logos.jsx:34",
+        "quote": "setN(Math.round(100 * (1 - (1 - p) ** 3)))"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "heading",
+          "value": "20px/28px"
+        },
+        {
+          "property": "gridGap",
+          "value": "16px"
+        },
+        {
+          "property": "cellHeight",
+          "value": "32px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "heading",
+          "value": "24px/32px"
+        },
+        {
+          "property": "gridGap",
+          "value": "24px"
+        },
+        {
+          "property": "cellHeight",
+          "value": "40px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real customer logos and a live usage figure: never reproduce logos or invent a count attributed to real companies."
+  },
+  "quirks": [
+    "Count-up is skipped when the strip is already in view on load (e.g. pricing at 1440).",
+    "Spotify logo tinted green here, untinted on /enterprise."
+  ],
+  "assetRoles": [
+    "customer-logo"
+  ]
+}

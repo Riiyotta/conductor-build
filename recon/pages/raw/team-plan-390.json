@@ -1,0 +1,152 @@
+{
+ "url": "https://www.conductor.build/team-plan",
+ "title": "Conductor Teams | Conductor",
+ "desc": "Team plans are currently invite-only. If you'd like to bring Conductor to your company, fill out the form below and we'll be in touch soon.",
+ "docH": 1308,
+ "docW": 390,
+ "vw": 390,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 57,
+   "top": 0,
+   "right": 390,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 799,
+ "footerH": 509,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://js-na2.hsforms.net/ui-forms-embed-components-app/frame.html?_hsPortalId=246368856&_hsFormId=a7817add-03f3-49dc-9ffc-16c10009e49a&_hsIsQa=false&_hsHublet=na2&_hsDisableScriptloader=true&_hsDisableRedirect=true&_hsInstanceId=dab48adb-6fe5-44a0-b491-f58838635f1b",
+  "https://www.conductor.build/about.webp",
+  "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=form-frame-load-success&count=1"
+ ],
+ "anims": [],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    390,
+    742
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    0,
+    57,
+    390,
+    742
+   ],
+   "p": "64px 16px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.mb-4.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    16,
+    121,
+    358,
+    36
+   ],
+   "t": "Conductor Teams",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p.max-w-2xl.text-sm.leading-6.text-muted-foreground.sm:text-base",
+   "b": [
+    16,
+    173,
+    358,
+    72
+   ],
+   "t": "Team plans are currently invite-only. If you'd like to bring Conductor to your company, fill out the form below and we'll be in touch soon.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "mw": "672px"
+  },
+  {
+   "k": "iframe",
+   "b": [
+    16,
+    245,
+    358,
+    798
+   ],
+   "ov": "clip"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/team-plan",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "7462"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79554"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  },
+  {
+   "url": "https://js-na2.hsforms.net/ui-forms-embed-components-app/frame.html?_hsPortalId=246368856&_hsFormId=a7817add-03f3-49dc-9ffc-16c10009e49a&_hsIsQa=false&_hsHublet=na2&_hsDisableScriptloader=true&_hsDisableRedirect=true&_hsInstanceId=dab48adb-6fe5-44a0-b491-f58838635f1b",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "18433"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/render-definition/246368856/a7817add-03f3-49dc-9ffc-16c10009e49a",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "2357"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/feature-control/246368856",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "157"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/visitor/246368856/a7817add-03f3-49dc-9ffc-16c10009e49a?hutk=",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "20"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=developer-forms-embed-v3-developer-RENDER_SUCCESS&count=1",
+   "status": 200,
+   "type": "image/gif",
+   "len": "35"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=form-frame-load-success&count=1",
+   "status": 200,
+   "type": "image/gif",
+   "len": "35"
+  }
+ ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.36.0-sonnet-4-6-pierre-diffs",
+  "version": "0.36.0",
+  "versionSlug": "0.36.0",
+  "title": "Sonnet 4.6, Pierre Diffs",
+  "fullTitle": "0.36.0: Sonnet 4.6, Pierre Diffs",
+  "date": "Feb 17th, 2026",
+  "dateISO": "2026-02-17",
+  "description": "Conductor 0.36.0 changelog - Sonnet 4.6, Pierre Diffs",
+  "summary": "Sonnet 4.6 is now live in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.36.0/1771359980844-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.0-sonnet-4-6-pierre-diffs/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.0-sonnet-4-6-pierre-diffs",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.0-sonnet-4-6-pierre-diffs",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Sonnet 4.6 is now live in Conductor!\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.0/1771359980844-image.png\"/></figure></p>\n<p>We&#x27;ve replaced our diff viewer with a more accurate and beautiful <a href=\"http://diffs.com/\" target=\"_blank\" rel=\"noopener noreferrer\">diff</a> engine.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.0/1771359981518-image.png\"/></figure></p>\n<p>We’ve brought back more info about each workspace in the sidebar, so you can tell at a glance what repo and directory you’re in.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.0/1771359982278-image.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>You can now drag and drop to reorder repositories in the sidebar.</li>\n<li>Adjustments to chat tab sizing</li>\n<li>You can now toggle sidebar visibility from the View menu</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Clarify branch rename instruction, which Codex was misinterpreting</li>\n<li>Fix a bug where the right sidebar toggle button would incorrectly appear on the home page</li>\n<li>Fix an issue with textarea autoresizing in the UI for Claude&#x27;s ask-a-question tool</li>\n<li>Fixed a bug where AI-generated chat titles might override manual changes</li>\n</ul>",
+  "markdown": "\nSonnet 4.6 is now live in Conductor!\n![image](/assets/changelog/media/0.36.0/1771359980844-image.png)\n\nWe've replaced our diff viewer with a more accurate and beautiful [diff](http://diffs.com/) engine.\n![image](/assets/changelog/media/0.36.0/1771359981518-image.png)\n\nWe’ve brought back more info about each workspace in the sidebar, so you can tell at a glance what repo and directory you’re in.\n![image](/assets/changelog/media/0.36.0/1771359982278-image.png)\n\n## Improvements\n\n- You can now drag and drop to reorder repositories in the sidebar.\n- Adjustments to chat tab sizing\n- You can now toggle sidebar visibility from the View menu\n\n## Fixes\n\n- Clarify branch rename instruction, which Codex was misinterpreting\n- Fix a bug where the right sidebar toggle button would incorrectly appear on the home page\n- Fix an issue with textarea autoresizing in the UI for Claude's ask-a-question tool\n- Fixed a bug where AI-generated chat titles might override manual changes\n"
+}

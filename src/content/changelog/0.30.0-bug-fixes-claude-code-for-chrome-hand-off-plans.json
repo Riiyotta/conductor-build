@@ -1,0 +1,32 @@
+{
+  "slug": "0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans",
+  "version": "0.30.0",
+  "versionSlug": "0.30.0",
+  "title": "Bug Fixes, Claude Code for Chrome, Hand off plans",
+  "fullTitle": "0.30.0: Bug Fixes, Claude Code for Chrome, Hand off plans",
+  "date": "Jan 13th, 2026",
+  "dateISO": "2026-01-13",
+  "description": "Conductor 0.30.0 changelog - Bug Fixes, Claude Code for Chrome, Hand off plans",
+  "summary": "We've fixed the increase in Error Code 1 and Unknown errors that would occur when using an async subagent or background task with Claude Code.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.30.0/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png",
+    "alt": "Claude Code for Chrome"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans",
+  "sourceUrl": "https://www.conductor.build/changelog/0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed the increase in <code>Error Code 1</code> and <code>Unknown error</code>s that would occur when using an async subagent or background task with Claude Code.</p>\n<p>Claude Code in Conductor can now use Chrome to test changes, browse the web, and take screenshots. Enable in Settings → Chat.</p>\n<figure data-asset><img alt=\"Claude Code for Chrome\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.30.0/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png\"/></figure>\n<p>Also, quickly hand off plans to another agent in the same workspace for implementation.</p>\n<figure data-asset><img alt=\"Hand off plans\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.30.0/1768351379517-CleanShot_2026-01-13_at_16.32.08_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Improved rendering for the GetTerminalOutput tool</li>\n<li>Added CI job run time to the Checks tab</li>\n<li>CI jobs in the Checks tab are now sorted by state</li>\n<li>Use the <code>Enter</code> key to create a new TODO automatically in the Checks tab</li>\n<li>Added a button to copy queued user messages</li>\n<li>Added app and SDK versions to the help menu</li>\n<li>Added <code>⌘K</code> shortcut to clear terminal display</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where a workspace&#x27;s branch name wouldn&#x27;t show when initializing</li>\n<li>Fixed a bug where files marked as deleted could not be marked as viewed</li>\n<li>Fixed a bug where navigating to the Checks panel would change the view in the main panel</li>\n</ul>",
+  "markdown": "\nWe've fixed the increase in `Error Code 1` and `Unknown error`s that would occur when using an async subagent or background task with Claude Code.\n\nClaude Code in Conductor can now use Chrome to test changes, browse the web, and take screenshots. Enable in Settings → Chat.\n\n![Claude Code for Chrome](/assets/changelog/media/0.30.0/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png)\n\nAlso, quickly hand off plans to another agent in the same workspace for implementation.\n\n![Hand off plans](/assets/changelog/media/0.30.0/1768351379517-CleanShot_2026-01-13_at_16.32.08_2x.png)\n\n## Improvements\n\n- Improved rendering for the GetTerminalOutput tool\n- Added CI job run time to the Checks tab\n- CI jobs in the Checks tab are now sorted by state\n- Use the `Enter` key to create a new TODO automatically in the Checks tab\n- Added a button to copy queued user messages\n- Added app and SDK versions to the help menu\n- Added `⌘K` shortcut to clear terminal display\n\n## Fixes\n\n- Fixed a bug where a workspace's branch name wouldn't show when initializing\n- Fixed a bug where files marked as deleted could not be marked as viewed\n- Fixed a bug where navigating to the Checks panel would change the view in the main panel\n"
+}

@@ -1,0 +1,19 @@
+{
+  "slug": "0.35.1-bug-fixes",
+  "version": "0.35.1",
+  "versionSlug": "0.35.1",
+  "title": "Bug Fixes",
+  "fullTitle": "0.35.1: Bug Fixes",
+  "date": "Feb 11th, 2026",
+  "dateISO": "2026-02-11",
+  "description": "Conductor 0.35.1 changelog - Bug Fixes",
+  "summary": "We fixed a bug that caused chats to intermittently disappear.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.35.1-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.35.1-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.35.1-bug-fixes",
+  "headings": [],
+  "html": "<p>We fixed a bug that caused chats to intermittently disappear.</p>",
+  "markdown": "\nWe fixed a bug that caused chats to intermittently disappear.\n"
+}

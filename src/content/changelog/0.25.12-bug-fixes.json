@@ -1,0 +1,28 @@
+{
+  "slug": "0.25.12-bug-fixes",
+  "version": "0.25.12",
+  "versionSlug": "0.25.12",
+  "title": "Bug Fixes",
+  "fullTitle": "0.25.12: Bug Fixes",
+  "date": "Dec 15th, 2025",
+  "dateISO": "2025-12-15",
+  "description": "Conductor 0.25.12 changelog - Bug Fixes",
+  "summary": "We now bundle the GitHub CLI with Conductor. If you've had issues authenticating with GitHub in the past, this should help!",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.25.12-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.12-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.12-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We now bundle the GitHub CLI with Conductor. If you&#x27;ve had issues authenticating with GitHub in the past, this should help!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added a max width for chats</li>\n<li>Improved archiving UI: expanded dialog and added tooltips for full branch names</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed $CONDUCTOR environment variables (port, workspace path, etc) not being picked up by Claude Code and Codex</li>\n<li>Gracefully handle repos that have been deleted on disk</li>\n<li>Fixed session picker eyebrow icon showing Claude Code icons for Codex sessions</li>\n<li>Fixed issues with Codex API Key not always being picked up</li>\n</ul>",
+  "markdown": "\nWe now bundle the GitHub CLI with Conductor. If you've had issues authenticating with GitHub in the past, this should help!\n\n## Improvements\n\n- Added a max width for chats\n- Improved archiving UI: expanded dialog and added tooltips for full branch names\n\n## Fixes\n\n- Fixed $CONDUCTOR environment variables (port, workspace path, etc) not being picked up by Claude Code and Codex\n- Gracefully handle repos that have been deleted on disk\n- Fixed session picker eyebrow icon showing Claude Code icons for Codex sessions\n- Fixed issues with Codex API Key not always being picked up\n"
+}

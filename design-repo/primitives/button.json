@@ -1,0 +1,43 @@
+{
+  "id": "button",
+  "kind": "primitive",
+  "purpose": "Single action trigger. Variants are the four measured button treatments; none has a CSS transition except the CTA icon swap.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Header.jsx:63",
+      "quote": "inline-flex h-8 shrink-0 cursor-pointer items-center"
+    },
+    {
+      "ref": "src/pages/Pricing.jsx:64",
+      "quote": "function PlanButton({ cta }) {"
+    }
+  ],
+  "tokens": [
+    "{component.button.primary}",
+    "{component.button.on-image}",
+    "{component.button.cta-white}",
+    "{component.button.outline}"
+  ],
+  "variants": [
+    "primary",
+    "on-image",
+    "cta-white",
+    "outline"
+  ],
+  "states": [
+    "rest",
+    "hover (instant, no transition)",
+    "focus-visible ring foreground/35"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:101",
+      "quote": "**Download** button: 90x32 at x=1234,y=12"
+    },
+    {
+      "ref": "CLONE_SPEC_PAGES.md:100",
+      "quote": "Pricing buttons have **no transition class**, so their hover is instant."
+    }
+  ],
+  "accessibility": "Native <button> for in-page actions (dialog), <a> for navigation."
+}

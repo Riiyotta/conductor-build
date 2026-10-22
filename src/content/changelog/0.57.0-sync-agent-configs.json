@@ -1,0 +1,48 @@
+{
+  "slug": "0.57.0-sync-agent-configs",
+  "version": "0.57.0",
+  "versionSlug": "0.57.0",
+  "title": "Sync agent configs",
+  "fullTitle": "0.57.0: Sync agent configs",
+  "date": "May 22, 2026",
+  "dateISO": "2026-05-22",
+  "description": "Conductor 0.57.0 changelog - Sync agent configs",
+  "summary": "Added a Sync Agent Configs button in Settings → General to copy skills, slash commands, and MCP servers between Claude Code and Codex.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/sync-agent-configs-0.57.0.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.57.0-sync-agent-configs/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.57.0-sync-agent-configs",
+  "sourceUrl": "https://www.conductor.build/changelog/0.57.0-sync-agent-configs",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Synced agent configs"
+    },
+    {
+      "depth": 3,
+      "title": "Conductor-aware agents"
+    },
+    {
+      "depth": 3,
+      "title": "Ten tabs"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<h3>Synced agent configs</h3>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/sync-agent-configs-0.57.0.png\"/></figure>\n<p>Added a Sync Agent Configs button in Settings → General to copy skills, slash commands, and MCP servers between Claude Code and Codex.</p>\n<h3>Conductor-aware agents</h3>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/conductor-aware-agents-0.57.0.png\"/></figure>\n<p>All agents can now use and understand Conductor - you can say “Configure my setup script for this project” or “Should I use spotlight here” and the agent will help you out!</p>\n<h3>Ten tabs</h3>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/ten-tabs-0.57.0.png\"/></figure>\n<p>As Kevin Gates once observed, sometimes you need more lines of communication. Turn on Tab Freak Mode in Settings → Experimental to get up to 10 tabs in a workspace. 😎</p>\n<h3>Improvements</h3>\n<ul>\n<li>The top bar now shows the worktree name.</li>\n<li>Improved git change checks for large workspaces.</li>\n<li>Added back the draft PR option to Create PR buttons.</li>\n<li>Local workspaces now show their folder name in the top bar.</li>\n<li>Added a Git setting to keep workspace names from changing automatically.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Sending a message no longer waits for the workspace setup script to finish.</li>\n<li>Fixed an issue where PR data could get stuck loading after branch or tab changes.</li>\n<li>Fixed copied resource usage details for Git commands.</li>\n<li>Fixed an issue where linked directories added with /add-dir were not available to agents in local workspaces.</li>\n<li>Fixed an issue where diff comment line selections did not appear until after dragging finished.</li>\n<li>Prompt submissions work again.</li>\n<li>Fixed an issue where GitHub sign-in could return to the login screen.</li>\n<li>Fixed an issue where Claude would still say &quot;Authentication required&quot; in the current chat after a successful login.</li>\n<li>Fixed an issue that could block the web sign-in flow on app.conductor.build.</li>\n<li>Fixed an issue where long links in chat messages could make the message view scroll sideways.</li>\n<li>Fixed an issue where the Option+U shortcut (and other dead-key shortcuts) would insert a stray accent character into the focused terminal, composer, or file editor.</li>\n<li>Fixed an issue where composer @ suggestions could stop appearing.</li>\n<li>Fixed an issue where the sidebar educational popup could appear above the workspace list fade.</li>\n<li>Fixed an issue where Conductor could show a branch as ahead after its commits were pushed.</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Sending a message from a file view will no longer navigate back to the chat.</li>\n</ul>",
+  "markdown": "\n## Synced agent configs\n\n![image](/assets/changelog/images/sync-agent-configs-0.57.0.png)\n\nAdded a Sync Agent Configs button in Settings → General to copy skills, slash commands, and MCP servers between Claude Code and Codex.\n\n## Conductor-aware agents\n\n![image](/assets/changelog/images/conductor-aware-agents-0.57.0.png)\n\nAll agents can now use and understand Conductor - you can say “Configure my setup script for this project” or “Should I use spotlight here” and the agent will help you out!\n\n## Ten tabs\n\n![image](/assets/changelog/images/ten-tabs-0.57.0.png)\n\nAs Kevin Gates once observed, sometimes you need more lines of communication. Turn on Tab Freak Mode in Settings → Experimental to get up to 10 tabs in a workspace. 😎\n\n## Improvements\n\n- The top bar now shows the worktree name.\n- Improved git change checks for large workspaces.\n- Added back the draft PR option to Create PR buttons.\n- Local workspaces now show their folder name in the top bar.\n- Added a Git setting to keep workspace names from changing automatically.\n\n## Fixes\n\n- Sending a message no longer waits for the workspace setup script to finish.\n- Fixed an issue where PR data could get stuck loading after branch or tab changes.\n- Fixed copied resource usage details for Git commands.\n- Fixed an issue where linked directories added with /add-dir were not available to agents in local workspaces.\n- Fixed an issue where diff comment line selections did not appear until after dragging finished.\n- Prompt submissions work again.\n- Fixed an issue where GitHub sign-in could return to the login screen.\n- Fixed an issue where Claude would still say \"Authentication required\" in the current chat after a successful login.\n- Fixed an issue that could block the web sign-in flow on app.conductor.build.\n- Fixed an issue where long links in chat messages could make the message view scroll sideways.\n- Fixed an issue where the Option+U shortcut (and other dead-key shortcuts) would insert a stray accent character into the focused terminal, composer, or file editor.\n- Fixed an issue where composer @ suggestions could stop appearing.\n- Fixed an issue where the sidebar educational popup could appear above the workspace list fade.\n- Fixed an issue where Conductor could show a branch as ahead after its commits were pushed.\n\n## Misc\n\n- Sending a message from a file view will no longer navigate back to the chat.\n"
+}

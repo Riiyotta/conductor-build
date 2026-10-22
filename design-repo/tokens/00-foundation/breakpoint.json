@@ -1,0 +1,45 @@
+{
+  "$description": "Tailwind default breakpoints (min-width). Measured viewports: 1440, 1280, 1024, 800, 390.",
+  "breakpoint": {
+    "sm": {
+      "$value": "640px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:62",
+          "quote": "Tailwind defaults: sm 640, md 768, lg 1024, xl 1280."
+        }
+      ]
+    },
+    "md": {
+      "$value": "768px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:62",
+          "quote": "Tailwind defaults: sm 640, md 768, lg 1024, xl 1280."
+        }
+      ]
+    },
+    "lg": {
+      "$value": "1024px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:62",
+          "quote": "Tailwind defaults: sm 640, md 768, lg 1024, xl 1280."
+        }
+      ]
+    },
+    "xl": {
+      "$value": "1280px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:62",
+          "quote": "Tailwind defaults: sm 640, md 768, lg 1024, xl 1280."
+        }
+      ]
+    }
+  }
+}

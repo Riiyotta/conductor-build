@@ -1,0 +1,771 @@
+{
+  "slug": "concepts/git-worktrees",
+  "url": "/docs/concepts/git-worktrees",
+  "title": "Git worktrees",
+  "description": "Understand how Conductor uses Git worktrees to create isolated coding-agent workspaces",
+  "meta": {
+    "title": "Git worktrees | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/concepts/git-worktrees/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Concepts"
+    },
+    {
+      "name": "Git worktrees"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#how-conductor-uses-worktrees",
+      "title": "How Conductor uses worktrees"
+    },
+    {
+      "depth": 2,
+      "url": "#what-is-isolated",
+      "title": "What is isolated"
+    },
+    {
+      "depth": 2,
+      "url": "#what-is-shared",
+      "title": "What is shared"
+    },
+    {
+      "depth": 2,
+      "url": "#what-conductor-copies",
+      "title": "What Conductor copies"
+    },
+    {
+      "depth": 2,
+      "url": "#branches-and-worktrees",
+      "title": "Branches and worktrees"
+    },
+    {
+      "depth": 2,
+      "url": "#when-to-create-another-workspace",
+      "title": "When to create another workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#how-this-differs-from-raw-git-worktrees",
+      "title": "How this differs from raw Git worktrees"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/concepts/testing",
+    "title": "Testing",
+    "description": "Automate testing in Conductor"
+  },
+  "next": {
+    "url": "/docs/api",
+    "title": "Conductor API",
+    "description": "Drive Conductor cloud workspaces programmatically over HTTP"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor uses Git worktrees to give each workspace its own files, branch, commands, chats, and review flow."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A Git worktree is a second working tree attached to the same repository. Instead of copying the whole project or asking several agents to share one checkout, Conductor creates a separate working tree for each workspace. That lets agents work in parallel without editing the same files on disk."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Git's own reference, see the official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://git-scm.com/docs/git-worktree",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git worktree documentation"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-conductor-uses-worktrees",
+      "children": [
+        {
+          "type": "text",
+          "value": "How Conductor uses worktrees"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you create a workspace, Conductor creates a Git worktree for that workspace and checks out a branch inside it."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "That workspace becomes the container for the rest of the workflow:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The agent edits files inside the workspace directory."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup, run, terminal, and test commands execute from that workspace directory."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The workspace branch becomes the unit you review, push, and turn into a pull request."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Chats, diffs, PR state, and archive actions stay attached to the same workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Workspace notes and handoffs can live in the gitignored "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " folder."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The original repository checkout remains the project root. Conductor workspaces are usually created under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/conductor/workspaces/<repo name>/<workspace name>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", but each one is still connected to the same underlying Git repository."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-is-isolated",
+      "children": [
+        {
+          "type": "text",
+          "value": "What is isolated"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each Conductor workspace gets its own working tree. That means code changes, generated files, local terminal commands, and running app processes can belong to one task instead of your main checkout or another agent's task."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This is the foundation for parallel agents in Conductor:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "One workspace can implement a feature while another investigates a bug."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "One branch can be reviewed and merged while another stays experimental."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "One agent can run a dev server or tests without taking over another workspace's terminal state."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspace isolation is development isolation, not a security boundary. Agents and commands still run on your Mac with your user permissions unless you configure stricter controls."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-is-shared",
+      "children": [
+        {
+          "type": "text",
+          "value": "What is shared"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Worktrees share the same Git repository data. They use the same history, refs, remotes, and object database, while each workspace has its own checkout on disk."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "That shared Git backing is why Conductor can create a workspace quickly without cloning the repository again. It is also why normal Git operations still work: you can commit, rename branches, push to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "origin"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", open a PR, or merge from the Conductor UI or the terminal."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-conductor-copies",
+      "children": [
+        {
+          "type": "text",
+          "value": "What Conductor copies"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A new worktree starts from tracked files. Git does not automatically bring along untracked or gitignored local files from your main checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "That matters for files such as:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env.local"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "local certificates"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "generated configuration"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "tool state that is intentionally gitignored"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when every new workspace needs specific gitignored files. Conductor uses "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "-style patterns and only copies files that Git already ignores."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the workspace needs commands instead of copied files, such as dependency installation, code generation, symlinks, or database setup."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "branches-and-worktrees",
+      "children": [
+        {
+          "type": "text",
+          "value": "Branches and worktrees"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Git only allows a branch to be checked out in one worktree at a time."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In Conductor, that means a workspace branch usually belongs to exactly one workspace. If a branch is already checked out in one workspace, Git will not let another workspace or your project root check out that same branch at the same time."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use one of these patterns when you need similar work in more than one place:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Give each worktree its own branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create a new branch from the existing branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Switch the first workspace to a different branch before checking out the branch somewhere else."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor's workspace and PR flow is built around this rule. A workspace branch is the review unit, and the workspace keeps the agent sessions, diff, terminal state, and PR status together."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "when-to-create-another-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "When to create another workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create another Conductor workspace when work should have its own branch, files, running environment, and review path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Keep agents in one workspace when they need to collaborate on the same branch and latest file state."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the decision model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the full Conductor workspace model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workspaces-and-branches"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Isolated workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-this-differs-from-raw-git-worktrees",
+      "children": [
+        {
+          "type": "text",
+          "value": "How this differs from raw Git worktrees"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Raw Git worktrees give you separate checkouts. Conductor builds the agent workflow around those checkouts."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor handles the recurring workspace operations: creating the branch and worktree, copying allowed local files, running setup scripts and actions, keeping the diff visible, connecting pull request state, and archiving the workspace when the task is done."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can still use normal Git commands inside a workspace. Conductor is adding structure around the worktree so each agent task has a clear place to run, review, merge, or discard."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor uses Git worktrees to give each workspace its own files, branch, commands, chats, and review flow.</p><p>A Git worktree is a second working tree attached to the same repository. Instead of copying the whole project or asking several agents to share one checkout, Conductor creates a separate working tree for each workspace. That lets agents work in parallel without editing the same files on disk.</p><p>For Git's own reference, see the official <a href=\"https://git-scm.com/docs/git-worktree\" target=\"_blank\" rel=\"noopener noreferrer\">Git worktree documentation</a>.</p><h2 id=\"how-conductor-uses-worktrees\"><a href=\"#how-conductor-uses-worktrees\">How Conductor uses worktrees</a></h2><p>When you create a workspace, Conductor creates a Git worktree for that workspace and checks out a branch inside it.</p><p>That workspace becomes the container for the rest of the workflow:</p><ul><li>The agent edits files inside the workspace directory.</li><li>Setup, run, terminal, and test commands execute from that workspace directory.</li><li>The workspace branch becomes the unit you review, push, and turn into a pull request.</li><li>Chats, diffs, PR state, and archive actions stay attached to the same workspace.</li><li>Workspace notes and handoffs can live in the gitignored <code>.context</code> folder.</li></ul><p>The original repository checkout remains the project root. Conductor workspaces are usually created under <code>~/conductor/workspaces/&lt;repo name&gt;/&lt;workspace name&gt;</code>, but each one is still connected to the same underlying Git repository.</p><h2 id=\"what-is-isolated\"><a href=\"#what-is-isolated\">What is isolated</a></h2><p>Each Conductor workspace gets its own working tree. That means code changes, generated files, local terminal commands, and running app processes can belong to one task instead of your main checkout or another agent's task.</p><p>This is the foundation for parallel agents in Conductor:</p><ul><li>One workspace can implement a feature while another investigates a bug.</li><li>One branch can be reviewed and merged while another stays experimental.</li><li>One agent can run a dev server or tests without taking over another workspace's terminal state.</li></ul><p>Workspace isolation is development isolation, not a security boundary. Agents and commands still run on your Mac with your user permissions unless you configure stricter controls.</p><h2 id=\"what-is-shared\"><a href=\"#what-is-shared\">What is shared</a></h2><p>Worktrees share the same Git repository data. They use the same history, refs, remotes, and object database, while each workspace has its own checkout on disk.</p><p>That shared Git backing is why Conductor can create a workspace quickly without cloning the repository again. It is also why normal Git operations still work: you can commit, rename branches, push to <code>origin</code>, open a PR, or merge from the Conductor UI or the terminal.</p><h2 id=\"what-conductor-copies\"><a href=\"#what-conductor-copies\">What Conductor copies</a></h2><p>A new worktree starts from tracked files. Git does not automatically bring along untracked or gitignored local files from your main checkout.</p><p>That matters for files such as:</p><ul><li><code>.env.local</code></li><li>local certificates</li><li>generated configuration</li><li>tool state that is intentionally gitignored</li></ul><p>Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> when every new workspace needs specific gitignored files. Conductor uses <code>.worktreeinclude</code>-style patterns and only copies files that Git already ignores.</p><p>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> when the workspace needs commands instead of copied files, such as dependency installation, code generation, symlinks, or database setup.</p><h2 id=\"branches-and-worktrees\"><a href=\"#branches-and-worktrees\">Branches and worktrees</a></h2><p>Git only allows a branch to be checked out in one worktree at a time.</p><p>In Conductor, that means a workspace branch usually belongs to exactly one workspace. If a branch is already checked out in one workspace, Git will not let another workspace or your project root check out that same branch at the same time.</p><p>Use one of these patterns when you need similar work in more than one place:</p><ul><li>Give each worktree its own branch.</li><li>Create a new branch from the existing branch.</li><li>Switch the first workspace to a different branch before checking out the branch somewhere else.</li></ul><p>Conductor's workspace and PR flow is built around this rule. A workspace branch is the review unit, and the workspace keeps the agent sessions, diff, terminal state, and PR status together.</p><h2 id=\"when-to-create-another-workspace\"><a href=\"#when-to-create-another-workspace\">When to create another workspace</a></h2><p>Create another Conductor workspace when work should have its own branch, files, running environment, and review path.</p><p>Keep agents in one workspace when they need to collaborate on the same branch and latest file state.</p><p>For the decision model, see <a href=\"/docs/concepts/parallel-agents\">Parallel agents</a>. For the full Conductor workspace model, see <a href=\"/docs/concepts/workspaces-and-branches\">Isolated workspaces</a>.</p><h2 id=\"how-this-differs-from-raw-git-worktrees\"><a href=\"#how-this-differs-from-raw-git-worktrees\">How this differs from raw Git worktrees</a></h2><p>Raw Git worktrees give you separate checkouts. Conductor builds the agent workflow around those checkouts.</p><p>Conductor handles the recurring workspace operations: creating the branch and worktree, copying allowed local files, running setup scripts and actions, keeping the diff visible, connecting pull request state, and archiving the workspace when the task is done.</p><p>You can still use normal Git commands inside a workspace. Conductor is adding structure around the worktree so each agent task has a clear place to run, review, merge, or discard.</p>",
+  "text": "Conductor uses Git worktrees to give each workspace its own files, branch, commands, chats, and review flow.\nA Git worktree is a second working tree attached to the same repository. Instead of copying the whole project or asking several agents to share one checkout, Conductor creates a separate working tree for each workspace. That lets agents work in parallel without editing the same files on disk.\nFor Git's own reference, see the official Git worktree documentation.\nHow Conductor uses worktrees\nWhen you create a workspace, Conductor creates a Git worktree for that workspace and checks out a branch inside it.\nThat workspace becomes the container for the rest of the workflow:\nThe agent edits files inside the workspace directory.\nSetup, run, terminal, and test commands execute from that workspace directory.\nThe workspace branch becomes the unit you review, push, and turn into a pull request.\nChats, diffs, PR state, and archive actions stay attached to the same workspace.\nWorkspace notes and handoffs can live in the gitignored .context folder.\nThe original repository checkout remains the project root. Conductor workspaces are usually created under ~/conductor/workspaces/<repo name>/<workspace name>, but each one is still connected to the same underlying Git repository.\nWhat is isolated\nEach Conductor workspace gets its own working tree. That means code changes, generated files, local terminal commands, and running app processes can belong to one task instead of your main checkout or another agent's task.\nThis is the foundation for parallel agents in Conductor:\nOne workspace can implement a feature while another investigates a bug.\nOne branch can be reviewed and merged while another stays experimental.\nOne agent can run a dev server or tests without taking over another workspace's terminal state.\nWorkspace isolation is development isolation, not a security boundary. Agents and commands still run on your Mac with your user permissions unless you configure stricter controls.\nWhat is shared\nWorktrees share the same Git repository data. They use the same history, refs, remotes, and object database, while each workspace has its own checkout on disk.\nThat shared Git backing is why Conductor can create a workspace quickly without cloning the repository again. It is also why normal Git operations still work: you can commit, rename branches, push to origin, open a PR, or merge from the Conductor UI or the terminal.\nWhat Conductor copies\nA new worktree starts from tracked files. Git does not automatically bring along untracked or gitignored local files from your main checkout.\nThat matters for files such as:\n.env.local\nlocal certificates\ngenerated configuration\ntool state that is intentionally gitignored\nUse Files to copy when every new workspace needs specific gitignored files. Conductor uses .worktreeinclude-style patterns and only copies files that Git already ignores.\nUse a setup script when the workspace needs commands instead of copied files, such as dependency installation, code generation, symlinks, or database setup.\nBranches and worktrees\nGit only allows a branch to be checked out in one worktree at a time.\nIn Conductor, that means a workspace branch usually belongs to exactly one workspace. If a branch is already checked out in one workspace, Git will not let another workspace or your project root check out that same branch at the same time.\nUse one of these patterns when you need similar work in more than one place:\nGive each worktree its own branch.\nCreate a new branch from the existing branch.\nSwitch the first workspace to a different branch before checking out the branch somewhere else.\nConductor's workspace and PR flow is built around this rule. A workspace branch is the review unit, and the workspace keeps the agent sessions, diff, terminal state, and PR status together.\nWhen to create another workspace\nCreate another Conductor workspace when work should have its own branch, files, running environment, and review path.\nKeep agents in one workspace when they need to collaborate on the same branch and latest file state.\nFor the decision model, see Parallel agents. For the full Conductor workspace model, see Isolated workspaces.\nHow this differs from raw Git worktrees\nRaw Git worktrees give you separate checkouts. Conductor builds the agent workflow around those checkouts.\nConductor handles the recurring workspace operations: creating the branch and worktree, copying allowed local files, running setup scripts and actions, keeping the diff visible, connecting pull request state, and archiving the workspace when the task is done.\nYou can still use normal Git commands inside a workspace. Conductor is adding structure around the worktree so each agent task has a clear place to run, review, merge, or discard.",
+  "markdown": "\n# Git worktrees\n\n\n\nConductor uses Git worktrees to give each workspace its own files, branch, commands, chats, and review flow.\n\nA Git worktree is a second working tree attached to the same repository. Instead of copying the whole project or asking several agents to share one checkout, Conductor creates a separate working tree for each workspace. That lets agents work in parallel without editing the same files on disk.\n\nFor Git's own reference, see the official [Git worktree documentation](https://git-scm.com/docs/git-worktree).\n\n## How Conductor uses worktrees [#how-conductor-uses-worktrees]\n\nWhen you create a workspace, Conductor creates a Git worktree for that workspace and checks out a branch inside it.\n\nThat workspace becomes the container for the rest of the workflow:\n\n* The agent edits files inside the workspace directory.\n* Setup, run, terminal, and test commands execute from that workspace directory.\n* The workspace branch becomes the unit you review, push, and turn into a pull request.\n* Chats, diffs, PR state, and archive actions stay attached to the same workspace.\n* Workspace notes and handoffs can live in the gitignored `.context` folder.\n\nThe original repository checkout remains the project root. Conductor workspaces are usually created under `~/conductor/workspaces/<repo name>/<workspace name>`, but each one is still connected to the same underlying Git repository.\n\n## What is isolated [#what-is-isolated]\n\nEach Conductor workspace gets its own working tree. That means code changes, generated files, local terminal commands, and running app processes can belong to one task instead of your main checkout or another agent's task.\n\nThis is the foundation for parallel agents in Conductor:\n\n* One workspace can implement a feature while another investigates a bug.\n* One branch can be reviewed and merged while another stays experimental.\n* One agent can run a dev server or tests without taking over another workspace's terminal state.\n\nWorkspace isolation is development isolation, not a security boundary. Agents and commands still run on your Mac with your user permissions unless you configure stricter controls.\n\n## What is shared [#what-is-shared]\n\nWorktrees share the same Git repository data. They use the same history, refs, remotes, and object database, while each workspace has its own checkout on disk.\n\nThat shared Git backing is why Conductor can create a workspace quickly without cloning the repository again. It is also why normal Git operations still work: you can commit, rename branches, push to `origin`, open a PR, or merge from the Conductor UI or the terminal.\n\n## What Conductor copies [#what-conductor-copies]\n\nA new worktree starts from tracked files. Git does not automatically bring along untracked or gitignored local files from your main checkout.\n\nThat matters for files such as:\n\n* `.env.local`\n* local certificates\n* generated configuration\n* tool state that is intentionally gitignored\n\nUse [Files to copy](/docs/reference/files-to-copy) when every new workspace needs specific gitignored files. Conductor uses `.worktreeinclude`-style patterns and only copies files that Git already ignores.\n\nUse a [setup script](/docs/reference/scripts#setup-scripts) when the workspace needs commands instead of copied files, such as dependency installation, code generation, symlinks, or database setup.\n\n## Branches and worktrees [#branches-and-worktrees]\n\nGit only allows a branch to be checked out in one worktree at a time.\n\nIn Conductor, that means a workspace branch usually belongs to exactly one workspace. If a branch is already checked out in one workspace, Git will not let another workspace or your project root check out that same branch at the same time.\n\nUse one of these patterns when you need similar work in more than one place:\n\n* Give each worktree its own branch.\n* Create a new branch from the existing branch.\n* Switch the first workspace to a different branch before checking out the branch somewhere else.\n\nConductor's workspace and PR flow is built around this rule. A workspace branch is the review unit, and the workspace keeps the agent sessions, diff, terminal state, and PR status together.\n\n## When to create another workspace [#when-to-create-another-workspace]\n\nCreate another Conductor workspace when work should have its own branch, files, running environment, and review path.\n\nKeep agents in one workspace when they need to collaborate on the same branch and latest file state.\n\nFor the decision model, see [Parallel agents](/docs/concepts/parallel-agents). For the full Conductor workspace model, see [Isolated workspaces](/docs/concepts/workspaces-and-branches).\n\n## How this differs from raw Git worktrees [#how-this-differs-from-raw-git-worktrees]\n\nRaw Git worktrees give you separate checkouts. Conductor builds the agent workflow around those checkouts.\n\nConductor handles the recurring workspace operations: creating the branch and worktree, copying allowed local files, running setup scripts and actions, keeping the diff visible, connecting pull request state, and archiving the workspace when the task is done.\n\nYou can still use normal Git commands inside a workspace. Conductor is adding structure around the worktree so each agent task has a clear place to run, review, merge, or discard.\n"
+}

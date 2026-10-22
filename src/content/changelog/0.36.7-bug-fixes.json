@@ -1,0 +1,19 @@
+{
+  "slug": "0.36.7-bug-fixes",
+  "version": "0.36.7",
+  "versionSlug": "0.36.7",
+  "title": "Bug Fixes",
+  "fullTitle": "0.36.7: Bug Fixes",
+  "date": "Feb 27th, 2026",
+  "dateISO": "2026-02-27",
+  "description": "Conductor 0.36.7 changelog - Bug Fixes",
+  "summary": "We now detect if your Xcode license is out of date on app startup to avoid gh commands silently failing.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.36.7-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.7-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.7-bug-fixes",
+  "headings": [],
+  "html": "<p>We now detect if your <code>Xcode</code> license is out of date on app startup to avoid <code>gh</code> commands silently failing.</p>",
+  "markdown": "\nWe now detect if your `Xcode` license is out of date on app startup to avoid `gh` commands silently failing.\n"
+}

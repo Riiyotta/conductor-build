@@ -1,0 +1,36 @@
+{
+  "slug": "0.43.0-codex-skills-plan-mode-fast-mode",
+  "version": "0.43.0",
+  "versionSlug": "0.43.0",
+  "title": "Codex: Skills, Plan Mode, Fast Mode",
+  "fullTitle": "0.43.0: Codex: Skills, Plan Mode, Fast Mode",
+  "date": "Mar 20th, 2026",
+  "dateISO": "2026-03-20",
+  "description": "Conductor 0.43.0 changelog - Codex: Skills, Plan Mode, Fast Mode",
+  "summary": "Codex in Conductor now has fast mode mode, plan mode, and skills!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.43.0/1774067154596-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.43.0-codex-skills-plan-mode-fast-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.43.0-codex-skills-plan-mode-fast-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.43.0-codex-skills-plan-mode-fast-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Codex in Conductor now has fast mode mode, plan mode, and skills!\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.43.0/1774067154596-image.png\"/></figure></p>\n<p>You can now create a repo with <a href=\"https://github.com/garrytan/gstack\" target=\"_blank\" rel=\"noopener noreferrer\">gstack</a> initialized. Go to Add repository → Quick start to try it out.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.43.0/1774067154862-image.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Default fast mode now applies to Codex as well as Opus</li>\n<li>Tightened command palette fuzzy matching</li>\n<li>Thinking blocks in Garry mode are now uncollapsed</li>\n<li>Re-initialize workspace when switching agent on empty chat</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed ask tool not triggering approval</li>\n<li>Added “Yes, and” prefix to tool permission label</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Added merge conflict resolution UI (in Settings → Experimental)</li>\n<li>Added setting to encourage the AI to include essential info in final message (Settings → Experimental)</li>\n</ul>",
+  "markdown": "\nCodex in Conductor now has fast mode mode, plan mode, and skills!\n![image](/assets/changelog/media/0.43.0/1774067154596-image.png)\n\nYou can now create a repo with [gstack](https://github.com/garrytan/gstack) initialized. Go to Add repository → Quick start to try it out.\n![image](/assets/changelog/media/0.43.0/1774067154862-image.png)\n\n## Improvements\n\n- Default fast mode now applies to Codex as well as Opus\n- Tightened command palette fuzzy matching\n- Thinking blocks in Garry mode are now uncollapsed\n- Re-initialize workspace when switching agent on empty chat\n\n## Fixes\n\n- Fixed ask tool not triggering approval\n- Added “Yes, and” prefix to tool permission label\n\n## Misc\n\n- Added merge conflict resolution UI (in Settings → Experimental)\n- Added setting to encourage the AI to include essential info in final message (Settings → Experimental)\n"
+}

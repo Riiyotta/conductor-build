@@ -1,0 +1,145 @@
+{
+  "id": "content.brandkit-asset-cards",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.brandkit-asset-cards"
+  ],
+  "purpose": "Preview each logo file on its intended background with per-format downloads.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Brandkit.jsx:106",
+      "quote": "function AssetCard({ a }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:346",
+      "quote": "### 6.3 Asset cards"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.brandkit-asset-cards"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "cards": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "text",
+            "maxWords": 4,
+            "required": true,
+            "observedMaxWords": 3
+          },
+          "caption": {
+            "type": "text",
+            "maxWords": 6,
+            "required": true,
+            "observedMaxWords": 5
+          },
+          "preview": {
+            "type": "media",
+            "roles": [
+              "brand-mark"
+            ],
+            "required": true
+          },
+          "previewSurface": {
+            "type": "enum",
+            "values": [
+              "light",
+              "dark"
+            ],
+            "required": true
+          },
+          "files": {
+            "type": "list",
+            "items": {
+              "type": "object",
+              "fields": {
+                "name": {
+                  "type": "pattern",
+                  "pattern": "^[a-z0-9.-]+$",
+                  "required": true
+                },
+                "format": {
+                  "type": "enum",
+                  "values": [
+                    "SVG",
+                    "PNG"
+                  ],
+                  "required": true
+                }
+              },
+              "required": true
+            },
+            "minItems": 1,
+            "maxItems": 2,
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:356",
+        "quote": "**Hover adds an underline** (measured, instant)."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "2"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Conductor trademarks."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "brand-mark"
+  ]
+}

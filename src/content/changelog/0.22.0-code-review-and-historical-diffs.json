@@ -1,0 +1,32 @@
+{
+  "slug": "0.22.0-code-review-and-historical-diffs",
+  "version": "0.22.0",
+  "versionSlug": "0.22.0",
+  "title": "Code Review and Historical Diffs",
+  "fullTitle": "0.22.0: Code Review and Historical Diffs",
+  "date": "Nov 12th, 2025",
+  "dateISO": "2025-11-12",
+  "description": "Conductor 0.22.0 changelog - Code Review and Historical Diffs",
+  "summary": "Click the \"Review\" button in the right sidebar to get the AI to review changes.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.0/2604e5a2-0a1b-4e44-be0d-49416fb19ee6.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.0-code-review-and-historical-diffs/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.0-code-review-and-historical-diffs",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.0-code-review-and-historical-diffs",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.0/2604e5a2-0a1b-4e44-be0d-49416fb19ee6.png\"/></figure>\n<p>Click the &quot;Review&quot; button in the right sidebar to get the AI to review changes.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.0/ef8e1202-7657-4674-9437-95465b440953.png\"/></figure>\n<p>You can now view turn-by-turn diffs for each message in the chat.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.0/5781358b-14f4-4858-933d-b6aa55ad5389.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Add <code>⌘.</code> shortcut to activate Zen mode</li>\n<li>Show when chat compaction starts</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix a git timestamp parsing error that would crash Conductor</li>\n<li>Fix buttons in the Composer sending the message draft on click</li>\n<li>Fix vertical scrolling in the dispatcher</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"1510\"\n    height=\"738\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.0/2604e5a2-0a1b-4e44-be0d-49416fb19ee6.png\"\n/>\n\nClick the \"Review\" button in the right sidebar to get the AI to review changes.\n\n<img\n    width=\"2048\"\n    height=\"1638\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.0/ef8e1202-7657-4674-9437-95465b440953.png\"\n/>\n\nYou can now view turn-by-turn diffs for each message in the chat.\n\n<img\n    width=\"1424\"\n    height=\"1450\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.0/5781358b-14f4-4858-933d-b6aa55ad5389.png\"\n/>\n\n## Improvements\n\n- Add `⌘.` shortcut to activate Zen mode\n- Show when chat compaction starts\n\n## Fixes\n\n- Fix a git timestamp parsing error that would crash Conductor\n- Fix buttons in the Composer sending the message draft on click\n- Fix vertical scrolling in the dispatcher\n"
+}

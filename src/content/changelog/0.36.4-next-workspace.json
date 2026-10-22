@@ -1,0 +1,28 @@
+{
+  "slug": "0.36.4-next-workspace",
+  "version": "0.36.4",
+  "versionSlug": "0.36.4",
+  "title": "Next Workspace",
+  "fullTitle": "0.36.4: Next Workspace",
+  "date": "Feb 24th, 2026",
+  "dateISO": "2026-02-24",
+  "description": "Conductor 0.36.4 changelog - Next Workspace",
+  "summary": "You can now quickly jump between chats that need your attention or have unread messages.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.36.4/1771974660429-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.4-next-workspace/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.4-next-workspace",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.4-next-workspace",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now quickly jump between chats that need your attention or have unread messages.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.4/1771974660429-image.png\"/></figure></p>\n<p>We’ve also smoothed out the animations when toggling thinking and plan mode, and improved our Linear integration.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/1771974746887-Screenshot_2026-02-23___08.42_PM.mp4&quot;\ncontrols\nwidth=&quot;100%&quot;</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<h3>Fixes</h3>\n<ul>\n<li>Workspace diffs now time out after 20s</li>\n<li>Linear deeplinks now handle <code>prompt</code> and <code>path</code> parameters and we’ve improved our loading state</li>\n</ul>",
+  "markdown": "\nYou can now quickly jump between chats that need your attention or have unread messages.\n![image](/assets/changelog/media/0.36.4/1771974660429-image.png)\n\nWe’ve also smoothed out the animations when toggling thinking and plan mode, and improved our Linear integration.\n\n<video\n    src=\"https://conductor-marketing.t3.tigrisfiles.io/uploads/1771974746887-Screenshot_2026-02-23___08.42_PM.mp4\"\n    controls\n    width=\"100%\"\n></video>\n\n## Fixes\n\n- Workspace diffs now time out after 20s\n- Linear deeplinks now handle `prompt` and `path` parameters and we’ve improved our loading state\n"
+}

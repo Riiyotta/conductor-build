@@ -1,0 +1,679 @@
+{
+  "slug": "reference/privacy",
+  "url": "/docs/reference/privacy",
+  "title": "Privacy",
+  "description": "What we do (and don't do) with your data.",
+  "meta": {
+    "title": "Privacy | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/privacy/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Security"
+    },
+    {
+      "name": "Privacy"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#what-data-do-we-access",
+      "title": "What data do we access?"
+    },
+    {
+      "depth": 2,
+      "url": "#where-do-you-store-my-chats",
+      "title": "Where do you store my chats?"
+    },
+    {
+      "depth": 2,
+      "url": "#what-types-of-data-does-conductor-collect",
+      "title": "What types of data does Conductor collect?"
+    },
+    {
+      "depth": 2,
+      "url": "#where-does-my-network-traffic-go",
+      "title": "Where does my network traffic go?"
+    },
+    {
+      "depth": 2,
+      "url": "#what-data-do-the-model-providers-collect-are-my-messages-used-for-training",
+      "title": "What data do the model providers collect? Are my messages used for training?"
+    },
+    {
+      "depth": 2,
+      "url": "#is-my-data-encrypted-who-can-access-my-data",
+      "title": "Is my data encrypted? Who can access my data?"
+    },
+    {
+      "depth": 2,
+      "url": "#enterprise-data-privacy",
+      "title": "Enterprise data privacy"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/security-and-permissions",
+    "title": "Security and permissions",
+    "description": "Previous Page"
+  },
+  "next": {
+    "url": "/docs/faq",
+    "title": "FAQ",
+    "description": "Frequently asked questions about Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-data-do-we-access",
+      "children": [
+        {
+          "type": "text",
+          "value": "What data do we access?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Cloud workspaces, Conductor stores session inputs and outputs on its servers so agents can keep working, chats stay synchronized, and members of your organization can collaborate in the workspace together."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For local workspaces, we don't access your chats. Your messages go directly to your model provider, and your session data stays on your Mac."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "We also collect analytics data, such as which features you use and crash logs. This helps us fix bugs and learn which parts of Conductor to improve."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "where-do-you-store-my-chats",
+      "children": [
+        {
+          "type": "text",
+          "value": "Where do you store my chats?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud chat history is stored on Conductor's servers. Local chat history is saved in the Application Support directory "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/Library/Application Support/com.conductor.app"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-types-of-data-does-conductor-collect",
+      "children": [
+        {
+          "type": "text",
+          "value": "What types of data does Conductor collect?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor stores:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Account data, such as your email address and, if you integrate with GitHub, installation data"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud workspace data, including session inputs, outputs, and the workspace state needed to run and synchronize the workspace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "We store analytics data in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://posthog.com/",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "PostHog"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when an event occurs in the app, such as:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "You create a workspace, select a model, or send a message, including metadata such as which model was involved and which app features you're using"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A model provider returns an error, including the error message"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "An unexpected error occurs, including the error message and stack trace"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "PostHog stores data about your computer, such as your operating system and IP address."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "where-does-my-network-traffic-go",
+      "children": [
+        {
+          "type": "text",
+          "value": "Where does my network traffic go?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs, model requests go to the provider you configure, and requests to MCP servers, GitHub, and other integrations go to those services."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In local workspaces, model traffic goes straight to your model provider."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-data-do-the-model-providers-collect-are-my-messages-used-for-training",
+      "children": [
+        {
+          "type": "text",
+          "value": "What data do the model providers collect? Are my messages used for training?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can find the privacy policies of our model providers here:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://www.anthropic.com/legal/privacy",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Anthropic"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://openai.com/policies/row-privacy-policy/",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "OpenAI"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://cursor.com/privacy",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "is-my-data-encrypted-who-can-access-my-data",
+      "children": [
+        {
+          "type": "text",
+          "value": "Is my data encrypted? Who can access my data?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Data Conductor stores, such as account and Cloud workspace data, is encrypted. Analytics data is stored on PostHog's servers."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Local chat data can be accessed by people and processes that can access your Mac user account."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Data sent to a model provider or integration is governed by that service's security, access, and privacy policies."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "enterprise-data-privacy",
+      "children": [
+        {
+          "type": "text",
+          "value": "Enterprise data privacy"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Enterprise data privacy is a local-only setting that disables features that require external AI providers, such as AI-generated chat titles and custom MCP servers. Enterprise data privacy cannot be used in cloud."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "User level"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " — toggle it in "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/account?scrollTo=enterprise_data_privacy",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Account"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". This applies to your machine only."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Repo level"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " — set "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "enterprise_data_privacy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "true"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " in "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/user-project"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".conductor/settings.toml"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". This applies to everyone working in the repo when the file is committed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "enterprise_data_privacy = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "These settings are independent. If either one is enabled, Enterprise data\nprivacy is enabled. You don't need to configure both."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<h2 id=\"what-data-do-we-access\"><a href=\"#what-data-do-we-access\">What data do we access?</a></h2><p>For Cloud workspaces, Conductor stores session inputs and outputs on its servers so agents can keep working, chats stay synchronized, and members of your organization can collaborate in the workspace together.</p><p>For local workspaces, we don't access your chats. Your messages go directly to your model provider, and your session data stays on your Mac.</p><p>We also collect analytics data, such as which features you use and crash logs. This helps us fix bugs and learn which parts of Conductor to improve.</p><h2 id=\"where-do-you-store-my-chats\"><a href=\"#where-do-you-store-my-chats\">Where do you store my chats?</a></h2><p>Cloud chat history is stored on Conductor's servers. Local chat history is saved in the Application Support directory <code>~/Library/Application Support/com.conductor.app</code>.</p><h2 id=\"what-types-of-data-does-conductor-collect\"><a href=\"#what-types-of-data-does-conductor-collect\">What types of data does Conductor collect?</a></h2><p>Conductor stores:</p><ul><li>Account data, such as your email address and, if you integrate with GitHub, installation data</li><li>Cloud workspace data, including session inputs, outputs, and the workspace state needed to run and synchronize the workspace</li></ul><p>We store analytics data in <a href=\"https://posthog.com/\" target=\"_blank\" rel=\"noopener noreferrer\">PostHog</a> when an event occurs in the app, such as:</p><ul><li>You create a workspace, select a model, or send a message, including metadata such as which model was involved and which app features you're using</li><li>A model provider returns an error, including the error message</li><li>An unexpected error occurs, including the error message and stack trace</li></ul><p>PostHog stores data about your computer, such as your operating system and IP address.</p><h2 id=\"where-does-my-network-traffic-go\"><a href=\"#where-does-my-network-traffic-go\">Where does my network traffic go?</a></h2><p>In Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs, model requests go to the provider you configure, and requests to MCP servers, GitHub, and other integrations go to those services.</p><p>In local workspaces, model traffic goes straight to your model provider.</p><h2 id=\"what-data-do-the-model-providers-collect-are-my-messages-used-for-training\"><a href=\"#what-data-do-the-model-providers-collect-are-my-messages-used-for-training\">What data do the model providers collect? Are my messages used for training?</a></h2><p>You can find the privacy policies of our model providers here:</p><ul><li><a href=\"https://www.anthropic.com/legal/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic</a></li><li><a href=\"https://openai.com/policies/row-privacy-policy/\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAI</a></li><li><a href=\"https://cursor.com/privacy\" target=\"_blank\" rel=\"noopener noreferrer\">Cursor</a></li></ul><h2 id=\"is-my-data-encrypted-who-can-access-my-data\"><a href=\"#is-my-data-encrypted-who-can-access-my-data\">Is my data encrypted? Who can access my data?</a></h2><p>Data Conductor stores, such as account and Cloud workspace data, is encrypted. Analytics data is stored on PostHog's servers.</p><p>Local chat data can be accessed by people and processes that can access your Mac user account.</p><p>Data sent to a model provider or integration is governed by that service's security, access, and privacy policies.</p><h2 id=\"enterprise-data-privacy\"><a href=\"#enterprise-data-privacy\">Enterprise data privacy</a></h2><p>Enterprise data privacy is a local-only setting that disables features that require external AI providers, such as AI-generated chat titles and custom MCP servers. Enterprise data privacy cannot be used in cloud.</p><ul><li><strong>User level</strong> — toggle it in <a href=\"https://app.conductor.build/settings/user/account?scrollTo=enterprise_data_privacy\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Account</code></a>. This applies to your machine only.</li><li><strong>Repo level</strong> — set <code>enterprise_data_privacy</code> to <code>true</code> in <a href=\"/docs/reference/settings/user-project\"><code>.conductor/settings.toml</code></a>. This applies to everyone working in the repo when the file is committed.</li></ul><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">true</span></span></code></pre></figure><div role=\"note\" data-callout=\"info\"><p>These settings are independent. If either one is enabled, Enterprise data\nprivacy is enabled. You don't need to configure both.</p></div>",
+  "text": "What data do we access?\nFor Cloud workspaces, Conductor stores session inputs and outputs on its servers so agents can keep working, chats stay synchronized, and members of your organization can collaborate in the workspace together.\nFor local workspaces, we don't access your chats. Your messages go directly to your model provider, and your session data stays on your Mac.\nWe also collect analytics data, such as which features you use and crash logs. This helps us fix bugs and learn which parts of Conductor to improve.\nWhere do you store my chats?\nCloud chat history is stored on Conductor's servers. Local chat history is saved in the Application Support directory ~/Library/Application Support/com.conductor.app.\nWhat types of data does Conductor collect?\nConductor stores:\nAccount data, such as your email address and, if you integrate with GitHub, installation data\nCloud workspace data, including session inputs, outputs, and the workspace state needed to run and synchronize the workspace\nWe store analytics data in PostHog when an event occurs in the app, such as:\nYou create a workspace, select a model, or send a message, including metadata such as which model was involved and which app features you're using\nA model provider returns an error, including the error message\nAn unexpected error occurs, including the error message and stack trace\nPostHog stores data about your computer, such as your operating system and IP address.\nWhere does my network traffic go?\nIn Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs, model requests go to the provider you configure, and requests to MCP servers, GitHub, and other integrations go to those services.\nIn local workspaces, model traffic goes straight to your model provider.\nWhat data do the model providers collect? Are my messages used for training?\nYou can find the privacy policies of our model providers here:\nAnthropic\nOpenAI\nCursor\nIs my data encrypted? Who can access my data?\nData Conductor stores, such as account and Cloud workspace data, is encrypted. Analytics data is stored on PostHog's servers.\nLocal chat data can be accessed by people and processes that can access your Mac user account.\nData sent to a model provider or integration is governed by that service's security, access, and privacy policies.\nEnterprise data privacy\nEnterprise data privacy is a local-only setting that disables features that require external AI providers, such as AI-generated chat titles and custom MCP servers. Enterprise data privacy cannot be used in cloud.\nUser level — toggle it in Settings -> Account. This applies to your machine only.\nRepo level — set enterprise_data_privacy to true in .conductor/settings.toml. This applies to everyone working in the repo when the file is committed.\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = trueThese settings are independent. If either one is enabled, Enterprise data\nprivacy is enabled. You don't need to configure both.",
+  "markdown": "\n# Privacy\n\n\n\n## What data do we access? [#what-data-do-we-access]\n\nFor Cloud workspaces, Conductor stores session inputs and outputs on its servers so agents can keep working, chats stay synchronized, and members of your organization can collaborate in the workspace together.\n\nFor local workspaces, we don't access your chats. Your messages go directly to your model provider, and your session data stays on your Mac.\n\nWe also collect analytics data, such as which features you use and crash logs. This helps us fix bugs and learn which parts of Conductor to improve.\n\n## Where do you store my chats? [#where-do-you-store-my-chats]\n\nCloud chat history is stored on Conductor's servers. Local chat history is saved in the Application Support directory `~/Library/Application Support/com.conductor.app`.\n\n## What types of data does Conductor collect? [#what-types-of-data-does-conductor-collect]\n\nConductor stores:\n\n* Account data, such as your email address and, if you integrate with GitHub, installation data\n* Cloud workspace data, including session inputs, outputs, and the workspace state needed to run and synchronize the workspace\n\nWe store analytics data in [PostHog](https://posthog.com/) when an event occurs in the app, such as:\n\n* You create a workspace, select a model, or send a message, including metadata such as which model was involved and which app features you're using\n* A model provider returns an error, including the error message\n* An unexpected error occurs, including the error message and stack trace\n\nPostHog stores data about your computer, such as your operating system and IP address.\n\n## Where does my network traffic go? [#where-does-my-network-traffic-go]\n\nIn Cloud workspaces, sessions run in Conductor-managed infrastructure. Conductor stores session inputs and outputs, model requests go to the provider you configure, and requests to MCP servers, GitHub, and other integrations go to those services.\n\nIn local workspaces, model traffic goes straight to your model provider.\n\n## What data do the model providers collect? Are my messages used for training? [#what-data-do-the-model-providers-collect-are-my-messages-used-for-training]\n\nYou can find the privacy policies of our model providers here:\n\n* [Anthropic](https://www.anthropic.com/legal/privacy)\n* [OpenAI](https://openai.com/policies/row-privacy-policy/)\n* [Cursor](https://cursor.com/privacy)\n\n## Is my data encrypted? Who can access my data? [#is-my-data-encrypted-who-can-access-my-data]\n\nData Conductor stores, such as account and Cloud workspace data, is encrypted. Analytics data is stored on PostHog's servers.\n\nLocal chat data can be accessed by people and processes that can access your Mac user account.\n\nData sent to a model provider or integration is governed by that service's security, access, and privacy policies.\n\n## Enterprise data privacy [#enterprise-data-privacy]\n\nEnterprise data privacy is a local-only setting that disables features that require external AI providers, such as AI-generated chat titles and custom MCP servers. Enterprise data privacy cannot be used in cloud.\n\n* **User level** — toggle it in [`Settings` -> `Account`](https://app.conductor.build/settings/user/account?scrollTo=enterprise_data_privacy). This applies to your machine only.\n* **Repo level** — set `enterprise_data_privacy` to `true` in [`.conductor/settings.toml`](/docs/reference/settings/user-project). This applies to everyone working in the repo when the file is committed.\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n```\n\nThese settings are independent. If either one is enabled, Enterprise data\nprivacy is enabled. You don't need to configure both.\n"
+}

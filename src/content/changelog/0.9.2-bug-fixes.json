@@ -1,0 +1,28 @@
+{
+  "slug": "0.9.2-bug-fixes",
+  "version": "0.9.2",
+  "versionSlug": "0.9.2",
+  "title": "Bug Fixes!",
+  "fullTitle": "0.9.2: Bug Fixes!",
+  "date": "Sept 3rd, 2025",
+  "dateISO": "2025-09-03",
+  "description": "Conductor 0.9.2 changelog - Bug Fixes!",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.9.2-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.9.2-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.9.2-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Added Settings to the macOS menu bar</li>\n<li>Show when Claude Code will next be usable when users hit their usage limit</li>\n<li>New workspace names are validated to prevent duplicate branch names</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed sort order of Linear search results</li>\n<li>Only show error retry buttons on the most recent chat turn</li>\n<li>Terminal processes exiting will not automatically close the respective terminal tab</li>\n<li>Capitalization is now preserved in new workspace names</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Added Settings to the macOS menu bar\n- Show when Claude Code will next be usable when users hit their usage limit\n- New workspace names are validated to prevent duplicate branch names\n\n## Fixes\n\n- Fixed sort order of Linear search results\n- Only show error retry buttons on the most recent chat turn\n- Terminal processes exiting will not automatically close the respective terminal tab\n- Capitalization is now preserved in new workspace names\n"
+}

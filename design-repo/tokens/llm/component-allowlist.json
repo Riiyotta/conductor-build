@@ -1,0 +1,240 @@
+{
+  "allowlistVersion": "1.0.0",
+  "$description": "Closed list of what a generator may instantiate or set. Ids must match contract files 1:1 (verify_all.py parity check).",
+  "primitives": [
+    "avatar",
+    "badge",
+    "button",
+    "icon",
+    "input",
+    "kbd",
+    "logo-image",
+    "select",
+    "text-link",
+    "textarea",
+    "tooltip"
+  ],
+  "components": [
+    "accordion",
+    "arrow-link",
+    "callout",
+    "changelog-card",
+    "code-block",
+    "copy-button",
+    "data-table",
+    "demo-card",
+    "logo-grid",
+    "media-frame",
+    "nav-tree",
+    "pager",
+    "plan-card",
+    "prose-heading-anchor",
+    "team-card",
+    "testimonial-card",
+    "toc-rail",
+    "tree-bullet-list"
+  ],
+  "sections": [
+    "changelog.back-link",
+    "changelog.entry-list",
+    "changelog.pagination",
+    "changelog.post-entry",
+    "content.brandkit-about",
+    "content.brandkit-asset-cards",
+    "content.brandkit-download-card",
+    "content.changelog-preview",
+    "content.join-us-apply-card",
+    "content.join-us-team-cards",
+    "content.join-us-team-photo",
+    "content.legal-prose",
+    "content.pricing-faq",
+    "content.pricing-plans",
+    "content.prose-article",
+    "conversion.be-like-this-guy",
+    "conversion.enterprise-contact-form",
+    "conversion.team-plan-form-scrollbox",
+    "docs.breadcrumb",
+    "docs.mobile-drawer",
+    "docs.page-title",
+    "docs.prev-next",
+    "docs.prose-body",
+    "docs.search-dialog",
+    "docs.sidebar",
+    "docs.toc",
+    "features.feature-shell",
+    "hero.brandkit-header",
+    "hero.home",
+    "hero.page-header",
+    "hero.pricing-title",
+    "proof.enterprise-logo-grid",
+    "proof.testimonials",
+    "proof.trusted-logo-strip",
+    "shell.docs-subnav",
+    "shell.download-dialog",
+    "shell.downloading-screen",
+    "shell.footer-mono",
+    "shell.footer-sans",
+    "shell.header",
+    "shell.mobile-menu"
+  ],
+  "sectionVariants": {
+    "changelog.back-link": [
+      "default"
+    ],
+    "changelog.entry-list": [
+      "default"
+    ],
+    "changelog.pagination": [
+      "default"
+    ],
+    "changelog.post-entry": [
+      "default"
+    ],
+    "content.brandkit-about": [
+      "default"
+    ],
+    "content.brandkit-asset-cards": [
+      "default"
+    ],
+    "content.brandkit-download-card": [
+      "default"
+    ],
+    "content.changelog-preview": [
+      "default"
+    ],
+    "content.join-us-apply-card": [
+      "default"
+    ],
+    "content.join-us-team-cards": [
+      "default"
+    ],
+    "content.join-us-team-photo": [
+      "default"
+    ],
+    "content.legal-prose": [
+      "default"
+    ],
+    "content.pricing-faq": [
+      "default"
+    ],
+    "content.pricing-plans": [
+      "default"
+    ],
+    "content.prose-article": [
+      "default"
+    ],
+    "conversion.be-like-this-guy": [
+      "default"
+    ],
+    "conversion.enterprise-contact-form": [
+      "default"
+    ],
+    "conversion.team-plan-form-scrollbox": [
+      "default"
+    ],
+    "docs.breadcrumb": [
+      "default"
+    ],
+    "docs.mobile-drawer": [
+      "default"
+    ],
+    "docs.page-title": [
+      "default"
+    ],
+    "docs.prev-next": [
+      "default"
+    ],
+    "docs.prose-body": [
+      "default"
+    ],
+    "docs.search-dialog": [
+      "default"
+    ],
+    "docs.sidebar": [
+      "default"
+    ],
+    "docs.toc": [
+      "default"
+    ],
+    "features.feature-shell": [
+      "anywhere",
+      "byok",
+      "cloud-sandbox",
+      "multiplayer"
+    ],
+    "hero.brandkit-header": [
+      "default"
+    ],
+    "hero.home": [
+      "default"
+    ],
+    "hero.page-header": [
+      "max-w-2xl",
+      "max-w-3xl"
+    ],
+    "hero.pricing-title": [
+      "default"
+    ],
+    "proof.enterprise-logo-grid": [
+      "default"
+    ],
+    "proof.testimonials": [
+      "default"
+    ],
+    "proof.trusted-logo-strip": [
+      "default"
+    ],
+    "shell.docs-subnav": [
+      "default"
+    ],
+    "shell.download-dialog": [
+      "default"
+    ],
+    "shell.downloading-screen": [
+      "default"
+    ],
+    "shell.footer-mono": [
+      "default"
+    ],
+    "shell.footer-sans": [
+      "default"
+    ],
+    "shell.header": [
+      "default"
+    ],
+    "shell.mobile-menu": [
+      "default"
+    ]
+  },
+  "nodeSettableProperties": [
+    "type",
+    "section",
+    "variant",
+    "content",
+    "motion"
+  ],
+  "motionSettableProperties": [
+    "patterns",
+    "reducedMotionFallback"
+  ],
+  "assetRoles": [
+    "brand-mark",
+    "customer-logo",
+    "decorative-background",
+    "demo-video",
+    "download-endpoint",
+    "form-endpoint",
+    "icon",
+    "person-avatar",
+    "product-screenshot",
+    "team-photo",
+    "ui-animation",
+    "vendor-mark"
+  ],
+  "pageSpecTopLevelProperties": [
+    "pageSpecVersion",
+    "template",
+    "route",
+    "nodes"
+  ]
+}

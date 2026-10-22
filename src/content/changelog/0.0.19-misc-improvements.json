@@ -1,0 +1,32 @@
+{
+  "slug": "0.0.19-misc-improvements",
+  "version": "0.0.19",
+  "versionSlug": "0.0.19",
+  "title": "Misc Improvements",
+  "fullTitle": "0.0.19: Misc Improvements",
+  "date": "July 21st, 2025",
+  "dateISO": "2025-07-21",
+  "description": "Conductor 0.0.19 changelog - Misc Improvements",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.0.19-misc-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.0.19-misc-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.0.19-misc-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Unread indicators in the sidebar and Mac Dock now show one notification per workspace to reduce noise</li>\n<li>Added zoom keyboard shortcuts (<code>⌘+</code> to zoom in, <code>⌘-</code> to zoom out, <code>⌘0</code> to reset zoom)</li>\n<li>Added a button in the sidebar to access the dashboard</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Improved the performance of <code>@</code> file mentions in large codebases</li>\n<li>Fixed an issue where the <code>Compact conversation</code> button wouldn&#x27;t show up when the a workspace reached 100% context</li>\n<li>Fixed a bug where long branch names would hide the &quot;Archive workspace&quot; button</li>\n<li>Fixed a bug where trackpads were unable to scroll the repository list in the &quot;Add repository&quot; dialog</li>\n<li>Fixed a bug where compacting a conversation would show a loading state in all workspaces</li>\n<li>The feedback dialog now submits on <code>cmd+enter</code> instead of <code>enter</code></li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Cleaned up presentation of the &quot;Add repository&quot; dialog</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Unread indicators in the sidebar and Mac Dock now show one notification per workspace to reduce noise\n- Added zoom keyboard shortcuts (`⌘+` to zoom in, `⌘-` to zoom out, `⌘0` to reset zoom)\n- Added a button in the sidebar to access the dashboard\n\n## Fixes\n\n- Improved the performance of `@` file mentions in large codebases\n- Fixed an issue where the `Compact conversation` button wouldn't show up when the a workspace reached 100% context\n- Fixed a bug where long branch names would hide the \"Archive workspace\" button\n- Fixed a bug where trackpads were unable to scroll the repository list in the \"Add repository\" dialog\n- Fixed a bug where compacting a conversation would show a loading state in all workspaces\n- The feedback dialog now submits on `cmd+enter` instead of `enter`\n\n## Misc\n\n- Cleaned up presentation of the \"Add repository\" dialog\n"
+}

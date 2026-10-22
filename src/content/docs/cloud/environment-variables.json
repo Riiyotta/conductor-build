@@ -1,0 +1,1441 @@
+{
+  "slug": "cloud/environment-variables",
+  "url": "/docs/cloud/environment-variables",
+  "title": "Cloud workspace environment variables",
+  "description": "Variables available to Cloud Computer builds, setup scripts, agents, and terminals",
+  "meta": {
+    "title": "Cloud workspace environment variables | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/environment-variables/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Cloud workspace environment variables"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#conductor-provided-variables",
+      "title": "Conductor-provided variables"
+    },
+    {
+      "depth": 2,
+      "url": "#add-your-own-variables",
+      "title": "Add your own variables"
+    },
+    {
+      "depth": 2,
+      "url": "#configure-setup-for-local-and-cloud",
+      "title": "Configure setup for local and Cloud"
+    },
+    {
+      "depth": 2,
+      "url": "#reserved-names",
+      "title": "Reserved names"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud/cloud-computer",
+    "title": "Cloud Computer",
+    "description": "Configure the shared repositories, environment, software, and builds for your organization"
+  },
+  "next": {
+    "url": "/docs/cloud/faq",
+    "title": "Cloud FAQ",
+    "description": "Plans, specifications, pricing, and security for Conductor Cloud"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor provides the variables below to cloud workspace setup scripts,\nagents, actions, and cloud terminals. For variables shared with local\nworkspaces, see\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/environment-variables"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor environment variables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "conductor-provided-variables",
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor-provided variables"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Variable"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Value in cloud workspaces"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_NAME"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace display name, when one has been assigned."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Naming workspace-specific resources."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Path to the repository checkout inside the sandbox."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Finding the workspace directory from setup scripts, agents, and terminals."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_ROOT_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The same path as "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_PATH"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Scripts that run in both local and cloud workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_BASE_DIR"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Directory containing the workspace."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Caches and scratch files outside the repository checkout."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_IS_LOCAL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " in cloud workspaces."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Choosing local or cloud steps in one project script."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_URL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Base URL for the Conductor API."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Calling the Conductor API from a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_TOKEN"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace-scoped API token in new machine-launched cloud workspaces when automatic workspace API access is enabled; other cloud workspaces receive no automatic token."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Authenticating workspace API requests without a personal API key."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your own Conductor API key when you configure one. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Overriding the workspace token with a personal API key."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_SESSION_ID"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Current session ID. Available only in agent processes, not setup scripts or terminals."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Passing the optional "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "X-Conductor-Session-Id"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " API header to attribute a request to its session."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "With "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_URL"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_TOKEN"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " ("
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in\nolder workspaces), an agent or script can call the Conductor API from inside\nthe workspace. The provided token is scoped to the workspace. Each user can\nconfigure automatic API access separately for each organization in "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings\n→ User → General"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Changes do not affect existing workspaces or tokens. A\nuser-supplied "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " always takes precedence. See the\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/api"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor API guide"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for endpoints and authentication."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud workspaces do not receive "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". See\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/working-with-cloud-workspaces#forward-a-development-port"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Forward a development port"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-your-own-variables",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add your own variables"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Set organization-wide values, including secrets, in the\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/cloud-computer#environment-variables-and-secrets"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud Computer environment"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For values that belong to one repository rather than the whole organization,\nuse "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "environment_variables.cloud"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[environment_variables]\nAPI_BASE_URL = \"https://api.staging.example.com\"\n\n[environment_variables.cloud]\nCI = \"1\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "API_BASE_URL = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://api.staging.example.com\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "cloud",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "CI = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"1\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository or personal Cloud variables take precedence over an organization\nCloud Computer variable with the same name."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "configure-setup-for-local-and-cloud",
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure setup for local and Cloud"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud and local workspaces use separate setup scripts:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud workspaces run the repository's "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Setup script"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " from organization\nsettings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local workspaces run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "scripts.setup"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " from "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " (or\nthe legacy "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "conductor.json"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ")."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To share the implementation, commit a script to the repository and call it\nfrom both. Branch on "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_IS_LOCAL"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for steps that only make sense on\nyour Mac — cloud workspaces run Linux, so Homebrew, Xcode, and other Mac-only\ntools need a cloud alternative or a local-only branch:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "if [ \"$CONDUCTOR_IS_LOCAL\" = \"1\" ]; then\n  # Local only: read from the separate root checkout on your Mac.\n  ln -s \"$CONDUCTOR_ROOT_PATH/.env\" .env\nfi\n\npnpm install",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "if",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " [ ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_IS_LOCAL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " =",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " \"1\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ]; ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "then",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  # Local only: read from the separate root checkout on your Mac.",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  ln",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -s",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_ROOT_PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/.env\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .env",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "fi",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "pnpm",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " install",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In a cloud workspace, "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_ROOT_PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " already points to the workspace\ncheckout. Conductor manages git and GitHub CLI authentication, so don't copy\nGitHub tokens into Cloud Computer variables."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "reserved-names",
+      "children": [
+        {
+          "type": "text",
+          "value": "Reserved names"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Variable names must be valid shell identifiers. The names and prefixes below\nbelong to the sandbox runtime and cannot be overridden."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Reserved name or prefix"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Reason"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "HOME"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Managed by the sandbox user environment."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Managed by the sandbox shell environment."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "PORT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Reserved for platform runtime behavior."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "NODE_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Reserved for Node.js module resolution."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_URL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor for API routing."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_BASE_DIR"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor for the sandbox directory."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_IS_LOCAL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor to identify cloud workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_ROOT_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor for the repository checkout path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_NAME"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor for the workspace name."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set by Conductor for the repository checkout path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_INTERNAL_*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Reserved for Conductor runtime behavior."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_GIT_AUTH_*"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Reserved for Conductor-managed Git authentication."
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "html": "<p>Conductor provides the variables below to cloud workspace setup scripts,\nagents, actions, and cloud terminals. For variables shared with local\nworkspaces, see\n<a href=\"/docs/reference/environment-variables\">Conductor environment variables</a>.</p><h2 id=\"conductor-provided-variables\"><a href=\"#conductor-provided-variables\">Conductor-provided variables</a></h2><table><thead><tr><th>Variable</th><th>Value in cloud workspaces</th><th>Use it for</th></tr></thead><tbody><tr><td><code>CONDUCTOR_WORKSPACE_NAME</code></td><td>Workspace display name, when one has been assigned.</td><td>Naming workspace-specific resources.</td></tr><tr><td><code>CONDUCTOR_WORKSPACE_PATH</code></td><td>Path to the repository checkout inside the sandbox.</td><td>Finding the workspace directory from setup scripts, agents, and terminals.</td></tr><tr><td><code>CONDUCTOR_ROOT_PATH</code></td><td>The same path as <code>CONDUCTOR_WORKSPACE_PATH</code>.</td><td>Scripts that run in both local and cloud workspaces.</td></tr><tr><td><code>CONDUCTOR_BASE_DIR</code></td><td>Directory containing the workspace.</td><td>Caches and scratch files outside the repository checkout.</td></tr><tr><td><code>CONDUCTOR_IS_LOCAL</code></td><td><code>0</code> in cloud workspaces.</td><td>Choosing local or cloud steps in one project script.</td></tr><tr><td><code>CONDUCTOR_API_URL</code></td><td>Base URL for the Conductor API.</td><td>Calling the Conductor API from a workspace.</td></tr><tr><td><code>CONDUCTOR_API_TOKEN</code></td><td>Workspace-scoped API token in new machine-launched cloud workspaces when automatic workspace API access is enabled; other cloud workspaces receive no automatic token.</td><td>Authenticating workspace API requests without a personal API key.</td></tr><tr><td><code>CONDUCTOR_API_KEY</code></td><td>Your own Conductor API key when you configure one. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here.</td><td>Overriding the workspace token with a personal API key.</td></tr><tr><td><code>CONDUCTOR_SESSION_ID</code></td><td>Current session ID. Available only in agent processes, not setup scripts or terminals.</td><td>Passing the optional <code>X-Conductor-Session-Id</code> API header to attribute a request to its session.</td></tr></tbody></table><p>With <code>CONDUCTOR_API_URL</code> and <code>CONDUCTOR_API_TOKEN</code> (<code>CONDUCTOR_API_KEY</code> in\nolder workspaces), an agent or script can call the Conductor API from inside\nthe workspace. The provided token is scoped to the workspace. Each user can\nconfigure automatic API access separately for each organization in <strong>Settings\n→ User → General</strong>. Changes do not affect existing workspaces or tokens. A\nuser-supplied <code>CONDUCTOR_API_KEY</code> always takes precedence. See the\n<a href=\"/docs/api\">Conductor API guide</a> for endpoints and authentication.</p><p>Cloud workspaces do not receive <code>CONDUCTOR_PORT</code>. See\n<a href=\"/docs/cloud/working-with-cloud-workspaces#forward-a-development-port\">Forward a development port</a>.</p><h2 id=\"add-your-own-variables\"><a href=\"#add-your-own-variables\">Add your own variables</a></h2><p>Set organization-wide values, including secrets, in the\n<a href=\"/docs/cloud/cloud-computer#environment-variables-and-secrets\">Cloud Computer environment</a>.</p><p>For values that belong to one repository rather than the whole organization,\nuse <code>environment_variables.cloud</code> in <code>.conductor/settings.toml</code>:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">API_BASE_URL = </span><span style=\"color:#032F62\">\"https://api.staging.example.com\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">cloud</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">CI = </span><span style=\"color:#032F62\">\"1\"</span></span></code></pre></figure><p>Repository or personal Cloud variables take precedence over an organization\nCloud Computer variable with the same name.</p><h2 id=\"configure-setup-for-local-and-cloud\"><a href=\"#configure-setup-for-local-and-cloud\">Configure setup for local and Cloud</a></h2><p>Cloud and local workspaces use separate setup scripts:</p><ul><li>Cloud workspaces run the repository's <strong>Setup script</strong> from organization\nsettings.</li><li>Local workspaces run <code>scripts.setup</code> from <code>.conductor/settings.toml</code> (or\nthe legacy <code>conductor.json</code>).</li></ul><p>To share the implementation, commit a script to the repository and call it\nfrom both. Branch on <code>CONDUCTOR_IS_LOCAL</code> for steps that only make sense on\nyour Mac — cloud workspaces run Linux, so Homebrew, Xcode, and other Mac-only\ntools need a cloud alternative or a local-only branch:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#D73A49\">if</span><span style=\"color:#24292E\"> [ </span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\">$CONDUCTOR_IS_LOCAL</span><span style=\"color:#032F62\">\"</span><span style=\"color:#D73A49\"> =</span><span style=\"color:#032F62\"> \"1\"</span><span style=\"color:#24292E\"> ]; </span><span style=\"color:#D73A49\">then</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\">  # Local only: read from the separate root checkout on your Mac.</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">  ln</span><span style=\"color:#005CC5\"> -s</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$CONDUCTOR_ROOT_PATH</span><span style=\"color:#032F62\">/.env\"</span><span style=\"color:#032F62\"> .env</span></span>\n<span class=\"line\"><span style=\"color:#D73A49\">fi</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">pnpm</span><span style=\"color:#032F62\"> install</span></span></code></pre></figure><p>In a cloud workspace, <code>CONDUCTOR_ROOT_PATH</code> already points to the workspace\ncheckout. Conductor manages git and GitHub CLI authentication, so don't copy\nGitHub tokens into Cloud Computer variables.</p><h2 id=\"reserved-names\"><a href=\"#reserved-names\">Reserved names</a></h2><p>Variable names must be valid shell identifiers. The names and prefixes below\nbelong to the sandbox runtime and cannot be overridden.</p><table><thead><tr><th>Reserved name or prefix</th><th>Reason</th></tr></thead><tbody><tr><td><code>HOME</code></td><td>Managed by the sandbox user environment.</td></tr><tr><td><code>PATH</code></td><td>Managed by the sandbox shell environment.</td></tr><tr><td><code>PORT</code></td><td>Reserved for platform runtime behavior.</td></tr><tr><td><code>NODE_PATH</code></td><td>Reserved for Node.js module resolution.</td></tr><tr><td><code>CONDUCTOR_API_URL</code></td><td>Set by Conductor for API routing.</td></tr><tr><td><code>CONDUCTOR_BASE_DIR</code></td><td>Set by Conductor for the sandbox directory.</td></tr><tr><td><code>CONDUCTOR_IS_LOCAL</code></td><td>Set by Conductor to identify cloud workspaces.</td></tr><tr><td><code>CONDUCTOR_ROOT_PATH</code></td><td>Set by Conductor for the repository checkout path.</td></tr><tr><td><code>CONDUCTOR_WORKSPACE_NAME</code></td><td>Set by Conductor for the workspace name.</td></tr><tr><td><code>CONDUCTOR_WORKSPACE_PATH</code></td><td>Set by Conductor for the repository checkout path.</td></tr><tr><td><code>CONDUCTOR_INTERNAL_*</code></td><td>Reserved for Conductor runtime behavior.</td></tr><tr><td><code>CONDUCTOR_GIT_AUTH_*</code></td><td>Reserved for Conductor-managed Git authentication.</td></tr></tbody></table>",
+  "text": "Conductor provides the variables below to cloud workspace setup scripts,\nagents, actions, and cloud terminals. For variables shared with local\nworkspaces, see\nConductor environment variables.\nConductor-provided variables\nVariableValue in cloud workspacesUse it forCONDUCTOR_WORKSPACE_NAMEWorkspace display name, when one has been assigned.Naming workspace-specific resources.CONDUCTOR_WORKSPACE_PATHPath to the repository checkout inside the sandbox.Finding the workspace directory from setup scripts, agents, and terminals.CONDUCTOR_ROOT_PATHThe same path as CONDUCTOR_WORKSPACE_PATH.Scripts that run in both local and cloud workspaces.CONDUCTOR_BASE_DIRDirectory containing the workspace.Caches and scratch files outside the repository checkout.CONDUCTOR_IS_LOCAL0 in cloud workspaces.Choosing local or cloud steps in one project script.CONDUCTOR_API_URLBase URL for the Conductor API.Calling the Conductor API from a workspace.CONDUCTOR_API_TOKENWorkspace-scoped API token in new machine-launched cloud workspaces when automatic workspace API access is enabled; other cloud workspaces receive no automatic token.Authenticating workspace API requests without a personal API key.CONDUCTOR_API_KEYYour own Conductor API key when you configure one. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here.Overriding the workspace token with a personal API key.CONDUCTOR_SESSION_IDCurrent session ID. Available only in agent processes, not setup scripts or terminals.Passing the optional X-Conductor-Session-Id API header to attribute a request to its session.With CONDUCTOR_API_URL and CONDUCTOR_API_TOKEN (CONDUCTOR_API_KEY in\nolder workspaces), an agent or script can call the Conductor API from inside\nthe workspace. The provided token is scoped to the workspace. Each user can\nconfigure automatic API access separately for each organization in Settings\n→ User → General. Changes do not affect existing workspaces or tokens. A\nuser-supplied CONDUCTOR_API_KEY always takes precedence. See the\nConductor API guide for endpoints and authentication.\nCloud workspaces do not receive CONDUCTOR_PORT. See\nForward a development port.\nAdd your own variables\nSet organization-wide values, including secrets, in the\nCloud Computer environment.\nFor values that belong to one repository rather than the whole organization,\nuse environment_variables.cloud in .conductor/settings.toml:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[environment_variables]\nAPI_BASE_URL = \"https://api.staging.example.com\"\n[environment_variables.cloud]\nCI = \"1\"Repository or personal Cloud variables take precedence over an organization\nCloud Computer variable with the same name.\nConfigure setup for local and Cloud\nCloud and local workspaces use separate setup scripts:\nCloud workspaces run the repository's Setup script from organization\nsettings.\nLocal workspaces run scripts.setup from .conductor/settings.toml (or\nthe legacy conductor.json).\nTo share the implementation, commit a script to the repository and call it\nfrom both. Branch on CONDUCTOR_IS_LOCAL for steps that only make sense on\nyour Mac — cloud workspaces run Linux, so Homebrew, Xcode, and other Mac-only\ntools need a cloud alternative or a local-only branch:\nif [ \"$CONDUCTOR_IS_LOCAL\" = \"1\" ]; then\n  # Local only: read from the separate root checkout on your Mac.\n  ln -s \"$CONDUCTOR_ROOT_PATH/.env\" .env\nfi\npnpm installIn a cloud workspace, CONDUCTOR_ROOT_PATH already points to the workspace\ncheckout. Conductor manages git and GitHub CLI authentication, so don't copy\nGitHub tokens into Cloud Computer variables.\nReserved names\nVariable names must be valid shell identifiers. The names and prefixes below\nbelong to the sandbox runtime and cannot be overridden.\nReserved name or prefixReasonHOMEManaged by the sandbox user environment.PATHManaged by the sandbox shell environment.PORTReserved for platform runtime behavior.NODE_PATHReserved for Node.js module resolution.CONDUCTOR_API_URLSet by Conductor for API routing.CONDUCTOR_BASE_DIRSet by Conductor for the sandbox directory.CONDUCTOR_IS_LOCALSet by Conductor to identify cloud workspaces.CONDUCTOR_ROOT_PATHSet by Conductor for the repository checkout path.CONDUCTOR_WORKSPACE_NAMESet by Conductor for the workspace name.CONDUCTOR_WORKSPACE_PATHSet by Conductor for the repository checkout path.CONDUCTOR_INTERNAL_*Reserved for Conductor runtime behavior.CONDUCTOR_GIT_AUTH_*Reserved for Conductor-managed Git authentication.",
+  "markdown": "\n# Cloud workspace environment variables\n\n\n\nConductor provides the variables below to cloud workspace setup scripts,\nagents, actions, and cloud terminals. For variables shared with local\nworkspaces, see\n[Conductor environment variables](/docs/reference/environment-variables).\n\n## Conductor-provided variables [#conductor-provided-variables]\n\n| Variable                   | Value in cloud workspaces                                                                                                                                                                                                             | Use it for                                                                                      |\n| -------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------- |\n| `CONDUCTOR_WORKSPACE_NAME` | Workspace display name, when one has been assigned.                                                                                                                                                                                   | Naming workspace-specific resources.                                                            |\n| `CONDUCTOR_WORKSPACE_PATH` | Path to the repository checkout inside the sandbox.                                                                                                                                                                                   | Finding the workspace directory from setup scripts, agents, and terminals.                      |\n| `CONDUCTOR_ROOT_PATH`      | The same path as `CONDUCTOR_WORKSPACE_PATH`.                                                                                                                                                                                          | Scripts that run in both local and cloud workspaces.                                            |\n| `CONDUCTOR_BASE_DIR`       | Directory containing the workspace.                                                                                                                                                                                                   | Caches and scratch files outside the repository checkout.                                       |\n| `CONDUCTOR_IS_LOCAL`       | `0` in cloud workspaces.                                                                                                                                                                                                              | Choosing local or cloud steps in one project script.                                            |\n| `CONDUCTOR_API_URL`        | Base URL for the Conductor API.                                                                                                                                                                                                       | Calling the Conductor API from a workspace.                                                     |\n| `CONDUCTOR_API_TOKEN`      | Workspace-scoped API token in new machine-launched cloud workspaces when automatic workspace API access is enabled; other cloud workspaces receive no automatic token.                                                                | Authenticating workspace API requests without a personal API key.                               |\n| `CONDUCTOR_API_KEY`        | Your own Conductor API key when you configure one. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here. | Overriding the workspace token with a personal API key.                                         |\n| `CONDUCTOR_SESSION_ID`     | Current session ID. Available only in agent processes, not setup scripts or terminals.                                                                                                                                                | Passing the optional `X-Conductor-Session-Id` API header to attribute a request to its session. |\n\nWith `CONDUCTOR_API_URL` and `CONDUCTOR_API_TOKEN` (`CONDUCTOR_API_KEY` in\nolder workspaces), an agent or script can call the Conductor API from inside\nthe workspace. The provided token is scoped to the workspace. Each user can\nconfigure automatic API access separately for each organization in **Settings\n→ User → General**. Changes do not affect existing workspaces or tokens. A\nuser-supplied `CONDUCTOR_API_KEY` always takes precedence. See the\n[Conductor API guide](/docs/api) for endpoints and authentication.\n\nCloud workspaces do not receive `CONDUCTOR_PORT`. See\n[Forward a development port](/docs/cloud/working-with-cloud-workspaces#forward-a-development-port).\n\n## Add your own variables [#add-your-own-variables]\n\nSet organization-wide values, including secrets, in the\n[Cloud Computer environment](/docs/cloud/cloud-computer#environment-variables-and-secrets).\n\nFor values that belong to one repository rather than the whole organization,\nuse `environment_variables.cloud` in `.conductor/settings.toml`:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[environment_variables]\nAPI_BASE_URL = \"https://api.staging.example.com\"\n\n[environment_variables.cloud]\nCI = \"1\"\n```\n\nRepository or personal Cloud variables take precedence over an organization\nCloud Computer variable with the same name.\n\n## Configure setup for local and Cloud [#configure-setup-for-local-and-cloud]\n\nCloud and local workspaces use separate setup scripts:\n\n* Cloud workspaces run the repository's **Setup script** from organization\n  settings.\n* Local workspaces run `scripts.setup` from `.conductor/settings.toml` (or\n  the legacy `conductor.json`).\n\nTo share the implementation, commit a script to the repository and call it\nfrom both. Branch on `CONDUCTOR_IS_LOCAL` for steps that only make sense on\nyour Mac — cloud workspaces run Linux, so Homebrew, Xcode, and other Mac-only\ntools need a cloud alternative or a local-only branch:\n\n```bash\nif [ \"$CONDUCTOR_IS_LOCAL\" = \"1\" ]; then\n  # Local only: read from the separate root checkout on your Mac.\n  ln -s \"$CONDUCTOR_ROOT_PATH/.env\" .env\nfi\n\npnpm install\n```\n\nIn a cloud workspace, `CONDUCTOR_ROOT_PATH` already points to the workspace\ncheckout. Conductor manages git and GitHub CLI authentication, so don't copy\nGitHub tokens into Cloud Computer variables.\n\n## Reserved names [#reserved-names]\n\nVariable names must be valid shell identifiers. The names and prefixes below\nbelong to the sandbox runtime and cannot be overridden.\n\n| Reserved name or prefix    | Reason                                             |\n| -------------------------- | -------------------------------------------------- |\n| `HOME`                     | Managed by the sandbox user environment.           |\n| `PATH`                     | Managed by the sandbox shell environment.          |\n| `PORT`                     | Reserved for platform runtime behavior.            |\n| `NODE_PATH`                | Reserved for Node.js module resolution.            |\n| `CONDUCTOR_API_URL`        | Set by Conductor for API routing.                  |\n| `CONDUCTOR_BASE_DIR`       | Set by Conductor for the sandbox directory.        |\n| `CONDUCTOR_IS_LOCAL`       | Set by Conductor to identify cloud workspaces.     |\n| `CONDUCTOR_ROOT_PATH`      | Set by Conductor for the repository checkout path. |\n| `CONDUCTOR_WORKSPACE_NAME` | Set by Conductor for the workspace name.           |\n| `CONDUCTOR_WORKSPACE_PATH` | Set by Conductor for the repository checkout path. |\n| `CONDUCTOR_INTERNAL_*`     | Reserved for Conductor runtime behavior.           |\n| `CONDUCTOR_GIT_AUTH_*`     | Reserved for Conductor-managed Git authentication. |\n"
+}

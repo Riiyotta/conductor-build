@@ -1,0 +1,28 @@
+{
+  "slug": "0.14.3-performance-improvements",
+  "version": "0.14.3",
+  "versionSlug": "0.14.3",
+  "title": "Performance Improvements",
+  "fullTitle": "0.14.3: Performance Improvements",
+  "date": "Oct 8th, 2025",
+  "dateISO": "2025-10-08",
+  "description": "Conductor 0.14.3 changelog - Performance Improvements",
+  "summary": "We've fixed a regression that could leave zombie claude processes on user systems.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.14.3-performance-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.3-performance-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.3-performance-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a regression that could leave zombie <code>claude</code> processes on user systems.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Updated right sidebar empty state</li>\n<li>Better error handling for the Anthropic Consumer Terms and Privacy Policy October 8th deadline error</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed MCP documentation link</li>\n</ul>\n<p>We&#x27;ve also temporarily removed plan mode from Conductor due to bugs in the Anthropic Agent SDK. For now, we&#x27;re getting good results by asking Sonnet 4.5 to make a plan.</p>",
+  "markdown": "\nWe've fixed a regression that could leave zombie `claude` processes on user systems.\n\n## Improvements\n\n- Updated right sidebar empty state\n- Better error handling for the Anthropic Consumer Terms and Privacy Policy October 8th deadline error\n\n## Fixes\n\n- Fixed MCP documentation link\n\nWe've also temporarily removed plan mode from Conductor due to bugs in the Anthropic Agent SDK. For now, we're getting good results by asking Sonnet 4.5 to make a plan.\n"
+}

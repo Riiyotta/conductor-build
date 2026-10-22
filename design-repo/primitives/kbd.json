@@ -1,0 +1,29 @@
+{
+  "id": "kbd",
+  "kind": "primitive",
+  "purpose": "Keyboard key chip used by docs shortcuts, the search ⌘K hint and the dialog Enter hint.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:460",
+      "quote": "function Shortcut({ node }) {"
+    }
+  ],
+  "tokens": [
+    "{typography.fontFamily.mono}",
+    "{radius.md}"
+  ],
+  "variants": [
+    "docs-key",
+    "search-hint",
+    "dialog-enter"
+  ],
+  "states": [
+    "rest"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:396",
+      "quote": "### 3.10 Keyboard shortcut (`node: shortcut`; 144 occurrences) and kbd"
+    }
+  ]
+}

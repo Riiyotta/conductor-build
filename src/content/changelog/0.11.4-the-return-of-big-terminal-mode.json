@@ -1,0 +1,32 @@
+{
+  "slug": "0.11.4-the-return-of-big-terminal-mode",
+  "version": "0.11.4",
+  "versionSlug": "0.11.4",
+  "title": "The Return of Big Terminal Mode",
+  "fullTitle": "0.11.4: The Return of Big Terminal Mode",
+  "date": "Sept 23rd, 2025",
+  "dateISO": "2025-09-23",
+  "description": "Conductor 0.11.4 changelog - The Return of Big Terminal Mode",
+  "summary": "We've brought back big terminal mode! Enable it in Settings → Terminal",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.11.4/acf61848-1830-4c82-859f-ecbcda848e79.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.11.4-the-return-of-big-terminal-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.11.4-the-return-of-big-terminal-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.11.4-the-return-of-big-terminal-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve brought back big terminal mode! Enable it in <code>Settings</code> → <code>Terminal</code></p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.11.4/acf61848-1830-4c82-859f-ecbcda848e79.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Preview what Claude will see when sending comment attachments</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Removed an unnecessary error toast when closing the &quot;Add a local repo&quot; dialog</li>\n</ul>\n<p>In 0.11.5, added debug tools for the conductor.json migration</p>",
+  "markdown": "\nWe've brought back big terminal mode! Enable it in `Settings` → `Terminal`\n\n<img\n    width=\"2048\"\n    height=\"1218\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.11.4/acf61848-1830-4c82-859f-ecbcda848e79.png\"\n/>\n\n## Improvements\n\n- Preview what Claude will see when sending comment attachments\n\n## Fixes\n\n- Removed an unnecessary error toast when closing the \"Add a local repo\" dialog\n\nIn 0.11.5, added debug tools for the conductor.json migration\n"
+}

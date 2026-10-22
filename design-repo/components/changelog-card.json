@@ -1,0 +1,28 @@
+{
+  "id": "changelog-card",
+  "kind": "component",
+  "purpose": "Square-cornered link card: version badge, date, two-line-clamped title.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Changelog.jsx:13",
+      "quote": "export default function Changelog() {"
+    }
+  ],
+  "tokens": [
+    "{component.card.changelog-preview}",
+    "{component.badge.version}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "rest",
+    "hover border foreground/30 + title opacity .7"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:258",
+      "quote": "Card: `<a>` with 1px #eae8e6 border, **no radius**, bg #fff, padding 24px."
+    }
+  ]
+}

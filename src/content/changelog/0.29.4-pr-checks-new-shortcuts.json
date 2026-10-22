@@ -1,0 +1,36 @@
+{
+  "slug": "0.29.4-pr-checks-new-shortcuts",
+  "version": "0.29.4",
+  "versionSlug": "0.29.4",
+  "title": "PR Checks, New Shortcuts",
+  "fullTitle": "0.29.4: PR Checks, New Shortcuts",
+  "date": "Jan 12th, 2026",
+  "dateISO": "2026-01-12",
+  "description": "Conductor 0.29.4 changelog - PR Checks, New Shortcuts",
+  "summary": "Each workspace now has a Checks tab. Use it to monitor GitHub actions, deployments, and user TODOs.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.4/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png",
+    "alt": "PR Checks"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.4-pr-checks-new-shortcuts/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.4-pr-checks-new-shortcuts",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.4-pr-checks-new-shortcuts",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Each workspace now has a Checks tab. Use it to monitor GitHub actions, deployments, and user TODOs.</p>\n<figure data-asset><img alt=\"PR Checks\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.4/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png\"/></figure>\n<p>We’ve also added new keyboard shortcuts:</p>\n<ul>\n<li>Review ⌘⇧R</li>\n<li>Fix errors ⌘⇧X</li>\n<li>Open in GitHub ⌘⇧G</li>\n<li>Pull latest ⌘⇧L</li>\n<li>Merge ⌘⇧M</li>\n<li>CTRL+Tab and Shift+Ctrl+Tab to switch chat tabs</li>\n</ul>\n<p>Press ⌘/ to see a cheatsheet of all shortcuts.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Better rendering for “read image” tool use</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed plan mode helper text wrapping on smaller screens</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Various UI tweaks to the Composer</li>\n</ul>",
+  "markdown": "\nEach workspace now has a Checks tab. Use it to monitor GitHub actions, deployments, and user TODOs.\n\n![PR Checks](/assets/changelog/media/0.29.4/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png)\n\nWe’ve also added new keyboard shortcuts:\n\n- Review ⌘⇧R\n- Fix errors ⌘⇧X\n- Open in GitHub ⌘⇧G\n- Pull latest ⌘⇧L\n- Merge ⌘⇧M\n- CTRL+Tab and Shift+Ctrl+Tab to switch chat tabs\n\nPress ⌘/ to see a cheatsheet of all shortcuts.\n\n## Improvements\n\n- Better rendering for “read image” tool use\n\n## Fixes\n\n- Fixed plan mode helper text wrapping on smaller screens\n\n## Misc\n\n- Various UI tweaks to the Composer\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+  "version": "0.29.5",
+  "versionSlug": "0.29.5",
+  "title": "Bug Fixes, Claude can now read your terminal",
+  "fullTitle": "0.29.5: Bug Fixes, Claude can now read your terminal",
+  "date": "Jan 12th, 2026",
+  "dateISO": "2026-01-12",
+  "description": "Conductor 0.29.5 changelog - Bug Fixes, Claude can now read your terminal",
+  "summary": "We've identified a regression in the Claude Agent SDK when using async subagents that results in Error Code 1 and Unknown error responses. Please upvote this issue for Anthropic to make a proper fix!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.5/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png",
+    "alt": "Claude can now read your terminal"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.5-bug-fixes-claude-can-now-read-your-terminal/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.5-bug-fixes-claude-can-now-read-your-terminal",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve identified a regression in the Claude Agent SDK when using async subagents that results in <code>Error Code 1</code> and <code>Unknown error</code> responses. Please <a href=\"https://github.com/anthropics/claude-agent-sdk-typescript/issues/130\" target=\"_blank\" rel=\"noopener noreferrer\">upvote this issue for Anthropic to make a proper fix</a>!</p>\n<p>We’ve also added a new tool for Claude to read your terminal.</p>\n<figure data-asset><img alt=\"Claude can now read your terminal\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.5/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added shortcut ⇧⌥C to view uncommitted changes</li>\n<li>Added project name to deployments in the Changes tab</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the new workspace page appearing when the last tab in a workspace was closed</li>\n<li>Fixed a bug where deleted files could not be marked as viewed</li>\n<li>Clarified behavior in thinking toggle</li>\n</ul>",
+  "markdown": "\nWe've identified a regression in the Claude Agent SDK when using async subagents that results in `Error Code 1` and `Unknown error` responses. Please [upvote this issue for Anthropic to make a proper fix](https://github.com/anthropics/claude-agent-sdk-typescript/issues/130)!\n\nWe’ve also added a new tool for Claude to read your terminal.\n\n![Claude can now read your terminal](/assets/changelog/media/0.29.5/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png)\n\n## Improvements\n\n- Added shortcut ⇧⌥C to view uncommitted changes\n- Added project name to deployments in the Changes tab\n\n## Fixes\n\n- Fixed the new workspace page appearing when the last tab in a workspace was closed\n- Fixed a bug where deleted files could not be marked as viewed\n- Clarified behavior in thinking toggle\n"
+}

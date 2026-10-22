@@ -1,0 +1,119 @@
+{
+  "id": "shell.mobile-menu",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.mobile-menu"
+  ],
+  "purpose": "Small-screen navigation panel with a Download row.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Header.jsx:102",
+      "quote": "className=\"flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-muted\""
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:102",
+      "quote": "Below md: the nav is hidden and a menu button appears."
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.mobile-menu"
+    }
+  },
+  "slot": "chrome",
+  "content": {
+    "items": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "label": {
+            "type": "text",
+            "maxWords": 3,
+            "required": true,
+            "observedMaxWords": 2
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 6,
+      "required": true
+    },
+    "downloadLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollow": "shell.header",
+    "allowedTemplates": [
+      "template.brandkit",
+      "template.changelog-index",
+      "template.changelog-post",
+      "template.enterprise",
+      "template.home",
+      "template.join-us",
+      "template.legal",
+      "template.pricing",
+      "template.prose-page",
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "instant-toggle",
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "instant-toggle",
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:102",
+        "quote": "Clicking any item closes the panel. No open/close animation."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "display",
+          "value": "available via menu button"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "display",
+          "value": "none"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

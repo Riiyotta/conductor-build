@@ -1,0 +1,36 @@
+{
+  "slug": "0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+  "version": "0.25.0",
+  "versionSlug": "0.25.0",
+  "title": "Workspace Storage Improvements, AI Response Metadata, and Slash Commands",
+  "fullTitle": "0.25.0: Workspace Storage Improvements, AI Response Metadata, and Slash Commands",
+  "date": "Dec 3rd, 2025",
+  "dateISO": "2025-12-03",
+  "description": "Conductor 0.25.0 changelog - Workspace Storage Improvements, AI Response Metadata, and Slash Commands",
+  "summary": "Workspaces will now be created at ~/conductor/workspaces/ instead of .conductor. This means no more need to add .conductor to gitignore or exclude it from your build tools, and will help prevent the agents from getting confused about where to edit files.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.0/fb9f3af5-65da-416b-8122-61b1a5fa31e7.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Workspaces will now be created at <code>~/conductor/workspaces/</code> instead of <code>.conductor</code>. This means no more need to add <code>.conductor</code> to gitignore or exclude it from your build tools, and will help prevent the agents from getting confused about where to edit files.</p>\n<p>(This change will apply for any new repo you add to Conductor going forward. Nothing will change for existing repos.)</p>\n<p>You&#x27;ll now see metadata below each AI response, including how long it took, a button to copy the response as markdown, and a list of changed files.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.0/fb9f3af5-65da-416b-8122-61b1a5fa31e7.png\"/></figure>\n<p>Claude Code&#x27;s default slash commands now work in Conductor! Commands installed via Plugins work as well. MCP server statuses will also now appear before sending a message.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"https://github.com/user-attachments/assets/4c405ab0-2584-49a5-876e-bf20ade3ff20\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added a button to copy file contents when viewing files and diffs</li>\n<li>We&#x27;ve improved fuzzy search for slash commands</li>\n<li>Improved switch visibility in dark mode</li>\n<li>Improved rendering of Claude Code Skills in the chat</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Only show ⌘N shortcut tooltip on the selected repository</li>\n<li>Fixed the archive button incorrectly having a loading state when other workspaces were archiving</li>\n<li>The target branch is now explicitly mentioned in the AI&#x27;s instructions for creating PRs</li>\n<li>Fixed port recognition when URLs wrapped across lines in the terminal</li>\n<li>Fixed arrows opening in the wrong direction when expanding collapsed changes</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Increased default toast duration from 5 → 10 seconds</li>\n<li>Removed the &quot;Open In&quot; button from the new workspace screen</li>\n<li>Converted settings from a dialog to a proper page</li>\n<li>Changed shortcut to close settings page from &quot;Esc&quot; to &quot;Cmd + Esc&quot;</li>\n</ul>",
+  "markdown": "\nWorkspaces will now be created at `~/conductor/workspaces/` instead of `.conductor`. This means no more need to add `.conductor` to gitignore or exclude it from your build tools, and will help prevent the agents from getting confused about where to edit files.\n\n(This change will apply for any new repo you add to Conductor going forward. Nothing will change for existing repos.)\n\nYou'll now see metadata below each AI response, including how long it took, a button to copy the response as markdown, and a list of changed files.\n\n<img\n    width=\"1784\"\n    height=\"364\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.0/fb9f3af5-65da-416b-8122-61b1a5fa31e7.png\"\n/>\n\nClaude Code's default slash commands now work in Conductor! Commands installed via Plugins work as well. MCP server statuses will also now appear before sending a message.\n\n<img\n    width=\"486\"\n    height=\"293\"\n    alt=\"image\"\n    src=\"https://github.com/user-attachments/assets/4c405ab0-2584-49a5-876e-bf20ade3ff20\"\n/>\n\n## Improvements\n\n- Added a button to copy file contents when viewing files and diffs\n- We've improved fuzzy search for slash commands\n- Improved switch visibility in dark mode\n- Improved rendering of Claude Code Skills in the chat\n\n## Fixes\n\n- Only show ⌘N shortcut tooltip on the selected repository\n- Fixed the archive button incorrectly having a loading state when other workspaces were archiving\n- The target branch is now explicitly mentioned in the AI's instructions for creating PRs\n- Fixed port recognition when URLs wrapped across lines in the terminal\n- Fixed arrows opening in the wrong direction when expanding collapsed changes\n\n## Misc\n\n- Increased default toast duration from 5 → 10 seconds\n- Removed the \"Open In\" button from the new workspace screen\n- Converted settings from a dialog to a proper page\n- Changed shortcut to close settings page from \"Esc\" to \"Cmd + Esc\"\n"
+}

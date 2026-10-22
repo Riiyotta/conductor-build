@@ -1,0 +1,28 @@
+{
+  "id": "pager",
+  "kind": "component",
+  "purpose": "Changelog two-row pager (prev/next + page numbers with ellipses).",
+  "implementedBy": [
+    {
+      "ref": "src/components/changelog/ChangelogPager.jsx:39",
+      "quote": "export default function ChangelogPager({ page }) {"
+    }
+  ],
+  "tokens": [
+    "{semantic.border.subtle}",
+    "{radius.md}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "disabled prev/next",
+    "current page"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:478",
+      "quote": "### 5.3 Index pagination (`nav[aria-label=\"Changelog pages\"]`)"
+    }
+  ]
+}

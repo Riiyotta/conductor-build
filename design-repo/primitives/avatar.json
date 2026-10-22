@@ -1,0 +1,37 @@
+{
+  "id": "avatar",
+  "kind": "primitive",
+  "purpose": "Round or rounded-square person image. Sizes 20 (hero quote), 28 (multiplayer stack), 40 (testimonials), 48/56 (team cards).",
+  "implementedBy": [
+    {
+      "ref": "src/components/Testimonials.jsx:60",
+      "quote": "function Card({ t, index }) {"
+    }
+  ],
+  "tokens": [
+    "{radius.full}",
+    "{radius.md}",
+    "{elevation.avatar-ring}",
+    "{semantic.border.default}"
+  ],
+  "variants": [
+    "20",
+    "28",
+    "40",
+    "team-48-56"
+  ],
+  "states": [
+    "rest"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:123",
+      "quote": "Avatar 20x20 round with 1px #eae8e6 border"
+    },
+    {
+      "ref": "CLONE_SPEC_PAGES.md:299",
+      "quote": "img.aspect-square.w-12.sm:w-14.rounded-md.object-cover"
+    }
+  ],
+  "accessibility": "Decorative when the name is adjacent (alt=\"\"); team cards use alt 'Portrait of <Name>'."
+}

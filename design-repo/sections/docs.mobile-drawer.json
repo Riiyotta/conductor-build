@@ -1,0 +1,112 @@
+{
+  "id": "docs.mobile-drawer",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.mobile-drawer"
+  ],
+  "purpose": "Small-screen slide-in copy of the docs navigation.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/MobileNav.jsx:46",
+      "quote": "export function MobileDrawer({ state, onClose, root, activeUrl }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:209",
+      "quote": "### 1.6 Mobile drawer (`aside#nd-sidebar-mobile`, <768)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.mobile-drawer"
+    }
+  },
+  "slot": "overlay",
+  "content": {
+    "tree": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "folder",
+              "page",
+              "separator"
+            ],
+            "required": true
+          },
+          "label": {
+            "type": "text",
+            "maxWords": 8,
+            "required": true,
+            "observedMaxWords": 7
+          },
+          "href": {
+            "type": "url",
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 80,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "drawer-slide",
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "drawer-slide",
+      "hover-color"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/docs/docs.css:193",
+        "quote": "animation: fd-sidebar-in 250ms ease;"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "width",
+          "value": "85%, max 380px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "display",
+          "value": "none"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

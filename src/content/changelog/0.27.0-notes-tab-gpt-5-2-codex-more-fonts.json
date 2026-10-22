@@ -1,0 +1,32 @@
+{
+  "slug": "0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+  "version": "0.27.0",
+  "versionSlug": "0.27.0",
+  "title": "Notes Tab, GPT-5.2-Codex, More Fonts",
+  "fullTitle": "0.27.0: Notes Tab, GPT-5.2-Codex, More Fonts",
+  "date": "Dec 18th, 2025",
+  "dateISO": "2025-12-18",
+  "description": "Conductor 0.27.0 changelog - Notes Tab, GPT-5.2-Codex, More Fonts",
+  "summary": "Each workspace now has a scratchpad. Share notes with agents using <notes>.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.27.0/f4b04768-fe04-4ccb-89f6-aa651df5dfc3.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.27.0-notes-tab-gpt-5-2-codex-more-fonts/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+  "sourceUrl": "https://www.conductor.build/changelog/0.27.0-notes-tab-gpt-5-2-codex-more-fonts",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Each workspace now has a scratchpad. Share notes with agents using <code>&lt;notes&gt;</code>.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.27.0/f4b04768-fe04-4ccb-89f6-aa651df5dfc3.png\"/></figure>\n<p>OpenAI&#x27;s latest frontier coding model is now available in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.27.0/43cfb6e5-b3eb-421b-a5b3-db27fe7cbeaf.png\"/></figure>\n<p>Also, you can now customize the monospace font under Settings → Appearance.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.27.0/fdd3ff4a-75ff-4c7a-bfac-13453ab2839f.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added <a href=\"https://fork.dev\" target=\"_blank\" rel=\"noopener noreferrer\">Fork</a> to the Open In menu</li>\n<li>Improved OAuth error token error message</li>\n<li>You can now manually remove a comment that was imported from GitHub</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed some jank with renaming branches</li>\n<li>Fixed rendering errors with Mermaid diagrams</li>\n<li>Fixed a bug when forking chats that would drop files that were both tracked and ignored</li>\n<li>Fixed a race condition where messages could occasionally get sent to Claude twice</li>\n</ul>",
+  "markdown": "\nEach workspace now has a scratchpad. Share notes with agents using `<notes>`.\n\n<img\n    width=\"2048\"\n    height=\"1317\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.27.0/f4b04768-fe04-4ccb-89f6-aa651df5dfc3.png\"\n/>\n\nOpenAI's latest frontier coding model is now available in Conductor!\n\n<img\n    width=\"472\"\n    height=\"280\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.27.0/43cfb6e5-b3eb-421b-a5b3-db27fe7cbeaf.png\"\n/>\n\nAlso, you can now customize the monospace font under Settings → Appearance.\n\n<img\n    width=\"1212\"\n    height=\"620\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.27.0/fdd3ff4a-75ff-4c7a-bfac-13453ab2839f.png\"\n/>\n\n## Improvements\n\n- Added [Fork](https://fork.dev) to the Open In menu\n- Improved OAuth error token error message\n- You can now manually remove a comment that was imported from GitHub\n\n## Fixes\n\n- Fixed some jank with renaming branches\n- Fixed rendering errors with Mermaid diagrams\n- Fixed a bug when forking chats that would drop files that were both tracked and ignored\n- Fixed a race condition where messages could occasionally get sent to Claude twice\n"
+}

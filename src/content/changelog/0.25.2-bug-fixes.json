@@ -1,0 +1,28 @@
+{
+  "slug": "0.25.2-bug-fixes",
+  "version": "0.25.2",
+  "versionSlug": "0.25.2",
+  "title": "Bug Fixes",
+  "fullTitle": "0.25.2: Bug Fixes",
+  "date": "Dec 4th, 2025",
+  "dateISO": "2025-12-04",
+  "description": "Conductor 0.25.2 changelog - Bug Fixes",
+  "summary": "We've discovered a bug in the Claude Agent SDK that prevents MCPs in .mcp.json from being picked up by Claude. Please upvote this issue for Anthropic to make a proper fix!",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.25.2-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.2-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.2-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve discovered a bug in the Claude Agent SDK that prevents MCPs in <code>.mcp.json</code> from being picked up by Claude. Please <a href=\"https://github.com/anthropics/claude-code/issues/13107\" target=\"_blank\" rel=\"noopener noreferrer\">upvote this issue for Anthropic to make a proper fix</a>!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added back the <code>/clear</code> command</li>\n<li>Improved rendering of slash commands in the chat</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug in workspace creation that should result in faster creation times</li>\n<li>Improved slash command auto-complete suggestions</li>\n<li>Fixed diff comments sometimes disappearing while writing drafts</li>\n<li>Fixed the merge button not working on repositories that didn&#x27;t support squash merges</li>\n<li>Fixed the Composer not visually updating after approving a plan</li>\n<li>Truncated large numbers of file changes in AI message summaries</li>\n<li>Hide educational tooltips from new users</li>\n</ul>",
+  "markdown": "\nWe've discovered a bug in the Claude Agent SDK that prevents MCPs in `.mcp.json` from being picked up by Claude. Please [upvote this issue for Anthropic to make a proper fix](https://github.com/anthropics/claude-code/issues/13107)!\n\n## Improvements\n\n- Added back the `/clear` command\n- Improved rendering of slash commands in the chat\n\n## Fixes\n\n- Fixed a bug in workspace creation that should result in faster creation times\n- Improved slash command auto-complete suggestions\n- Fixed diff comments sometimes disappearing while writing drafts\n- Fixed the merge button not working on repositories that didn't support squash merges\n- Fixed the Composer not visually updating after approving a plan\n- Truncated large numbers of file changes in AI message summaries\n- Hide educational tooltips from new users\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.14.6-markdown-preview",
+  "version": "0.14.6",
+  "versionSlug": "0.14.6",
+  "title": "Markdown Preview",
+  "fullTitle": "0.14.6: Markdown Preview",
+  "date": "Oct 10th, 2025",
+  "dateISO": "2025-10-10",
+  "description": "Conductor 0.14.6 changelog - Markdown Preview",
+  "summary": "We've added a markdown preview to the diff viewer!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.14.6/f6aa9573-8f77-48dd-992a-014c5f6a9215.png",
+    "alt": "CleanShot 2025-10-10 at 12 27 37@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.14.6-markdown-preview/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.6-markdown-preview",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.6-markdown-preview",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve added a markdown preview to the diff viewer!</p>\n<figure data-asset><img alt=\"CleanShot 2025-10-10 at 12 27 37@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.14.6/f6aa9573-8f77-48dd-992a-014c5f6a9215.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li><code>gh</code> auth status now caches for 24hr</li>\n<li>Updated resolve conflicts prompt to <code>Resolve any existing merge conflicts with the remote branch ({targetBranch}). Then, commit and push your changes.</code></li>\n<li>Rename revert -&gt; discard</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix horizontal overflow render in repo details dialog</li>\n<li>Sidebar UI tweaks</li>\n</ul>",
+  "markdown": "\nWe've added a markdown preview to the diff viewer!\n\n<img\n    width=\"3234\"\n    height=\"2094\"\n    alt=\"CleanShot 2025-10-10 at 12 27 37@2x\"\n    src=\"/assets/changelog/media/0.14.6/f6aa9573-8f77-48dd-992a-014c5f6a9215.png\"\n/>\n\n## Improvements\n\n- `gh` auth status now caches for 24hr\n- Updated resolve conflicts prompt to `Resolve any existing merge conflicts with the remote branch ({targetBranch}). Then, commit and push your changes.`\n- Rename revert -> discard\n\n## Fixes\n\n- Fix horizontal overflow render in repo details dialog\n- Sidebar UI tweaks\n"
+}

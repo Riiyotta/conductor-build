@@ -1,0 +1,36 @@
+{
+  "slug": "0.2.2-bugfixes",
+  "version": "0.2.2",
+  "versionSlug": "0.2.2",
+  "title": "Bugfixes",
+  "fullTitle": "0.2.2: Bugfixes",
+  "date": "July 31st, 2025",
+  "dateISO": "2025-07-31",
+  "description": "Conductor 0.2.2 changelog - Bugfixes",
+  "summary": "We're experimenting with automatically collapsing Claude's responses. Long chats should also now be much more performant.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.2.2/78e57a8b-f6c3-4067-95ea-936092763df4.png",
+    "alt": "CleanShot 2025-07-31 at 22 53 50@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.2.2-bugfixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.2.2-bugfixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.2.2-bugfixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>We&#x27;re experimenting with automatically collapsing Claude&#x27;s responses. Long chats should also now be much more performant.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-31 at 22 53 50@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.2.2/78e57a8b-f6c3-4067-95ea-936092763df4.png\"/></figure>\n<p>You can also now <code>@</code> agents to explicitly call them.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-31 at 22 52 02@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.2.2/e683aa0c-f02a-4325-9f69-26fbfa7925cd.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Performance improvements on long chats</li>\n<li>Long messages from Claude Code now collapse automatically</li>\n<li>Show when a workspace is compacting in the sidebar</li>\n<li>Added syntax highlighting for setup scripts</li>\n<li>Right click to mark workspace as unread</li>\n<li><code>@</code> Agents to explicitly call them</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Long chats are faster to render</li>\n<li>Fixed a bug where archiving workspaces would fail unrecoverably</li>\n<li>Fixed an issue where hover states became invisible in dark mode</li>\n<li>Fixed a bug where you could add the same directory twice</li>\n<li>We now validate that the chosen directory exists before cloning a repo</li>\n<li>Fixed typography discrepancies throughout the UI</li>\n<li>Fixed an issue that could lead to a double slash // in the clone target path</li>\n<li>Fixed a missing space between tool names and the files they affected</li>\n<li>Fixed a bug where system theme changes would not be recognized by Conductor</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Updated the command menu to include recently added features</li>\n<li>Added Windsurf to the &quot;Open In&quot; menu</li>\n<li>Added support for <code>.xlsx</code> attachments</li>\n</ul>\n<p>New in 0.2.3:</p>\n<ul>\n<li>Agents in Conductor can now help the user out with understanding Conductor&#x27;s workspace system, and will follow the system better.</li>\n<li>This will help prevent an occasional issue where Claude would mistakenly edit files in the root directory.</li>\n</ul>\n<p>New in 0.2.4:</p>\n<ul>\n<li>Fixed a bug where certain messages would appear out of order</li>\n</ul>",
+  "markdown": "\nWe're experimenting with automatically collapsing Claude's responses. Long chats should also now be much more performant.\n\n<img\n    width=\"1522\"\n    height=\"770\"\n    alt=\"CleanShot 2025-07-31 at 22 53 50@2x\"\n    src=\"/assets/changelog/media/0.2.2/78e57a8b-f6c3-4067-95ea-936092763df4.png\"\n/>\n\nYou can also now `@` agents to explicitly call them.\n\n<img\n    width=\"624\"\n    height=\"358\"\n    alt=\"CleanShot 2025-07-31 at 22 52 02@2x\"\n    src=\"/assets/changelog/media/0.2.2/e683aa0c-f02a-4325-9f69-26fbfa7925cd.png\"\n/>\n\n## Improvements\n\n- Performance improvements on long chats\n- Long messages from Claude Code now collapse automatically\n- Show when a workspace is compacting in the sidebar\n- Added syntax highlighting for setup scripts\n- Right click to mark workspace as unread\n- `@` Agents to explicitly call them\n\n## Fixes\n\n- Long chats are faster to render\n- Fixed a bug where archiving workspaces would fail unrecoverably\n- Fixed an issue where hover states became invisible in dark mode\n- Fixed a bug where you could add the same directory twice\n- We now validate that the chosen directory exists before cloning a repo\n- Fixed typography discrepancies throughout the UI\n- Fixed an issue that could lead to a double slash // in the clone target path\n- Fixed a missing space between tool names and the files they affected\n- Fixed a bug where system theme changes would not be recognized by Conductor\n\n## Misc\n\n- Updated the command menu to include recently added features\n- Added Windsurf to the \"Open In\" menu\n- Added support for `.xlsx` attachments\n\nNew in 0.2.3:\n\n- Agents in Conductor can now help the user out with understanding Conductor's workspace system, and will follow the system better.\n- This will help prevent an occasional issue where Claude would mistakenly edit files in the root directory.\n\nNew in 0.2.4:\n\n- Fixed a bug where certain messages would appear out of order\n"
+}

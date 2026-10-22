@@ -1,0 +1,644 @@
+{
+  "slug": "reference/agent-behavior",
+  "url": "/docs/reference/agent-behavior",
+  "title": "Agent behavior",
+  "description": "Reference for agent instructions, modes, permissions, and checkpoints",
+  "meta": {
+    "title": "Agent behavior | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/agent-behavior/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Agent behavior"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#session-controls",
+      "title": "Session controls"
+    },
+    {
+      "depth": 2,
+      "url": "#repository-instructions",
+      "title": "Repository instructions"
+    },
+    {
+      "depth": 2,
+      "url": "#instruction-files-and-skills",
+      "title": "Instruction files and skills"
+    },
+    {
+      "depth": 2,
+      "url": "#permissions",
+      "title": "Permissions"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/big-terminal-mode",
+    "title": "Big Terminal Mode",
+    "description": "Use a full terminal in the center panel"
+  },
+  "next": {
+    "url": "/docs/reference/slash-commands",
+    "title": "Slash commands",
+    "description": "Reusable prompt commands for agent chats"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This page summarizes the controls that affect how agents behave in Conductor."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "session-controls",
+      "children": [
+        {
+          "type": "text",
+          "value": "Session controls"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Control"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Scope"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Plan Mode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Current session"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Ask the agent to plan before editing"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Fast Mode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Current session"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Trade extra credits for faster work where supported"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Thinking or reasoning level"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Current session"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Adjust how much reasoning the model spends"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex personality"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex session"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Choose a Codex working style"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Checkpoints"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Session/workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Revert code and chat state to an earlier turn"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For conceptual guidance, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/agent-modes"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Agent modes"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repository-instructions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository instructions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use repository instructions for guidance that should apply repeatedly:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "General preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " apply broad instructions to agents in a repository."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Code review preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " are sent when you click "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Review"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create PR preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " are sent when you create a pull request."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Fix errors preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " are sent when Conductor asks an agent to fix errors."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Resolve conflicts preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " are sent when an agent helps with merge conflicts."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Branch rename preferences"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " guide automatic branch naming."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "These preferences live in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "instruction-files-and-skills",
+      "children": [
+        {
+          "type": "text",
+          "value": "Instruction files and skills"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Agents can also use instructions stored in your repository or user configuration, such as:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "AGENTS.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CLAUDE.md"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".claude/commands"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Skills"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Keep durable project conventions in these files. Keep task-specific details in the chat or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".context"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "permissions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Permissions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Agents run locally and can use the same local permissions as your user account unless you configure stricter controls. Some actions may ask for approval before the agent continues."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For security details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/security-and-permissions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Security and permissions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>This page summarizes the controls that affect how agents behave in Conductor.</p><h2 id=\"session-controls\"><a href=\"#session-controls\">Session controls</a></h2><table><thead><tr><th>Control</th><th>Scope</th><th>Use it for</th></tr></thead><tbody><tr><td>Plan Mode</td><td>Current session</td><td>Ask the agent to plan before editing</td></tr><tr><td>Fast Mode</td><td>Current session</td><td>Trade extra credits for faster work where supported</td></tr><tr><td>Thinking or reasoning level</td><td>Current session</td><td>Adjust how much reasoning the model spends</td></tr><tr><td>Codex personality</td><td>Codex session</td><td>Choose a Codex working style</td></tr><tr><td>Checkpoints</td><td>Session/workspace</td><td>Revert code and chat state to an earlier turn</td></tr></tbody></table><p>For conceptual guidance, see <a href=\"/docs/concepts/agent-modes\">Agent modes</a>.</p><h2 id=\"repository-instructions\"><a href=\"#repository-instructions\">Repository instructions</a></h2><p>Use repository instructions for guidance that should apply repeatedly:</p><ul><li><code>General preferences</code> apply broad instructions to agents in a repository.</li><li><code>Code review preferences</code> are sent when you click <code>Review</code>.</li><li><code>Create PR preferences</code> are sent when you create a pull request.</li><li><code>Fix errors preferences</code> are sent when Conductor asks an agent to fix errors.</li><li><code>Resolve conflicts preferences</code> are sent when an agent helps with merge conflicts.</li><li><code>Branch rename preferences</code> guide automatic branch naming.</li></ul><p>These preferences live in <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a>.</p><h2 id=\"instruction-files-and-skills\"><a href=\"#instruction-files-and-skills\">Instruction files and skills</a></h2><p>Agents can also use instructions stored in your repository or user configuration, such as:</p><ul><li><code>AGENTS.md</code></li><li><code>CLAUDE.md</code></li><li><code>.claude/commands</code></li><li>Skills</li></ul><p>Keep durable project conventions in these files. Keep task-specific details in the chat or <code>.context</code>.</p><h2 id=\"permissions\"><a href=\"#permissions\">Permissions</a></h2><p>Agents run locally and can use the same local permissions as your user account unless you configure stricter controls. Some actions may ask for approval before the agent continues.</p><p>For security details, see <a href=\"/docs/reference/security-and-permissions\">Security and permissions</a>.</p>",
+  "text": "This page summarizes the controls that affect how agents behave in Conductor.\nSession controls\nControlScopeUse it forPlan ModeCurrent sessionAsk the agent to plan before editingFast ModeCurrent sessionTrade extra credits for faster work where supportedThinking or reasoning levelCurrent sessionAdjust how much reasoning the model spendsCodex personalityCodex sessionChoose a Codex working styleCheckpointsSession/workspaceRevert code and chat state to an earlier turnFor conceptual guidance, see Agent modes.\nRepository instructions\nUse repository instructions for guidance that should apply repeatedly:\nGeneral preferences apply broad instructions to agents in a repository.\nCode review preferences are sent when you click Review.\nCreate PR preferences are sent when you create a pull request.\nFix errors preferences are sent when Conductor asks an agent to fix errors.\nResolve conflicts preferences are sent when an agent helps with merge conflicts.\nBranch rename preferences guide automatic branch naming.\nThese preferences live in Repository Settings.\nInstruction files and skills\nAgents can also use instructions stored in your repository or user configuration, such as:\nAGENTS.md\nCLAUDE.md\n.claude/commands\nSkills\nKeep durable project conventions in these files. Keep task-specific details in the chat or .context.\nPermissions\nAgents run locally and can use the same local permissions as your user account unless you configure stricter controls. Some actions may ask for approval before the agent continues.\nFor security details, see Security and permissions.",
+  "markdown": "\n# Agent behavior\n\n\n\nThis page summarizes the controls that affect how agents behave in Conductor.\n\n## Session controls [#session-controls]\n\n| Control                     | Scope             | Use it for                                          |\n| --------------------------- | ----------------- | --------------------------------------------------- |\n| Plan Mode                   | Current session   | Ask the agent to plan before editing                |\n| Fast Mode                   | Current session   | Trade extra credits for faster work where supported |\n| Thinking or reasoning level | Current session   | Adjust how much reasoning the model spends          |\n| Codex personality           | Codex session     | Choose a Codex working style                        |\n| Checkpoints                 | Session/workspace | Revert code and chat state to an earlier turn       |\n\nFor conceptual guidance, see [Agent modes](/docs/concepts/agent-modes).\n\n## Repository instructions [#repository-instructions]\n\nUse repository instructions for guidance that should apply repeatedly:\n\n* `General preferences` apply broad instructions to agents in a repository.\n* `Code review preferences` are sent when you click `Review`.\n* `Create PR preferences` are sent when you create a pull request.\n* `Fix errors preferences` are sent when Conductor asks an agent to fix errors.\n* `Resolve conflicts preferences` are sent when an agent helps with merge conflicts.\n* `Branch rename preferences` guide automatic branch naming.\n\nThese preferences live in [Repository Settings](https://app.conductor.build/settings/repos?section=actions).\n\n## Instruction files and skills [#instruction-files-and-skills]\n\nAgents can also use instructions stored in your repository or user configuration, such as:\n\n* `AGENTS.md`\n* `CLAUDE.md`\n* `.claude/commands`\n* Skills\n\nKeep durable project conventions in these files. Keep task-specific details in the chat or `.context`.\n\n## Permissions [#permissions]\n\nAgents run locally and can use the same local permissions as your user account unless you configure stricter controls. Some actions may ask for approval before the agent continues.\n\nFor security details, see [Security and permissions](/docs/reference/security-and-permissions).\n"
+}

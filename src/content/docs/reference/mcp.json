@@ -1,0 +1,2117 @@
+{
+  "slug": "reference/mcp",
+  "url": "/docs/reference/mcp",
+  "title": "MCP",
+  "description": "Configure Model Context Protocol servers for Claude Code, Codex, and Cursor Composer workflows",
+  "meta": {
+    "title": "MCP | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/mcp/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "MCP"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#how-mcp-works",
+      "title": "How MCP works"
+    },
+    {
+      "depth": 2,
+      "url": "#transport-types",
+      "title": "Transport types"
+    },
+    {
+      "depth": 2,
+      "url": "#configuration-scopes",
+      "title": "Configuration scopes"
+    },
+    {
+      "depth": 2,
+      "url": "#add-a-claude-code-mcp-server",
+      "title": "Add a Claude Code MCP server"
+    },
+    {
+      "depth": 2,
+      "url": "#add-a-codex-mcp-server",
+      "title": "Add a Codex MCP server"
+    },
+    {
+      "depth": 2,
+      "url": "#add-a-cursor-composer-mcp-server",
+      "title": "Add a Cursor Composer MCP server"
+    },
+    {
+      "depth": 2,
+      "url": "#project-level-mcp-servers",
+      "title": "Project-level MCP servers"
+    },
+    {
+      "depth": 2,
+      "url": "#status-in-conductor",
+      "title": "Status in Conductor"
+    },
+    {
+      "depth": 2,
+      "url": "#good-candidates",
+      "title": "Good candidates"
+    },
+    {
+      "depth": 2,
+      "url": "#security-and-privacy",
+      "title": "Security and privacy"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/slash-commands",
+    "title": "Slash commands",
+    "description": "Reusable prompt commands for agent chats"
+  },
+  "next": {
+    "url": "/docs/reference/harnesses",
+    "title": "Overview",
+    "description": "Compare the harnesses Conductor can run and where each one is configured"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor sessions can use Model Context Protocol (MCP) servers where the selected agent host supports MCP. Claude Code and Codex sessions load their agent-specific MCP configuration inside Conductor. Cursor Composer MCP servers are configured in Cursor and apply when you open a Conductor workspace in Cursor."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use MCP when an agent needs repeatable access to external tools, private data, or workflow actions such as documentation search, issue tracking, database queries, or internal APIs."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a step-by-step setup, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/configure-mcp-servers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up MCP servers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-mcp-works",
+      "children": [
+        {
+          "type": "text",
+          "value": "How MCP works"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "MCP uses a client-server model. The agent host starts or connects to one MCP server per configured integration, discovers the server's available tools, and routes tool calls to that server during the conversation."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Official MCP docs describe three core server primitives:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Primitive"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "What it provides"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Example use in coding work"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Tools"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Executable functions the agent can call"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Search docs, create an issue, query a database"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Resources"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Data sources the agent can read as context"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Read API docs, schema metadata, or project records"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Prompts"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Reusable prompt templates exposed by the server"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Run a project-specific workflow"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "See the official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://modelcontextprotocol.io/docs/learn/architecture",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP architecture overview"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the protocol model."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "transport-types",
+      "children": [
+        {
+          "type": "text",
+          "value": "Transport types"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Transport"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it when"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Notes"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "stdio"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The server runs as a local command, such as "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "npx"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "node"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "python"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or a local binary."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The MCP client launches the process and exchanges JSON-RPC messages over stdin and stdout."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Streamable HTTP"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The server is hosted at a URL and supports the current MCP HTTP transport."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Remote servers can use bearer tokens, OAuth, API keys, and custom headers."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "SSE"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "You already depend on an older server that has not moved to Streamable HTTP."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Claude Code still documents SSE, but marks it deprecated in favor of HTTP where available."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://modelcontextprotocol.io/specification/2025-06-18/basic/transports",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP transports specification"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " defines "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "stdio"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and Streamable HTTP as the standard transports."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "configuration-scopes",
+      "children": [
+        {
+          "type": "text",
+          "value": "Configuration scopes"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Scope"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Cursor Composer"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "User"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.claude.json"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude mcp add --scope user"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.codex/config.toml"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex mcp add"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.cursor/mcp.json"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or Cursor's MCP settings UI"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Personal MCP servers you want available across repositories."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Project"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".mcp.json"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " in the repository root"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".codex/config.toml"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " scoped to the trusted project"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".cursor/mcp.json"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " in the repository root"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Shared project MCP servers that should follow the repository."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Local project"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.claude.json"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " under the current project path"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Personal "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.codex/config.toml"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " entries, optionally limited to trusted projects in the Codex config."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Local Cursor config that is not committed"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Machine-specific credentials or experiments."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor does not define a separate MCP config format. It uses the MCP configuration that Claude Code and Codex load for the session. Cursor Composer uses Cursor's MCP configuration when the workspace is open in Cursor."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-a-claude-code-mcp-server",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a Claude Code MCP server"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a user-scoped "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "stdio"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " server with the Claude Code CLI:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "claude mcp add <server-name> -s user -- <command> [args...]",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "claude",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " <",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "server-nam",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "e",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ">",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " -s",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " user",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " <",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "comman",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "d",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ">",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " [args...]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For example, add Context7 for documentation search:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "claude mcp add context7 -s user -- npx -y @upstash/context7-mcp",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "claude",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " context7",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -s",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " user",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " npx",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -y",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " @upstash/context7-mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " separator before the server command and arguments. Claude Code treats flags before "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " as Claude options and everything after "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " as the server command."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For more options, see the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/mcp",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code MCP docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-a-codex-mcp-server",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a Codex MCP server"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "stdio"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " server with the Codex CLI:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "codex mcp add <server-name> -- <command> [args...]",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " <",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "server-nam",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "e",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ">",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " <",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "comman",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "d",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ">",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " [args...]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For example, add Context7 for documentation search:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "codex mcp add context7 -- npx -y @upstash/context7-mcp",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " context7",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " npx",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -y",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " @upstash/context7-mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex stores MCP configuration in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.codex/config.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". The Codex CLI and IDE extension share that configuration."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also edit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "config.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " directly:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[mcp_servers.context7]\ncommand = \"npx\"\nargs = [\"-y\", \"@upstash/context7-mcp\"]",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "mcp_servers",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "context7",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npx\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "args = [",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"-y\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ", ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"@upstash/context7-mcp\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex also supports streamable HTTP MCP servers:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "codex mcp add openaiDeveloperDocs --url https://developers.openai.com/mcp",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " openaiDeveloperDocs",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --url",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://developers.openai.com/mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For more options, see the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://developers.openai.com/codex/mcp",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex MCP docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://developers.openai.com/codex/config-reference",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex configuration reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-a-cursor-composer-mcp-server",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a Cursor Composer MCP server"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add Cursor Composer MCP servers in Cursor's MCP settings UI or by editing "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Cursor supports user-level and project-level MCP configuration:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "json",
+      "title": ".cursor/mcp.json",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "{",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"mcpServers\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"context7\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "            \"command\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npx\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ",",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "            \"args\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": [",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"-y\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ", ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"@upstash/context7-mcp\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        }",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    }",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "}",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the MCP server should follow a repository. If you open a Conductor workspace in Cursor, Cursor reads the project-level "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " from that workspace checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For more options, see the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://cursor.com/docs/mcp",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Cursor MCP docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "project-level-mcp-servers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Project-level MCP servers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If a repository has an "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file at its project root, Claude Code sessions in that Conductor workspace inherit those MCP servers."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Codex, you can scope MCP servers to a trusted project with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".codex/config.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Cursor Composer, use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the repository root. This is Cursor's project-level MCP config file, not the same file as Claude Code's root "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you're moving project-level MCP config from Cursor, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/migrate-from-cursor#migrate-mcp-servers"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Work with Cursor and VS Code"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "status-in-conductor",
+      "children": [
+        {
+          "type": "text",
+          "value": "Status in Conductor"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor can show MCP server status for Claude Code and Codex in the chat composer and the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP status"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " dialog. Before a session starts, the status reflects the workspace-level configuration Conductor can discover. After a session starts, the status reflects the running session."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Refresh status"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " after you change MCP configuration. For Codex, Conductor opens "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "codex mcp list"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in a terminal when you run the MCP command flow, because the Codex CLI expects a concrete "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "mcp"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " subcommand."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor Composer MCP server status is managed in Cursor's MCP UI. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "good-candidates",
+      "children": [
+        {
+          "type": "text",
+          "value": "Good candidates"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "MCP works best for tools an agent needs repeatedly, such as documentation search, issue tracking, databases, and internal APIs."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Common examples include Context7 for documentation search and Linear for issue management."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "security-and-privacy",
+      "children": [
+        {
+          "type": "text",
+          "value": "Security and privacy"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "MCP servers can run local commands, read local data, and send data to external services depending on the server you configure. Review the server command, requested credentials, and tool list before adding it."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For local MCP servers, prefer trusted packages or local code you control. The official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP security best practices"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " recommend clear consent before running local server commands and warn that local MCP servers run with the user's privileges unless sandboxed."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Enterprise data privacy disables custom MCP servers. See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/privacy#enterprise-data-privacy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Privacy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor sessions can use Model Context Protocol (MCP) servers where the selected agent host supports MCP. Claude Code and Codex sessions load their agent-specific MCP configuration inside Conductor. Cursor Composer MCP servers are configured in Cursor and apply when you open a Conductor workspace in Cursor.</p><p>Use MCP when an agent needs repeatable access to external tools, private data, or workflow actions such as documentation search, issue tracking, database queries, or internal APIs.</p><p>For a step-by-step setup, see <a href=\"/docs/guides/configure-mcp-servers\">Set up MCP servers</a>.</p><h2 id=\"how-mcp-works\"><a href=\"#how-mcp-works\">How MCP works</a></h2><p>MCP uses a client-server model. The agent host starts or connects to one MCP server per configured integration, discovers the server's available tools, and routes tool calls to that server during the conversation.</p><p>Official MCP docs describe three core server primitives:</p><table><thead><tr><th>Primitive</th><th>What it provides</th><th>Example use in coding work</th></tr></thead><tbody><tr><td>Tools</td><td>Executable functions the agent can call</td><td>Search docs, create an issue, query a database</td></tr><tr><td>Resources</td><td>Data sources the agent can read as context</td><td>Read API docs, schema metadata, or project records</td></tr><tr><td>Prompts</td><td>Reusable prompt templates exposed by the server</td><td>Run a project-specific workflow</td></tr></tbody></table><p>See the official <a href=\"https://modelcontextprotocol.io/docs/learn/architecture\" target=\"_blank\" rel=\"noopener noreferrer\">MCP architecture overview</a> for the protocol model.</p><h2 id=\"transport-types\"><a href=\"#transport-types\">Transport types</a></h2><table><thead><tr><th>Transport</th><th>Use it when</th><th>Notes</th></tr></thead><tbody><tr><td><code>stdio</code></td><td>The server runs as a local command, such as <code>npx</code>, <code>node</code>, <code>python</code>, or a local binary.</td><td>The MCP client launches the process and exchanges JSON-RPC messages over stdin and stdout.</td></tr><tr><td>Streamable HTTP</td><td>The server is hosted at a URL and supports the current MCP HTTP transport.</td><td>Remote servers can use bearer tokens, OAuth, API keys, and custom headers.</td></tr><tr><td>SSE</td><td>You already depend on an older server that has not moved to Streamable HTTP.</td><td>Claude Code still documents SSE, but marks it deprecated in favor of HTTP where available.</td></tr></tbody></table><p>The official <a href=\"https://modelcontextprotocol.io/specification/2025-06-18/basic/transports\" target=\"_blank\" rel=\"noopener noreferrer\">MCP transports specification</a> defines <code>stdio</code> and Streamable HTTP as the standard transports.</p><h2 id=\"configuration-scopes\"><a href=\"#configuration-scopes\">Configuration scopes</a></h2><table><thead><tr><th>Scope</th><th>Claude Code</th><th>Codex</th><th>Cursor Composer</th><th>Use it for</th></tr></thead><tbody><tr><td>User</td><td><code>~/.claude.json</code> or <code>claude mcp add --scope user</code></td><td><code>~/.codex/config.toml</code> or <code>codex mcp add</code></td><td><code>~/.cursor/mcp.json</code> or Cursor's MCP settings UI</td><td>Personal MCP servers you want available across repositories.</td></tr><tr><td>Project</td><td><code>.mcp.json</code> in the repository root</td><td><code>.codex/config.toml</code> scoped to the trusted project</td><td><code>.cursor/mcp.json</code> in the repository root</td><td>Shared project MCP servers that should follow the repository.</td></tr><tr><td>Local project</td><td><code>~/.claude.json</code> under the current project path</td><td>Personal <code>~/.codex/config.toml</code> entries, optionally limited to trusted projects in the Codex config.</td><td>Local Cursor config that is not committed</td><td>Machine-specific credentials or experiments.</td></tr></tbody></table><p>Conductor does not define a separate MCP config format. It uses the MCP configuration that Claude Code and Codex load for the session. Cursor Composer uses Cursor's MCP configuration when the workspace is open in Cursor.</p><h2 id=\"add-a-claude-code-mcp-server\"><a href=\"#add-a-claude-code-mcp-server\">Add a Claude Code MCP server</a></h2><p>Add a user-scoped <code>stdio</code> server with the Claude Code CLI:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">claude</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#D73A49\"> &lt;</span><span style=\"color:#032F62\">server-nam</span><span style=\"color:#24292E\">e</span><span style=\"color:#D73A49\">&gt;</span><span style=\"color:#005CC5\"> -s</span><span style=\"color:#032F62\"> user</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#D73A49\"> &lt;</span><span style=\"color:#032F62\">comman</span><span style=\"color:#24292E\">d</span><span style=\"color:#D73A49\">&gt;</span><span style=\"color:#24292E\"> [args...]</span></span></code></pre></figure><p>For example, add Context7 for documentation search:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">claude</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> context7</span><span style=\"color:#005CC5\"> -s</span><span style=\"color:#032F62\"> user</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#032F62\"> npx</span><span style=\"color:#005CC5\"> -y</span><span style=\"color:#032F62\"> @upstash/context7-mcp</span></span></code></pre></figure><p>Use the <code>--</code> separator before the server command and arguments. Claude Code treats flags before <code>--</code> as Claude options and everything after <code>--</code> as the server command.</p><p>For more options, see the <a href=\"https://code.claude.com/docs/en/mcp\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code MCP docs</a>.</p><h2 id=\"add-a-codex-mcp-server\"><a href=\"#add-a-codex-mcp-server\">Add a Codex MCP server</a></h2><p>Add a <code>stdio</code> server with the Codex CLI:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#D73A49\"> &lt;</span><span style=\"color:#032F62\">server-nam</span><span style=\"color:#24292E\">e</span><span style=\"color:#D73A49\">&gt;</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#D73A49\"> &lt;</span><span style=\"color:#032F62\">comman</span><span style=\"color:#24292E\">d</span><span style=\"color:#D73A49\">&gt;</span><span style=\"color:#24292E\"> [args...]</span></span></code></pre></figure><p>For example, add Context7 for documentation search:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> context7</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#032F62\"> npx</span><span style=\"color:#005CC5\"> -y</span><span style=\"color:#032F62\"> @upstash/context7-mcp</span></span></code></pre></figure><p>Codex stores MCP configuration in <code>~/.codex/config.toml</code>. The Codex CLI and IDE extension share that configuration.</p><p>You can also edit <code>config.toml</code> directly:</p><figure data-code data-lang=\"toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">mcp_servers</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">context7</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"npx\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">args = [</span><span style=\"color:#032F62\">\"-y\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"@upstash/context7-mcp\"</span><span style=\"color:#24292E\">]</span></span></code></pre></figure><p>Codex also supports streamable HTTP MCP servers:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> openaiDeveloperDocs</span><span style=\"color:#005CC5\"> --url</span><span style=\"color:#032F62\"> https://developers.openai.com/mcp</span></span></code></pre></figure><p>For more options, see the <a href=\"https://developers.openai.com/codex/mcp\" target=\"_blank\" rel=\"noopener noreferrer\">Codex MCP docs</a> and <a href=\"https://developers.openai.com/codex/config-reference\" target=\"_blank\" rel=\"noopener noreferrer\">Codex configuration reference</a>.</p><h2 id=\"add-a-cursor-composer-mcp-server\"><a href=\"#add-a-cursor-composer-mcp-server\">Add a Cursor Composer MCP server</a></h2><p>Add Cursor Composer MCP servers in Cursor's MCP settings UI or by editing <code>mcp.json</code>. Cursor supports user-level and project-level MCP configuration:</p><figure data-code data-lang=\"json\" data-title=\".cursor/mcp.json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"context7\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"command\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"npx\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"args\"</span><span style=\"color:#24292E\">: [</span><span style=\"color:#032F62\">\"-y\"</span><span style=\"color:#24292E\">, </span><span style=\"color:#032F62\">\"@upstash/context7-mcp\"</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure><p>Use <code>.cursor/mcp.json</code> when the MCP server should follow a repository. If you open a Conductor workspace in Cursor, Cursor reads the project-level <code>.cursor/mcp.json</code> from that workspace checkout.</p><p>For more options, see the <a href=\"https://cursor.com/docs/mcp\" target=\"_blank\" rel=\"noopener noreferrer\">Cursor MCP docs</a>.</p><h2 id=\"project-level-mcp-servers\"><a href=\"#project-level-mcp-servers\">Project-level MCP servers</a></h2><p>If a repository has an <code>.mcp.json</code> file at its project root, Claude Code sessions in that Conductor workspace inherit those MCP servers.</p><p>For Codex, you can scope MCP servers to a trusted project with <code>.codex/config.toml</code>.</p><p>For Cursor Composer, use <code>.cursor/mcp.json</code> at the repository root. This is Cursor's project-level MCP config file, not the same file as Claude Code's root <code>.mcp.json</code>.</p><p>If you're moving project-level MCP config from Cursor, see <a href=\"/docs/guides/migrate-from-cursor#migrate-mcp-servers\">Work with Cursor and VS Code</a>.</p><h2 id=\"status-in-conductor\"><a href=\"#status-in-conductor\">Status in Conductor</a></h2><p>Conductor can show MCP server status for Claude Code and Codex in the chat composer and the <code>MCP status</code> dialog. Before a session starts, the status reflects the workspace-level configuration Conductor can discover. After a session starts, the status reflects the running session.</p><p>Use <code>Refresh status</code> after you change MCP configuration. For Codex, Conductor opens <code>codex mcp list</code> in a terminal when you run the MCP command flow, because the Codex CLI expects a concrete <code>mcp</code> subcommand.</p><p>Cursor Composer MCP server status is managed in Cursor's MCP UI. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.</p><h2 id=\"good-candidates\"><a href=\"#good-candidates\">Good candidates</a></h2><p>MCP works best for tools an agent needs repeatedly, such as documentation search, issue tracking, databases, and internal APIs.</p><p>Common examples include Context7 for documentation search and Linear for issue management.</p><h2 id=\"security-and-privacy\"><a href=\"#security-and-privacy\">Security and privacy</a></h2><p>MCP servers can run local commands, read local data, and send data to external services depending on the server you configure. Review the server command, requested credentials, and tool list before adding it.</p><p>For local MCP servers, prefer trusted packages or local code you control. The official <a href=\"https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices\" target=\"_blank\" rel=\"noopener noreferrer\">MCP security best practices</a> recommend clear consent before running local server commands and warn that local MCP servers run with the user's privileges unless sandboxed.</p><p>Enterprise data privacy disables custom MCP servers. See <a href=\"/docs/reference/privacy#enterprise-data-privacy\">Privacy</a>.</p>",
+  "text": "Conductor sessions can use Model Context Protocol (MCP) servers where the selected agent host supports MCP. Claude Code and Codex sessions load their agent-specific MCP configuration inside Conductor. Cursor Composer MCP servers are configured in Cursor and apply when you open a Conductor workspace in Cursor.\nUse MCP when an agent needs repeatable access to external tools, private data, or workflow actions such as documentation search, issue tracking, database queries, or internal APIs.\nFor a step-by-step setup, see Set up MCP servers.\nHow MCP works\nMCP uses a client-server model. The agent host starts or connects to one MCP server per configured integration, discovers the server's available tools, and routes tool calls to that server during the conversation.\nOfficial MCP docs describe three core server primitives:\nPrimitiveWhat it providesExample use in coding workToolsExecutable functions the agent can callSearch docs, create an issue, query a databaseResourcesData sources the agent can read as contextRead API docs, schema metadata, or project recordsPromptsReusable prompt templates exposed by the serverRun a project-specific workflowSee the official MCP architecture overview for the protocol model.\nTransport types\nTransportUse it whenNotesstdioThe server runs as a local command, such as npx, node, python, or a local binary.The MCP client launches the process and exchanges JSON-RPC messages over stdin and stdout.Streamable HTTPThe server is hosted at a URL and supports the current MCP HTTP transport.Remote servers can use bearer tokens, OAuth, API keys, and custom headers.SSEYou already depend on an older server that has not moved to Streamable HTTP.Claude Code still documents SSE, but marks it deprecated in favor of HTTP where available.The official MCP transports specification defines stdio and Streamable HTTP as the standard transports.\nConfiguration scopes\nScopeClaude CodeCodexCursor ComposerUse it forUser~/.claude.json or claude mcp add --scope user~/.codex/config.toml or codex mcp add~/.cursor/mcp.json or Cursor's MCP settings UIPersonal MCP servers you want available across repositories.Project.mcp.json in the repository root.codex/config.toml scoped to the trusted project.cursor/mcp.json in the repository rootShared project MCP servers that should follow the repository.Local project~/.claude.json under the current project pathPersonal ~/.codex/config.toml entries, optionally limited to trusted projects in the Codex config.Local Cursor config that is not committedMachine-specific credentials or experiments.Conductor does not define a separate MCP config format. It uses the MCP configuration that Claude Code and Codex load for the session. Cursor Composer uses Cursor's MCP configuration when the workspace is open in Cursor.\nAdd a Claude Code MCP server\nAdd a user-scoped stdio server with the Claude Code CLI:\nclaude mcp add <server-name> -s user -- <command> [args...]For example, add Context7 for documentation search:\nclaude mcp add context7 -s user -- npx -y @upstash/context7-mcpUse the -- separator before the server command and arguments. Claude Code treats flags before -- as Claude options and everything after -- as the server command.\nFor more options, see the Claude Code MCP docs.\nAdd a Codex MCP server\nAdd a stdio server with the Codex CLI:\ncodex mcp add <server-name> -- <command> [args...]For example, add Context7 for documentation search:\ncodex mcp add context7 -- npx -y @upstash/context7-mcpCodex stores MCP configuration in ~/.codex/config.toml. The Codex CLI and IDE extension share that configuration.\nYou can also edit config.toml directly:\n[mcp_servers.context7]\ncommand = \"npx\"\nargs = [\"-y\", \"@upstash/context7-mcp\"]Codex also supports streamable HTTP MCP servers:\ncodex mcp add openaiDeveloperDocs --url https://developers.openai.com/mcpFor more options, see the Codex MCP docs and Codex configuration reference.\nAdd a Cursor Composer MCP server\nAdd Cursor Composer MCP servers in Cursor's MCP settings UI or by editing mcp.json. Cursor supports user-level and project-level MCP configuration:\n{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}Use .cursor/mcp.json when the MCP server should follow a repository. If you open a Conductor workspace in Cursor, Cursor reads the project-level .cursor/mcp.json from that workspace checkout.\nFor more options, see the Cursor MCP docs.\nProject-level MCP servers\nIf a repository has an .mcp.json file at its project root, Claude Code sessions in that Conductor workspace inherit those MCP servers.\nFor Codex, you can scope MCP servers to a trusted project with .codex/config.toml.\nFor Cursor Composer, use .cursor/mcp.json at the repository root. This is Cursor's project-level MCP config file, not the same file as Claude Code's root .mcp.json.\nIf you're moving project-level MCP config from Cursor, see Work with Cursor and VS Code.\nStatus in Conductor\nConductor can show MCP server status for Claude Code and Codex in the chat composer and the MCP status dialog. Before a session starts, the status reflects the workspace-level configuration Conductor can discover. After a session starts, the status reflects the running session.\nUse Refresh status after you change MCP configuration. For Codex, Conductor opens codex mcp list in a terminal when you run the MCP command flow, because the Codex CLI expects a concrete mcp subcommand.\nCursor Composer MCP server status is managed in Cursor's MCP UI. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.\nGood candidates\nMCP works best for tools an agent needs repeatedly, such as documentation search, issue tracking, databases, and internal APIs.\nCommon examples include Context7 for documentation search and Linear for issue management.\nSecurity and privacy\nMCP servers can run local commands, read local data, and send data to external services depending on the server you configure. Review the server command, requested credentials, and tool list before adding it.\nFor local MCP servers, prefer trusted packages or local code you control. The official MCP security best practices recommend clear consent before running local server commands and warn that local MCP servers run with the user's privileges unless sandboxed.\nEnterprise data privacy disables custom MCP servers. See Privacy.",
+  "markdown": "\n# MCP\n\n\n\nConductor sessions can use Model Context Protocol (MCP) servers where the selected agent host supports MCP. Claude Code and Codex sessions load their agent-specific MCP configuration inside Conductor. Cursor Composer MCP servers are configured in Cursor and apply when you open a Conductor workspace in Cursor.\n\nUse MCP when an agent needs repeatable access to external tools, private data, or workflow actions such as documentation search, issue tracking, database queries, or internal APIs.\n\nFor a step-by-step setup, see [Set up MCP servers](/docs/guides/configure-mcp-servers).\n\n## How MCP works [#how-mcp-works]\n\nMCP uses a client-server model. The agent host starts or connects to one MCP server per configured integration, discovers the server's available tools, and routes tool calls to that server during the conversation.\n\nOfficial MCP docs describe three core server primitives:\n\n| Primitive | What it provides                                | Example use in coding work                         |\n| --------- | ----------------------------------------------- | -------------------------------------------------- |\n| Tools     | Executable functions the agent can call         | Search docs, create an issue, query a database     |\n| Resources | Data sources the agent can read as context      | Read API docs, schema metadata, or project records |\n| Prompts   | Reusable prompt templates exposed by the server | Run a project-specific workflow                    |\n\nSee the official [MCP architecture overview](https://modelcontextprotocol.io/docs/learn/architecture) for the protocol model.\n\n## Transport types [#transport-types]\n\n| Transport       | Use it when                                                                             | Notes                                                                                      |\n| --------------- | --------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |\n| `stdio`         | The server runs as a local command, such as `npx`, `node`, `python`, or a local binary. | The MCP client launches the process and exchanges JSON-RPC messages over stdin and stdout. |\n| Streamable HTTP | The server is hosted at a URL and supports the current MCP HTTP transport.              | Remote servers can use bearer tokens, OAuth, API keys, and custom headers.                 |\n| SSE             | You already depend on an older server that has not moved to Streamable HTTP.            | Claude Code still documents SSE, but marks it deprecated in favor of HTTP where available. |\n\nThe official [MCP transports specification](https://modelcontextprotocol.io/specification/2025-06-18/basic/transports) defines `stdio` and Streamable HTTP as the standard transports.\n\n## Configuration scopes [#configuration-scopes]\n\n| Scope         | Claude Code                                       | Codex                                                                                                | Cursor Composer                                  | Use it for                                                    |\n| ------------- | ------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ------------------------------------------------ | ------------------------------------------------------------- |\n| User          | `~/.claude.json` or `claude mcp add --scope user` | `~/.codex/config.toml` or `codex mcp add`                                                            | `~/.cursor/mcp.json` or Cursor's MCP settings UI | Personal MCP servers you want available across repositories.  |\n| Project       | `.mcp.json` in the repository root                | `.codex/config.toml` scoped to the trusted project                                                   | `.cursor/mcp.json` in the repository root        | Shared project MCP servers that should follow the repository. |\n| Local project | `~/.claude.json` under the current project path   | Personal `~/.codex/config.toml` entries, optionally limited to trusted projects in the Codex config. | Local Cursor config that is not committed        | Machine-specific credentials or experiments.                  |\n\nConductor does not define a separate MCP config format. It uses the MCP configuration that Claude Code and Codex load for the session. Cursor Composer uses Cursor's MCP configuration when the workspace is open in Cursor.\n\n## Add a Claude Code MCP server [#add-a-claude-code-mcp-server]\n\nAdd a user-scoped `stdio` server with the Claude Code CLI:\n\n```bash\nclaude mcp add <server-name> -s user -- <command> [args...]\n```\n\nFor example, add Context7 for documentation search:\n\n```bash\nclaude mcp add context7 -s user -- npx -y @upstash/context7-mcp\n```\n\nUse the `--` separator before the server command and arguments. Claude Code treats flags before `--` as Claude options and everything after `--` as the server command.\n\nFor more options, see the [Claude Code MCP docs](https://code.claude.com/docs/en/mcp).\n\n## Add a Codex MCP server [#add-a-codex-mcp-server]\n\nAdd a `stdio` server with the Codex CLI:\n\n```bash\ncodex mcp add <server-name> -- <command> [args...]\n```\n\nFor example, add Context7 for documentation search:\n\n```bash\ncodex mcp add context7 -- npx -y @upstash/context7-mcp\n```\n\nCodex stores MCP configuration in `~/.codex/config.toml`. The Codex CLI and IDE extension share that configuration.\n\nYou can also edit `config.toml` directly:\n\n```toml\n[mcp_servers.context7]\ncommand = \"npx\"\nargs = [\"-y\", \"@upstash/context7-mcp\"]\n```\n\nCodex also supports streamable HTTP MCP servers:\n\n```bash\ncodex mcp add openaiDeveloperDocs --url https://developers.openai.com/mcp\n```\n\nFor more options, see the [Codex MCP docs](https://developers.openai.com/codex/mcp) and [Codex configuration reference](https://developers.openai.com/codex/config-reference).\n\n## Add a Cursor Composer MCP server [#add-a-cursor-composer-mcp-server]\n\nAdd Cursor Composer MCP servers in Cursor's MCP settings UI or by editing `mcp.json`. Cursor supports user-level and project-level MCP configuration:\n\n```json title=\".cursor/mcp.json\"\n{\n    \"mcpServers\": {\n        \"context7\": {\n            \"command\": \"npx\",\n            \"args\": [\"-y\", \"@upstash/context7-mcp\"]\n        }\n    }\n}\n```\n\nUse `.cursor/mcp.json` when the MCP server should follow a repository. If you open a Conductor workspace in Cursor, Cursor reads the project-level `.cursor/mcp.json` from that workspace checkout.\n\nFor more options, see the [Cursor MCP docs](https://cursor.com/docs/mcp).\n\n## Project-level MCP servers [#project-level-mcp-servers]\n\nIf a repository has an `.mcp.json` file at its project root, Claude Code sessions in that Conductor workspace inherit those MCP servers.\n\nFor Codex, you can scope MCP servers to a trusted project with `.codex/config.toml`.\n\nFor Cursor Composer, use `.cursor/mcp.json` at the repository root. This is Cursor's project-level MCP config file, not the same file as Claude Code's root `.mcp.json`.\n\nIf you're moving project-level MCP config from Cursor, see [Work with Cursor and VS Code](/docs/guides/migrate-from-cursor#migrate-mcp-servers).\n\n## Status in Conductor [#status-in-conductor]\n\nConductor can show MCP server status for Claude Code and Codex in the chat composer and the `MCP status` dialog. Before a session starts, the status reflects the workspace-level configuration Conductor can discover. After a session starts, the status reflects the running session.\n\nUse `Refresh status` after you change MCP configuration. For Codex, Conductor opens `codex mcp list` in a terminal when you run the MCP command flow, because the Codex CLI expects a concrete `mcp` subcommand.\n\nCursor Composer MCP server status is managed in Cursor's MCP UI. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.\n\n## Good candidates [#good-candidates]\n\nMCP works best for tools an agent needs repeatedly, such as documentation search, issue tracking, databases, and internal APIs.\n\nCommon examples include Context7 for documentation search and Linear for issue management.\n\n## Security and privacy [#security-and-privacy]\n\nMCP servers can run local commands, read local data, and send data to external services depending on the server you configure. Review the server command, requested credentials, and tool list before adding it.\n\nFor local MCP servers, prefer trusted packages or local code you control. The official [MCP security best practices](https://modelcontextprotocol.io/docs/tutorials/security/security_best_practices) recommend clear consent before running local server commands and warn that local MCP servers run with the user's privileges unless sandboxed.\n\nEnterprise data privacy disables custom MCP servers. See [Privacy](/docs/reference/privacy#enterprise-data-privacy).\n"
+}

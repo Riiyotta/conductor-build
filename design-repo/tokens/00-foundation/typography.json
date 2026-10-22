@@ -1,0 +1,313 @@
+{
+  "$description": "Font stacks and the type scale actually rendered. Tailwind v4 unitless line-height ratios resolve to the px line-heights recorded here.",
+  "typography": {
+    "fontFamily": {
+      "sans": {
+        "$value": [
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$type": "fontFamily",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:55",
+            "quote": "sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],"
+          },
+          {
+            "ref": "CLONE_SPEC.md:18",
+            "quote": "**Computed font-family for all sans text:**"
+          }
+        ],
+        "note": "CORRECTED: Geist is declared and preloaded but never applied (CLONE_SPEC.md §0.1). Everything renders in this system stack."
+      },
+      "mono": {
+        "$value": [
+          "ui-monospace",
+          "SFMono-Regular",
+          "SF Mono",
+          "Menlo",
+          "Consolas",
+          "Liberation Mono",
+          "monospace"
+        ],
+        "$type": "fontFamily",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:57",
+            "quote": "'ui-monospace',"
+          }
+        ]
+      },
+      "prose": {
+        "$value": [
+          "Geist",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "sans-serif",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif"
+        ],
+        "$type": "fontFamily",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:68",
+            "quote": "prose: ['Geist', '-apple-system'"
+          },
+          {
+            "ref": "CLONE_SPEC_PAGES.md:58",
+            "quote": "A DOM width test gave the prose stack 389.14px"
+          }
+        ],
+        "note": "Declared stack for standalone-page and docs prose. No Geist @font-face exists, so it renders the same system sans as fontFamily.sans."
+      },
+      "hubspot-geist": {
+        "$value": [
+          "HS Geist",
+          "Helvetica"
+        ],
+        "$type": "fontFamily",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:70",
+            "quote": "'hs-geist': ['\"HS Geist\"', 'Helvetica'],"
+          }
+        ]
+      },
+      "hubspot-andale": {
+        "$value": [
+          "andale mono",
+          "times"
+        ],
+        "$type": "fontFamily",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:71",
+            "quote": "'hs-andale': ['\"andale mono\"', 'times'],"
+          }
+        ]
+      }
+    },
+    "fontSize": {
+      "8": {
+        "$value": {
+          "fontSize": "8px",
+          "lineHeight": "10.67px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:168",
+            "quote": "in mono 8px/10.67px"
+          }
+        ]
+      },
+      "10": {
+        "$value": {
+          "fontSize": "10px",
+          "lineHeight": "13.33px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:168",
+            "quote": "(10px/13.33px #fff)"
+          }
+        ]
+      },
+      "xs": {
+        "$value": {
+          "fontSize": "12px",
+          "lineHeight": "16px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:77",
+            "quote": "xs: ['0.75rem'"
+          }
+        ]
+      },
+      "sm": {
+        "$value": {
+          "fontSize": "14px",
+          "lineHeight": "20px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:78",
+            "quote": "sm: ['0.875rem'"
+          }
+        ]
+      },
+      "base": {
+        "$value": {
+          "fontSize": "16px",
+          "lineHeight": "24px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:79",
+            "quote": "base: ['1rem'"
+          }
+        ]
+      },
+      "lg": {
+        "$value": {
+          "fontSize": "18px",
+          "lineHeight": "28px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:137",
+            "quote": "`h2.text-lg.font-semibold.tracking-tight`: 18px/28px"
+          }
+        ]
+      },
+      "xl": {
+        "$value": {
+          "fontSize": "20px",
+          "lineHeight": "28px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:80",
+            "quote": "xl: ['1.25rem'"
+          }
+        ]
+      },
+      "2xl": {
+        "$value": {
+          "fontSize": "24px",
+          "lineHeight": "32px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:81",
+            "quote": "'2xl': ['1.5rem'"
+          }
+        ]
+      },
+      "3xl": {
+        "$value": {
+          "fontSize": "30px",
+          "lineHeight": "36px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:462",
+            "quote": "**30px/36px at every width**"
+          }
+        ]
+      },
+      "4xl": {
+        "$value": {
+          "fontSize": "36px",
+          "lineHeight": "40px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "tailwind.config.cjs:82",
+            "quote": "'4xl': ['2.25rem'"
+          }
+        ]
+      },
+      "prose-base": {
+        "$value": {
+          "fontSize": "16px",
+          "lineHeight": "28px"
+        },
+        "$type": "typography",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:63",
+            "quote": "| base p | 16px/28px, margin 20px 0"
+          }
+        ]
+      }
+    },
+    "fontWeight": {
+      "regular": {
+        "$value": 400,
+        "$type": "fontWeight",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:77",
+            "quote": "| Feature body `p` | 16px/24px | 400"
+          }
+        ]
+      },
+      "medium": {
+        "$value": 500,
+        "$type": "fontWeight",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:79",
+            "quote": "| Button label (nav Download) | 14px/20px | 500"
+          }
+        ]
+      },
+      "semibold": {
+        "$value": 600,
+        "$type": "fontWeight",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:71",
+            "quote": "| H2 feature title | 24px/32px | 600"
+          }
+        ]
+      },
+      "bold": {
+        "$value": 700,
+        "$type": "fontWeight",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:74",
+            "quote": "| CTA H2 \"Be like this guy.\" | 36px/40px, centered | **700**"
+          }
+        ]
+      },
+      "extrabold": {
+        "$value": 800,
+        "$type": "fontWeight",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:64",
+            "quote": "| h1 (privacy/terms) | 36px/40px **800**"
+          }
+        ]
+      }
+    },
+    "letterSpacing": {
+      "tight": {
+        "$value": "-0.025em",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:70",
+            "quote": "| H1 hero (2 block spans) | 36px/40px (`sm:text-4xl`) | 600 | -0.9px (-0.025em)"
+          }
+        ]
+      },
+      "wider": {
+        "$value": "0.05em",
+        "$type": "dimension",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:87",
+            "quote": "| Changelog version badge | 12px/16px UPPERCASE, sans | 400 | 0.6px (0.05em)"
+          }
+        ]
+      }
+    }
+  }
+}

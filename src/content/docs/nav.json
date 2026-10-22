@@ -1,0 +1,1021 @@
+{
+  "name": "Conductor",
+  "roots": [
+    {
+      "type": "folder",
+      "name": "Reference",
+      "description": "Conductor reference and concepts",
+      "root": true,
+      "index": {
+        "type": "page",
+        "name": "Introduction",
+        "description": "Learn what Conductor is and where to start in the docs",
+        "url": "/docs",
+        "source": "(docs)/(start)/index.mdx"
+      },
+      "children": [
+        {
+          "type": "separator",
+          "name": "Get Started"
+        },
+        {
+          "type": "page",
+          "name": "Introduction",
+          "description": "Learn what Conductor is and where to start in the docs",
+          "url": "/docs",
+          "source": "(docs)/(start)/index.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Install",
+          "description": "Get Conductor running on your Mac",
+          "url": "/docs/installation",
+          "source": "(docs)/(start)/installation.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Your first workspace",
+          "description": "Import a repository, configure it, and start agent work in an isolated Conductor workspace",
+          "url": "/docs/first-workspace",
+          "source": "(docs)/(start)/first-workspace.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Configure your project",
+          "description": "Set up shared Conductor project settings for new workspaces",
+          "url": "/docs/configure-your-project",
+          "source": "(docs)/(start)/configure-your-project.mdx"
+        },
+        {
+          "type": "separator",
+          "name": "Cloud"
+        },
+        {
+          "type": "page",
+          "name": "What is Conductor Cloud?",
+          "description": "Run coding agents in shared cloud workspaces with your team",
+          "url": "/docs/cloud",
+          "source": "(docs)/cloud/index.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Set up cloud",
+          "description": "Connect GitHub, add an agent credential, and set up your Cloud Computer",
+          "url": "/docs/cloud/getting-started",
+          "source": "(docs)/cloud/getting-started.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Work with cloud workspaces",
+          "description": "Use workspace status, SSH, file sync, terminals, and forwarded ports",
+          "url": "/docs/cloud/working-with-cloud-workspaces",
+          "source": "(docs)/cloud/working-with-cloud-workspaces.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Multiplayer",
+          "description": "Find team work, share chats, follow workspaces, and hand work to a teammate",
+          "url": "/docs/cloud/collaboration",
+          "source": "(docs)/cloud/collaboration.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Cloud Computer",
+          "description": "Configure the shared repositories, environment, software, and builds for your organization",
+          "url": "/docs/cloud/cloud-computer",
+          "source": "(docs)/cloud/cloud-computer.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Environment variables",
+          "url": "/docs/cloud/environment-variables"
+        },
+        {
+          "type": "page",
+          "name": "Cloud FAQ",
+          "description": "Plans, specifications, pricing, and security for Conductor Cloud",
+          "url": "/docs/cloud/faq",
+          "source": "(docs)/cloud/faq.mdx"
+        },
+        {
+          "type": "separator",
+          "name": "Concepts"
+        },
+        {
+          "type": "page",
+          "name": "Isolated workspaces",
+          "description": "Understand projects, repositories, workspaces, branches, working trees, and running environments",
+          "url": "/docs/concepts/workspaces-and-branches",
+          "source": "(docs)/concepts/workspaces-and-branches.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Workflow",
+          "description": "How Conductor turns isolated workspace streams into reviewed pull requests",
+          "url": "/docs/concepts/workflow",
+          "source": "(docs)/concepts/workflow.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Parallel agents",
+          "description": "Choose when to split work across workspaces or inside one workspace",
+          "url": "/docs/concepts/parallel-agents",
+          "source": "(docs)/concepts/parallel-agents.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Testing",
+          "description": "Automate testing in Conductor",
+          "url": "/docs/concepts/testing",
+          "source": "(docs)/concepts/testing.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Git worktrees",
+          "description": "Understand how Conductor uses Git worktrees to create isolated coding-agent workspaces",
+          "url": "/docs/concepts/git-worktrees",
+          "source": "(docs)/concepts/git-worktrees.mdx"
+        },
+        {
+          "type": "separator",
+          "name": "Reference"
+        },
+        {
+          "type": "folder",
+          "name": "API",
+          "description": "Drive Conductor cloud workspaces from code and MCP clients",
+          "children": [
+            {
+              "type": "page",
+              "name": "Conductor API",
+              "description": "Drive Conductor cloud workspaces programmatically over HTTP",
+              "url": "/docs/api",
+              "source": "(docs)/api/index.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Conductor MCP server",
+              "description": "Connect an MCP client to create and manage Conductor cloud workspaces",
+              "url": "/docs/api/mcp",
+              "source": "(docs)/api/mcp.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Workspace setup",
+          "defaultOpen": false,
+          "collapsible": true,
+          "children": [
+            {
+              "type": "page",
+              "name": "Project scripts",
+              "description": "Reference for setup scripts, archive scripts, and actions",
+              "url": "/docs/reference/scripts",
+              "source": "(docs)/reference/scripts/index.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Files to copy",
+              "description": "Configure gitignored files that Conductor copies into new workspaces",
+              "url": "/docs/reference/files-to-copy",
+              "source": "(docs)/reference/files-to-copy.mdx"
+            },
+            {
+              "type": "page",
+              "name": ".worktreeinclude",
+              "url": "/docs/reference/worktreeinclude"
+            },
+            {
+              "type": "page",
+              "name": "Conductor variables",
+              "description": "Variables available to workspace terminals, agents, and scripts",
+              "url": "/docs/reference/environment-variables",
+              "source": "(docs)/reference/environment-variables.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Shell configuration",
+              "description": "Configure shell setup",
+              "url": "/docs/reference/shells",
+              "source": "(docs)/reference/shells.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Spotlight testing",
+              "description": "Test one workspace from the repository root",
+              "url": "/docs/reference/scripts/spotlight-testing",
+              "source": "(docs)/reference/scripts/spotlight-testing.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Cities",
+              "description": "How Conductor names workspaces after cities",
+              "url": "/docs/reference/cities",
+              "source": "(docs)/reference/cities.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Settings",
+          "defaultOpen": false,
+          "collapsible": true,
+          "children": [
+            {
+              "type": "page",
+              "name": "Overview",
+              "description": "How Conductor settings configure workspaces, scripts, agents, and projects",
+              "url": "/docs/reference/settings",
+              "source": "(docs)/reference/settings/index.mdx"
+            },
+            {
+              "type": "page",
+              "name": "User and project",
+              "description": "Reference for Conductor user, project, and local project settings",
+              "url": "/docs/reference/settings/user-project",
+              "source": "(docs)/reference/settings/user-project.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Managed",
+              "description": "Reference for organization-managed Conductor settings",
+              "url": "/docs/reference/settings/managed",
+              "source": "(docs)/reference/settings/managed.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Reference",
+              "description": "Conductor settings keys by scope",
+              "url": "/docs/reference/settings/reference",
+              "source": "(docs)/reference/settings/reference.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Sample configs",
+              "description": "Example repository settings files for Conductor",
+              "url": "/docs/reference/settings/example",
+              "source": "(docs)/reference/settings/example.mdx"
+            },
+            {
+              "type": "page",
+              "name": "How to share settings",
+              "description": "Commit .conductor/settings.toml so a repository can share Conductor scripts and settings",
+              "url": "/docs/reference/scripts/share-with-teammates",
+              "source": "(docs)/reference/scripts/share-with-teammates.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Agents and tools",
+          "defaultOpen": false,
+          "collapsible": true,
+          "children": [
+            {
+              "type": "page",
+              "name": "Agent modes",
+              "url": "/docs/concepts/agent-modes"
+            },
+            {
+              "type": "page",
+              "name": "Big Terminal Mode",
+              "description": "Use a full terminal in the center panel",
+              "url": "/docs/reference/big-terminal-mode",
+              "source": "(docs)/reference/big-terminal-mode.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Agent behavior",
+              "description": "Reference for agent instructions, modes, permissions, and checkpoints",
+              "url": "/docs/reference/agent-behavior",
+              "source": "(docs)/reference/agent-behavior.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Slash commands",
+              "description": "Reusable prompt commands for agent chats",
+              "url": "/docs/reference/slash-commands",
+              "source": "(docs)/reference/slash-commands.mdx"
+            },
+            {
+              "type": "page",
+              "name": "MCP",
+              "description": "Configure Model Context Protocol servers for Claude Code, Codex, and Cursor Composer workflows",
+              "url": "/docs/reference/mcp",
+              "source": "(docs)/reference/mcp.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Harnesses",
+          "description": "Claude Code, Codex, Cursor, and OpenCode support in Conductor",
+          "children": [
+            {
+              "type": "page",
+              "name": "Overview",
+              "description": "Compare the harnesses Conductor can run and where each one is configured",
+              "url": "/docs/reference/harnesses",
+              "source": "(docs)/reference/harnesses/index.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Claude Code",
+              "description": "Details for running Claude Code inside Conductor",
+              "url": "/docs/reference/harnesses/claude-code",
+              "source": "(docs)/reference/harnesses/claude-code.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Codex",
+              "description": "Details for running OpenAI Codex inside Conductor",
+              "url": "/docs/reference/harnesses/codex",
+              "source": "(docs)/reference/harnesses/codex.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Cursor",
+              "description": "Details for running the Cursor Agent harness inside Conductor",
+              "url": "/docs/reference/harnesses/cursor",
+              "source": "(docs)/reference/harnesses/cursor.mdx"
+            },
+            {
+              "type": "page",
+              "name": "OpenCode",
+              "description": "Details for running the OpenCode harness inside Conductor",
+              "url": "/docs/reference/harnesses/opencode",
+              "source": "(docs)/reference/harnesses/opencode.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Review and merge",
+          "defaultOpen": false,
+          "collapsible": true,
+          "children": [
+            {
+              "type": "page",
+              "name": "Diff viewer",
+              "description": "Review workspace changes, comments, and PR-ready diffs",
+              "url": "/docs/reference/diff-viewer",
+              "source": "(docs)/reference/diff-viewer.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Checks",
+              "description": "Reference for merge readiness signals in a workspace",
+              "url": "/docs/reference/checks",
+              "source": "(docs)/reference/checks.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Checkpoints",
+              "description": "View turn by turn changes in a workspace and revert to previous turns",
+              "url": "/docs/reference/checkpoints",
+              "source": "(docs)/reference/checkpoints.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Todos",
+              "description": "Track merge-blocking work in a workspace",
+              "url": "/docs/reference/todos",
+              "source": "(docs)/reference/todos.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "App controls",
+          "defaultOpen": false,
+          "collapsible": true,
+          "children": [
+            {
+              "type": "page",
+              "name": "Keyboard shortcuts",
+              "description": "Conductor shortcuts for navigation, workspaces, chat, review, Git, terminal, and app actions",
+              "url": "/docs/reference/keyboard-shortcuts",
+              "source": "(docs)/reference/keyboard-shortcuts.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Deep links",
+              "description": "Open Conductor and trigger actions via conductor:// URLs",
+              "url": "/docs/reference/deep-links",
+              "source": "(docs)/reference/deep-links.mdx"
+            }
+          ]
+        },
+        {
+          "type": "separator",
+          "name": "Security"
+        },
+        {
+          "type": "page",
+          "name": "Security and permissions",
+          "url": "/docs/reference/security-and-permissions"
+        },
+        {
+          "type": "page",
+          "name": "Privacy",
+          "url": "/docs/reference/privacy"
+        },
+        {
+          "type": "separator",
+          "name": "Troubleshooting"
+        },
+        {
+          "type": "page",
+          "name": "FAQ",
+          "description": "Frequently asked questions about Conductor",
+          "url": "/docs/faq",
+          "source": "(docs)/(troubleshooting)/faq.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Troubleshooting issues",
+          "description": "Fix common authentication, agent, script, workspace, review, and known product issues",
+          "url": "/docs/troubleshooting/issues",
+          "source": "(docs)/(troubleshooting)/troubleshooting/issues.mdx"
+        }
+      ]
+    },
+    {
+      "type": "folder",
+      "name": "How to",
+      "description": "Complete common tasks in Conductor",
+      "root": true,
+      "index": {
+        "type": "page",
+        "name": "Use Files to copy",
+        "description": "Copy .env files and other gitignored local config into local Conductor workspaces",
+        "url": "/docs/guides/use-files-to-copy",
+        "source": "(docs)/guides/use-files-to-copy.mdx"
+      },
+      "children": [
+        {
+          "type": "separator",
+          "name": "Setup"
+        },
+        {
+          "type": "page",
+          "name": "Configure settings",
+          "description": "Set personal defaults, project settings, and local project overrides in Conductor",
+          "url": "/docs/guides/configure-settings",
+          "source": "(docs)/guides/configure-settings.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Use Files to copy",
+          "description": "Copy .env files and other gitignored local config into local Conductor workspaces",
+          "url": "/docs/guides/use-files-to-copy",
+          "source": "(docs)/guides/use-files-to-copy.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Configure model providers",
+          "description": "Set up Claude Code, Codex, OpenCode, and Cursor credentials in Conductor",
+          "url": "/docs/guides/providers",
+          "source": "(docs)/guides/providers.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Set up MCP servers",
+          "description": "Add MCP servers for Claude Code, Codex, and Cursor Composer workflows so agents can use shared tools and context",
+          "url": "/docs/guides/configure-mcp-servers",
+          "source": "(docs)/guides/configure-mcp-servers.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Work with Cursor",
+          "description": "Run Cursor sessions in Conductor, open workspaces in Cursor or VS Code, and bring Cursor MCP servers and rules into Conductor",
+          "url": "/docs/guides/migrate-from-cursor",
+          "source": "(docs)/guides/migrate-from-cursor.mdx"
+        },
+        {
+          "type": "separator",
+          "name": "Repository"
+        },
+        {
+          "type": "folder",
+          "name": "Repository layouts",
+          "description": "Work with larger repository and service layouts",
+          "children": [
+            {
+              "type": "page",
+              "name": "Work in monorepos",
+              "description": "Control which directories agents can see in a monorepo workspace",
+              "url": "/docs/guides/repositories/monorepos",
+              "source": "(docs)/guides/repositories/monorepos.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Linking multiple directories",
+              "description": "Let one workspace read and edit code across related repositories",
+              "url": "/docs/guides/repositories/linking-multiple-directories",
+              "source": "(docs)/guides/repositories/linking-multiple-directories.mdx"
+            }
+          ]
+        },
+        {
+          "type": "separator",
+          "name": "Workspace"
+        },
+        {
+          "type": "folder",
+          "name": "Parallel agents",
+          "children": [
+            {
+              "type": "page",
+              "name": "Run multiple Claude Code sessions in parallel",
+              "description": "Use Conductor workspaces to run several Claude Code tasks at once without sharing one checkout, branch, or review path",
+              "url": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions",
+              "source": "(docs)/guides/parallel-agents/run-multiple-claude-code-sessions.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Run multiple Codex sessions in parallel",
+              "description": "Use Conductor workspaces to run several Codex tasks at once with separate branches, files, terminals, and review state",
+              "url": "/docs/guides/parallel-agents/run-multiple-codex-sessions",
+              "source": "(docs)/guides/parallel-agents/run-multiple-codex-sessions.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Run multiple Cursor sessions",
+              "description": "Use Conductor workspaces to run several Cursor tasks at once with separate branches, files, terminals, and review state",
+              "url": "/docs/guides/parallel-agents/run-multiple-cursor-sessions",
+              "source": "(docs)/guides/parallel-agents/run-multiple-cursor-sessions.mdx"
+            }
+          ]
+        },
+        {
+          "type": "page",
+          "name": "From issue to PR",
+          "description": "Take a GitHub or Linear issue through implementation, review, and pull request",
+          "url": "/docs/guides/issue-to-pr",
+          "source": "(docs)/guides/issue-to-pr.mdx"
+        },
+        {
+          "type": "page",
+          "name": "Review and merge a workspace",
+          "description": "Use Conductor's review, checks, and PR tools before merging",
+          "url": "/docs/guides/review-and-merge",
+          "source": "(docs)/guides/review-and-merge.mdx"
+        },
+        {
+          "type": "separator",
+          "name": "Git"
+        },
+        {
+          "type": "folder",
+          "name": "Git Worktrees",
+          "children": [
+            {
+              "type": "page",
+              "name": "Run Claude Code with Git worktrees",
+              "description": "Use Claude Code in Conductor workspaces so parallel sessions get separate branches, files, and setup",
+              "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+              "source": "(docs)/guides/git-worktrees/run-claude-code-with-git-worktrees.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Run Codex with Git worktrees",
+              "description": "Use Codex in Conductor workspaces so each task gets its own branch, files, and run environment",
+              "url": "/docs/guides/git-worktrees/run-codex-with-git-worktrees",
+              "source": "(docs)/guides/git-worktrees/run-codex-with-git-worktrees.mdx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "fallback": [
+    {
+      "type": "folder",
+      "name": "Docs",
+      "children": [
+        {
+          "type": "folder",
+          "name": "Cloud",
+          "children": [
+            {
+              "type": "page",
+              "name": "Cloud workspace environment variables",
+              "description": "Variables available to Cloud Computer builds, setup scripts, agents, and terminals",
+              "url": "/docs/cloud/environment-variables",
+              "source": "(docs)/cloud/environment-variables.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Concepts",
+          "children": [
+            {
+              "type": "page",
+              "name": "Agent modes",
+              "description": "Understand Plan Mode, Fast Mode, reasoning controls, and agent-specific session controls",
+              "url": "/docs/concepts/agent-modes",
+              "source": "(docs)/concepts/agent-modes.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Guides",
+          "children": [
+            {
+              "type": "page",
+              "name": "Connect Slack via MCP",
+              "description": "Give Conductor agents access to Slack search, messages, and canvases through Slack's hosted MCP server",
+              "url": "/docs/guides/connect-slack-mcp",
+              "source": "(docs)/guides/connect-slack-mcp.mdx"
+            }
+          ]
+        },
+        {
+          "type": "folder",
+          "name": "Reference",
+          "children": [
+            {
+              "type": "page",
+              "name": "conductor.json",
+              "description": "Legacy repository configuration file for Conductor",
+              "url": "/docs/reference/conductor-json",
+              "source": "(docs)/reference/conductor-json.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Privacy",
+              "description": "What we do (and don't do) with your data.",
+              "url": "/docs/reference/privacy",
+              "source": "(docs)/reference/privacy.mdx"
+            },
+            {
+              "type": "page",
+              "name": "Security and permissions",
+              "description": "How execution, tool approvals, macOS permissions, and network traffic work.",
+              "url": "/docs/reference/security-and-permissions",
+              "source": "(docs)/reference/security-and-permissions.mdx"
+            },
+            {
+              "type": "page",
+              "name": ".worktreeinclude",
+              "description": "Project file format for shared Files to copy patterns",
+              "url": "/docs/reference/worktreeinclude",
+              "source": "(docs)/reference/worktreeinclude.mdx"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "order": [
+    {
+      "root": "Reference",
+      "pages": [
+        {
+          "url": "/docs",
+          "name": "Introduction",
+          "group": ""
+        },
+        {
+          "url": "/docs",
+          "name": "Introduction",
+          "group": "Get Started"
+        },
+        {
+          "url": "/docs/installation",
+          "name": "Install",
+          "group": "Get Started"
+        },
+        {
+          "url": "/docs/first-workspace",
+          "name": "Your first workspace",
+          "group": "Get Started"
+        },
+        {
+          "url": "/docs/configure-your-project",
+          "name": "Configure your project",
+          "group": "Get Started"
+        },
+        {
+          "url": "/docs/cloud",
+          "name": "What is Conductor Cloud?",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/getting-started",
+          "name": "Set up cloud",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/working-with-cloud-workspaces",
+          "name": "Work with cloud workspaces",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/collaboration",
+          "name": "Multiplayer",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/cloud-computer",
+          "name": "Cloud Computer",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/environment-variables",
+          "name": "Environment variables",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/cloud/faq",
+          "name": "Cloud FAQ",
+          "group": "Cloud"
+        },
+        {
+          "url": "/docs/concepts/workspaces-and-branches",
+          "name": "Isolated workspaces",
+          "group": "Concepts"
+        },
+        {
+          "url": "/docs/concepts/workflow",
+          "name": "Workflow",
+          "group": "Concepts"
+        },
+        {
+          "url": "/docs/concepts/parallel-agents",
+          "name": "Parallel agents",
+          "group": "Concepts"
+        },
+        {
+          "url": "/docs/concepts/testing",
+          "name": "Testing",
+          "group": "Concepts"
+        },
+        {
+          "url": "/docs/concepts/git-worktrees",
+          "name": "Git worktrees",
+          "group": "Concepts"
+        },
+        {
+          "url": "/docs/api",
+          "name": "Conductor API",
+          "group": "Reference / API"
+        },
+        {
+          "url": "/docs/api/mcp",
+          "name": "Conductor MCP server",
+          "group": "Reference / API"
+        },
+        {
+          "url": "/docs/reference/scripts",
+          "name": "Project scripts",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/files-to-copy",
+          "name": "Files to copy",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/worktreeinclude",
+          "name": ".worktreeinclude",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/environment-variables",
+          "name": "Conductor variables",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/shells",
+          "name": "Shell configuration",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/scripts/spotlight-testing",
+          "name": "Spotlight testing",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/cities",
+          "name": "Cities",
+          "group": "Reference / Workspace setup"
+        },
+        {
+          "url": "/docs/reference/settings",
+          "name": "Overview",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/reference/settings/user-project",
+          "name": "User and project",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/reference/settings/managed",
+          "name": "Managed",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/reference/settings/reference",
+          "name": "Reference",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/reference/settings/example",
+          "name": "Sample configs",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/reference/scripts/share-with-teammates",
+          "name": "How to share settings",
+          "group": "Reference / Settings"
+        },
+        {
+          "url": "/docs/concepts/agent-modes",
+          "name": "Agent modes",
+          "group": "Reference / Agents and tools"
+        },
+        {
+          "url": "/docs/reference/big-terminal-mode",
+          "name": "Big Terminal Mode",
+          "group": "Reference / Agents and tools"
+        },
+        {
+          "url": "/docs/reference/agent-behavior",
+          "name": "Agent behavior",
+          "group": "Reference / Agents and tools"
+        },
+        {
+          "url": "/docs/reference/slash-commands",
+          "name": "Slash commands",
+          "group": "Reference / Agents and tools"
+        },
+        {
+          "url": "/docs/reference/mcp",
+          "name": "MCP",
+          "group": "Reference / Agents and tools"
+        },
+        {
+          "url": "/docs/reference/harnesses",
+          "name": "Overview",
+          "group": "Reference / Harnesses"
+        },
+        {
+          "url": "/docs/reference/harnesses/claude-code",
+          "name": "Claude Code",
+          "group": "Reference / Harnesses"
+        },
+        {
+          "url": "/docs/reference/harnesses/codex",
+          "name": "Codex",
+          "group": "Reference / Harnesses"
+        },
+        {
+          "url": "/docs/reference/harnesses/cursor",
+          "name": "Cursor",
+          "group": "Reference / Harnesses"
+        },
+        {
+          "url": "/docs/reference/harnesses/opencode",
+          "name": "OpenCode",
+          "group": "Reference / Harnesses"
+        },
+        {
+          "url": "/docs/reference/diff-viewer",
+          "name": "Diff viewer",
+          "group": "Reference / Review and merge"
+        },
+        {
+          "url": "/docs/reference/checks",
+          "name": "Checks",
+          "group": "Reference / Review and merge"
+        },
+        {
+          "url": "/docs/reference/checkpoints",
+          "name": "Checkpoints",
+          "group": "Reference / Review and merge"
+        },
+        {
+          "url": "/docs/reference/todos",
+          "name": "Todos",
+          "group": "Reference / Review and merge"
+        },
+        {
+          "url": "/docs/reference/keyboard-shortcuts",
+          "name": "Keyboard shortcuts",
+          "group": "Reference / App controls"
+        },
+        {
+          "url": "/docs/reference/deep-links",
+          "name": "Deep links",
+          "group": "Reference / App controls"
+        },
+        {
+          "url": "/docs/reference/security-and-permissions",
+          "name": "Security and permissions",
+          "group": "Security"
+        },
+        {
+          "url": "/docs/reference/privacy",
+          "name": "Privacy",
+          "group": "Security"
+        },
+        {
+          "url": "/docs/faq",
+          "name": "FAQ",
+          "group": "Troubleshooting"
+        },
+        {
+          "url": "/docs/troubleshooting/issues",
+          "name": "Troubleshooting issues",
+          "group": "Troubleshooting"
+        }
+      ]
+    },
+    {
+      "root": "How to",
+      "pages": [
+        {
+          "url": "/docs/guides/use-files-to-copy",
+          "name": "Use Files to copy",
+          "group": ""
+        },
+        {
+          "url": "/docs/guides/configure-settings",
+          "name": "Configure settings",
+          "group": "Setup"
+        },
+        {
+          "url": "/docs/guides/use-files-to-copy",
+          "name": "Use Files to copy",
+          "group": "Setup"
+        },
+        {
+          "url": "/docs/guides/providers",
+          "name": "Configure model providers",
+          "group": "Setup"
+        },
+        {
+          "url": "/docs/guides/configure-mcp-servers",
+          "name": "Set up MCP servers",
+          "group": "Setup"
+        },
+        {
+          "url": "/docs/guides/migrate-from-cursor",
+          "name": "Work with Cursor",
+          "group": "Setup"
+        },
+        {
+          "url": "/docs/guides/repositories/monorepos",
+          "name": "Work in monorepos",
+          "group": "Repository / Repository layouts"
+        },
+        {
+          "url": "/docs/guides/repositories/linking-multiple-directories",
+          "name": "Linking multiple directories",
+          "group": "Repository / Repository layouts"
+        },
+        {
+          "url": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions",
+          "name": "Run multiple Claude Code sessions in parallel",
+          "group": "Workspace / Parallel agents"
+        },
+        {
+          "url": "/docs/guides/parallel-agents/run-multiple-codex-sessions",
+          "name": "Run multiple Codex sessions in parallel",
+          "group": "Workspace / Parallel agents"
+        },
+        {
+          "url": "/docs/guides/parallel-agents/run-multiple-cursor-sessions",
+          "name": "Run multiple Cursor sessions",
+          "group": "Workspace / Parallel agents"
+        },
+        {
+          "url": "/docs/guides/issue-to-pr",
+          "name": "From issue to PR",
+          "group": "Workspace"
+        },
+        {
+          "url": "/docs/guides/review-and-merge",
+          "name": "Review and merge a workspace",
+          "group": "Workspace"
+        },
+        {
+          "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+          "name": "Run Claude Code with Git worktrees",
+          "group": "Git / Git Worktrees"
+        },
+        {
+          "url": "/docs/guides/git-worktrees/run-codex-with-git-worktrees",
+          "name": "Run Codex with Git worktrees",
+          "group": "Git / Git Worktrees"
+        }
+      ]
+    }
+  ]
+}

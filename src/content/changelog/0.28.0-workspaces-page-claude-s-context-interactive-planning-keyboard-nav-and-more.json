@@ -1,0 +1,48 @@
+{
+  "slug": "0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+  "version": "0.28.0",
+  "versionSlug": "0.28.0",
+  "title": "Workspaces Page, Claude’s Context, Interactive Planning, Keyboard Nav, and more!",
+  "fullTitle": "0.28.0: Workspaces Page, Claude’s Context, Interactive Planning, Keyboard Nav, and more!",
+  "date": "Dec 22nd, 2025",
+  "dateISO": "2025-12-22",
+  "description": "Conductor 0.28.0 changelog - Workspaces Page, Claude’s Context, Interactive Planning, Keyboard Nav, and more!",
+  "summary": "Use the workspaces page to view a history of all of your workspaces. Open existing or un-archive old workspaces. Filter by repo, branch, or PR number.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.28.0/1766433104288-image.png",
+    "alt": "image.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Workspaces page"
+    },
+    {
+      "depth": 4,
+      "title": "Context"
+    },
+    {
+      "depth": 4,
+      "title": "Interactive plan mode"
+    },
+    {
+      "depth": 4,
+      "title": "Workspace context"
+    },
+    {
+      "depth": 4,
+      "title": "Navigate chat with your keyboard"
+    },
+    {
+      "depth": 4,
+      "title": "WYSIWYG Notes"
+    }
+  ],
+  "html": "<h4>Workspaces page</h4>\n<p>Use the workspaces page to view a history of all of your workspaces. Open existing or un-archive old workspaces. Filter by repo, branch, or PR number.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.0/1766433104288-image.png\"/></figure>\n<h4>Context</h4>\n<p>You’ll now see an indicator in the Composer when Claude is close to running out of context.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.0/1766433117505-image.png\"/></figure>\n<h4>Interactive plan mode</h4>\n<p>Claude will now ask interactive questions when helping you plan changes.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.0/1766433126882-image.png\"/></figure>\n<h4>Workspace context</h4>\n<p>All new workspaces now have a <code>.context</code> folder. Use it to store context you want to share with multiple agents but don’t want to check into git. Attachments will automatically be stored here.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.0/1766433135099-image.png\"/></figure>\n<p>Click the plus icon to attach files directly in the chat.</p>\n<h4>Navigate chat with your keyboard</h4>\n<p>You can now navigate a chat with your keyboard. Navigate with arrow keys or vim style <code>j</code> <code>k</code> .</p>\n<p>We’ve also added a new shortcut for toggles the sidebars with <code>[</code> and <code>]</code> keys.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/ConductorKbd.mp4&quot;\nautoplay\nmuted\nloop\nplaysinline\nwidth=&quot;100%&quot;</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<h4>WYSIWYG Notes</h4>\n<p>Notes tab now support rich markdown previews:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.0/1766433991631-image.png\"/></figure>\n<p>Improvements:</p>\n<ul>\n<li>Viewing PRs in GitHub is now instant</li>\n<li>Made it more obvious when historical changes are being viewed (and how to exit the view)</li>\n<li>Hover the duration of a response to see more metadata (start time, end time, and model name)</li>\n<li>Permission mode changes are now sent to Claude in real time</li>\n<li>Added feedback in the UI when run scripts are stopping/starting</li>\n</ul>\n<p>Fixes:</p>\n<ul>\n<li>Fixed default branch detection for locally-created repositories</li>\n<li>Fixed lag when toggling sidebar visibility</li>\n<li>Fixed UI jank when cancelling</li>\n<li>Fixed the “Fix Errors” button not sending logs to the agent when some workflows were still in progress</li>\n<li>Fixed a bug where messages could not be sent after cancelling in Codex chats</li>\n</ul>\n<p>Misc:</p>\n<ul>\n<li>We’ve disabled GPT-5.2-Codex for API key users since it’s not available for API users yet. We recommend using an OpenAI subscription if you want to use GPT-5.2-Codex.</li>\n<li>We’ve moved repository settings to the Settings page (<code>⌘,</code>)</li>\n<li>Visual cleanups in the composer, chat, sidebar, and elsewhere</li>\n</ul>",
+  "markdown": "\n### Workspaces page\n\nUse the workspaces page to view a history of all of your workspaces. Open existing or un-archive old workspaces. Filter by repo, branch, or PR number.\n\n<img\n    src=\"/assets/changelog/media/0.28.0/1766433104288-image.png\"\n    alt=\"image.png\"\n/>\n\n### Context\n\nYou’ll now see an indicator in the Composer when Claude is close to running out of context.\n\n<img\n    src=\"/assets/changelog/media/0.28.0/1766433117505-image.png\"\n    alt=\"image.png\"\n/>\n\n### Interactive plan mode\n\nClaude will now ask interactive questions when helping you plan changes.\n\n<img\n    src=\"/assets/changelog/media/0.28.0/1766433126882-image.png\"\n    alt=\"image.png\"\n/>\n\n### Workspace context\n\nAll new workspaces now have a `.context` folder. Use it to store context you want to share with multiple agents but don’t want to check into git. Attachments will automatically be stored here.\n\n<img\n    src=\"/assets/changelog/media/0.28.0/1766433135099-image.png\"\n    alt=\"image.png\"\n/>\n\nClick the plus icon to attach files directly in the chat.\n\n### Navigate chat with your keyboard\n\nYou can now navigate a chat with your keyboard. Navigate with arrow keys or vim style `j` `k` .\n\nWe’ve also added a new shortcut for toggles the sidebars with `[` and `]` keys.\n\n<video\n    src=\"https://conductor-marketing.t3.tigrisfiles.io/uploads/ConductorKbd.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    width=\"100%\"\n></video>\n\n### WYSIWYG Notes\n\nNotes tab now support rich markdown previews:\n\n<img\n    width=\"1136\"\n    height=\"800\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.28.0/1766433991631-image.png\"\n/>\n\nImprovements:\n\n- Viewing PRs in GitHub is now instant\n- Made it more obvious when historical changes are being viewed (and how to exit the view)\n- Hover the duration of a response to see more metadata (start time, end time, and model name)\n- Permission mode changes are now sent to Claude in real time\n- Added feedback in the UI when run scripts are stopping/starting\n\nFixes:\n\n- Fixed default branch detection for locally-created repositories\n- Fixed lag when toggling sidebar visibility\n- Fixed UI jank when cancelling\n- Fixed the “Fix Errors” button not sending logs to the agent when some workflows were still in progress\n- Fixed a bug where messages could not be sent after cancelling in Codex chats\n\nMisc:\n\n- We’ve disabled GPT-5.2-Codex for API key users since it’s not available for API users yet. We recommend using an OpenAI subscription if you want to use GPT-5.2-Codex.\n- We’ve moved repository settings to the Settings page (`⌘,`)\n- Visual cleanups in the composer, chat, sidebar, and elsewhere\n"
+}

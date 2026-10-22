@@ -1,0 +1,1355 @@
+{
+  "slug": "reference/deep-links",
+  "url": "/docs/reference/deep-links",
+  "title": "Deep links",
+  "description": "Open Conductor and trigger actions via conductor:// URLs",
+  "meta": {
+    "title": "Deep links | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/deep-links/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Deep links"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#supported-links",
+      "title": "Supported links"
+    },
+    {
+      "depth": 3,
+      "url": "#workspace",
+      "title": "Workspace"
+    },
+    {
+      "depth": 4,
+      "url": "#prompt",
+      "title": "prompt"
+    },
+    {
+      "depth": 4,
+      "url": "#path",
+      "title": "path"
+    },
+    {
+      "depth": 4,
+      "url": "#branch",
+      "title": "branch"
+    },
+    {
+      "depth": 4,
+      "url": "#linear_id",
+      "title": "linear_id"
+    },
+    {
+      "depth": 4,
+      "url": "#example",
+      "title": "Example"
+    },
+    {
+      "depth": 3,
+      "url": "#async-plan",
+      "title": "Async plan"
+    },
+    {
+      "depth": 3,
+      "url": "#settings",
+      "title": "Settings"
+    },
+    {
+      "depth": 2,
+      "url": "#notes",
+      "title": "Notes"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/keyboard-shortcuts",
+    "title": "Keyboard shortcuts",
+    "description": "Conductor shortcuts for navigation, workspaces, chat, review, Git, terminal, and app actions"
+  },
+  "next": {
+    "url": "/docs/reference/security-and-permissions",
+    "title": "Security and permissions",
+    "description": "Next Page"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor registers the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor://"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " URL scheme. Clicking a deep link (or opening it via "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "open conductor://..."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ") will activate Conductor and trigger the corresponding action."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "supported-links",
+      "children": [
+        {
+          "type": "text",
+          "value": "Supported links"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspace"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor://prompt=<prompt>&path=<repo path>&branch=<branch name>",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor://prompt=<prompt>&path=<repo path>&branch=<branch name>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Opens the new-workspace composer in your active organization. Review the composer, then click "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to create the workspace. All parameters are optional and can be combined in any order."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "prompt",
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "prompt"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Prefills the composer with the prompt, which is sent when the workspace is created."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "path",
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "path"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Selects the repository to create the workspace in. If no repository matches, Conductor keeps the current or default selection without showing an error."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Local organizations:"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " Matches the absolute root path of a repository added to Conductor, ignoring trailing slashes."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cloud organizations:"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " First matches the repository's checkout path on the organization's cloud machine, such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "my-app"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". Otherwise, it tries the final folder name if that name identifies exactly one repository. For example, "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "/Users/jane/code/my-app"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " can select the cloud repository checked out at "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "my-app"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "branch",
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "branch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Selects an existing branch to create the workspace from. Requires "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "path"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If the branch doesn't exist on the repository's remote, the composer says so and uses the default branch."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "linear_id",
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "linear_id"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Creates a workspace for a Linear issue instead of opening the composer. Conductor fetches the issue, detects the matching repository, and either opens an existing workspace on the issue's branch or creates a new one with the issue attached. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "prompt"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is sent to the new workspace, or drafted in the existing one; "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "path"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "branch"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " are ignored. Requires a connected Linear account."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "example",
+      "children": [
+        {
+          "type": "text",
+          "value": "Example"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor://prompt=Fix%20the%20login%20bug&path=%2FUsers%2Fjane%2Fcode%2Fmy-app&branch=fix%2Flogin",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor://prompt=Fix%20the%20login%20bug&path=%2FUsers%2Fjane%2Fcode%2Fmy-app&branch=fix%2Flogin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "async-plan",
+      "children": [
+        {
+          "type": "text",
+          "value": "Async plan"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor://async?repo=<repo name>&plan=<base64 plan>",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor://async?repo=<repo name>&plan=<base64 plan>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Creates a new workspace with a base64-encoded plan attached as a markdown file. The "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "repo"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " parameter is optional and defaults to the first repository."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "Settings"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor://settings/<page>",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor://settings/<page>"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Opens a settings page. Unknown pages open "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "General"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". To share a settings link on the web, use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "https://app.conductor.build/settings/<page>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", which opens the same page in Conductor."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Page"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Opens"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/general"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "General"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/account"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Account"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/appearance"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Appearance"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/models"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Default models"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/git"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Git"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/connections"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Connections"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/providers"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Agents. Add "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "?providerTab=claude"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "cursor"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "opencode"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " to open one agent's tab."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/environment"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/experimental"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Experimental"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/advanced"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Advanced"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "user/remote-control"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "/docs/reference/remote-control"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Remote control"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "repos"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Repository settings. Add "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "?section=environment"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "actions"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "misc"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "organization/computer"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "/docs/cloud/cloud-computer"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Cloud computer"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", in cloud organizations"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "organization/environment"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Organization environment, in cloud organizations"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "organization/mcp"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "MCP, in cloud organizations"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "organization/prompts"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Prompts, in cloud organizations"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "notes",
+      "children": [
+        {
+          "type": "text",
+          "value": "Notes"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "All parameter values should be URL-encoded."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The generic links ("
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "prompt"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "path"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "branch"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "linear_id"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ") use a flat "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "key=value&key=value"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " format directly after "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "conductor://"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", without a hostname or path."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "async"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " link uses standard URL structure with a hostname ("
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "conductor://async?..."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ")."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor registers the <code>conductor://</code> URL scheme. Clicking a deep link (or opening it via <code>open conductor://...</code>) will activate Conductor and trigger the corresponding action.</p><h2 id=\"supported-links\"><a href=\"#supported-links\">Supported links</a></h2><h3 id=\"workspace\"><a href=\"#workspace\">Workspace</a></h3><figure data-code><pre><code><span class=\"line\">conductor://prompt=&lt;prompt&gt;&amp;path=&lt;repo path&gt;&amp;branch=&lt;branch name&gt;</span></code></pre></figure><p>Opens the new-workspace composer in your active organization. Review the composer, then click <strong>Create</strong> to create the workspace. All parameters are optional and can be combined in any order.</p><h4 id=\"prompt\"><a href=\"#prompt\"><code>prompt</code></a></h4><p>Prefills the composer with the prompt, which is sent when the workspace is created.</p><h4 id=\"path\"><a href=\"#path\"><code>path</code></a></h4><p>Selects the repository to create the workspace in. If no repository matches, Conductor keeps the current or default selection without showing an error.</p><ul><li><strong>Local organizations:</strong> Matches the absolute root path of a repository added to Conductor, ignoring trailing slashes.</li><li><strong>Cloud organizations:</strong> First matches the repository's checkout path on the organization's cloud machine, such as <code>my-app</code>. Otherwise, it tries the final folder name if that name identifies exactly one repository. For example, <code>/Users/jane/code/my-app</code> can select the cloud repository checked out at <code>my-app</code>.</li></ul><h4 id=\"branch\"><a href=\"#branch\"><code>branch</code></a></h4><p>Selects an existing branch to create the workspace from. Requires <code>path</code>. If the branch doesn't exist on the repository's remote, the composer says so and uses the default branch.</p><h4 id=\"linear_id\"><a href=\"#linear_id\"><code>linear_id</code></a></h4><p>Creates a workspace for a Linear issue instead of opening the composer. Conductor fetches the issue, detects the matching repository, and either opens an existing workspace on the issue's branch or creates a new one with the issue attached. <code>prompt</code> is sent to the new workspace, or drafted in the existing one; <code>path</code> and <code>branch</code> are ignored. Requires a connected Linear account.</p><h4 id=\"example\"><a href=\"#example\">Example</a></h4><figure data-code><pre><code><span class=\"line\">conductor://prompt=Fix%20the%20login%20bug&amp;path=%2FUsers%2Fjane%2Fcode%2Fmy-app&amp;branch=fix%2Flogin</span></code></pre></figure><h3 id=\"async-plan\"><a href=\"#async-plan\">Async plan</a></h3><figure data-code><pre><code><span class=\"line\">conductor://async?repo=&lt;repo name&gt;&amp;plan=&lt;base64 plan&gt;</span></code></pre></figure><p>Creates a new workspace with a base64-encoded plan attached as a markdown file. The <code>repo</code> parameter is optional and defaults to the first repository.</p><h3 id=\"settings\"><a href=\"#settings\">Settings</a></h3><figure data-code><pre><code><span class=\"line\">conductor://settings/&lt;page&gt;</span></code></pre></figure><p>Opens a settings page. Unknown pages open <code>General</code>. To share a settings link on the web, use <code>https://app.conductor.build/settings/&lt;page&gt;</code>, which opens the same page in Conductor.</p><table><thead><tr><th>Page</th><th>Opens</th></tr></thead><tbody><tr><td><code>user/general</code></td><td>General</td></tr><tr><td><code>user/account</code></td><td>Account</td></tr><tr><td><code>user/appearance</code></td><td>Appearance</td></tr><tr><td><code>user/models</code></td><td>Default models</td></tr><tr><td><code>user/git</code></td><td>Git</td></tr><tr><td><code>user/connections</code></td><td>Connections</td></tr><tr><td><code>user/providers</code></td><td>Agents. Add <code>?providerTab=claude</code>, <code>codex</code>, <code>cursor</code>, or <code>opencode</code> to open one agent's tab.</td></tr><tr><td><code>user/environment</code></td><td>Environment</td></tr><tr><td><code>user/experimental</code></td><td>Experimental</td></tr><tr><td><code>user/advanced</code></td><td>Advanced</td></tr><tr><td><code>user/remote-control</code></td><td><a href=\"/docs/reference/remote-control\">Remote control</a></td></tr><tr><td><code>repos</code></td><td>Repository settings. Add <code>?section=environment</code>, <code>git</code>, <code>scripts</code>, <code>actions</code>, or <code>misc</code>.</td></tr><tr><td><code>organization/computer</code></td><td><a href=\"/docs/cloud/cloud-computer\">Cloud computer</a>, in cloud organizations</td></tr><tr><td><code>organization/environment</code></td><td>Organization environment, in cloud organizations</td></tr><tr><td><code>organization/mcp</code></td><td>MCP, in cloud organizations</td></tr><tr><td><code>organization/prompts</code></td><td>Prompts, in cloud organizations</td></tr></tbody></table><h2 id=\"notes\"><a href=\"#notes\">Notes</a></h2><ul><li>All parameter values should be URL-encoded.</li><li>The generic links (<code>prompt</code>, <code>path</code>, <code>branch</code>, <code>linear_id</code>) use a flat <code>key=value&amp;key=value</code> format directly after <code>conductor://</code>, without a hostname or path.</li><li>The <code>async</code> link uses standard URL structure with a hostname (<code>conductor://async?...</code>).</li></ul>",
+  "text": "Conductor registers the conductor:// URL scheme. Clicking a deep link (or opening it via open conductor://...) will activate Conductor and trigger the corresponding action.\nSupported links\nWorkspace\nconductor://prompt=<prompt>&path=<repo path>&branch=<branch name>Opens the new-workspace composer in your active organization. Review the composer, then click Create to create the workspace. All parameters are optional and can be combined in any order.\nprompt\nPrefills the composer with the prompt, which is sent when the workspace is created.\npath\nSelects the repository to create the workspace in. If no repository matches, Conductor keeps the current or default selection without showing an error.\nLocal organizations: Matches the absolute root path of a repository added to Conductor, ignoring trailing slashes.\nCloud organizations: First matches the repository's checkout path on the organization's cloud machine, such as my-app. Otherwise, it tries the final folder name if that name identifies exactly one repository. For example, /Users/jane/code/my-app can select the cloud repository checked out at my-app.\nbranch\nSelects an existing branch to create the workspace from. Requires path. If the branch doesn't exist on the repository's remote, the composer says so and uses the default branch.\nlinear_id\nCreates a workspace for a Linear issue instead of opening the composer. Conductor fetches the issue, detects the matching repository, and either opens an existing workspace on the issue's branch or creates a new one with the issue attached. prompt is sent to the new workspace, or drafted in the existing one; path and branch are ignored. Requires a connected Linear account.\nExample\nconductor://prompt=Fix%20the%20login%20bug&path=%2FUsers%2Fjane%2Fcode%2Fmy-app&branch=fix%2FloginAsync plan\nconductor://async?repo=<repo name>&plan=<base64 plan>Creates a new workspace with a base64-encoded plan attached as a markdown file. The repo parameter is optional and defaults to the first repository.\nSettings\nconductor://settings/<page>Opens a settings page. Unknown pages open General. To share a settings link on the web, use https://app.conductor.build/settings/<page>, which opens the same page in Conductor.\nPageOpensuser/generalGeneraluser/accountAccountuser/appearanceAppearanceuser/modelsDefault modelsuser/gitGituser/connectionsConnectionsuser/providersAgents. Add ?providerTab=claude, codex, cursor, or opencode to open one agent's tab.user/environmentEnvironmentuser/experimentalExperimentaluser/advancedAdvanceduser/remote-controlRemote controlreposRepository settings. Add ?section=environment, git, scripts, actions, or misc.organization/computerCloud computer, in cloud organizationsorganization/environmentOrganization environment, in cloud organizationsorganization/mcpMCP, in cloud organizationsorganization/promptsPrompts, in cloud organizationsNotes\nAll parameter values should be URL-encoded.\nThe generic links (prompt, path, branch, linear_id) use a flat key=value&key=value format directly after conductor://, without a hostname or path.\nThe async link uses standard URL structure with a hostname (conductor://async?...).",
+  "markdown": "\n# Deep links\n\n\n\nConductor registers the `conductor://` URL scheme. Clicking a deep link (or opening it via `open conductor://...`) will activate Conductor and trigger the corresponding action.\n\n## Supported links [#supported-links]\n\n### Workspace [#workspace]\n\n```\nconductor://prompt=<prompt>&path=<repo path>&branch=<branch name>\n```\n\nOpens the new-workspace composer in your active organization. Review the composer, then click **Create** to create the workspace. All parameters are optional and can be combined in any order.\n\n#### `prompt` [#prompt]\n\nPrefills the composer with the prompt, which is sent when the workspace is created.\n\n#### `path` [#path]\n\nSelects the repository to create the workspace in. If no repository matches, Conductor keeps the current or default selection without showing an error.\n\n* **Local organizations:** Matches the absolute root path of a repository added to Conductor, ignoring trailing slashes.\n* **Cloud organizations:** First matches the repository's checkout path on the organization's cloud machine, such as `my-app`. Otherwise, it tries the final folder name if that name identifies exactly one repository. For example, `/Users/jane/code/my-app` can select the cloud repository checked out at `my-app`.\n\n#### `branch` [#branch]\n\nSelects an existing branch to create the workspace from. Requires `path`. If the branch doesn't exist on the repository's remote, the composer says so and uses the default branch.\n\n#### `linear_id` [#linear_id]\n\nCreates a workspace for a Linear issue instead of opening the composer. Conductor fetches the issue, detects the matching repository, and either opens an existing workspace on the issue's branch or creates a new one with the issue attached. `prompt` is sent to the new workspace, or drafted in the existing one; `path` and `branch` are ignored. Requires a connected Linear account.\n\n#### Example [#example]\n\n```\nconductor://prompt=Fix%20the%20login%20bug&path=%2FUsers%2Fjane%2Fcode%2Fmy-app&branch=fix%2Flogin\n```\n\n### Async plan [#async-plan]\n\n```\nconductor://async?repo=<repo name>&plan=<base64 plan>\n```\n\nCreates a new workspace with a base64-encoded plan attached as a markdown file. The `repo` parameter is optional and defaults to the first repository.\n\n### Settings [#settings]\n\n```\nconductor://settings/<page>\n```\n\nOpens a settings page. Unknown pages open `General`. To share a settings link on the web, use `https://app.conductor.build/settings/<page>`, which opens the same page in Conductor.\n\n| Page                       | Opens                                                                                        |\n| -------------------------- | -------------------------------------------------------------------------------------------- |\n| `user/general`             | General                                                                                      |\n| `user/account`             | Account                                                                                      |\n| `user/appearance`          | Appearance                                                                                   |\n| `user/models`              | Default models                                                                               |\n| `user/git`                 | Git                                                                                          |\n| `user/connections`         | Connections                                                                                  |\n| `user/providers`           | Agents. Add `?providerTab=claude`, `codex`, `cursor`, or `opencode` to open one agent's tab. |\n| `user/environment`         | Environment                                                                                  |\n| `user/experimental`        | Experimental                                                                                 |\n| `user/advanced`            | Advanced                                                                                     |\n| `user/remote-control`      | [Remote control](/docs/reference/remote-control)                                             |\n| `repos`                    | Repository settings. Add `?section=environment`, `git`, `scripts`, `actions`, or `misc`.     |\n| `organization/computer`    | [Cloud computer](/docs/cloud/cloud-computer), in cloud organizations                         |\n| `organization/environment` | Organization environment, in cloud organizations                                             |\n| `organization/mcp`         | MCP, in cloud organizations                                                                  |\n| `organization/prompts`     | Prompts, in cloud organizations                                                              |\n\n## Notes [#notes]\n\n* All parameter values should be URL-encoded.\n* The generic links (`prompt`, `path`, `branch`, `linear_id`) use a flat `key=value&key=value` format directly after `conductor://`, without a hostname or path.\n* The `async` link uses standard URL structure with a hostname (`conductor://async?...`).\n"
+}

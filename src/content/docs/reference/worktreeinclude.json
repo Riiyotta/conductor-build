@@ -1,0 +1,791 @@
+{
+  "slug": "reference/worktreeinclude",
+  "url": "/docs/reference/worktreeinclude",
+  "title": ".worktreeinclude",
+  "description": "Project file format for shared Files to copy patterns",
+  "meta": {
+    "title": ".worktreeinclude | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/worktreeinclude/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": ".worktreeinclude"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#what-worktreeinclude-does",
+      "title": "What .worktreeinclude does"
+    },
+    {
+      "depth": 2,
+      "url": "#when-to-commit-it",
+      "title": "When to commit it"
+    },
+    {
+      "depth": 2,
+      "url": "#what-not-to-solve-with-worktreeinclude",
+      "title": "What not to solve with .worktreeinclude"
+    },
+    {
+      "depth": 2,
+      "url": "#pattern-syntax",
+      "title": "Pattern syntax"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/files-to-copy",
+    "title": "Files to copy",
+    "description": "Configure gitignored files that Conductor copies into new workspaces"
+  },
+  "next": {
+    "url": "/docs/reference/environment-variables",
+    "title": "Conductor variables",
+    "description": "Variables available to workspace terminals, agents, and scripts"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Git worktrees do not copy gitignored local files by default. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is the project file format that tells Conductor which gitignored files to copy into new local workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to the repository root when every new local workspace should receive the same local files."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also configure the same behavior in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for settings examples, eligibility rules, precedence, defaults, and pattern syntax. Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/use-files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Use Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for a guided setup flow."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-worktreeinclude-does",
+      "children": [
+        {
+          "type": "text",
+          "value": "What .worktreeinclude does"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file lists gitignored files that should be copied into new local workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor reads "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " through Files to copy. Claude Code also documents the same file for "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "copying gitignored files into worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", so it is useful when a project uses both tools."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The important safety rule is that "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " does not make a file tracked. It only selects files that Git already ignores."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "txt",
+      "title": ".worktreeinclude",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": ".env.local\nconfig/secrets.json\ncerts/local/**",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": ".env.local"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "config/secrets.json"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "certs/local/**"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This says: when a matching file exists in the main checkout and Git ignores it, copy it into the new local workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "when-to-commit-it",
+      "children": [
+        {
+          "type": "text",
+          "value": "When to commit it"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the project needs the same local files in every worktree. The file contains patterns, not secret values, so it can usually live safely in Git."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "That gives every teammate and every new local workspace the same rule:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "keep secret values out of Git"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "keep the list of required local files in Git"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "create worktrees without repeating manual copy steps"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the pattern is personal to one machine, use Conductor's per-repo Files to copy setting instead of committing "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can configure personal or repository-specific Files to copy patterns with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "file_include_globs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor settings:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\n\"\"\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "file_include_globs = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": ".env.local",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "config/local.json",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "\"\"\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " exists, it wins over "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "file_include_globs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the full precedence rules."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-not-to-solve-with-worktreeinclude",
+      "children": [
+        {
+          "type": "text",
+          "value": "What not to solve with .worktreeinclude"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for static gitignored files that already exist in the main checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the workspace needs to run commands, install dependencies, generate files, create symlinks, or fetch secrets from a password manager or cloud secret store."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use your hosting provider or deployment environment for production secrets. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is a local development convenience, not a production secret-management system."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "pattern-syntax",
+      "children": [
+        {
+          "type": "text",
+          "value": "Pattern syntax"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " uses "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://git-scm.com/docs/gitignore",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".gitignore"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " pattern syntax"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", including comments, root-anchored paths, nested globs, directory patterns, and negation with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "!"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the full syntax reference and examples."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Git worktrees do not copy gitignored local files by default. <code>.worktreeinclude</code> is the project file format that tells Conductor which gitignored files to copy into new local workspaces.</p><p>Add <code>.worktreeinclude</code> to the repository root when every new local workspace should receive the same local files.</p><p>You can also configure the same behavior in <code>.conductor/settings.toml</code>. Use the <a href=\"/docs/reference/files-to-copy\">Files to copy reference</a> for settings examples, eligibility rules, precedence, defaults, and pattern syntax. Use <a href=\"/docs/guides/use-files-to-copy\">Use Files to copy</a> for a guided setup flow.</p><h2 id=\"what-worktreeinclude-does\"><a href=\"#what-worktreeinclude-does\">What .worktreeinclude does</a></h2><p>A <code>.worktreeinclude</code> file lists gitignored files that should be copied into new local workspaces.</p><p>Conductor reads <code>.worktreeinclude</code> through Files to copy. Claude Code also documents the same file for <a href=\"https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees\" target=\"_blank\" rel=\"noopener noreferrer\">copying gitignored files into worktrees</a>, so it is useful when a project uses both tools.</p><p>The important safety rule is that <code>.worktreeinclude</code> does not make a file tracked. It only selects files that Git already ignores.</p><p>For example:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.env.local</span>\n<span class=\"line\">config/secrets.json</span>\n<span class=\"line\">certs/local/**</span></code></pre></figure><p>This says: when a matching file exists in the main checkout and Git ignores it, copy it into the new local workspace.</p><h2 id=\"when-to-commit-it\"><a href=\"#when-to-commit-it\">When to commit it</a></h2><p>Commit <code>.worktreeinclude</code> when the project needs the same local files in every worktree. The file contains patterns, not secret values, so it can usually live safely in Git.</p><p>That gives every teammate and every new local workspace the same rule:</p><ul><li>keep secret values out of Git</li><li>keep the list of required local files in Git</li><li>create worktrees without repeating manual copy steps</li></ul><p>If the pattern is personal to one machine, use Conductor's per-repo Files to copy setting instead of committing <code>.worktreeinclude</code>.</p><p>You can configure personal or repository-specific Files to copy patterns with <code>file_include_globs</code> in Conductor settings:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">file_include_globs = </span><span style=\"color:#032F62\">\"\"\"</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">.env.local</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">config/local.json</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">\"\"\"</span></span></code></pre></figure><p>If <code>.worktreeinclude</code> exists, it wins over <code>file_include_globs</code>. See <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for the full precedence rules.</p><h2 id=\"what-not-to-solve-with-worktreeinclude\"><a href=\"#what-not-to-solve-with-worktreeinclude\">What not to solve with .worktreeinclude</a></h2><p>Use <code>.worktreeinclude</code> for static gitignored files that already exist in the main checkout.</p><p>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> when the workspace needs to run commands, install dependencies, generate files, create symlinks, or fetch secrets from a password manager or cloud secret store.</p><p>Use your hosting provider or deployment environment for production secrets. <code>.worktreeinclude</code> is a local development convenience, not a production secret-management system.</p><h2 id=\"pattern-syntax\"><a href=\"#pattern-syntax\">Pattern syntax</a></h2><p><code>.worktreeinclude</code> uses <a href=\"https://git-scm.com/docs/gitignore\" target=\"_blank\" rel=\"noopener noreferrer\"><code>.gitignore</code> pattern syntax</a>, including comments, root-anchored paths, nested globs, directory patterns, and negation with <code>!</code>.</p><p>See <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for the full syntax reference and examples.</p>",
+  "text": "Git worktrees do not copy gitignored local files by default. .worktreeinclude is the project file format that tells Conductor which gitignored files to copy into new local workspaces.\nAdd .worktreeinclude to the repository root when every new local workspace should receive the same local files.\nYou can also configure the same behavior in .conductor/settings.toml. Use the Files to copy reference for settings examples, eligibility rules, precedence, defaults, and pattern syntax. Use Use Files to copy for a guided setup flow.\nWhat .worktreeinclude does\nA .worktreeinclude file lists gitignored files that should be copied into new local workspaces.\nConductor reads .worktreeinclude through Files to copy. Claude Code also documents the same file for copying gitignored files into worktrees, so it is useful when a project uses both tools.\nThe important safety rule is that .worktreeinclude does not make a file tracked. It only selects files that Git already ignores.\nFor example:\n.env.local\nconfig/secrets.json\ncerts/local/**This says: when a matching file exists in the main checkout and Git ignores it, copy it into the new local workspace.\nWhen to commit it\nCommit .worktreeinclude when the project needs the same local files in every worktree. The file contains patterns, not secret values, so it can usually live safely in Git.\nThat gives every teammate and every new local workspace the same rule:\nkeep secret values out of Git\nkeep the list of required local files in Git\ncreate worktrees without repeating manual copy steps\nIf the pattern is personal to one machine, use Conductor's per-repo Files to copy setting instead of committing .worktreeinclude.\nYou can configure personal or repository-specific Files to copy patterns with file_include_globs in Conductor settings:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\n\"\"\"If .worktreeinclude exists, it wins over file_include_globs. See Files to copy for the full precedence rules.\nWhat not to solve with .worktreeinclude\nUse .worktreeinclude for static gitignored files that already exist in the main checkout.\nUse a setup script when the workspace needs to run commands, install dependencies, generate files, create symlinks, or fetch secrets from a password manager or cloud secret store.\nUse your hosting provider or deployment environment for production secrets. .worktreeinclude is a local development convenience, not a production secret-management system.\nPattern syntax\n.worktreeinclude uses .gitignore pattern syntax, including comments, root-anchored paths, nested globs, directory patterns, and negation with !.\nSee Files to copy for the full syntax reference and examples.",
+  "markdown": "\n# .worktreeinclude\n\n\n\nGit worktrees do not copy gitignored local files by default. `.worktreeinclude` is the project file format that tells Conductor which gitignored files to copy into new local workspaces.\n\nAdd `.worktreeinclude` to the repository root when every new local workspace should receive the same local files.\n\nYou can also configure the same behavior in `.conductor/settings.toml`. Use the [Files to copy reference](/docs/reference/files-to-copy) for settings examples, eligibility rules, precedence, defaults, and pattern syntax. Use [Use Files to copy](/docs/guides/use-files-to-copy) for a guided setup flow.\n\n## What .worktreeinclude does [#what-worktreeinclude-does]\n\nA `.worktreeinclude` file lists gitignored files that should be copied into new local workspaces.\n\nConductor reads `.worktreeinclude` through Files to copy. Claude Code also documents the same file for [copying gitignored files into worktrees](https://code.claude.com/docs/en/worktrees#copy-gitignored-files-into-worktrees), so it is useful when a project uses both tools.\n\nThe important safety rule is that `.worktreeinclude` does not make a file tracked. It only selects files that Git already ignores.\n\nFor example:\n\n```txt title=\".worktreeinclude\"\n.env.local\nconfig/secrets.json\ncerts/local/**\n```\n\nThis says: when a matching file exists in the main checkout and Git ignores it, copy it into the new local workspace.\n\n## When to commit it [#when-to-commit-it]\n\nCommit `.worktreeinclude` when the project needs the same local files in every worktree. The file contains patterns, not secret values, so it can usually live safely in Git.\n\nThat gives every teammate and every new local workspace the same rule:\n\n* keep secret values out of Git\n* keep the list of required local files in Git\n* create worktrees without repeating manual copy steps\n\nIf the pattern is personal to one machine, use Conductor's per-repo Files to copy setting instead of committing `.worktreeinclude`.\n\nYou can configure personal or repository-specific Files to copy patterns with `file_include_globs` in Conductor settings:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nfile_include_globs = \"\"\"\n.env.local\nconfig/local.json\n\"\"\"\n```\n\nIf `.worktreeinclude` exists, it wins over `file_include_globs`. See [Files to copy](/docs/reference/files-to-copy) for the full precedence rules.\n\n## What not to solve with .worktreeinclude [#what-not-to-solve-with-worktreeinclude]\n\nUse `.worktreeinclude` for static gitignored files that already exist in the main checkout.\n\nUse a [setup script](/docs/reference/scripts#setup-scripts) when the workspace needs to run commands, install dependencies, generate files, create symlinks, or fetch secrets from a password manager or cloud secret store.\n\nUse your hosting provider or deployment environment for production secrets. `.worktreeinclude` is a local development convenience, not a production secret-management system.\n\n## Pattern syntax [#pattern-syntax]\n\n`.worktreeinclude` uses [`.gitignore` pattern syntax](https://git-scm.com/docs/gitignore), including comments, root-anchored paths, nested globs, directory patterns, and negation with `!`.\n\nSee [Files to copy](/docs/reference/files-to-copy) for the full syntax reference and examples.\n"
+}

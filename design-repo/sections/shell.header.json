@@ -1,0 +1,147 @@
+{
+  "id": "shell.header",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.header"
+  ],
+  "purpose": "Persistent orientation and the single always-visible download entry point.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Header.jsx:62",
+      "quote": "onClick={openDownload}"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:94",
+      "quote": "## 1. Header (sticky)"
+    },
+    {
+      "ref": "CLONE_SPEC_PAGES.md:36",
+      "quote": "**Active nav state** (new)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.header"
+    }
+  },
+  "slot": "chrome",
+  "content": {
+    "navLinks": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "label": {
+            "type": "text",
+            "maxWords": 3,
+            "required": true,
+            "observedMaxWords": 2
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 6,
+      "required": true
+    },
+    "activeLabel": {
+      "type": "text",
+      "maxWords": 3,
+      "required": false,
+      "observedMaxWords": 2
+    },
+    "downloadLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    }
+  },
+  "constraints": {
+    "mustBeFirst": true,
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit",
+      "template.changelog-index",
+      "template.changelog-post",
+      "template.docs-page",
+      "template.enterprise",
+      "template.home",
+      "template.join-us",
+      "template.legal",
+      "template.pricing",
+      "template.prose-page",
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color",
+      "instant-hover",
+      "scroll-mask-nav"
+    ],
+    "defaultPatterns": [
+      "hover-color",
+      "instant-hover",
+      "scroll-mask-nav"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:327",
+        "quote": "| M10 | Header nav overflow mask |"
+      },
+      {
+        "ref": "src/components/Header.jsx:63",
+        "quote": "rounded-md bg-foreground px-3 py-3 text-sm font-medium text-background hover:bg-foreground/90"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "nav",
+          "value": "hidden; 36px menu button shown"
+        },
+        {
+          "property": "paddingInline",
+          "value": "16px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "nav",
+          "value": "flex row, gap 24px, overflow-x auto with edge mask"
+        },
+        {
+          "property": "paddingInline",
+          "value": "32px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "Download button hover is instant (no transition class).",
+    "On docs routes the header is hidden below 768px (shell.docs-subnav replaces it)."
+  ],
+  "assetRoles": []
+}

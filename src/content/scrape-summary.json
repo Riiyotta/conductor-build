@@ -1,0 +1,42 @@
+{
+  "scrapedAt": "2026-10-22T08:05:41.561Z",
+  "origin": "https://www.conductor.build",
+  "docs": {
+    "sitemap": 69,
+    "extracted": 69
+  },
+  "changelog": {
+    "sitemap": 207,
+    "extracted": 207,
+    "indexPages": 21,
+    "indexEntries": 207
+  },
+  "media": {
+    "total": 342,
+    "ok": 337,
+    "bytes": 1190652260
+  },
+  "failures": [
+    {
+      "item": "[object Object]",
+      "error": "media https://github.com/user-attachments/assets/4c405ab0-2584-49a5-876e-bf20ade3ff20: HTTP 404"
+    },
+    {
+      "item": "[object Object]",
+      "error": "media https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5: HTTP 404"
+    },
+    {
+      "item": "[object Object]",
+      "error": "media https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce: HTTP 404"
+    },
+    {
+      "item": "[object Object]",
+      "error": "media https://github.com/user-attachments/assets/d44ef61d-b7cf-4b86-b2af-ce9d6e59e70b: HTTP 404"
+    },
+    {
+      "item": "[object Object]",
+      "error": "media https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a: HTTP 404"
+    }
+  ],
+  "seconds": 45
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "0.17.1-bug-fixes",
+  "version": "0.17.1",
+  "versionSlug": "0.17.1",
+  "title": "Bug Fixes",
+  "fullTitle": "0.17.1: Bug Fixes",
+  "date": "Oct 27th, 2025",
+  "dateISO": "2025-10-27",
+  "description": "Conductor 0.17.1 changelog - Bug Fixes",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.17.1-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.1-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.1-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Improved performance issue in composer. Let us know if you&#x27;re still seeing any issues with lag!</li>\n<li>Relative commit time in the changes dropdown filter</li>\n<li>We&#x27;ve consolidated the diff and file tab into one</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed composer send button hover color</li>\n<li>Fixed unread count not incrementing for sessions in non-focused workspaces</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Improved performance issue in composer. Let us know if you're still seeing any issues with lag!\n- Relative commit time in the changes dropdown filter\n- We've consolidated the diff and file tab into one\n\n## Fixes\n\n- Fixed composer send button hover color\n- Fixed unread count not incrementing for sessions in non-focused workspaces\n"
+}

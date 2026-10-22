@@ -1,0 +1,32 @@
+{
+  "slug": "0.22.2-codex-cancellation",
+  "version": "0.22.2",
+  "versionSlug": "0.22.2",
+  "title": "Codex Cancellation",
+  "fullTitle": "0.22.2: Codex Cancellation",
+  "date": "Nov 17th, 2025",
+  "dateISO": "2025-11-17",
+  "description": "Conductor 0.22.2 changelog - Codex Cancellation",
+  "summary": "You can now cancel Codex while it's working (ESC) and we've reduced bundle size from 225MB to ~124MB.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.2/653fafc8-d734-4850-a45a-d65ebebc6241.png",
+    "alt": "CleanShot 2025-11-17 at 13 38 41@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.2-codex-cancellation/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.2-codex-cancellation",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.2-codex-cancellation",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now cancel Codex while it&#x27;s working (ESC) and we&#x27;ve reduced bundle size from 225MB to ~124MB.</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-17 at 13 38 41@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.2/653fafc8-d734-4850-a45a-d65ebebc6241.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Claude Code now comes bundled with Conductor</li>\n<li>Reduced bundle size to ~124MB</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the loading indicator disappearing while the AI was still responding</li>\n<li>Improved logging</li>\n</ul>",
+  "markdown": "\nYou can now cancel Codex while it's working (ESC) and we've reduced bundle size from 225MB to ~124MB.\n\n<img\n    width=\"1352\"\n    height=\"472\"\n    alt=\"CleanShot 2025-11-17 at 13 38 41@2x\"\n    src=\"/assets/changelog/media/0.22.2/653fafc8-d734-4850-a45a-d65ebebc6241.png\"\n/>\n\n## Improvements\n\n- Claude Code now comes bundled with Conductor\n- Reduced bundle size to ~124MB\n\n## Fixes\n\n- Fixed the loading indicator disappearing while the AI was still responding\n- Improved logging\n"
+}

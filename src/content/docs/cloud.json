@@ -1,0 +1,599 @@
+{
+  "slug": "cloud",
+  "url": "/docs/cloud",
+  "title": "What is Conductor Cloud?",
+  "description": "Run coding agents in shared cloud workspaces with your team",
+  "meta": {
+    "title": "What is Conductor Cloud? | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "What is Conductor Cloud?"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#how-cloud-is-organized",
+      "title": "How Cloud is organized"
+    },
+    {
+      "depth": 2,
+      "url": "#your-cloud-computer",
+      "title": "Your Cloud Computer"
+    },
+    {
+      "depth": 2,
+      "url": "#multiplayer",
+      "title": "Multiplayer"
+    },
+    {
+      "depth": 2,
+      "url": "#local-and-cloud-workspaces",
+      "title": "Local and Cloud workspaces"
+    },
+    {
+      "depth": 2,
+      "url": "#get-help",
+      "title": "Get help"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/configure-your-project",
+    "title": "Configure your project",
+    "description": "Set up shared Conductor project settings for new workspaces"
+  },
+  "next": {
+    "url": "/docs/cloud/getting-started",
+    "title": "Set up cloud",
+    "description": "Connect GitHub, add an agent credential, and set up your Cloud Computer"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor Cloud runs every agent in its own isolated cloud sandbox, with your\nrepos and dependencies pre-installed. Sandboxes spin up in seconds, and agents\nkeep working after you close your laptop. Workspaces and chats are shared with\nyour organization, so a teammate can open the same workspace, follow the same\nconversation, and pick up where you left off."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "New here? "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/getting-started"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up cloud"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/cloud-collaboration-chat.png",
+      "alt": "A shared Conductor Cloud conversation where one teammate mentions another and both participate in the workspace"
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-cloud-is-organized",
+      "children": [
+        {
+          "type": "text",
+          "value": "How Cloud is organized"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Concept"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "What it means"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Organization"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your team in Conductor: its people, repositories, workspaces, and shared settings."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cloud Computer"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The organization's shared environment: repositories, environment variables, secrets, and installed software."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cloud workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "An isolated sandbox for one repository and branch, created from the Cloud Computer's active build."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "your-cloud-computer",
+      "children": [
+        {
+          "type": "text",
+          "value": "Your Cloud Computer"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each organization shares one Cloud Computer: the repositories, environment\nvariables, secrets, and software every new workspace starts with. Change its\nconfiguration, then choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Build computer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; new workspaces start from the\nlatest successful build, while existing workspaces keep the environment they\nwere created with."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/cloud-computer-graphite-light.png",
+      "alt": "The graphite Cloud Computer illustration from Conductor onboarding",
+      "variants": [
+        {
+          "src": "/assets/docs/images/cloud-computer-graphite-light.png",
+          "theme": "light"
+        },
+        {
+          "src": "/assets/docs/images/cloud-computer-graphite-dark.png",
+          "theme": "dark"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can also have an agent configure the computer for you: it can test your\nrepositories, edit setup scripts, and run builds. See\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/cloud-computer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud Computer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "multiplayer",
+      "children": [
+        {
+          "type": "text",
+          "value": "Multiplayer"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspaces, chats, and presence are shared across the organization: browse\neveryone's work in "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Home"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", contribute to a teammate's chat, follow\nworkspaces you care about, and hand work off with "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Reassign to"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". See\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/collaboration"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Multiplayer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "local-and-cloud-workspaces",
+      "children": [
+        {
+          "type": "text",
+          "value": "Local and Cloud workspaces"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can use both kinds of workspace from the Conductor Mac app."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": []
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Local workspace"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud workspace"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Files and agents run on"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your Mac"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "An isolated Linux sandbox"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Team visibility"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Stored in your local Conductor app"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Shared with the organization"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your Mac and local project settings"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The active Cloud Computer build"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Access from local tools"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Directly through the local worktree"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Through SSH or file sync"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "After your Mac closes"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Local processes stop"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Agents keep running until the sandbox "
+              },
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "/docs/cloud/working-with-cloud-workspaces#sleep-and-maximum-lifetime"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "sleeps"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The chat, diff, git, terminal, and pull request workflow is the same in both."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "get-help",
+      "children": [
+        {
+          "type": "text",
+          "value": "Get help"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Help → Send Feedback"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor or email\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "mailto:humans@conductor.build"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "humans@conductor.build"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Include the\norganization, workspace, and repository names when reporting a Cloud issue."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor Cloud runs every agent in its own isolated cloud sandbox, with your\nrepos and dependencies pre-installed. Sandboxes spin up in seconds, and agents\nkeep working after you close your laptop. Workspaces and chats are shared with\nyour organization, so a teammate can open the same workspace, follow the same\nconversation, and pick up where you left off.</p><p>New here? <a href=\"/docs/cloud/getting-started\">Set up cloud</a>.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/cloud-collaboration-chat.png\" alt=\"A shared Conductor Cloud conversation where one teammate mentions another and both participate in the workspace\" /></figure><h2 id=\"how-cloud-is-organized\"><a href=\"#how-cloud-is-organized\">How Cloud is organized</a></h2><table><thead><tr><th>Concept</th><th>What it means</th></tr></thead><tbody><tr><td>Organization</td><td>Your team in Conductor: its people, repositories, workspaces, and shared settings.</td></tr><tr><td>Cloud Computer</td><td>The organization's shared environment: repositories, environment variables, secrets, and installed software.</td></tr><tr><td>Cloud workspace</td><td>An isolated sandbox for one repository and branch, created from the Cloud Computer's active build.</td></tr></tbody></table><h2 id=\"your-cloud-computer\"><a href=\"#your-cloud-computer\">Your Cloud Computer</a></h2><p>Each organization shares one Cloud Computer: the repositories, environment\nvariables, secrets, and software every new workspace starts with. Change its\nconfiguration, then choose <strong>Build computer</strong>; new workspaces start from the\nlatest successful build, while existing workspaces keep the environment they\nwere created with.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/cloud-computer-graphite-light.png\" alt=\"The graphite Cloud Computer illustration from Conductor onboarding\" /></figure><p>You can also have an agent configure the computer for you: it can test your\nrepositories, edit setup scripts, and run builds. See\n<a href=\"/docs/cloud/cloud-computer\">Cloud Computer</a>.</p><h2 id=\"multiplayer\"><a href=\"#multiplayer\">Multiplayer</a></h2><p>Workspaces, chats, and presence are shared across the organization: browse\neveryone's work in <strong>Home</strong>, contribute to a teammate's chat, follow\nworkspaces you care about, and hand work off with <strong>Reassign to</strong>. See\n<a href=\"/docs/cloud/collaboration\">Multiplayer</a>.</p><h2 id=\"local-and-cloud-workspaces\"><a href=\"#local-and-cloud-workspaces\">Local and Cloud workspaces</a></h2><p>You can use both kinds of workspace from the Conductor Mac app.</p><table><thead><tr><th></th><th>Local workspace</th><th>Cloud workspace</th></tr></thead><tbody><tr><td>Files and agents run on</td><td>Your Mac</td><td>An isolated Linux sandbox</td></tr><tr><td>Team visibility</td><td>Stored in your local Conductor app</td><td>Shared with the organization</td></tr><tr><td>Environment</td><td>Your Mac and local project settings</td><td>The active Cloud Computer build</td></tr><tr><td>Access from local tools</td><td>Directly through the local worktree</td><td>Through SSH or file sync</td></tr><tr><td>After your Mac closes</td><td>Local processes stop</td><td>Agents keep running until the sandbox <a href=\"/docs/cloud/working-with-cloud-workspaces#sleep-and-maximum-lifetime\">sleeps</a></td></tr></tbody></table><p>The chat, diff, git, terminal, and pull request workflow is the same in both.</p><h2 id=\"get-help\"><a href=\"#get-help\">Get help</a></h2><p>Choose <code>Help → Send Feedback</code> in Conductor or email\n<a href=\"mailto:humans@conductor.build\">humans@conductor.build</a>. Include the\norganization, workspace, and repository names when reporting a Cloud issue.</p>",
+  "text": "Conductor Cloud runs every agent in its own isolated cloud sandbox, with your\nrepos and dependencies pre-installed. Sandboxes spin up in seconds, and agents\nkeep working after you close your laptop. Workspaces and chats are shared with\nyour organization, so a teammate can open the same workspace, follow the same\nconversation, and pick up where you left off.\nNew here? Set up cloud.\nHow Cloud is organized\nConceptWhat it meansOrganizationYour team in Conductor: its people, repositories, workspaces, and shared settings.Cloud ComputerThe organization's shared environment: repositories, environment variables, secrets, and installed software.Cloud workspaceAn isolated sandbox for one repository and branch, created from the Cloud Computer's active build.Your Cloud Computer\nEach organization shares one Cloud Computer: the repositories, environment\nvariables, secrets, and software every new workspace starts with. Change its\nconfiguration, then choose Build computer; new workspaces start from the\nlatest successful build, while existing workspaces keep the environment they\nwere created with.\nYou can also have an agent configure the computer for you: it can test your\nrepositories, edit setup scripts, and run builds. See\nCloud Computer.\nMultiplayer\nWorkspaces, chats, and presence are shared across the organization: browse\neveryone's work in Home, contribute to a teammate's chat, follow\nworkspaces you care about, and hand work off with Reassign to. See\nMultiplayer.\nLocal and Cloud workspaces\nYou can use both kinds of workspace from the Conductor Mac app.\nLocal workspaceCloud workspaceFiles and agents run onYour MacAn isolated Linux sandboxTeam visibilityStored in your local Conductor appShared with the organizationEnvironmentYour Mac and local project settingsThe active Cloud Computer buildAccess from local toolsDirectly through the local worktreeThrough SSH or file syncAfter your Mac closesLocal processes stopAgents keep running until the sandbox sleepsThe chat, diff, git, terminal, and pull request workflow is the same in both.\nGet help\nChoose Help → Send Feedback in Conductor or email\nhumans@conductor.build. Include the\norganization, workspace, and repository names when reporting a Cloud issue.",
+  "markdown": "\n# What is Conductor Cloud?\n\n\n\nConductor Cloud runs every agent in its own isolated cloud sandbox, with your\nrepos and dependencies pre-installed. Sandboxes spin up in seconds, and agents\nkeep working after you close your laptop. Workspaces and chats are shared with\nyour organization, so a teammate can open the same workspace, follow the same\nconversation, and pick up where you left off.\n\nNew here? [Set up cloud](/docs/cloud/getting-started).\n\n\n\n\n## How Cloud is organized [#how-cloud-is-organized]\n\n| Concept         | What it means                                                                                                |\n| --------------- | ------------------------------------------------------------------------------------------------------------ |\n| Organization    | Your team in Conductor: its people, repositories, workspaces, and shared settings.                           |\n| Cloud Computer  | The organization's shared environment: repositories, environment variables, secrets, and installed software. |\n| Cloud workspace | An isolated sandbox for one repository and branch, created from the Cloud Computer's active build.           |\n\n## Your Cloud Computer [#your-cloud-computer]\n\nEach organization shares one Cloud Computer: the repositories, environment\nvariables, secrets, and software every new workspace starts with. Change its\nconfiguration, then choose **Build computer**; new workspaces start from the\nlatest successful build, while existing workspaces keep the environment they\nwere created with.\n\n\n\n\nYou can also have an agent configure the computer for you: it can test your\nrepositories, edit setup scripts, and run builds. See\n[Cloud Computer](/docs/cloud/cloud-computer).\n\n## Multiplayer [#multiplayer]\n\nWorkspaces, chats, and presence are shared across the organization: browse\neveryone's work in **Home**, contribute to a teammate's chat, follow\nworkspaces you care about, and hand work off with **Reassign to**. See\n[Multiplayer](/docs/cloud/collaboration).\n\n## Local and Cloud workspaces [#local-and-cloud-workspaces]\n\nYou can use both kinds of workspace from the Conductor Mac app.\n\n|                         | Local workspace                     | Cloud workspace                                                                                                      |\n| ----------------------- | ----------------------------------- | -------------------------------------------------------------------------------------------------------------------- |\n| Files and agents run on | Your Mac                            | An isolated Linux sandbox                                                                                            |\n| Team visibility         | Stored in your local Conductor app  | Shared with the organization                                                                                         |\n| Environment             | Your Mac and local project settings | The active Cloud Computer build                                                                                      |\n| Access from local tools | Directly through the local worktree | Through SSH or file sync                                                                                             |\n| After your Mac closes   | Local processes stop                | Agents keep running until the sandbox [sleeps](/docs/cloud/working-with-cloud-workspaces#sleep-and-maximum-lifetime) |\n\nThe chat, diff, git, terminal, and pull request workflow is the same in both.\n\n## Get help [#get-help]\n\nChoose `Help → Send Feedback` in Conductor or email\n[humans@conductor.build](mailto:humans@conductor.build). Include the\norganization, workspace, and repository names when reporting a Cloud issue.\n"
+}

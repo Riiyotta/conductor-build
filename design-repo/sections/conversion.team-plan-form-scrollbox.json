@@ -1,0 +1,116 @@
+{
+  "id": "conversion.team-plan-form-scrollbox",
+  "category": "CONVERSION",
+  "iaSections": [
+    "conversion.team-plan-form-scrollbox"
+  ],
+  "purpose": "Capture a team-plan request (same fields) inside a clipped scroll box.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/TeamPlan.jsx:23",
+      "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:242",
+      "quote": "**The form lives in a 450px-tall scroll box**"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "conversion.team-plan-form-scrollbox"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "fields": {
+      "type": "list",
+      "items": {
+        "type": "enum",
+        "values": [
+          "firstname",
+          "lastname",
+          "jobtitle",
+          "email",
+          "company_name",
+          "company_size",
+          "message"
+        ],
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 7,
+      "required": true
+    },
+    "submitLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "successTitle": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "successBody": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 7
+    },
+    "endpoint": {
+      "type": "endpoint",
+      "roles": [
+        "form-endpoint"
+      ],
+      "required": true
+    },
+    "scrollBoxHeight": {
+      "type": "enum",
+      "values": [
+        450
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true,
+    "allowedTemplates": [
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "src/components/pages/HubSpotForm.jsx:17",
+        "quote": "Submit: hover translateY(-1px), active translateY(1px), bg unchanged;"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "450px scroll box clips the form (original quirk, replicated)."
+  ],
+  "assetRoles": [
+    "form-endpoint"
+  ]
+}

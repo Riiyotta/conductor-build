@@ -1,0 +1,32 @@
+{
+  "slug": "0.32.1-rerun-setup-scripts",
+  "version": "0.32.1",
+  "versionSlug": "0.32.1",
+  "title": "Rerun setup scripts",
+  "fullTitle": "0.32.1: Rerun setup scripts",
+  "date": "Jan 22nd, 2026",
+  "dateISO": "2026-01-22",
+  "description": "Conductor 0.32.1 changelog - Rerun setup scripts",
+  "summary": "You can now rerun your setup script directly from the terminal panel.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.32.1/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png",
+    "alt": "Rerun setup script"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.32.1-rerun-setup-scripts/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.32.1-rerun-setup-scripts",
+  "sourceUrl": "https://www.conductor.build/changelog/0.32.1-rerun-setup-scripts",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now rerun your setup script directly from the terminal panel.</p>\n<figure data-asset><img alt=\"Rerun setup script\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.32.1/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added a setting to always view how much of the context window Claude has used. Enable it in Settings → Chat.</li>\n<li>Added an option to copy plans to clipboard</li>\n<li>Restored the <code>⌘O</code> shortcut to open a repository from its settings page</li>\n<li>Added Elixir syntax highlighting</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>We&#x27;ve fixed a bug where chats would sometimes appear empty on load</li>\n</ul>",
+  "markdown": "\nYou can now rerun your setup script directly from the terminal panel.\n\n![Rerun setup script](/assets/changelog/media/0.32.1/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png)\n\n## Improvements\n\n- Added a setting to always view how much of the context window Claude has used. Enable it in Settings → Chat.\n- Added an option to copy plans to clipboard\n- Restored the `⌘O` shortcut to open a repository from its settings page\n- Added Elixir syntax highlighting\n\n## Fixes\n\n- We've fixed a bug where chats would sometimes appear empty on load\n"
+}

@@ -1,0 +1,28 @@
+{
+  "id": "data-table",
+  "kind": "component",
+  "purpose": "Docs table shell.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:296",
+      "quote": "function Table({ node }) {"
+    }
+  ],
+  "tokens": [
+    "{semantic.surface.docs-table}",
+    "{semantic.surface.docs-table-header}",
+    "{semantic.border.docs-table}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "static"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:347",
+      "quote": "### 3.6 Table (`node: table`): `.docs-table-shell` (56 tables)"
+    }
+  ]
+}

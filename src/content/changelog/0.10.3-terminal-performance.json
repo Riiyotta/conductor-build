@@ -1,0 +1,32 @@
+{
+  "slug": "0.10.3-terminal-performance",
+  "version": "0.10.3",
+  "versionSlug": "0.10.3",
+  "title": "Terminal Performance",
+  "fullTitle": "0.10.3: Terminal Performance",
+  "date": "Sept 11th, 2025",
+  "dateISO": "2025-09-11",
+  "description": "Conductor 0.10.3 changelog - Terminal Performance",
+  "summary": "Terminal now uses WebGL rendering. It should be much snappier.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.10.3/c3253d2f-55a3-47ca-a9d8-fca8a194e231.gif",
+    "alt": "TerminalAmp"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.10.3-terminal-performance/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.10.3-terminal-performance",
+  "sourceUrl": "https://www.conductor.build/changelog/0.10.3-terminal-performance",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Terminal now uses WebGL rendering. It should be much snappier.</p>\n<figure data-asset><img alt=\"TerminalAmp\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.10.3/c3253d2f-55a3-47ca-a9d8-fca8a194e231.gif\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Display API key source in top bar</li>\n<li>Render agent output as markdown</li>\n<li>Auto expand files clicked in the git panel</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed message queueing</li>\n<li>Fixed binary files showing up incorrectly in the git diff</li>\n</ul>",
+  "markdown": "\nTerminal now uses WebGL rendering. It should be much snappier.\n\n![TerminalAmp](/assets/changelog/media/0.10.3/c3253d2f-55a3-47ca-a9d8-fca8a194e231.gif)\n\n## Improvements\n\n- Display API key source in top bar\n- Render agent output as markdown\n- Auto expand files clicked in the git panel\n\n## Fixes\n\n- Fixed message queueing\n- Fixed binary files showing up incorrectly in the git diff\n"
+}

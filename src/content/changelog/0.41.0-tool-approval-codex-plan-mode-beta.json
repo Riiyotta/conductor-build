@@ -1,0 +1,36 @@
+{
+  "slug": "0.41.0-tool-approval-codex-plan-mode-beta",
+  "version": "0.41.0",
+  "versionSlug": "0.41.0",
+  "title": "Tool Approval + Codex Plan Mode Beta",
+  "fullTitle": "0.41.0: Tool Approval + Codex Plan Mode Beta",
+  "date": "Mar 19, 2026",
+  "dateISO": "2026-03-19",
+  "description": "Conductor 0.41.0 changelog - Tool Approval + Codex Plan Mode Beta",
+  "summary": "We’ve added tool approval as a new enterprise setting. If you’d like to enable it, email us humans@conductor.build.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.41.0/1773956606308-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.41.0-tool-approval-codex-plan-mode-beta/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.41.0-tool-approval-codex-plan-mode-beta",
+  "sourceUrl": "https://www.conductor.build/changelog/0.41.0-tool-approval-codex-plan-mode-beta",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>We’ve added tool approval as a new enterprise setting. If you’d like to enable it, email us <a href=\"/cdn-cgi/l/email-protection\" data-cfemail=\"365e435b575845765559585243554259441854435f5a52\">[email&#160;protected]</a>.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.41.0/1773956606308-image.png\"/></figure></p>\n<p>We’ve also added Codex plan mode and fast mode, in beta. To try them out, go to Settings → Experimental → Use alternative Codex SDK.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.41.0/1773956606677-image.png\"/></figure></p>\n<p>Large repositories with many file changes should load faster and take up less memory.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Icon picker in repo settings now has better spacing</li>\n<li>Focus composer after adding an attachment, and backspace to remove attachments</li>\n<li>Files, checks, and comments now share the same tab</li>\n<li>Added a new repository shortcut to the workspace add menu</li>\n<li>Show git status icon in group by status mode in the experimental sidebar</li>\n<li>You can now enter or exit plan mode with /plan command</li>\n<li>PR creation now uses your current model instead of switching to Haiku</li>\n<li>Resource usage logs now include workspace names for processes</li>\n<li>&quot;Garry mode&quot; experimental setting that shows all tool calls expanded by default instead of collapsed</li>\n<li>Command palette now shows workspace metadata (sessions, PR status, git info) and supports settings keyword search</li>\n<li>Optimize PR fetching to reduce GitHub API rate limit pressure</li>\n<li>Auto-resize diff comment textarea based on content</li>\n<li>Improve performance on large repositories with many changed files</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed bash tool commands briefly showing &quot;undefined&quot; while waiting for output</li>\n<li>Fixed a bug where the rerun setup button was not clickable</li>\n<li>Fixed a bug in the experimental sidebar where the workspace summary hover card would show through when the right-click context menu was open. The hover card now closes when the context menu opens.</li>\n<li>Fixed an issue where the changes list wouldn&#x27;t scroll to keep the selected file visible when navigating with arrow keys</li>\n<li>Fixed an issue where ⇧⌥→ word selection would move the wrong end of the selection</li>\n<li>Cleaned up terminal exit flow</li>\n<li>Fixed ⌘O app switcher icons aspect ratio</li>\n<li>Fixed unarchiving renamed workspaces</li>\n<li>Prevented unarchived workspaces from being immediately re-archived if their PR was already merged</li>\n<li>Comment attachments no longer linger in the composer after sending</li>\n<li>Fixed app switcher icon sizing and aspect ratio</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Updated Xcode icon to the official Apple developer icon</li>\n<li>Added detection for VS Code installations with non-standard bundle names</li>\n</ul>",
+  "markdown": "\nWe’ve added tool approval as a new enterprise setting. If you’d like to enable it, email us humans@conductor.build.\n![image](/assets/changelog/media/0.41.0/1773956606308-image.png)\n\nWe’ve also added Codex plan mode and fast mode, in beta. To try them out, go to Settings → Experimental → Use alternative Codex SDK.\n![image](/assets/changelog/media/0.41.0/1773956606677-image.png)\n\nLarge repositories with many file changes should load faster and take up less memory.\n\n## Improvements\n\n- Icon picker in repo settings now has better spacing\n- Focus composer after adding an attachment, and backspace to remove attachments\n- Files, checks, and comments now share the same tab\n- Added a new repository shortcut to the workspace add menu\n- Show git status icon in group by status mode in the experimental sidebar\n- You can now enter or exit plan mode with /plan command\n- PR creation now uses your current model instead of switching to Haiku\n- Resource usage logs now include workspace names for processes\n- \"Garry mode\" experimental setting that shows all tool calls expanded by default instead of collapsed\n- Command palette now shows workspace metadata (sessions, PR status, git info) and supports settings keyword search\n- Optimize PR fetching to reduce GitHub API rate limit pressure\n- Auto-resize diff comment textarea based on content\n- Improve performance on large repositories with many changed files\n\n## Fixes\n\n- Fixed bash tool commands briefly showing \"undefined\" while waiting for output\n- Fixed a bug where the rerun setup button was not clickable\n- Fixed a bug in the experimental sidebar where the workspace summary hover card would show through when the right-click context menu was open. The hover card now closes when the context menu opens.\n- Fixed an issue where the changes list wouldn't scroll to keep the selected file visible when navigating with arrow keys\n- Fixed an issue where ⇧⌥→ word selection would move the wrong end of the selection\n- Cleaned up terminal exit flow\n- Fixed ⌘O app switcher icons aspect ratio\n- Fixed unarchiving renamed workspaces\n- Prevented unarchived workspaces from being immediately re-archived if their PR was already merged\n- Comment attachments no longer linger in the composer after sending\n- Fixed app switcher icon sizing and aspect ratio\n\n## Misc\n\n- Updated Xcode icon to the official Apple developer icon\n- Added detection for VS Code installations with non-standard bundle names\n"
+}

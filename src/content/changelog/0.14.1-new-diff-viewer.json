@@ -1,0 +1,32 @@
+{
+  "slug": "0.14.1-new-diff-viewer",
+  "version": "0.14.1",
+  "versionSlug": "0.14.1",
+  "title": "New Diff Viewer",
+  "fullTitle": "0.14.1: New Diff Viewer",
+  "date": "Oct 7th, 2025",
+  "dateISO": "2025-10-07",
+  "description": "Conductor 0.14.1 changelog - New Diff Viewer",
+  "summary": "We've revamped the diff UI!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.14.1/237c299b-87e3-4631-bd85-aa671a623827.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.14.1-new-diff-viewer/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.1-new-diff-viewer",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.1-new-diff-viewer",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve revamped the diff UI!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.14.1/237c299b-87e3-4631-bd85-aa671a623827.png\"/></figure>\n<p>We&#x27;ve also fixed a performance degradation associated with having many workspaces. Conductor should be much faster now!</p>\n<h3>Improvements</h3>\n<ul>\n<li>New sound effects on workspace completion</li>\n<li>Added an <code>escape</code> shortcut to cancel git diff comments</li>\n<li>Converted the repository details page to a simpler dialog</li>\n<li>Added UI treatment for <code>/login</code> errors</li>\n<li>Show full branch name on hover in workspace sidebar</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Disabled font ligatures in git diffs</li>\n<li>Fixed binary file detection for untracked files</li>\n<li>Fixed line detection for untracked files</li>\n<li>Fixed a bug where comments and line numbers could become misaligned in the git diff</li>\n<li>Added drag regions to the git diff sheet</li>\n<li>Fixed input not resetting on linear search palette close</li>\n</ul>\n<p>New in 0.14.2:</p>\n<ul>\n<li>Performance improvements</li>\n<li>Option to set AWS_PROFILE</li>\n</ul>",
+  "markdown": "\nWe've revamped the diff UI!\n\n<img\n    width=\"2048\"\n    height=\"1319\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.14.1/237c299b-87e3-4631-bd85-aa671a623827.png\"\n/>\n\nWe've also fixed a performance degradation associated with having many workspaces. Conductor should be much faster now!\n\n## Improvements\n\n- New sound effects on workspace completion\n- Added an `escape` shortcut to cancel git diff comments\n- Converted the repository details page to a simpler dialog\n- Added UI treatment for `/login` errors\n- Show full branch name on hover in workspace sidebar\n\n## Fixes\n\n- Disabled font ligatures in git diffs\n- Fixed binary file detection for untracked files\n- Fixed line detection for untracked files\n- Fixed a bug where comments and line numbers could become misaligned in the git diff\n- Added drag regions to the git diff sheet\n- Fixed input not resetting on linear search palette close\n\nNew in 0.14.2:\n\n- Performance improvements\n- Option to set AWS_PROFILE\n"
+}

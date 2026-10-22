@@ -1,0 +1,30 @@
+{
+  "id": "select",
+  "kind": "primitive",
+  "purpose": "Company-size dropdown (custom listbox with search) from the HubSpot replica.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/HubSpotForm.jsx:23",
+      "quote": "const COMPANY_SIZES = ['1-10', '11-50', '51-100', '101-500', '500+']"
+    }
+  ],
+  "tokens": [
+    "{semantic.border.form-input}",
+    "{semantic.text.form-label}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "closed",
+    "open",
+    "selected",
+    "no-matches"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:224",
+      "quote": "Options: `1-10`, `11-50`, `51-100`, `101-500`, `500+`."
+    }
+  ]
+}

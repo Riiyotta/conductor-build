@@ -1,0 +1,32 @@
+{
+  "slug": "0.12.1-improved-plan-mode",
+  "version": "0.12.1",
+  "versionSlug": "0.12.1",
+  "title": "Improved Plan Mode",
+  "fullTitle": "0.12.1: Improved Plan Mode",
+  "date": "Sept 27th, 2025",
+  "dateISO": "2025-09-27",
+  "description": "Conductor 0.12.1 changelog - Improved Plan Mode",
+  "summary": "We've improved plan mode! Claude no longer thinks it's still in plan mode when it's not. We've also updated the controls to respond to Claude's plans:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.12.1/2fedcbfa-dac9-4903-bd87-2766302876c6.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.12.1-improved-plan-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.12.1-improved-plan-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.12.1-improved-plan-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve improved plan mode! Claude no longer thinks it&#x27;s still in plan mode when it&#x27;s not. We&#x27;ve also updated the controls to respond to Claude&#x27;s plans:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.12.1/2fedcbfa-dac9-4903-bd87-2766302876c6.png\"/></figure>\n<p>Claude will also no longer forget that its read files across turns. Response times should be faster across chats too.</p>\n<h3>Improvements</h3>\n<ul>\n<li>We now only update the MacOS notification badge when Claude completes</li>\n<li>Improved the <code>Resolve merge conflicts</code> button prompt</li>\n<li>Added keyboard shortcut <code>⌘+⇧+P</code> to create a PR</li>\n<li>Show the number of pending checks in the git status bar</li>\n<li>Better notifications when scripts fail</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug sourcing initialization script</li>\n<li>Prevented upstream tracking of new workspace branches</li>\n<li>Fixed compact button height</li>\n</ul>",
+  "markdown": "\nWe've improved plan mode! Claude no longer thinks it's still in plan mode when it's not. We've also updated the controls to respond to Claude's plans:\n\n<img\n    width=\"1268\"\n    height=\"450\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.12.1/2fedcbfa-dac9-4903-bd87-2766302876c6.png\"\n/>\n\nClaude will also no longer forget that its read files across turns. Response times should be faster across chats too.\n\n## Improvements\n\n- We now only update the MacOS notification badge when Claude completes\n- Improved the `Resolve merge conflicts` button prompt\n- Added keyboard shortcut `⌘+⇧+P` to create a PR\n- Show the number of pending checks in the git status bar\n- Better notifications when scripts fail\n\n## Fixes\n\n- Fixed a bug sourcing initialization script\n- Prevented upstream tracking of new workspace branches\n- Fixed compact button height\n"
+}

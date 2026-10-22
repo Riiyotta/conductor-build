@@ -1,0 +1,19 @@
+{
+  "slug": "0.28.5-bug-fix",
+  "version": "0.28.5",
+  "versionSlug": "0.28.5",
+  "title": "Bug Fix",
+  "fullTitle": "0.28.5: Bug Fix",
+  "date": "Dec 30th, 2025",
+  "dateISO": "2025-12-30",
+  "description": "Conductor 0.28.5 changelog - Bug Fix",
+  "summary": "We fixed a bug causing slow startup times.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.28.5-bug-fix/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.5-bug-fix",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.5-bug-fix",
+  "headings": [],
+  "html": "<p>We fixed a bug causing slow startup times.</p>",
+  "markdown": "\nWe fixed a bug causing slow startup times.\n"
+}

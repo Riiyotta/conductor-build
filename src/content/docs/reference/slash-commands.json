@@ -1,0 +1,265 @@
+{
+  "slug": "reference/slash-commands",
+  "url": "/docs/reference/slash-commands",
+  "title": "Slash commands",
+  "description": "Reusable prompt commands for agent chats",
+  "meta": {
+    "title": "Slash commands | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/slash-commands/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Slash commands"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#command-location",
+      "title": "Command location"
+    },
+    {
+      "depth": 2,
+      "url": "#good-commands",
+      "title": "Good commands"
+    },
+    {
+      "depth": 2,
+      "url": "#learn-more",
+      "title": "Learn more"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/agent-behavior",
+    "title": "Agent behavior",
+    "description": "Reference for agent instructions, modes, permissions, and checkpoints"
+  },
+  "next": {
+    "url": "/docs/reference/mcp",
+    "title": "MCP",
+    "description": "Configure Model Context Protocol servers for Claude Code, Codex, and Cursor Composer workflows"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Slash commands are reusable prompts stored as Markdown files. Use them for prompts your team runs often, such as review checklists, release steps, or debugging workflows."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "command-location",
+      "children": [
+        {
+          "type": "text",
+          "value": "Command location"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create custom commands in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".claude/commands/"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". They appear in the chat composer when you type "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "/"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "mkdir -p ~/.claude/commands\necho \"Your prompt here\" > ~/.claude/commands/<name>.md",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "mkdir",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -p",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " ~/.claude/commands",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "echo",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Your prompt here\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " ~/.claude/commands/",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "<",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "nam",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "e",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ">",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": ".md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The file name becomes the slash command name."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "good-commands",
+      "children": [
+        {
+          "type": "text",
+          "value": "Good commands"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Good slash commands are specific and reusable. Include the role, the task, the expected output, and any constraints the agent should follow."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "learn-more",
+      "children": [
+        {
+          "type": "text",
+          "value": "Learn more"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Claude Code command behavior, see the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://docs.anthropic.com/en/docs/claude-code/slash-commands",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code slash command docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Slash commands are reusable prompts stored as Markdown files. Use them for prompts your team runs often, such as review checklists, release steps, or debugging workflows.</p><h2 id=\"command-location\"><a href=\"#command-location\">Command location</a></h2><p>Create custom commands in <code>.claude/commands/</code>. They appear in the chat composer when you type <code>/</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">mkdir</span><span style=\"color:#005CC5\"> -p</span><span style=\"color:#032F62\"> ~/.claude/commands</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">echo</span><span style=\"color:#032F62\"> \"Your prompt here\"</span><span style=\"color:#D73A49\"> &gt;</span><span style=\"color:#032F62\"> ~/.claude/commands/</span><span style=\"color:#D73A49\">&lt;</span><span style=\"color:#032F62\">nam</span><span style=\"color:#24292E\">e</span><span style=\"color:#D73A49\">&gt;</span><span style=\"color:#032F62\">.md</span></span></code></pre></figure><p>The file name becomes the slash command name.</p><h2 id=\"good-commands\"><a href=\"#good-commands\">Good commands</a></h2><p>Good slash commands are specific and reusable. Include the role, the task, the expected output, and any constraints the agent should follow.</p><h2 id=\"learn-more\"><a href=\"#learn-more\">Learn more</a></h2><p>For Claude Code command behavior, see the <a href=\"https://docs.anthropic.com/en/docs/claude-code/slash-commands\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code slash command docs</a>.</p>",
+  "text": "Slash commands are reusable prompts stored as Markdown files. Use them for prompts your team runs often, such as review checklists, release steps, or debugging workflows.\nCommand location\nCreate custom commands in .claude/commands/. They appear in the chat composer when you type /:\nmkdir -p ~/.claude/commands\necho \"Your prompt here\" > ~/.claude/commands/<name>.mdThe file name becomes the slash command name.\nGood commands\nGood slash commands are specific and reusable. Include the role, the task, the expected output, and any constraints the agent should follow.\nLearn more\nFor Claude Code command behavior, see the Claude Code slash command docs.",
+  "markdown": "\n# Slash commands\n\n\n\nSlash commands are reusable prompts stored as Markdown files. Use them for prompts your team runs often, such as review checklists, release steps, or debugging workflows.\n\n## Command location [#command-location]\n\nCreate custom commands in `.claude/commands/`. They appear in the chat composer when you type `/`:\n\n```bash\nmkdir -p ~/.claude/commands\necho \"Your prompt here\" > ~/.claude/commands/<name>.md\n```\n\nThe file name becomes the slash command name.\n\n## Good commands [#good-commands]\n\nGood slash commands are specific and reusable. Include the role, the task, the expected output, and any constraints the agent should follow.\n\n## Learn more [#learn-more]\n\nFor Claude Code command behavior, see the [Claude Code slash command docs](https://docs.anthropic.com/en/docs/claude-code/slash-commands).\n"
+}

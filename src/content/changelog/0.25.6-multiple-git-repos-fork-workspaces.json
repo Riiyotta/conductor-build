@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.6-multiple-git-repos-fork-workspaces",
+  "version": "0.25.6",
+  "versionSlug": "0.25.6",
+  "title": "Multiple Git Repos, Fork Workspaces",
+  "fullTitle": "0.25.6: Multiple Git Repos, Fork Workspaces",
+  "date": "Dec 10th, 2025",
+  "dateISO": "2025-12-10",
+  "description": "Conductor 0.25.6 changelog - Multiple Git Repos, Fork Workspaces",
+  "summary": "You can now run /add-dir to let Claude edit workspaces across multiple repositories.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.6/17c63402-f153-45b0-982f-08f923522203.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.6-multiple-git-repos-fork-workspaces/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.6-multiple-git-repos-fork-workspaces",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.6-multiple-git-repos-fork-workspaces",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now run <code>/add-dir</code> to let Claude edit workspaces across multiple repositories.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.6/17c63402-f153-45b0-982f-08f923522203.png\"/></figure>\n<p>You can also fork a workspace. Doing so will create a new workspace with the changes up to that fork point, and a summary of your chat.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.6/6c4d7832-3916-423a-a661-72524db5c578.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Auto-resize images with &gt;8k pixel dimensions to prevent Claude Code errors</li>\n<li>Improved the chat scrollbar click target</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the Tufte markdown style not applying when viewing changed files</li>\n</ul>",
+  "markdown": "\nYou can now run `/add-dir` to let Claude edit workspaces across multiple repositories.\n\n<img\n    width=\"1134\"\n    height=\"720\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.6/17c63402-f153-45b0-982f-08f923522203.png\"\n/>\n\nYou can also fork a workspace. Doing so will create a new workspace with the changes up to that fork point, and a summary of your chat.\n\n<img\n    width=\"1422\"\n    height=\"208\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.6/6c4d7832-3916-423a-a661-72524db5c578.png\"\n/>\n\n## Improvements\n\n- Auto-resize images with >8k pixel dimensions to prevent Claude Code errors\n- Improved the chat scrollbar click target\n\n## Fixes\n\n- Fixed the Tufte markdown style not applying when viewing changed files\n"
+}

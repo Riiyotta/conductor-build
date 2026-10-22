@@ -1,0 +1,23 @@
+{
+  "slug": "0.87.1-grok-4-7",
+  "version": "0.87.1",
+  "versionSlug": "0.87.1",
+  "title": "Grok 4.7",
+  "fullTitle": "0.87.1: Grok 4.7",
+  "date": "September 21, 2026",
+  "dateISO": "2026-09-21",
+  "description": "Conductor 0.87.1 changelog - Grok 4.7",
+  "summary": "Grok 4.7 is now available in Conductor via Cursor. Give it a try!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/grok-4.7-0.87.1.png",
+    "alt": "Grok 4.7"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.87.1-grok-4-7/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.87.1-grok-4-7",
+  "sourceUrl": "https://www.conductor.build/changelog/0.87.1-grok-4-7",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Grok 4.7\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/grok-4.7-0.87.1.png\"/></figure>\n<p>Grok 4.7 is now available in Conductor via Cursor. Give it a try!</p>",
+  "markdown": "\n![Grok 4.7](/assets/changelog/images/grok-4.7-0.87.1.png)\n\nGrok 4.7 is now available in Conductor via Cursor. Give it a try!\n"
+}

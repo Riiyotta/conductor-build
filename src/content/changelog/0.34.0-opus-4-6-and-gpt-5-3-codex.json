@@ -1,0 +1,32 @@
+{
+  "slug": "0.34.0-opus-4-6-and-gpt-5-3-codex",
+  "version": "0.34.0",
+  "versionSlug": "0.34.0",
+  "title": "Opus 4.6 and GPT-5.3-Codex",
+  "fullTitle": "0.34.0: Opus 4.6 and GPT-5.3-Codex",
+  "date": "Feb 5th, 2026",
+  "dateISO": "2026-02-05",
+  "description": "Conductor 0.34.0 changelog - Opus 4.6 and GPT-5.3-Codex",
+  "summary": "The smartest and fastest models from Anthropic and OpenAI are now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.34.0/1770319106128-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.34.0-opus-4-6-and-gpt-5-3-codex/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.34.0-opus-4-6-and-gpt-5-3-codex",
+  "sourceUrl": "https://www.conductor.build/changelog/0.34.0-opus-4-6-and-gpt-5-3-codex",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements:"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>The smartest and fastest models from Anthropic and OpenAI are now available in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.34.0/1770319106128-image.png\"/></figure>\n<h4>Improvements:</h4>\n<ul>\n<li>Mermaid diagrams can now be expanded to fullscreen</li>\n<li>Each toast now links to the workspace it relates to</li>\n<li>Richer error messages from Claude Code and Codex</li>\n<li>Deeplinks (Linear, Slack, VS Code, etc.) in AI responses are now clickable</li>\n<li>Archiving is now blocked while agents are running</li>\n<li>New “Open in” options, including more variants of Zed and IntelliJ</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Cleaned up redundant compaction messages</li>\n</ul>",
+  "markdown": "\nThe smartest and fastest models from Anthropic and OpenAI are now available in Conductor!\n\n![image](/assets/changelog/media/0.34.0/1770319106128-image.png)\n\n#### Improvements:\n\n- Mermaid diagrams can now be expanded to fullscreen\n- Each toast now links to the workspace it relates to\n- Richer error messages from Claude Code and Codex\n- Deeplinks (Linear, Slack, VS Code, etc.) in AI responses are now clickable\n- Archiving is now blocked while agents are running\n- New “Open in” options, including more variants of Zed and IntelliJ\n\n#### Fixes\n\n- Cleaned up redundant compaction messages\n"
+}

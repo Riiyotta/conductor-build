@@ -1,0 +1,28 @@
+{
+  "slug": "0.25.10-bug-fixes",
+  "version": "0.25.10",
+  "versionSlug": "0.25.10",
+  "title": "Bug Fixes",
+  "fullTitle": "0.25.10: Bug Fixes",
+  "date": "Dec 12th, 2025",
+  "dateISO": "2025-12-12",
+  "description": "Conductor 0.25.10 changelog - Bug Fixes",
+  "summary": "We've fixed a bug where agents would occasionally hang without responding.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.25.10-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.10-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.10-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a bug where agents would occasionally hang without responding.</p>\n<p>Also, thanks to a recent fix from Anthropic, MCPs stored in <code>.mcp.json</code> files will now be recognized by Claude in Conductor!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Conductor now comes bundled with Claude Code!</li>\n<li>Failing PR status checks will now appear when a branch is still awaiting a mandatory PR review</li>\n<li>Standardized all checkmarks to gray</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the Open In button failing for some users</li>\n<li>Fixed a &quot;Failed to save token&quot; error in onboarding</li>\n</ul>",
+  "markdown": "\nWe've fixed a bug where agents would occasionally hang without responding.\n\nAlso, thanks to a recent fix from Anthropic, MCPs stored in `.mcp.json` files will now be recognized by Claude in Conductor!\n\n## Improvements\n\n- Conductor now comes bundled with Claude Code!\n- Failing PR status checks will now appear when a branch is still awaiting a mandatory PR review\n- Standardized all checkmarks to gray\n\n## Fixes\n\n- Fixed the Open In button failing for some users\n- Fixed a \"Failed to save token\" error in onboarding\n"
+}

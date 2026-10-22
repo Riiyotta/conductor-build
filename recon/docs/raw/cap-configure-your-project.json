@@ -1,0 +1,122 @@
+{
+ "ApiAgentPrompt": {
+  "html": "<figure dir=\"ltr\" class=\"my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm shiki shiki-themes github-light github-dark\" style=\"--shiki-light:#24292e;--shiki-dark:#e1e4e8;--shiki-light-bg:#fff;--shiki-dark-bg:#24292e\" tabindex=\"-1\"><div class=\"empty:hidden absolute top-3 right-2 z-2 backdrop-blur-lg rounded-lg text-fd-muted-foreground\"><button type=\"button\" class=\"inline-flex items-center justify-center rounded-md text-sm font-medium transition-colors duration-100 disabled:pointer-events-none disabled:opacity-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-fd-ring p-1 [&amp;_svg]:size-4 hover:text-fd-accent-foreground data-checked:text-fd-accent-foreground\" aria-label=\"Copy Text\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-clipboard\" aria-hidden=\"true\"><rect width=\"8\" height=\"4\" x=\"8\" y=\"2\" rx=\"1\" ry=\"1\"></rect><path d=\"M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2\"></path></svg></button></div><div role=\"region\" tabindex=\"0\" class=\"text-[0.8125rem] py-3.5 overflow-auto max-h-[600px] fd-scroll-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-fd-ring\" style=\"--padding-right:calc(var(--spacing) * 8)\"><pre class=\"min-w-full w-max *:flex *:flex-col\"><code><span class=\"line\"><span>your-repo/</span></span>\n<span class=\"line\"><span>├── .conductor/</span></span>\n<span class=\"line\"><span>│   └── settings.toml</span></span>\n<span class=\"line\"><span>├── package.json</span></span>\n<span class=\"line\"><span>└── ...</span></span></code></pre></div></figure>",
+  "style": {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "14px",
+   "line-height": "20px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "background-color": "rgb(255, 255, 255)",
+   "border-top": "1px solid rgb(234, 232, 230)",
+   "border-right": "1px solid rgb(234, 232, 230)",
+   "border-bottom": "1px solid rgb(234, 232, 230)",
+   "border-left": "1px solid rgb(234, 232, 230)",
+   "border-radius": "12px",
+   "margin": "16px 0px",
+   "display": "block",
+   "width": "655.078px",
+   "height": "122.812px",
+   "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 1px 3px 0px, rgba(0, 0, 0, 0.1) 0px 1px 2px -1px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "position": "relative",
+   "overflow-x": "hidden",
+   "overflow-y": "hidden",
+   "tab-size": "4",
+   "rect": [
+    380,
+    1084.6,
+    655.1,
+    122.8
+   ],
+   "tag": "figure",
+   "cls": "my-4 bg-fd-card rounded-xl shiki relative border shadow-sm not-prose overflow-hidden text-sm shiki shiki-themes github-light github-dark",
+   "text": "your-repo/\n├── .conductor/\n│   └── settings.toml\n├"
+  }
+ },
+ "ConfigureProjectPrompt": {
+  "html": "<section class=\"not-prose my-6 rounded-lg border border-border/80 bg-muted/20 p-4\"><div class=\"flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between\"><div class=\"max-w-2xl\"><h2 class=\"m-0 text-sm font-medium text-foreground\">Configure with Conductor</h2><p class=\"m-0 mt-1 text-sm leading-6 text-muted-foreground\">Open Conductor with the shared settings.toml setup prompt pre-filled, or copy it into an existing workspace.</p></div><div class=\"flex shrink-0 flex-col gap-2 sm:flex-row\"><a href=\"conductor://prompt=Use%20the%20bundled%20Conductor%20skill.%0A%0ARead%20the%20relevant%20docs%3A%0A-%20https%3A%2F%2Fwww.conductor.build%2Fdocs%2Freference%2Fsettings%0A-%20https%3A%2F%2Fwww.conductor.build%2Fdocs%2Freference%2Fscripts%0A%0AInspect%20this%20repo%20and%20create%20or%20update%20the%20%60.conductor%2Fsettings.local.toml%60%20file%20in%20the%20repo%20root%20with%20the%20best%20local%20Conductor%20config%20for%20this%20repository.%0A%0ARequirements%3A%0A-%20If%20%60.conductor%2Fsettings.local.toml%60%20already%20exists%2C%20preserve%20its%20existing%20settings%20unless%20clearly%20wrong.%0A-%20Inspect%20%60.conductor%2Fsettings.toml%60%20if%20it%20exists%2C%20but%20treat%20it%20as%20inherited%20shared%20defaults.%20Do%20not%20edit%20or%20duplicate%20shared%20settings%20unless%20a%20local%20override%20is%20needed.%0A-%20Stamp%20the%20schema%20at%20the%20top%20for%20validation%3A%20%60%22%24schema%22%20%3D%20%22https%3A%2F%2Fconductor.build%2Fschemas%2Fsettings.repo.schema.json%22%60.%0A-%20Configure%20the%20%60%5Bscripts%5D%60%20table%20as%20fully%20as%20makes%20sense%3B%20baseline%20is%20a%20setup%20script%20with%20%60scripts.setup%60%2C%20plus%20%60scripts.run%60%20and%20%60scripts.archive%60.%0A-%20Follow%20the%20repo's%20existing%20package%20manager%2C%20scripts%2C%20and%20setup%20conventions.%0A-%20Keep%20commands%20simple%2C%20non-interactive%2C%20non-destructive%2C%20and%20workspace-safe.%0A-%20Use%20%60CONDUCTOR_PORT%60%20for%20actions%20(%60scripts.run%60)%20when%20the%20project%20supports%20configurable%20ports.%0A-%20Set%20%60scripts.run_mode%60%20if%20concurrency%20behavior%20is%20clear.%0A-%20Use%20the%20%60%5Bscripts%5D%60%20table%20in%20%60.conductor%2Fsettings.local.toml%60%3B%20do%20not%20create%20a%20legacy%20%60conductor.json%60%20file.%0A-%20Recommend%20%60.conductor%2Fsettings.toml%60%20only%20when%20the%20user%20explicitly%20wants%20a%20shared%2C%20committed%20team%20default.%0A%0AInspect%20the%20usual%20sources%3A%20package%20files%2C%20lockfiles%2C%20README%2Fcontributing%20docs%2C%20Makefile%2Fjustfile%2Ftaskfile%2C%20Docker%2FProcfile%20config%2C%20and%20existing%20%60scripts%2F%60%20or%20%60bin%2F%60.%0A%0AAfter%20editing%2C%20validate%20the%20TOML%20and%20summarize%20what%20you%20configured%2C%20why%2C%20what%20remains%20inherited%20from%20shared%20settings%2C%20and%20one%20quick%20Conductor%20test%20I%20can%20run.\" class=\"inline-flex items-center justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/35 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 bg-foreground text-background hover:bg-foreground/90 font-medium px-3 py-4 text-sm gap-2 rounded-md h-9\">Open Conductor<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-external-link size-3.5\" aria-hidden=\"true\"><path d=\"M15 3h6v6\"></path><path d=\"M10 14 21 3\"></path><path d=\"M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6\"></path></svg></a><button class=\"inline-flex items-center justify-center whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-foreground/35 focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:shrink-0 border border-border bg-background/50 backdrop-blur-md hover:bg-secondary hover:text-secondary-foreground font-medium px-3 py-4 text-sm gap-2 rounded-md h-9\" type=\"button\"><svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" class=\"lucide lucide-copy size-3.5\" aria-hidden=\"true\"><rect width=\"14\" height=\"14\" x=\"8\" y=\"8\" rx=\"2\" ry=\"2\"></rect><path d=\"M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2\"></path></svg>Copy prompt</button></div></div><details class=\"mt-4 rounded-md border border-border/70 bg-background\"><summary class=\"cursor-pointer px-3 py-2 text-sm font-medium text-muted-foreground hover:text-foreground\">View prompt</summary><pre class=\"m-0 max-h-80 overflow-auto whitespace-pre-wrap border-t border-border/70 p-3 text-xs leading-5 text-foreground\">Use the bundled Conductor skill.\n\nRead the relevant docs:\n- https://www.conductor.build/docs/reference/settings\n- https://www.conductor.build/docs/reference/scripts\n\nInspect this repo and create or update the `.conductor/settings.local.toml` file in the repo root with the best local Conductor config for this repository.\n\nRequirements:\n- If `.conductor/settings.local.toml` already exists, preserve its existing settings unless clearly wrong.\n- Inspect `.conductor/settings.toml` if it exists, but treat it as inherited shared defaults. Do not edit or duplicate shared settings unless a local override is needed.\n- Stamp the schema at the top for validation: `\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"`.\n- Configure the `[scripts]` table as fully as makes sense; baseline is a setup script with `scripts.setup`, plus `scripts.run` and `scripts.archive`.\n- Follow the repo's existing package manager, scripts, and setup conventions.\n- Keep commands simple, non-interactive, non-destructive, and workspace-safe.\n- Use `CONDUCTOR_PORT` for actions (`scripts.run`) when the project supports configurable ports.\n- Set `scripts.run_mode` if concurrency behavior is clear.\n- Use the `[scripts]` table in `.conductor/settings.local.toml`; do not create a legacy `conductor.json` file.\n- Recommend `.conductor/settings.toml` only when the user explicitly wants a shared, committed team default.\n\nInspect the usual sources: package files, lockfiles, README/contributing docs, Makefile/justfile/taskfile, Docker/Procfile config, and existing `scripts/` or `bin/`.\n\nAfter editing, validate the TOML and summarize what you configured, why, what remains inherited from shared settings, and one quick Conductor test I can run.</pre></details></section>",
+  "style": {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "16px",
+   "line-height": "28px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "background-color": "oklab(0.984819 -0.000328124 0.00128484 / 0.2)",
+   "border-top": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-right": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-bottom": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-left": "1px solid oklab(0.931979 0.0013504 0.0032205 / 0.8)",
+   "border-radius": "8px",
+   "padding": "16px",
+   "margin": "24px 0px",
+   "display": "block",
+   "width": "655.078px",
+   "height": "184px",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "1",
+   "tab-size": "4",
+   "rect": [
+    380,
+    460.7,
+    655.1,
+    184
+   ],
+   "tag": "section",
+   "cls": "not-prose my-6 rounded-lg border border-border/80 bg-muted/20 p-4",
+   "text": "Configure with Conductor\n\nOpen Conductor with the "
+  }
+ },
+ "CityProbabilityCurve": {
+  "html": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\"></path></svg>",
+  "style": {
+   "font-family": "Geist, -apple-system, \"system-ui\", \"Segoe UI\", sans-serif, ui-sans-serif, system-ui, sans-serif",
+   "font-size": "14px",
+   "line-height": "20px",
+   "font-weight": "400",
+   "color": "rgb(117, 111, 108)",
+   "border-top": "0px solid rgb(234, 232, 230)",
+   "border-right": "0px solid rgb(234, 232, 230)",
+   "border-bottom": "0px solid rgb(234, 232, 230)",
+   "border-left": "0px solid rgb(234, 232, 230)",
+   "display": "block",
+   "width": "14px",
+   "height": "14px",
+   "text-decoration-color": "rgb(117, 111, 108)",
+   "opacity": "1",
+   "overflow-x": "hidden",
+   "overflow-y": "hidden",
+   "tab-size": "4",
+   "rect": [
+    397,
+    1288,
+    14,
+    14
+   ],
+   "tag": "svg",
+   "cls": "",
+   "text": ""
+  }
+ },
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/configure-your-project",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  },
+  {
+   "url": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+   "status": 200,
+   "type": "image",
+   "ct": "image/png"
+  }
+ ]
+}

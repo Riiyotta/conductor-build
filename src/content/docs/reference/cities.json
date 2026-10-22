@@ -1,0 +1,825 @@
+{
+  "slug": "reference/cities",
+  "url": "/docs/reference/cities",
+  "title": "Cities",
+  "description": "How Conductor names workspaces after cities",
+  "meta": {
+    "title": "Cities | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/cities/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Cities"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#why-cities-exist",
+      "title": "Why cities exist"
+    },
+    {
+      "depth": 2,
+      "url": "#passport",
+      "title": "Passport"
+    },
+    {
+      "depth": 2,
+      "url": "#finding-every-city",
+      "title": "Finding every city"
+    },
+    {
+      "depth": 2,
+      "url": "#chance-of-seeing-all-cities",
+      "title": "Chance of seeing all cities"
+    },
+    {
+      "depth": 2,
+      "url": "#confidence-milestones",
+      "title": "Confidence milestones"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/scripts/spotlight-testing",
+    "title": "Spotlight testing",
+    "description": "Test one workspace from the repository root"
+  },
+  "next": {
+    "url": "/docs/reference/settings",
+    "title": "Overview",
+    "description": "How Conductor settings configure workspaces, scripts, agents, and projects"
+  },
+  "components": [
+    "CityProbabilityCurve"
+  ],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Every Conductor workspace gets a city name."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cities make workspace names memorable and distinct. They also give each workspace a stable directory base, so agents, shells, editors, and other tools can keep finding the same files on disk."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor still uses the branch name or pull request title as the main way to identify active work. In the sidebar, the work item is primary; the city name is the place where that work lives."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "why-cities-exist",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why cities exist"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor creates isolated workspaces so you can run agents in parallel without making them fight over one checkout. Each workspace gets its own branch, working tree, files, running processes, and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".context"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " folder."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The city name is the friendly, durable part of that workspace location. For example, a workspace might live in a directory like "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "san-antonio-v3"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " while the branch explains what the workspace is doing."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the underlying workspace model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workspaces-and-branches"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Isolated workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "passport",
+      "children": [
+        {
+          "type": "text",
+          "value": "Passport"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can see the cities you have visited in Passport. Open it from "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command K",
+          "keys": [
+            "⌘",
+            "K"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": " and search for "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Passport"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Passport is mostly for fun. It turns your workspace history into a little travel log, including the rare cities you have found along the way."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "finding-every-city",
+      "children": [
+        {
+          "type": "text",
+          "value": "Finding every city"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor currently has 295 cities."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you keep every spawned workspace active, Conductor avoids city bases that are already active. In that case, finding all cities is deterministic: it is impossible before 295 active workspaces and guaranteed at 295 active workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The probabilities below describe a different situation: visiting cities over time, where archived or deleted workspaces no longer prevent repeats. In that model, repeats are possible, and the last few cities take much longer to find."
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "CityProbabilityCurve",
+      "props": {},
+      "children": []
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "chance-of-seeing-all-cities",
+      "children": [
+        {
+          "type": "text",
+          "value": "Chance of seeing all cities"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Approximate likelihood of having seen all 295 cities after "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "n"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " workspace spawns:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Workspaces spawned"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Chance all cities seen"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "5,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "0.29%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "6,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1.68%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "7,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "5.34%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "8,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "11.81%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "9,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "20.69%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "10,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "30.99%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "11,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "41.65%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "12,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "51.83%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "13,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "60.98%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "14,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "68.87%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "15,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "75.47%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "16,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "80.84%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "18,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "88.55%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "20,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "93.27%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "22,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "96.08%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "24,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "97.74%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "26,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "98.70%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "28,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "99.25%"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "30,000"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "99.57%"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "confidence-milestones",
+      "children": [
+        {
+          "type": "text",
+          "value": "Confidence milestones"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Confidence"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Workspaces needed"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "50%"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "~11,815"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "75%"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "~14,923"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "90%"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "~18,516"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "95%"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "~21,101"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "99%"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "~26,964"
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "html": "<p>Every Conductor workspace gets a city name.</p><p>Cities make workspace names memorable and distinct. They also give each workspace a stable directory base, so agents, shells, editors, and other tools can keep finding the same files on disk.</p><p>Conductor still uses the branch name or pull request title as the main way to identify active work. In the sidebar, the work item is primary; the city name is the place where that work lives.</p><h2 id=\"why-cities-exist\"><a href=\"#why-cities-exist\">Why cities exist</a></h2><p>Conductor creates isolated workspaces so you can run agents in parallel without making them fight over one checkout. Each workspace gets its own branch, working tree, files, running processes, and <code>.context</code> folder.</p><p>The city name is the friendly, durable part of that workspace location. For example, a workspace might live in a directory like <code>san-antonio-v3</code> while the branch explains what the workspace is doing.</p><p>For the underlying workspace model, see <a href=\"/docs/concepts/workspaces-and-branches\">Isolated workspaces</a>.</p><h2 id=\"passport\"><a href=\"#passport\">Passport</a></h2><p>You can see the cities you have visited in Passport. Open it from <span data-shortcut aria-label=\"Command K\"><kbd>⌘</kbd><span data-sep>+</span><kbd>K</kbd></span> and search for <code>Passport</code>.</p><p>Passport is mostly for fun. It turns your workspace history into a little travel log, including the rare cities you have found along the way.</p><h2 id=\"finding-every-city\"><a href=\"#finding-every-city\">Finding every city</a></h2><p>Conductor currently has 295 cities.</p><p>If you keep every spawned workspace active, Conductor avoids city bases that are already active. In that case, finding all cities is deterministic: it is impossible before 295 active workspaces and guaranteed at 295 active workspaces.</p><p>The probabilities below describe a different situation: visiting cities over time, where archived or deleted workspaces no longer prevent repeats. In that model, repeats are possible, and the last few cities take much longer to find.</p><div data-component=\"CityProbabilityCurve\" data-props=\"{}\"></div><h2 id=\"chance-of-seeing-all-cities\"><a href=\"#chance-of-seeing-all-cities\">Chance of seeing all cities</a></h2><p>Approximate likelihood of having seen all 295 cities after <code>n</code> workspace spawns:</p><table><thead><tr><th>Workspaces spawned</th><th>Chance all cities seen</th></tr></thead><tbody><tr><td>5,000</td><td>0.29%</td></tr><tr><td>6,000</td><td>1.68%</td></tr><tr><td>7,000</td><td>5.34%</td></tr><tr><td>8,000</td><td>11.81%</td></tr><tr><td>9,000</td><td>20.69%</td></tr><tr><td>10,000</td><td>30.99%</td></tr><tr><td>11,000</td><td>41.65%</td></tr><tr><td>12,000</td><td>51.83%</td></tr><tr><td>13,000</td><td>60.98%</td></tr><tr><td>14,000</td><td>68.87%</td></tr><tr><td>15,000</td><td>75.47%</td></tr><tr><td>16,000</td><td>80.84%</td></tr><tr><td>18,000</td><td>88.55%</td></tr><tr><td>20,000</td><td>93.27%</td></tr><tr><td>22,000</td><td>96.08%</td></tr><tr><td>24,000</td><td>97.74%</td></tr><tr><td>26,000</td><td>98.70%</td></tr><tr><td>28,000</td><td>99.25%</td></tr><tr><td>30,000</td><td>99.57%</td></tr></tbody></table><h2 id=\"confidence-milestones\"><a href=\"#confidence-milestones\">Confidence milestones</a></h2><table><thead><tr><th>Confidence</th><th>Workspaces needed</th></tr></thead><tbody><tr><td>50%</td><td>~11,815</td></tr><tr><td>75%</td><td>~14,923</td></tr><tr><td>90%</td><td>~18,516</td></tr><tr><td>95%</td><td>~21,101</td></tr><tr><td>99%</td><td>~26,964</td></tr></tbody></table>",
+  "text": "Every Conductor workspace gets a city name.\nCities make workspace names memorable and distinct. They also give each workspace a stable directory base, so agents, shells, editors, and other tools can keep finding the same files on disk.\nConductor still uses the branch name or pull request title as the main way to identify active work. In the sidebar, the work item is primary; the city name is the place where that work lives.\nWhy cities exist\nConductor creates isolated workspaces so you can run agents in parallel without making them fight over one checkout. Each workspace gets its own branch, working tree, files, running processes, and .context folder.\nThe city name is the friendly, durable part of that workspace location. For example, a workspace might live in a directory like san-antonio-v3 while the branch explains what the workspace is doing.\nFor the underlying workspace model, see Isolated workspaces.\nPassport\nYou can see the cities you have visited in Passport. Open it from ⌘K and search for Passport.\nPassport is mostly for fun. It turns your workspace history into a little travel log, including the rare cities you have found along the way.\nFinding every city\nConductor currently has 295 cities.\nIf you keep every spawned workspace active, Conductor avoids city bases that are already active. In that case, finding all cities is deterministic: it is impossible before 295 active workspaces and guaranteed at 295 active workspaces.\nThe probabilities below describe a different situation: visiting cities over time, where archived or deleted workspaces no longer prevent repeats. In that model, repeats are possible, and the last few cities take much longer to find.\nChance of seeing all cities\nApproximate likelihood of having seen all 295 cities after n workspace spawns:\nWorkspaces spawnedChance all cities seen5,0000.29%6,0001.68%7,0005.34%8,00011.81%9,00020.69%10,00030.99%11,00041.65%12,00051.83%13,00060.98%14,00068.87%15,00075.47%16,00080.84%18,00088.55%20,00093.27%22,00096.08%24,00097.74%26,00098.70%28,00099.25%30,00099.57%Confidence milestones\nConfidenceWorkspaces needed50%~11,81575%~14,92390%~18,51695%~21,10199%~26,964",
+  "markdown": "\n# Cities\n\n\n\nEvery Conductor workspace gets a city name.\n\nCities make workspace names memorable and distinct. They also give each workspace a stable directory base, so agents, shells, editors, and other tools can keep finding the same files on disk.\n\nConductor still uses the branch name or pull request title as the main way to identify active work. In the sidebar, the work item is primary; the city name is the place where that work lives.\n\n## Why cities exist [#why-cities-exist]\n\nConductor creates isolated workspaces so you can run agents in parallel without making them fight over one checkout. Each workspace gets its own branch, working tree, files, running processes, and `.context` folder.\n\nThe city name is the friendly, durable part of that workspace location. For example, a workspace might live in a directory like `san-antonio-v3` while the branch explains what the workspace is doing.\n\nFor the underlying workspace model, see [Isolated workspaces](/docs/concepts/workspaces-and-branches).\n\n## Passport [#passport]\n\nYou can see the cities you have visited in Passport. Open it from Command + K and search for `Passport`.\n\nPassport is mostly for fun. It turns your workspace history into a little travel log, including the rare cities you have found along the way.\n\n## Finding every city [#finding-every-city]\n\nConductor currently has 295 cities.\n\nIf you keep every spawned workspace active, Conductor avoids city bases that are already active. In that case, finding all cities is deterministic: it is impossible before 295 active workspaces and guaranteed at 295 active workspaces.\n\nThe probabilities below describe a different situation: visiting cities over time, where archived or deleted workspaces no longer prevent repeats. In that model, repeats are possible, and the last few cities take much longer to find.\n\n\n\n\n## Chance of seeing all cities [#chance-of-seeing-all-cities]\n\nApproximate likelihood of having seen all 295 cities after `n` workspace spawns:\n\n| Workspaces spawned | Chance all cities seen |\n| ------------------ | ---------------------- |\n| 5,000              | 0.29%                  |\n| 6,000              | 1.68%                  |\n| 7,000              | 5.34%                  |\n| 8,000              | 11.81%                 |\n| 9,000              | 20.69%                 |\n| 10,000             | 30.99%                 |\n| 11,000             | 41.65%                 |\n| 12,000             | 51.83%                 |\n| 13,000             | 60.98%                 |\n| 14,000             | 68.87%                 |\n| 15,000             | 75.47%                 |\n| 16,000             | 80.84%                 |\n| 18,000             | 88.55%                 |\n| 20,000             | 93.27%                 |\n| 22,000             | 96.08%                 |\n| 24,000             | 97.74%                 |\n| 26,000             | 98.70%                 |\n| 28,000             | 99.25%                 |\n| 30,000             | 99.57%                 |\n\n## Confidence milestones [#confidence-milestones]\n\n| Confidence | Workspaces needed |\n| ---------- | ----------------- |\n| 50%        | \\~11,815          |\n| 75%        | \\~14,923          |\n| 90%        | \\~18,516          |\n| 95%        | \\~21,101          |\n| 99%        | \\~26,964          |\n"
+}

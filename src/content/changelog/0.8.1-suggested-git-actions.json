@@ -1,0 +1,32 @@
+{
+  "slug": "0.8.1-suggested-git-actions",
+  "version": "0.8.1",
+  "versionSlug": "0.8.1",
+  "title": "Suggested Git Actions",
+  "fullTitle": "0.8.1: Suggested Git Actions",
+  "date": "August 25th, 2025",
+  "dateISO": "2025-08-25",
+  "description": "Conductor 0.8.1 changelog - Suggested Git Actions",
+  "summary": "Conductor now recommends each step on the way to merging your PR. Click the button in the top right to take the next action.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.8.1/39c8081c-9827-4e2d-ad73-63eab3c81016.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.8.1-suggested-git-actions/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.8.1-suggested-git-actions",
+  "sourceUrl": "https://www.conductor.build/changelog/0.8.1-suggested-git-actions",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Conductor now recommends each step on the way to merging your PR. Click the button in the top right to take the next action.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.8.1/39c8081c-9827-4e2d-ad73-63eab3c81016.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Auto focus the terminal when opening and closing tabs</li>\n<li>Updated font weights and styles</li>\n<li>Add Sublime Text to the &quot;Open In&quot; menu</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Show the correct creation time for workspaces in the sidebar</li>\n<li>Better performance when fetching Linear issues</li>\n<li>Switching between custom providers in a workspace is more reliable</li>\n<li>Updated the compact icon used in the chat</li>\n</ul>",
+  "markdown": "\nConductor now recommends each step on the way to merging your PR. Click the button in the top right to take the next action.\n\n<img\n    width=\"1250\"\n    height=\"1006\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.8.1/39c8081c-9827-4e2d-ad73-63eab3c81016.png\"\n/>\n\n## Improvements\n\n- Auto focus the terminal when opening and closing tabs\n- Updated font weights and styles\n- Add Sublime Text to the \"Open In\" menu\n\n## Fixes\n\n- Show the correct creation time for workspaces in the sidebar\n- Better performance when fetching Linear issues\n- Switching between custom providers in a workspace is more reliable\n- Updated the compact icon used in the chat\n"
+}

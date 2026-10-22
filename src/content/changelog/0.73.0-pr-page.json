@@ -1,0 +1,40 @@
+{
+  "slug": "0.73.0-pr-page",
+  "version": "0.73.0",
+  "versionSlug": "0.73.0",
+  "title": "PR page",
+  "fullTitle": "0.73.0: PR page",
+  "date": "July 7, 2026",
+  "dateISO": "2026-07-07",
+  "description": "Conductor 0.73.0 changelog - PR page",
+  "summary": "You can now review a PR without leaving Conductor: view comments and checks, edit the title and description, and merge.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/pr-page-0.73.0.png",
+    "alt": "A pull request in Conductor's new PR page, with merge button, checks, and comments"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.73.0-pr-page/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.73.0-pr-page",
+  "sourceUrl": "https://www.conductor.build/changelog/0.73.0-pr-page",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.73.1"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"A pull request in Conductor&#x27;s new PR page, with merge button, checks, and comments\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/pr-page-0.73.0.png\"/></figure>\n<p>You can now review a PR without leaving Conductor: view comments and checks, edit the title and description, and merge.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Workspaces with an unsent draft message now show a pencil icon in the sidebar</li>\n<li>Workspaces in the sidebar now animate when they move</li>\n<li>In repo settings, you can now hide run scripts that you don&#x27;t personally use</li>\n<li>Cleaned up styling for code blocks</li>\n<li>Improved support for Conductor&#x27;s workspace tools (diff, comments, terminal) in Codex and Cursor</li>\n<li>Better support for Claude Code background tasks</li>\n<li>Better rendering for when Claude Code chooses to fall back from Fable to a different model</li>\n<li>The Conductor setup prompt now configures repository-local settings by default</li>\n<li>Reduced background file sync work in cloud workspaces</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where repos whose git remote uses an SSH config host alias would be missing PR info</li>\n<li>Fixed an issue where the Changes view could show stale diff content until the app was restarted</li>\n<li>Fixed a crash where a file could appear twice in the changes list and multiply while scrolling</li>\n<li>Fixed run script defaults so each workspace remembers its last script</li>\n<li>Fixed an issue where running a local task in a cloud workspace could fail with missing dependencies on the first run</li>\n<li>Fixed an issue where Codex skills didn&#x27;t appear in the slash command menu in cloud workspaces</li>\n<li>Fixed pickers and dropdowns inside dialogs (e.g. the model picker in the new-workspace dialog) closing instantly or losing hover highlight</li>\n<li>Fixed the MCP server list overflowing the window when many servers are configured</li>\n<li>Fixed showing a &quot;drop here&quot; icon for dragged text it couldn&#x27;t accept</li>\n<li>Fixed the dispatcher&#x27;s add-project menu closing immediately after opening it from the repo picker</li>\n<li>Fixed an issue where the passport stopped counting cities for renamed workspaces, leaving the visited-cities count stuck</li>\n<li>Fixed an issue where if the workspace was corrupted, Conductor&#x27;s git operations could run against a git repo in a parent directory</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Clear error screen when the Intel version is opened on an Apple Silicon Mac</li>\n</ul>\n<h4>New in 0.73.1</h4>\n<ul>\n<li>Fixed an issue where uncompleted todos could block merging a pull request</li>\n<li>Moved the AI review button back to the git panel toolbar</li>\n</ul>",
+  "markdown": "\n![A pull request in Conductor's new PR page, with merge button, checks, and comments](/assets/changelog/images/pr-page-0.73.0.png)\n\nYou can now review a PR without leaving Conductor: view comments and checks, edit the title and description, and merge.\n\n## Improvements\n\n- Workspaces with an unsent draft message now show a pencil icon in the sidebar\n- Workspaces in the sidebar now animate when they move\n- In repo settings, you can now hide run scripts that you don't personally use\n- Cleaned up styling for code blocks\n- Improved support for Conductor's workspace tools (diff, comments, terminal) in Codex and Cursor\n- Better support for Claude Code background tasks\n- Better rendering for when Claude Code chooses to fall back from Fable to a different model\n- The Conductor setup prompt now configures repository-local settings by default\n- Reduced background file sync work in cloud workspaces\n\n## Fixes\n\n- Fixed an issue where repos whose git remote uses an SSH config host alias would be missing PR info\n- Fixed an issue where the Changes view could show stale diff content until the app was restarted\n- Fixed a crash where a file could appear twice in the changes list and multiply while scrolling\n- Fixed run script defaults so each workspace remembers its last script\n- Fixed an issue where running a local task in a cloud workspace could fail with missing dependencies on the first run\n- Fixed an issue where Codex skills didn't appear in the slash command menu in cloud workspaces\n- Fixed pickers and dropdowns inside dialogs (e.g. the model picker in the new-workspace dialog) closing instantly or losing hover highlight\n- Fixed the MCP server list overflowing the window when many servers are configured\n- Fixed showing a \"drop here\" icon for dragged text it couldn't accept\n- Fixed the dispatcher's add-project menu closing immediately after opening it from the repo picker\n- Fixed an issue where the passport stopped counting cities for renamed workspaces, leaving the visited-cities count stuck\n- Fixed an issue where if the workspace was corrupted, Conductor's git operations could run against a git repo in a parent directory\n\n## Misc\n\n- Clear error screen when the Intel version is opened on an Apple Silicon Mac\n\n### New in 0.73.1\n\n- Fixed an issue where uncompleted todos could block merging a pull request\n- Moved the AI review button back to the git panel toolbar\n"
+}

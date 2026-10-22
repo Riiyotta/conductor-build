@@ -1,0 +1,19 @@
+{
+  "slug": "0.36.6-bug-fixes",
+  "version": "0.36.6",
+  "versionSlug": "0.36.6",
+  "title": "Bug Fixes",
+  "fullTitle": "0.36.6: Bug Fixes",
+  "date": "Feb 27th, 2026",
+  "dateISO": "2026-02-27",
+  "description": "Conductor 0.36.6 changelog - Bug Fixes",
+  "summary": "We’ve updated the Claude Agent SDK to 0.36.6 to fix a bug with prompt caching.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.36.6-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.6-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.6-bug-fixes",
+  "headings": [],
+  "html": "<p>We’ve updated the Claude Agent SDK to 0.36.6 to fix a bug with <a href=\"https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2162\" target=\"_blank\" rel=\"noopener noreferrer\">prompt caching</a>.</p>",
+  "markdown": "\nWe’ve updated the Claude Agent SDK to 0.36.6 to fix a bug with [prompt caching](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md#2162).\n"
+}

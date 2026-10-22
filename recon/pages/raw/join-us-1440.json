@@ -1,0 +1,1378 @@
+{
+ "url": "https://www.conductor.build/join-us",
+ "title": "Join us | Conductor",
+ "desc": "We're building Conductor in San Francisco and hiring engineers and designers to shape the future of AI-native software development.",
+ "docH": 3377,
+ "docW": 1440,
+ "vw": 1440,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 1440,
+   "height": 57,
+   "top": 0,
+   "right": 1440,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 3044.2,
+ "footerH": 333,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/about.webp",
+  "https://www.conductor.build/_next/image?url=%2Fcharlie.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fjackson.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fteam%2Fkaden.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fsam.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fteam%2Fguillaume.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fteam%2Ftywen.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Fteam%2Flewis.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK"
+ ],
+ "anims": [
+  {
+   "t": "nav.top-nav-scroll-mask.hidden.max-w-[calc(100vw-10rem)].items-center.gap-6.over",
+   "n": "top-nav-scroll-mask-x",
+   "d": "auto",
+   "e": "linear",
+   "it": 1,
+   "ps": "running"
+  }
+ ],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    1440,
+    2987.2
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    270,
+    57,
+    900,
+    2987.2
+   ],
+   "p": "96px 32px",
+   "m": "0px 270px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.mb-4.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    336,
+    153,
+    768,
+    40
+   ],
+   "t": "Join Conductor",
+   "f": "36px/40px 600 ls:-0.9px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p.max-w-2xl.text-sm.leading-6.text-muted-foreground.sm:text-base",
+   "b": [
+    336,
+    209,
+    672,
+    48
+   ],
+   "t": "We're building Conductor in San Francisco and hiring engineers and designers to shape the future of AI-native software development.",
+   "f": "16px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "mw": "672px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    297,
+    768,
+    84
+   ],
+   "t": "Conductor lets you run a team of coding agents on your Mac. We've grown 10x since January and raised $24M from some of the top investors in Silicon Valley. We'r",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 20px"
+  },
+  {
+   "k": "a.not-prose.my-8.flex.items-center.gap-3.rounded-lg.border.border-border.border-dashed.p-3.text-sm.transition-colors.hover:bg-muted/50",
+   "b": [
+    336,
+    413,
+    768,
+    74
+   ],
+   "f": "14px/20px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "12px",
+   "m": "32px 0px",
+   "d": "flex row ai:center jc:normal gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://www.ycombinator.com/companies/conductor/jobs target=_blank"
+  },
+  {
+   "k": "div.flex.h-12.w-12.items-center.justify-center.rounded-md.bg-[#F5F5F5].text-lg.text-muted-foreground",
+   "b": [
+    349,
+    426,
+    48,
+    48
+   ],
+   "bg": "rgb(245, 245, 245)",
+   "rad": "6px",
+   "d": "flex row ai:center jc:center",
+   "cur": "pointer"
+  },
+  {
+   "k": "svg.lucide.lucide-arrow-up-right.h-4.w-4",
+   "b": [
+    365,
+    442,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 lucide lucide-arrow-up-right h-4 w-4 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "span.flex.items-center.gap-2.font-bold.text-foreground",
+   "b": [
+    409,
+    428,
+    489.2,
+    20
+   ],
+   "t": "Apply to join us",
+   "f": "14px/20px 700 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "cur": "pointer"
+  },
+  {
+   "k": "p.pt-1",
+   "b": [
+    409,
+    448,
+    489.2,
+    24
+   ],
+   "t": "We're looking for exceptional engineers and designers to work with us in SF.",
+   "f": "14px/20px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "p": "4px 0px 0px",
+   "cur": "pointer"
+  },
+  {
+   "k": "h2.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    336,
+    535,
+    768,
+    32
+   ],
+   "f": "24px/31.9999px 700 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "48px 0px 24px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "our-plan"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    336,
+    535,
+    90.2,
+    32
+   ],
+   "t": "Our plan",
+   "f": "24px/31.9999px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#our-plan"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    434.2,
+    544,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    591,
+    768,
+    56
+   ],
+   "t": "Coding agents are doing work that junior engineers used to do. Soon they'll be doing senior-engineer work. In response, humans are becoming full-time AI-manager",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 20px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    667,
+    768,
+    84
+   ],
+   "t": "What software will these AI-managers use? Conductor has already created a narrow new product category, the \"AI orchestrator,\" and it's already changing how peop",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "blockquote",
+   "b": [
+    336,
+    776.6,
+    768,
+    56
+   ],
+   "bd": "0px 0px 0px 4px solid rgb(234, 232, 230)",
+   "p": "0px 0px 0px 16px",
+   "m": "25.6px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    356,
+    776.6,
+    748,
+    56
+   ],
+   "t": "A huge amount of my work now is wildly parallelized, in a way I've never had to worry about before. It's been a while since a dev tool has changed my life [like",
+   "f": "16px/28px 500 ls:normal italic  ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    858.2,
+    768,
+    56
+   ],
+   "t": "Right now, AI-managers use many tools alongside Conductor. They'll probably use existing coding software (Cursor, Warp, GitHub) and tools for human managers (Li",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    934.2,
+    768,
+    84
+   ],
+   "t": "Of all those tools, we think it's the AI orchestrator that has the best shot at becoming the primary UI that the AI-managers will use. Although it's the newest ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    1038.2,
+    768,
+    84
+   ],
+   "t": "Designing the first AI orchestrator from the ground up as we build it has been a ton of fun. It feels like a perfect match for the skillset of our team: technic",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "img.h-auto.w-full.rounded-lg",
+   "b": [
+    336,
+    1154.2,
+    768,
+    432
+   ],
+   "rad": "8px",
+   "m": "32px 0px",
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/about.webp nat:960x540 alt:Conductor team"
+  },
+  {
+   "k": "h2.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    336,
+    1634.2,
+    768,
+    32
+   ],
+   "f": "24px/31.9999px 700 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "48px 0px 24px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "our-team"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    336,
+    1634.2,
+    98.3,
+    32
+   ],
+   "t": "Our team",
+   "f": "24px/31.9999px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#our-team"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    442.3,
+    1643.2,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    1690.2,
+    768,
+    84
+   ],
+   "t": "One reason we started Conductor was to create a place where we could do the best work of our lives: in person, with incredible people, toward a formidable goal,",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 20px"
+  },
+  {
+   "k": "p",
+   "b": [
+    336,
+    1794.2,
+    768,
+    56
+   ],
+   "t": "We work in person about five days a week in San Francisco. Learn more about and .",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "a",
+   "b": [
+    336,
+    1799.2,
+    739.6,
+    46
+   ],
+   "t": "what it's like working at Conductor",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://conductor-build.notion.site/What-It-s-Like-Working-at-Conductor-29da076bd0f2808bad97e3a4b876c01a target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    450.2,
+    1827.2,
+    218,
+    18
+   ],
+   "t": "see what we've been building",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://x.com/search?src=typed_query&q=%40conductor_build target=_blank"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    1870.2,
+    768,
+    202
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    1887.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fcharlie.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Charlie Holtz"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    1887.2,
+    95.5,
+    24
+   ],
+   "t": "Charlie Holtz",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    522.5,
+    1887.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    533.3,
+    1887.2,
+    158,
+    24
+   ],
+   "t": "CEO and Co-Founder",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    697.2,
+    1889.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/charlieholtz target=_blank",
+   "aria": "Charlie Holtz on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    701.2,
+    1893.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    1923.2,
+    666,
+    72
+   ],
+   "t": "Before Conductor, Charlie worked as a quantitative researcher at a , and led growth at Replicate where he created apps that were used by millions. One time he .",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "a",
+   "b": [
+    852.9,
+    1926.2,
+    73.8,
+    17
+   ],
+   "t": "hedge fund",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://point72.com/ target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    421,
+    1950.2,
+    650.7,
+    41
+   ],
+   "t": "accidentally struck fear into the heart of Hollywood",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://web.archive.org/web/20231117033051/https://www.businessinsider.com/david-attenborough-ai-video-hollywood-actors-afraid-sag-aftra-2023-11 target=_blank"
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2007.2,
+    666,
+    48
+   ],
+   "t": "Charlie started Conductor with Jackson in the summer of 2024 to build the best interface for managing your AIs, eat lots of ice cream, and do the best work of o",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2088.2,
+    768,
+    166
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2105.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fjackson.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Jackson de Campos"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2105.2,
+    149.3,
+    24
+   ],
+   "t": "Jackson de Campos",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    576.3,
+    2105.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    587,
+    2105.2,
+    157.8,
+    24
+   ],
+   "t": "CTO and Co-Founder",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    750.8,
+    2107.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/jacksondecampos target=_blank",
+   "aria": "Jackson de Campos on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    754.8,
+    2111.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2141.2,
+    666,
+    96
+   ],
+   "t": "Jackson first learned to code in Microsoft Visual Basic 2005, and he's been hooked ever since. Before starting Conductor, he built ML infrastructure at Netflix,",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a",
+   "b": [
+    617,
+    2192.2,
+    48.3,
+    17
+   ],
+   "t": "Shindig",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://shindig.life/ target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    667.7,
+    2216.2,
+    204.3,
+    17
+   ],
+   "t": "Garner's Modern English Usage",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://en.wikipedia.org/wiki/Garner%27s_Modern_English_Usage target=_blank"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2270.2,
+    768,
+    94
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2287.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fteam%2Fguillaume.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Guillaume Sabran"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2287.2,
+    130.2,
+    24
+   ],
+   "t": "Guillaume Sabran",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    557.2,
+    2287.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    567.9,
+    2287.2,
+    138.7,
+    24
+   ],
+   "t": "Founding Engineer",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    712.6,
+    2289.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/guisabran target=_blank",
+   "aria": "Guillaume Sabran on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    716.6,
+    2293.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2323.2,
+    666,
+    24
+   ],
+   "t": "Guillaume worked as a staff engineer at Airbnb, and before that he was at Snap.",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2380.2,
+    768,
+    94
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2397.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fteam%2Flewis.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Lewis Ellis"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2397.2,
+    75.6,
+    24
+   ],
+   "t": "Lewis Ellis",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    502.6,
+    2397.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    513.3,
+    2397.2,
+    65.4,
+    24
+   ],
+   "t": "Engineer",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    584.7,
+    2399.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/NotTuxedoSam target=_blank",
+   "aria": "Lewis Ellis on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    588.7,
+    2403.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2433.2,
+    666,
+    24
+   ],
+   "t": "Lewis worked at YC. Before that he was at Pave. He likes .",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a",
+   "b": [
+    788.4,
+    2436.2,
+    59.2,
+    17
+   ],
+   "t": "penguins",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://tuxedosam.dev/ target=_blank"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2490.2,
+    768,
+    118
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2507.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fteam%2Ftywen.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Tywen Kelly"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2507.2,
+    87.7,
+    24
+   ],
+   "t": "Tywen Kelly",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    514.7,
+    2507.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    525.4,
+    2507.2,
+    65.4,
+    24
+   ],
+   "t": "Engineer",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    596.8,
+    2509.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/tywenk target=_blank",
+   "aria": "Tywen Kelly on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    600.8,
+    2513.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2543.2,
+    666,
+    48
+   ],
+   "t": "Tywen is an artist turned engineer. He has imaged and wondered about . He has worked in VR, AI, and GovTech.",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a",
+   "b": [
+    746.6,
+    2546.2,
+    80.8,
+    17
+   ],
+   "t": "data centers",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://tywenkelly.com/Lensless-Horizon target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    967.8,
+    2546.2,
+    55.3,
+    17
+   ],
+   "t": "worlding",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://e-scapes.blog/posts/worlds-made-without-hands target=_blank"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2624.2,
+    768,
+    118
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2641.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fteam%2Fkaden.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Kaden Hyatt"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2641.2,
+    91.4,
+    24
+   ],
+   "t": "Kaden Hyatt",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    518.4,
+    2641.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    529.2,
+    2641.2,
+    65.4,
+    24
+   ],
+   "t": "Engineer",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    600.6,
+    2643.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/kaden_hyatt target=_blank",
+   "aria": "Kaden Hyatt on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    604.6,
+    2647.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2677.2,
+    666,
+    48
+   ],
+   "t": "Kaden is studying at the University of Chicago and was previously at Replit. He also co-created the card game .",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a",
+   "b": [
+    493.1,
+    2704.2,
+    92.9,
+    17
+   ],
+   "t": "Race to Kepler",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://racetokepler.com target=_blank"
+  },
+  {
+   "k": "article.not-prose.my-4.rounded-lg.border.border-border.border-dashed.p-4.first:mt-0.last:mb-0",
+   "b": [
+    336,
+    2758.2,
+    768,
+    190
+   ],
+   "bd": "1px 1px 1px 1px dashed rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px",
+   "m": "16px 0px 0px"
+  },
+  {
+   "k": "img.aspect-square.w-12.shrink-0.rounded-md.object-cover.sm:w-14",
+   "b": [
+    353,
+    2775.2,
+    56,
+    56
+   ],
+   "rad": "6px",
+   "mw": "100%",
+   "ov": "clip",
+   "of": "cover 50% 50%",
+   "src": "https://www.conductor.build/_next/image?url=%2Fsam.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:64x64 alt:Portrait of Sam Lehman"
+  },
+  {
+   "k": "span.block.sm:inline",
+   "b": [
+    421,
+    2775.2,
+    95.5,
+    24
+   ],
+   "t": "Sam Lehman",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span.hidden.sm:inline",
+   "b": [
+    522.5,
+    2775.2,
+    4.7,
+    24
+   ],
+   "t": "·",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    533.3,
+    2775.2,
+    103.4,
+    24
+   ],
+   "t": "Founding Ops",
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.size-5.items-center.justify-center.rounded-sm.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    642.6,
+    2777.2,
+    20,
+    20
+   ],
+   "f": "16px/24px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "rad": "4px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://x.com/splehman target=_blank",
+   "aria": "Sam Lehman on X"
+  },
+  {
+   "k": "svg.size-3",
+   "b": [
+    646.6,
+    2781.2,
+    12,
+    12
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 size-3 fill:rgb(117, 111, 108) stroke:none sw:1px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    421,
+    2811.2,
+    666,
+    120
+   ],
+   "t": "Sam wore many hats before donning his Conductor cap. He (literally) built a before serving as Chief of Staff at a $10B RIA. He then took a brief detour to get h",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a",
+   "b": [
+    911.6,
+    2814.2,
+    150.5,
+    17
+   ],
+   "t": "craft brewery in Seattle",
+   "f": "14px/24px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(234, 232, 230) off:2px",
+   "cur": "pointer",
+   "href": "https://www.instagram.com/fairislebrewing/?hl=en target=_blank"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/join-us",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "12700"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79666"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fcharlie.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "898"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fjackson.jpg&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "716"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fteam%2Fkaden.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "714"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fsam.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "942"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fteam%2Fguillaume.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "862"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fteam%2Ftywen.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "872"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Fteam%2Flewis.png&w=64&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "1146"
+  }
+ ]
+}

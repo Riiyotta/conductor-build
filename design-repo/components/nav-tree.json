@@ -1,0 +1,31 @@
+{
+  "id": "nav-tree",
+  "kind": "component",
+  "purpose": "Docs navigation tree (folders, pages, separators) shared by sidebar and drawer.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Sidebar.jsx:107",
+      "quote": "export function SidebarTree({ root, activeUrl, onNavigate }) {"
+    }
+  ],
+  "tokens": [
+    "{semantic.text.docs-active}",
+    "{semantic.surface.docs-active}",
+    "{motion.duration.folder-collapse}"
+  ],
+  "variants": [
+    "sidebar",
+    "drawer"
+  ],
+  "states": [
+    "page",
+    "active page",
+    "folder open/closed"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:110",
+      "quote": "### 1.3 Sidebar (desktop, `aside#nd-sidebar`)"
+    }
+  ]
+}

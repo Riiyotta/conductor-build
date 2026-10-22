@@ -1,0 +1,28 @@
+{
+  "slug": "0.18.4-better-create-pr-prompt",
+  "version": "0.18.4",
+  "versionSlug": "0.18.4",
+  "title": "Better Create PR Prompt",
+  "fullTitle": "0.18.4: Better Create PR Prompt",
+  "date": "Nov 4th, 2025",
+  "dateISO": "2025-11-04",
+  "description": "Conductor 0.18.4 changelog - Better Create PR Prompt",
+  "summary": "Claude is faster and aware of the current git status when creating PRs.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.18.4/0b13492e-8736-4691-941f-47b1e64ca125.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.18.4-better-create-pr-prompt/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.18.4-better-create-pr-prompt",
+  "sourceUrl": "https://www.conductor.build/changelog/0.18.4-better-create-pr-prompt",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Claude is faster and aware of the current git status when creating PRs.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.18.4/0b13492e-8736-4691-941f-47b1e64ca125.png\"/></figure>\n<p>Also, copy a workspace&#x27;s branch in one click.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.18.4/9e2ca9e4-2361-4a5c-a3f2-0a4870930431.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fix tab titles not always being in sync with Codex models</li>\n<li>Only highlight file in git panel when viewing diffs</li>\n<li>Fix markdown text wrapping in diffs</li>\n</ul>",
+  "markdown": "\nClaude is faster and aware of the current git status when creating PRs.\n\n<img\n    width=\"1184\"\n    height=\"924\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.18.4/0b13492e-8736-4691-941f-47b1e64ca125.png\"\n/>\n\nAlso, copy a workspace's branch in one click.\n\n<img\n    width=\"728\"\n    height=\"154\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.18.4/9e2ca9e4-2361-4a5c-a3f2-0a4870930431.png\"\n/>\n\n## Fixes\n\n- Fix tab titles not always being in sync with Codex models\n- Only highlight file in git panel when viewing diffs\n- Fix markdown text wrapping in diffs\n"
+}

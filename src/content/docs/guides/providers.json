@@ -1,0 +1,1978 @@
+{
+  "slug": "guides/providers",
+  "url": "/docs/guides/providers",
+  "title": "Configure model providers",
+  "description": "Set up Claude Code, Codex, OpenCode, and Cursor credentials in Conductor",
+  "meta": {
+    "title": "Configure model providers | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/providers/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Setup"
+    },
+    {
+      "name": "Configure model providers"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#claude-code",
+      "title": "Claude Code"
+    },
+    {
+      "depth": 2,
+      "url": "#codex",
+      "title": "Codex"
+    },
+    {
+      "depth": 2,
+      "url": "#opencode",
+      "title": "OpenCode"
+    },
+    {
+      "depth": 2,
+      "url": "#cursor",
+      "title": "Cursor"
+    },
+    {
+      "depth": 2,
+      "url": "#advanced-claude-code-providers",
+      "title": "Advanced Claude Code providers"
+    },
+    {
+      "depth": 3,
+      "url": "#openrouter",
+      "title": "OpenRouter"
+    },
+    {
+      "depth": 3,
+      "url": "#vercel-ai-gateway",
+      "title": "Vercel AI Gateway"
+    },
+    {
+      "depth": 3,
+      "url": "#bedrock",
+      "title": "Bedrock"
+    },
+    {
+      "depth": 3,
+      "url": "#glm",
+      "title": "GLM"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/use-files-to-copy",
+    "title": "Use Files to copy",
+    "description": "Copy .env files and other gitignored local config into local Conductor workspaces"
+  },
+  "next": {
+    "url": "/docs/guides/configure-mcp-servers",
+    "title": "Set up MCP servers",
+    "description": "Add MCP servers for Claude Code, Codex, and Cursor Composer workflows so agents can use shared tools and context"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor runs each chat through one harness. Configure harness auth in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when a provider needs environment variables."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor does not bill or resell model usage. Usage is billed by the provider account, subscription, usage pool, or API key used by the selected harness."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Harness"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure in"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Credential"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Notes"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Claude Code"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/providers?providerTab=claude",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Agents"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude Code"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Claude subscription, CLI auth, or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "ANTHROPIC_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment variables can route Claude Code to compatible providers."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/providers?providerTab=codex",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Agents"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Codex"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex sign-in, subscription, or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CODEX_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Vercel AI Gateway uses "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "AI_GATEWAY_API_KEY"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "OpenCode"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/providers?providerTab=opencode",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Agents"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "OpenCode"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "OpenCode provider API keys"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Visible models are managed in OpenCode settings."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cursor"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Agents"
+                      }
+                    ]
+                  },
+                  {
+                    "type": "text",
+                    "value": " -> "
+                  },
+                  {
+                    "type": "element",
+                    "tag": "code",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor"
+                      }
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CURSOR_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cursor runs through the Cursor API."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "claude-code",
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code can use your Claude subscription, Claude CLI login, an Anthropic API key, or Claude-compatible provider environment variables."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/providers?providerTab=claude",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Agents"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Claude Code"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Choose CLI auth for an existing Claude Code login, or choose API key mode."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "For API key mode, add your Anthropic key as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "ANTHROPIC_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Check the Claude Code auth status in the same settings panel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "warning",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "If "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "ANTHROPIC_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use API billing instead of subscription\nusage."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "codex",
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex can use Codex sign-in, an OpenAI subscription, or an API key."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/providers?providerTab=codex",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Agents"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Codex"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Choose CLI auth for an existing "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "codex login"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", or choose API key mode."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "For API key mode, add your OpenAI key as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CODEX_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Start a Codex session and choose a model that is available to your account."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Vercel AI Gateway, add these values in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "OPENAI_BASE_URL=https://ai-gateway.vercel.sh/codex/v1\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "OPENAI_BASE_URL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "https://ai-gateway.vercel.sh/codex/v1",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "AI_GATEWAY_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-vercel-ai-gateway-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "opencode",
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode uses provider credentials and the models returned by your OpenCode setup."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/providers?providerTab=opencode",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Agents"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "OpenCode"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Select "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Providers"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add provider API keys."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Choose which OpenCode models should be visible in Conductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Common OpenCode provider keys:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "OPENROUTER_API_KEY=your-openrouter-api-key\nBASETEN_API_KEY=your-baseten-api-key\nCEREBRAS_API_KEY=your-cerebras-api-key\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "OPENROUTER_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-openrouter-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "BASETEN_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-baseten-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "CEREBRAS_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-cerebras-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "AI_GATEWAY_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-vercel-ai-gateway-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode can also use provider credentials from local environment variables and its own provider configuration."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "cursor",
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions use Cursor Agent through the Cursor API. Conductor does not use a local Cursor executable for Cursor sessions."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Agents"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Cursor"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add your Cursor API key."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Or set "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CURSOR_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " in Conductor environment settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Start a Cursor session."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "CURSOR_API_KEY=your-cursor-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "CURSOR_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-cursor-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "advanced-claude-code-providers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Advanced Claude Code providers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code can use Anthropic-compatible providers through environment variables. Add these values in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When using a compatible provider, make sure "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "ANTHROPIC_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is not set to an Anthropic key in Conductor or in the shell environment that launches Conductor. Otherwise Claude Code may authenticate with Anthropic directly."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "openrouter",
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenRouter"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "ANTHROPIC_BASE_URL=https://openrouter.ai/api\nANTHROPIC_AUTH_TOKEN=your-openrouter-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_BASE_URL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "https://openrouter.ai/api",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_AUTH_TOKEN",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-openrouter-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Docs: "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://openrouter.ai/docs/guides/guides/claude-code-integration",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "OpenRouter Claude Code integration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "vercel-ai-gateway",
+      "children": [
+        {
+          "type": "text",
+          "value": "Vercel AI Gateway"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "ANTHROPIC_BASE_URL=https://ai-gateway.vercel.sh/claude-code\nANTHROPIC_AUTH_TOKEN=your-vercel-ai-gateway-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_BASE_URL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "https://ai-gateway.vercel.sh/claude-code",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_AUTH_TOKEN",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-vercel-ai-gateway-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Docs: "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://vercel.com/docs/ai-gateway/coding-agents/claude-code",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code with Vercel AI Gateway"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "bedrock",
+      "children": [
+        {
+          "type": "text",
+          "value": "Bedrock"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "CLAUDE_CODE_USE_BEDROCK=1\nAWS_REGION=us-east-1\nANTHROPIC_SMALL_FAST_MODEL_AWS_REGION=us-west-2\nANTHROPIC_DEFAULT_OPUS_MODEL=us.anthropic.claude-opus-4-7\nANTHROPIC_DEFAULT_SONNET_MODEL=us.anthropic.claude-sonnet-4-6\nANTHROPIC_DEFAULT_HAIKU_MODEL=us.anthropic.claude-haiku-4-5-20251001-v1:0",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "CLAUDE_CODE_USE_BEDROCK",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "1",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "AWS_REGION",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "us-east-1",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "us-west-2",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_DEFAULT_OPUS_MODEL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "us.anthropic.claude-opus-4-7",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_DEFAULT_SONNET_MODEL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "us.anthropic.claude-sonnet-4-6",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_DEFAULT_HAIKU_MODEL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "us.anthropic.claude-haiku-4-5-20251001-v1:0",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Docs: "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://docs.aws.amazon.com/bedrock/latest/userguide/claude-code.html",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "AWS Bedrock Claude Code"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "glm",
+      "children": [
+        {
+          "type": "text",
+          "value": "GLM"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "ANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic\nANTHROPIC_AUTH_TOKEN=your-zai-api-key",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_BASE_URL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "https://api.z.ai/api/anthropic",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_AUTH_TOKEN",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "your-zai-api-key",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Docs: "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://docs.z.ai/scenario-example/develop-tools/claude",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "GLM Claude integration"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a full provider list, see the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://code.claude.com/docs/en/third-party-integrations",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code third-party integrations docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor runs each chat through one harness. Configure harness auth in <a href=\"https://app.conductor.build/settings/user/providers\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code></a>. Use <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a> when a provider needs environment variables.</p><p>Conductor does not bill or resell model usage. Usage is billed by the provider account, subscription, usage pool, or API key used by the selected harness.</p><table><thead><tr><th>Harness</th><th>Configure in</th><th>Credential</th><th>Notes</th></tr></thead><tbody><tr><td>Claude Code</td><td><a href=\"https://app.conductor.build/settings/user/providers?providerTab=claude\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Claude Code</code></a></td><td>Claude subscription, CLI auth, or <code>ANTHROPIC_API_KEY</code></td><td>Environment variables can route Claude Code to compatible providers.</td></tr><tr><td>Codex</td><td><a href=\"https://app.conductor.build/settings/user/providers?providerTab=codex\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Codex</code></a></td><td>Codex sign-in, subscription, or <code>CODEX_API_KEY</code></td><td>Vercel AI Gateway uses <code>AI_GATEWAY_API_KEY</code>.</td></tr><tr><td>OpenCode</td><td><a href=\"https://app.conductor.build/settings/user/providers?providerTab=opencode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>OpenCode</code></a></td><td>OpenCode provider API keys</td><td>Visible models are managed in OpenCode settings.</td></tr><tr><td>Cursor</td><td><a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a></td><td><code>CURSOR_API_KEY</code></td><td>Cursor runs through the Cursor API.</td></tr></tbody></table><h2 id=\"claude-code\"><a href=\"#claude-code\">Claude Code</a></h2><p>Claude Code can use your Claude subscription, Claude CLI login, an Anthropic API key, or Claude-compatible provider environment variables.</p><ol><li>Open <a href=\"https://app.conductor.build/settings/user/providers?providerTab=claude\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Claude Code</code></a>.</li><li>Choose CLI auth for an existing Claude Code login, or choose API key mode.</li><li>For API key mode, add your Anthropic key as <code>ANTHROPIC_API_KEY</code>.</li><li>Check the Claude Code auth status in the same settings panel.</li></ol><div role=\"note\" data-callout=\"warning\"><p>If <code>ANTHROPIC_API_KEY</code> is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use API billing instead of subscription\nusage.</p></div><h2 id=\"codex\"><a href=\"#codex\">Codex</a></h2><p>Codex can use Codex sign-in, an OpenAI subscription, or an API key.</p><ol><li>Open <a href=\"https://app.conductor.build/settings/user/providers?providerTab=codex\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Codex</code></a>.</li><li>Choose CLI auth for an existing <code>codex login</code>, or choose API key mode.</li><li>For API key mode, add your OpenAI key as <code>CODEX_API_KEY</code>.</li><li>Start a Codex session and choose a model that is available to your account.</li></ol><p>For Vercel AI Gateway, add these values in <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">OPENAI_BASE_URL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">https://ai-gateway.vercel.sh/codex/v1</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">AI_GATEWAY_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-vercel-ai-gateway-api-key</span></span></code></pre></figure><h2 id=\"opencode\"><a href=\"#opencode\">OpenCode</a></h2><p>OpenCode uses provider credentials and the models returned by your OpenCode setup.</p><ol><li>Open <a href=\"https://app.conductor.build/settings/user/providers?providerTab=opencode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>OpenCode</code></a>.</li><li>Select <code>Providers</code>.</li><li>Add provider API keys.</li><li>Choose which OpenCode models should be visible in Conductor.</li></ol><p>Common OpenCode provider keys:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">OPENROUTER_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-openrouter-api-key</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">BASETEN_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-baseten-api-key</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">CEREBRAS_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-cerebras-api-key</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">AI_GATEWAY_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-vercel-ai-gateway-api-key</span></span></code></pre></figure><p>OpenCode can also use provider credentials from local environment variables and its own provider configuration.</p><h2 id=\"cursor\"><a href=\"#cursor\">Cursor</a></h2><p>Cursor sessions use Cursor Agent through the Cursor API. Conductor does not use a local Cursor executable for Cursor sessions.</p><ol><li>Open <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>.</li><li>Add your Cursor API key.</li><li>Or set <code>CURSOR_API_KEY</code> in Conductor environment settings.</li><li>Start a Cursor session.</li></ol><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">CURSOR_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-cursor-api-key</span></span></code></pre></figure><h2 id=\"advanced-claude-code-providers\"><a href=\"#advanced-claude-code-providers\">Advanced Claude Code providers</a></h2><p>Claude Code can use Anthropic-compatible providers through environment variables. Add these values in <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>.</p><p>When using a compatible provider, make sure <code>ANTHROPIC_API_KEY</code> is not set to an Anthropic key in Conductor or in the shell environment that launches Conductor. Otherwise Claude Code may authenticate with Anthropic directly.</p><h3 id=\"openrouter\"><a href=\"#openrouter\">OpenRouter</a></h3><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">https://openrouter.ai/api</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_AUTH_TOKEN</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-openrouter-api-key</span></span></code></pre></figure><p>Docs: <a href=\"https://openrouter.ai/docs/guides/guides/claude-code-integration\" target=\"_blank\" rel=\"noopener noreferrer\">OpenRouter Claude Code integration</a></p><h3 id=\"vercel-ai-gateway\"><a href=\"#vercel-ai-gateway\">Vercel AI Gateway</a></h3><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">https://ai-gateway.vercel.sh/claude-code</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_AUTH_TOKEN</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-vercel-ai-gateway-api-key</span></span></code></pre></figure><p>Docs: <a href=\"https://vercel.com/docs/ai-gateway/coding-agents/claude-code\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code with Vercel AI Gateway</a></p><h3 id=\"bedrock\"><a href=\"#bedrock\">Bedrock</a></h3><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">CLAUDE_CODE_USE_BEDROCK</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">1</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">AWS_REGION</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">us-east-1</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_SMALL_FAST_MODEL_AWS_REGION</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">us-west-2</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_DEFAULT_OPUS_MODEL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">us.anthropic.claude-opus-4-7</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_DEFAULT_SONNET_MODEL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">us.anthropic.claude-sonnet-4-6</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_DEFAULT_HAIKU_MODEL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">us.anthropic.claude-haiku-4-5-20251001-v1:0</span></span></code></pre></figure><p>Docs: <a href=\"https://docs.aws.amazon.com/bedrock/latest/userguide/claude-code.html\" target=\"_blank\" rel=\"noopener noreferrer\">AWS Bedrock Claude Code</a></p><h3 id=\"glm\"><a href=\"#glm\">GLM</a></h3><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">https://api.z.ai/api/anthropic</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_AUTH_TOKEN</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">your-zai-api-key</span></span></code></pre></figure><p>Docs: <a href=\"https://docs.z.ai/scenario-example/develop-tools/claude\" target=\"_blank\" rel=\"noopener noreferrer\">GLM Claude integration</a></p><p>For a full provider list, see the <a href=\"https://code.claude.com/docs/en/third-party-integrations\" target=\"_blank\" rel=\"noopener noreferrer\">Claude Code third-party integrations docs</a>.</p>",
+  "text": "Conductor runs each chat through one harness. Configure harness auth in Settings -> Agents. Use Settings -> Environment when a provider needs environment variables.\nConductor does not bill or resell model usage. Usage is billed by the provider account, subscription, usage pool, or API key used by the selected harness.\nHarnessConfigure inCredentialNotesClaude CodeSettings -> Agents -> Claude CodeClaude subscription, CLI auth, or ANTHROPIC_API_KEYEnvironment variables can route Claude Code to compatible providers.CodexSettings -> Agents -> CodexCodex sign-in, subscription, or CODEX_API_KEYVercel AI Gateway uses AI_GATEWAY_API_KEY.OpenCodeSettings -> Agents -> OpenCodeOpenCode provider API keysVisible models are managed in OpenCode settings.CursorSettings -> Agents -> CursorCURSOR_API_KEYCursor runs through the Cursor API.Claude Code\nClaude Code can use your Claude subscription, Claude CLI login, an Anthropic API key, or Claude-compatible provider environment variables.\nOpen Settings -> Agents -> Claude Code.\nChoose CLI auth for an existing Claude Code login, or choose API key mode.\nFor API key mode, add your Anthropic key as ANTHROPIC_API_KEY.\nCheck the Claude Code auth status in the same settings panel.\nIf ANTHROPIC_API_KEY is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use API billing instead of subscription\nusage.\nCodex\nCodex can use Codex sign-in, an OpenAI subscription, or an API key.\nOpen Settings -> Agents -> Codex.\nChoose CLI auth for an existing codex login, or choose API key mode.\nFor API key mode, add your OpenAI key as CODEX_API_KEY.\nStart a Codex session and choose a model that is available to your account.\nFor Vercel AI Gateway, add these values in Settings -> Environment:\nOPENAI_BASE_URL=https://ai-gateway.vercel.sh/codex/v1\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-keyOpenCode\nOpenCode uses provider credentials and the models returned by your OpenCode setup.\nOpen Settings -> Agents -> OpenCode.\nSelect Providers.\nAdd provider API keys.\nChoose which OpenCode models should be visible in Conductor.\nCommon OpenCode provider keys:\nOPENROUTER_API_KEY=your-openrouter-api-key\nBASETEN_API_KEY=your-baseten-api-key\nCEREBRAS_API_KEY=your-cerebras-api-key\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-keyOpenCode can also use provider credentials from local environment variables and its own provider configuration.\nCursor\nCursor sessions use Cursor Agent through the Cursor API. Conductor does not use a local Cursor executable for Cursor sessions.\nOpen Settings -> Agents -> Cursor.\nAdd your Cursor API key.\nOr set CURSOR_API_KEY in Conductor environment settings.\nStart a Cursor session.\nCURSOR_API_KEY=your-cursor-api-keyAdvanced Claude Code providers\nClaude Code can use Anthropic-compatible providers through environment variables. Add these values in Settings -> Environment.\nWhen using a compatible provider, make sure ANTHROPIC_API_KEY is not set to an Anthropic key in Conductor or in the shell environment that launches Conductor. Otherwise Claude Code may authenticate with Anthropic directly.\nOpenRouter\nANTHROPIC_BASE_URL=https://openrouter.ai/api\nANTHROPIC_AUTH_TOKEN=your-openrouter-api-keyDocs: OpenRouter Claude Code integration\nVercel AI Gateway\nANTHROPIC_BASE_URL=https://ai-gateway.vercel.sh/claude-code\nANTHROPIC_AUTH_TOKEN=your-vercel-ai-gateway-api-keyDocs: Claude Code with Vercel AI Gateway\nBedrock\nCLAUDE_CODE_USE_BEDROCK=1\nAWS_REGION=us-east-1\nANTHROPIC_SMALL_FAST_MODEL_AWS_REGION=us-west-2\nANTHROPIC_DEFAULT_OPUS_MODEL=us.anthropic.claude-opus-4-7\nANTHROPIC_DEFAULT_SONNET_MODEL=us.anthropic.claude-sonnet-4-6\nANTHROPIC_DEFAULT_HAIKU_MODEL=us.anthropic.claude-haiku-4-5-20251001-v1:0Docs: AWS Bedrock Claude Code\nGLM\nANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic\nANTHROPIC_AUTH_TOKEN=your-zai-api-keyDocs: GLM Claude integration\nFor a full provider list, see the Claude Code third-party integrations docs.",
+  "markdown": "\n# Configure model providers\n\n\n\nConductor runs each chat through one harness. Configure harness auth in [`Settings` -> `Agents`](https://app.conductor.build/settings/user/providers). Use [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment) when a provider needs environment variables.\n\nConductor does not bill or resell model usage. Usage is billed by the provider account, subscription, usage pool, or API key used by the selected harness.\n\n| Harness     | Configure in                                                                                                      | Credential                                            | Notes                                                                |\n| ----------- | ----------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------- | -------------------------------------------------------------------- |\n| Claude Code | [`Settings` -> `Agents` -> `Claude Code`](https://app.conductor.build/settings/user/providers?providerTab=claude) | Claude subscription, CLI auth, or `ANTHROPIC_API_KEY` | Environment variables can route Claude Code to compatible providers. |\n| Codex       | [`Settings` -> `Agents` -> `Codex`](https://app.conductor.build/settings/user/providers?providerTab=codex)        | Codex sign-in, subscription, or `CODEX_API_KEY`       | Vercel AI Gateway uses `AI_GATEWAY_API_KEY`.                         |\n| OpenCode    | [`Settings` -> `Agents` -> `OpenCode`](https://app.conductor.build/settings/user/providers?providerTab=opencode)  | OpenCode provider API keys                            | Visible models are managed in OpenCode settings.                     |\n| Cursor      | [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor)      | `CURSOR_API_KEY`                                      | Cursor runs through the Cursor API.                                  |\n\n## Claude Code [#claude-code]\n\nClaude Code can use your Claude subscription, Claude CLI login, an Anthropic API key, or Claude-compatible provider environment variables.\n\n1. Open [`Settings` -> `Agents` -> `Claude Code`](https://app.conductor.build/settings/user/providers?providerTab=claude).\n2. Choose CLI auth for an existing Claude Code login, or choose API key mode.\n3. For API key mode, add your Anthropic key as `ANTHROPIC_API_KEY`.\n4. Check the Claude Code auth status in the same settings panel.\n\nIf `ANTHROPIC_API_KEY` is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use API billing instead of subscription\nusage.\n\n## Codex [#codex]\n\nCodex can use Codex sign-in, an OpenAI subscription, or an API key.\n\n1. Open [`Settings` -> `Agents` -> `Codex`](https://app.conductor.build/settings/user/providers?providerTab=codex).\n2. Choose CLI auth for an existing `codex login`, or choose API key mode.\n3. For API key mode, add your OpenAI key as `CODEX_API_KEY`.\n4. Start a Codex session and choose a model that is available to your account.\n\nFor Vercel AI Gateway, add these values in [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment):\n\n```bash\nOPENAI_BASE_URL=https://ai-gateway.vercel.sh/codex/v1\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-key\n```\n\n## OpenCode [#opencode]\n\nOpenCode uses provider credentials and the models returned by your OpenCode setup.\n\n1. Open [`Settings` -> `Agents` -> `OpenCode`](https://app.conductor.build/settings/user/providers?providerTab=opencode).\n2. Select `Providers`.\n3. Add provider API keys.\n4. Choose which OpenCode models should be visible in Conductor.\n\nCommon OpenCode provider keys:\n\n```bash\nOPENROUTER_API_KEY=your-openrouter-api-key\nBASETEN_API_KEY=your-baseten-api-key\nCEREBRAS_API_KEY=your-cerebras-api-key\nAI_GATEWAY_API_KEY=your-vercel-ai-gateway-api-key\n```\n\nOpenCode can also use provider credentials from local environment variables and its own provider configuration.\n\n## Cursor [#cursor]\n\nCursor sessions use Cursor Agent through the Cursor API. Conductor does not use a local Cursor executable for Cursor sessions.\n\n1. Open [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor).\n2. Add your Cursor API key.\n3. Or set `CURSOR_API_KEY` in Conductor environment settings.\n4. Start a Cursor session.\n\n```bash\nCURSOR_API_KEY=your-cursor-api-key\n```\n\n## Advanced Claude Code providers [#advanced-claude-code-providers]\n\nClaude Code can use Anthropic-compatible providers through environment variables. Add these values in [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment).\n\nWhen using a compatible provider, make sure `ANTHROPIC_API_KEY` is not set to an Anthropic key in Conductor or in the shell environment that launches Conductor. Otherwise Claude Code may authenticate with Anthropic directly.\n\n### OpenRouter [#openrouter]\n\n```bash\nANTHROPIC_BASE_URL=https://openrouter.ai/api\nANTHROPIC_AUTH_TOKEN=your-openrouter-api-key\n```\n\nDocs: [OpenRouter Claude Code integration](https://openrouter.ai/docs/guides/guides/claude-code-integration)\n\n### Vercel AI Gateway [#vercel-ai-gateway]\n\n```bash\nANTHROPIC_BASE_URL=https://ai-gateway.vercel.sh/claude-code\nANTHROPIC_AUTH_TOKEN=your-vercel-ai-gateway-api-key\n```\n\nDocs: [Claude Code with Vercel AI Gateway](https://vercel.com/docs/ai-gateway/coding-agents/claude-code)\n\n### Bedrock [#bedrock]\n\n```bash\nCLAUDE_CODE_USE_BEDROCK=1\nAWS_REGION=us-east-1\nANTHROPIC_SMALL_FAST_MODEL_AWS_REGION=us-west-2\nANTHROPIC_DEFAULT_OPUS_MODEL=us.anthropic.claude-opus-4-7\nANTHROPIC_DEFAULT_SONNET_MODEL=us.anthropic.claude-sonnet-4-6\nANTHROPIC_DEFAULT_HAIKU_MODEL=us.anthropic.claude-haiku-4-5-20251001-v1:0\n```\n\nDocs: [AWS Bedrock Claude Code](https://docs.aws.amazon.com/bedrock/latest/userguide/claude-code.html)\n\n### GLM [#glm]\n\n```bash\nANTHROPIC_BASE_URL=https://api.z.ai/api/anthropic\nANTHROPIC_AUTH_TOKEN=your-zai-api-key\n```\n\nDocs: [GLM Claude integration](https://docs.z.ai/scenario-example/develop-tools/claude)\n\nFor a full provider list, see the [Claude Code third-party integrations docs](https://code.claude.com/docs/en/third-party-integrations).\n"
+}

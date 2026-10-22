@@ -1,0 +1,1051 @@
+{
+  "slug": "cloud/cloud-computer",
+  "url": "/docs/cloud/cloud-computer",
+  "title": "Cloud Computer",
+  "description": "Configure the shared repositories, environment, software, and builds for your organization",
+  "meta": {
+    "title": "Cloud Computer | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/cloud-computer/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Cloud Computer"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#specifications",
+      "title": "Specifications"
+    },
+    {
+      "depth": 2,
+      "url": "#edit-settings-with-an-agent",
+      "title": "Edit settings with an agent"
+    },
+    {
+      "depth": 2,
+      "url": "#repositories",
+      "title": "Repositories"
+    },
+    {
+      "depth": 2,
+      "url": "#environment-variables-and-secrets",
+      "title": "Environment variables and secrets"
+    },
+    {
+      "depth": 2,
+      "url": "#install-software",
+      "title": "Install software"
+    },
+    {
+      "depth": 3,
+      "url": "#make-installed-tools-available-in-workspaces",
+      "title": "Make installed tools available in workspaces"
+    },
+    {
+      "depth": 2,
+      "url": "#build-the-computer",
+      "title": "Build the computer"
+    },
+    {
+      "depth": 2,
+      "url": "#repository-setup-scripts",
+      "title": "Repository setup scripts"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud/collaboration",
+    "title": "Multiplayer",
+    "description": "Find team work, share chats, follow workspaces, and hand work to a teammate"
+  },
+  "next": {
+    "url": "/docs/cloud/environment-variables",
+    "title": "Environment variables",
+    "description": "Next Page"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The Cloud Computer is the shared development environment for a Conductor\norganization. Its active build determines the repositories, environment\nvariables, secrets, and software a new cloud workspace starts with. Manage it\nin "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/organization/computer",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cloud computer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; changes affect the whole\norganization."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "specifications",
+      "children": [
+        {
+          "type": "text",
+          "value": "Specifications"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each cloud workspace runs in an isolated microVM with:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Resource"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Specification"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "CPU"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "8 vCPUs"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Memory"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "16 GB RAM"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Storage"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "32 GB of ephemeral NVMe storage"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Operating system"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Amazon Linux 2023"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "edit-settings-with-an-agent",
+      "children": [
+        {
+          "type": "text",
+          "value": "Edit settings with an agent"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Instead of configuring the computer by hand, choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure with an\nagent"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to open an Admin workspace and tell the agent what you want to change.\nIt can inspect and test the repositories, update the install script and each\nrepository's setup script, and run builds — without asking you to confirm each\nstep."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The agent can't add or remove repositories, change environment variables or\nsecrets, manage members or credentials, or activate an older build; make those\nchanges directly in settings. It won't edit repository code unless you ask."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repositories",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repositories"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add the GitHub repositories (up to 50; other Git hosts aren't supported yet)\nyou want available when creating workspaces. Each is cloned onto the computer\nin the next build."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "environment-variables-and-secrets",
+      "children": [
+        {
+          "type": "text",
+          "value": "Environment variables and secrets"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Environment"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for values that every cloud workspace in the organization\nneeds, including secrets. Values are hidden after you save them: type a new\nvalue to replace one, or remove the row to delete it in the next build."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The Admin workspace agent's tools can't read or change saved values, but the\nvalues are present as environment variables inside workspaces — so don't ask\nan agent to print secrets into chat, build logs, or command output."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/environment-variables"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud workspace environment variables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\nfor Conductor-provided variables, precedence, and reserved names."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "install-software",
+      "children": [
+        {
+          "type": "text",
+          "value": "Install software"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Install software"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " script for slow, repeatable setup that every new\nworkspace should inherit: system packages, language runtimes, browser\nbinaries, shared caches. The base computer already includes Node.js 24, npm,\npnpm, Python 3, git, GitHub CLI, jq, Git LFS, ripgrep, tmux, Vim, and Google\nChrome. You have\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "sudo"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "dnf"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for system packages:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "sudo dnf install -y postgresql16",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "sudo",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " dnf",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " install",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -y",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " postgresql16",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The script runs once per build from the sandbox home directory, with the\nconfigured repositories below it, as Bash with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "set -euo pipefail"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " — a failed\ncommand fails the build."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "make-installed-tools-available-in-workspaces",
+      "children": [
+        {
+          "type": "text",
+          "value": "Make installed tools available in workspaces"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The install script is not a login shell, but workspace setup scripts, run\nscripts, and cloud terminals are — they read "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.bash_profile"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", which sources\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.profile"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If an installer changes "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", export the new path for the rest\nof the build and append it to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.profile"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -fsSL https://bun.sh/install | bash\n\nexport BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:$PATH\"\n\nprintf '%s\\n' \\\n  'export BUN_INSTALL=\"$HOME/.bun\"' \\\n  'export PATH=\"$BUN_INSTALL/bin:$PATH\"' \\\n  >> \"$HOME/.profile\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -fsSL",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://bun.sh/install",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " |",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " bash",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "export",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " BUN_INSTALL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$HOME",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/.bun\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "export",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$BUN_INSTALL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/bin:",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "printf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '%s\\n'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  'export BUN_INSTALL=\"$HOME/.bun\"'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  'export PATH=\"$BUN_INSTALL/bin:$PATH\"'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$HOME",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/.profile\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your install script replaces "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.bash_profile"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", keep the line that sources\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.profile"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " — otherwise tools installed during the build will be missing in\nworkspaces."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "build-the-computer",
+      "children": [
+        {
+          "type": "text",
+          "value": "Build the computer"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Build computer"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to apply configuration changes, or to pick up new\ncommits and dependencies without any changes. During a build, Conductor clones\nthe repositories, adds the environment variables, and runs the install script.\nA successful build automatically becomes "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Active"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ": new workspaces start from\nit, and existing workspaces keep the environment they were created with."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Select the build status to open its logs, or choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Restart build"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " if you\nedited the configuration mid-build. "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "History"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " lists past builds; choose\n"
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Activate"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " on a previous successful build to use it for new workspaces. It\ntakes effect immediately, with no confirmation."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repository-setup-scripts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository setup scripts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The install script prepares the shared computer once per build. A repository's\n"
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " — edited under that repository in organization settings, or\nby the Admin workspace agent — runs every time a new workspace is created. Use\nit for dependency installs, generated files, and seeds."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Saving a setup script doesn't require a build; it applies to the next\nworkspace. Keep a dependency install in it even if the computer build warms\ncaches, so new workspaces pick up changes made after the build."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud workspaces don't use the setup script in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or\nthe legacy "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; those still configure local workspaces. See\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/environment-variables#configure-setup-for-local-and-cloud"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "sharing one setup script for local and Cloud"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>The Cloud Computer is the shared development environment for a Conductor\norganization. Its active build determines the repositories, environment\nvariables, secrets, and software a new cloud workspace starts with. Manage it\nin <a href=\"https://app.conductor.build/settings/organization/computer\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Cloud computer</code></a>; changes affect the whole\norganization.</p><h2 id=\"specifications\"><a href=\"#specifications\">Specifications</a></h2><p>Each cloud workspace runs in an isolated microVM with:</p><table><thead><tr><th>Resource</th><th>Specification</th></tr></thead><tbody><tr><td>CPU</td><td>8 vCPUs</td></tr><tr><td>Memory</td><td>16 GB RAM</td></tr><tr><td>Storage</td><td>32 GB of ephemeral NVMe storage</td></tr><tr><td>Operating system</td><td>Amazon Linux 2023</td></tr></tbody></table><h2 id=\"edit-settings-with-an-agent\"><a href=\"#edit-settings-with-an-agent\">Edit settings with an agent</a></h2><p>Instead of configuring the computer by hand, choose <strong>Configure with an\nagent</strong> to open an Admin workspace and tell the agent what you want to change.\nIt can inspect and test the repositories, update the install script and each\nrepository's setup script, and run builds — without asking you to confirm each\nstep.</p><p>The agent can't add or remove repositories, change environment variables or\nsecrets, manage members or credentials, or activate an older build; make those\nchanges directly in settings. It won't edit repository code unless you ask.</p><h2 id=\"repositories\"><a href=\"#repositories\">Repositories</a></h2><p>Add the GitHub repositories (up to 50; other Git hosts aren't supported yet)\nyou want available when creating workspaces. Each is cloned onto the computer\nin the next build.</p><h2 id=\"environment-variables-and-secrets\"><a href=\"#environment-variables-and-secrets\">Environment variables and secrets</a></h2><p>Use <strong>Environment</strong> for values that every cloud workspace in the organization\nneeds, including secrets. Values are hidden after you save them: type a new\nvalue to replace one, or remove the row to delete it in the next build.</p><p>The Admin workspace agent's tools can't read or change saved values, but the\nvalues are present as environment variables inside workspaces — so don't ask\nan agent to print secrets into chat, build logs, or command output.</p><p>See <a href=\"/docs/cloud/environment-variables\">Cloud workspace environment variables</a>\nfor Conductor-provided variables, precedence, and reserved names.</p><h2 id=\"install-software\"><a href=\"#install-software\">Install software</a></h2><p>Use the <strong>Install software</strong> script for slow, repeatable setup that every new\nworkspace should inherit: system packages, language runtimes, browser\nbinaries, shared caches. The base computer already includes Node.js 24, npm,\npnpm, Python 3, git, GitHub CLI, jq, Git LFS, ripgrep, tmux, Vim, and Google\nChrome. You have\n<code>sudo</code>; use <code>dnf</code> for system packages:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">sudo</span><span style=\"color:#032F62\"> dnf</span><span style=\"color:#032F62\"> install</span><span style=\"color:#005CC5\"> -y</span><span style=\"color:#032F62\"> postgresql16</span></span></code></pre></figure><p>The script runs once per build from the sandbox home directory, with the\nconfigured repositories below it, as Bash with <code>set -euo pipefail</code> — a failed\ncommand fails the build.</p><h3 id=\"make-installed-tools-available-in-workspaces\"><a href=\"#make-installed-tools-available-in-workspaces\">Make installed tools available in workspaces</a></h3><p>The install script is not a login shell, but workspace setup scripts, run\nscripts, and cloud terminals are — they read <code>~/.bash_profile</code>, which sources\n<code>~/.profile</code>. If an installer changes <code>PATH</code>, export the new path for the rest\nof the build and append it to <code>~/.profile</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -fsSL</span><span style=\"color:#032F62\"> https://bun.sh/install</span><span style=\"color:#D73A49\"> |</span><span style=\"color:#6F42C1\"> bash</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#D73A49\">export</span><span style=\"color:#24292E\"> BUN_INSTALL</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\">$HOME</span><span style=\"color:#032F62\">/.bun\"</span></span>\n<span class=\"line\"><span style=\"color:#D73A49\">export</span><span style=\"color:#24292E\"> PATH</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\">$BUN_INSTALL</span><span style=\"color:#032F62\">/bin:</span><span style=\"color:#24292E\">$PATH</span><span style=\"color:#032F62\">\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#005CC5\">printf</span><span style=\"color:#032F62\"> '%s\\n'</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  'export BUN_INSTALL=\"$HOME/.bun\"'</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  'export PATH=\"$BUN_INSTALL/bin:$PATH\"'</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#D73A49\">  &gt;&gt;</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$HOME</span><span style=\"color:#032F62\">/.profile\"</span></span></code></pre></figure><p>If your install script replaces <code>~/.bash_profile</code>, keep the line that sources\n<code>~/.profile</code> — otherwise tools installed during the build will be missing in\nworkspaces.</p><h2 id=\"build-the-computer\"><a href=\"#build-the-computer\">Build the computer</a></h2><p>Choose <strong>Build computer</strong> to apply configuration changes, or to pick up new\ncommits and dependencies without any changes. During a build, Conductor clones\nthe repositories, adds the environment variables, and runs the install script.\nA successful build automatically becomes <strong>Active</strong>: new workspaces start from\nit, and existing workspaces keep the environment they were created with.</p><p>Select the build status to open its logs, or choose <strong>Restart build</strong> if you\nedited the configuration mid-build. <strong>History</strong> lists past builds; choose\n<strong>Activate</strong> on a previous successful build to use it for new workspaces. It\ntakes effect immediately, with no confirmation.</p><h2 id=\"repository-setup-scripts\"><a href=\"#repository-setup-scripts\">Repository setup scripts</a></h2><p>The install script prepares the shared computer once per build. A repository's\n<strong>Setup script</strong> — edited under that repository in organization settings, or\nby the Admin workspace agent — runs every time a new workspace is created. Use\nit for dependency installs, generated files, and seeds.</p><p>Saving a setup script doesn't require a build; it applies to the next\nworkspace. Keep a dependency install in it even if the computer build warms\ncaches, so new workspaces pick up changes made after the build.</p><p>Cloud workspaces don't use the setup script in <code>.conductor/settings.toml</code> or\nthe legacy <code>conductor.json</code>; those still configure local workspaces. See\n<a href=\"/docs/cloud/environment-variables#configure-setup-for-local-and-cloud\">sharing one setup script for local and Cloud</a>.</p>",
+  "text": "The Cloud Computer is the shared development environment for a Conductor\norganization. Its active build determines the repositories, environment\nvariables, secrets, and software a new cloud workspace starts with. Manage it\nin Settings -> Cloud computer; changes affect the whole\norganization.\nSpecifications\nEach cloud workspace runs in an isolated microVM with:\nResourceSpecificationCPU8 vCPUsMemory16 GB RAMStorage32 GB of ephemeral NVMe storageOperating systemAmazon Linux 2023Edit settings with an agent\nInstead of configuring the computer by hand, choose Configure with an\nagent to open an Admin workspace and tell the agent what you want to change.\nIt can inspect and test the repositories, update the install script and each\nrepository's setup script, and run builds — without asking you to confirm each\nstep.\nThe agent can't add or remove repositories, change environment variables or\nsecrets, manage members or credentials, or activate an older build; make those\nchanges directly in settings. It won't edit repository code unless you ask.\nRepositories\nAdd the GitHub repositories (up to 50; other Git hosts aren't supported yet)\nyou want available when creating workspaces. Each is cloned onto the computer\nin the next build.\nEnvironment variables and secrets\nUse Environment for values that every cloud workspace in the organization\nneeds, including secrets. Values are hidden after you save them: type a new\nvalue to replace one, or remove the row to delete it in the next build.\nThe Admin workspace agent's tools can't read or change saved values, but the\nvalues are present as environment variables inside workspaces — so don't ask\nan agent to print secrets into chat, build logs, or command output.\nSee Cloud workspace environment variables\nfor Conductor-provided variables, precedence, and reserved names.\nInstall software\nUse the Install software script for slow, repeatable setup that every new\nworkspace should inherit: system packages, language runtimes, browser\nbinaries, shared caches. The base computer already includes Node.js 24, npm,\npnpm, Python 3, git, GitHub CLI, jq, Git LFS, ripgrep, tmux, Vim, and Google\nChrome. You have\nsudo; use dnf for system packages:\nsudo dnf install -y postgresql16The script runs once per build from the sandbox home directory, with the\nconfigured repositories below it, as Bash with set -euo pipefail — a failed\ncommand fails the build.\nMake installed tools available in workspaces\nThe install script is not a login shell, but workspace setup scripts, run\nscripts, and cloud terminals are — they read ~/.bash_profile, which sources\n~/.profile. If an installer changes PATH, export the new path for the rest\nof the build and append it to ~/.profile:\ncurl -fsSL https://bun.sh/install | bash\nexport BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:$PATH\"\nprintf '%s\\n' \\\n  'export BUN_INSTALL=\"$HOME/.bun\"' \\\n  'export PATH=\"$BUN_INSTALL/bin:$PATH\"' \\\n  >> \"$HOME/.profile\"If your install script replaces ~/.bash_profile, keep the line that sources\n~/.profile — otherwise tools installed during the build will be missing in\nworkspaces.\nBuild the computer\nChoose Build computer to apply configuration changes, or to pick up new\ncommits and dependencies without any changes. During a build, Conductor clones\nthe repositories, adds the environment variables, and runs the install script.\nA successful build automatically becomes Active: new workspaces start from\nit, and existing workspaces keep the environment they were created with.\nSelect the build status to open its logs, or choose Restart build if you\nedited the configuration mid-build. History lists past builds; choose\nActivate on a previous successful build to use it for new workspaces. It\ntakes effect immediately, with no confirmation.\nRepository setup scripts\nThe install script prepares the shared computer once per build. A repository's\nSetup script — edited under that repository in organization settings, or\nby the Admin workspace agent — runs every time a new workspace is created. Use\nit for dependency installs, generated files, and seeds.\nSaving a setup script doesn't require a build; it applies to the next\nworkspace. Keep a dependency install in it even if the computer build warms\ncaches, so new workspaces pick up changes made after the build.\nCloud workspaces don't use the setup script in .conductor/settings.toml or\nthe legacy conductor.json; those still configure local workspaces. See\nsharing one setup script for local and Cloud.",
+  "markdown": "\n# Cloud Computer\n\n\n\nThe Cloud Computer is the shared development environment for a Conductor\norganization. Its active build determines the repositories, environment\nvariables, secrets, and software a new cloud workspace starts with. Manage it\nin [`Settings` -> `Cloud computer`](https://app.conductor.build/settings/organization/computer); changes affect the whole\norganization.\n\n## Specifications [#specifications]\n\nEach cloud workspace runs in an isolated microVM with:\n\n| Resource         | Specification                   |\n| ---------------- | ------------------------------- |\n| CPU              | 8 vCPUs                         |\n| Memory           | 16 GB RAM                       |\n| Storage          | 32 GB of ephemeral NVMe storage |\n| Operating system | Amazon Linux 2023               |\n\n## Edit settings with an agent [#edit-settings-with-an-agent]\n\nInstead of configuring the computer by hand, choose **Configure with an\nagent** to open an Admin workspace and tell the agent what you want to change.\nIt can inspect and test the repositories, update the install script and each\nrepository's setup script, and run builds — without asking you to confirm each\nstep.\n\nThe agent can't add or remove repositories, change environment variables or\nsecrets, manage members or credentials, or activate an older build; make those\nchanges directly in settings. It won't edit repository code unless you ask.\n\n## Repositories [#repositories]\n\nAdd the GitHub repositories (up to 50; other Git hosts aren't supported yet)\nyou want available when creating workspaces. Each is cloned onto the computer\nin the next build.\n\n## Environment variables and secrets [#environment-variables-and-secrets]\n\nUse **Environment** for values that every cloud workspace in the organization\nneeds, including secrets. Values are hidden after you save them: type a new\nvalue to replace one, or remove the row to delete it in the next build.\n\nThe Admin workspace agent's tools can't read or change saved values, but the\nvalues are present as environment variables inside workspaces — so don't ask\nan agent to print secrets into chat, build logs, or command output.\n\nSee [Cloud workspace environment variables](/docs/cloud/environment-variables)\nfor Conductor-provided variables, precedence, and reserved names.\n\n## Install software [#install-software]\n\nUse the **Install software** script for slow, repeatable setup that every new\nworkspace should inherit: system packages, language runtimes, browser\nbinaries, shared caches. The base computer already includes Node.js 24, npm,\npnpm, Python 3, git, GitHub CLI, jq, Git LFS, ripgrep, tmux, Vim, and Google\nChrome. You have\n`sudo`; use `dnf` for system packages:\n\n```bash\nsudo dnf install -y postgresql16\n```\n\nThe script runs once per build from the sandbox home directory, with the\nconfigured repositories below it, as Bash with `set -euo pipefail` — a failed\ncommand fails the build.\n\n### Make installed tools available in workspaces [#make-installed-tools-available-in-workspaces]\n\nThe install script is not a login shell, but workspace setup scripts, run\nscripts, and cloud terminals are — they read `~/.bash_profile`, which sources\n`~/.profile`. If an installer changes `PATH`, export the new path for the rest\nof the build and append it to `~/.profile`:\n\n```bash\ncurl -fsSL https://bun.sh/install | bash\n\nexport BUN_INSTALL=\"$HOME/.bun\"\nexport PATH=\"$BUN_INSTALL/bin:$PATH\"\n\nprintf '%s\\n' \\\n  'export BUN_INSTALL=\"$HOME/.bun\"' \\\n  'export PATH=\"$BUN_INSTALL/bin:$PATH\"' \\\n  >> \"$HOME/.profile\"\n```\n\nIf your install script replaces `~/.bash_profile`, keep the line that sources\n`~/.profile` — otherwise tools installed during the build will be missing in\nworkspaces.\n\n## Build the computer [#build-the-computer]\n\nChoose **Build computer** to apply configuration changes, or to pick up new\ncommits and dependencies without any changes. During a build, Conductor clones\nthe repositories, adds the environment variables, and runs the install script.\nA successful build automatically becomes **Active**: new workspaces start from\nit, and existing workspaces keep the environment they were created with.\n\nSelect the build status to open its logs, or choose **Restart build** if you\nedited the configuration mid-build. **History** lists past builds; choose\n**Activate** on a previous successful build to use it for new workspaces. It\ntakes effect immediately, with no confirmation.\n\n## Repository setup scripts [#repository-setup-scripts]\n\nThe install script prepares the shared computer once per build. A repository's\n**Setup script** — edited under that repository in organization settings, or\nby the Admin workspace agent — runs every time a new workspace is created. Use\nit for dependency installs, generated files, and seeds.\n\nSaving a setup script doesn't require a build; it applies to the next\nworkspace. Keep a dependency install in it even if the computer build warms\ncaches, so new workspaces pick up changes made after the build.\n\nCloud workspaces don't use the setup script in `.conductor/settings.toml` or\nthe legacy `conductor.json`; those still configure local workspaces. See\n[sharing one setup script for local and Cloud](/docs/cloud/environment-variables#configure-setup-for-local-and-cloud).\n"
+}

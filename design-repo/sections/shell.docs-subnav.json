@@ -1,0 +1,97 @@
+{
+  "id": "shell.docs-subnav",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.docs-subnav"
+  ],
+  "purpose": "Docs-only small-screen top bar: brand, search and sidebar toggles.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/MobileNav.jsx:22",
+      "quote": "export function MobileSubnav({ onOpenSidebar }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:102",
+      "quote": "**<768:** the marketing header is hidden and `header#nd-subnav` (Fumadocs) replaces it:"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.docs-subnav"
+    }
+  },
+  "slot": "chrome",
+  "content": {
+    "brandLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "searchLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "sidebarLabel": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:104",
+        "quote": "bg `rgba(255,255,255,.8)` with `backdrop-filter: blur(8px)`, and `transition-colors` 150ms."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "display",
+          "value": "sticky 56px bar"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "display",
+          "value": "none"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

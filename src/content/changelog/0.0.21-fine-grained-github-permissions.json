@@ -1,0 +1,23 @@
+{
+  "slug": "0.0.21-fine-grained-github-permissions",
+  "version": "0.0.21",
+  "versionSlug": "0.0.21",
+  "title": "Fine-grained GitHub permissions",
+  "fullTitle": "0.0.21: Fine-grained GitHub permissions",
+  "date": "July 22nd, 2025",
+  "dateISO": "2025-07-22",
+  "description": "Conductor 0.0.21 changelog - Fine-grained GitHub permissions",
+  "summary": "You can now give Conductor fine-grained GitHub repository access. You can also choose to skip the GitHub integration and add repositories using your SSH/HTTPs authentication.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.0.21/3d5d206d-1fac-41ae-a72a-44df85a059ec.png",
+    "alt": "CleanShot 2025-07-22 at 17 53 01@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.0.21-fine-grained-github-permissions/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.0.21-fine-grained-github-permissions",
+  "sourceUrl": "https://www.conductor.build/changelog/0.0.21-fine-grained-github-permissions",
+  "headings": [],
+  "html": "<p>You can now give Conductor fine-grained GitHub repository access. You can also choose to skip the GitHub integration and add repositories using your SSH/HTTPs authentication.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-22 at 17 53 01@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.21/3d5d206d-1fac-41ae-a72a-44df85a059ec.png\"/></figure>\n<p>To manage the GitHub integration, go to settings (<code>⌘+,</code>) and click Connect GitHub app:</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-22 at 17 54 19@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.21/19104eed-01e1-46dd-856b-c4632a119d21.png\"/></figure>",
+  "markdown": "\nYou can now give Conductor fine-grained GitHub repository access. You can also choose to skip the GitHub integration and add repositories using your SSH/HTTPs authentication.\n\n<img\n    width=\"1374\"\n    height=\"842\"\n    alt=\"CleanShot 2025-07-22 at 17 53 01@2x\"\n    src=\"/assets/changelog/media/0.0.21/3d5d206d-1fac-41ae-a72a-44df85a059ec.png\"\n/>\n\nTo manage the GitHub integration, go to settings (`⌘+,`) and click Connect GitHub app:\n\n<img\n    width=\"1100\"\n    height=\"152\"\n    alt=\"CleanShot 2025-07-22 at 17 54 19@2x\"\n    src=\"/assets/changelog/media/0.0.21/19104eed-01e1-46dd-856b-c4632a119d21.png\"\n/>\n"
+}

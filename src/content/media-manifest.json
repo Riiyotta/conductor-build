@@ -1,0 +1,3760 @@
+[
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/new-workspace.png",
+    "local": "/assets/docs/images/new-workspace.png",
+    "kind": "image",
+    "bytes": 1787553,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:first-workspace"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/VsWWy2kVpa8/sddefault.webp",
+    "local": "/assets/docs/youtube/VsWWy2kVpa8-sddefault.webp",
+    "kind": "image",
+    "bytes": 18826,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:index"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+    "local": "/assets/docs/images/cloud-collaboration-chat.png",
+    "kind": "image",
+    "bytes": 179780,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:cloud"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/cloud-computer-graphite-light.png",
+    "local": "/assets/docs/images/cloud-computer-graphite-light.png",
+    "kind": "image",
+    "bytes": 79097,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:cloud"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/cloud-computer-graphite-dark.png",
+    "local": "/assets/docs/images/cloud-computer-graphite-dark.png",
+    "kind": "image",
+    "bytes": 80377,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:cloud"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/MjX10slErMM/sddefault.webp",
+    "local": "/assets/docs/youtube/MjX10slErMM-sddefault.webp",
+    "kind": "image",
+    "bytes": 9766,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:concepts/agent-modes"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/UDlV5G0V0cM/sddefault.webp",
+    "local": "/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp",
+    "kind": "image",
+    "bytes": 17142,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:concepts/parallel-agents",
+      "docs:guides/parallel-agents/run-multiple-claude-code-sessions",
+      "docs:guides/parallel-agents/run-multiple-codex-sessions",
+      "docs:guides/parallel-agents/run-multiple-cursor-sessions"
+    ]
+  },
+  {
+    "remote": "https://melty.t3.storage.dev/workflow.mp4",
+    "local": "/assets/docs/media/workflow.mp4",
+    "kind": "video",
+    "bytes": 771097315,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "docs:concepts/workflow"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/sidebar1.png",
+    "local": "/assets/docs/images/sidebar1.png",
+    "kind": "image",
+    "bytes": 11702,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:concepts/workspaces-and-branches"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/IkkTL21jGW0/sddefault.webp",
+    "local": "/assets/docs/youtube/IkkTL21jGW0-sddefault.webp",
+    "kind": "image",
+    "bytes": 10872,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:concepts/workspaces-and-branches"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/2fkwP_xuE9Q/sddefault.webp",
+    "local": "/assets/docs/youtube/2fkwP_xuE9Q-sddefault.webp",
+    "kind": "image",
+    "bytes": 12042,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:guides/issue-to-pr"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/Uz6TfQWFdIg/sddefault.webp",
+    "local": "/assets/docs/youtube/Uz6TfQWFdIg-sddefault.webp",
+    "kind": "image",
+    "bytes": 11348,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:guides/use-files-to-copy",
+      "docs:reference/files-to-copy"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/KSQaIFJvGQQ/sddefault.webp",
+    "local": "/assets/docs/youtube/KSQaIFJvGQQ-sddefault.webp",
+    "kind": "image",
+    "bytes": 15798,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:reference/big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://meltylabs.t3.storage.dev/conductor-docs/ConductorDiffExplainer.mp4",
+    "local": "/assets/docs/media/ConductorDiffExplainer.mp4",
+    "kind": "video",
+    "bytes": 27196630,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "docs:reference/diff-viewer"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/git-worktrees-claude-code-workspace.png",
+    "local": "/assets/docs/images/git-worktrees-claude-code-workspace.png",
+    "kind": "image",
+    "bytes": 431872,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:guides/git-worktrees/run-claude-code-with-git-worktrees",
+      "docs:guides/parallel-agents/run-multiple-claude-code-sessions"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/git-worktrees-codex-workspace.png",
+    "local": "/assets/docs/images/git-worktrees-codex-workspace.png",
+    "kind": "image",
+    "bytes": 430431,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:guides/git-worktrees/run-codex-with-git-worktrees",
+      "docs:guides/parallel-agents/run-multiple-codex-sessions"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/docs-assets/images/select-working-directories.png",
+    "local": "/assets/docs/images/select-working-directories.png",
+    "kind": "image",
+    "bytes": 40337,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "docs:guides/repositories/monorepos"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/vMfDRck174s/sddefault.webp",
+    "local": "/assets/docs/youtube/vMfDRck174s-sddefault.webp",
+    "kind": "image",
+    "bytes": 13078,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:reference/harnesses/opencode"
+    ]
+  },
+  {
+    "remote": "https://meltylabs.t3.storage.dev/conductor-docs/ConductorAdvancedSetup.mp4",
+    "local": "/assets/docs/media/ConductorAdvancedSetup.mp4",
+    "kind": "video",
+    "bytes": 172032208,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "docs:reference/scripts"
+    ]
+  },
+  {
+    "remote": "https://i.ytimg.com/vi_webp/R21ghifdrXg/sddefault.webp",
+    "local": "/assets/docs/youtube/R21ghifdrXg-sddefault.webp",
+    "kind": "image",
+    "bytes": 12428,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "docs:reference/scripts/spotlight-testing"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-mobile-0.90.0.png",
+    "local": "/assets/changelog/images/conductor-mobile-0.90.0.png",
+    "kind": "image",
+    "bytes": 376973,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.90.0-conductor-for-ios"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/sign-in-with-chatgpt-0.89.0.png",
+    "local": "/assets/changelog/images/sign-in-with-chatgpt-0.89.0.png",
+    "kind": "image",
+    "bytes": 51516,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.89.0-sign-in-with-chatgpt"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/gpt-6-1-sol-0.89.1.png",
+    "local": "/assets/changelog/images/gpt-6-1-sol-0.89.1.png",
+    "kind": "image",
+    "bytes": 149239,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.89.1-gpt-6-1-sol"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/sonnet-5-5-0.87.6.png",
+    "local": "/assets/changelog/images/sonnet-5-5-0.87.6.png",
+    "kind": "image",
+    "bytes": 1143480,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.6-claude-sonnet-5-5"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/gpt-6-sol-luna-0.87.3.png",
+    "local": "/assets/changelog/images/gpt-6-sol-luna-0.87.3.png",
+    "kind": "image",
+    "bytes": 940387,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.3-gpt-6-sol-and-gpt-6-luna"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/opus-5-5-0.87.2.png",
+    "local": "/assets/changelog/images/opus-5-5-0.87.2.png",
+    "kind": "image",
+    "bytes": 9252259,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.2-claude-opus-5-5"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/grok-4.7-0.87.1.png",
+    "local": "/assets/changelog/images/grok-4.7-0.87.1.png",
+    "kind": "image",
+    "bytes": 333126,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.1-grok-4-7"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/search-in-files-0.87.0.png",
+    "local": "/assets/changelog/images/search-in-files-0.87.0.png",
+    "kind": "image",
+    "bytes": 111638,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.0-search-across-files-opencode-2-0"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/routine-github-filters-0.87.0.png",
+    "local": "/assets/changelog/images/routine-github-filters-0.87.0.png",
+    "kind": "image",
+    "bytes": 83647,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.87.0-search-across-files-opencode-2-0"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/sidebar-sections-0.85.0.png",
+    "local": "/assets/changelog/images/sidebar-sections-0.85.0.png",
+    "kind": "image",
+    "bytes": 601996,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.85.0-sections-routines-and-a-new-model-picker"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/model-picker-0.85.0.png",
+    "local": "/assets/changelog/images/model-picker-0.85.0.png",
+    "kind": "image",
+    "bytes": 87851,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.85.0-sections-routines-and-a-new-model-picker"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/routines-0.85.0.webp",
+    "local": "/assets/changelog/images/routines-0.85.0.webp",
+    "kind": "image",
+    "bytes": 2658630,
+    "contentType": "image/webp",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.85.0-sections-routines-and-a-new-model-picker"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/private-workspaces-0.85.0.png",
+    "local": "/assets/changelog/images/private-workspaces-0.85.0.png",
+    "kind": "image",
+    "bytes": 170775,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.85.0-sections-routines-and-a-new-model-picker"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/shared-loadout-0.86.0.png",
+    "local": "/assets/changelog/images/shared-loadout-0.86.0.png",
+    "kind": "image",
+    "bytes": 548912,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.86.0-share-your-loadouts"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/gpt-6-astra-0.84.2.png",
+    "local": "/assets/changelog/images/gpt-6-astra-0.84.2.png",
+    "kind": "image",
+    "bytes": 471209,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.84.2-gpt-6-astra"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/fable-5-1-0.83.2.png",
+    "local": "/assets/changelog/images/fable-5-1-0.83.2.png",
+    "kind": "image",
+    "bytes": 1815789,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.83.2-claude-fable-5-1"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/auto-port-forwarding-0.83.0.png",
+    "local": "/assets/changelog/images/auto-port-forwarding-0.83.0.png",
+    "kind": "image",
+    "bytes": 51712,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.83.0-auto-port-forwarding"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/diff-editor-comments-0.84.0.gif",
+    "local": "/assets/changelog/images/diff-editor-comments-0.84.0.gif",
+    "kind": "image",
+    "bytes": 1248824,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.84.0-edit-files-directly-in-diffs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/cloud-desktop-0.84.0.png",
+    "local": "/assets/changelog/images/cloud-desktop-0.84.0.png",
+    "kind": "image",
+    "bytes": 1201810,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.84.0-edit-files-directly-in-diffs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/ports-popover-0.84.1.gif",
+    "local": "/assets/changelog/images/ports-popover-0.84.1.gif",
+    "kind": "image",
+    "bytes": 122861,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.84.0-edit-files-directly-in-diffs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-mcp-0.82.0.png",
+    "local": "/assets/changelog/images/conductor-mcp-0.82.0.png",
+    "kind": "image",
+    "bytes": 193243,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.82.0-conductor-mcp"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/cloud-mcp-settings-0.82.0.png",
+    "local": "/assets/changelog/images/cloud-mcp-settings-0.82.0.png",
+    "kind": "image",
+    "bytes": 85507,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.82.0-conductor-mcp"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/cloud-computer-storage-0.82.0.png",
+    "local": "/assets/changelog/images/cloud-computer-storage-0.82.0.png",
+    "kind": "image",
+    "bytes": 51163,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.82.0-conductor-mcp"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/pdf-preview-0.82.0.png",
+    "local": "/assets/changelog/images/pdf-preview-0.82.0.png",
+    "kind": "image",
+    "bytes": 787753,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.82.0-conductor-mcp"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/claude-concise-mode-0.82.0.png",
+    "local": "/assets/changelog/images/claude-concise-mode-0.82.0.png",
+    "kind": "image",
+    "bytes": 28630,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.82.0-conductor-mcp"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/github-pr-stacks-0.80.0.png",
+    "local": "/assets/changelog/images/github-pr-stacks-0.80.0.png",
+    "kind": "image",
+    "bytes": 61523,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.80.0-stacks"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-cli-0.80.0.png",
+    "local": "/assets/changelog/images/conductor-cli-0.80.0.png",
+    "kind": "image",
+    "bytes": 302603,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.80.0-stacks"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/cloud-port-forwarding-0.80.0.png",
+    "local": "/assets/changelog/images/cloud-port-forwarding-0.80.0.png",
+    "kind": "image",
+    "bytes": 179499,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.80.0-stacks"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/grok-4.6-0.80.1.png",
+    "local": "/assets/changelog/images/grok-4.6-0.80.1.png",
+    "kind": "image",
+    "bytes": 28827,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.80.1-grok-4-6"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-cloud-0.78.0.jpg",
+    "local": "/assets/changelog/images/conductor-cloud-0.78.0.jpg",
+    "kind": "image",
+    "bytes": 134922,
+    "contentType": "image/jpeg",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.78.0-introducing-conductor-cloud"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-cloud-collaboration-0.78.0.png",
+    "local": "/assets/changelog/images/conductor-cloud-collaboration-0.78.0.png",
+    "kind": "image",
+    "bytes": 267567,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.78.0-introducing-conductor-cloud"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/opus-5-0.77.2.png",
+    "local": "/assets/changelog/images/opus-5-0.77.2.png",
+    "kind": "image",
+    "bytes": 3517303,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.77.2-claude-opus-5"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/cloud-collaboration-0.77.0.png",
+    "local": "/assets/changelog/images/cloud-collaboration-0.77.0.png",
+    "kind": "image",
+    "bytes": 170159,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.77.0-early-access-multiplayer-api-background-tasks-performance"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-api-openclaw-0.77.0.jpg",
+    "local": "/assets/changelog/images/conductor-api-openclaw-0.77.0.jpg",
+    "kind": "image",
+    "bytes": 460632,
+    "contentType": "image/jpeg",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.77.0-early-access-multiplayer-api-background-tasks-performance"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/background-task-waiting-0.77.0.png",
+    "local": "/assets/changelog/images/background-task-waiting-0.77.0.png",
+    "kind": "image",
+    "bytes": 16613,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.77.0-early-access-multiplayer-api-background-tasks-performance"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/performance-gpu-0.77.0.png",
+    "local": "/assets/changelog/images/performance-gpu-0.77.0.png",
+    "kind": "image",
+    "bytes": 468288,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.77.0-early-access-multiplayer-api-background-tasks-performance"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/checks-tab-0.76.0.png",
+    "local": "/assets/changelog/images/checks-tab-0.76.0.png",
+    "kind": "image",
+    "bytes": 465186,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.76.0-bug-squashathon"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/pr-page-0.76.0.png",
+    "local": "/assets/changelog/images/pr-page-0.76.0.png",
+    "kind": "image",
+    "bytes": 3020215,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.76.0-bug-squashathon"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/codex-usage-0.75.0.png",
+    "local": "/assets/changelog/images/codex-usage-0.75.0.png",
+    "kind": "image",
+    "bytes": 1055878,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.75.0-polish"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/pr-badge-open-github-0.75.0.png",
+    "local": "/assets/changelog/images/pr-badge-open-github-0.75.0.png",
+    "kind": "image",
+    "bytes": 37033,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.75.0-polish"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/gpt-5.6-luna-0.75.0.png",
+    "local": "/assets/changelog/images/gpt-5.6-luna-0.75.0.png",
+    "kind": "image",
+    "bytes": 34778,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.75.0-polish"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/gpt-5.6-0.73.3.png",
+    "local": "/assets/changelog/images/gpt-5.6-0.73.3.png",
+    "kind": "image",
+    "bytes": 38235,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.73.3-gpt-5-6"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/grok-4.5-0.73.2.png",
+    "local": "/assets/changelog/images/grok-4.5-0.73.2.png",
+    "kind": "image",
+    "bytes": 45313,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.73.2-grok-4-5"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/workspace-links-0.71.0.png",
+    "local": "/assets/changelog/images/workspace-links-0.71.0.png",
+    "kind": "image",
+    "bytes": 30514,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.71.0-workspace-and-chat-links"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/pr-page-0.73.0.png",
+    "local": "/assets/changelog/images/pr-page-0.73.0.png",
+    "kind": "image",
+    "bytes": 505690,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.73.0-pr-page"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/sonnet-5-0.70.1.png",
+    "local": "/assets/changelog/images/sonnet-5-0.70.1.png",
+    "kind": "image",
+    "bytes": 36226,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.70.1-claude-sonnet-5"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/multiple-run-scripts-menu-0.70.0.png",
+    "local": "/assets/changelog/images/multiple-run-scripts-menu-0.70.0.png",
+    "kind": "image",
+    "bytes": 26442,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.70.0-multiple-run-scripts"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.69.0/519293ba-c568-44f3-9dbf-fafc2055ed40/1782241182948-2dab283a-463f-49d7-b36a-eaee4b274665-opencode.mp4",
+    "local": "/assets/changelog/media/0.69.0/1782241182948-2dab283a-463f-49d7-b36a-eaee4b274665-opencode.mp4",
+    "kind": "video",
+    "bytes": 2103575,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.69.0-opencode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.68.0/4f7ac0f4-3b8f-4f95-91f2-a3e4643417a1/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png",
+    "local": "/assets/changelog/media/0.68.0/1781900006852-bf25caf4-3622-4a80-abbf-46135b049985-CleanShot_2026-06-19_at_13.13.09_2x.png",
+    "kind": "image",
+    "bytes": 190012,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.68.0-markdown-frontmatter"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.66.0/c0df0117-8e13-42ab-b916-4fa9fdcd9ef6/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4",
+    "local": "/assets/changelog/media/0.66.0/1781641450211-2f61d0db-f5fc-4342-bf6b-b7cbfa04315c-Clipboard-20260616-202400-036.mp4",
+    "kind": "video",
+    "bytes": 2115713,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.66.0-create-workspace-from-issue"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/1781286329427-9669f3d9-05ed-4540-96dd-f0d9db92a62d-CleanShot_2026-06-12_at_10.40.21.mp4",
+    "local": "/assets/changelog/media/0.65.0/1781286329427-9669f3d9-05ed-4540-96dd-f0d9db92a62d-CleanShot_2026-06-12_at_10.40.21.mp4",
+    "kind": "video",
+    "bytes": 303608,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.65.0-codex-goal-support"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.65.0/af0b4fdc-ea36-4d19-93a7-eb96d6af1a3a/1781278112622-895268e6-22fd-4b43-a239-44e247960c3f-CleanShot_2026-06-12_at_08.27.48.mp4",
+    "local": "/assets/changelog/media/0.65.0/1781278112622-895268e6-22fd-4b43-a239-44e247960c3f-CleanShot_2026-06-12_at_08.27.48.mp4",
+    "kind": "video",
+    "bytes": 473038,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.65.0-codex-goal-support"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.65.0/af0b4fdc-ea36-4d19-93a7-eb96d6af1a3a/1781278158390-dcaa7d84-cdeb-4401-b0f5-df7f1b2736aa-CleanShot_2026-06-12_at_08.29.10_2x.png",
+    "local": "/assets/changelog/media/0.65.0/1781278158390-dcaa7d84-cdeb-4401-b0f5-df7f1b2736aa-CleanShot_2026-06-12_at_08.29.10_2x.png",
+    "kind": "image",
+    "bytes": 72710,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.65.0-codex-goal-support"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.64.0/b5dbef72-6901-4cdd-93df-ceb504969603/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4",
+    "local": "/assets/changelog/media/0.64.0/1781028245148-53c92d41-315a-4f49-8299-a916e6ac50a5-Clipboard-20260609-180356-502.mp4",
+    "kind": "video",
+    "bytes": 2590479,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.64.0-claude-fable-5"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.62.0/0.62.0/1780951829667-e33e58c6-daef-43aa-86bc-87e7fc0d3bf5-Clipboard-20260608-204802-476.mp4",
+    "local": "/assets/changelog/media/0.63.0/1780951829667-e33e58c6-daef-43aa-86bc-87e7fc0d3bf5-Clipboard-20260608-204802-476.mp4",
+    "kind": "video",
+    "bytes": 6443170,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.63.0-cursor-support-dispatcher"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/marketing/0.63.0/3ae6e1b6-9e33-44ea-b2ce-5acf79cbcf7e/1780949731653-8800ea3d-39d5-45a7-baf1-bdc4d71240d6-Clipboard-20260608-201521-313.mp4",
+    "local": "/assets/changelog/media/0.63.0/1780949731653-8800ea3d-39d5-45a7-baf1-bdc4d71240d6-Clipboard-20260608-201521-313.mp4",
+    "kind": "video",
+    "bytes": 5089457,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.63.0-cursor-support-dispatcher"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780099515800-image.png",
+    "local": "/assets/changelog/media/0.61.0/1780099515800-image.png",
+    "kind": "image",
+    "bytes": 69874,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.61.0-ultracode-git-improve"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780099516542-image.gif",
+    "local": "/assets/changelog/media/0.61.0/1780099516542-image.gif",
+    "kind": "image",
+    "bytes": 1139459,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.61.0-ultracode-git-improve"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780691919611-image.png",
+    "local": "/assets/changelog/media/0.62.0/1780691919611-image.png",
+    "kind": "image",
+    "bytes": 4019734,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.62.0-repo-settings-browser-preview"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780691922016-video.mp4",
+    "local": "/assets/changelog/media/0.62.0/1780691922016-video.mp4",
+    "kind": "video",
+    "bytes": 18546057,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.62.0-repo-settings-browser-preview"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780691923117-video.mp4",
+    "local": "/assets/changelog/media/0.62.0/1780691923117-video.mp4",
+    "kind": "video",
+    "bytes": 1304642,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.62.0-repo-settings-browser-preview"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1780691923531-video.mp4",
+    "local": "/assets/changelog/media/0.62.0/1780691923531-video.mp4",
+    "kind": "video",
+    "bytes": 347286,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.62.0-repo-settings-browser-preview"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/opus-4-8-0.59.1.png",
+    "local": "/assets/changelog/images/opus-4-8-0.59.1.png",
+    "kind": "image",
+    "bytes": 27791,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.59.0-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779475000000-scroll-masks-0.56.0.gif",
+    "local": "/assets/changelog/media/0.56.0/1779475000000-scroll-masks-0.56.0.gif",
+    "kind": "image",
+    "bytes": 1193651,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.56.0-settings-scrolls"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779475000001-provider-settings-0.56.0.png",
+    "local": "/assets/changelog/media/0.56.0/1779475000001-provider-settings-0.56.0.png",
+    "kind": "image",
+    "bytes": 244606,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.56.0-settings-scrolls"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/sync-agent-configs-0.57.0.png",
+    "local": "/assets/changelog/images/sync-agent-configs-0.57.0.png",
+    "kind": "image",
+    "bytes": 38697,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.57.0-sync-agent-configs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/conductor-aware-agents-0.57.0.png",
+    "local": "/assets/changelog/images/conductor-aware-agents-0.57.0.png",
+    "kind": "image",
+    "bytes": 54867,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.57.0-sync-agent-configs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/ten-tabs-0.57.0.png",
+    "local": "/assets/changelog/images/ten-tabs-0.57.0.png",
+    "kind": "image",
+    "bytes": 26548,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.57.0-sync-agent-configs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779307966900-image.png",
+    "local": "/assets/changelog/media/0.55.0/1779307966900-image.png",
+    "kind": "image",
+    "bytes": 90718,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.55.0-per-repo-spotlight-html-previews"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779307967770-video.mp4",
+    "local": "/assets/changelog/media/0.55.0/1779307967770-video.mp4",
+    "kind": "video",
+    "bytes": 4638988,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.55.0-per-repo-spotlight-html-previews"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779310379139-CleanShot_2026-05-20_at_13.52.35_2x.png",
+    "local": "/assets/changelog/media/0.55.0/1779310379139-CleanShot_2026-05-20_at_13.52.35_2x.png",
+    "kind": "image",
+    "bytes": 141322,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.55.0-per-repo-spotlight-html-previews"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/merge-queue-rendering-0.55.0.png",
+    "local": "/assets/changelog/images/merge-queue-rendering-0.55.0.png",
+    "kind": "image",
+    "bytes": 302141,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.55.0-per-repo-spotlight-html-previews"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779147467258-image.gif",
+    "local": "/assets/changelog/media/0.54.0/1779147467258-image.gif",
+    "kind": "image",
+    "bytes": 686348,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779147467810-image.gif",
+    "local": "/assets/changelog/media/0.54.0/1779147467810-image.gif",
+    "kind": "image",
+    "bytes": 879226,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779147468411-image.gif",
+    "local": "/assets/changelog/media/0.54.0/1779147468411-image.gif",
+    "kind": "image",
+    "bytes": 426433,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779147468742-image.gif",
+    "local": "/assets/changelog/media/0.54.0/1779147468742-image.gif",
+    "kind": "image",
+    "bytes": 173142,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779147469192-image.png",
+    "local": "/assets/changelog/media/0.54.0/1779147469192-image.png",
+    "kind": "image",
+    "bytes": 152860,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779150280234-environment.gif",
+    "local": "/assets/changelog/media/0.54.0/1779150280234-environment.gif",
+    "kind": "image",
+    "bytes": 170975,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1779148037026-image.png",
+    "local": "/assets/changelog/media/0.54.0/1779148037026-image.png",
+    "kind": "image",
+    "bytes": 195484,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/workspace-rename-0.54.0.png",
+    "local": "/assets/changelog/images/workspace-rename-0.54.0.png",
+    "kind": "image",
+    "bytes": 47036,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.54.0-new-queue-diff-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778020308529-image.png",
+    "local": "/assets/changelog/media/0.51.0/1778020308529-image.png",
+    "kind": "image",
+    "bytes": 75429,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.51.0-codex-is-more-beautiful"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778020309307-image.png",
+    "local": "/assets/changelog/media/0.51.0/1778020309307-image.png",
+    "kind": "image",
+    "bytes": 2391397,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.51.0-codex-is-more-beautiful"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778020309784-image.png",
+    "local": "/assets/changelog/media/0.51.0/1778020309784-image.png",
+    "kind": "image",
+    "bytes": 62570,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.51.0-codex-is-more-beautiful"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778020309987-image.png",
+    "local": "/assets/changelog/media/0.51.0/1778020309987-image.png",
+    "kind": "image",
+    "bytes": 52358,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.51.0-codex-is-more-beautiful"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778020310308-image.png",
+    "local": "/assets/changelog/media/0.51.0/1778020310308-image.png",
+    "kind": "image",
+    "bytes": 61228,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.51.0-codex-is-more-beautiful"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1777671232815-image.png",
+    "local": "/assets/changelog/media/0.50.0/1777671232815-image.png",
+    "kind": "image",
+    "bytes": 32477,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.50.0-steering"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1777676276653-CleanShot_2026-05-01_at_15.57.34_2x.png",
+    "local": "/assets/changelog/media/0.50.0/1777676276653-CleanShot_2026-05-01_at_15.57.34_2x.png",
+    "kind": "image",
+    "bytes": 113722,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.50.0-steering"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1777675980401-CleanShot_2026-05-01_at_15.52.31_2x.png",
+    "local": "/assets/changelog/media/0.50.0/1777675980401-CleanShot_2026-05-01_at_15.52.31_2x.png",
+    "kind": "image",
+    "bytes": 66540,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.50.0-steering"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1777671233360-image.png",
+    "local": "/assets/changelog/media/0.50.0/1777671233360-image.png",
+    "kind": "image",
+    "bytes": 63351,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.50.0-steering"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1777676402214-CleanShot_2026-05-01_at_15.59.37_2x.png",
+    "local": "/assets/changelog/media/0.50.0/1777676402214-CleanShot_2026-05-01_at_15.59.37_2x.png",
+    "kind": "image",
+    "bytes": 37804,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.50.0-steering"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778205509048-image.png",
+    "local": "/assets/changelog/media/0.52.0/1778205509048-image.png",
+    "kind": "image",
+    "bytes": 31648,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.52.0-sounds-colors"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1778205509342-image.png",
+    "local": "/assets/changelog/media/0.52.0/1778205509342-image.png",
+    "kind": "image",
+    "bytes": 174954,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.52.0-sounds-colors"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776974195874-CleanShot_2026-04-23_at_12.56.15_2x.png",
+    "local": "/assets/changelog/media/0.49.0/1776974195874-CleanShot_2026-04-23_at_12.56.15_2x.png",
+    "kind": "image",
+    "bytes": 32393,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.49.0-conductor-allegro-gpt-5-5"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776907036915-video.mp4",
+    "local": "/assets/changelog/media/0.49.0/1776907036915-video.mp4",
+    "kind": "video",
+    "bytes": 6864785,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.49.0-conductor-allegro-gpt-5-5"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png",
+    "local": "/assets/changelog/media/0.48.5/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png",
+    "kind": "image",
+    "bytes": 94185,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.5-effort"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png",
+    "local": "/assets/changelog/media/0.48.2/1776358502960-CleanShot_2026-04-16_at_09.54.44_2x.png",
+    "kind": "image",
+    "bytes": 19652,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.2-claude-opus-4-7"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198032202-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198032202-image.png",
+    "kind": "image",
+    "bytes": 3652458,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198032815-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198032815-image.png",
+    "kind": "image",
+    "bytes": 4175859,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198033341-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198033341-image.png",
+    "kind": "image",
+    "bytes": 119293,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198033641-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198033641-image.png",
+    "kind": "image",
+    "bytes": 70118,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198033870-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198033870-image.png",
+    "kind": "image",
+    "bytes": 31188,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198034106-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198034106-image.png",
+    "kind": "image",
+    "bytes": 123099,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776198034649-image.png",
+    "local": "/assets/changelog/media/0.48.0/1776198034649-image.png",
+    "kind": "image",
+    "bytes": 78344,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1776210506658-CleanShot_2026-04-14_at_16.46.54_2x.png",
+    "local": "/assets/changelog/media/0.48.0/1776210506658-CleanShot_2026-04-14_at_16.46.54_2x.png",
+    "kind": "image",
+    "bytes": 113205,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.48.0-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775442018933-CleanShot_2026-04-05_at_19.20.02_2x.png",
+    "local": "/assets/changelog/media/0.46.0/1775442018933-CleanShot_2026-04-05_at_19.20.02_2x.png",
+    "kind": "image",
+    "bytes": 156382,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.46.0-bug-fixes-instant-archiving-terminal"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775441947842-ConductorArchiving.mp4",
+    "local": "/assets/changelog/media/0.46.0/1775441947842-ConductorArchiving.mp4",
+    "kind": "video",
+    "bytes": 2560462,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.46.0-bug-fixes-instant-archiving-terminal"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088338122-image.png",
+    "local": "/assets/changelog/media/0.45.0/1775088338122-image.png",
+    "kind": "image",
+    "bytes": 30168,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088338389-image.png",
+    "local": "/assets/changelog/media/0.45.0/1775088338389-image.png",
+    "kind": "image",
+    "bytes": 279654,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088338677-image.png",
+    "local": "/assets/changelog/media/0.45.0/1775088338677-image.png",
+    "kind": "image",
+    "bytes": 40681,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088338960-image.png",
+    "local": "/assets/changelog/media/0.45.0/1775088338960-image.png",
+    "kind": "image",
+    "bytes": 33226,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088339276-image.png",
+    "local": "/assets/changelog/media/0.45.0/1775088339276-image.png",
+    "kind": "image",
+    "bytes": 241251,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1775088337448-video.mp4",
+    "local": "/assets/changelog/media/0.45.0/1775088337448-video.mp4",
+    "kind": "video",
+    "bytes": 3758729,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.45.0-file-previews-codex-personalities"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774067154596-image.png",
+    "local": "/assets/changelog/media/0.43.0/1774067154596-image.png",
+    "kind": "image",
+    "bytes": 202577,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.43.0-codex-skills-plan-mode-fast-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774067154862-image.png",
+    "local": "/assets/changelog/media/0.43.0/1774067154862-image.png",
+    "kind": "image",
+    "bytes": 150399,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.43.0-codex-skills-plan-mode-fast-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774395513472-image.png",
+    "local": "/assets/changelog/media/0.44.0/1774395513472-image.png",
+    "kind": "image",
+    "bytes": 467021,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774395513949-image.png",
+    "local": "/assets/changelog/media/0.44.0/1774395513949-image.png",
+    "kind": "image",
+    "bytes": 128469,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774395514112-image.png",
+    "local": "/assets/changelog/media/0.44.0/1774395514112-image.png",
+    "kind": "image",
+    "bytes": 22458,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1774395514400-image.png",
+    "local": "/assets/changelog/media/0.44.0/1774395514400-image.png",
+    "kind": "image",
+    "bytes": 97000,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773956606308-image.png",
+    "local": "/assets/changelog/media/0.41.0/1773956606308-image.png",
+    "kind": "image",
+    "bytes": 356571,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.41.0-tool-approval-codex-plan-mode-beta"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773956606677-image.png",
+    "local": "/assets/changelog/media/0.41.0/1773956606677-image.png",
+    "kind": "image",
+    "bytes": 115891,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.41.0-tool-approval-codex-plan-mode-beta"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773698681114-image.png",
+    "local": "/assets/changelog/media/0.40.1/1773698681114-image.png",
+    "kind": "image",
+    "bytes": 200923,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.40.1-fast-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773449853442-image.png",
+    "local": "/assets/changelog/media/0.39.0/1773449853442-image.png",
+    "kind": "image",
+    "bytes": 329514,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.39.0-insta-summarize-command-palette-opus-4-6"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773449853982-image.png",
+    "local": "/assets/changelog/media/0.39.0/1773449853982-image.png",
+    "kind": "image",
+    "bytes": 2649360,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.39.0-insta-summarize-command-palette-opus-4-6"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773449853029-video.mp4",
+    "local": "/assets/changelog/media/0.39.0/1773449853029-video.mp4",
+    "kind": "video",
+    "bytes": 836482,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.39.0-insta-summarize-command-palette-opus-4-6"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png",
+    "local": "/assets/changelog/media/0.38.4/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png",
+    "kind": "image",
+    "bytes": 40071,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.38.4-direnv-support-opus-4-6-1m"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773187360353-CleanShot_2026-03-10_at_17.02.34_2x.png",
+    "local": "/assets/changelog/media/0.38.4/1773187360353-CleanShot_2026-03-10_at_17.02.34_2x.png",
+    "kind": "image",
+    "bytes": 58061,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.38.4-direnv-support-opus-4-6-1m"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1773167427543-image.png",
+    "local": "/assets/changelog/media/0.38.3/1773167427543-image.png",
+    "kind": "image",
+    "bytes": 118856,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.38.3-multiline-comments"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png",
+    "local": "/assets/changelog/media/0.38.0/1772750910259-CleanShot_2026-03-05_at_14.48.20_2x.png",
+    "kind": "image",
+    "bytes": 50393,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.38.0-gpt-5-4"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772741358744-CleanShot_2026-03-05_at_12.09.12_2x.png",
+    "local": "/assets/changelog/media/0.38.0/1772741358744-CleanShot_2026-03-05_at_12.09.12_2x.png",
+    "kind": "image",
+    "bytes": 117613,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.38.0-gpt-5-4"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png",
+    "local": "/assets/changelog/media/0.37.1/1772646055437-CleanShot_2026-03-04_at_09.40.33_2x.png",
+    "kind": "image",
+    "bytes": 69135,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.37.1-polish-and-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772585344123-video.mp4",
+    "local": "/assets/changelog/media/0.37.0/1772585344123-video.mp4",
+    "kind": "video",
+    "bytes": 3308306,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.37.0-manual-mode"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772243714830-Conductorsnappy.mp4",
+    "local": "/assets/changelog/media/0.36.9/1772243714830-Conductorsnappy.mp4",
+    "kind": "video",
+    "bytes": 2607377,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.9-performance-improvements"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png",
+    "local": "/assets/changelog/media/0.36.5/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png",
+    "kind": "image",
+    "bytes": 169798,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.5-open-from-linear-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1772151034572-CleanShot_2026-02-26_at_16.10.08_2x.png",
+    "local": "/assets/changelog/media/0.36.5/1772151034572-CleanShot_2026-02-26_at_16.10.08_2x.png",
+    "kind": "image",
+    "bytes": 53322,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.5-open-from-linear-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771974660429-image.png",
+    "local": "/assets/changelog/media/0.36.4/1771974660429-image.png",
+    "kind": "image",
+    "bytes": 171913,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.4-next-workspace"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771877342199-image.png",
+    "local": "/assets/changelog/media/0.36.3/1771877342199-image.png",
+    "kind": "image",
+    "bytes": 133492,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.3-submit-a-prompt-sdk-memory-leaks"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771954108596-CleanShot_2026-02-24_at_09.28.07_2x.png",
+    "local": "/assets/changelog/media/0.36.3/1771954108596-CleanShot_2026-02-24_at_09.28.07_2x.png",
+    "kind": "image",
+    "bytes": 293727,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.3-submit-a-prompt-sdk-memory-leaks"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771480180909-image.png",
+    "local": "/assets/changelog/media/0.36.2/1771480180909-image.png",
+    "kind": "image",
+    "bytes": 40234,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.2-model-picker-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771359980844-image.png",
+    "local": "/assets/changelog/media/0.36.0/1771359980844-image.png",
+    "kind": "image",
+    "bytes": 29751,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.0-sonnet-4-6-pierre-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771359981518-image.png",
+    "local": "/assets/changelog/media/0.36.0/1771359981518-image.png",
+    "kind": "image",
+    "bytes": 3549930,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.0-sonnet-4-6-pierre-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771359982278-image.png",
+    "local": "/assets/changelog/media/0.36.0/1771359982278-image.png",
+    "kind": "image",
+    "bytes": 401569,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.36.0-sonnet-4-6-pierre-diffs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1771097364174-image.png",
+    "local": "/assets/changelog/media/0.35.3/1771097364174-image.png",
+    "kind": "image",
+    "bytes": 39221,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.35.3-reliability-and-performance"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770929018501-image.png",
+    "local": "/assets/changelog/media/0.35.2/1770929018501-image.png",
+    "kind": "image",
+    "bytes": 144426,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770929018741-image.png",
+    "local": "/assets/changelog/media/0.35.2/1770929018741-image.png",
+    "kind": "image",
+    "bytes": 84290,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770749325599-image.png",
+    "local": "/assets/changelog/media/0.34.2/1770749325599-image.png",
+    "kind": "image",
+    "bytes": 49882,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.34.2-chat-summaries-re-run-actions-latex"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770749325912-image.png",
+    "local": "/assets/changelog/media/0.34.2/1770749325912-image.png",
+    "kind": "image",
+    "bytes": 56470,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.34.2-chat-summaries-re-run-actions-latex"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770749326150-image.png",
+    "local": "/assets/changelog/media/0.34.2/1770749326150-image.png",
+    "kind": "image",
+    "bytes": 299229,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.34.2-chat-summaries-re-run-actions-latex"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770849671156-image.png",
+    "local": "/assets/changelog/media/0.35.0/1770849671156-image.png",
+    "kind": "image",
+    "bytes": 243084,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.35.0-workspace-status"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770849671510-image.png",
+    "local": "/assets/changelog/media/0.35.0/1770849671510-image.png",
+    "kind": "image",
+    "bytes": 425498,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.35.0-workspace-status"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770405777147-image.png",
+    "local": "/assets/changelog/media/0.34.1/1770405777147-image.png",
+    "kind": "image",
+    "bytes": 183742,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.34.1-editable-pr-titles-and-descriptions"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770319106128-image.png",
+    "local": "/assets/changelog/media/0.34.0/1770319106128-image.png",
+    "kind": "image",
+    "bytes": 59127,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.34.0-opus-4-6-and-gpt-5-3-codex"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png",
+    "local": "/assets/changelog/media/0.33.4/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png",
+    "kind": "image",
+    "bytes": 253802,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.4-git-panel-grouping-and-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1770153556088-image.png",
+    "local": "/assets/changelog/media/0.33.5/1770153556088-image.png",
+    "kind": "image",
+    "bytes": 407575,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.5-better-archiving"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769733805582-image.png",
+    "local": "/assets/changelog/media/0.33.3/1769733805582-image.png",
+    "kind": "image",
+    "bytes": 144031,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.3-performance-improvements-file-context-menu"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769636035709-image.png",
+    "local": "/assets/changelog/media/0.33.2/1769636035709-image.png",
+    "kind": "image",
+    "bytes": 533149,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.2-view-github-actions-in-conductor"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769542581206-image.png",
+    "local": "/assets/changelog/media/0.33.0/1769542581206-image.png",
+    "kind": "image",
+    "bytes": 487557,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.0-tasks-typography"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769542581588-image.png",
+    "local": "/assets/changelog/media/0.33.0/1769542581588-image.png",
+    "kind": "image",
+    "bytes": 471070,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.0-tasks-typography"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769542582144-image.png",
+    "local": "/assets/changelog/media/0.33.0/1769542582144-image.png",
+    "kind": "image",
+    "bytes": 53890,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.0-tasks-typography"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769542582282-image.png",
+    "local": "/assets/changelog/media/0.33.0/1769542582282-image.png",
+    "kind": "image",
+    "bytes": 51540,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.33.0-tasks-typography"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png",
+    "local": "/assets/changelog/media/0.32.1/1769125644872-CleanShot_2026-01-22_at_15.46.11_2x.png",
+    "kind": "image",
+    "bytes": 231105,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.32.1-rerun-setup-scripts"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768852746133-Clipboard-20260117-203656-672.mp4",
+    "local": "/assets/changelog/media/0.31.3/1768852746133-Clipboard-20260117-203656-672.mp4",
+    "kind": "video",
+    "bytes": 1264601,
+    "contentType": "video/mp4",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.3-askuserquestion-improvements"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png",
+    "local": "/assets/changelog/media/0.31.2/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png",
+    "kind": "image",
+    "bytes": 191340,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.2-general-agent-preferences"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png",
+    "local": "/assets/changelog/media/0.32.0/1769094178043-CleanShot_2026-01-22_at_06.59.07_2x.png",
+    "kind": "image",
+    "bytes": 198341,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769094176261-CleanShot_2026-01-22_at_07.01.53_2x.png",
+    "local": "/assets/changelog/media/0.32.0/1769094176261-CleanShot_2026-01-22_at_07.01.53_2x.png",
+    "kind": "image",
+    "bytes": 147182,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769094177659-CleanShot_2026-01-22_at_06.45.43_2x.png",
+    "local": "/assets/changelog/media/0.32.0/1769094177659-CleanShot_2026-01-22_at_06.45.43_2x.png",
+    "kind": "image",
+    "bytes": 199957,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1769094177141-CleanShot_2026-01-22_at_06.56.46.gif",
+    "local": "/assets/changelog/media/0.32.0/1769094177141-CleanShot_2026-01-22_at_06.56.46.gif",
+    "kind": "image",
+    "bytes": 538455,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768607997278-image.png",
+    "local": "/assets/changelog/media/0.31.1/1768607997278-image.png",
+    "kind": "image",
+    "bytes": 318570,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.1-checks-tab"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png",
+    "local": "/assets/changelog/media/0.29.5/1768254270382-CleanShot_2026-01-12_at_13.29.21_2x.png",
+    "kind": "image",
+    "bytes": 541765,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.5-bug-fixes-claude-can-now-read-your-terminal"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png",
+    "local": "/assets/changelog/media/0.30.0/1768351380349-CleanShot_2026-01-13_at_16.33.01_2x.png",
+    "kind": "image",
+    "bytes": 45273,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768351379517-CleanShot_2026-01-13_at_16.32.08_2x.png",
+    "local": "/assets/changelog/media/0.30.0/1768351379517-CleanShot_2026-01-13_at_16.32.08_2x.png",
+    "kind": "image",
+    "bytes": 36038,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png",
+    "local": "/assets/changelog/media/0.31.0/1768502805048-CleanShot_2026-01-15_at_10.31.48_2x.png",
+    "kind": "image",
+    "bytes": 530345,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768502805807-CleanShot_2026-01-15_at_10.33.25_2x.png",
+    "local": "/assets/changelog/media/0.31.0/1768502805807-CleanShot_2026-01-15_at_10.33.25_2x.png",
+    "kind": "image",
+    "bytes": 278391,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768502806213-CleanShot_2026-01-15_at_10.35.17_2x.png",
+    "local": "/assets/changelog/media/0.31.0/1768502806213-CleanShot_2026-01-15_at_10.35.17_2x.png",
+    "kind": "image",
+    "bytes": 275995,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768502806850-CleanShot_2026-01-15_at_10.45.43_2x.png",
+    "local": "/assets/changelog/media/0.31.0/1768502806850-CleanShot_2026-01-15_at_10.45.43_2x.png",
+    "kind": "image",
+    "bytes": 242433,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png",
+    "local": "/assets/changelog/media/0.29.4/1768232202433-CleanShot_2026-01-12_at_07.34.37_2x.png",
+    "kind": "image",
+    "bytes": 196451,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.4-pr-checks-new-shortcuts"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png",
+    "local": "/assets/changelog/media/0.29.2/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png",
+    "kind": "image",
+    "bytes": 130639,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.2-vercel-deployments-simplified-thinking-levels"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767974673603-CleanShot_2026-01-09_at_08.02.26_2x.png",
+    "local": "/assets/changelog/media/0.29.2/1767974673603-CleanShot_2026-01-09_at_08.02.26_2x.png",
+    "kind": "image",
+    "bytes": 169543,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.2-vercel-deployments-simplified-thinking-levels"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png",
+    "local": "/assets/changelog/media/0.29.3/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png",
+    "kind": "image",
+    "bytes": 154190,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.3-composer-improvements-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png",
+    "local": "/assets/changelog/media/0.29.1/1767892363892-CleanShot_2026-01-08_at_08.56.51_2x.png",
+    "kind": "image",
+    "bytes": 362953,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.1-customize-prompts-mark-files-as-viewed"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767892873190-CleanShot_2026-01-08_at_09.19.48_2x.png",
+    "local": "/assets/changelog/media/0.29.1/1767892873190-CleanShot_2026-01-08_at_09.19.48_2x.png",
+    "kind": "image",
+    "bytes": 248113,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.1-customize-prompts-mark-files-as-viewed"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767806660570-image.png",
+    "local": "/assets/changelog/media/0.29.0/1767806660570-image.png",
+    "kind": "image",
+    "bytes": 382150,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.0-claude-can-now-comment-on-your-code"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767806660033-CleanShot_2026-01-07_at_09.21.20_2x.png",
+    "local": "/assets/changelog/media/0.29.0/1767806660033-CleanShot_2026-01-07_at_09.21.20_2x.png",
+    "kind": "image",
+    "bytes": 207403,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.0-claude-can-now-comment-on-your-code"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767806659277-CleanShot_2026-01-07_at_09.23.25_2x.png",
+    "local": "/assets/changelog/media/0.29.0/1767806659277-CleanShot_2026-01-07_at_09.23.25_2x.png",
+    "kind": "image",
+    "bytes": 260307,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.29.0-claude-can-now-comment-on-your-code"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png",
+    "local": "/assets/changelog/media/0.28.7/1767642385609-CleanShot_2026-01-05_at_08.54.48_2x.png",
+    "kind": "image",
+    "bytes": 17398,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.7-change-target-branch"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767642386547-CleanShot_2026-01-05_at_08.55.13_2x.png",
+    "local": "/assets/changelog/media/0.28.7/1767642386547-CleanShot_2026-01-05_at_08.55.13_2x.png",
+    "kind": "image",
+    "bytes": 86280,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.7-change-target-branch"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png",
+    "local": "/assets/changelog/media/0.28.4/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png",
+    "kind": "image",
+    "bytes": 346873,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.4-todos"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767133962164-CleanShot_2025-12-30_at_17.32.36_2x.png",
+    "local": "/assets/changelog/media/0.28.4/1767133962164-CleanShot_2025-12-30_at_17.32.36_2x.png",
+    "kind": "image",
+    "bytes": 126383,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.4-todos"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1767134709038-CleanShot_2025-12-30_at_17.44.59_2x.png",
+    "local": "/assets/changelog/media/0.28.4/1767134709038-CleanShot_2025-12-30_at_17.44.59_2x.png",
+    "kind": "image",
+    "bytes": 90509,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.4-todos"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766614762331-legendary-cities.png",
+    "local": "/assets/changelog/media/0.28.2/1766614762331-legendary-cities.png",
+    "kind": "image",
+    "bytes": 449176,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.2-bug-fixes-legendary-cities-an-experiment"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png",
+    "local": "/assets/changelog/media/0.28.3/1766845639845-CleanShot_2025-12-27_at_09.26.21_2x.png",
+    "kind": "image",
+    "bytes": 78022,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.3-bug-fixes"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/context-dir-0.28.1.png",
+    "local": "/assets/changelog/images/context-dir-0.28.1.png",
+    "kind": "image",
+    "bytes": 164851,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.1-context-directory-set-working-directories"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/set-working-dir-0.28.1.png",
+    "local": "/assets/changelog/images/set-working-dir-0.28.1.png",
+    "kind": "image",
+    "bytes": 77441,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.1-context-directory-set-working-directories"
+    ]
+  },
+  {
+    "remote": "https://www.conductor.build/changelog/custom-mono-fonts-0.28.1.png",
+    "local": "/assets/changelog/images/custom-mono-fonts-0.28.1.png",
+    "kind": "image",
+    "bytes": 1484992,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.1-context-directory-set-working-directories"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766159277805-image.png",
+    "local": "/assets/changelog/media/0.27.1/1766159277805-image.png",
+    "kind": "image",
+    "bytes": 74305,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.27.1-clickable-file-mentions"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766433104288-image.png",
+    "local": "/assets/changelog/media/0.28.0/1766433104288-image.png",
+    "kind": "image",
+    "bytes": 1476865,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766433117505-image.png",
+    "local": "/assets/changelog/media/0.28.0/1766433117505-image.png",
+    "kind": "image",
+    "bytes": 59070,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766433126882-image.png",
+    "local": "/assets/changelog/media/0.28.0/1766433126882-image.png",
+    "kind": "image",
+    "bytes": 174116,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766433135099-image.png",
+    "local": "/assets/changelog/media/0.28.0/1766433135099-image.png",
+    "kind": "image",
+    "bytes": 35771,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more"
+    ]
+  },
+  {
+    "remote": "https://conductor-marketing.t3.tigrisfiles.io/uploads/1766433991631-image.png",
+    "local": "/assets/changelog/media/0.28.0/1766433991631-image.png",
+    "kind": "image",
+    "bytes": 231905,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/632ab731-231f-42f0-b0a2-120dfd0433ce",
+    "local": "/assets/changelog/media/0.26.0/632ab731-231f-42f0-b0a2-120dfd0433ce.png",
+    "kind": "image",
+    "bytes": 509795,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.26.0-search-workspaces-view-files-from-chat"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/beb5225b-2b8b-4fb5-89ad-163cff34f6e1",
+    "local": "/assets/changelog/media/0.26.0/beb5225b-2b8b-4fb5-89ad-163cff34f6e1.png",
+    "kind": "image",
+    "bytes": 173448,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.26.0-search-workspaces-view-files-from-chat"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a269d43e-c84a-4e5b-bb9d-d639fc80a025",
+    "local": "/assets/changelog/media/0.26.0/a269d43e-c84a-4e5b-bb9d-d639fc80a025.png",
+    "kind": "image",
+    "bytes": 21824,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.26.0-search-workspaces-view-files-from-chat"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/f4b04768-fe04-4ccb-89f6-aa651df5dfc3",
+    "local": "/assets/changelog/media/0.27.0/f4b04768-fe04-4ccb-89f6-aa651df5dfc3.png",
+    "kind": "image",
+    "bytes": 548397,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.27.0-notes-tab-gpt-5-2-codex-more-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/43cfb6e5-b3eb-421b-a5b3-db27fe7cbeaf",
+    "local": "/assets/changelog/media/0.27.0/43cfb6e5-b3eb-421b-a5b3-db27fe7cbeaf.png",
+    "kind": "image",
+    "bytes": 37383,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.27.0-notes-tab-gpt-5-2-codex-more-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/fdd3ff4a-75ff-4c7a-bfac-13453ab2839f",
+    "local": "/assets/changelog/media/0.27.0/fdd3ff4a-75ff-4c7a-bfac-13453ab2839f.png",
+    "kind": "image",
+    "bytes": 117625,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.27.0-notes-tab-gpt-5-2-codex-more-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/326a54db-735e-4591-b893-959cace0c218",
+    "local": "/assets/changelog/media/0.25.11/326a54db-735e-4591-b893-959cace0c218.png",
+    "kind": "image",
+    "bytes": 31787,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.11-fetch-comments-from-github-mark-workspaces-as-unread"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/42a38686-f552-4493-84c4-3a7bf7156f5f",
+    "local": "/assets/changelog/media/0.25.11/42a38686-f552-4493-84c4-3a7bf7156f5f.png",
+    "kind": "image",
+    "bytes": 40348,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.11-fetch-comments-from-github-mark-workspaces-as-unread"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/55c5394f-cfb6-44bd-87e8-ba27c3d7a023",
+    "local": "/assets/changelog/media/0.25.8/55c5394f-cfb6-44bd-87e8-ba27c3d7a023.png",
+    "kind": "image",
+    "bytes": 36410,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.8-gpt-5-2"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/17c63402-f153-45b0-982f-08f923522203",
+    "local": "/assets/changelog/media/0.25.6/17c63402-f153-45b0-982f-08f923522203.png",
+    "kind": "image",
+    "bytes": 174882,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.6-multiple-git-repos-fork-workspaces"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/6c4d7832-3916-423a-a661-72524db5c578",
+    "local": "/assets/changelog/media/0.25.6/6c4d7832-3916-423a-a661-72524db5c578.png",
+    "kind": "image",
+    "bytes": 103489,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.6-multiple-git-repos-fork-workspaces"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/90109963-1ee9-4bd5-8f04-93c6fab628cd",
+    "local": "/assets/changelog/media/0.25.7/90109963-1ee9-4bd5-8f04-93c6fab628cd.png",
+    "kind": "image",
+    "bytes": 31036,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.7-env-bug-fix-vercel-ci-status-checks"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/91e73804-4c34-48b7-8959-b7089220cecf",
+    "local": "/assets/changelog/media/0.25.5/91e73804-4c34-48b7-8959-b7089220cecf.png",
+    "kind": "image",
+    "bytes": 628979,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/6b2bc5e6-04a8-44c7-a3f1-2fb37183e009",
+    "local": "/assets/changelog/media/0.25.5/6b2bc5e6-04a8-44c7-a3f1-2fb37183e009.png",
+    "kind": "image",
+    "bytes": 60300,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/95838254-75d3-4254-b8bb-57e3f36fb7fc",
+    "local": "/assets/changelog/media/0.25.4/95838254-75d3-4254-b8bb-57e3f36fb7fc.png",
+    "kind": "image",
+    "bytes": 39997,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.4-sync-pr-comments-from-github"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b406113e-9e8e-4385-bdc8-7b68a5b1e95e",
+    "local": "/assets/changelog/media/0.25.4/b406113e-9e8e-4385-bdc8-7b68a5b1e95e.png",
+    "kind": "image",
+    "bytes": 3935688,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.4-sync-pr-comments-from-github"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/29cab87f-d1ab-4b97-8695-704a2884693c",
+    "local": "/assets/changelog/media/0.25.3/29cab87f-d1ab-4b97-8695-704a2884693c.png",
+    "kind": "image",
+    "bytes": 56332,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.3-pinned-workspaces"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/fb9f3af5-65da-416b-8122-61b1a5fa31e7",
+    "local": "/assets/changelog/media/0.25.0/fb9f3af5-65da-416b-8122-61b1a5fa31e7.png",
+    "kind": "image",
+    "bytes": 94802,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/4c405ab0-2584-49a5-876e-bf20ade3ff20",
+    "local": null,
+    "kind": "image",
+    "status": "failed: HTTP 404",
+    "referencedBy": [
+      "changelog:0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/c2f0d4a3-68d7-44f0-9517-203c64ea20e7",
+    "local": "/assets/changelog/media/0.25.1/c2f0d4a3-68d7-44f0-9517-203c64ea20e7.png",
+    "kind": "image",
+    "bytes": 188946,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.25.1-conductor-wrapped"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a6d19085-480a-454e-8eb1-5b45f03de6ae",
+    "local": "/assets/changelog/media/0.24.0/a6d19085-480a-454e-8eb1-5b45f03de6ae.png",
+    "kind": "image",
+    "bytes": 160430,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.24.0-improved-codex-quick-start"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/66cb317e-b878-47d1-9551-c3b4b9955fbb",
+    "local": "/assets/changelog/media/0.24.0/66cb317e-b878-47d1-9551-c3b4b9955fbb.png",
+    "kind": "image",
+    "bytes": 896811,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.24.0-improved-codex-quick-start"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/5d415c46-c420-4c12-a81d-ba4e55bebb18",
+    "local": "/assets/changelog/media/0.24.0/5d415c46-c420-4c12-a81d-ba4e55bebb18.png",
+    "kind": "image",
+    "bytes": 20093,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.24.0-improved-codex-quick-start"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d",
+    "local": "/assets/changelog/media/0.23.3/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d.png",
+    "kind": "image",
+    "bytes": 144094,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.23.3-repo-details"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/64c98865-795b-4ff0-8a26-48725051b727",
+    "local": "/assets/changelog/media/0.23.0/64c98865-795b-4ff0-8a26-48725051b727.png",
+    "kind": "image",
+    "bytes": 29765,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.23.0-opus-4-5-and-better-scrolling"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b069d0ab-1a9f-4aa5-bbe4-934d54aa9229",
+    "local": "/assets/changelog/media/0.23.0/b069d0ab-1a9f-4aa5-bbe4-934d54aa9229.gif",
+    "kind": "image",
+    "bytes": 3360182,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.23.0-opus-4-5-and-better-scrolling"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/5108e6f4-5401-48ef-80e9-2f3e6f3113ef",
+    "local": "/assets/changelog/media/0.22.8/5108e6f4-5401-48ef-80e9-2f3e6f3113ef.png",
+    "kind": "image",
+    "bytes": 1253078,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.8-onboarding-improvements"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b20dea11-2f90-4cbd-88fa-30d16938fd50",
+    "local": "/assets/changelog/media/0.22.7/b20dea11-2f90-4cbd-88fa-30d16938fd50.png",
+    "kind": "image",
+    "bytes": 658790,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.7-send-plans-to-new-chats"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/6ebca22f-7ea4-4408-af65-a4d8d96477da",
+    "local": "/assets/changelog/media/0.22.6/6ebca22f-7ea4-4408-af65-a4d8d96477da.png",
+    "kind": "image",
+    "bytes": 72809,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.6-conversation-summaries-codex-diffs-and-custom-review-models"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/945cb1fe-4a19-4325-88ef-5f7ef06a3c5a",
+    "local": "/assets/changelog/media/0.22.6/945cb1fe-4a19-4325-88ef-5f7ef06a3c5a.png",
+    "kind": "image",
+    "bytes": 548713,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.6-conversation-summaries-codex-diffs-and-custom-review-models"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/1ea3a260-a233-4876-be07-319aac3c79d1",
+    "local": "/assets/changelog/media/0.22.6/1ea3a260-a233-4876-be07-319aac3c79d1.png",
+    "kind": "image",
+    "bytes": 263523,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.6-conversation-summaries-codex-diffs-and-custom-review-models"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9",
+    "local": "/assets/changelog/media/0.22.5/8d5f0c7a-2e05-4663-b25e-a4ac65bd74f9.png",
+    "kind": "image",
+    "bytes": 36982,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.5-gpt-5-1-codex-max-improved-diff-viewer"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/4008e446-986f-4a57-abb9-7babf8fd142c",
+    "local": "/assets/changelog/media/0.22.5/4008e446-986f-4a57-abb9-7babf8fd142c.png",
+    "kind": "image",
+    "bytes": 1922935,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.5-gpt-5-1-codex-max-improved-diff-viewer"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a070a527-3c35-4763-a58e-b75235882554",
+    "local": "/assets/changelog/media/0.22.4/a070a527-3c35-4763-a58e-b75235882554.png",
+    "kind": "image",
+    "bytes": 1546026,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.4-expand-terminal-env-vars-and-github-enterprise"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/402cb134-94d3-4010-8ded-35de9869d7bf",
+    "local": "/assets/changelog/media/0.22.4/402cb134-94d3-4010-8ded-35de9869d7bf.png",
+    "kind": "image",
+    "bytes": 293548,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.4-expand-terminal-env-vars-and-github-enterprise"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/7536bf9a-7008-47b9-a1da-4733a2dd1912",
+    "local": "/assets/changelog/media/0.22.4/7536bf9a-7008-47b9-a1da-4733a2dd1912.png",
+    "kind": "image",
+    "bytes": 78579,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.4-expand-terminal-env-vars-and-github-enterprise"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/653fafc8-d734-4850-a45a-d65ebebc6241",
+    "local": "/assets/changelog/media/0.22.2/653fafc8-d734-4850-a45a-d65ebebc6241.png",
+    "kind": "image",
+    "bytes": 52958,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.2-codex-cancellation"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6",
+    "local": "/assets/changelog/media/0.22.1/cebf23c7-1ed2-48a8-9914-8e3d20bcf7e6.png",
+    "kind": "image",
+    "bytes": 54177,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.1-gpt-5-1"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/55afad27-22b0-4c83-bec8-38a6523da614",
+    "local": "/assets/changelog/media/0.22.1/55afad27-22b0-4c83-bec8-38a6523da614.png",
+    "kind": "image",
+    "bytes": 268207,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.1-gpt-5-1"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/2604e5a2-0a1b-4e44-be0d-49416fb19ee6",
+    "local": "/assets/changelog/media/0.22.0/2604e5a2-0a1b-4e44-be0d-49416fb19ee6.png",
+    "kind": "image",
+    "bytes": 377504,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.0-code-review-and-historical-diffs"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/ef8e1202-7657-4674-9437-95465b440953",
+    "local": "/assets/changelog/media/0.22.0/ef8e1202-7657-4674-9437-95465b440953.png",
+    "kind": "image",
+    "bytes": 1737680,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.0-code-review-and-historical-diffs"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/5781358b-14f4-4858-933d-b6aa55ad5389",
+    "local": "/assets/changelog/media/0.22.0/5781358b-14f4-4858-933d-b6aa55ad5389.png",
+    "kind": "image",
+    "bytes": 386550,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.22.0-code-review-and-historical-diffs"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a021e5e6-ea79-48ce-926d-8d487a028f3b",
+    "local": "/assets/changelog/media/0.21.0/a021e5e6-ea79-48ce-926d-8d487a028f3b.png",
+    "kind": "image",
+    "bytes": 1684324,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.21.0-plan-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/c948e4f7-c9e5-4483-8b72-dba1f5cf4f59",
+    "local": "/assets/changelog/media/0.21.0/c948e4f7-c9e5-4483-8b72-dba1f5cf4f59.png",
+    "kind": "image",
+    "bytes": 80314,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.21.0-plan-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/010a79a1-2d66-40e5-bd7e-6eef5e3118d2",
+    "local": "/assets/changelog/media/0.20.0/010a79a1-2d66-40e5-bd7e-6eef5e3118d2.png",
+    "kind": "image",
+    "bytes": 676721,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.20.0-file-picker-and-chat-titles"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/94131afa-daf6-4f10-80a3-69cf1ef63b9e",
+    "local": "/assets/changelog/media/0.20.0/94131afa-daf6-4f10-80a3-69cf1ef63b9e.png",
+    "kind": "image",
+    "bytes": 154562,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.20.0-file-picker-and-chat-titles"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f",
+    "local": "/assets/changelog/media/0.19.0/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f.png",
+    "kind": "image",
+    "bytes": 34989,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.19.0-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/703b0edd-f4f0-4f4b-bd7f-c3c53aa29371",
+    "local": "/assets/changelog/media/0.19.0/703b0edd-f4f0-4f4b-bd7f-c3c53aa29371.png",
+    "kind": "image",
+    "bytes": 64096,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.19.0-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/0a81e613-2241-4aa0-bd98-2224a943d39d",
+    "local": "/assets/changelog/media/0.19.0/0a81e613-2241-4aa0-bd98-2224a943d39d.png",
+    "kind": "image",
+    "bytes": 2174388,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.19.0-checkpoints"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/0b13492e-8736-4691-941f-47b1e64ca125",
+    "local": "/assets/changelog/media/0.18.4/0b13492e-8736-4691-941f-47b1e64ca125.png",
+    "kind": "image",
+    "bytes": 305969,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.18.4-better-create-pr-prompt"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/9e2ca9e4-2361-4a5c-a3f2-0a4870930431",
+    "local": "/assets/changelog/media/0.18.4/9e2ca9e4-2361-4a5c-a3f2-0a4870930431.png",
+    "kind": "image",
+    "bytes": 56028,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.18.4-better-create-pr-prompt"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/13bc1acd-594f-4388-a551-bedce75917a9",
+    "local": "/assets/changelog/media/0.18.0/13bc1acd-594f-4388-a551-bedce75917a9.png",
+    "kind": "image",
+    "bytes": 66667,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.18.0-codex"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/8436493a-311b-4d6b-bd03-45174cd8dcc2",
+    "local": "/assets/changelog/media/0.17.5/8436493a-311b-4d6b-bd03-45174cd8dcc2.png",
+    "kind": "image",
+    "bytes": 646294,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.17.5-tab-beautification"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/e4686ede-aeb1-445b-8be9-8e6d0b0d609c",
+    "local": "/assets/changelog/media/0.17.5/e4686ede-aeb1-445b-8be9-8e6d0b0d609c.png",
+    "kind": "image",
+    "bytes": 97210,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.17.5-tab-beautification"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/c4455295-6256-4a2a-82d0-92e26552d103",
+    "local": "/assets/changelog/media/0.17.5/c4455295-6256-4a2a-82d0-92e26552d103.png",
+    "kind": "image",
+    "bytes": 99651,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.17.5-tab-beautification"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/2db9f4de-93b8-45cc-9b63-1252d6139ba4",
+    "local": "/assets/changelog/media/0.17.4/2db9f4de-93b8-45cc-9b63-1252d6139ba4.png",
+    "kind": "image",
+    "bytes": 366376,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.17.4-git-status-in-sidebar"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a133a147-1e99-4080-a4b5-6738c77e4c58",
+    "local": "/assets/changelog/media/0.17.0/a133a147-1e99-4080-a4b5-6738c77e4c58.png",
+    "kind": "image",
+    "bytes": 1307809,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.17.0-multiple-chats"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/4cbb91de-02ab-4e12-9cd0-bc087e15f91e",
+    "local": "/assets/changelog/media/0.16.0/4cbb91de-02ab-4e12-9cd0-bc087e15f91e.png",
+    "kind": "image",
+    "bytes": 1144729,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.16.0-diff-viewer-file-explorer"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/79ca2508-ef92-42cf-bf84-1a4c80122e98",
+    "local": "/assets/changelog/media/0.16.0/79ca2508-ef92-42cf-bf84-1a4c80122e98.png",
+    "kind": "image",
+    "bytes": 314575,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.16.0-diff-viewer-file-explorer"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5",
+    "local": null,
+    "kind": "image",
+    "status": "failed: HTTP 404",
+    "referencedBy": [
+      "changelog:0.15.1-claude-s-thinking"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce",
+    "local": null,
+    "kind": "image",
+    "status": "failed: HTTP 404",
+    "referencedBy": [
+      "changelog:0.15.0-linear"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d44ef61d-b7cf-4b86-b2af-ce9d6e59e70b",
+    "local": null,
+    "kind": "image",
+    "status": "failed: HTTP 404",
+    "referencedBy": [
+      "changelog:0.15.0-linear"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/f6aa9573-8f77-48dd-992a-014c5f6a9215",
+    "local": "/assets/changelog/media/0.14.6/f6aa9573-8f77-48dd-992a-014c5f6a9215.png",
+    "kind": "image",
+    "bytes": 2241525,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.14.6-markdown-preview"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/237c299b-87e3-4631-bd85-aa671a623827",
+    "local": "/assets/changelog/media/0.14.1/237c299b-87e3-4631-bd85-aa671a623827.png",
+    "kind": "image",
+    "bytes": 1368722,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.14.1-new-diff-viewer"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0",
+    "local": "/assets/changelog/media/0.13.6/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0.png",
+    "kind": "image",
+    "bytes": 357899,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.13.6-run-on-bedrock-vertex-or-custom-provider"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a",
+    "local": null,
+    "kind": "image",
+    "status": "failed: HTTP 404",
+    "referencedBy": [
+      "changelog:0.14.0-command-palette"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5",
+    "local": "/assets/changelog/media/0.13.2/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5.png",
+    "kind": "image",
+    "bytes": 623544,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.13.2-sonnet-4-5-new-workspace-page"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/44d6a6e6-2619-41c8-9b3e-929c7af99819",
+    "local": "/assets/changelog/media/0.13.2/44d6a6e6-2619-41c8-9b3e-929c7af99819.png",
+    "kind": "image",
+    "bytes": 1014087,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.13.2-sonnet-4-5-new-workspace-page"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/29e6baa4-4a7d-45d3-a294-ca2ca2e64db0",
+    "local": "/assets/changelog/media/0.13.2/29e6baa4-4a7d-45d3-a294-ca2ca2e64db0.png",
+    "kind": "image",
+    "bytes": 79858,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.13.2-sonnet-4-5-new-workspace-page"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/ddba9e61-05fb-4581-9c8c-8b77c8fbe1c9",
+    "local": "/assets/changelog/media/0.13.2/ddba9e61-05fb-4581-9c8c-8b77c8fbe1c9.png",
+    "kind": "image",
+    "bytes": 49087,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.13.2-sonnet-4-5-new-workspace-page"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/2fedcbfa-dac9-4903-bd87-2766302876c6",
+    "local": "/assets/changelog/media/0.12.1/2fedcbfa-dac9-4903-bd87-2766302876c6.png",
+    "kind": "image",
+    "bytes": 77340,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.12.1-improved-plan-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/ef5e62cd-3e0e-4af2-9469-a308d38fb1bc",
+    "local": "/assets/changelog/media/0.12.0/ef5e62cd-3e0e-4af2-9469-a308d38fb1bc.png",
+    "kind": "image",
+    "bytes": 84263,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.12.0-forward-failing-checks-to-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/dac35e52-f39b-4873-beeb-6fb310190e25",
+    "local": "/assets/changelog/media/0.12.0/dac35e52-f39b-4873-beeb-6fb310190e25.png",
+    "kind": "image",
+    "bytes": 748378,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.12.0-forward-failing-checks-to-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/af5e2cf6-1f43-4265-a0c9-87b661987f09",
+    "local": "/assets/changelog/media/0.12.0/af5e2cf6-1f43-4265-a0c9-87b661987f09.png",
+    "kind": "image",
+    "bytes": 164517,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.12.0-forward-failing-checks-to-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/acf61848-1830-4c82-859f-ecbcda848e79",
+    "local": "/assets/changelog/media/0.11.4/acf61848-1830-4c82-859f-ecbcda848e79.png",
+    "kind": "image",
+    "bytes": 1045886,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.11.4-the-return-of-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/5db0d284-4d32-4cd6-b6fe-583f06ce5805",
+    "local": "/assets/changelog/media/0.11.0/5db0d284-4d32-4cd6-b6fe-583f06ce5805.png",
+    "kind": "image",
+    "bytes": 244283,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.11.0-conductor-json"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/bef4ffcc-b72e-433a-bc9a-4034c2930821",
+    "local": "/assets/changelog/media/0.10.5/bef4ffcc-b72e-433a-bc9a-4034c2930821.gif",
+    "kind": "image",
+    "bytes": 6394809,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.10.5-terminal-performance-pt-2"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d",
+    "local": "/assets/changelog/media/0.11.3/ecd9bac7-0f09-40c1-bf2b-cdb9e14aa81d.png",
+    "kind": "image",
+    "bytes": 1324032,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.11.3-new-onboarding"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/52beafc5-6802-45b3-9553-33ffc071a0f2",
+    "local": "/assets/changelog/media/0.11.3/52beafc5-6802-45b3-9553-33ffc071a0f2.png",
+    "kind": "image",
+    "bytes": 141685,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.11.3-new-onboarding"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/c3253d2f-55a3-47ca-a9d8-fca8a194e231",
+    "local": "/assets/changelog/media/0.10.3/c3253d2f-55a3-47ca-a9d8-fca8a194e231.gif",
+    "kind": "image",
+    "bytes": 7757875,
+    "contentType": "image/gif",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.10.3-terminal-performance"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d1c0356a-eef2-41de-8de0-56c6a2cb5384",
+    "local": "/assets/changelog/media/0.10.0/d1c0356a-eef2-41de-8de0-56c6a2cb5384.png",
+    "kind": "image",
+    "bytes": 1092914,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.10.0-code-review"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a",
+    "local": "/assets/changelog/media/0.10.1/a1d5f6f9-0927-4c23-8673-6bcd1fc8215a.png",
+    "kind": "image",
+    "bytes": 257063,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.10.1-checkout-prs-in-conductor"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/11177c6c-cdd8-4732-aa76-84e46cfae4bd",
+    "local": "/assets/changelog/media/0.10.2/11177c6c-cdd8-4732-aa76-84e46cfae4bd.png",
+    "kind": "image",
+    "bytes": 42690,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.10.2-toggle-big-terminal-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/9dfeb99a-c08f-4930-8eb5-2f8844f72728",
+    "local": "/assets/changelog/media/0.9.3/9dfeb99a-c08f-4930-8eb5-2f8844f72728.png",
+    "kind": "image",
+    "bytes": 2747747,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.3-new-diff-review-panel-faster-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/3869a0a7-535f-49d8-b00c-8e121893f11c",
+    "local": "/assets/changelog/media/0.9.0/3869a0a7-535f-49d8-b00c-8e121893f11c.png",
+    "kind": "image",
+    "bytes": 436043,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.0-run-script-hooks-and-custom-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/44a72d5c-df75-4c9f-80ef-31a9ea6e320e",
+    "local": "/assets/changelog/media/0.9.0/44a72d5c-df75-4c9f-80ef-31a9ea6e320e.png",
+    "kind": "image",
+    "bytes": 119719,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.0-run-script-hooks-and-custom-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/6868d227-ffcf-459d-a637-ae87b6accec0",
+    "local": "/assets/changelog/media/0.9.0/6868d227-ffcf-459d-a637-ae87b6accec0.png",
+    "kind": "image",
+    "bytes": 210368,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.0-run-script-hooks-and-custom-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/f5303c5c-14fa-4a48-b61c-cd91e59d9f38",
+    "local": "/assets/changelog/media/0.9.0/f5303c5c-14fa-4a48-b61c-cd91e59d9f38.png",
+    "kind": "image",
+    "bytes": 330162,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.0-run-script-hooks-and-custom-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b98c2078-061d-4d87-a91f-a55160743e69",
+    "local": "/assets/changelog/media/0.9.0/b98c2078-061d-4d87-a91f-a55160743e69.png",
+    "kind": "image",
+    "bytes": 218763,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.0-run-script-hooks-and-custom-fonts"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/85d8953e-6136-495c-8b51-1be510cc75a2",
+    "local": "/assets/changelog/media/0.9.1/85d8953e-6136-495c-8b51-1be510cc75a2.png",
+    "kind": "image",
+    "bytes": 263443,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.9.1-open-dev-scripts-and-more-performant-long-chats"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/39c8081c-9827-4e2d-ad73-63eab3c81016",
+    "local": "/assets/changelog/media/0.8.1/39c8081c-9827-4e2d-ad73-63eab3c81016.png",
+    "kind": "image",
+    "bytes": 535642,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.8.1-suggested-git-actions"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/08a3e637-9c21-403a-b523-b610328310ba",
+    "local": "/assets/changelog/media/0.7.3/08a3e637-9c21-403a-b523-b610328310ba.png",
+    "kind": "image",
+    "bytes": 54290,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.7.3-plan-mode"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b3dac156-2096-4c38-af2c-8e31a1aed87f",
+    "local": "/assets/changelog/media/0.8.0/b3dac156-2096-4c38-af2c-8e31a1aed87f.png",
+    "kind": "image",
+    "bytes": 221181,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.8.0-integrate-with-linear-faster-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/4a6cf899-4093-4f41-ab9c-cc589ab54dac",
+    "local": "/assets/changelog/media/0.8.0/4a6cf899-4093-4f41-ab9c-cc589ab54dac.png",
+    "kind": "image",
+    "bytes": 48740,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.8.0-integrate-with-linear-faster-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/82e50dac-1129-42b3-82f5-81cd837880a0",
+    "local": "/assets/changelog/media/0.8.0/82e50dac-1129-42b3-82f5-81cd837880a0.png",
+    "kind": "image",
+    "bytes": 1044135,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.8.0-integrate-with-linear-faster-claude"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/a87ce9aa-0cc1-4d34-a556-7ed36792a46a",
+    "local": "/assets/changelog/media/0.7.2/a87ce9aa-0cc1-4d34-a556-7ed36792a46a.png",
+    "kind": "image",
+    "bytes": 255768,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.7.2-add-terminal-context-to-chat"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/e81fcc29-eb0a-4f05-b628-826d8fa6db07",
+    "local": "/assets/changelog/media/0.7.0/e81fcc29-eb0a-4f05-b628-826d8fa6db07.png",
+    "kind": "image",
+    "bytes": 24680,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.7.0-we-no-longer-burn-your-cpu-hopefully"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/fd98b248-2271-445a-8f45-187c368f765f",
+    "local": "/assets/changelog/media/0.7.0/fd98b248-2271-445a-8f45-187c368f765f.png",
+    "kind": "image",
+    "bytes": 26551,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.7.0-we-no-longer-burn-your-cpu-hopefully"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/968733c0-f68e-4016-a688-190864c2d901",
+    "local": "/assets/changelog/media/0.7.0/968733c0-f68e-4016-a688-190864c2d901.png",
+    "kind": "image",
+    "bytes": 124836,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.7.0-we-no-longer-burn-your-cpu-hopefully"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/036c1352-3d84-4989-95df-91edd3a22347",
+    "local": "/assets/changelog/media/0.6.0/036c1352-3d84-4989-95df-91edd3a22347.png",
+    "kind": "image",
+    "bytes": 1765270,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.6.0-a-new-look"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/7da2fa87-22ad-4287-8dc6-3a194101bdef",
+    "local": "/assets/changelog/media/0.6.0/7da2fa87-22ad-4287-8dc6-3a194101bdef.png",
+    "kind": "image",
+    "bytes": 637587,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.6.0-a-new-look"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/95f43b66-ca6b-4457-b34c-b98f244a25e6",
+    "local": "/assets/changelog/media/0.6.0/95f43b66-ca6b-4457-b34c-b98f244a25e6.png",
+    "kind": "image",
+    "bytes": 128607,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.6.0-a-new-look"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/eb957581-1633-4929-8649-c193f77d7100",
+    "local": "/assets/changelog/media/0.6.0/eb957581-1633-4929-8649-c193f77d7100.png",
+    "kind": "image",
+    "bytes": 1308270,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.6.0-a-new-look"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d090d73b-d4d1-47ab-b011-7b4144b63e40",
+    "local": "/assets/changelog/media/0.6.0/d090d73b-d4d1-47ab-b011-7b4144b63e40.png",
+    "kind": "image",
+    "bytes": 136166,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.6.0-a-new-look"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d39527bd-9a7b-4560-bca0-c1454708c0f1",
+    "local": "/assets/changelog/media/0.5.0/d39527bd-9a7b-4560-bca0-c1454708c0f1.png",
+    "kind": "image",
+    "bytes": 199491,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.5.0-gpt-5"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/ec83a39f-e559-4bd3-9f8b-a7c7b16b3ad9",
+    "local": "/assets/changelog/media/0.5.0/ec83a39f-e559-4bd3-9f8b-a7c7b16b3ad9.png",
+    "kind": "image",
+    "bytes": 160985,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.5.0-gpt-5"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/762894c3-a0e6-4b5a-9685-e9047d365cc8",
+    "local": "/assets/changelog/media/0.3.2/762894c3-a0e6-4b5a-9685-e9047d365cc8.png",
+    "kind": "image",
+    "bytes": 175980,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.3.2-opus-4-1"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/78e57a8b-f6c3-4067-95ea-936092763df4",
+    "local": "/assets/changelog/media/0.2.2/78e57a8b-f6c3-4067-95ea-936092763df4.png",
+    "kind": "image",
+    "bytes": 161316,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.2.2-bugfixes"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/e683aa0c-f02a-4325-9f69-26fbfa7925cd",
+    "local": "/assets/changelog/media/0.2.2/e683aa0c-f02a-4325-9f69-26fbfa7925cd.png",
+    "kind": "image",
+    "bytes": 35595,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.2.2-bugfixes"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/7d7b21c1-3b16-4667-bbec-075d429da05b",
+    "local": "/assets/changelog/media/0.2.0/7d7b21c1-3b16-4667-bbec-075d429da05b.png",
+    "kind": "image",
+    "bytes": 48964,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.2.0-local-repositories-agents"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/7ea6bce3-55b9-4fdd-a38f-7c145a014059",
+    "local": "/assets/changelog/media/0.2.0/7ea6bce3-55b9-4fdd-a38f-7c145a014059.png",
+    "kind": "image",
+    "bytes": 211121,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.2.0-local-repositories-agents"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/d939180a-b086-4b57-8e4c-da5d770f30ca",
+    "local": "/assets/changelog/media/0.1.1/d939180a-b086-4b57-8e4c-da5d770f30ca.png",
+    "kind": "image",
+    "bytes": 187287,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.1.1-slash-commands-custom-providers"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/774601ae-5545-4fc0-ba2c-03b1533c117b",
+    "local": "/assets/changelog/media/0.1.1/774601ae-5545-4fc0-ba2c-03b1533c117b.png",
+    "kind": "image",
+    "bytes": 167894,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.1.1-slash-commands-custom-providers"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9",
+    "local": "/assets/changelog/media/0.3.0/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9.png",
+    "kind": "image",
+    "bytes": 1960427,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.3.0-git-diff-view"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/b6da7db7-94af-40b9-8067-d1cd82bdeb3b",
+    "local": "/assets/changelog/media/0.3.0/b6da7db7-94af-40b9-8067-d1cd82bdeb3b.png",
+    "kind": "image",
+    "bytes": 611183,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.3.0-git-diff-view"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/9fad1f74-b5fb-4ed2-89cb-3c7bb94d7c0e",
+    "local": "/assets/changelog/media/0.1.0/9fad1f74-b5fb-4ed2-89cb-3c7bb94d7c0e.png",
+    "kind": "image",
+    "bytes": 143758,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.1.0-mcps-message-queues"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/5f61cc93-d888-44f0-aaa3-8170a0875bbc",
+    "local": "/assets/changelog/media/0.1.0/5f61cc93-d888-44f0-aaa3-8170a0875bbc.png",
+    "kind": "image",
+    "bytes": 60884,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.1.0-mcps-message-queues"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/3d5d206d-1fac-41ae-a72a-44df85a059ec",
+    "local": "/assets/changelog/media/0.0.21/3d5d206d-1fac-41ae-a72a-44df85a059ec.png",
+    "kind": "image",
+    "bytes": 94515,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.21-fine-grained-github-permissions"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/19104eed-01e1-46dd-856b-c4632a119d21",
+    "local": "/assets/changelog/media/0.0.21/19104eed-01e1-46dd-856b-c4632a119d21.png",
+    "kind": "image",
+    "bytes": 27362,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.21-fine-grained-github-permissions"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/73322103-6874-4eac-a2d9-16da5692586e",
+    "local": "/assets/changelog/media/0.0.20/73322103-6874-4eac-a2d9-16da5692586e.png",
+    "kind": "image",
+    "bytes": 164253,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.20-attachments"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/1541d4ee-8efb-4050-9412-d7d10632b94e",
+    "local": "/assets/changelog/media/0.0.17/1541d4ee-8efb-4050-9412-d7d10632b94e.png",
+    "kind": "image",
+    "bytes": 136098,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.17-github-integration"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/79ec33e1-ce33-4196-885e-e5e016db0949",
+    "local": "/assets/changelog/media/0.0.17/79ec33e1-ce33-4196-885e-e5e016db0949.png",
+    "kind": "image",
+    "bytes": 105719,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.17-github-integration"
+    ]
+  },
+  {
+    "remote": "https://github.com/user-attachments/assets/7ee30008-24d3-4b54-9567-812ff995cdab",
+    "local": "/assets/changelog/media/0.0.16/7ee30008-24d3-4b54-9567-812ff995cdab.png",
+    "kind": "image",
+    "bytes": 198871,
+    "contentType": "image/png",
+    "status": "cached",
+    "referencedBy": [
+      "changelog:0.0.16-terminal-improvements"
+    ]
+  }
+]

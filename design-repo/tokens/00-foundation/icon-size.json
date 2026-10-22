@@ -1,0 +1,55 @@
+{
+  "$description": "Icon sizes (lucide line icons unless noted).",
+  "iconSize": {
+    "12": {
+      "$value": "12px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:308",
+          "quote": "X logo svg 12x12 fill currentColor"
+        }
+      ]
+    },
+    "14": {
+      "$value": "14px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:76",
+          "quote": "lucide `link` icon 14x14 (`size-3.5`"
+        }
+      ]
+    },
+    "16": {
+      "$value": "16px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:121",
+          "quote": "trailing lucide arrow-right 16px"
+        }
+      ]
+    },
+    "18": {
+      "$value": "18px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:106",
+          "quote": "icon 18px (`[&_svg]:size-4.5`)"
+        }
+      ]
+    },
+    "20": {
+      "$value": "20px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:300",
+          "quote": "Apple logo 20x20"
+        }
+      ]
+    }
+  }
+}

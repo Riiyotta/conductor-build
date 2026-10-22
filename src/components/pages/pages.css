@@ -1,0 +1,305 @@
+/*
+ * Standalone marketing pages (CLONE_SPEC_PAGES.md). Imported by src/components/pages/* only,
+ * so the homepage stylesheet (src/index.css) is untouched.
+ */
+
+/* §2.2 HubSpot enterprise form font (Geist woff2 served by HubSpot, local copies).
+   Named "HS Geist" so it can never leak into the site's sans stack (§0.3: prose names Geist but
+   renders the system sans; it must stay that way). */
+@font-face {
+  font-family: 'HS Geist';
+  src: url('/assets/pages/enterprise/fonts/Geist-400.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'HS Geist';
+  src: url('/assets/pages/enterprise/fonts/Geist-700.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ---------------------------------------------------------------------------------------------
+ * §0.3 Prose article: `prose prose-sm sm:prose` (Tailwind Typography + fumadocs overrides).
+ * Base rules below are the prose-sm values (<640px); the media query switches to `prose` values.
+ * Every rule is scoped out of `.not-prose` subtrees, like the original.
+ * ------------------------------------------------------------------------------------------- */
+.prose {
+  color: theme('colors.foreground');
+  font-family: theme('fontFamily.prose');
+  max-width: theme('maxWidth.prose');
+  font-size: 14px;
+  line-height: 24.0001px;
+}
+.prose :where(p):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.prose :where(strong):not(:where(.not-prose, .not-prose *)) {
+  color: theme('colors.foreground');
+  font-weight: 600;
+}
+.prose :where(em):not(:where(.not-prose, .not-prose *)) {
+  font-style: italic;
+}
+/* Links (not heading anchors): 500, foreground, 1px underline foreground/55, hover opacity .8 */
+.prose :where(a:not([data-card])):not(:where(.not-prose, .not-prose *)) {
+  color: theme('colors.foreground');
+  font-weight: 500;
+  text-decoration-line: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: theme('colors.foreground / 55%');
+  /* fumadocs override: .18em (2.88px at 16px, 2.52px at 14px) */
+  text-underline-offset: 0.18em;
+  transition: opacity 0.2s;
+}
+.prose :where(a:not([data-card]):hover):not(:where(.not-prose, .not-prose *)) {
+  opacity: 0.8;
+}
+/* Heading anchor text: weight 500 (prose `a` rule), no underline, no fade */
+.prose :where(a[data-card]):not(:where(.not-prose, .not-prose *)) {
+  color: inherit;
+  font-weight: 500;
+  text-decoration: none;
+  text-underline-offset: 0.18em;
+}
+
+.prose :where(h1):not(:where(.not-prose, .not-prose *)) {
+  color: theme('colors.foreground');
+  font-weight: 800;
+  font-size: 30px;
+  line-height: 36px;
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+  color: theme('colors.foreground');
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  margin-top: 32px;
+  margin-bottom: 16px;
+}
+.prose :where(h2 + *):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0;
+}
+
+.prose :where(ul):not(:where(.not-prose, .not-prose *)) {
+  list-style-type: disc;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-inline-start: 22px;
+}
+.prose :where(ol):not(:where(.not-prose, .not-prose *)) {
+  list-style-type: decimal;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  padding-inline-start: 22px;
+}
+.prose :where(li):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 4px;
+  margin-bottom: 4px;
+}
+.prose :where(ol > li, ul > li):not(:where(.not-prose, .not-prose *)) {
+  /* prose-sm: .428571em = 5.99999px (the sub-pixel matters for glyph positioning) */
+  padding-inline-start: 0.428571em;
+}
+.prose :where(ol > li, ul > li):not(:where(.not-prose, .not-prose *))::marker {
+  color: theme('colors.muted.foreground');
+  font-weight: 400;
+}
+.prose :where(ul > li p):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+.prose :where(.prose > ul > li > p:first-child, .prose > ol > li > p:first-child):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 16px;
+}
+.prose :where(.prose > ul > li > p:last-child, .prose > ol > li > p:last-child):not(:where(.not-prose, .not-prose *)) {
+  margin-bottom: 16px;
+}
+.prose :where(ul ul, ul ol, ol ul, ol ol):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+  color: theme('colors.muted.foreground');
+  font-style: italic;
+  font-weight: 500;
+  border-inline-start: 4px solid theme('colors.border');
+  quotes: '\201C' '\201D' '\2018' '\2019';
+  margin-top: 18.6667px;
+  margin-bottom: 18.6667px;
+  padding-inline-start: 1.11111em; /* prose-sm: 15.5555px */
+}
+.prose :where(blockquote p:first-of-type):not(:where(.not-prose, .not-prose *))::before {
+  content: open-quote;
+}
+.prose :where(blockquote p:last-of-type):not(:where(.not-prose, .not-prose *))::after {
+  content: close-quote;
+}
+
+.prose :where(img):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.prose :where(.prose > :first-child):not(:where(.not-prose, .not-prose *)) {
+  margin-top: 0;
+}
+.prose :where(.prose > :last-child):not(:where(.not-prose, .not-prose *)) {
+  margin-bottom: 0;
+}
+
+/* sm:prose (>=640px) */
+@media (min-width: 640px) {
+  .prose {
+    font-size: 16px;
+    line-height: 28px;
+  }
+  .prose :where(p):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .prose :where(h1):not(:where(.not-prose, .not-prose *)) {
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 32px;
+  }
+  .prose :where(h2):not(:where(.not-prose, .not-prose *)) {
+    font-size: 24px;
+    /* typography's 1.33333 ratio → 31.9999px, which shifts the glyphs ~.5px vs a flat 32px */
+    line-height: 1.33333;
+    margin-top: 48px;
+    margin-bottom: 24px;
+  }
+  .prose :where(h2 + *):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 0;
+  }
+  .prose :where(ul, ol):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    padding-inline-start: 26px;
+  }
+  .prose :where(li):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+  .prose :where(ol > li, ul > li):not(:where(.not-prose, .not-prose *)) {
+    padding-inline-start: 6px;
+  }
+  .prose :where(ul > li p):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .prose :where(.prose > ul > li > p:first-child, .prose > ol > li > p:first-child):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 20px;
+  }
+  .prose :where(.prose > ul > li > p:last-child, .prose > ol > li > p:last-child):not(:where(.not-prose, .not-prose *)) {
+    margin-bottom: 20px;
+  }
+  .prose :where(ul ul, ul ol, ol ul, ol ol):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 12px;
+    margin-bottom: 12px;
+  }
+  .prose :where(blockquote):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 25.6px;
+    margin-bottom: 25.6px;
+    padding-inline-start: 16px;
+  }
+  .prose :where(img):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 32px;
+    margin-bottom: 32px;
+  }
+  .prose :where(.prose > :first-child):not(:where(.not-prose, .not-prose *)) {
+    margin-top: 0;
+  }
+  .prose :where(.prose > :last-child):not(:where(.not-prose, .not-prose *)) {
+    margin-bottom: 0;
+  }
+}
+
+/* §2.2 HubSpot form (rules ported from the hsfc-* stylesheet inside the original iframe) */
+.hs-form-frame {
+  /* HubSpot's breakpoints are media queries on the iframe width = this wrapper's width */
+  container-type: inline-size;
+}
+.hs-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  gap: 30px;
+  margin-bottom: 20px;
+}
+.hs-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 30px;
+}
+@container (max-width: 430px) {
+  .hs-row {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hs-buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .hs-buttons > * {
+    width: 100%;
+  }
+}
+.hs-input {
+  transition: box-shadow 0.2s;
+}
+.hs-input:hover {
+  box-shadow: theme('boxShadow.hs-hover');
+}
+.hs-input:focus {
+  box-shadow: theme('boxShadow.hs-focus');
+}
+.hs-input:active {
+  box-shadow: theme('boxShadow.hs-active');
+}
+.hs-submit {
+  transition: transform 0.2s ease-out, background-color 0.2s linear, box-shadow 0.2s;
+}
+.hs-submit:hover {
+  transform: translateY(-1px);
+}
+.hs-submit:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+.hs-option {
+  list-style: none;
+  min-height: 14px;
+  padding: 10px;
+  background-color: theme('colors.white');
+  color: theme('colors.hubspot.label');
+  cursor: pointer;
+  transition: filter 0.1s;
+}
+.hs-option--disabled {
+  cursor: default;
+}
+.hs-option:hover,
+.hs-option:focus,
+.hs-option--selected {
+  outline: none;
+  filter: brightness(90%);
+}
+
+/* §2.2 HubSpot dropdown caret: 12x6 CSS triangle, border-top 6px #212d3a */
+.hs-caret {
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid theme('colors.hubspot.label');
+}

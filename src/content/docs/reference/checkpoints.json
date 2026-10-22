@@ -1,0 +1,174 @@
+{
+  "slug": "reference/checkpoints",
+  "url": "/docs/reference/checkpoints",
+  "title": "Checkpoints",
+  "description": "View turn by turn changes in a workspace and revert to previous turns",
+  "meta": {
+    "title": "Checkpoints | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/checkpoints/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Checkpoints"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#restoring-checkpoints",
+      "title": "Restoring Checkpoints"
+    },
+    {
+      "depth": 2,
+      "url": "#how-checkpoints-work",
+      "title": "How Checkpoints Work"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/checks",
+    "title": "Checks",
+    "description": "Reference for merge readiness signals in a workspace"
+  },
+  "next": {
+    "url": "/docs/reference/todos",
+    "title": "Todos",
+    "description": "Track merge-blocking work in a workspace"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Checkpoints are automatic snapshots of an agent's changes to your codebase. They show you what changed in the most recent turn and let you revert to previous turns."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "restoring-checkpoints",
+      "children": [
+        {
+          "type": "text",
+          "value": "Restoring Checkpoints"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To restore to a previous turn, hover over your message and click the revert icon."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Clicking the revert icon will "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "permanently delete"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " all user and AI messages from the selected turn and later. All code changes made since that user message was sent will also be reverted. Once the reversion is complete, the agent will have no knowledge of the changes or conversation you deleted."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-checkpoints-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "How Checkpoints Work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Checkpoints are stored locally, separate from your working branch's Git history."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Before each supported agent responds to a user message, Conductor captures the working branch state in a private Git ref."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Each checkpoint therefore captures all AI and user code changes between when the previous and current user messages were sent."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Exercise caution when using checkpoints if multiple chats are running in the\nsame workspace."
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>Checkpoints are automatic snapshots of an agent's changes to your codebase. They show you what changed in the most recent turn and let you revert to previous turns.</p><h2 id=\"restoring-checkpoints\"><a href=\"#restoring-checkpoints\">Restoring Checkpoints</a></h2><p>To restore to a previous turn, hover over your message and click the revert icon.</p><p>Clicking the revert icon will <strong>permanently delete</strong> all user and AI messages from the selected turn and later. All code changes made since that user message was sent will also be reverted. Once the reversion is complete, the agent will have no knowledge of the changes or conversation you deleted.</p><h2 id=\"how-checkpoints-work\"><a href=\"#how-checkpoints-work\">How Checkpoints Work</a></h2><ul><li>Checkpoints are stored locally, separate from your working branch's Git history.</li><li>Before each supported agent responds to a user message, Conductor captures the working branch state in a private Git ref.</li><li>Each checkpoint therefore captures all AI and user code changes between when the previous and current user messages were sent.</li></ul><div role=\"note\" data-callout=\"info\"><p>Exercise caution when using checkpoints if multiple chats are running in the\nsame workspace.</p></div>",
+  "text": "Checkpoints are automatic snapshots of an agent's changes to your codebase. They show you what changed in the most recent turn and let you revert to previous turns.\nRestoring Checkpoints\nTo restore to a previous turn, hover over your message and click the revert icon.\nClicking the revert icon will permanently delete all user and AI messages from the selected turn and later. All code changes made since that user message was sent will also be reverted. Once the reversion is complete, the agent will have no knowledge of the changes or conversation you deleted.\nHow Checkpoints Work\nCheckpoints are stored locally, separate from your working branch's Git history.\nBefore each supported agent responds to a user message, Conductor captures the working branch state in a private Git ref.\nEach checkpoint therefore captures all AI and user code changes between when the previous and current user messages were sent.\nExercise caution when using checkpoints if multiple chats are running in the\nsame workspace.",
+  "markdown": "\n# Checkpoints\n\n\n\nCheckpoints are automatic snapshots of an agent's changes to your codebase. They show you what changed in the most recent turn and let you revert to previous turns.\n\n## Restoring Checkpoints [#restoring-checkpoints]\n\nTo restore to a previous turn, hover over your message and click the revert icon.\n\nClicking the revert icon will **permanently delete** all user and AI messages from the selected turn and later. All code changes made since that user message was sent will also be reverted. Once the reversion is complete, the agent will have no knowledge of the changes or conversation you deleted.\n\n## How Checkpoints Work [#how-checkpoints-work]\n\n* Checkpoints are stored locally, separate from your working branch's Git history.\n* Before each supported agent responds to a user message, Conductor captures the working branch state in a private Git ref.\n* Each checkpoint therefore captures all AI and user code changes between when the previous and current user messages were sent.\n\nExercise caution when using checkpoints if multiple chats are running in the\nsame workspace.\n"
+}

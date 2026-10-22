@@ -1,0 +1,28 @@
+{
+  "slug": "0.11.6-improved-cancelling",
+  "version": "0.11.6",
+  "versionSlug": "0.11.6",
+  "title": "Improved Cancelling",
+  "fullTitle": "0.11.6: Improved Cancelling",
+  "date": "Sept 23rd, 2025",
+  "dateISO": "2025-09-23",
+  "description": "Conductor 0.11.6 changelog - Improved Cancelling",
+  "summary": "Cancelling is now much more reliable in Conductor!",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.11.6-improved-cancelling/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.11.6-improved-cancelling",
+  "sourceUrl": "https://www.conductor.build/changelog/0.11.6-improved-cancelling",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Cancelling is now much more reliable in Conductor!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Improvements to <code>conductor.json</code> files generated via Claude Code</li>\n<li>Improved markdown display for agent output</li>\n<li>Added app icons to the &quot;Open&quot; dropdown</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed slowness when sending attachments in the UI</li>\n<li>Fixed comment whitespace getting trimmed while drafting</li>\n<li>Claude Code now stops when you archive a workspace</li>\n</ul>",
+  "markdown": "\nCancelling is now much more reliable in Conductor!\n\n## Improvements\n\n- Improvements to `conductor.json` files generated via Claude Code\n- Improved markdown display for agent output\n- Added app icons to the \"Open\" dropdown\n\n## Fixes\n\n- Fixed slowness when sending attachments in the UI\n- Fixed comment whitespace getting trimmed while drafting\n- Claude Code now stops when you archive a workspace\n"
+}

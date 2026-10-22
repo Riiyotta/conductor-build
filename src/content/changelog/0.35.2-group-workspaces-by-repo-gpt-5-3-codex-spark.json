@@ -1,0 +1,32 @@
+{
+  "slug": "0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+  "version": "0.35.2",
+  "versionSlug": "0.35.2",
+  "title": "Group workspaces by repo, GPT-5.3-Codex-Spark ",
+  "fullTitle": "0.35.2: Group workspaces by repo, GPT-5.3-Codex-Spark ",
+  "date": "Feb 12th, 2026",
+  "dateISO": "2026-02-12",
+  "description": "Conductor 0.35.2 changelog - Group workspaces by repo, GPT-5.3-Codex-Spark ",
+  "summary": "You can now group workspaces by repository!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.35.2/1770929018501-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+  "sourceUrl": "https://www.conductor.build/changelog/0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now group workspaces by repository!\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.35.2/1770929018501-image.png\"/></figure></p>\n<p>OpenAI’s fastest frontier model is now available!\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.35.2/1770929018741-image.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Workspace titles are now bolded when awaiting question responses or plan review</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Cancelling Claude Code is now faster and more reliable</li>\n<li>We’ve reduced GitHub polling for workspaces to prevent hitting query quotas</li>\n</ul>",
+  "markdown": "\nYou can now group workspaces by repository!\n![image](/assets/changelog/media/0.35.2/1770929018501-image.png)\n\nOpenAI’s fastest frontier model is now available!\n![image](/assets/changelog/media/0.35.2/1770929018741-image.png)\n\n## Improvements\n\n- Workspace titles are now bolded when awaiting question responses or plan review\n\n## Fixes\n\n- Cancelling Claude Code is now faster and more reliable\n- We’ve reduced GitHub polling for workspaces to prevent hitting query quotas\n"
+}

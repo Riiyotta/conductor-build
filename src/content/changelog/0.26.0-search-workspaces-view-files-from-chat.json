@@ -1,0 +1,32 @@
+{
+  "slug": "0.26.0-search-workspaces-view-files-from-chat",
+  "version": "0.26.0",
+  "versionSlug": "0.26.0",
+  "title": "Search Workspaces, View Files from Chat",
+  "fullTitle": "0.26.0: Search Workspaces, View Files from Chat",
+  "date": "Dec 17th, 2025",
+  "dateISO": "2025-12-17",
+  "description": "Conductor 0.26.0 changelog - Search Workspaces, View Files from Chat",
+  "summary": "You can now search for workspaces by their branch name, repo, or PR number (⌘⇧F).",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.26.0/632ab731-231f-42f0-b0a2-120dfd0433ce.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.26.0-search-workspaces-view-files-from-chat/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.26.0-search-workspaces-view-files-from-chat",
+  "sourceUrl": "https://www.conductor.build/changelog/0.26.0-search-workspaces-view-files-from-chat",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now search for workspaces by their branch name, repo, or PR number (⌘⇧F).</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.26.0/632ab731-231f-42f0-b0a2-120dfd0433ce.png\"/></figure>\n<p>You can also click on any file path the agent mentions to view it in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.26.0/beb5225b-2b8b-4fb5-89ad-163cff34f6e1.png\"/></figure>\n<p>We&#x27;ve also added xhigh reasoning for GPT-5.2!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.26.0/a269d43e-c84a-4e5b-bb9d-d639fc80a025.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added an index to code review instructions to make referencing issues easier</li>\n<li>Added a sub agent icon to the tool use summary</li>\n<li>Added PR # to the left sidebar</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed flicker when closing chat tabs</li>\n<li>Indentation in user messages is now preserved</li>\n<li>Fixed terminals being shut down only after files were deleted in a workspace</li>\n</ul>",
+  "markdown": "\nYou can now search for workspaces by their branch name, repo, or PR number (⌘⇧F).\n\n<img\n    width=\"2048\"\n    height=\"1320\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.26.0/632ab731-231f-42f0-b0a2-120dfd0433ce.png\"\n/>\n\nYou can also click on any file path the agent mentions to view it in Conductor!\n\n<img\n    width=\"1416\"\n    height=\"200\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.26.0/beb5225b-2b8b-4fb5-89ad-163cff34f6e1.png\"\n/>\n\nWe've also added xhigh reasoning for GPT-5.2!\n\n<img\n    width=\"456\"\n    height=\"98\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.26.0/a269d43e-c84a-4e5b-bb9d-d639fc80a025.png\"\n/>\n\n## Improvements\n\n- Added an index to code review instructions to make referencing issues easier\n- Added a sub agent icon to the tool use summary\n- Added PR # to the left sidebar\n\n## Fixes\n\n- Fixed flicker when closing chat tabs\n- Indentation in user messages is now preserved\n- Fixed terminals being shut down only after files were deleted in a workspace\n"
+}

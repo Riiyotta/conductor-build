@@ -1,0 +1,32 @@
+{
+  "slug": "0.10.5-terminal-performance-pt-2",
+  "version": "0.10.5",
+  "versionSlug": "0.10.5",
+  "title": "Terminal Performance Pt. 2",
+  "fullTitle": "0.10.5: Terminal Performance Pt. 2",
+  "date": "Sept 17th, 2025",
+  "dateISO": "2025-09-17",
+  "description": "Conductor 0.10.5 changelog - Terminal Performance Pt. 2",
+  "summary": "We've refactored the terminal. This should reduce crashing and lag, and improve performance for long running tasks.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.10.5/bef4ffcc-b72e-433a-bc9a-4034c2930821.gif",
+    "alt": "ConductorArchive"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.10.5-terminal-performance-pt-2/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.10.5-terminal-performance-pt-2",
+  "sourceUrl": "https://www.conductor.build/changelog/0.10.5-terminal-performance-pt-2",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve refactored the terminal. This should reduce crashing and lag, and improve performance for long running tasks.</p>\n<p>Archiving is also now instant:\n<figure data-asset><img alt=\"ConductorArchive\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.10.5/bef4ffcc-b72e-433a-bc9a-4034c2930821.gif\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Simplified signing in with GitHub (we now rely on a local <code>gh</code> installation)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed <code>/clear</code></li>\n<li>Fixed comments appearing multiple times in certain git diffs</li>\n<li>Fixed appending <code>.conductor</code> to <code>.git/info/exclude</code></li>\n</ul>\n<p>New in 0.10.6:</p>\n<ul>\n<li>Support for gh login for <code>bash</code> shell users</li>\n</ul>",
+  "markdown": "\nWe've refactored the terminal. This should reduce crashing and lag, and improve performance for long running tasks.\n\nArchiving is also now instant:\n![ConductorArchive](/assets/changelog/media/0.10.5/bef4ffcc-b72e-433a-bc9a-4034c2930821.gif)\n\n## Improvements\n\n- Simplified signing in with GitHub (we now rely on a local `gh` installation)\n\n## Fixes\n\n- Fixed `/clear`\n- Fixed comments appearing multiple times in certain git diffs\n- Fixed appending `.conductor` to `.git/info/exclude`\n\nNew in 0.10.6:\n\n- Support for gh login for `bash` shell users\n"
+}

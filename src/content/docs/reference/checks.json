@@ -1,0 +1,314 @@
+{
+  "slug": "reference/checks",
+  "url": "/docs/reference/checks",
+  "title": "Checks",
+  "description": "Reference for merge readiness signals in a workspace",
+  "meta": {
+    "title": "Checks | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/checks/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Checks"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#what-it-shows",
+      "title": "What it shows"
+    },
+    {
+      "depth": 2,
+      "url": "#how-to-use-it",
+      "title": "How to use it"
+    },
+    {
+      "depth": 2,
+      "url": "#blockers",
+      "title": "Blockers"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/diff-viewer",
+    "title": "Diff viewer",
+    "description": "Review workspace changes, comments, and PR-ready diffs"
+  },
+  "next": {
+    "url": "/docs/reference/checkpoints",
+    "title": "Checkpoints",
+    "description": "View turn by turn changes in a workspace and revert to previous turns"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The Checks tab collects the state you need before merging a workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-it-shows",
+      "children": [
+        {
+          "type": "text",
+          "value": "What it shows"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Checks may include:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Git status"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Pull request metadata"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CI and status checks"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Deployments"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GitHub comments and review threads"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Todos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The available sections depend on the repository, whether a pull request exists, and which integrations are connected."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-to-use-it",
+      "children": [
+        {
+          "type": "text",
+          "value": "How to use it"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the Checks tab as the last review pass before merge:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the branch has the changes you expect."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open or update the pull request."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Fix failing checks."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Send unresolved comments to the agent or resolve them yourself."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Complete todos."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Merge when the workspace is ready."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "blockers",
+      "children": [
+        {
+          "type": "text",
+          "value": "Blockers"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor may block or discourage merge actions when required work is still open, such as unresolved todos or failed checks. Treat these as prompts to inspect the workspace before merging."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/review-and-merge"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Review and merge a workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>The Checks tab collects the state you need before merging a workspace.</p><h2 id=\"what-it-shows\"><a href=\"#what-it-shows\">What it shows</a></h2><p>Checks may include:</p><ul><li>Git status</li><li>Pull request metadata</li><li>CI and status checks</li><li>Deployments</li><li>GitHub comments and review threads</li><li>Todos</li></ul><p>The available sections depend on the repository, whether a pull request exists, and which integrations are connected.</p><h2 id=\"how-to-use-it\"><a href=\"#how-to-use-it\">How to use it</a></h2><p>Use the Checks tab as the last review pass before merge:</p><ol><li>Confirm the branch has the changes you expect.</li><li>Open or update the pull request.</li><li>Fix failing checks.</li><li>Send unresolved comments to the agent or resolve them yourself.</li><li>Complete todos.</li><li>Merge when the workspace is ready.</li></ol><h2 id=\"blockers\"><a href=\"#blockers\">Blockers</a></h2><p>Conductor may block or discourage merge actions when required work is still open, such as unresolved todos or failed checks. Treat these as prompts to inspect the workspace before merging.</p><p>For the full workflow, see <a href=\"/docs/guides/review-and-merge\">Review and merge a workspace</a>.</p>",
+  "text": "The Checks tab collects the state you need before merging a workspace.\nWhat it shows\nChecks may include:\nGit status\nPull request metadata\nCI and status checks\nDeployments\nGitHub comments and review threads\nTodos\nThe available sections depend on the repository, whether a pull request exists, and which integrations are connected.\nHow to use it\nUse the Checks tab as the last review pass before merge:\nConfirm the branch has the changes you expect.\nOpen or update the pull request.\nFix failing checks.\nSend unresolved comments to the agent or resolve them yourself.\nComplete todos.\nMerge when the workspace is ready.\nBlockers\nConductor may block or discourage merge actions when required work is still open, such as unresolved todos or failed checks. Treat these as prompts to inspect the workspace before merging.\nFor the full workflow, see Review and merge a workspace.",
+  "markdown": "\n# Checks\n\n\n\nThe Checks tab collects the state you need before merging a workspace.\n\n## What it shows [#what-it-shows]\n\nChecks may include:\n\n* Git status\n* Pull request metadata\n* CI and status checks\n* Deployments\n* GitHub comments and review threads\n* Todos\n\nThe available sections depend on the repository, whether a pull request exists, and which integrations are connected.\n\n## How to use it [#how-to-use-it]\n\nUse the Checks tab as the last review pass before merge:\n\n1. Confirm the branch has the changes you expect.\n2. Open or update the pull request.\n3. Fix failing checks.\n4. Send unresolved comments to the agent or resolve them yourself.\n5. Complete todos.\n6. Merge when the workspace is ready.\n\n## Blockers [#blockers]\n\nConductor may block or discourage merge actions when required work is still open, such as unresolved todos or failed checks. Treat these as prompts to inspect the workspace before merging.\n\nFor the full workflow, see [Review and merge a workspace](/docs/guides/review-and-merge).\n"
+}

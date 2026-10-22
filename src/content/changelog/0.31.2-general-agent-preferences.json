@@ -1,0 +1,32 @@
+{
+  "slug": "0.31.2-general-agent-preferences",
+  "version": "0.31.2",
+  "versionSlug": "0.31.2",
+  "title": "General agent preferences",
+  "fullTitle": "0.31.2: General agent preferences",
+  "date": "Jan 17th, 2026",
+  "dateISO": "2026-01-17",
+  "description": "Conductor 0.31.2 changelog - General agent preferences",
+  "summary": "You can now add instructions for Conductor to give to each agent when it starts up, similar to CLAUDE.md or AGENTS.md. Configure instructions in Repository Settings.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.31.2/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png",
+    "alt": "General agent preferences"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.31.2-general-agent-preferences/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.31.2-general-agent-preferences",
+  "sourceUrl": "https://www.conductor.build/changelog/0.31.2-general-agent-preferences",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now add instructions for Conductor to give to each agent when it starts up, similar to <code>CLAUDE.md</code> or <code>AGENTS.md</code>. Configure instructions in Repository Settings.</p>\n<figure data-asset><img alt=\"General agent preferences\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.2/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added <code>⌘G</code> and <code>⌘⇧G</code> shortcuts to navigate between chat search results</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug that would sometimes prevent workspaces from being archived</li>\n<li>Fixed the thinking and plan mode toggles in dark mode</li>\n<li>Fixed the &quot;Create PR&quot; button sometimes sending a message to the wrong chat</li>\n<li>Fixed file names overflowing when reviewing diffs</li>\n</ul>",
+  "markdown": "\nYou can now add instructions for Conductor to give to each agent when it starts up, similar to `CLAUDE.md` or `AGENTS.md`. Configure instructions in Repository Settings.\n\n![General agent preferences](/assets/changelog/media/0.31.2/1768679906696-CleanShot_2026-01-17_at_11.31.52_2x.png)\n\n## Improvements\n\n- Added `⌘G` and `⌘⇧G` shortcuts to navigate between chat search results\n\n## Fixes\n\n- Fixed a bug that would sometimes prevent workspaces from being archived\n- Fixed the thinking and plan mode toggles in dark mode\n- Fixed the \"Create PR\" button sometimes sending a message to the wrong chat\n- Fixed file names overflowing when reviewing diffs\n"
+}

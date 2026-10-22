@@ -1,0 +1,169 @@
+{
+  "id": "changelog.entry-list",
+  "category": "CHANGELOG",
+  "iaSections": [
+    "changelog.entry-list"
+  ],
+  "purpose": "Paged reverse-chronological release notes.",
+  "implementedBy": [
+    {
+      "ref": "src/components/changelog/ChangelogEntry.jsx:11",
+      "quote": "export default function ChangelogEntry({ post, html, variant = 'index' }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:444",
+      "quote": "### 5.2 Entry (index article and post article)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "changelog.entry-list"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "entries": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "version": {
+            "type": "pattern",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "required": true
+          },
+          "date": {
+            "type": "text",
+            "maxWords": 4,
+            "required": true,
+            "observedMaxWords": 3
+          },
+          "title": {
+            "type": "text",
+            "maxWords": 14,
+            "required": true,
+            "observedMaxWords": 12
+          },
+          "body": {
+            "type": "list",
+            "items": {
+              "type": "object",
+              "fields": {
+                "kind": {
+                  "type": "enum",
+                  "values": [
+                    "paragraph",
+                    "heading",
+                    "list-item",
+                    "code",
+                    "image",
+                    "video"
+                  ],
+                  "required": true
+                },
+                "text": {
+                  "type": "text",
+                  "maxWords": 80,
+                  "required": false,
+                  "observedMaxWords": 75
+                },
+                "media": {
+                  "type": "media",
+                  "roles": [
+                    "product-screenshot",
+                    "demo-video"
+                  ],
+                  "required": false
+                }
+              },
+              "required": true
+            },
+            "minItems": 1,
+            "maxItems": 60,
+            "required": true
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 10,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.changelog-index"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color",
+      "sticky-meta",
+      "video-autoplay-loop"
+    ],
+    "defaultPatterns": [
+      "hover-color",
+      "sticky-meta"
+    ],
+    "reducedMotionFallback": "poster-or-first-frame",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:507",
+        "quote": "### 5.6 Motion (changelog)"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "meta",
+          "value": "stacked above title"
+        },
+        {
+          "property": "title",
+          "value": "24px/32px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "title",
+          "value": "30px/36px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "meta",
+          "value": "absolute left -192px, sticky top 96px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Release notes are factual claims about shipped software: never invent releases; never copy Conductor's changelog text."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "demo-video",
+    "product-screenshot"
+  ]
+}

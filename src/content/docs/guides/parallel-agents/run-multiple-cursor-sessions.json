@@ -1,0 +1,1017 @@
+{
+  "slug": "guides/parallel-agents/run-multiple-cursor-sessions",
+  "url": "/docs/guides/parallel-agents/run-multiple-cursor-sessions",
+  "title": "Run multiple Cursor sessions in parallel",
+  "description": "Use Conductor workspaces to run several Cursor tasks at once with separate branches, files, terminals, and review state",
+  "meta": {
+    "title": "Run multiple Cursor sessions in parallel | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/parallel-agents/run-multiple-cursor-sessions/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Workspace"
+    },
+    {
+      "name": "Run multiple Cursor sessions in parallel"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#before-you-start",
+      "title": "Before you start"
+    },
+    {
+      "depth": 2,
+      "url": "#choose-the-unit-of-parallel-work",
+      "title": "Choose the unit of parallel work"
+    },
+    {
+      "depth": 2,
+      "url": "#run-several-cursor-tasks",
+      "title": "Run several Cursor tasks"
+    },
+    {
+      "depth": 3,
+      "url": "#create-one-workspace-per-independent-cursor-task",
+      "title": "Create one workspace per independent Cursor task"
+    },
+    {
+      "depth": 3,
+      "url": "#start-cursor-in-each-workspace",
+      "title": "Start Cursor in each workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#run-and-test-each-workspace-separately",
+      "title": "Run and test each workspace separately"
+    },
+    {
+      "depth": 3,
+      "url": "#open-the-workspace-in-cursor-when-useful",
+      "title": "Open the workspace in Cursor when useful"
+    },
+    {
+      "depth": 3,
+      "url": "#review-and-merge-workspace-by-workspace",
+      "title": "Review and merge workspace by workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#keep-the-sessions-coordinated",
+      "title": "Keep the sessions coordinated"
+    },
+    {
+      "depth": 2,
+      "url": "#caveats",
+      "title": "Caveats"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/parallel-agents/run-multiple-codex-sessions",
+    "title": "Run multiple Codex sessions in parallel",
+    "description": "Use Conductor workspaces to run several Codex tasks at once with separate branches, files, terminals, and review state"
+  },
+  "next": {
+    "url": "/docs/guides/issue-to-pr",
+    "title": "From issue to PR",
+    "description": "Take a GitHub or Linear issue through implementation, review, and pull request"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when you want several Cursor tasks moving at the same time without one task taking over another task's checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In Conductor, the unit of independent Cursor work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor supports Cursor's Composer 2.5 for Cursor sessions, so Composer 2.5 tasks can run in the same workspace model as Claude Code and Codex tasks."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor also has native IDE and background-agent workflows. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the decision model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "UDlV5G0V0cM",
+      "title": "Managing multiple agent sessions with Conductor",
+      "thumbnail": "/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "before-you-start",
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you start"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions, including Composer 2.5, need a Cursor API key. Add it in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or set "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor's environment settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You also need a repository that can run from a workspace directory. Use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for static gitignored files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Use a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "choose-the-unit-of-parallel-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose the unit of parallel work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you start more sessions, decide whether the work needs isolation or shared state."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use separate workspaces when each Cursor task should become its own branch, review, or pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use multiple chats in one workspace when the tasks need to share the same branch and current code state, such as one Cursor session implementing while another reviews the same diff."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This choice matters more than the number of sessions. Parallel agents help when the tasks are independent enough to review separately."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-several-cursor-tasks",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run several Cursor tasks"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "children": [
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-one-workspace-per-independent-cursor-task",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create one workspace per independent Cursor task"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a workspace with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command Shift N",
+                  "keys": [
+                    "⌘",
+                    "Shift",
+                    "N"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " or the "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "..."
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " button next to "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "New workspace"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch, then attaches the Cursor chat, terminal, diff, and review state to that workspace."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "start-cursor-in-each-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start Cursor in each workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the workspace and choose Cursor for the chat. Use Composer 2.5 when you want Cursor's Composer model in a Conductor workspace."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Give each Cursor session a scoped prompt: what to change, what not to change, how to verify it, and when to stop for review. Repeat this for each independent task."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "run-and-test-each-workspace-separately",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Run and test each workspace separately"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use the Run button or terminal from the workspace that owns the change. Setup scripts and actions execute from the workspace directory."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If several workspaces need local servers at once, use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_PORT"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " so each workspace gets a separate port range. If your project cannot run cleanly from workspace directories, use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts/spotlight-testing"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Spotlight testing"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "open-the-workspace-in-cursor-when-useful",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the workspace in Cursor when useful"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If you want Cursor's editor surface for manual editing, click "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Open In"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " or press "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command O",
+                  "keys": [
+                    "⌘",
+                    "O"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " and choose Cursor."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Opening the workspace in Cursor does not replace the Conductor workspace. Conductor still owns the branch, terminal, diff, checks, pull request, and archive flow."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "review-and-merge-workspace-by-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Review and merge workspace by workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the Diff Viewer with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command Shift D",
+                  "keys": [
+                    "⌘",
+                    "Shift",
+                    "D"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " and inspect one workspace at a time."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use the "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/checks"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Checks tab"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "keep-the-sessions-coordinated",
+      "children": [
+        {
+          "type": "text",
+          "value": "Keep the sessions coordinated"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Give each Cursor session a task that can finish independently."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Keep durable project context in "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "AGENTS.md"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CLAUDE.md"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", repository instructions, or the workspace "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " directory."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use one workspace when the Cursor sessions need to collaborate on the same in-progress branch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "caveats",
+      "children": [
+        {
+          "type": "text",
+          "value": "Caveats"
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Parallel Cursor sessions still use your Cursor access",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor runs Cursor through your Cursor API key. Parallel work can still be limited by your Cursor account, plan, API limits, local resources, and provider behavior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Workspace isolation is not a security boundary",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Each workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/security-and-permissions"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Security and permissions"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Local setup and cloud setup can differ",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "scripts.setup"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " and use "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/environment-variables"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "CONDUCTOR_IS_LOCAL"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " for local-only steps."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Use Cursor directly when you want only Cursor's native workflow",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If you want to stay entirely in Cursor's native IDE or background-agent surfaces, use Cursor directly. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the same workflow with Anthropic's agent, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Claude Code sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the same workflow with OpenAI's agent, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when you want several Cursor tasks moving at the same time without one task taking over another task's checkout.</p><p>In Conductor, the unit of independent Cursor work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.</p><p>Conductor supports Cursor's Composer 2.5 for Cursor sessions, so Composer 2.5 tasks can run in the same workspace model as Claude Code and Codex tasks.</p><p>Cursor also has native IDE and background-agent workflows. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.</p><p>For the decision model, see <a href=\"/docs/concepts/parallel-agents\">Parallel agents</a>.</p><div data-youtube=\"UDlV5G0V0cM\" data-title=\"Managing multiple agent sessions with Conductor\" data-thumbnail=\"/assets/docs/youtube/UDlV5G0V0cM-sddefault.webp\"></div><h2 id=\"before-you-start\"><a href=\"#before-you-start\">Before you start</a></h2><p>Cursor sessions, including Composer 2.5, need a Cursor API key. Add it in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>, or set <code>CURSOR_API_KEY</code> in Conductor's environment settings.</p><p>You also need a repository that can run from a workspace directory. Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for static gitignored files such as <code>.env.local</code>. Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.</p><h2 id=\"choose-the-unit-of-parallel-work\"><a href=\"#choose-the-unit-of-parallel-work\">Choose the unit of parallel work</a></h2><p>Before you start more sessions, decide whether the work needs isolation or shared state.</p><p>Use separate workspaces when each Cursor task should become its own branch, review, or pull request.</p><p>Use multiple chats in one workspace when the tasks need to share the same branch and current code state, such as one Cursor session implementing while another reviews the same diff.</p><p>This choice matters more than the number of sessions. Parallel agents help when the tasks are independent enough to review separately.</p><h2 id=\"run-several-cursor-tasks\"><a href=\"#run-several-cursor-tasks\">Run several Cursor tasks</a></h2><div data-steps><div data-step><h3 id=\"create-one-workspace-per-independent-cursor-task\"><a href=\"#create-one-workspace-per-independent-cursor-task\">Create one workspace per independent Cursor task</a></h3><p>Create a workspace with <span data-shortcut aria-label=\"Command Shift N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>N</kbd></span> or the <code>...</code> button next to <code>New workspace</code>.</p><p>Start from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch, then attaches the Cursor chat, terminal, diff, and review state to that workspace.</p></div><div data-step><h3 id=\"start-cursor-in-each-workspace\"><a href=\"#start-cursor-in-each-workspace\">Start Cursor in each workspace</a></h3><p>Open the workspace and choose Cursor for the chat. Use Composer 2.5 when you want Cursor's Composer model in a Conductor workspace.</p><p>Give each Cursor session a scoped prompt: what to change, what not to change, how to verify it, and when to stop for review. Repeat this for each independent task.</p></div><div data-step><h3 id=\"run-and-test-each-workspace-separately\"><a href=\"#run-and-test-each-workspace-separately\">Run and test each workspace separately</a></h3><p>Use the Run button or terminal from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.</p><p>If several workspaces need local servers at once, use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_PORT</code></a> so each workspace gets a separate port range. If your project cannot run cleanly from workspace directories, use <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</p></div><div data-step><h3 id=\"open-the-workspace-in-cursor-when-useful\"><a href=\"#open-the-workspace-in-cursor-when-useful\">Open the workspace in Cursor when useful</a></h3><p>If you want Cursor's editor surface for manual editing, click <code>Open In</code> or press <span data-shortcut aria-label=\"Command O\"><kbd>⌘</kbd><span data-sep>+</span><kbd>O</kbd></span> and choose Cursor.</p><p>Opening the workspace in Cursor does not replace the Conductor workspace. Conductor still owns the branch, terminal, diff, checks, pull request, and archive flow.</p></div><div data-step><h3 id=\"review-and-merge-workspace-by-workspace\"><a href=\"#review-and-merge-workspace-by-workspace\">Review and merge workspace by workspace</a></h3><p>Open the Diff Viewer with <span data-shortcut aria-label=\"Command Shift D\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>D</kbd></span> and inspect one workspace at a time.</p><p>Use the <a href=\"/docs/reference/checks\">Checks tab</a> to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.</p></div></div><h2 id=\"keep-the-sessions-coordinated\"><a href=\"#keep-the-sessions-coordinated\">Keep the sessions coordinated</a></h2><ul><li>Give each Cursor session a task that can finish independently.</li><li>Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.</li><li>Keep durable project context in <code>AGENTS.md</code>, <code>CLAUDE.md</code>, repository instructions, or the workspace <code>.context</code> directory.</li><li>Use one workspace when the Cursor sessions need to collaborate on the same in-progress branch.</li></ul><h2 id=\"caveats\"><a href=\"#caveats\">Caveats</a></h2><div data-accordions=\"single\"><details data-accordion><summary>Parallel Cursor sessions still use your Cursor access</summary><p>Conductor runs Cursor through your Cursor API key. Parallel work can still be limited by your Cursor account, plan, API limits, local resources, and provider behavior.</p></details><details data-accordion><summary>Workspace isolation is not a security boundary</summary><p>Each workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See <a href=\"/docs/reference/security-and-permissions\">Security and permissions</a>.</p></details><details data-accordion><summary>Local setup and cloud setup can differ</summary><p>Files to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in <code>scripts.setup</code> and use <a href=\"/docs/reference/environment-variables\"><code>CONDUCTOR_IS_LOCAL</code></a> for local-only steps.</p></details><details data-accordion><summary>Use Cursor directly when you want only Cursor's native workflow</summary><p>If you want to stay entirely in Cursor's native IDE or background-agent surfaces, use Cursor directly. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.</p></details></div><p>For the same workflow with Anthropic's agent, see <a href=\"/docs/guides/parallel-agents/run-multiple-claude-code-sessions\">Run multiple Claude Code sessions in parallel</a>. For the same workflow with OpenAI's agent, see <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>.</p>",
+  "text": "Use this guide when you want several Cursor tasks moving at the same time without one task taking over another task's checkout.\nIn Conductor, the unit of independent Cursor work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.\nConductor supports Cursor's Composer 2.5 for Cursor sessions, so Composer 2.5 tasks can run in the same workspace model as Claude Code and Codex tasks.\nCursor also has native IDE and background-agent workflows. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\nFor the decision model, see Parallel agents.\nBefore you start\nCursor sessions, including Composer 2.5, need a Cursor API key. Add it in Settings -> Agents -> Cursor, or set CURSOR_API_KEY in Conductor's environment settings.\nYou also need a repository that can run from a workspace directory. Use Files to copy for static gitignored files such as .env.local. Use a setup script for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.\nChoose the unit of parallel work\nBefore you start more sessions, decide whether the work needs isolation or shared state.\nUse separate workspaces when each Cursor task should become its own branch, review, or pull request.\nUse multiple chats in one workspace when the tasks need to share the same branch and current code state, such as one Cursor session implementing while another reviews the same diff.\nThis choice matters more than the number of sessions. Parallel agents help when the tasks are independent enough to review separately.\nRun several Cursor tasks\nCreate one workspace per independent Cursor task\nCreate a workspace with ⌘ShiftN or the ... button next to New workspace.\nStart from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch, then attaches the Cursor chat, terminal, diff, and review state to that workspace.\nStart Cursor in each workspace\nOpen the workspace and choose Cursor for the chat. Use Composer 2.5 when you want Cursor's Composer model in a Conductor workspace.\nGive each Cursor session a scoped prompt: what to change, what not to change, how to verify it, and when to stop for review. Repeat this for each independent task.\nRun and test each workspace separately\nUse the Run button or terminal from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.\nIf several workspaces need local servers at once, use CONDUCTOR_PORT so each workspace gets a separate port range. If your project cannot run cleanly from workspace directories, use Spotlight testing.\nOpen the workspace in Cursor when useful\nIf you want Cursor's editor surface for manual editing, click Open In or press ⌘O and choose Cursor.\nOpening the workspace in Cursor does not replace the Conductor workspace. Conductor still owns the branch, terminal, diff, checks, pull request, and archive flow.\nReview and merge workspace by workspace\nOpen the Diff Viewer with ⌘ShiftD and inspect one workspace at a time.\nUse the Checks tab to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.\nKeep the sessions coordinated\nGive each Cursor session a task that can finish independently.\nAvoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.\nKeep durable project context in AGENTS.md, CLAUDE.md, repository instructions, or the workspace .context directory.\nUse one workspace when the Cursor sessions need to collaborate on the same in-progress branch.\nCaveats\nParallel Cursor sessions still use your Cursor accessConductor runs Cursor through your Cursor API key. Parallel work can still be limited by your Cursor account, plan, API limits, local resources, and provider behavior.\nWorkspace isolation is not a security boundaryEach workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See Security and permissions.\nLocal setup and cloud setup can differFiles to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in scripts.setup and use CONDUCTOR_IS_LOCAL for local-only steps.\nUse Cursor directly when you want only Cursor's native workflowIf you want to stay entirely in Cursor's native IDE or background-agent surfaces, use Cursor directly. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\nFor the same workflow with Anthropic's agent, see Run multiple Claude Code sessions in parallel. For the same workflow with OpenAI's agent, see Run multiple Codex sessions in parallel.",
+  "markdown": "\n# Run multiple Cursor sessions in parallel\n\n\n\nUse this guide when you want several Cursor tasks moving at the same time without one task taking over another task's checkout.\n\nIn Conductor, the unit of independent Cursor work is a workspace. Create one workspace for each task that should have its own branch, working tree, setup context, terminal, diff, and pull request path.\n\nConductor supports Cursor's Composer 2.5 for Cursor sessions, so Composer 2.5 tasks can run in the same workspace model as Claude Code and Codex tasks.\n\nCursor also has native IDE and background-agent workflows. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\n\nFor the decision model, see [Parallel agents](/docs/concepts/parallel-agents).\n\n\n\n\n## Before you start [#before-you-start]\n\nCursor sessions, including Composer 2.5, need a Cursor API key. Add it in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor), or set `CURSOR_API_KEY` in Conductor's environment settings.\n\nYou also need a repository that can run from a workspace directory. Use [Files to copy](/docs/reference/files-to-copy) for static gitignored files such as `.env.local`. Use a [setup script](/docs/reference/scripts#setup-scripts) for commands that install dependencies, generate files, create symlinks, initialize local databases, or prepare other per-workspace resources.\n\n## Choose the unit of parallel work [#choose-the-unit-of-parallel-work]\n\nBefore you start more sessions, decide whether the work needs isolation or shared state.\n\nUse separate workspaces when each Cursor task should become its own branch, review, or pull request.\n\nUse multiple chats in one workspace when the tasks need to share the same branch and current code state, such as one Cursor session implementing while another reviews the same diff.\n\nThis choice matters more than the number of sessions. Parallel agents help when the tasks are independent enough to review separately.\n\n## Run several Cursor tasks [#run-several-cursor-tasks]\n\n### Create one workspace per independent Cursor task [#create-one-workspace-per-independent-cursor-task]\n\nCreate a workspace with Command + Shift + N or the `...` button next to `New workspace`.\n\nStart from a GitHub issue, Linear issue, pull request, branch, or a new task. Conductor creates a separate git worktree and branch, then attaches the Cursor chat, terminal, diff, and review state to that workspace.\n\n### Start Cursor in each workspace [#start-cursor-in-each-workspace]\n\nOpen the workspace and choose Cursor for the chat. Use Composer 2.5 when you want Cursor's Composer model in a Conductor workspace.\n\nGive each Cursor session a scoped prompt: what to change, what not to change, how to verify it, and when to stop for review. Repeat this for each independent task.\n\n### Run and test each workspace separately [#run-and-test-each-workspace-separately]\n\nUse the Run button or terminal from the workspace that owns the change. Setup scripts and actions execute from the workspace directory.\n\nIf several workspaces need local servers at once, use [`CONDUCTOR_PORT`](/docs/reference/environment-variables) so each workspace gets a separate port range. If your project cannot run cleanly from workspace directories, use [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n\n### Open the workspace in Cursor when useful [#open-the-workspace-in-cursor-when-useful]\n\nIf you want Cursor's editor surface for manual editing, click `Open In` or press Command + O and choose Cursor.\n\nOpening the workspace in Cursor does not replace the Conductor workspace. Conductor still owns the branch, terminal, diff, checks, pull request, and archive flow.\n\n### Review and merge workspace by workspace [#review-and-merge-workspace-by-workspace]\n\nOpen the Diff Viewer with Command + Shift + D and inspect one workspace at a time.\n\nUse the [Checks tab](/docs/reference/checks) to track git status, CI, deployments, comments, and todos. Merge and archive the workspaces that are ready; keep revising or archive the ones that are not worth shipping.\n\n## Keep the sessions coordinated [#keep-the-sessions-coordinated]\n\n* Give each Cursor session a task that can finish independently.\n* Avoid assigning two workspaces the same file-heavy refactor unless you expect merge conflicts.\n* Keep durable project context in `AGENTS.md`, `CLAUDE.md`, repository instructions, or the workspace `.context` directory.\n* Use one workspace when the Cursor sessions need to collaborate on the same in-progress branch.\n\n## Caveats [#caveats]\n\nConductor runs Cursor through your Cursor API key. Parallel work can still be limited by your Cursor account, plan, API limits, local resources, and provider behavior.\n\nEach workspace has separate files and branch state, but commands still run on your Mac with your user permissions unless you configure stricter controls. See [Security and permissions](/docs/reference/security-and-permissions).\n\nFiles to copy runs for local Mac workspaces. If a workflow must also work in cloud workspaces, put required commands in `scripts.setup` and use [`CONDUCTOR_IS_LOCAL`](/docs/reference/environment-variables) for local-only steps.\n\nIf you want to stay entirely in Cursor's native IDE or background-agent surfaces, use Cursor directly. Use Conductor when you want parallel Cursor sessions plus Conductor's workspace sidebar, setup scripts, actions, diff review, checks, and pull request flow.\n\nFor the same workflow with Anthropic's agent, see [Run multiple Claude Code sessions in parallel](/docs/guides/parallel-agents/run-multiple-claude-code-sessions). For the same workflow with OpenAI's agent, see [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions).\n"
+}

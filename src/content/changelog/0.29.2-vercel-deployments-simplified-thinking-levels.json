@@ -1,0 +1,32 @@
+{
+  "slug": "0.29.2-vercel-deployments-simplified-thinking-levels",
+  "version": "0.29.2",
+  "versionSlug": "0.29.2",
+  "title": "Vercel deployments, simplified thinking levels",
+  "fullTitle": "0.29.2: Vercel deployments, simplified thinking levels",
+  "date": "Jan 9th, 2026",
+  "dateISO": "2026-01-09",
+  "description": "Conductor 0.29.2 changelog - Vercel deployments, simplified thinking levels",
+  "summary": "Use the Deployments tab to view Vercel and GitHub deployments associated with each PR.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.2/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png",
+    "alt": "Vercel deployments"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.2-vercel-deployments-simplified-thinking-levels/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.2-vercel-deployments-simplified-thinking-levels",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.2-vercel-deployments-simplified-thinking-levels",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Use the Deployments tab to view Vercel and GitHub deployments associated with each PR.</p>\n<figure data-asset><img alt=\"Vercel deployments\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.2/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png\"/></figure>\n<p>We’ve simplified the thinking levels in Conductor. Use <code>⌥T</code> to toggle thinking on and off. Thinking is now enabled by default for new users.</p>\n<figure data-asset><img alt=\"Simplified thinking levels\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.2/1767974673603-CleanShot_2026-01-09_at_08.02.26_2x.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the left sidebar being hidden when all repositories were deleted</li>\n<li>Improved error messaging when spotlight fails to launch due to an ongoing rebase</li>\n<li>Fixed <code>CONDUCTOR_*</code> env variables not being visible to Claude or Codex</li>\n<li>Tweaked PR creation instructions to use the <code>GetWorkspaceDiff</code> tool</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Dialogs have more padding</li>\n<li>Simplified version control header</li>\n</ul>",
+  "markdown": "\nUse the Deployments tab to view Vercel and GitHub deployments associated with each PR.\n\n![Vercel deployments](/assets/changelog/media/0.29.2/1767974674371-CleanShot_2026-01-09_at_08.03.36_2x.png)\n\nWe’ve simplified the thinking levels in Conductor. Use `⌥T` to toggle thinking on and off. Thinking is now enabled by default for new users.\n\n![Simplified thinking levels](/assets/changelog/media/0.29.2/1767974673603-CleanShot_2026-01-09_at_08.02.26_2x.png)\n\n## Fixes\n\n- Fixed the left sidebar being hidden when all repositories were deleted\n- Improved error messaging when spotlight fails to launch due to an ongoing rebase\n- Fixed `CONDUCTOR_*` env variables not being visible to Claude or Codex\n- Tweaked PR creation instructions to use the `GetWorkspaceDiff` tool\n\n## Misc\n\n- Dialogs have more padding\n- Simplified version control header\n"
+}

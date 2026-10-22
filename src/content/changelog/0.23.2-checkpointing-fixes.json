@@ -1,0 +1,24 @@
+{
+  "slug": "0.23.2-checkpointing-fixes",
+  "version": "0.23.2",
+  "versionSlug": "0.23.2",
+  "title": "Checkpointing Fixes",
+  "fullTitle": "0.23.2: Checkpointing Fixes",
+  "date": "Nov 25th, 2025",
+  "dateISO": "2025-11-25",
+  "description": "Conductor 0.23.2 changelog - Checkpointing Fixes",
+  "summary": "We've fixed a bug where reverting a chat would result in an error code 1. This was due to an undocumented breaking change in the Anthropic Agent SDK.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.23.2-checkpointing-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.23.2-checkpointing-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.23.2-checkpointing-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a bug where reverting a chat would result in an error code 1. This was due to an undocumented breaking change in the Anthropic Agent SDK.</p>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where new workspaces would occasionally start from an old git commit</li>\n<li>Fixed the app crashing when navigating to the Linear tab while not authenticated</li>\n<li>Fixed diffs for renamed files not showing correctly</li>\n</ul>",
+  "markdown": "\nWe've fixed a bug where reverting a chat would result in an error code 1. This was due to an undocumented breaking change in the Anthropic Agent SDK.\n\n## Fixes\n\n- Fixed a bug where new workspaces would occasionally start from an old git commit\n- Fixed the app crashing when navigating to the Linear tab while not authenticated\n- Fixed diffs for renamed files not showing correctly\n"
+}

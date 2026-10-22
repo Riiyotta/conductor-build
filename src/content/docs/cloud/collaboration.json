@@ -1,0 +1,465 @@
+{
+  "slug": "cloud/collaboration",
+  "url": "/docs/cloud/collaboration",
+  "title": "Multiplayer",
+  "description": "Find team work, share chats, follow workspaces, and hand work to a teammate",
+  "meta": {
+    "title": "Multiplayer | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/collaboration/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Multiplayer"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#find-your-teams-work",
+      "title": "Find your team's work"
+    },
+    {
+      "depth": 2,
+      "url": "#work-in-a-shared-chat",
+      "title": "Work in a shared chat"
+    },
+    {
+      "depth": 2,
+      "url": "#follow-a-workspace",
+      "title": "Follow a workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#hand-off-a-workspace",
+      "title": "Hand off a workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#share-a-direct-link",
+      "title": "Share a direct link"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud/working-with-cloud-workspaces",
+    "title": "Work with cloud workspaces",
+    "description": "Use workspace status, SSH, file sync, terminals, and forwarded ports"
+  },
+  "next": {
+    "url": "/docs/cloud/cloud-computer",
+    "title": "Cloud Computer",
+    "description": "Configure the shared repositories, environment, software, and builds for your organization"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspaces in a Cloud organization are shared with the team. Members can open\nthe same workspaces and chats, see who's active, and continue each other's\nwork."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "find-your-teams-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Find your team's work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Home"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the sidebar to see the organization's workspaces. Home\nstarts with your work and provides filters for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "By"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": choose a teammate or "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Anyone"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "In"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": choose one or more projects."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Archived"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": show or hide archived workspaces."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The sidebar keeps your "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Pinned"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "My workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " sections close at\nhand. Choose a person under "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Team"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to open Home filtered to their\nworkspaces. Presence dots show teammates who are currently active."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "work-in-a-shared-chat",
+      "children": [
+        {
+          "type": "text",
+          "value": "Work in a shared chat"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open a teammate's workspace from Home or the sidebar, then select one of its\nchats. The transcript and new agent output update live for everyone. When\nanother person has the workspace open, their avatar appears on the workspace,\nand Conductor shows when they are typing in the same chat."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create another chat when you want a separate agent thread against the same\nworkspace files, without creating another workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "follow-a-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Follow a workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Following is useful when someone else is assigned to the workspace but you\nwant to keep it in your workflow."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose the eye button in the workspace top bar, or right-click the workspace\nin the sidebar or Home and choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Follow"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". The workspace appears under\n"
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Following"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in your sidebar. (You can't follow a workspace assigned to you —\nit's already under "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "My workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ".)"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A workspace's avatar stack shows its creator and followers, highlighted when\nthey currently have the workspace open."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "hand-off-a-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Hand off a workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Right-click the workspace and choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Reassign to"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to make a teammate\nresponsible for it. The workspace moves into their assigned work; followers\nkeep following."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "share-a-direct-link",
+      "children": [
+        {
+          "type": "text",
+          "value": "Share a direct link"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose the link button in the workspace top bar, press "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "⌘⇧C"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or right-click\nthe workspace and choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Copy link"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". The link opens the workspace in\nConductor for any member of the organization."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Workspaces in a Cloud organization are shared with the team. Members can open\nthe same workspaces and chats, see who's active, and continue each other's\nwork.</p><h2 id=\"find-your-teams-work\"><a href=\"#find-your-teams-work\">Find your team's work</a></h2><p>Choose <strong>Home</strong> in the sidebar to see the organization's workspaces. Home\nstarts with your work and provides filters for:</p><ul><li><strong>By</strong>: choose a teammate or <strong>Anyone</strong>.</li><li><strong>In</strong>: choose one or more projects.</li><li><strong>Archived</strong>: show or hide archived workspaces.</li></ul><p>The sidebar keeps your <strong>Pinned</strong> and <strong>My workspaces</strong> sections close at\nhand. Choose a person under <strong>Team</strong> to open Home filtered to their\nworkspaces. Presence dots show teammates who are currently active.</p><h2 id=\"work-in-a-shared-chat\"><a href=\"#work-in-a-shared-chat\">Work in a shared chat</a></h2><p>Open a teammate's workspace from Home or the sidebar, then select one of its\nchats. The transcript and new agent output update live for everyone. When\nanother person has the workspace open, their avatar appears on the workspace,\nand Conductor shows when they are typing in the same chat.</p><p>Create another chat when you want a separate agent thread against the same\nworkspace files, without creating another workspace.</p><h2 id=\"follow-a-workspace\"><a href=\"#follow-a-workspace\">Follow a workspace</a></h2><p>Following is useful when someone else is assigned to the workspace but you\nwant to keep it in your workflow.</p><p>Choose the eye button in the workspace top bar, or right-click the workspace\nin the sidebar or Home and choose <strong>Follow</strong>. The workspace appears under\n<strong>Following</strong> in your sidebar. (You can't follow a workspace assigned to you —\nit's already under <strong>My workspaces</strong>.)</p><p>A workspace's avatar stack shows its creator and followers, highlighted when\nthey currently have the workspace open.</p><h2 id=\"hand-off-a-workspace\"><a href=\"#hand-off-a-workspace\">Hand off a workspace</a></h2><p>Right-click the workspace and choose <strong>Reassign to</strong> to make a teammate\nresponsible for it. The workspace moves into their assigned work; followers\nkeep following.</p><h2 id=\"share-a-direct-link\"><a href=\"#share-a-direct-link\">Share a direct link</a></h2><p>Choose the link button in the workspace top bar, press <code>⌘⇧C</code>, or right-click\nthe workspace and choose <strong>Copy link</strong>. The link opens the workspace in\nConductor for any member of the organization.</p>",
+  "text": "Workspaces in a Cloud organization are shared with the team. Members can open\nthe same workspaces and chats, see who's active, and continue each other's\nwork.\nFind your team's work\nChoose Home in the sidebar to see the organization's workspaces. Home\nstarts with your work and provides filters for:\nBy: choose a teammate or Anyone.\nIn: choose one or more projects.\nArchived: show or hide archived workspaces.\nThe sidebar keeps your Pinned and My workspaces sections close at\nhand. Choose a person under Team to open Home filtered to their\nworkspaces. Presence dots show teammates who are currently active.\nWork in a shared chat\nOpen a teammate's workspace from Home or the sidebar, then select one of its\nchats. The transcript and new agent output update live for everyone. When\nanother person has the workspace open, their avatar appears on the workspace,\nand Conductor shows when they are typing in the same chat.\nCreate another chat when you want a separate agent thread against the same\nworkspace files, without creating another workspace.\nFollow a workspace\nFollowing is useful when someone else is assigned to the workspace but you\nwant to keep it in your workflow.\nChoose the eye button in the workspace top bar, or right-click the workspace\nin the sidebar or Home and choose Follow. The workspace appears under\nFollowing in your sidebar. (You can't follow a workspace assigned to you —\nit's already under My workspaces.)\nA workspace's avatar stack shows its creator and followers, highlighted when\nthey currently have the workspace open.\nHand off a workspace\nRight-click the workspace and choose Reassign to to make a teammate\nresponsible for it. The workspace moves into their assigned work; followers\nkeep following.\nShare a direct link\nChoose the link button in the workspace top bar, press ⌘⇧C, or right-click\nthe workspace and choose Copy link. The link opens the workspace in\nConductor for any member of the organization.",
+  "markdown": "\n# Multiplayer\n\n\n\nWorkspaces in a Cloud organization are shared with the team. Members can open\nthe same workspaces and chats, see who's active, and continue each other's\nwork.\n\n## Find your team's work [#find-your-teams-work]\n\nChoose **Home** in the sidebar to see the organization's workspaces. Home\nstarts with your work and provides filters for:\n\n* **By**: choose a teammate or **Anyone**.\n* **In**: choose one or more projects.\n* **Archived**: show or hide archived workspaces.\n\nThe sidebar keeps your **Pinned** and **My workspaces** sections close at\nhand. Choose a person under **Team** to open Home filtered to their\nworkspaces. Presence dots show teammates who are currently active.\n\n## Work in a shared chat [#work-in-a-shared-chat]\n\nOpen a teammate's workspace from Home or the sidebar, then select one of its\nchats. The transcript and new agent output update live for everyone. When\nanother person has the workspace open, their avatar appears on the workspace,\nand Conductor shows when they are typing in the same chat.\n\nCreate another chat when you want a separate agent thread against the same\nworkspace files, without creating another workspace.\n\n## Follow a workspace [#follow-a-workspace]\n\nFollowing is useful when someone else is assigned to the workspace but you\nwant to keep it in your workflow.\n\nChoose the eye button in the workspace top bar, or right-click the workspace\nin the sidebar or Home and choose **Follow**. The workspace appears under\n**Following** in your sidebar. (You can't follow a workspace assigned to you —\nit's already under **My workspaces**.)\n\nA workspace's avatar stack shows its creator and followers, highlighted when\nthey currently have the workspace open.\n\n## Hand off a workspace [#hand-off-a-workspace]\n\nRight-click the workspace and choose **Reassign to** to make a teammate\nresponsible for it. The workspace moves into their assigned work; followers\nkeep following.\n\n## Share a direct link [#share-a-direct-link]\n\nChoose the link button in the workspace top bar, press `⌘⇧C`, or right-click\nthe workspace and choose **Copy link**. The link opens the workspace in\nConductor for any member of the organization.\n"
+}

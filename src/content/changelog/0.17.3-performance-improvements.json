@@ -1,0 +1,28 @@
+{
+  "slug": "0.17.3-performance-improvements",
+  "version": "0.17.3",
+  "versionSlug": "0.17.3",
+  "title": "Performance Improvements",
+  "fullTitle": "0.17.3: Performance Improvements",
+  "date": "Oct 28th, 2025",
+  "dateISO": "2025-10-28",
+  "description": "Conductor 0.17.3 changelog - Performance Improvements",
+  "summary": "We've fixed a performance regression introduced in 0.17.0 related to session notifications. Our apologies!",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.17.3-performance-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.3-performance-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.3-performance-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a performance regression introduced in 0.17.0 related to session notifications. Our apologies!</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added a setting for a custom branch prefix</li>\n<li>Use Haiku 4.5 for creating PRs through Claude</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix nested buttons</li>\n<li>Fixed chats getting stuck when Claude called the <code>exit_plan_mode</code> tool</li>\n</ul>",
+  "markdown": "\nWe've fixed a performance regression introduced in 0.17.0 related to session notifications. Our apologies!\n\n## Improvements\n\n- Added a setting for a custom branch prefix\n- Use Haiku 4.5 for creating PRs through Claude\n\n## Fixes\n\n- Fix nested buttons\n- Fixed chats getting stuck when Claude called the `exit_plan_mode` tool\n"
+}

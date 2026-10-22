@@ -1,0 +1,32 @@
+{
+  "slug": "0.31.1-checks-tab",
+  "version": "0.31.1",
+  "versionSlug": "0.31.1",
+  "title": "Checks tab",
+  "fullTitle": "0.31.1: Checks tab",
+  "date": "Jan 16th, 2026",
+  "dateISO": "2026-01-16",
+  "description": "Conductor 0.31.1 changelog - Checks tab",
+  "summary": "The checks tab is one place to keep track of everything you need to do before merging. Track git status, deployments, CI actions, comments, and user todos all in one place.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.31.1/1768607997278-image.png",
+    "alt": "Checks tab"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.31.1-checks-tab/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.31.1-checks-tab",
+  "sourceUrl": "https://www.conductor.build/changelog/0.31.1-checks-tab",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>The checks tab is one place to keep track of everything you need to do before merging. Track git status, deployments, CI actions, comments, and user todos all in one place.</p>\n<figure data-asset><img alt=\"Checks tab\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.31.1/1768607997278-image.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added <code>⌘,</code> shortcut to open repo settings</li>\n<li>Conductor will now ask to commit if there are uncommitted changes when archiving a workspace</li>\n<li>Slash command autocomplete now works anywhere in a message</li>\n<li>Added <code>/restart</code> to restart the Claude Code process in a chat</li>\n<li>A confirmation dialog will now appear if agents are running when restarting Conductor</li>\n<li>We&#x27;ve restored granular thinking levels for Codex (low, medium, high, xhigh)</li>\n<li>Non-file level GitHub comments are now accessible from the Checks tab</li>\n<li>Improved favicon detection logic in the left sidebar</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed app crashing for users with corporate SSL proxies with native TLS</li>\n<li>Invalid slash commands will now show an error in the chat</li>\n<li>Increased <code>⌘F</code> search bar width</li>\n<li>Repository names are now truncated in the left sidebar</li>\n<li>Repository names are now truncated in settings</li>\n<li>Fixed left sidebar icon alignment</li>\n<li>Fixed a bug where the left sidebar could be resized to have no width</li>\n<li>Fixed text overflowing in the right panel</li>\n</ul>",
+  "markdown": "\nThe checks tab is one place to keep track of everything you need to do before merging. Track git status, deployments, CI actions, comments, and user todos all in one place.\n\n![Checks tab](/assets/changelog/media/0.31.1/1768607997278-image.png)\n\n## Improvements\n\n- Added `⌘,` shortcut to open repo settings\n- Conductor will now ask to commit if there are uncommitted changes when archiving a workspace\n- Slash command autocomplete now works anywhere in a message\n- Added `/restart` to restart the Claude Code process in a chat\n- A confirmation dialog will now appear if agents are running when restarting Conductor\n- We've restored granular thinking levels for Codex (low, medium, high, xhigh)\n- Non-file level GitHub comments are now accessible from the Checks tab\n- Improved favicon detection logic in the left sidebar\n\n## Fixes\n\n- Fixed app crashing for users with corporate SSL proxies with native TLS\n- Invalid slash commands will now show an error in the chat\n- Increased `⌘F` search bar width\n- Repository names are now truncated in the left sidebar\n- Repository names are now truncated in settings\n- Fixed left sidebar icon alignment\n- Fixed a bug where the left sidebar could be resized to have no width\n- Fixed text overflowing in the right panel\n"
+}

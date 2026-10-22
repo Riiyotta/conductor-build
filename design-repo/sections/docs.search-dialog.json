@@ -1,0 +1,74 @@
+{
+  "id": "docs.search-dialog",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.search-dialog"
+  ],
+  "purpose": "Keyboard-first search over the docs.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Search.jsx:93",
+      "quote": "function SearchDialog({ state, onClose }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:226",
+      "quote": "### 1.7 Search (⌘K / Ctrl-K, the search button, or the subnav search icon)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.search-dialog"
+    }
+  },
+  "slot": "overlay",
+  "content": {
+    "placeholder": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "shortcutHint": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 2
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "search-dialog-fade"
+    ],
+    "defaultPatterns": [
+      "search-dialog-fade"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/docs/docs.css:181",
+        "quote": "animation: fd-dialog-in 300ms cubic-bezier(0.16, 1, 0.3, 1);"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "Clone searches a local index instead of the original /api/search endpoint."
+  ],
+  "assetRoles": []
+}

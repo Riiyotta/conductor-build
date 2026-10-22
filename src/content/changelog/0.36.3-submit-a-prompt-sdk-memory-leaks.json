@@ -1,0 +1,32 @@
+{
+  "slug": "0.36.3-submit-a-prompt-sdk-memory-leaks",
+  "version": "0.36.3",
+  "versionSlug": "0.36.3",
+  "title": "Submit a Prompt, SDK Memory Leaks",
+  "fullTitle": "0.36.3: Submit a Prompt, SDK Memory Leaks",
+  "date": "Feb 23rd, 2026",
+  "dateISO": "2026-02-23",
+  "description": "Conductor 0.36.3 changelog - Submit a Prompt, SDK Memory Leaks",
+  "summary": "You can now prompt a coding agent to build what you want to see in Conductor. If we like your prompt, we'll run it and merge the result!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.36.3/1771877342199-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.3-submit-a-prompt-sdk-memory-leaks/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.3-submit-a-prompt-sdk-memory-leaks",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.3-submit-a-prompt-sdk-memory-leaks",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now prompt a coding agent to build what you want to see in Conductor. If we like your prompt, we&#x27;ll run it and merge the result!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.3/1771877342199-image.png\"/></figure>\n<p>To submit a prompt, click Help → Submit a prompt in the sidebar.\n<figure data-asset><img alt=\"Submit a prompt\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.3/1771954108596-CleanShot_2026-02-24_at_09.28.07_2x.png\"/></figure></p>\n<p>The integrated terminal now respects tool version manager configurations like mise, asdf, and rbenv.</p>\n<p>We&#x27;ve also updated the Anthropic Agent SDK to 2.1.50, which should solve some <a href=\"https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md\" target=\"_blank\" rel=\"noopener noreferrer\">memory leak issues</a>. Let us know if you&#x27;re seeing any <a href=\"https://www.notion.so/conductor-build/Conductor-memory-leak-troubleshooting-steps-30ea076bd0f280199359c7c91716faa6?source=copy_link\" target=\"_blank\" rel=\"noopener noreferrer\">performance problems in Conductor</a> - we&#x27;d love to get to the bottom of it.</p>\n<h3>Improvements</h3>\n<ul>\n<li>You can now enable enterprise data privacy mode by setting <code>enterpriseDataPrivacy</code> in <code>conductor.json</code></li>\n<li>Split workspace sidebar controls into separate filter and display buttons</li>\n<li>&quot;Show more&quot; buttons in the sidebar when workspaces are grouped by repo</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>File tabs now properly refresh content when navigating between text files</li>\n<li>Fixed reversed branch order in Graphite stacks with 3+ levels</li>\n<li>Integrated terminal now respects tool version manager configurations (mise, asdf, rbenv)</li>\n</ul>",
+  "markdown": "\nYou can now prompt a coding agent to build what you want to see in Conductor. If we like your prompt, we'll run it and merge the result!\n\n![image](/assets/changelog/media/0.36.3/1771877342199-image.png)\n\nTo submit a prompt, click Help → Submit a prompt in the sidebar.\n![Submit a prompt](/assets/changelog/media/0.36.3/1771954108596-CleanShot_2026-02-24_at_09.28.07_2x.png)\n\nThe integrated terminal now respects tool version manager configurations like mise, asdf, and rbenv.\n\nWe've also updated the Anthropic Agent SDK to 2.1.50, which should solve some [memory leak issues](https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md). Let us know if you're seeing any [performance problems in Conductor](https://www.notion.so/conductor-build/Conductor-memory-leak-troubleshooting-steps-30ea076bd0f280199359c7c91716faa6?source=copy_link) - we'd love to get to the bottom of it.\n\n## Improvements\n\n- You can now enable enterprise data privacy mode by setting `enterpriseDataPrivacy` in `conductor.json`\n- Split workspace sidebar controls into separate filter and display buttons\n- \"Show more\" buttons in the sidebar when workspaces are grouped by repo\n\n## Fixes\n\n- File tabs now properly refresh content when navigating between text files\n- Fixed reversed branch order in Graphite stacks with 3+ levels\n- Integrated terminal now respects tool version manager configurations (mise, asdf, rbenv)\n"
+}

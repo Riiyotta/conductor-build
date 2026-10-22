@@ -1,0 +1,28 @@
+{
+  "slug": "0.17.4-git-status-in-sidebar",
+  "version": "0.17.4",
+  "versionSlug": "0.17.4",
+  "title": "Git Status in Sidebar",
+  "fullTitle": "0.17.4: Git Status in Sidebar",
+  "date": "Oct 28th, 2025",
+  "dateISO": "2025-10-28",
+  "description": "Conductor 0.17.4 changelog - Git Status in Sidebar",
+  "summary": "View git status in the sidebar at a glance.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.17.4/2db9f4de-93b8-45cc-9b63-1252d6139ba4.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.17.4-git-status-in-sidebar/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.4-git-status-in-sidebar",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.4-git-status-in-sidebar",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>View git status in the sidebar at a glance.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.17.4/2db9f4de-93b8-45cc-9b63-1252d6139ba4.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fix <code>exit_plan_mode</code> tool calls causing a chat to get stuck</li>\n<li>Fix the composer not always getting auto-focused</li>\n<li>Fix branches being renamed in new chat tabs</li>\n<li>Fix text overflow for renamed files in the git panel</li>\n</ul>",
+  "markdown": "\nView git status in the sidebar at a glance.\n\n<img\n    width=\"888\"\n    height=\"740\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.17.4/2db9f4de-93b8-45cc-9b63-1252d6139ba4.png\"\n/>\n\n## Fixes\n\n- Fix `exit_plan_mode` tool calls causing a chat to get stuck\n- Fix the composer not always getting auto-focused\n- Fix branches being renamed in new chat tabs\n- Fix text overflow for renamed files in the git panel\n"
+}

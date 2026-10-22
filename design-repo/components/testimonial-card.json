@@ -1,0 +1,30 @@
+{
+  "id": "testimonial-card",
+  "kind": "component",
+  "purpose": "Quote + meta row (avatar, name, verified badge, company icon, subtitle), optionally wrapped in a link.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Testimonials.jsx:60",
+      "quote": "function Card({ t, index }) {"
+    }
+  ],
+  "tokens": [
+    "{typography.fontSize.2xl}",
+    "{motion.duration.reveal}"
+  ],
+  "variants": [
+    "linked",
+    "unlinked"
+  ],
+  "states": [
+    "hidden-before-reveal",
+    "revealed",
+    "meta hover opacity .7"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:235",
+      "quote": "- Card: an optional `<a class=\"group block\" target=_blank>` wrapping:"
+    }
+  ]
+}

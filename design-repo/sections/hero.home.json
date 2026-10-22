@@ -1,0 +1,208 @@
+{
+  "id": "hero.home",
+  "category": "HERO",
+  "iaSections": [
+    "hero.home"
+  ],
+  "purpose": "Homepage promise: rotating headline, primary CTA and one customer quote over the product screenshot.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Hero.jsx:48",
+      "quote": "export default function Hero() {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:104",
+      "quote": "## 2. Hero"
+    },
+    {
+      "ref": "CLONE_SPEC.md:318",
+      "quote": "| M1 | Hero H1 line 2 scramble |"
+    },
+    {
+      "ref": "CLONE_SPEC.md:320",
+      "quote": "| M3 | Hero H1 fade |"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "hero.home"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "wordmark": {
+      "type": "media",
+      "roles": [
+        "brand-mark"
+      ],
+      "required": true
+    },
+    "headingLead": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 6
+    },
+    "rotatingPhrases": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 4,
+        "required": true,
+        "observedMaxWords": 3
+      },
+      "minItems": 2,
+      "maxItems": 3,
+      "required": true
+    },
+    "primaryCta": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 3,
+          "required": true,
+          "observedMaxWords": 2
+        },
+        "href": {
+          "type": "url",
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "quote": {
+      "type": "object",
+      "fields": {
+        "text": {
+          "type": "text",
+          "maxWords": 16,
+          "required": true,
+          "observedMaxWords": 12
+        },
+        "authorName": {
+          "type": "text",
+          "maxWords": 3,
+          "required": true,
+          "observedMaxWords": 1
+        },
+        "authorRole": {
+          "type": "text",
+          "maxWords": 6,
+          "required": true,
+          "observedMaxWords": 4
+        },
+        "avatar": {
+          "type": "media",
+          "roles": [
+            "person-avatar"
+          ],
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "background": {
+      "type": "media",
+      "roles": [
+        "decorative-background"
+      ],
+      "required": true
+    },
+    "screenshot": {
+      "type": "media",
+      "roles": [
+        "product-screenshot"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "scramble-cycle",
+      "fade-in-on-mount",
+      "animated-webp-mask-once",
+      "arrow-nudge-hover"
+    ],
+    "defaultPatterns": [
+      "scramble-cycle",
+      "fade-in-on-mount",
+      "animated-webp-mask-once",
+      "arrow-nudge-hover"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/Hero.jsx:31",
+        "quote": "useInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 3000)"
+      },
+      {
+        "ref": "src/lib/hooks.js:37",
+        "quote": "export function useScramble(props) {"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "min(30px, 7.4vw - 2.5px), line-height 1.5"
+        },
+        {
+          "property": "ctaGrid",
+          "value": "1 column"
+        },
+        {
+          "property": "wordmarkWidth",
+          "value": "192px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "36px/40px"
+        },
+        {
+          "property": "ctaGrid",
+          "value": "2 columns"
+        },
+        {
+          "property": "wordmarkWidth",
+          "value": "224px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Carries a real customer quote and a real person's avatar; never fabricate a quote or attribute one to a real person."
+  },
+  "quirks": [
+    "Get Conductor button has no background transition; only the arrow nudges.",
+    "Scramble: 3000ms phrase cycle, ~470-650ms scramble, chars a-z (range 97-122)."
+  ],
+  "assetRoles": [
+    "brand-mark",
+    "decorative-background",
+    "person-avatar",
+    "product-screenshot"
+  ]
+}

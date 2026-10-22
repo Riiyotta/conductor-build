@@ -1,0 +1,40 @@
+{
+  "slug": "0.28.4-todos",
+  "version": "0.28.4",
+  "versionSlug": "0.28.4",
+  "title": "Todos",
+  "fullTitle": "0.28.4: Todos",
+  "date": "Dec 30th, 2025",
+  "dateISO": "2025-12-30",
+  "description": "Conductor 0.28.4 changelog - Todos",
+  "summary": "Introducing todos! Click the notes tab to see a list of what's necessary to merge your work.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.28.4/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png",
+    "alt": "CleanShot 2025-12-30 at 17.30.09@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.28.4-todos/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.28.4-todos",
+  "sourceUrl": "https://www.conductor.build/changelog/0.28.4-todos",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Todos"
+    },
+    {
+      "depth": 4,
+      "title": "Read diffs"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h4>Todos</h4>\n<p>Introducing todos! Click the notes tab to see a list of what&#x27;s necessary to merge your work.</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-30 at 17.30.09@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.4/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png\"/></figure>\n<p>Workspaces are blocked until your todos are checked off, so you don&#x27;t accidentally merge unfinished work.</p>\n<figure data-asset><img alt=\"CleanShot 2025-12-30 at 17.32.36@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.4/1767133962164-CleanShot_2025-12-30_at_17.32.36_2x.png\"/></figure>\n<h4>Read diffs</h4>\n<p>Claude Code can now read the workspace diff. Under the hood, it uses a new tool called GetWorkspaceDiff.</p>\n<figure data-asset><img alt=\"\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.28.4/1767134709038-CleanShot_2025-12-30_at_17.44.59_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Keyboard shortcuts now respect keyboard layouts (they now work for Colemak/Dvorak/non QWERTY keyboards)</li>\n<li>Reduced Tufte markdown font size</li>\n<li>Search for branch names in command palette and Workspace page</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed error where pasting multiple screenshots would fail</li>\n<li>Exit plan mode when switching between Claude/Codex</li>\n</ul>",
+  "markdown": "\n### Todos\n\nIntroducing todos! Click the notes tab to see a list of what's necessary to merge your work.\n\n<img\n    src=\"/assets/changelog/media/0.28.4/1767133824233-CleanShot_2025-12-30_at_17.30.09_2x.png\"\n    alt=\"CleanShot 2025-12-30 at 17.30.09@2x.png\"\n/>\n\nWorkspaces are blocked until your todos are checked off, so you don't accidentally merge unfinished work.\n\n<img\n    src=\"/assets/changelog/media/0.28.4/1767133962164-CleanShot_2025-12-30_at_17.32.36_2x.png\"\n    alt=\"CleanShot 2025-12-30 at 17.32.36@2x.png\"\n/>\n\n### Read diffs\n\nClaude Code can now read the workspace diff. Under the hood, it uses a new tool called GetWorkspaceDiff.\n\n<img src=\"/assets/changelog/media/0.28.4/1767134709038-CleanShot_2025-12-30_at_17.44.59_2x.png\" />\n\n## Improvements\n\n- Keyboard shortcuts now respect keyboard layouts (they now work for Colemak/Dvorak/non QWERTY keyboards)\n- Reduced Tufte markdown font size\n- Search for branch names in command palette and Workspace page\n\n## Fixes\n\n- Fixed error where pasting multiple screenshots would fail\n- Exit plan mode when switching between Claude/Codex\n"
+}

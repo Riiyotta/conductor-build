@@ -1,0 +1,23 @@
+{
+  "slug": "0.80.1-grok-4-6",
+  "version": "0.80.1",
+  "versionSlug": "0.80.1",
+  "title": "Grok 4.6",
+  "fullTitle": "0.80.1: Grok 4.6",
+  "date": "August 12, 2026",
+  "dateISO": "2026-08-12",
+  "description": "Conductor 0.80.1 changelog - Grok 4.6",
+  "summary": "Grok 4.6 is now available in Conductor through Cursor. Give it a try!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/grok-4.6-0.80.1.png",
+    "alt": "Grok 4.6 selected in the Cursor model picker"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.80.1-grok-4-6/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.80.1-grok-4-6",
+  "sourceUrl": "https://www.conductor.build/changelog/0.80.1-grok-4-6",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"Grok 4.6 selected in the Cursor model picker\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/grok-4.6-0.80.1.png\"/></figure>\n<p>Grok 4.6 is now available in Conductor through Cursor. Give it a try!</p>\n<p>To use Grok 4.6, set up Cursor in Settings → Harnesses → Cursor, then pick it from the model picker in any chat.</p>",
+  "markdown": "\n![Grok 4.6 selected in the Cursor model picker](/assets/changelog/images/grok-4.6-0.80.1.png)\n\nGrok 4.6 is now available in Conductor through Cursor. Give it a try!\n\nTo use Grok 4.6, set up Cursor in Settings → Harnesses → Cursor, then pick it from the model picker in any chat.\n"
+}

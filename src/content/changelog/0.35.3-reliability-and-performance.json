@@ -1,0 +1,32 @@
+{
+  "slug": "0.35.3-reliability-and-performance",
+  "version": "0.35.3",
+  "versionSlug": "0.35.3",
+  "title": "Reliability and performance",
+  "fullTitle": "0.35.3: Reliability and performance",
+  "date": "Feb 14th, 2026",
+  "dateISO": "2026-02-14",
+  "description": "Conductor 0.35.3 changelog - Reliability and performance",
+  "summary": "We’ve fixed some rendering and performance issues, including removing animations that caused high idle CPU usage.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.35.3/1771097364174-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.35.3-reliability-and-performance/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.35.3-reliability-and-performance",
+  "sourceUrl": "https://www.conductor.build/changelog/0.35.3-reliability-and-performance",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve fixed some rendering and performance issues, including removing animations that caused high idle CPU usage.</p>\n<p>We’ve added an option to delete workspaces that can’t be archived. (This can happen if something outside the app renames or deletes a workspace’s directory or worktree.)</p>\n<p>Also, you can now rename chats in the tab bar:\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.35.3/1771097364174-image.png\"/></figure></p>\n<p>Happy Valentine&#x27;s Day!</p>\n<h4>Improvements</h4>\n<ul>\n<li>Model picker is now keyboard-navigable</li>\n<li>Mermaid diagrams now support pan and zoom when expanded</li>\n<li>When you add 10+ attachments, they now scroll to save space</li>\n<li>We now remind the agent to write PR descriptions that cover all changes in the PR, not just changes it made</li>\n<li>In repo settings, you can now configure the URL used by the “Open” button</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Rendering and UI performance improvements</li>\n<li>Fix an issue with Codex on x86_64 architecture</li>\n</ul>",
+  "markdown": "\nWe’ve fixed some rendering and performance issues, including removing animations that caused high idle CPU usage.\n\nWe’ve added an option to delete workspaces that can’t be archived. (This can happen if something outside the app renames or deletes a workspace’s directory or worktree.)\n\nAlso, you can now rename chats in the tab bar:\n![image](/assets/changelog/media/0.35.3/1771097364174-image.png)\n\nHappy Valentine's Day!\n\n#### Improvements\n\n- Model picker is now keyboard-navigable\n- Mermaid diagrams now support pan and zoom when expanded\n- When you add 10+ attachments, they now scroll to save space\n- We now remind the agent to write PR descriptions that cover all changes in the PR, not just changes it made\n- In repo settings, you can now configure the URL used by the “Open” button\n\n#### Fixes\n\n- Rendering and UI performance improvements\n- Fix an issue with Codex on x86_64 architecture\n"
+}

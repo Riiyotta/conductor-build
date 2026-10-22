@@ -1,0 +1,1736 @@
+{
+ "url": "https://www.conductor.build/brandkit",
+ "title": "Brand kit | Conductor",
+ "desc": "Official Conductor brand assets, product description, and links.",
+ "docH": 4455,
+ "docW": 500,
+ "vw": 390,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 57,
+   "top": 0,
+   "right": 390,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 3946,
+ "footerH": 509,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/brandkit/conductor-letter-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/brandkit/conductor-letter-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/brandkit/conductor-wordmark-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/brandkit/conductor-wordmark-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/about.webp"
+ ],
+ "anims": [],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    390,
+    3889
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    0,
+    57,
+    390,
+    3889
+   ],
+   "p": "64px 16px",
+   "mw": "900px"
+  },
+  {
+   "k": "div.inline-flex.items-center.text-xs.focus:outline-none.focus:ring-2.focus:ring-ring.focus:ring-offset-2.font-mono.tracking-wider.uppercase.bg-tip-secondary.border.border-tip-secondary-border.text-tip-muted.rounded-xs.px",
+   "b": [
+    16,
+    124,
+    80.4,
+    22
+   ],
+   "t": "Brand kit",
+   "f": "12px/16px 400 ls:0.6px  uppercase ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(125, 94, 89)",
+   "bg": "rgb(248, 247, 246)",
+   "bd": "1px 1px 1px 1px solid rgb(243, 236, 231)",
+   "rad": "2px",
+   "p": "2px 4px",
+   "m": "0px 0px 24px",
+   "d": "inline-flex row ai:center jc:normal"
+  },
+  {
+   "k": "h1.mb-4.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    16,
+    170,
+    358,
+    36
+   ],
+   "t": "Conductor brand assets",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p.max-w-2xl.text-sm.leading-6.text-muted-foreground.sm:text-base",
+   "b": [
+    16,
+    222,
+    358,
+    48
+   ],
+   "t": "Official Conductor brand assets, product description, and links.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "mw": "672px"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    294,
+    358,
+    96
+   ],
+   "t": "Official product description, links, and logo files for Conductor. The downloadable ZIP includes light and dark SVG and PNG files for the letter mark and wordma",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "div.mt-8.rounded-lg.border.border-border.bg-muted.p-5",
+   "b": [
+    16,
+    422,
+    358,
+    146
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "20px",
+   "m": "32px 0px 0px"
+  },
+  {
+   "k": "div.flex.size-10.shrink-0.items-center.justify-center.rounded-md.border.border-border.bg-background",
+   "b": [
+    37,
+    443,
+    40,
+    40
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "6px",
+   "d": "flex row ai:center jc:center"
+  },
+  {
+   "k": "svg.lucide.lucide-file-archive.size-4.text-foreground",
+   "b": [
+    49,
+    455,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-file-archive size-4 text-foreground fill:none stroke:rgb(44, 40, 38) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "h2.text-base.font-semibold.text-foreground",
+   "b": [
+    89,
+    443,
+    255.8,
+    24
+   ],
+   "t": "Brand kit download",
+   "f": "16px/24px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.mt-1.text-sm.text-muted-foreground",
+   "b": [
+    89,
+    471,
+    255.8,
+    20
+   ],
+   "t": "Light and dark SVGs, plus PNG exports.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "4px 0px 0px"
+  },
+  {
+   "k": "a.inline-flex.items-center.justify-center.whitespace-nowrap.ring-offset-background.focus-visible:outline-none.focus-visible:ring-2.focus-visible:ring-foreground/35.focus-visible:ring-offset-2.disabled:pointer-events-none",
+   "b": [
+    37,
+    507,
+    316,
+    40
+   ],
+   "t": "Download ZIP",
+   "f": "14px/20px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(255, 255, 255)",
+   "bg": "rgb(44, 40, 38)",
+   "rad": "6px",
+   "p": "16px 12px",
+   "d": "flex row ai:center jc:center gap:8px",
+   "cur": "pointer",
+   "ws": "nowrap",
+   "href": "/brandkit/conductor-brandkit.zip"
+  },
+  {
+   "k": "svg.lucide.lucide-download.size-4",
+   "b": [
+    137.4,
+    519,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "ws": "nowrap",
+   "svg": "0 0 24 24 lucide lucide-download size-4 fill:none stroke:rgb(255, 255, 255) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "section.overflow-hidden.rounded-lg.border.border-border.bg-background",
+   "b": [
+    16,
+    616,
+    358,
+    411
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "ov": "hidden"
+  },
+  {
+   "k": "div.flex.min-h-64.items-center.justify-center.p-10.bg-white",
+   "b": [
+    17,
+    617,
+    356,
+    256
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "p": "40px",
+   "d": "flex row ai:center jc:center"
+  },
+  {
+   "k": "img.h-40.w-auto",
+   "b": [
+    142.1,
+    665,
+    105.7,
+    160
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/brandkit/conductor-letter-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:115x174 alt:Letter mark preview"
+  },
+  {
+   "k": "div.border-t.border-border.bg-background.p-5",
+   "b": [
+    17,
+    873,
+    356,
+    153
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 0px 0px 0px solid rgb(234, 232, 230)",
+   "p": "20px"
+  },
+  {
+   "k": "svg.lucide.lucide-file-text.mt-0.5.size-4.text-muted-foreground",
+   "b": [
+    37,
+    896,
+    16,
+    16
+   ],
+   "m": "2px 0px 0px",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-file-text mt-0.5 size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "h2.text-sm.font-semibold.text-foreground",
+   "b": [
+    61,
+    894,
+    181.3,
+    20
+   ],
+   "t": "Conductor Letter mark",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.mt-1.text-xs.text-muted-foreground",
+   "b": [
+    61,
+    918,
+    181.3,
+    16
+   ],
+   "t": "Dark. Use on light backgrounds.",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "4px 0px 0px"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    950,
+    162.6,
+    24
+   ],
+   "t": "conductor-letter-dark.svg",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    328.7,
+    954,
+    24.3,
+    16
+   ],
+   "t": "SVG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-letter-dark.svg"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    982,
+    237.4,
+    24
+   ],
+   "t": "conductor-letter-dark.png · 677 x 1024",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    327.5,
+    986,
+    25.5,
+    16
+   ],
+   "t": "PNG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-letter-dark.png"
+  },
+  {
+   "k": "section.overflow-hidden.rounded-lg.border.border-border.bg-background",
+   "b": [
+    16,
+    1051,
+    358,
+    411
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "ov": "hidden"
+  },
+  {
+   "k": "div.flex.min-h-64.items-center.justify-center.p-10.bg-[#282423]",
+   "b": [
+    17,
+    1052,
+    356,
+    256
+   ],
+   "bg": "rgb(40, 36, 35)",
+   "p": "40px",
+   "d": "flex row ai:center jc:center"
+  },
+  {
+   "k": "img.h-40.w-auto",
+   "b": [
+    142.1,
+    1100,
+    105.7,
+    160
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/brandkit/conductor-letter-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:115x174 alt:Letter mark preview"
+  },
+  {
+   "k": "div.border-t.border-border.bg-background.p-5",
+   "b": [
+    17,
+    1308,
+    356,
+    153
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 0px 0px 0px solid rgb(234, 232, 230)",
+   "p": "20px"
+  },
+  {
+   "k": "svg.lucide.lucide-file-text.mt-0.5.size-4.text-muted-foreground",
+   "b": [
+    37,
+    1331,
+    16,
+    16
+   ],
+   "m": "2px 0px 0px",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-file-text mt-0.5 size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "h2.text-sm.font-semibold.text-foreground",
+   "b": [
+    61,
+    1329,
+    183.7,
+    20
+   ],
+   "t": "Conductor Letter mark",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.mt-1.text-xs.text-muted-foreground",
+   "b": [
+    61,
+    1353,
+    183.7,
+    16
+   ],
+   "t": "Light. Use on dark backgrounds.",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "4px 0px 0px"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    1385,
+    162.3,
+    24
+   ],
+   "t": "conductor-letter-light.svg",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    328.7,
+    1389,
+    24.3,
+    16
+   ],
+   "t": "SVG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-letter-light.svg"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    1417,
+    237,
+    24
+   ],
+   "t": "conductor-letter-light.png · 677 x 1024",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    327.5,
+    1421,
+    25.5,
+    16
+   ],
+   "t": "PNG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-letter-light.png"
+  },
+  {
+   "k": "section.overflow-hidden.rounded-lg.border.border-border.bg-background",
+   "b": [
+    16,
+    1486,
+    358,
+    411
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "ov": "hidden"
+  },
+  {
+   "k": "div.flex.min-h-64.items-center.justify-center.p-10.bg-white",
+   "b": [
+    17,
+    1487,
+    356,
+    256
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "p": "40px",
+   "d": "flex row ai:center jc:center"
+  },
+  {
+   "k": "img.h-auto.w-full.max-w-lg",
+   "b": [
+    57,
+    1593.8,
+    276,
+    42.4
+   ],
+   "mw": "512px",
+   "ov": "clip",
+   "src": "https://www.conductor.build/brandkit/conductor-wordmark-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:1750x269 alt:Wordmark preview"
+  },
+  {
+   "k": "div.border-t.border-border.bg-background.p-5",
+   "b": [
+    17,
+    1743,
+    356,
+    153
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 0px 0px 0px solid rgb(234, 232, 230)",
+   "p": "20px"
+  },
+  {
+   "k": "svg.lucide.lucide-file-text.mt-0.5.size-4.text-muted-foreground",
+   "b": [
+    37,
+    1766,
+    16,
+    16
+   ],
+   "m": "2px 0px 0px",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-file-text mt-0.5 size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "h2.text-sm.font-semibold.text-foreground",
+   "b": [
+    61,
+    1764,
+    181.3,
+    20
+   ],
+   "t": "Conductor Wordmark",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.mt-1.text-xs.text-muted-foreground",
+   "b": [
+    61,
+    1788,
+    181.3,
+    16
+   ],
+   "t": "Dark. Use on light backgrounds.",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "4px 0px 0px"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    1820,
+    188.5,
+    24
+   ],
+   "t": "conductor-wordmark-dark.svg",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    328.7,
+    1824,
+    24.3,
+    16
+   ],
+   "t": "SVG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-wordmark-dark.svg"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    1852,
+    266.6,
+    24
+   ],
+   "t": "conductor-wordmark-dark.png · 2400 x 369",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    327.5,
+    1856,
+    25.5,
+    16
+   ],
+   "t": "PNG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-wordmark-dark.png"
+  },
+  {
+   "k": "section.overflow-hidden.rounded-lg.border.border-border.bg-background",
+   "b": [
+    16,
+    1921,
+    358,
+    411
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "ov": "hidden"
+  },
+  {
+   "k": "div.flex.min-h-64.items-center.justify-center.p-10.bg-[#282423]",
+   "b": [
+    17,
+    1922,
+    356,
+    256
+   ],
+   "bg": "rgb(40, 36, 35)",
+   "p": "40px",
+   "d": "flex row ai:center jc:center"
+  },
+  {
+   "k": "img.h-auto.w-full.max-w-lg",
+   "b": [
+    57,
+    2028.8,
+    276,
+    42.4
+   ],
+   "mw": "512px",
+   "ov": "clip",
+   "src": "https://www.conductor.build/brandkit/conductor-wordmark-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:1750x269 alt:Wordmark preview"
+  },
+  {
+   "k": "div.border-t.border-border.bg-background.p-5",
+   "b": [
+    17,
+    2178,
+    356,
+    153
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 0px 0px 0px solid rgb(234, 232, 230)",
+   "p": "20px"
+  },
+  {
+   "k": "svg.lucide.lucide-file-text.mt-0.5.size-4.text-muted-foreground",
+   "b": [
+    37,
+    2201,
+    16,
+    16
+   ],
+   "m": "2px 0px 0px",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-file-text mt-0.5 size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "h2.text-sm.font-semibold.text-foreground",
+   "b": [
+    61,
+    2199,
+    183.7,
+    20
+   ],
+   "t": "Conductor Wordmark",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.mt-1.text-xs.text-muted-foreground",
+   "b": [
+    61,
+    2223,
+    183.7,
+    16
+   ],
+   "t": "Light. Use on dark backgrounds.",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "4px 0px 0px"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    2255,
+    188.2,
+    24
+   ],
+   "t": "conductor-wordmark-light.svg",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    328.7,
+    2259,
+    24.3,
+    16
+   ],
+   "t": "SVG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-wordmark-light.svg"
+  },
+  {
+   "k": "span.min-w-0.truncate.rounded-sm.bg-muted.px-2.py-1.text-xs.text-muted-foreground",
+   "b": [
+    37,
+    2287,
+    266.2,
+    24
+   ],
+   "t": "conductor-wordmark-light.png · 2400 x 369",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "4px",
+   "p": "4px 8px",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.shrink-0.text-xs.text-foreground.underline-offset-4.hover:underline",
+   "b": [
+    327.5,
+    2291,
+    25.5,
+    16
+   ],
+   "t": "PNG",
+   "f": "12px/16px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "/brandkit/conductor-wordmark-light.png"
+  },
+  {
+   "k": "section.mt-12",
+   "b": [
+    16,
+    2380,
+    358,
+    1502
+   ],
+   "m": "48px 0px 0px"
+  },
+  {
+   "k": "h2.mb-3.text-xl.font-semibold.text-foreground",
+   "b": [
+    16,
+    2380,
+    358,
+    28
+   ],
+   "t": "About Conductor",
+   "f": "20px/28px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "section.rounded-lg.border.border-border.bg-background.p-4",
+   "b": [
+    16,
+    2420,
+    483.9,
+    350
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px"
+  },
+  {
+   "k": "h3.text-sm.font-semibold.text-foreground",
+   "b": [
+    33,
+    2443,
+    77.9,
+    20
+   ],
+   "t": "Description",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "button.inline-flex.size-8.shrink-0.items-center.justify-center.rounded-md.border.border-border.bg-background.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    450.9,
+    2437,
+    32,
+    32
+   ],
+   "f": "16px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ta": "center",
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "6px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "default",
+   "aria": "Copy description"
+  },
+  {
+   "k": "svg.lucide.lucide-copy.size-3.5",
+   "b": [
+    459.9,
+    2446,
+    14,
+    14
+   ],
+   "ov": "hidden",
+   "cur": "default",
+   "svg": "0 0 24 24 lucide lucide-copy size-3.5 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    33,
+    2481,
+    449.9,
+    96
+   ],
+   "t": "Conductor is a Mac app for running coding agents in parallel. Developers create isolated workspaces for Claude Code, Codex, and Cursor, see what each agent is d",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p",
+   "b": [
+    33,
+    2593,
+    449.9,
+    72
+   ],
+   "t": "Each workspace gets its own branch, git worktree, run environment, and shared context folder, so multiple tasks can move at once without crowding the main repos",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p",
+   "b": [
+    33,
+    2681,
+    449.9,
+    72
+   ],
+   "t": "Conductor is a Y Combinator Summer 2024 company based in San Francisco, building developer tools for teams working with AI coding agents.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.rounded-lg.border.border-border.bg-background.p-4",
+   "b": [
+    16,
+    2782,
+    483.9,
+    126
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px"
+  },
+  {
+   "k": "h3.text-sm.font-semibold.text-foreground",
+   "b": [
+    33,
+    2805,
+    117.3,
+    20
+   ],
+   "t": "Short description",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "button.inline-flex.size-8.shrink-0.items-center.justify-center.rounded-md.border.border-border.bg-background.text-muted-foreground.transition-colors.hover:bg-muted.hover:text-foreground",
+   "b": [
+    450.9,
+    2799,
+    32,
+    32
+   ],
+   "f": "16px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ta": "center",
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "6px",
+   "d": "flex row ai:center jc:center",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "default",
+   "aria": "Copy short description"
+  },
+  {
+   "k": "svg.lucide.lucide-copy.size-3.5",
+   "b": [
+    459.9,
+    2808,
+    14,
+    14
+   ],
+   "ov": "hidden",
+   "cur": "default",
+   "svg": "0 0 24 24 lucide lucide-copy size-3.5 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p.text-sm.leading-6.text-muted-foreground",
+   "b": [
+    33,
+    2843,
+    449.9,
+    48
+   ],
+   "t": "Conductor is a Mac app for running Claude Code, Codex, and Cursor agents in parallel across isolated workspaces.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.rounded-lg.border.border-border.bg-background.p-4",
+   "b": [
+    16,
+    2920,
+    483.9,
+    394
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px"
+  },
+  {
+   "k": "h3.mb-3.text-sm.font-semibold.text-foreground",
+   "b": [
+    33,
+    2937,
+    449.9,
+    20
+   ],
+   "t": "Facts",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "dl.grid.gap-2",
+   "b": [
+    33,
+    2969,
+    449.9,
+    328
+   ],
+   "d": "grid cols:449.891px gap:8px"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    2969,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    2979,
+    112,
+    20
+   ],
+   "t": "Product",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    2979,
+    297.9,
+    20
+   ],
+   "t": "Conductor",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3017,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3027,
+    112,
+    20
+   ],
+   "t": "Category",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3027,
+    297.9,
+    20
+   ],
+   "t": "Developer tools / AI",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3065,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3075,
+    112,
+    20
+   ],
+   "t": "Platform",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3075,
+    297.9,
+    20
+   ],
+   "t": "Mac app",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3113,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3123,
+    112,
+    20
+   ],
+   "t": "Agents",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3123,
+    297.9,
+    20
+   ],
+   "t": "Claude Code, Codex, and Cursor",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3161,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3171,
+    112,
+    20
+   ],
+   "t": "Founded",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3171,
+    297.9,
+    20
+   ],
+   "t": "2024",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3209,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3219,
+    112,
+    20
+   ],
+   "t": "YC batch",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3219,
+    297.9,
+    20
+   ],
+   "t": "Summer 2024",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "div.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm",
+   "b": [
+    33,
+    3257,
+    449.9,
+    40
+   ],
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px"
+  },
+  {
+   "k": "dt.text-muted-foreground",
+   "b": [
+    45,
+    3267,
+    112,
+    20
+   ],
+   "t": "Location",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dd.truncate.text-foreground",
+   "b": [
+    173,
+    3267,
+    297.9,
+    20
+   ],
+   "t": "San Francisco",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "section.rounded-lg.border.border-border.bg-background.p-4",
+   "b": [
+    16,
+    3326,
+    483.9,
+    214
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px"
+  },
+  {
+   "k": "h3.mb-3.text-sm.font-semibold.text-foreground",
+   "b": [
+    33,
+    3343,
+    449.9,
+    20
+   ],
+   "t": "Agent resources",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "p.mb-3.text-sm.leading-6.text-muted-foreground",
+   "b": [
+    33,
+    3375,
+    449.9,
+    48
+   ],
+   "t": "Agents can discover the Conductor skill from the site root or load the skill markdown directly.",
+   "f": "14px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "a.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3435,
+    449.9,
+    40
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "/.well-known/agent-skills/conductor/SKILL.md"
+  },
+  {
+   "k": "span.w-24.shrink-0.text-muted-foreground",
+   "b": [
+    45,
+    3445,
+    96,
+    20
+   ],
+   "t": "Skill",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.min-w-0.flex-1.truncate.font-mono.text-xs.text-foreground",
+   "b": [
+    153,
+    3447,
+    317.9,
+    16
+   ],
+   "t": "/.well-known/agent-skills/conductor/SKILL.md",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "cur": "pointer",
+   "ws": "nowrap"
+  },
+  {
+   "k": "a.flex.items-center.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3483,
+    449.9,
+    40
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:normal gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "/.well-known/agent-skills/index.json"
+  },
+  {
+   "k": "span.w-24.shrink-0.text-muted-foreground",
+   "b": [
+    45,
+    3493,
+    96,
+    20
+   ],
+   "t": "Discovery",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.min-w-0.flex-1.truncate.font-mono.text-xs.text-foreground",
+   "b": [
+    153,
+    3495,
+    317.9,
+    16
+   ],
+   "t": "/.well-known/agent-skills/index.json",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(44, 40, 38)",
+   "ov": "hidden",
+   "cur": "pointer",
+   "ws": "nowrap"
+  },
+  {
+   "k": "section.rounded-lg.border.border-border.bg-background.p-4",
+   "b": [
+    16,
+    3552,
+    483.9,
+    330
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "8px",
+   "p": "16px"
+  },
+  {
+   "k": "h3.mb-3.text-sm.font-semibold.text-foreground",
+   "b": [
+    33,
+    3569,
+    449.9,
+    20
+   ],
+   "t": "Official links",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "a.flex.items-center.justify-between.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3601,
+    449.9,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:space-between gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "/"
+  },
+  {
+   "k": "div.font-medium.text-foreground",
+   "b": [
+    45,
+    3611,
+    195.1,
+    20
+   ],
+   "t": "Website",
+   "f": "14px/20px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.font-mono.text-xs.text-muted-foreground",
+   "b": [
+    45,
+    3635,
+    195.1,
+    14
+   ],
+   "t": "https://www.conductor.build",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "svg.lucide.lucide-external-link.size-4.text-muted-foreground",
+   "b": [
+    454.9,
+    3623,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 lucide lucide-external-link size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "a.flex.items-center.justify-between.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3669,
+    449.9,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:space-between gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "/docs"
+  },
+  {
+   "k": "div.font-medium.text-foreground",
+   "b": [
+    45,
+    3679,
+    231.2,
+    20
+   ],
+   "t": "Docs",
+   "f": "14px/20px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.font-mono.text-xs.text-muted-foreground",
+   "b": [
+    45,
+    3703,
+    231.2,
+    14
+   ],
+   "t": "https://www.conductor.build/docs",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "svg.lucide.lucide-external-link.size-4.text-muted-foreground",
+   "b": [
+    454.9,
+    3691,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 lucide lucide-external-link size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "a.flex.items-center.justify-between.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3737,
+    449.9,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:space-between gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "/changelog"
+  },
+  {
+   "k": "div.font-medium.text-foreground",
+   "b": [
+    45,
+    3747,
+    267.3,
+    20
+   ],
+   "t": "Changelog",
+   "f": "14px/20px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.font-mono.text-xs.text-muted-foreground",
+   "b": [
+    45,
+    3771,
+    267.3,
+    14
+   ],
+   "t": "https://www.conductor.build/changelog",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "svg.lucide.lucide-external-link.size-4.text-muted-foreground",
+   "b": [
+    454.9,
+    3759,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 lucide lucide-external-link size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "a.flex.items-center.justify-between.gap-3.rounded-md.bg-muted.px-3.py-2.5.text-sm.transition-colors.hover:bg-muted/80",
+   "b": [
+    33,
+    3805,
+    449.9,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "bg": "rgb(250, 250, 249)",
+   "rad": "6px",
+   "p": "10px 12px",
+   "d": "flex row ai:center jc:space-between gap:12px",
+   "tr": "color, background-color, border-color, outline-color, text-decoration-color, fill, stroke, --tw-gradient-from, --tw-gradient-via, --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "cur": "pointer",
+   "href": "https://www.ycombinator.com/companies/conductor target=_blank"
+  },
+  {
+   "k": "div.font-medium.text-foreground",
+   "b": [
+    45,
+    3815,
+    339.6,
+    20
+   ],
+   "t": "YC profile",
+   "f": "14px/20px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer"
+  },
+  {
+   "k": "code.font-mono.text-xs.text-muted-foreground",
+   "b": [
+    45,
+    3839,
+    339.6,
+    14
+   ],
+   "t": "https://www.ycombinator.com/companies/conductor",
+   "f": "12px/16px 400 ls:normal   ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(117, 111, 108)",
+   "cur": "pointer"
+  },
+  {
+   "k": "svg.lucide.lucide-external-link.size-4.text-muted-foreground",
+   "b": [
+    454.9,
+    3827,
+    16,
+    16
+   ],
+   "ov": "hidden",
+   "cur": "pointer",
+   "svg": "0 0 24 24 lucide lucide-external-link size-4 text-muted-foreground fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/brandkit",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "11639"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79554"
+  },
+  {
+   "url": "https://www.conductor.build/brandkit/conductor-letter-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1340"
+  },
+  {
+   "url": "https://www.conductor.build/brandkit/conductor-letter-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1341"
+  },
+  {
+   "url": "https://www.conductor.build/brandkit/conductor-wordmark-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "10098"
+  },
+  {
+   "url": "https://www.conductor.build/brandkit/conductor-wordmark-dark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "10066"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  }
+ ]
+}

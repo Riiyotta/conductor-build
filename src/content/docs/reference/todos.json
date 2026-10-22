@@ -1,0 +1,155 @@
+{
+  "slug": "reference/todos",
+  "url": "/docs/reference/todos",
+  "title": "Todos",
+  "description": "Track merge-blocking work in a workspace",
+  "meta": {
+    "title": "Todos | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/todos/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Todos"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#how-todos-work",
+      "title": "How todos work"
+    },
+    {
+      "depth": 2,
+      "url": "#send-todos-to-the-agent",
+      "title": "Send todos to the agent"
+    },
+    {
+      "depth": 2,
+      "url": "#when-to-clear-todos",
+      "title": "When to clear todos"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/checkpoints",
+    "title": "Checkpoints",
+    "description": "View turn by turn changes in a workspace and revert to previous turns"
+  },
+  "next": {
+    "url": "/docs/reference/keyboard-shortcuts",
+    "title": "Keyboard shortcuts",
+    "description": "Conductor shortcuts for navigation, workspaces, chat, review, Git, terminal, and app actions"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Todos track work that must be finished before a workspace merges."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-todos-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "How todos work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The todos section shows what still needs to happen before merge. You can add your own todos, and agents can use todos to organize longer tasks."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspaces are blocked until todos are checked off, so known unfinished work does not merge by accident."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "send-todos-to-the-agent",
+      "children": [
+        {
+          "type": "text",
+          "value": "Send todos to the agent"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Mention "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "@todos"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the composer when you want the agent to see the current todo list."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "when-to-clear-todos",
+      "children": [
+        {
+          "type": "text",
+          "value": "When to clear todos"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Clear a todo only when the work is complete or no longer applies. If a todo is no longer relevant, remove it instead of checking it off as completed."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Todos track work that must be finished before a workspace merges.</p><h2 id=\"how-todos-work\"><a href=\"#how-todos-work\">How todos work</a></h2><p>The todos section shows what still needs to happen before merge. You can add your own todos, and agents can use todos to organize longer tasks.</p><p>Workspaces are blocked until todos are checked off, so known unfinished work does not merge by accident.</p><h2 id=\"send-todos-to-the-agent\"><a href=\"#send-todos-to-the-agent\">Send todos to the agent</a></h2><p>Mention <code>@todos</code> in the composer when you want the agent to see the current todo list.</p><h2 id=\"when-to-clear-todos\"><a href=\"#when-to-clear-todos\">When to clear todos</a></h2><p>Clear a todo only when the work is complete or no longer applies. If a todo is no longer relevant, remove it instead of checking it off as completed.</p>",
+  "text": "Todos track work that must be finished before a workspace merges.\nHow todos work\nThe todos section shows what still needs to happen before merge. You can add your own todos, and agents can use todos to organize longer tasks.\nWorkspaces are blocked until todos are checked off, so known unfinished work does not merge by accident.\nSend todos to the agent\nMention @todos in the composer when you want the agent to see the current todo list.\nWhen to clear todos\nClear a todo only when the work is complete or no longer applies. If a todo is no longer relevant, remove it instead of checking it off as completed.",
+  "markdown": "\n# Todos\n\n\n\nTodos track work that must be finished before a workspace merges.\n\n## How todos work [#how-todos-work]\n\nThe todos section shows what still needs to happen before merge. You can add your own todos, and agents can use todos to organize longer tasks.\n\nWorkspaces are blocked until todos are checked off, so known unfinished work does not merge by accident.\n\n## Send todos to the agent [#send-todos-to-the-agent]\n\nMention `@todos` in the composer when you want the agent to see the current todo list.\n\n## When to clear todos [#when-to-clear-todos]\n\nClear a todo only when the work is complete or no longer applies. If a todo is no longer relevant, remove it instead of checking it off as completed.\n"
+}

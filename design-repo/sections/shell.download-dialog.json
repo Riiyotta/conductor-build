@@ -1,0 +1,164 @@
+{
+  "id": "shell.download-dialog",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.download-dialog"
+  ],
+  "purpose": "Choose and start the Mac download (Apple silicon primary, Intel fallback, Windows/Linux waitlist).",
+  "implementedBy": [
+    {
+      "ref": "src/components/DownloadDialog.jsx:84",
+      "quote": "function DownloadDialog({ onClose, onDownload }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:294",
+      "quote": "## 11b. Download dialog"
+    },
+    {
+      "ref": "src/components/DownloadDialog.jsx:19",
+      "quote": "Net effect: the dialog appears and disappears instantly"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.download-dialog"
+    }
+  },
+  "slot": "overlay",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 4,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "description": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 6
+    },
+    "primaryAction": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 4,
+          "required": true,
+          "observedMaxWords": 3
+        },
+        "sublabel": {
+          "type": "text",
+          "maxWords": 3,
+          "required": true,
+          "observedMaxWords": 2
+        },
+        "endpoint": {
+          "type": "endpoint",
+          "roles": [
+            "download-endpoint"
+          ],
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "waitlistAction": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 5,
+          "required": true,
+          "observedMaxWords": 3
+        },
+        "endpoint": {
+          "type": "endpoint",
+          "roles": [
+            "form-endpoint"
+          ],
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "footnote": {
+      "type": "text",
+      "maxWords": 7,
+      "required": true,
+      "observedMaxWords": 5
+    },
+    "fallbackAction": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 6,
+          "required": true,
+          "observedMaxWords": 4
+        },
+        "endpoint": {
+          "type": "endpoint",
+          "roles": [
+            "download-endpoint"
+          ],
+          "required": true
+        }
+      },
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit",
+      "template.changelog-index",
+      "template.changelog-post",
+      "template.docs-page",
+      "template.enterprise",
+      "template.home",
+      "template.join-us",
+      "template.legal",
+      "template.pricing",
+      "template.prose-page",
+      "template.team-plan"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "instant-toggle",
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "instant-toggle",
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "src/components/DownloadDialog.jsx:31",
+        "quote": "const FIRST_REVEAL_DELAY = 300"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "CORRECTED vs CLONE_SPEC.md M12: no enter/exit animation; first open per page load mounts ~300ms late.",
+    "Download buttons point at the live third-party vendor CDN: assetRole download-endpoint, pinned must-not-reuse-live-endpoint.",
+    "Waitlist link points at a live Google Form: assetRole form-endpoint."
+  ],
+  "assetRoles": [
+    "download-endpoint",
+    "form-endpoint"
+  ]
+}

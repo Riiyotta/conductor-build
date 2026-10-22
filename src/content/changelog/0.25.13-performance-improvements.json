@@ -1,0 +1,28 @@
+{
+  "slug": "0.25.13-performance-improvements",
+  "version": "0.25.13",
+  "versionSlug": "0.25.13",
+  "title": "Performance Improvements",
+  "fullTitle": "0.25.13: Performance Improvements",
+  "date": "Dec 16th, 2025",
+  "dateISO": "2025-12-16",
+  "description": "Conductor 0.25.13 changelog - Performance Improvements",
+  "summary": "We've made several performance improvements to the Composer to reduce input lag. We've also re-written fuzzy search. It should be up to 10x faster on larger codebases.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.25.13-performance-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.13-performance-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.13-performance-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve made several performance improvements to the Composer to reduce input lag. We&#x27;ve also re-written fuzzy search. It should be up to 10x faster on larger codebases.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added Antigravity to the Open In menu</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Performance improvements to the Composer\n<ul>\n<li>Fixed a bug where pasting inputs with <code>@</code> characters would cause flickering and input lag</li>\n<li>Fixed unnecessary re-renders slowing down queries</li>\n<li>We&#x27;ve re-written fuzzy search. It should be up to 10x faster on larger codebases.</li>\n</ul>\n</li>\n<li>Claude Code MCP servers are now hidden when using Codex</li>\n<li>Fixed diffs showing incorrectly when using plan mode</li>\n</ul>",
+  "markdown": "\nWe've made several performance improvements to the Composer to reduce input lag. We've also re-written fuzzy search. It should be up to 10x faster on larger codebases.\n\n## Improvements\n\n- Added Antigravity to the Open In menu\n\n## Fixes\n\n- Performance improvements to the Composer\n    - Fixed a bug where pasting inputs with `@` characters would cause flickering and input lag\n    - Fixed unnecessary re-renders slowing down queries\n    - We've re-written fuzzy search. It should be up to 10x faster on larger codebases.\n- Claude Code MCP servers are now hidden when using Codex\n- Fixed diffs showing incorrectly when using plan mode\n"
+}

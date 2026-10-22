@@ -1,0 +1,27 @@
+{
+  "id": "textarea",
+  "kind": "primitive",
+  "purpose": "Optional message field of the HubSpot replica.",
+  "implementedBy": [
+    {
+      "ref": "src/components/pages/HubSpotForm.jsx:207",
+      "quote": "export default function HubSpotForm({ variant = 'enterprise', formId, className = '' }) {"
+    }
+  ],
+  "tokens": [
+    "{semantic.border.form-input}"
+  ],
+  "variants": [
+    "default"
+  ],
+  "states": [
+    "rest",
+    "focus"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:225",
+      "quote": "Textarea h 64."
+    }
+  ]
+}

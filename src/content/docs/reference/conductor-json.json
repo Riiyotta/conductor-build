@@ -1,0 +1,1545 @@
+{
+  "slug": "reference/conductor-json",
+  "url": "/docs/reference/conductor-json",
+  "title": "conductor.json",
+  "description": "Legacy repository configuration file for Conductor",
+  "meta": {
+    "title": "conductor.json | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/conductor-json/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "conductor.json"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#current-recommendation",
+      "title": "Current recommendation"
+    },
+    {
+      "depth": 2,
+      "url": "#legacy-file-format",
+      "title": "Legacy file format"
+    },
+    {
+      "depth": 2,
+      "url": "#migrate-to-settingstoml",
+      "title": "Migrate to settings.toml"
+    },
+    {
+      "depth": 2,
+      "url": "#related-pages",
+      "title": "Related pages"
+    }
+  ],
+  "tocStyle": "clerk",
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is Conductor's legacy repository configuration file. New shared repository settings should use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If a repository has "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", Conductor treats the repository as migrated and ignores repo-level "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "current-recommendation",
+      "children": [
+        {
+          "type": "text",
+          "value": "Current recommendation"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for shared team settings:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"npm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"npm run dev\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npm run dev\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when teammates should share the same configuration. Add "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".gitignore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for personal repository overrides:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "touch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "touch",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "grep",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -qxF",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \".conductor/settings.local.toml\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ||",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " printf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"\\n.conductor/settings.local.toml\\n\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For supported TOML fields, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For precedence and file locations, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the team workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts/share-with-teammates"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Share repository settings with teammates"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "legacy-file-format",
+      "children": [
+        {
+          "type": "text",
+          "value": "Legacy file format"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Older repositories may still contain "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " at the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "json",
+      "title": "conductor.json",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "{\n    \"scripts\": {\n        \"setup\": \"npm install\",\n        \"run\": \"npm run dev\"\n    },\n    \"runScriptMode\": \"concurrent\"\n}",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "{",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"scripts\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"setup\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ",",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"run\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"npm run dev\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    },",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"runScriptMode\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "}",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Supported legacy fields:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Field"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML replacement"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.setup"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.setup"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.command"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.archive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.archive"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "runScriptMode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "\"concurrent\""
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "\"nonconcurrent\""
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run_mode"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "enterpriseDataPrivacy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "enterprise_data_privacy"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "migrate-to-settingstoml",
+      "children": [
+        {
+          "type": "text",
+          "value": "Migrate to settings.toml"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To migrate manually:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Move each legacy field to its TOML replacement."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Delete "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "conductor.json"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Commit both changes."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Example migration:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "json",
+      "title": "conductor.json",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "{\n    \"scripts\": {\n        \"setup\": \"pnpm install\",\n        \"run\": \"pnpm dev --port $CONDUCTOR_PORT\",\n        \"archive\": \"./script/workspace-archive.sh\"\n    },\n    \"runScriptMode\": \"concurrent\",\n    \"enterpriseDataPrivacy\": true\n}",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "{",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"scripts\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"setup\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ",",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"run\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ",",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"archive\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    },",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"runScriptMode\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": ",",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"enterpriseDataPrivacy\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "}",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "becomes:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "enterprise_data_privacy = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "archive = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If Conductor shows a migration prompt in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", use it to create a migration pull request automatically."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "related-pages",
+      "children": [
+        {
+          "type": "text",
+          "value": "Related pages"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings quickstart"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/user-project"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "User and project settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Scripts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts/share-with-teammates"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Share repository settings with teammates"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/environment-variables"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor environment variables"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p><code>conductor.json</code> is Conductor's legacy repository configuration file. New shared repository settings should use <a href=\"/docs/reference/settings\"><code>.conductor/settings.toml</code></a> instead.</p><p>If a repository has <code>.conductor/settings.toml</code>, Conductor treats the repository as migrated and ignores repo-level <code>conductor.json</code>.</p><h2 id=\"current-recommendation\"><a href=\"#current-recommendation\">Current recommendation</a></h2><p>Use <code>.conductor/settings.toml</code> for shared team settings:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"npm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"npm run dev\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Commit <code>.conductor/settings.toml</code> when teammates should share the same configuration. Add <code>.conductor/settings.local.toml</code> to <code>.gitignore</code> for personal repository overrides:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">touch</span><span style=\"color:#032F62\"> .gitignore</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">grep</span><span style=\"color:#005CC5\"> -qxF</span><span style=\"color:#032F62\"> \".conductor/settings.local.toml\"</span><span style=\"color:#032F62\"> .gitignore</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> printf</span><span style=\"color:#032F62\"> \"\\n.conductor/settings.local.toml\\n\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> .gitignore</span></span></code></pre></figure><p>For supported TOML fields, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>. For precedence and file locations, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>. For the team workflow, see <a href=\"/docs/reference/scripts/share-with-teammates\">Share repository settings with teammates</a>.</p><h2 id=\"legacy-file-format\"><a href=\"#legacy-file-format\">Legacy file format</a></h2><p>Older repositories may still contain <code>conductor.json</code> at the repository root:</p><figure data-code data-lang=\"json\" data-title=\"conductor.json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"scripts\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"setup\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"npm install\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"run\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"npm run dev\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    },</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"runScriptMode\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure><p>Supported legacy fields:</p><table><thead><tr><th>Field</th><th>Type</th><th>TOML replacement</th></tr></thead><tbody><tr><td><code>scripts.setup</code></td><td>string</td><td><code>scripts.setup</code></td></tr><tr><td><code>scripts.run</code></td><td>string</td><td><code>scripts.run.&lt;id&gt;.command</code></td></tr><tr><td><code>scripts.archive</code></td><td>string</td><td><code>scripts.archive</code></td></tr><tr><td><code>runScriptMode</code></td><td><code>\"concurrent\"</code> or <code>\"nonconcurrent\"</code></td><td><code>scripts.run_mode</code></td></tr><tr><td><code>enterpriseDataPrivacy</code></td><td>boolean</td><td><code>enterprise_data_privacy</code></td></tr></tbody></table><h2 id=\"migrate-to-settingstoml\"><a href=\"#migrate-to-settingstoml\">Migrate to settings.toml</a></h2><p>To migrate manually:</p><ol><li>Create <code>.conductor/settings.toml</code>.</li><li>Move each legacy field to its TOML replacement.</li><li>Delete <code>conductor.json</code>.</li><li>Commit both changes.</li></ol><p>Example migration:</p><figure data-code data-lang=\"json\" data-title=\"conductor.json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"scripts\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"setup\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"pnpm install\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"run\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"archive\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    },</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"runScriptMode\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"concurrent\"</span><span style=\"color:#24292E\">,</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"enterpriseDataPrivacy\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure><p>becomes:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>If Conductor shows a migration prompt in <a href=\"https://app.conductor.build/settings/repos\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a>, use it to create a migration pull request automatically.</p><h2 id=\"related-pages\"><a href=\"#related-pages\">Related pages</a></h2><ul><li><a href=\"/docs/reference/settings\">Settings quickstart</a></li><li><a href=\"/docs/reference/settings/user-project\">User and project settings</a></li><li><a href=\"/docs/reference/scripts\">Scripts</a></li><li><a href=\"/docs/reference/scripts/share-with-teammates\">Share repository settings with teammates</a></li><li><a href=\"/docs/reference/environment-variables\">Conductor environment variables</a></li></ul>",
+  "text": "conductor.json is Conductor's legacy repository configuration file. New shared repository settings should use .conductor/settings.toml instead.\nIf a repository has .conductor/settings.toml, Conductor treats the repository as migrated and ignores repo-level conductor.json.\nCurrent recommendation\nUse .conductor/settings.toml for shared team settings:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nsetup = \"npm install\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"npm run dev\"\ndefault = true\nicon = \"play\"Commit .conductor/settings.toml when teammates should share the same configuration. Add .conductor/settings.local.toml to .gitignore for personal repository overrides:\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignoreFor supported TOML fields, see Settings reference. For precedence and file locations, see User and project settings. For the team workflow, see Share repository settings with teammates.\nLegacy file format\nOlder repositories may still contain conductor.json at the repository root:\n{\n    \"scripts\": {\n        \"setup\": \"npm install\",\n        \"run\": \"npm run dev\"\n    },\n    \"runScriptMode\": \"concurrent\"\n}Supported legacy fields:\nFieldTypeTOML replacementscripts.setupstringscripts.setupscripts.runstringscripts.run.<id>.commandscripts.archivestringscripts.archiverunScriptMode\"concurrent\" or \"nonconcurrent\"scripts.run_modeenterpriseDataPrivacybooleanenterprise_data_privacyMigrate to settings.toml\nTo migrate manually:\nCreate .conductor/settings.toml.\nMove each legacy field to its TOML replacement.\nDelete conductor.json.\nCommit both changes.\nExample migration:\n{\n    \"scripts\": {\n        \"setup\": \"pnpm install\",\n        \"run\": \"pnpm dev --port $CONDUCTOR_PORT\",\n        \"archive\": \"./script/workspace-archive.sh\"\n    },\n    \"runScriptMode\": \"concurrent\",\n    \"enterpriseDataPrivacy\": true\n}becomes:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"If Conductor shows a migration prompt in Repository Settings, use it to create a migration pull request automatically.\nRelated pages\nSettings quickstart\nUser and project settings\nScripts\nShare repository settings with teammates\nConductor environment variables",
+  "markdown": "\n# conductor.json\n\n\n\n`conductor.json` is Conductor's legacy repository configuration file. New shared repository settings should use [`.conductor/settings.toml`](/docs/reference/settings) instead.\n\nIf a repository has `.conductor/settings.toml`, Conductor treats the repository as migrated and ignores repo-level `conductor.json`.\n\n## Current recommendation [#current-recommendation]\n\nUse `.conductor/settings.toml` for shared team settings:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"npm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"npm run dev\"\ndefault = true\nicon = \"play\"\n```\n\nCommit `.conductor/settings.toml` when teammates should share the same configuration. Add `.conductor/settings.local.toml` to `.gitignore` for personal repository overrides:\n\n```bash\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\n```\n\nFor supported TOML fields, see [Settings reference](/docs/reference/settings/reference). For precedence and file locations, see [User and project settings](/docs/reference/settings/user-project). For the team workflow, see [Share repository settings with teammates](/docs/reference/scripts/share-with-teammates).\n\n## Legacy file format [#legacy-file-format]\n\nOlder repositories may still contain `conductor.json` at the repository root:\n\n```json title=\"conductor.json\"\n{\n    \"scripts\": {\n        \"setup\": \"npm install\",\n        \"run\": \"npm run dev\"\n    },\n    \"runScriptMode\": \"concurrent\"\n}\n```\n\nSupported legacy fields:\n\n| Field                   | Type                                | TOML replacement           |\n| ----------------------- | ----------------------------------- | -------------------------- |\n| `scripts.setup`         | string                              | `scripts.setup`            |\n| `scripts.run`           | string                              | `scripts.run.<id>.command` |\n| `scripts.archive`       | string                              | `scripts.archive`          |\n| `runScriptMode`         | `\"concurrent\"` or `\"nonconcurrent\"` | `scripts.run_mode`         |\n| `enterpriseDataPrivacy` | boolean                             | `enterprise_data_privacy`  |\n\n## Migrate to settings.toml [#migrate-to-settingstoml]\n\nTo migrate manually:\n\n1. Create `.conductor/settings.toml`.\n2. Move each legacy field to its TOML replacement.\n3. Delete `conductor.json`.\n4. Commit both changes.\n\nExample migration:\n\n```json title=\"conductor.json\"\n{\n    \"scripts\": {\n        \"setup\": \"pnpm install\",\n        \"run\": \"pnpm dev --port $CONDUCTOR_PORT\",\n        \"archive\": \"./script/workspace-archive.sh\"\n    },\n    \"runScriptMode\": \"concurrent\",\n    \"enterpriseDataPrivacy\": true\n}\n```\n\nbecomes:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nIf Conductor shows a migration prompt in [Repository Settings](https://app.conductor.build/settings/repos), use it to create a migration pull request automatically.\n\n## Related pages [#related-pages]\n\n* [Settings quickstart](/docs/reference/settings)\n* [User and project settings](/docs/reference/settings/user-project)\n* [Scripts](/docs/reference/scripts)\n* [Share repository settings with teammates](/docs/reference/scripts/share-with-teammates)\n* [Conductor environment variables](/docs/reference/environment-variables)\n"
+}

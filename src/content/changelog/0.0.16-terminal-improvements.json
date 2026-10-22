@@ -1,0 +1,28 @@
+{
+  "slug": "0.0.16-terminal-improvements",
+  "version": "0.0.16",
+  "versionSlug": "0.0.16",
+  "title": "Terminal Improvements",
+  "fullTitle": "0.0.16: Terminal Improvements",
+  "date": "July 18th, 2025",
+  "dateISO": "2025-07-18",
+  "description": "Conductor 0.0.16 changelog - Terminal Improvements",
+  "summary": "We've upgraded the terminal in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.0.16/7ee30008-24d3-4b54-9567-812ff995cdab.png",
+    "alt": "CleanShot 2025-07-18 at 10 27 06@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.0.16-terminal-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.0.16-terminal-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.0.16-terminal-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve upgraded the terminal in Conductor!</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-18 at 10 27 06@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.16/7ee30008-24d3-4b54-9567-812ff995cdab.png\"/></figure>\n<p>Sessions now persist when navigating between workspaces; we also squashed several terminal bugs.</p>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed default padding in dialogs</li>\n<li>Fixed a bug where the composer would cover more text than necessary</li>\n<li>Fixed a bug where workspaces wouldn&#x27;t be reset to <code>idle</code> state on app restart</li>\n<li>Fixed a bug where certain workspaces wouldn&#x27;t load due to an infinite rendering loop</li>\n</ul>",
+  "markdown": "\nWe've upgraded the terminal in Conductor!\n\n<img\n    width=\"1134\"\n    height=\"850\"\n    alt=\"CleanShot 2025-07-18 at 10 27 06@2x\"\n    src=\"/assets/changelog/media/0.0.16/7ee30008-24d3-4b54-9567-812ff995cdab.png\"\n/>\n\nSessions now persist when navigating between workspaces; we also squashed several terminal bugs.\n\n## Fixes\n\n- Fixed default padding in dialogs\n- Fixed a bug where the composer would cover more text than necessary\n- Fixed a bug where workspaces wouldn't be reset to `idle` state on app restart\n- Fixed a bug where certain workspaces wouldn't load due to an infinite rendering loop\n"
+}

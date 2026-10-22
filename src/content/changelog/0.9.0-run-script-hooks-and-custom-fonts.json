@@ -1,0 +1,36 @@
+{
+  "slug": "0.9.0-run-script-hooks-and-custom-fonts",
+  "version": "0.9.0",
+  "versionSlug": "0.9.0",
+  "title": "Run script, hooks, and custom fonts",
+  "fullTitle": "0.9.0: Run script, hooks, and custom fonts",
+  "date": "Sept 1st, 2025",
+  "dateISO": "2025-09-01",
+  "description": "Conductor 0.9.0 changelog - Run script, hooks, and custom fonts",
+  "summary": "Add a run script to create a one-click shortcut (or ⌘R) to your tests or development server.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.9.0/3869a0a7-535f-49d8-b00c-8e121893f11c.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.9.0-run-script-hooks-and-custom-fonts/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.9.0-run-script-hooks-and-custom-fonts",
+  "sourceUrl": "https://www.conductor.build/changelog/0.9.0-run-script-hooks-and-custom-fonts",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Add a run script to create a one-click shortcut (or ⌘R) to your tests or development server.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.0/3869a0a7-535f-49d8-b00c-8e121893f11c.png\"/></figure>\n<p>Project level slash commands and agents are now usable in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.0/44a72d5c-df75-4c9f-80ef-31a9ea6e320e.png\"/></figure>\n<p>Global hooks and memory are now configurable in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.0/6868d227-ffcf-459d-a637-ae87b6accec0.png\"/></figure>\n<p>You can now set a custom terminal font in settings!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.0/f5303c5c-14fa-4a48-b61c-cd91e59d9f38.png\"/></figure>\n<p>We&#x27;ve also added the PR status to the sidebar:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.0/b98c2078-061d-4d87-a91f-a55160743e69.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Conductor&#x27;s doc site is now live at <a href=\"/docs\" target=\"_blank\" rel=\"noopener noreferrer\">conductor.build/docs</a></li>\n<li>Added support for opening draft PRs in the git panel</li>\n<li>Added support for manually opening PRs via the git panel</li>\n<li>Auto-convert long text snippet pastes into attachments for better readability</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed loading icon animations throughout the app that would wobble off axis</li>\n<li>Fixed a bug where <code>/clear</code> would not clear the session</li>\n<li>Fixed popover border radius inconsistencies</li>\n<li>Fixed composer border radius inconsistencies</li>\n<li>Fixed referenced files not being truncated and highlighted in user messages</li>\n<li>Fixed a bug where multi-line <code>$ARGUMENTS</code> wouldn&#x27;t register with slash commands</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Telemetry improvements</li>\n</ul>",
+  "markdown": "\nAdd a run script to create a one-click shortcut (or ⌘R) to your tests or development server.\n\n<img\n    width=\"914\"\n    height=\"892\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.0/3869a0a7-535f-49d8-b00c-8e121893f11c.png\"\n/>\n\nProject level slash commands and agents are now usable in Conductor!\n\n<img\n    width=\"502\"\n    height=\"566\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.0/44a72d5c-df75-4c9f-80ef-31a9ea6e320e.png\"\n/>\n\nGlobal hooks and memory are now configurable in Conductor!\n\n<img\n    width=\"1530\"\n    height=\"1394\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.0/6868d227-ffcf-459d-a637-ae87b6accec0.png\"\n/>\n\nYou can now set a custom terminal font in settings!\n\n<img\n    width=\"1664\"\n    height=\"1526\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.0/f5303c5c-14fa-4a48-b61c-cd91e59d9f38.png\"\n/>\n\nWe've also added the PR status to the sidebar:\n\n<img\n    width=\"622\"\n    height=\"666\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.0/b98c2078-061d-4d87-a91f-a55160743e69.png\"\n/>\n\n## Improvements\n\n- Conductor's doc site is now live at [conductor.build/docs](/docs)\n- Added support for opening draft PRs in the git panel\n- Added support for manually opening PRs via the git panel\n- Auto-convert long text snippet pastes into attachments for better readability\n\n## Fixes\n\n- Fixed loading icon animations throughout the app that would wobble off axis\n- Fixed a bug where `/clear` would not clear the session\n- Fixed popover border radius inconsistencies\n- Fixed composer border radius inconsistencies\n- Fixed referenced files not being truncated and highlighted in user messages\n- Fixed a bug where multi-line `$ARGUMENTS` wouldn't register with slash commands\n\n## Misc\n\n- Telemetry improvements\n"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "0.18.3-bug-fixes",
+  "version": "0.18.3",
+  "versionSlug": "0.18.3",
+  "title": "Bug Fixes",
+  "fullTitle": "0.18.3: Bug Fixes",
+  "date": "Nov 3rd, 2025",
+  "dateISO": "2025-11-03",
+  "description": "Conductor 0.18.3 changelog - Bug Fixes",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.18.3-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.18.3-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.18.3-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Added a default thinking level preference in <code>Settings</code> → <code>General</code></li>\n<li>Show PR number and URL for merged PRs</li>\n<li>Sort grouped Linear issues by their created time</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Don&#x27;t attach thinking mode in <code>/compact</code> messages</li>\n<li>Fix open-in behavior for file badges</li>\n<li>Fix oversized tool header hit areas</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Added a default thinking level preference in `Settings` → `General`\n- Show PR number and URL for merged PRs\n- Sort grouped Linear issues by their created time\n\n## Fixes\n\n- Don't attach thinking mode in `/compact` messages\n- Fix open-in behavior for file badges\n- Fix oversized tool header hit areas\n"
+}

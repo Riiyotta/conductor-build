@@ -1,0 +1,31 @@
+{
+  "slug": "0.37.0-manual-mode",
+  "version": "0.37.0",
+  "versionSlug": "0.37.0",
+  "title": "Manual Mode™",
+  "fullTitle": "0.37.0: Manual Mode™",
+  "date": "Mar 3rd, 2026",
+  "dateISO": "2026-03-03",
+  "description": "Conductor 0.37.0 changelog - Manual Mode™",
+  "summary": "Conductor now has a built-in file editor for when you want to edit files directly (like a caveman). It comes with full syntax highlighting and ⌘F. We use it for quick edits, like .env files, json configs, or tailwind classes. Otherwise, ask the AI.",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.37.0/1772585344123-video.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.37.0-manual-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.37.0-manual-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.37.0-manual-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Conductor now has a built-in file editor for when you want to edit files directly (like a caveman). It comes with full syntax highlighting and ⌘F. We use it for quick edits, like <code>.env</code> files, json configs, or tailwind classes. Otherwise, ask the AI.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/1772585344123-video.mp4&quot;\nwidth=&quot;100%&quot;\nautoplay\nmuted\nplaysinline</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<p>We’ve also shipped some performance improvements—Conductor should feel snappier.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Add text search to the repository selector in the Cmd+Shift+N menu</li>\n<li>Display the port number on the terminal panel&#x27;s open button</li>\n<li>Add a button to copy rendered tables as markdown (thanks <a href=\"https://x.com/brian_lovin\" target=\"_blank\" rel=\"noopener noreferrer\">@brian_lovin</a>)</li>\n<li>Improve top bar tab density and hover feedback on tab actions</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Create missing folders automatically when starting a quick repo (<a href=\"https://x.com/swyx\" target=\"_blank\" rel=\"noopener noreferrer\">thanks @swyx</a>)</li>\n<li>Stop polling for file changes after a turn completes</li>\n<li>Prevent chat summaries from using external AI in enterprise data privacy mode</li>\n<li>Fix the &quot;mark as read&quot; option and a bug with marking messages as unread</li>\n</ul>",
+  "markdown": "\nConductor now has a built-in file editor for when you want to edit files directly (like a caveman). It comes with full syntax highlighting and ⌘F. We use it for quick edits, like `.env` files, json configs, or tailwind classes. Otherwise, ask the AI.\n\n<video\n    src=\"/assets/changelog/media/0.37.0/1772585344123-video.mp4\"\n    width=\"100%\"\n    autoplay\n    muted\n    playsinline\n></video>\n\nWe’ve also shipped some performance improvements—Conductor should feel snappier.\n\n## Improvements\n\n- Add text search to the repository selector in the Cmd+Shift+N menu\n- Display the port number on the terminal panel's open button\n- Add a button to copy rendered tables as markdown (thanks [@brian_lovin](https://x.com/brian_lovin))\n- Improve top bar tab density and hover feedback on tab actions\n\n## Fixes\n\n- Create missing folders automatically when starting a quick repo ([thanks @swyx](https://x.com/swyx))\n- Stop polling for file changes after a turn completes\n- Prevent chat summaries from using external AI in enterprise data privacy mode\n- Fix the \"mark as read\" option and a bug with marking messages as unread\n"
+}

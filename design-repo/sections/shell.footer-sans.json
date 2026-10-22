@@ -1,0 +1,170 @@
+{
+  "id": "shell.footer-sans",
+  "category": "SHELL",
+  "iaSections": [
+    "shell.footer-sans"
+  ],
+  "purpose": "Site footer as rendered on the homepage: system sans because of the homepage's font-mono -> sans override wrapper.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Footer.jsx:44",
+      "quote": "export default function Footer({ mono = false }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:282",
+      "quote": "## 11. Footer"
+    },
+    {
+      "ref": "src/pages/Home.jsx:16",
+      "quote": "<div className=\"bg-background font-sans\">"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "shell.footer-sans"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "columns": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "heading": {
+            "type": "text",
+            "maxWords": 2,
+            "required": true,
+            "observedMaxWords": 1
+          },
+          "links": {
+            "type": "list",
+            "items": {
+              "type": "object",
+              "fields": {
+                "label": {
+                  "type": "text",
+                  "maxWords": 3,
+                  "required": true,
+                  "observedMaxWords": 2
+                },
+                "href": {
+                  "type": "url",
+                  "required": true
+                }
+              },
+              "required": true
+            },
+            "minItems": 1,
+            "maxItems": 4,
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 4,
+      "maxItems": 4,
+      "required": true
+    },
+    "copyright": {
+      "type": "text",
+      "maxWords": 5,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "complianceLink": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 5,
+          "required": true,
+          "observedMaxWords": 4
+        },
+        "href": {
+          "type": "url",
+          "required": true
+        }
+      },
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustBeLastFlow": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:284",
+        "quote": "**Link hover color rgba(44,40,38,.7).**"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "2"
+        },
+        {
+          "property": "paddingInline",
+          "value": "24px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "paddingInline",
+          "value": "32px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "4"
+        }
+      ]
+    },
+    {
+      "minWidth": 1024,
+      "changes": [
+        {
+          "property": "columnGap",
+          "value": "48px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "Renders SANS only here; the same component renders MONO on the other 305 routes."
+  ],
+  "assetRoles": []
+}

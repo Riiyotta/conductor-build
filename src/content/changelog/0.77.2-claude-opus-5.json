@@ -1,0 +1,36 @@
+{
+  "slug": "0.77.2-claude-opus-5",
+  "version": "0.77.2",
+  "versionSlug": "0.77.2",
+  "title": "Claude Opus 5",
+  "fullTitle": "0.77.2: Claude Opus 5",
+  "date": "July 24, 2026",
+  "dateISO": "2026-07-24",
+  "description": "Conductor 0.77.2 changelog - Claude Opus 5",
+  "summary": "Claude Opus 5 is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/opus-5-0.77.2.png",
+    "alt": "Claude Opus 5"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.77.2-claude-opus-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.77.2-claude-opus-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.77.2-claude-opus-5",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "New in 0.77.3"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.77.4"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.77.5"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"Claude Opus 5\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/opus-5-0.77.2.png\"/></figure>\n<p>Claude Opus 5 is now available in Conductor!</p>\n<p>Opus 5 comes close to the frontier intelligence of Claude Fable 5 at half the price.</p>\n<h4>New in 0.77.3</h4>\n<ul>\n<li>Claude Opus 5 is now the default model</li>\n</ul>\n<h4>New in 0.77.4</h4>\n<ul>\n<li>Fixed an issue where agent replies could disappear after sending a follow-up while a turn was still running</li>\n</ul>\n<h4>New in 0.77.5</h4>\n<ul>\n<li>Fixed an issue where GitHub and Linear connections could not show up in cloud account settings</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"2880\"\n    height=\"1620\"\n    alt=\"Claude Opus 5\"\n    src=\"/assets/changelog/images/opus-5-0.77.2.png\"\n/>\n\nClaude Opus 5 is now available in Conductor!\n\nOpus 5 comes close to the frontier intelligence of Claude Fable 5 at half the price.\n\n### New in 0.77.3\n\n- Claude Opus 5 is now the default model\n\n### New in 0.77.4\n\n- Fixed an issue where agent replies could disappear after sending a follow-up while a turn was still running\n\n### New in 0.77.5\n\n- Fixed an issue where GitHub and Linear connections could not show up in cloud account settings\n"
+}

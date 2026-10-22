@@ -1,0 +1,142 @@
+{
+  "id": "content.join-us-team-cards",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.join-us-team-cards"
+  ],
+  "purpose": "Introduce team members with role and short bio.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/JoinUs.jsx:114",
+      "quote": "function TeamCard({ person }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:295",
+      "quote": "### 5.2 Team card"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.join-us-team-cards"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "heading": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "cards": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "name": {
+            "type": "text",
+            "maxWords": 4,
+            "required": true,
+            "observedMaxWords": 3
+          },
+          "role": {
+            "type": "text",
+            "maxWords": 5,
+            "required": true,
+            "observedMaxWords": 4
+          },
+          "bio": {
+            "type": "list",
+            "items": {
+              "type": "text",
+              "maxWords": 95,
+              "required": true,
+              "observedMaxWords": 90
+            },
+            "minItems": 1,
+            "maxItems": 3,
+            "required": true
+          },
+          "avatar": {
+            "type": "media",
+            "roles": [
+              "person-avatar"
+            ],
+            "required": true
+          },
+          "xHref": {
+            "type": "url",
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 7,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.join-us"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:309",
+        "quote": "hover: bg #fafaf9 + color #2c2826, 150ms (measured)"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "avatar",
+          "value": "48px"
+        },
+        {
+          "property": "nameRow",
+          "value": "name on its own line"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "avatar",
+          "value": "56px"
+        },
+        {
+          "property": "nameRow",
+          "value": "inline name · role · X"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real, named people with real photos and bios: never fabricate people or reuse their likeness."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "person-avatar"
+  ]
+}

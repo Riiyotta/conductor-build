@@ -1,0 +1,36 @@
+{
+  "slug": "0.3.2-opus-4-1",
+  "version": "0.3.2",
+  "versionSlug": "0.3.2",
+  "title": "Opus 4.1",
+  "fullTitle": "0.3.2: Opus 4.1",
+  "date": "August 5th, 2025",
+  "dateISO": "2025-08-05",
+  "description": "Conductor 0.3.2 changelog - Opus 4.1",
+  "summary": "Claude Opus 4.1 is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.3.2/762894c3-a0e6-4b5a-9685-e9047d365cc8.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.3.2-opus-4-1/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.3.2-opus-4-1",
+  "sourceUrl": "https://www.conductor.build/changelog/0.3.2-opus-4-1",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Claude Opus 4.1 is now available in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.3.2/762894c3-a0e6-4b5a-9685-e9047d365cc8.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Added drag and drop to reorder repositories in the left sidebar</li>\n<li>Added PyCharm as an &quot;Open In IDE&quot; option</li>\n<li>Conductor now remembers where you last cloned a repo and defaults to that location for new clones. Also, the initial default path is now <code>~/conductor</code>.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where the &quot;Add Repository&quot; popover was not visible on some screens</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Improved error message when failing to authenticate with <code>gh</code></li>\n<li>Added the full URL that was fetched to the top of the WebFetch tool call</li>\n</ul>",
+  "markdown": "\nClaude Opus 4.1 is now available in Conductor!\n\n<img\n    width=\"1200\"\n    height=\"632\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.3.2/762894c3-a0e6-4b5a-9685-e9047d365cc8.png\"\n/>\n\n## Improvements\n\n- Added drag and drop to reorder repositories in the left sidebar\n- Added PyCharm as an \"Open In IDE\" option\n- Conductor now remembers where you last cloned a repo and defaults to that location for new clones. Also, the initial default path is now `~/conductor`.\n\n## Fixes\n\n- Fixed a bug where the \"Add Repository\" popover was not visible on some screens\n\n## Misc\n\n- Improved error message when failing to authenticate with `gh`\n- Added the full URL that was fetched to the top of the WebFetch tool call\n"
+}

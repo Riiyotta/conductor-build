@@ -1,0 +1,43 @@
+{
+  "slug": "0.46.0-bug-fixes-instant-archiving-terminal",
+  "version": "0.46.0",
+  "versionSlug": "0.46.0",
+  "title": "Bug Fixes, Instant Archiving, @terminal",
+  "fullTitle": "0.46.0: Bug Fixes, Instant Archiving, @terminal",
+  "date": "Apr 5, 2026",
+  "dateISO": "2026-04-05",
+  "description": "Conductor 0.46.0 changelog - Bug Fixes, Instant Archiving, @terminal",
+  "summary": "Archiving is now instant! You can restore any archived workspace in the History tab in the sidebar.",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.46.0/1775441947842-ConductorArchiving.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.46.0-bug-fixes-instant-archiving-terminal/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.46.0-bug-fixes-instant-archiving-terminal",
+  "sourceUrl": "https://www.conductor.build/changelog/0.46.0-bug-fixes-instant-archiving-terminal",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "0.46.1 — Apr 8th, 2026"
+    },
+    {
+      "depth": 3,
+      "title": "0.46.2 — Apr 10th, 2026"
+    },
+    {
+      "depth": 3,
+      "title": "0.46.3 — April 11th, 2026"
+    }
+  ],
+  "html": "<p>Archiving is now instant! You can restore any archived workspace in the History tab in the sidebar.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/1775441947842-ConductorArchiving.mp4&quot;\nautoplay\nmuted\nloop\nplaysinline\nwidth=&quot;100%&quot;</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<p>You can now tag your terminal in the chat with <code>@terminal</code>:</p>\n<figure data-asset><img alt=\"CleanShot 2026-04-05 at 19.20.02@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.46.0/1775442018933-CleanShot_2026-04-05_at_19.20.02_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>New workspaces now open the same bottom panel tab (Setup/Run/Terminal) you last used</li>\n<li>Increased the height of the question tool area for long questions</li>\n<li>Simplified the workspace branch-matching setting and removed the separate rename toggle</li>\n<li>You can now attach current terminal output from the composer with <code>@terminal</code></li>\n<li>Slash commands now load independently from MCP status</li>\n<li>Reduced the delay before the first agent action in a workspace</li>\n<li>Instant archiving</li>\n<li>When terminal is focused, ⇧+Tab now goes to the terminal instead of toggling plan mode</li>\n<li>Ask-user-question blocks now scroll when the content is too long</li>\n<li>Preview chat summaries and plans before attaching them</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where clicking the last message in the chat outline would scroll past the content, allowing over-scrolling into empty space. The last turn now uses &quot;end&quot; alignment instead of &quot;start&quot; when navigating via the table of contents</li>\n<li>Fixed an issue leading to &quot;No active session&quot; error</li>\n<li>Fixed Codex sessions so they can use Conductor tools like asking questions and reading workspace diffs</li>\n<li>Fixed an issue where workspaces from merged PRs were archived immediately</li>\n<li>Fixed an issue where the app could freeze when a workspace contained a large number of untracked files</li>\n<li>Fixed several formatting issues in the prompt input area</li>\n<li>Fixed a UI glitch where long file paths could cover other controls</li>\n<li>Fixed an issue where switching workspaces could reopen &quot;All changes&quot;</li>\n<li>Fixed an issue where reverting a Codex chat could fail after the session closed</li>\n<li>Fixed workspace terminals that could show raw arrow-key escape codes and unclear tab labels</li>\n<li>Fixed some git actions failing when Git briefly held index.lock</li>\n<li>Fixed an issue where subagents could get permanently stuck waiting for tool approval when managed approvals are enabled</li>\n<li>Fixed an issue where renamed dev workspaces could still show the old name</li>\n<li>Fixed an issue where cancelling Codex could lose chat context</li>\n<li>Fixed an issue where switching back to a workspace could open the wrong tab</li>\n<li>Fixed terminal tabs restoring with incorrect line wrapping</li>\n<li>Fixed an issue where restored terminals showed an echoed printf command</li>\n</ul>\n<h3>0.46.1 — Apr 8th, 2026</h3>\n<ul>\n<li>Fixed a bug that could cause setup scripts to hang</li>\n<li>Fixed an issue where messages containing $$ would render as LaTeX</li>\n<li>Removed logs from feedback dialog</li>\n</ul>\n<h3>0.46.2 — Apr 10th, 2026</h3>\n<ul>\n<li>Fixed the continue button</li>\n<li>Updated Claude Code binary to 2.1.89</li>\n<li>Fixed an issue that could cause PR status to fail refresh</li>\n</ul>\n<h3>0.46.3 — April 11th, 2026</h3>\n<ul>\n<li>Fixed a bug that could cause &quot;failed to verify claude executable&quot; error</li>\n</ul>",
+  "markdown": "\nArchiving is now instant! You can restore any archived workspace in the History tab in the sidebar.\n\n<video\n    src=\"/assets/changelog/media/0.46.0/1775441947842-ConductorArchiving.mp4\"\n    autoplay\n    muted\n    loop\n    playsinline\n    width=\"100%\"\n></video>\n\nYou can now tag your terminal in the chat with `@terminal`:\n\n<img\n    src=\"/assets/changelog/media/0.46.0/1775442018933-CleanShot_2026-04-05_at_19.20.02_2x.png\"\n    alt=\"CleanShot 2026-04-05 at 19.20.02@2x.png\"\n/>\n\n## Improvements\n\n- New workspaces now open the same bottom panel tab (Setup/Run/Terminal) you last used\n- Increased the height of the question tool area for long questions\n- Simplified the workspace branch-matching setting and removed the separate rename toggle\n- You can now attach current terminal output from the composer with `@terminal`\n- Slash commands now load independently from MCP status\n- Reduced the delay before the first agent action in a workspace\n- Instant archiving\n- When terminal is focused, ⇧+Tab now goes to the terminal instead of toggling plan mode\n- Ask-user-question blocks now scroll when the content is too long\n- Preview chat summaries and plans before attaching them\n\n## Fixes\n\n- Fixed an issue where clicking the last message in the chat outline would scroll past the content, allowing over-scrolling into empty space. The last turn now uses \"end\" alignment instead of \"start\" when navigating via the table of contents\n- Fixed an issue leading to \"No active session\" error\n- Fixed Codex sessions so they can use Conductor tools like asking questions and reading workspace diffs\n- Fixed an issue where workspaces from merged PRs were archived immediately\n- Fixed an issue where the app could freeze when a workspace contained a large number of untracked files\n- Fixed several formatting issues in the prompt input area\n- Fixed a UI glitch where long file paths could cover other controls\n- Fixed an issue where switching workspaces could reopen \"All changes\"\n- Fixed an issue where reverting a Codex chat could fail after the session closed\n- Fixed workspace terminals that could show raw arrow-key escape codes and unclear tab labels\n- Fixed some git actions failing when Git briefly held index.lock\n- Fixed an issue where subagents could get permanently stuck waiting for tool approval when managed approvals are enabled\n- Fixed an issue where renamed dev workspaces could still show the old name\n- Fixed an issue where cancelling Codex could lose chat context\n- Fixed an issue where switching back to a workspace could open the wrong tab\n- Fixed terminal tabs restoring with incorrect line wrapping\n- Fixed an issue where restored terminals showed an echoed printf command\n\n## 0.46.1 — Apr 8th, 2026\n\n- Fixed a bug that could cause setup scripts to hang\n- Fixed an issue where messages containing $$ would render as LaTeX\n- Removed logs from feedback dialog\n\n## 0.46.2 — Apr 10th, 2026\n\n- Fixed the continue button\n- Updated Claude Code binary to 2.1.89\n- Fixed an issue that could cause PR status to fail refresh\n\n## 0.46.3 — April 11th, 2026\n\n- Fixed a bug that could cause \"failed to verify claude executable\" error\n"
+}

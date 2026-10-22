@@ -1,0 +1,31 @@
+{
+  "slug": "0.36.9-performance-improvements",
+  "version": "0.36.9",
+  "versionSlug": "0.36.9",
+  "title": "Performance Improvements",
+  "fullTitle": "0.36.9: Performance Improvements",
+  "date": "Feb 27th, 2026",
+  "dateISO": "2026-02-27",
+  "description": "Conductor 0.36.9 changelog - Performance Improvements",
+  "summary": "We’ve removed some code that introduced performance issues. The app should feel snappier.",
+  "hero": {
+    "type": "video",
+    "src": "/assets/changelog/media/0.36.9/1772243714830-Conductorsnappy.mp4"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.9-performance-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.9-performance-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.9-performance-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve removed some code that introduced performance issues. The app should feel snappier.</p>\n<p>&lt;video\nsrc=&quot;https://conductor-marketing.t3.tigrisfiles.io/uploads/1772243714830-Conductorsnappy.mp4&quot;\nwidth=&quot;100%&quot;\nautoplay\nmuted\nplaysinline</p>\n<div role=\"note\" aria-label=\"Info note\"><div aria-hidden=\"true\"></div><div><span>Info: </span><div>\n\n</div></div></div>\n<h3>Improvements</h3>\n<ul>\n<li>Added a keyboard shortcut for commit and push (⌘⇧Y)</li>\n<li>Added new shortcuts to open or duplicate a workspace from an existing branch (⌘⇧N)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Removed the inline archive button from workspace list rows to prevent accidental archives</li>\n</ul>",
+  "markdown": "\nWe’ve removed some code that introduced performance issues. The app should feel snappier.\n\n<video\n    src=\"/assets/changelog/media/0.36.9/1772243714830-Conductorsnappy.mp4\"\n    width=\"100%\"\n    autoplay\n    muted\n    playsinline\n></video>\n\n## Improvements\n\n- Added a keyboard shortcut for commit and push (⌘⇧Y)\n- Added new shortcuts to open or duplicate a workspace from an existing branch (⌘⇧N)\n\n## Fixes\n\n- Removed the inline archive button from workspace list rows to prevent accidental archives\n"
+}

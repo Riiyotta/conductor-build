@@ -1,0 +1,32 @@
+{
+  "slug": "0.18.0-codex",
+  "version": "0.18.0",
+  "versionSlug": "0.18.0",
+  "title": "Codex",
+  "fullTitle": "0.18.0: Codex",
+  "date": "Oct 31st, 2025",
+  "dateISO": "2025-10-31",
+  "description": "Conductor 0.18.0 changelog - Codex",
+  "summary": "You can now use Codex in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.18.0/13bc1acd-594f-4388-a551-bedce75917a9.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.18.0-codex/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.18.0-codex",
+  "sourceUrl": "https://www.conductor.build/changelog/0.18.0-codex",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now use Codex in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.18.0/13bc1acd-594f-4388-a551-bedce75917a9.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Simpler workspace empty state</li>\n<li>New &quot;create workspace from&quot; button</li>\n<li>Added `ctrl+`` shortcut to focus the terminal</li>\n<li>Improved tab history UI</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix alignment of run button</li>\n<li>Fix workspaces re-ordering in the sidebar when session tabs were closed</li>\n<li>Fix horizontal chat overflow</li>\n<li>Hide the pull latest changes button when workspace is behind remote</li>\n<li>Fix file mentions not triggering in the composer after parentheses or brackets</li>\n</ul>",
+  "markdown": "\nYou can now use Codex in Conductor!\n\n<img\n    width=\"572\"\n    height=\"512\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.18.0/13bc1acd-594f-4388-a551-bedce75917a9.png\"\n/>\n\n## Improvements\n\n- Simpler workspace empty state\n- New \"create workspace from\" button\n- Added `ctrl+\\`` shortcut to focus the terminal\n- Improved tab history UI\n\n## Fixes\n\n- Fix alignment of run button\n- Fix workspaces re-ordering in the sidebar when session tabs were closed\n- Fix horizontal chat overflow\n- Hide the pull latest changes button when workspace is behind remote\n- Fix file mentions not triggering in the composer after parentheses or brackets\n"
+}

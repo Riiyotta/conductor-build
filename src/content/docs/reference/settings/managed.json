@@ -1,0 +1,511 @@
+{
+  "slug": "reference/settings/managed",
+  "url": "/docs/reference/settings/managed",
+  "title": "Managed settings",
+  "description": "Reference for organization-managed Conductor settings",
+  "meta": {
+    "title": "Managed settings | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/settings/managed/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Managed settings"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#file-location",
+      "title": "File location"
+    },
+    {
+      "depth": 2,
+      "url": "#example",
+      "title": "Example"
+    },
+    {
+      "depth": 2,
+      "url": "#settings-reference",
+      "title": "Settings reference"
+    },
+    {
+      "depth": 2,
+      "url": "#precedence",
+      "title": "Precedence"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/settings/user-project",
+    "title": "User and project",
+    "description": "Reference for Conductor user, project, and local project settings"
+  },
+  "next": {
+    "url": "/docs/reference/settings/reference",
+    "title": "Reference",
+    "description": "Conductor settings keys by scope"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed settings build on Conductor's normal "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "user and project settings model"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". In that model, user settings provide personal defaults, repository shared settings define project behavior, and project overrides apply to one project on one machine."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed settings add one organization-controlled layer above that stack. They are for organizations that need to enforce selected Conductor settings on a user's Mac. Most users should configure user and project settings instead."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed values override user and repository settings, disable the matching controls in Settings, and are used when Conductor launches agents. Managed settings are provisional."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "file-location",
+      "children": [
+        {
+          "type": "text",
+          "value": "File location"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Write managed TOML settings to:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "~/.conductor/settings.managed.toml",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "~/.conductor/settings.managed.toml"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor still reads legacy "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.conductor/settings.managed.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", but TOML is the recommended format."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "example",
+      "children": [
+        {
+          "type": "text",
+          "value": "Example"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": "~/.conductor/settings.managed.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.toml.json\"\nenterprise_data_privacy = true\nclaude_code_executable_path = \"/opt/homebrew/bin/claude\"\n\n[models]\ndefault = \"gpt-5.5\"\n\n[environmentVariables.local]\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n\n[environmentVariables.cloud]\nOPENAI_BASE_URL = \"https://openai.example.com\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.toml.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "enterprise_data_privacy = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "claude_code_executable_path = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"/opt/homebrew/bin/claude\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "models",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"gpt-5.5\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environmentVariables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "local",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_BASE_URL = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://api.example.com\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environmentVariables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "cloud",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "OPENAI_BASE_URL = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://openai.example.com\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "settings-reference",
+      "children": [
+        {
+          "type": "text",
+          "value": "Settings reference"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the managed key list, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference#managed-settings"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "precedence",
+      "children": [
+        {
+          "type": "text",
+          "value": "Precedence"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed settings have the highest precedence. When a managed file defines a supported setting, it overrides the normal settings stack:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Managed settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Project overrides."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository shared settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "User shared settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Built-in defaults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full settings precedence model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Managed settings build on Conductor's normal <a href=\"/docs/reference/settings/user-project\">user and project settings model</a>. In that model, user settings provide personal defaults, repository shared settings define project behavior, and project overrides apply to one project on one machine.</p><p>Managed settings add one organization-controlled layer above that stack. They are for organizations that need to enforce selected Conductor settings on a user's Mac. Most users should configure user and project settings instead.</p><p>Managed values override user and repository settings, disable the matching controls in Settings, and are used when Conductor launches agents. Managed settings are provisional.</p><h2 id=\"file-location\"><a href=\"#file-location\">File location</a></h2><p>Write managed TOML settings to:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">~/.conductor/settings.managed.toml</span></code></pre></figure><p>Conductor still reads legacy <code>~/.conductor/settings.managed.json</code>, but TOML is the recommended format.</p><h2 id=\"example\"><a href=\"#example\">Example</a></h2><figure data-code data-lang=\"toml\" data-title=\"~/.conductor/settings.managed.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.toml.json\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">claude_code_executable_path = </span><span style=\"color:#032F62\">\"/opt/homebrew/bin/claude\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">models</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#032F62\">\"gpt-5.5\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environmentVariables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">local</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL = </span><span style=\"color:#032F62\">\"https://api.example.com\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environmentVariables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">cloud</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">OPENAI_BASE_URL = </span><span style=\"color:#032F62\">\"https://openai.example.com\"</span></span></code></pre></figure><h2 id=\"settings-reference\"><a href=\"#settings-reference\">Settings reference</a></h2><p>For the managed key list, see <a href=\"/docs/reference/settings/reference#managed-settings\">Settings reference</a>.</p><h2 id=\"precedence\"><a href=\"#precedence\">Precedence</a></h2><p>Managed settings have the highest precedence. When a managed file defines a supported setting, it overrides the normal settings stack:</p><ol><li>Managed settings.</li><li>Project overrides.</li><li>Repository shared settings.</li><li>User shared settings.</li><li>Built-in defaults.</li></ol><p>For the full settings precedence model, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>.</p>",
+  "text": "Managed settings build on Conductor's normal user and project settings model. In that model, user settings provide personal defaults, repository shared settings define project behavior, and project overrides apply to one project on one machine.\nManaged settings add one organization-controlled layer above that stack. They are for organizations that need to enforce selected Conductor settings on a user's Mac. Most users should configure user and project settings instead.\nManaged values override user and repository settings, disable the matching controls in Settings, and are used when Conductor launches agents. Managed settings are provisional.\nFile location\nWrite managed TOML settings to:\n~/.conductor/settings.managed.tomlConductor still reads legacy ~/.conductor/settings.managed.json, but TOML is the recommended format.\nExample\n\"$schema\" = \"https://conductor.build/schemas/settings.toml.json\"\nenterprise_data_privacy = true\nclaude_code_executable_path = \"/opt/homebrew/bin/claude\"\n[models]\ndefault = \"gpt-5.5\"\n[environmentVariables.local]\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n[environmentVariables.cloud]\nOPENAI_BASE_URL = \"https://openai.example.com\"Settings reference\nFor the managed key list, see Settings reference.\nPrecedence\nManaged settings have the highest precedence. When a managed file defines a supported setting, it overrides the normal settings stack:\nManaged settings.\nProject overrides.\nRepository shared settings.\nUser shared settings.\nBuilt-in defaults.\nFor the full settings precedence model, see User and project settings.",
+  "markdown": "\n# Managed settings\n\n\n\nManaged settings build on Conductor's normal [user and project settings model](/docs/reference/settings/user-project). In that model, user settings provide personal defaults, repository shared settings define project behavior, and project overrides apply to one project on one machine.\n\nManaged settings add one organization-controlled layer above that stack. They are for organizations that need to enforce selected Conductor settings on a user's Mac. Most users should configure user and project settings instead.\n\nManaged values override user and repository settings, disable the matching controls in Settings, and are used when Conductor launches agents. Managed settings are provisional.\n\n## File location [#file-location]\n\nWrite managed TOML settings to:\n\n```text\n~/.conductor/settings.managed.toml\n```\n\nConductor still reads legacy `~/.conductor/settings.managed.json`, but TOML is the recommended format.\n\n## Example [#example]\n\n```toml title=\"~/.conductor/settings.managed.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.toml.json\"\nenterprise_data_privacy = true\nclaude_code_executable_path = \"/opt/homebrew/bin/claude\"\n\n[models]\ndefault = \"gpt-5.5\"\n\n[environmentVariables.local]\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n\n[environmentVariables.cloud]\nOPENAI_BASE_URL = \"https://openai.example.com\"\n```\n\n## Settings reference [#settings-reference]\n\nFor the managed key list, see [Settings reference](/docs/reference/settings/reference#managed-settings).\n\n## Precedence [#precedence]\n\nManaged settings have the highest precedence. When a managed file defines a supported setting, it overrides the normal settings stack:\n\n1. Managed settings.\n2. Project overrides.\n3. Repository shared settings.\n4. User shared settings.\n5. Built-in defaults.\n\nFor the full settings precedence model, see [User and project settings](/docs/reference/settings/user-project).\n"
+}

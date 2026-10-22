@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+  "version": "0.25.11",
+  "versionSlug": "0.25.11",
+  "title": "Fetch Comments from GitHub, Mark Workspaces as Unread",
+  "fullTitle": "0.25.11: Fetch Comments from GitHub, Mark Workspaces as Unread",
+  "date": "Dec 13th, 2025",
+  "dateISO": "2025-12-13",
+  "description": "Conductor 0.25.11 changelog - Fetch Comments from GitHub, Mark Workspaces as Unread",
+  "summary": "Fetch comments from GitHub in one click when changes are requested on your PR!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.11/326a54db-735e-4591-b893-959cace0c218.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.11-fetch-comments-from-github-mark-workspaces-as-unread/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.11-fetch-comments-from-github-mark-workspaces-as-unread",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Fetch comments from GitHub in one click when changes are requested on your PR!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.11/326a54db-735e-4591-b893-959cace0c218.png\"/></figure>\n<p>You can also now mark workspaces as unread!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.11/42a38686-f552-4493-84c4-3a7bf7156f5f.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>You can now search by PR number in the command palette (<code>⌘K</code>)</li>\n<li>Simpler message duration formatting</li>\n<li>We&#x27;ve reorganized the Settings page. It should take fewer clicks to find the most relevant settings!</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed environment variables not being cleared when unset in settings</li>\n<li>Fixed visual issues with loading animations</li>\n<li>Removed hover state CSS transitions. Hovering should feel snappier throughout the app.</li>\n<li>Fixed <code>/add-dir</code> sometimes not running</li>\n<li>Fixed resolved comments not being filtered when fetching comments from GitHub</li>\n<li>Fixed slash commands not getting processed when sent as the first message in a chat or when thinking was enabled</li>\n<li>The revert button will now only show when it will succeed</li>\n<li>Better unicode support in Mermaid diagrams</li>\n</ul>",
+  "markdown": "\nFetch comments from GitHub in one click when changes are requested on your PR!\n\n<img\n    width=\"862\"\n    height=\"72\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.11/326a54db-735e-4591-b893-959cace0c218.png\"\n/>\n\nYou can also now mark workspaces as unread!\n\n<img\n    width=\"660\"\n    height=\"272\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.11/42a38686-f552-4493-84c4-3a7bf7156f5f.png\"\n/>\n\n## Improvements\n\n- You can now search by PR number in the command palette (`⌘K`)\n- Simpler message duration formatting\n- We've reorganized the Settings page. It should take fewer clicks to find the most relevant settings!\n\n## Fixes\n\n- Fixed environment variables not being cleared when unset in settings\n- Fixed visual issues with loading animations\n- Removed hover state CSS transitions. Hovering should feel snappier throughout the app.\n- Fixed `/add-dir` sometimes not running\n- Fixed resolved comments not being filtered when fetching comments from GitHub\n- Fixed slash commands not getting processed when sent as the first message in a chat or when thinking was enabled\n- The revert button will now only show when it will succeed\n- Better unicode support in Mermaid diagrams\n"
+}

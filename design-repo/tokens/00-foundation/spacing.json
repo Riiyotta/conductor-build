@@ -1,0 +1,145 @@
+{
+  "$description": "4px-based spacing steps that are actually used (Tailwind step name -> px).",
+  "spacing": {
+    "1": {
+      "$value": "4px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:168",
+          "quote": "rest state `translate-y-1` (4px)"
+        }
+      ]
+    },
+    "1.5": {
+      "$value": "6px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:144",
+          "quote": "flex gap 6px"
+        }
+      ]
+    },
+    "2": {
+      "$value": "8px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:123",
+          "quote": "Attribution `footer.mt-2` (8px)"
+        }
+      ]
+    },
+    "3": {
+      "$value": "12px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:120",
+          "quote": "`grid grid-cols-1 gap-3 sm:grid-cols-2` (12px gap)"
+        }
+      ]
+    },
+    "4": {
+      "$value": "16px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:134",
+          "quote": "`section.px-4.pb-16.pt-6` (24px top, 64px bottom, 16px sides)"
+        }
+      ]
+    },
+    "5": {
+      "$value": "20px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:256",
+          "quote": "Quote link `mt-5` (20px)"
+        }
+      ]
+    },
+    "6": {
+      "$value": "24px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:149",
+          "quote": "Single column 704px, row gap 24px."
+        }
+      ]
+    },
+    "8": {
+      "$value": "32px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:115",
+          "quote": "`mb-8` (32px)"
+        }
+      ]
+    },
+    "10": {
+      "$value": "40px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:257",
+          "quote": "Cards `mt-10` (40px)"
+        }
+      ]
+    },
+    "12": {
+      "$value": "48px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:250",
+          "quote": "Footer link `mt-12` (48px)"
+        }
+      ]
+    },
+    "14": {
+      "$value": "56px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:266",
+          "quote": "\"View all\" `mt-14` (56px)"
+        }
+      ]
+    },
+    "16": {
+      "$value": "64px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:289",
+          "quote": "Bottom row `mt-16` (64px)"
+        }
+      ]
+    },
+    "24": {
+      "$value": "96px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:254",
+          "quote": "`px-8 py-24` at lg (96px top/bottom"
+        }
+      ]
+    },
+    "32": {
+      "$value": "128px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:233",
+          "quote": "`section.px-8.py-32` at sm+ (32px sides, 128px top/bottom"
+        }
+      ]
+    }
+  }
+}

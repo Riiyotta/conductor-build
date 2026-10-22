@@ -1,0 +1,27 @@
+{
+  "id": "accordion",
+  "kind": "component",
+  "purpose": "Single-open accordion group (docs).",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:254",
+      "quote": "function Accordions({ node }) {"
+    }
+  ],
+  "tokens": [
+    "{motion.duration.folder-collapse}"
+  ],
+  "variants": [
+    "single"
+  ],
+  "states": [
+    "closed",
+    "open"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:336",
+      "quote": "### 3.5 Accordions (`node: accordions` > `accordion`): Fumadocs `Accordions type=\"single\"` (11 groups, 29 items)"
+    }
+  ]
+}

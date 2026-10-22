@@ -1,0 +1,721 @@
+{
+  "slug": "guides/git-worktrees/run-codex-with-git-worktrees",
+  "url": "/docs/guides/git-worktrees/run-codex-with-git-worktrees",
+  "title": "Run Codex with Git worktrees",
+  "description": "Use Codex in Conductor workspaces so each task gets its own branch, files, and run environment",
+  "meta": {
+    "title": "Run Codex with Git worktrees | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/git-worktrees/run-codex-with-git-worktrees/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Git"
+    },
+    {
+      "name": "Run Codex with Git worktrees"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#run-codex-in-a-conductor-workspace",
+      "title": "Run Codex in a Conductor workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#add-the-repository-to-conductor",
+      "title": "Add the repository to Conductor"
+    },
+    {
+      "depth": 3,
+      "url": "#create-a-new-workspace-for-the-codex-task",
+      "title": "Create a new workspace for the Codex task"
+    },
+    {
+      "depth": 3,
+      "url": "#prepare-the-workspace-before-codex-starts",
+      "title": "Prepare the workspace before Codex starts"
+    },
+    {
+      "depth": 3,
+      "url": "#start-a-codex-chat-in-that-workspace",
+      "title": "Start a Codex chat in that workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#review-and-merge-from-the-workspace",
+      "title": "Review and merge from the workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#caveats-that-matter",
+      "title": "Caveats that matter"
+    },
+    {
+      "depth": 2,
+      "url": "#why-use-conductor-instead-of-raw-worktrees",
+      "title": "Why use Conductor instead of raw worktrees"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+    "title": "Run Claude Code with Git worktrees",
+    "description": "Use Claude Code in Conductor workspaces so parallel sessions get separate branches, files, and setup"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when you want Codex to work on a task without taking over your main checkout or colliding with another agent session."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor solves that by creating a separate workspace for the task, then keeping the Codex chat, branch, terminal, and review flow attached to that workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You do not need to start from Codex app's own Worktree mode. Conductor already creates a separate git worktree and branch for each workspace, then lets you choose Codex as the agent in that workspace."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/git-worktrees-codex-workspace.png",
+      "alt": "Conductor workspace created for a Codex task, showing the new branch, copied files, and completed setup"
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full Conductor workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the Git model behind that workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/git-worktrees"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git Worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For Codex's upstream worktree behavior, see the official "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://developers.openai.com/codex/app/worktrees",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex worktrees docs"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "run-codex-in-a-conductor-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Run Codex in a Conductor workspace"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "children": [
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "add-the-repository-to-conductor",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add the repository to Conductor"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the project in Conductor if it is not already there."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-a-new-workspace-for-the-codex-task",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a new workspace for the Codex task"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a workspace with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command N",
+                  "keys": [
+                    "⌘",
+                    "N"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": " when the Codex task should have its own branch, files, terminal commands, and review path."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor creates the workspace as its own git worktree and starts it from the repository's configured base branch."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "prepare-the-workspace-before-codex-starts",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Prepare the workspace before Codex starts"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Prepare the workspace the same way you would prepare any Conductor workspace:"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "ul",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "a",
+                      "attrs": {
+                        "href": "/docs/reference/files-to-copy"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Files to copy"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " for static gitignored files in local workspaces."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use a "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "a",
+                      "attrs": {
+                        "href": "/docs/reference/scripts#setup-scripts"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "setup script"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " for dependency installs, generated files, symlinks, and command-based preparation."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Use an "
+                    },
+                    {
+                      "type": "element",
+                      "tag": "a",
+                      "attrs": {
+                        "href": "/docs/reference/scripts#run-scripts"
+                      },
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "action"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " when the workspace should have a normal dev server or watcher behind the Run button."
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "start-a-codex-chat-in-that-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start a Codex chat in that workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the workspace and choose Codex as the agent for the session."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "That gives Codex a separate workspace path, branch, chat, terminal, diff, and PR flow without disturbing your main checkout or another active workspace."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "review-and-merge-from-the-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Review and merge from the workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "When the work is ready, use the Diff Viewer, Checks panel, and PR flow from the same Conductor workspace."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "caveats-that-matter",
+      "children": [
+        {
+          "type": "text",
+          "value": "Caveats that matter"
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Use separate workspaces when Codex work should land independently",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "In Conductor, separate workspaces are the default tool for independent Codex tasks. If two tasks should ship separately, give them separate workspaces rather than separate chats in one workspace."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Cloud and local setup are not the same",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy currently runs for local Mac workspaces. If a Codex workflow must behave the same in cloud workspaces, put the required preparation in "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "scripts.setup"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " instead of relying only on copied local files."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "why-use-conductor-instead-of-raw-worktrees",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why use Conductor instead of raw worktrees"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor gives Codex the surrounding workflow that raw worktrees do not:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A workspace per task, branch, and agent chat."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for ignored local files that new local workspaces need."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#setup-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Setup scripts"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#run-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "actions"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " per workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GitHub review and PR flow attached to the workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A clean way to run Codex beside Claude Code or other workspaces in parallel."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your main challenge is bringing "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and similar files into new workspaces, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/use-files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Use Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". If you are setting up Conductor for the first time, start with "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/first-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Your first workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For the broader multi-session workflow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/parallel-agents/run-multiple-codex-sessions"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Run multiple Codex sessions in parallel"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when you want Codex to work on a task without taking over your main checkout or colliding with another agent session.</p><p>Conductor solves that by creating a separate workspace for the task, then keeping the Codex chat, branch, terminal, and review flow attached to that workspace.</p><p>You do not need to start from Codex app's own Worktree mode. Conductor already creates a separate git worktree and branch for each workspace, then lets you choose Codex as the agent in that workspace.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/git-worktrees-codex-workspace.png\" alt=\"Conductor workspace created for a Codex task, showing the new branch, copied files, and completed setup\" /></figure><p>For the full Conductor workflow, see <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>. For the Git model behind that workflow, see <a href=\"/docs/concepts/git-worktrees\">Git Worktrees</a>. For Codex's upstream worktree behavior, see the official <a href=\"https://developers.openai.com/codex/app/worktrees\" target=\"_blank\" rel=\"noopener noreferrer\">Codex worktrees docs</a>.</p><h2 id=\"run-codex-in-a-conductor-workspace\"><a href=\"#run-codex-in-a-conductor-workspace\">Run Codex in a Conductor workspace</a></h2><div data-steps><div data-step><h3 id=\"add-the-repository-to-conductor\"><a href=\"#add-the-repository-to-conductor\">Add the repository to Conductor</a></h3><p>Open the project in Conductor if it is not already there.</p></div><div data-step><h3 id=\"create-a-new-workspace-for-the-codex-task\"><a href=\"#create-a-new-workspace-for-the-codex-task\">Create a new workspace for the Codex task</a></h3><p>Create a workspace with <span data-shortcut aria-label=\"Command N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>N</kbd></span> when the Codex task should have its own branch, files, terminal commands, and review path.</p><p>Conductor creates the workspace as its own git worktree and starts it from the repository's configured base branch.</p></div><div data-step><h3 id=\"prepare-the-workspace-before-codex-starts\"><a href=\"#prepare-the-workspace-before-codex-starts\">Prepare the workspace before Codex starts</a></h3><p>Prepare the workspace the same way you would prepare any Conductor workspace:</p><ul><li>Use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> for static gitignored files in local workspaces.</li><li>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> for dependency installs, generated files, symlinks, and command-based preparation.</li><li>Use an <a href=\"/docs/reference/scripts#run-scripts\">action</a> when the workspace should have a normal dev server or watcher behind the Run button.</li></ul></div><div data-step><h3 id=\"start-a-codex-chat-in-that-workspace\"><a href=\"#start-a-codex-chat-in-that-workspace\">Start a Codex chat in that workspace</a></h3><p>Open the workspace and choose Codex as the agent for the session.</p><p>That gives Codex a separate workspace path, branch, chat, terminal, diff, and PR flow without disturbing your main checkout or another active workspace.</p></div><div data-step><h3 id=\"review-and-merge-from-the-workspace\"><a href=\"#review-and-merge-from-the-workspace\">Review and merge from the workspace</a></h3><p>When the work is ready, use the Diff Viewer, Checks panel, and PR flow from the same Conductor workspace.</p></div></div><h2 id=\"caveats-that-matter\"><a href=\"#caveats-that-matter\">Caveats that matter</a></h2><div data-accordions=\"single\"><details data-accordion><summary>Use separate workspaces when Codex work should land independently</summary><p>In Conductor, separate workspaces are the default tool for independent Codex tasks. If two tasks should ship separately, give them separate workspaces rather than separate chats in one workspace.</p></details><details data-accordion><summary>Cloud and local setup are not the same</summary><p>Files to copy currently runs for local Mac workspaces. If a Codex workflow must behave the same in cloud workspaces, put the required preparation in <code>scripts.setup</code> instead of relying only on copied local files.</p></details></div><h2 id=\"why-use-conductor-instead-of-raw-worktrees\"><a href=\"#why-use-conductor-instead-of-raw-worktrees\">Why use Conductor instead of raw worktrees</a></h2><p>Conductor gives Codex the surrounding workflow that raw worktrees do not:</p><ul><li>A workspace per task, branch, and agent chat.</li><li><a href=\"/docs/reference/files-to-copy\">Files to copy</a> for ignored local files that new local workspaces need.</li><li><a href=\"/docs/reference/scripts#setup-scripts\">Setup scripts</a> and <a href=\"/docs/reference/scripts#run-scripts\">actions</a> per workspace.</li><li>GitHub review and PR flow attached to the workspace.</li><li>A clean way to run Codex beside Claude Code or other workspaces in parallel.</li></ul><p>If your main challenge is bringing <code>.env.local</code> and similar files into new workspaces, see <a href=\"/docs/guides/use-files-to-copy\">Use Files to copy</a>. If you are setting up Conductor for the first time, start with <a href=\"/docs/first-workspace\">Your first workspace</a>. For the broader multi-session workflow, see <a href=\"/docs/guides/parallel-agents/run-multiple-codex-sessions\">Run multiple Codex sessions in parallel</a>.</p>",
+  "text": "Use this guide when you want Codex to work on a task without taking over your main checkout or colliding with another agent session.\nConductor solves that by creating a separate workspace for the task, then keeping the Codex chat, branch, terminal, and review flow attached to that workspace.\nYou do not need to start from Codex app's own Worktree mode. Conductor already creates a separate git worktree and branch for each workspace, then lets you choose Codex as the agent in that workspace.\nFor the full Conductor workflow, see Run multiple Codex sessions in parallel. For the Git model behind that workflow, see Git Worktrees. For Codex's upstream worktree behavior, see the official Codex worktrees docs.\nRun Codex in a Conductor workspace\nAdd the repository to Conductor\nOpen the project in Conductor if it is not already there.\nCreate a new workspace for the Codex task\nCreate a workspace with ⌘N when the Codex task should have its own branch, files, terminal commands, and review path.\nConductor creates the workspace as its own git worktree and starts it from the repository's configured base branch.\nPrepare the workspace before Codex starts\nPrepare the workspace the same way you would prepare any Conductor workspace:\nUse Files to copy for static gitignored files in local workspaces.\nUse a setup script for dependency installs, generated files, symlinks, and command-based preparation.\nUse an action when the workspace should have a normal dev server or watcher behind the Run button.\nStart a Codex chat in that workspace\nOpen the workspace and choose Codex as the agent for the session.\nThat gives Codex a separate workspace path, branch, chat, terminal, diff, and PR flow without disturbing your main checkout or another active workspace.\nReview and merge from the workspace\nWhen the work is ready, use the Diff Viewer, Checks panel, and PR flow from the same Conductor workspace.\nCaveats that matter\nUse separate workspaces when Codex work should land independentlyIn Conductor, separate workspaces are the default tool for independent Codex tasks. If two tasks should ship separately, give them separate workspaces rather than separate chats in one workspace.\nCloud and local setup are not the sameFiles to copy currently runs for local Mac workspaces. If a Codex workflow must behave the same in cloud workspaces, put the required preparation in scripts.setup instead of relying only on copied local files.\nWhy use Conductor instead of raw worktrees\nConductor gives Codex the surrounding workflow that raw worktrees do not:\nA workspace per task, branch, and agent chat.\nFiles to copy for ignored local files that new local workspaces need.\nSetup scripts and actions per workspace.\nGitHub review and PR flow attached to the workspace.\nA clean way to run Codex beside Claude Code or other workspaces in parallel.\nIf your main challenge is bringing .env.local and similar files into new workspaces, see Use Files to copy. If you are setting up Conductor for the first time, start with Your first workspace. For the broader multi-session workflow, see Run multiple Codex sessions in parallel.",
+  "markdown": "\n# Run Codex with Git worktrees\n\n\n\nUse this guide when you want Codex to work on a task without taking over your main checkout or colliding with another agent session.\n\nConductor solves that by creating a separate workspace for the task, then keeping the Codex chat, branch, terminal, and review flow attached to that workspace.\n\nYou do not need to start from Codex app's own Worktree mode. Conductor already creates a separate git worktree and branch for each workspace, then lets you choose Codex as the agent in that workspace.\n\n\n\n\nFor the full Conductor workflow, see [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions). For the Git model behind that workflow, see [Git Worktrees](/docs/concepts/git-worktrees). For Codex's upstream worktree behavior, see the official [Codex worktrees docs](https://developers.openai.com/codex/app/worktrees).\n\n## Run Codex in a Conductor workspace [#run-codex-in-a-conductor-workspace]\n\n### Add the repository to Conductor [#add-the-repository-to-conductor]\n\nOpen the project in Conductor if it is not already there.\n\n### Create a new workspace for the Codex task [#create-a-new-workspace-for-the-codex-task]\n\nCreate a workspace with Command + N when the Codex task should have its own branch, files, terminal commands, and review path.\n\nConductor creates the workspace as its own git worktree and starts it from the repository's configured base branch.\n\n### Prepare the workspace before Codex starts [#prepare-the-workspace-before-codex-starts]\n\nPrepare the workspace the same way you would prepare any Conductor workspace:\n\n* Use [Files to copy](/docs/reference/files-to-copy) for static gitignored files in local workspaces.\n* Use a [setup script](/docs/reference/scripts#setup-scripts) for dependency installs, generated files, symlinks, and command-based preparation.\n* Use an [action](/docs/reference/scripts#run-scripts) when the workspace should have a normal dev server or watcher behind the Run button.\n\n### Start a Codex chat in that workspace [#start-a-codex-chat-in-that-workspace]\n\nOpen the workspace and choose Codex as the agent for the session.\n\nThat gives Codex a separate workspace path, branch, chat, terminal, diff, and PR flow without disturbing your main checkout or another active workspace.\n\n### Review and merge from the workspace [#review-and-merge-from-the-workspace]\n\nWhen the work is ready, use the Diff Viewer, Checks panel, and PR flow from the same Conductor workspace.\n\n## Caveats that matter [#caveats-that-matter]\n\nIn Conductor, separate workspaces are the default tool for independent Codex tasks. If two tasks should ship separately, give them separate workspaces rather than separate chats in one workspace.\n\nFiles to copy currently runs for local Mac workspaces. If a Codex workflow must behave the same in cloud workspaces, put the required preparation in `scripts.setup` instead of relying only on copied local files.\n\n## Why use Conductor instead of raw worktrees [#why-use-conductor-instead-of-raw-worktrees]\n\nConductor gives Codex the surrounding workflow that raw worktrees do not:\n\n* A workspace per task, branch, and agent chat.\n* [Files to copy](/docs/reference/files-to-copy) for ignored local files that new local workspaces need.\n* [Setup scripts](/docs/reference/scripts#setup-scripts) and [actions](/docs/reference/scripts#run-scripts) per workspace.\n* GitHub review and PR flow attached to the workspace.\n* A clean way to run Codex beside Claude Code or other workspaces in parallel.\n\nIf your main challenge is bringing `.env.local` and similar files into new workspaces, see [Use Files to copy](/docs/guides/use-files-to-copy). If you are setting up Conductor for the first time, start with [Your first workspace](/docs/first-workspace). For the broader multi-session workflow, see [Run multiple Codex sessions in parallel](/docs/guides/parallel-agents/run-multiple-codex-sessions).\n"
+}

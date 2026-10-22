@@ -1,0 +1,1071 @@
+{
+  "version": "1.0.0",
+  "$description": "One entry per distinct page shape. Node order, template ids and route counts mirror ia.json exactly (verify_all.py checks parity when ia.json is present). Every node is required and non-repeatable because every route of a template renders the identical section sequence; content (not sections) varies per route.",
+  "templates": {
+    "template.home": {
+      "name": "Homepage",
+      "chrome": "marketing-sans-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.home",
+          "variant": "default",
+          "iaSection": "hero.home",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "proof.trusted-logo-strip",
+          "variant": "default",
+          "iaSection": "proof.trusted-logo-strip",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "features.feature-shell",
+          "variant": "multiplayer",
+          "iaSection": "features.multiplayer",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "features.feature-shell",
+          "variant": "cloud-sandbox",
+          "iaSection": "features.cloud-sandbox",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "features.feature-shell",
+          "variant": "byok",
+          "iaSection": "features.byok",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "features.feature-shell",
+          "variant": "anywhere",
+          "iaSection": "features.anywhere",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "proof.testimonials",
+          "variant": "default",
+          "iaSection": "proof.testimonials",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.changelog-preview",
+          "variant": "default",
+          "iaSection": "content.changelog-preview",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "conversion.be-like-this-guy",
+          "variant": "default",
+          "iaSection": "conversion.be-like-this-guy",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-sans",
+          "variant": "default",
+          "iaSection": "shell.footer-sans",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:290",
+          "quote": "\"id\": \"template.home\""
+        },
+        {
+          "ref": "src/pages/Home.jsx:14",
+          "quote": "export default function Home() {"
+        }
+      ]
+    },
+    "template.pricing": {
+      "name": "Pricing",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/pricing"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.pricing-title",
+          "variant": "default",
+          "iaSection": "hero.pricing-title",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.pricing-plans",
+          "variant": "default",
+          "iaSection": "content.pricing-plans",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "proof.trusted-logo-strip",
+          "variant": "default",
+          "iaSection": "proof.trusted-logo-strip",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.pricing-faq",
+          "variant": "default",
+          "iaSection": "content.pricing-faq",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:314",
+          "quote": "\"id\": \"template.pricing\""
+        },
+        {
+          "ref": "src/pages/Pricing.jsx:259",
+          "quote": "export default function Pricing() {"
+        }
+      ]
+    },
+    "template.enterprise": {
+      "name": "Enterprise contact",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/enterprise"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.page-header",
+          "variant": "max-w-3xl",
+          "iaSection": "hero.page-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.prose-article",
+          "variant": "default",
+          "iaSection": "content.prose-article",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "proof.enterprise-logo-grid",
+          "variant": "default",
+          "iaSection": "proof.enterprise-logo-grid",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "conversion.enterprise-contact-form",
+          "variant": "default",
+          "iaSection": "conversion.enterprise-contact-form",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:333",
+          "quote": "\"id\": \"template.enterprise\""
+        },
+        {
+          "ref": "src/pages/Enterprise.jsx:45",
+          "quote": "<HubSpotForm variant=\"enterprise\""
+        }
+      ]
+    },
+    "template.team-plan": {
+      "name": "Team plan request",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/team-plan"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.page-header",
+          "variant": "max-w-2xl",
+          "iaSection": "hero.page-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "conversion.team-plan-form-scrollbox",
+          "variant": "default",
+          "iaSection": "conversion.team-plan-form-scrollbox",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:352",
+          "quote": "\"id\": \"template.team-plan\""
+        },
+        {
+          "ref": "src/pages/TeamPlan.jsx:23",
+          "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+        }
+      ]
+    },
+    "template.prose-page": {
+      "name": "Prose page (Slack integration)",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/slack"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.page-header",
+          "variant": "max-w-3xl",
+          "iaSection": "hero.page-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.prose-article",
+          "variant": "default",
+          "iaSection": "content.prose-article",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:369",
+          "quote": "\"id\": \"template.prose-page\""
+        },
+        {
+          "ref": "src/pages/Slack.jsx:26",
+          "quote": "/assets/pages/slack/slack-search.png"
+        }
+      ]
+    },
+    "template.join-us": {
+      "name": "Join us (careers)",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/join-us"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.page-header",
+          "variant": "max-w-3xl",
+          "iaSection": "hero.page-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.prose-article",
+          "variant": "default",
+          "iaSection": "content.prose-article",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.join-us-apply-card",
+          "variant": "default",
+          "iaSection": "content.join-us-apply-card",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.join-us-team-photo",
+          "variant": "default",
+          "iaSection": "content.join-us-team-photo",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.join-us-team-cards",
+          "variant": "default",
+          "iaSection": "content.join-us-team-cards",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:386",
+          "quote": "\"id\": \"template.join-us\""
+        },
+        {
+          "ref": "src/pages/JoinUs.jsx:151",
+          "quote": "export default function JoinUs() {"
+        }
+      ]
+    },
+    "template.brandkit": {
+      "name": "Brand kit",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 1,
+        "exact": [
+          "/brandkit"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "hero.brandkit-header",
+          "variant": "default",
+          "iaSection": "hero.brandkit-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.brandkit-download-card",
+          "variant": "default",
+          "iaSection": "content.brandkit-download-card",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.brandkit-asset-cards",
+          "variant": "default",
+          "iaSection": "content.brandkit-asset-cards",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.brandkit-about",
+          "variant": "default",
+          "iaSection": "content.brandkit-about",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:406",
+          "quote": "\"id\": \"template.brandkit\""
+        },
+        {
+          "ref": "src/pages/Brandkit.jsx:157",
+          "quote": "export default function Brandkit() {"
+        }
+      ]
+    },
+    "template.legal": {
+      "name": "Legal document",
+      "chrome": "marketing-mono-footer",
+      "routes": {
+        "count": 2,
+        "exact": [
+          "/privacy",
+          "/terms"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "content.legal-prose",
+          "variant": "default",
+          "iaSection": "content.legal-prose",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:425",
+          "quote": "\"id\": \"template.legal\""
+        },
+        {
+          "ref": "src/components/pages/LegalLayout.jsx:6",
+          "quote": "export default function LegalLayout({ title, description, children }) {"
+        }
+      ]
+    },
+    "template.docs-page": {
+      "name": "Docs page",
+      "chrome": "docs-shell",
+      "routes": {
+        "count": 69,
+        "pattern": "/docs/{slug-path}",
+        "regex": "^/docs(/[a-z0-9][a-z0-9-]*)*$",
+        "sample": [
+          "/docs",
+          "/docs/installation",
+          "/docs/first-workspace",
+          "/docs/reference/conductor-json",
+          "/docs/reference/keyboard-shortcuts",
+          "/docs/api/mcp",
+          "/docs/guides/parallel-agents/run-multiple-claude-code-sessions"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.docs-subnav",
+          "variant": "default",
+          "iaSection": "shell.docs-subnav",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "docs.sidebar",
+          "variant": "default",
+          "iaSection": "docs.sidebar",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.mobile-drawer",
+          "variant": "default",
+          "iaSection": "docs.mobile-drawer",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "docs.breadcrumb",
+          "variant": "default",
+          "iaSection": "docs.breadcrumb",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.page-title",
+          "variant": "default",
+          "iaSection": "docs.page-title",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.prose-body",
+          "variant": "default",
+          "iaSection": "docs.prose-body",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.prev-next",
+          "variant": "default",
+          "iaSection": "docs.prev-next",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.toc",
+          "variant": "default",
+          "iaSection": "docs.toc",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "docs.search-dialog",
+          "variant": "default",
+          "iaSection": "docs.search-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:441",
+          "quote": "\"id\": \"template.docs-page\""
+        },
+        {
+          "ref": "src/pages/docs/DocsPage.jsx:104",
+          "quote": "export default function DocsPage() {"
+        }
+      ]
+    },
+    "template.changelog-index": {
+      "name": "Changelog index (paginated)",
+      "chrome": "changelog-shell",
+      "routes": {
+        "count": 21,
+        "pattern": "/changelog/page/{N}",
+        "regex": "^/changelog(/page/([2-9]|1[0-9]|2[01]))?$",
+        "sample": [
+          "/changelog",
+          "/changelog/page/2",
+          "/changelog/page/21"
+        ],
+        "range": [
+          2,
+          21
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "changelog.entry-list",
+          "variant": "default",
+          "iaSection": "changelog.entry-list",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "changelog.pagination",
+          "variant": "default",
+          "iaSection": "changelog.pagination",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:473",
+          "quote": "\"id\": \"template.changelog-index\""
+        },
+        {
+          "ref": "src/pages/changelog/ChangelogIndex.jsx:5",
+          "quote": "ChangelogPager"
+        }
+      ]
+    },
+    "template.changelog-post": {
+      "name": "Changelog post",
+      "chrome": "changelog-shell",
+      "routes": {
+        "count": 207,
+        "pattern": "/changelog/{version-slug}",
+        "regex": "^/changelog/(?!page/)[0-9]+\\.[0-9]+\\.[0-9]+-[a-z0-9.-]+$",
+        "sample": [
+          "/changelog/0.91.0-a-mostly-boring-update",
+          "/changelog/0.90.0-conductor-for-ios",
+          "/changelog/0.69.0-opencode",
+          "/changelog/0.0.16-terminal-improvements"
+        ]
+      },
+      "nodes": [
+        {
+          "section": "shell.header",
+          "variant": "default",
+          "iaSection": "shell.header",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "shell.mobile-menu",
+          "variant": "default",
+          "iaSection": "shell.mobile-menu",
+          "required": true,
+          "repeatable": false,
+          "slot": "chrome"
+        },
+        {
+          "section": "changelog.back-link",
+          "variant": "default",
+          "iaSection": "changelog.back-link",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "changelog.post-entry",
+          "variant": "default",
+          "iaSection": "changelog.post-entry",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.footer-mono",
+          "variant": "default",
+          "iaSection": "shell.footer-mono",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "shell.download-dialog",
+          "variant": "default",
+          "iaSection": "shell.download-dialog",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        },
+        {
+          "section": "shell.downloading-screen",
+          "variant": "default",
+          "iaSection": "shell.downloading-screen",
+          "required": true,
+          "repeatable": false,
+          "slot": "overlay"
+        }
+      ],
+      "measuredFrom": [
+        {
+          "ref": "ia.json:492",
+          "quote": "\"id\": \"template.changelog-post\""
+        },
+        {
+          "ref": "src/pages/changelog/ChangelogPost.jsx:55",
+          "quote": "Back to changelog"
+        }
+      ]
+    }
+  },
+  "specialRoutes": {
+    "/404 (any unmatched path)": {
+      "inIA": false,
+      "countedInRoutes": false,
+      "description": "Retro terminal NotFound page with no header/footer; whole viewport links home; typewriter 4-10ms/char, 530ms cursor blink, noindex.",
+      "measuredFrom": [
+        {
+          "ref": "src/pages/NotFound.jsx:5",
+          "quote": "// 404: replica of the original's `NotFoundTerminal`"
+        },
+        {
+          "ref": "src/App.jsx:56",
+          "quote": "<Route path=\"*\" element={<NotFound />} />"
+        }
+      ]
+    }
+  }
+}

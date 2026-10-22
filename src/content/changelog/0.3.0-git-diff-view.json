@@ -1,0 +1,36 @@
+{
+  "slug": "0.3.0-git-diff-view",
+  "version": "0.3.0",
+  "versionSlug": "0.3.0",
+  "title": "Git Diff View",
+  "fullTitle": "0.3.0: Git Diff View",
+  "date": "August 2nd, 2025",
+  "dateISO": "2025-08-02",
+  "description": "Conductor 0.3.0 changelog - Git Diff View",
+  "summary": "You can now see your up-to-date git status directly in the sidebar!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.3.0/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9.png",
+    "alt": "CleanShot 2025-08-01 at 19 50 38@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.3.0-git-diff-view/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.3.0-git-diff-view",
+  "sourceUrl": "https://www.conductor.build/changelog/0.3.0-git-diff-view",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Other improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>You can now see your up-to-date git status directly in the sidebar!</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-01 at 19 50 38@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.3.0/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9.png\"/></figure>\n<p>We&#x27;ve also improved diff rendering and added an option to filter by commit:</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-01 at 19 51 21@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.3.0/b6da7db7-94af-40b9-8067-d1cd82bdeb3b.png\"/></figure>\n<h3>Other improvements</h3>\n<ul>\n<li>When Claude returns an error, there&#x27;s a new &quot;Retry Message&quot; button</li>\n<li>You can now collapse repos in the sidebar</li>\n<li>You can now drag-and-drop to add a new repo on the home page</li>\n<li>When you resize the right sidebar panels, Conductor will now remember your settings</li>\n<li>Conductor will now auto-detect your repository&#x27;s default branch when you first clone it</li>\n<li>Cleaned up the UI for adding new repositories</li>\n<li>Added keyboard shortcuts for toggling the theme (⌘⇧T) and sending feedback (⌘⇧F)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where <code>@</code> autocomplete suggestions would be hidden behind suggested git actions</li>\n<li>Fixed a styling issue with hover state in the sidebar</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>We&#x27;ve removed the &quot;% context used&quot; indicator because the numbers Anthropic gives us don&#x27;t let us estimate this reliably</li>\n<li>We have a new email address: <a href=\"mailto:humans@conductor.build\">humans@conductor.build</a>. The feedback, bug reports, and suggestions have been super helpful—please keep them coming!</li>\n</ul>",
+  "markdown": "\nYou can now see your up-to-date git status directly in the sidebar!\n\n<img\n    width=\"3184\"\n    height=\"2050\"\n    alt=\"CleanShot 2025-08-01 at 19 50 38@2x\"\n    src=\"/assets/changelog/media/0.3.0/772fdf5a-b276-4c21-8e4d-6d65a3a31cb9.png\"\n/>\n\nWe've also improved diff rendering and added an option to filter by commit:\n\n<img\n    width=\"2872\"\n    height=\"1852\"\n    alt=\"CleanShot 2025-08-01 at 19 51 21@2x\"\n    src=\"/assets/changelog/media/0.3.0/b6da7db7-94af-40b9-8067-d1cd82bdeb3b.png\"\n/>\n\n## Other improvements\n\n- When Claude returns an error, there's a new \"Retry Message\" button\n- You can now collapse repos in the sidebar\n- You can now drag-and-drop to add a new repo on the home page\n- When you resize the right sidebar panels, Conductor will now remember your settings\n- Conductor will now auto-detect your repository's default branch when you first clone it\n- Cleaned up the UI for adding new repositories\n- Added keyboard shortcuts for toggling the theme (⌘⇧T) and sending feedback (⌘⇧F)\n\n## Fixes\n\n- Fixed a bug where `@` autocomplete suggestions would be hidden behind suggested git actions\n- Fixed a styling issue with hover state in the sidebar\n\n## Misc\n\n- We've removed the \"% context used\" indicator because the numbers Anthropic gives us don't let us estimate this reliably\n- We have a new email address: [humans@conductor.build](mailto:humans@conductor.build). The feedback, bug reports, and suggestions have been super helpful—please keep them coming!\n"
+}

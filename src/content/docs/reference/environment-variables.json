@@ -1,0 +1,978 @@
+{
+  "slug": "reference/environment-variables",
+  "url": "/docs/reference/environment-variables",
+  "title": "Conductor environment variables",
+  "description": "Variables available to workspace terminals, agents, and scripts",
+  "meta": {
+    "title": "Conductor environment variables | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/environment-variables/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Conductor environment variables"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#configure-custom-variables",
+      "title": "Configure custom variables"
+    },
+    {
+      "depth": 2,
+      "url": "#common-uses",
+      "title": "Common uses"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/worktreeinclude",
+    "title": ".worktreeinclude",
+    "description": "Previous Page"
+  },
+  "next": {
+    "url": "/docs/reference/shells",
+    "title": "Shell configuration",
+    "description": "Configure shell setup"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor makes these environment variables available in workspace terminals,\nagents, and "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Cloud workspaces do not receive\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_DEFAULT_BRANCH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/environment-variables"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "cloud workspace environment\nvariables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for cloud-specific details."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Variable"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_NAME"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace display name. Local workspaces fall back to their directory name; cloud workspaces set it only when a display name is available."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_ROOT_PATH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Repository root path. In a cloud workspace, this is the same as "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_WORKSPACE_PATH"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_DEFAULT_BRANCH"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Target branch for local workspaces, usually "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "main"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ". Not set in cloud workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_BASE_DIR"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Parent directory of the cloud workspace. Not set in local workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_PORT"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "First port in a range of 10 ports assigned to a local workspace. Not set in cloud workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_IS_LOCAL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "1"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " in local workspaces and "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "0"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " in cloud workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_URL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Conductor API base URL. Set in every cloud workspace and not set in local workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_TOKEN"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace-scoped API token in new machine-launched cloud workspaces by default. Each user can configure automatic API access separately for each organization in "
+              },
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "strong",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings → General"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ". Changes affect only new workspaces; existing workspaces and tokens are unchanged. Not set automatically in other cloud or local workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your own Conductor API key when you configure one; it takes precedence over the workspace token. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_SESSION_ID"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Current session ID in agent processes on current workspaces. It is not available to setup scripts or ordinary terminal processes, and older cloud sandboxes may not have it. Send it as the optional "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "X-Conductor-Session-Id"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " API header."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "configure-custom-variables",
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure custom variables"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use settings when every agent, terminal, setup script, or action in a repository needs the same custom environment variables:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[environment_variables]\nAPI_BASE_URL = \"http://localhost:3000\"\n\n[environment_variables.local]\nCONDUCTOR_TARGET = \"local\"\n\n[environment_variables.cloud]\nCONDUCTOR_TARGET = \"cloud\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "API_BASE_URL = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"http://localhost:3000\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "local",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "CONDUCTOR_TARGET = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "cloud",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "CONDUCTOR_TARGET = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"cloud\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "environment_variables"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for values shared by local and cloud agents. Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "environment_variables.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "environment_variables.cloud"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when a value should only apply to one execution environment. Do not commit secrets to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for machine-local secret values. For the full key reference, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "common-uses",
+      "children": [
+        {
+          "type": "text",
+          "value": "Common uses"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_ROOT_PATH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when a setup script needs a file from the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "ln -s \"$CONDUCTOR_ROOT_PATH/.env\" .env",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "ln",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -s",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_ROOT_PATH",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/.env\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .env",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when multiple workspaces need to run the same app without port conflicts:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "npm run dev -- --port \"$CONDUCTOR_PORT\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "npm",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " run",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " dev",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " --port",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_PORT",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For script behavior, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor makes these environment variables available in workspace terminals,\nagents, and <a href=\"/docs/reference/scripts\">scripts</a>. Cloud workspaces do not receive\n<code>CONDUCTOR_PORT</code> or <code>CONDUCTOR_DEFAULT_BRANCH</code>; see <a href=\"/docs/cloud/environment-variables\">cloud workspace environment\nvariables</a> for cloud-specific details.</p><table><thead><tr><th>Variable</th><th>Description</th></tr></thead><tbody><tr><td><code>CONDUCTOR_WORKSPACE_NAME</code></td><td>Workspace display name. Local workspaces fall back to their directory name; cloud workspaces set it only when a display name is available.</td></tr><tr><td><code>CONDUCTOR_WORKSPACE_PATH</code></td><td>Workspace path.</td></tr><tr><td><code>CONDUCTOR_ROOT_PATH</code></td><td>Repository root path. In a cloud workspace, this is the same as <code>CONDUCTOR_WORKSPACE_PATH</code>.</td></tr><tr><td><code>CONDUCTOR_DEFAULT_BRANCH</code></td><td>Target branch for local workspaces, usually <code>main</code>. Not set in cloud workspaces.</td></tr><tr><td><code>CONDUCTOR_BASE_DIR</code></td><td>Parent directory of the cloud workspace. Not set in local workspaces.</td></tr><tr><td><code>CONDUCTOR_PORT</code></td><td>First port in a range of 10 ports assigned to a local workspace. Not set in cloud workspaces.</td></tr><tr><td><code>CONDUCTOR_IS_LOCAL</code></td><td><code>1</code> in local workspaces and <code>0</code> in cloud workspaces.</td></tr><tr><td><code>CONDUCTOR_API_URL</code></td><td>Conductor API base URL. Set in every cloud workspace and not set in local workspaces.</td></tr><tr><td><code>CONDUCTOR_API_TOKEN</code></td><td>Workspace-scoped API token in new machine-launched cloud workspaces by default. Each user can configure automatic API access separately for each organization in <a href=\"https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Settings → General</strong></a>. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Not set automatically in other cloud or local workspaces.</td></tr><tr><td><code>CONDUCTOR_API_KEY</code></td><td>Your own Conductor API key when you configure one; it takes precedence over the workspace token. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here.</td></tr><tr><td><code>CONDUCTOR_SESSION_ID</code></td><td>Current session ID in agent processes on current workspaces. It is not available to setup scripts or ordinary terminal processes, and older cloud sandboxes may not have it. Send it as the optional <code>X-Conductor-Session-Id</code> API header.</td></tr></tbody></table><h2 id=\"configure-custom-variables\"><a href=\"#configure-custom-variables\">Configure custom variables</a></h2><p>Use settings when every agent, terminal, setup script, or action in a repository needs the same custom environment variables:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">API_BASE_URL = </span><span style=\"color:#032F62\">\"http://localhost:3000\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">local</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">CONDUCTOR_TARGET = </span><span style=\"color:#032F62\">\"local\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">cloud</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">CONDUCTOR_TARGET = </span><span style=\"color:#032F62\">\"cloud\"</span></span></code></pre></figure><p>Use <code>environment_variables</code> for values shared by local and cloud agents. Use <code>environment_variables.local</code> and <code>environment_variables.cloud</code> when a value should only apply to one execution environment. Do not commit secrets to <code>.conductor/settings.toml</code>; use <code>.conductor/settings.local.toml</code> for machine-local secret values. For the full key reference, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>.</p><h2 id=\"common-uses\"><a href=\"#common-uses\">Common uses</a></h2><p>Use <code>CONDUCTOR_ROOT_PATH</code> when a setup script needs a file from the repository root:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">ln</span><span style=\"color:#005CC5\"> -s</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$CONDUCTOR_ROOT_PATH</span><span style=\"color:#032F62\">/.env\"</span><span style=\"color:#032F62\"> .env</span></span></code></pre></figure><p>Use <code>CONDUCTOR_PORT</code> when multiple workspaces need to run the same app without port conflicts:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">npm</span><span style=\"color:#032F62\"> run</span><span style=\"color:#032F62\"> dev</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#005CC5\"> --port</span><span style=\"color:#032F62\"> \"</span><span style=\"color:#24292E\">$CONDUCTOR_PORT</span><span style=\"color:#032F62\">\"</span></span></code></pre></figure><p>For script behavior, see <a href=\"/docs/reference/scripts\">Scripts</a>.</p>",
+  "text": "Conductor makes these environment variables available in workspace terminals,\nagents, and scripts. Cloud workspaces do not receive\nCONDUCTOR_PORT or CONDUCTOR_DEFAULT_BRANCH; see cloud workspace environment\nvariables for cloud-specific details.\nVariableDescriptionCONDUCTOR_WORKSPACE_NAMEWorkspace display name. Local workspaces fall back to their directory name; cloud workspaces set it only when a display name is available.CONDUCTOR_WORKSPACE_PATHWorkspace path.CONDUCTOR_ROOT_PATHRepository root path. In a cloud workspace, this is the same as CONDUCTOR_WORKSPACE_PATH.CONDUCTOR_DEFAULT_BRANCHTarget branch for local workspaces, usually main. Not set in cloud workspaces.CONDUCTOR_BASE_DIRParent directory of the cloud workspace. Not set in local workspaces.CONDUCTOR_PORTFirst port in a range of 10 ports assigned to a local workspace. Not set in cloud workspaces.CONDUCTOR_IS_LOCAL1 in local workspaces and 0 in cloud workspaces.CONDUCTOR_API_URLConductor API base URL. Set in every cloud workspace and not set in local workspaces.CONDUCTOR_API_TOKENWorkspace-scoped API token in new machine-launched cloud workspaces by default. Each user can configure automatic API access separately for each organization in Settings → General. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Not set automatically in other cloud or local workspaces.CONDUCTOR_API_KEYYour own Conductor API key when you configure one; it takes precedence over the workspace token. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here.CONDUCTOR_SESSION_IDCurrent session ID in agent processes on current workspaces. It is not available to setup scripts or ordinary terminal processes, and older cloud sandboxes may not have it. Send it as the optional X-Conductor-Session-Id API header.Configure custom variables\nUse settings when every agent, terminal, setup script, or action in a repository needs the same custom environment variables:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[environment_variables]\nAPI_BASE_URL = \"http://localhost:3000\"\n[environment_variables.local]\nCONDUCTOR_TARGET = \"local\"\n[environment_variables.cloud]\nCONDUCTOR_TARGET = \"cloud\"Use environment_variables for values shared by local and cloud agents. Use environment_variables.local and environment_variables.cloud when a value should only apply to one execution environment. Do not commit secrets to .conductor/settings.toml; use .conductor/settings.local.toml for machine-local secret values. For the full key reference, see Settings reference.\nCommon uses\nUse CONDUCTOR_ROOT_PATH when a setup script needs a file from the repository root:\nln -s \"$CONDUCTOR_ROOT_PATH/.env\" .envUse CONDUCTOR_PORT when multiple workspaces need to run the same app without port conflicts:\nnpm run dev -- --port \"$CONDUCTOR_PORT\"For script behavior, see Scripts.",
+  "markdown": "\n# Conductor environment variables\n\n\n\nConductor makes these environment variables available in workspace terminals,\nagents, and [scripts](/docs/reference/scripts). Cloud workspaces do not receive\n`CONDUCTOR_PORT` or `CONDUCTOR_DEFAULT_BRANCH`; see [cloud workspace environment\nvariables](/docs/cloud/environment-variables) for cloud-specific details.\n\n| Variable                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                       |\n| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `CONDUCTOR_WORKSPACE_NAME` | Workspace display name. Local workspaces fall back to their directory name; cloud workspaces set it only when a display name is available.                                                                                                                                                                                                                                                                                        |\n| `CONDUCTOR_WORKSPACE_PATH` | Workspace path.                                                                                                                                                                                                                                                                                                                                                                                                                   |\n| `CONDUCTOR_ROOT_PATH`      | Repository root path. In a cloud workspace, this is the same as `CONDUCTOR_WORKSPACE_PATH`.                                                                                                                                                                                                                                                                                                                                       |\n| `CONDUCTOR_DEFAULT_BRANCH` | Target branch for local workspaces, usually `main`. Not set in cloud workspaces.                                                                                                                                                                                                                                                                                                                                                  |\n| `CONDUCTOR_BASE_DIR`       | Parent directory of the cloud workspace. Not set in local workspaces.                                                                                                                                                                                                                                                                                                                                                             |\n| `CONDUCTOR_PORT`           | First port in a range of 10 ports assigned to a local workspace. Not set in cloud workspaces.                                                                                                                                                                                                                                                                                                                                     |\n| `CONDUCTOR_IS_LOCAL`       | `1` in local workspaces and `0` in cloud workspaces.                                                                                                                                                                                                                                                                                                                                                                              |\n| `CONDUCTOR_API_URL`        | Conductor API base URL. Set in every cloud workspace and not set in local workspaces.                                                                                                                                                                                                                                                                                                                                             |\n| `CONDUCTOR_API_TOKEN`      | Workspace-scoped API token in new machine-launched cloud workspaces by default. Each user can configure automatic API access separately for each organization in [**Settings → General**](https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access). Changes affect only new workspaces; existing workspaces and tokens are unchanged. Not set automatically in other cloud or local workspaces. |\n| `CONDUCTOR_API_KEY`        | Your own Conductor API key when you configure one; it takes precedence over the workspace token. When you don't supply your own, workspaces that receive an automatic token also set it here, and older cloud workspaces set their automatic workspace-scoped credential only here.                                                                                                                                               |\n| `CONDUCTOR_SESSION_ID`     | Current session ID in agent processes on current workspaces. It is not available to setup scripts or ordinary terminal processes, and older cloud sandboxes may not have it. Send it as the optional `X-Conductor-Session-Id` API header.                                                                                                                                                                                         |\n\n## Configure custom variables [#configure-custom-variables]\n\nUse settings when every agent, terminal, setup script, or action in a repository needs the same custom environment variables:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[environment_variables]\nAPI_BASE_URL = \"http://localhost:3000\"\n\n[environment_variables.local]\nCONDUCTOR_TARGET = \"local\"\n\n[environment_variables.cloud]\nCONDUCTOR_TARGET = \"cloud\"\n```\n\nUse `environment_variables` for values shared by local and cloud agents. Use `environment_variables.local` and `environment_variables.cloud` when a value should only apply to one execution environment. Do not commit secrets to `.conductor/settings.toml`; use `.conductor/settings.local.toml` for machine-local secret values. For the full key reference, see [Settings reference](/docs/reference/settings/reference).\n\n## Common uses [#common-uses]\n\nUse `CONDUCTOR_ROOT_PATH` when a setup script needs a file from the repository root:\n\n```bash\nln -s \"$CONDUCTOR_ROOT_PATH/.env\" .env\n```\n\nUse `CONDUCTOR_PORT` when multiple workspaces need to run the same app without port conflicts:\n\n```bash\nnpm run dev -- --port \"$CONDUCTOR_PORT\"\n```\n\nFor script behavior, see [Scripts](/docs/reference/scripts).\n"
+}

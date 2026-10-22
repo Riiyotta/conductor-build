@@ -1,0 +1,32 @@
+{
+  "slug": "0.34.1-editable-pr-titles-and-descriptions",
+  "version": "0.34.1",
+  "versionSlug": "0.34.1",
+  "title": "Editable PR titles and descriptions ",
+  "fullTitle": "0.34.1: Editable PR titles and descriptions ",
+  "date": "Feb 6th, 2026",
+  "dateISO": "2026-02-06",
+  "description": "Conductor 0.34.1 changelog - Editable PR titles and descriptions ",
+  "summary": "You can now edit PR titles and descriptions in the Checks tab! When you ask the AI to create a PR it will use the values you provided.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.34.1/1770405777147-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.34.1-editable-pr-titles-and-descriptions/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.34.1-editable-pr-titles-and-descriptions",
+  "sourceUrl": "https://www.conductor.build/changelog/0.34.1-editable-pr-titles-and-descriptions",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now edit PR titles and descriptions in the Checks tab! When you ask the AI to create a PR it will use the values you provided.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.34.1/1770405777147-image.png\"/></figure></p>\n<p>We’ve also improved several of the prompts used throughout Conductor, including for code review and chat summarization.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added UI rendering for agent swarm tools</li>\n<li>Non-image files can now be pasted into the Composer</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where images copied in Conductor could not be pasted into the Composer</li>\n<li>Fixed inconsistent tool icon sizing</li>\n<li>Fixed certain unicode characters not rendering in the terminal</li>\n</ul>",
+  "markdown": "\nYou can now edit PR titles and descriptions in the Checks tab! When you ask the AI to create a PR it will use the values you provided.\n![image](/assets/changelog/media/0.34.1/1770405777147-image.png)\n\nWe’ve also improved several of the prompts used throughout Conductor, including for code review and chat summarization.\n\n## Improvements\n\n- Added UI rendering for agent swarm tools\n- Non-image files can now be pasted into the Composer\n\n## Fixes\n\n- Fixed a bug where images copied in Conductor could not be pasted into the Composer\n- Fixed inconsistent tool icon sizing\n- Fixed certain unicode characters not rendering in the terminal\n"
+}

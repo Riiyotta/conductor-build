@@ -1,0 +1,2054 @@
+{
+ "url": "https://www.conductor.build/pricing",
+ "title": "Pricing | Conductor",
+ "desc": "Choose the Conductor plan that fits how you and your team work.",
+ "docH": 5390,
+ "docW": 390,
+ "vw": 390,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 57,
+   "top": 0,
+   "right": 390,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 4881,
+ "footerH": 509,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Flogos%2Fyc-wordmark-orange.png&w=3840&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/about.webp"
+ ],
+ "anims": [],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    390,
+    4824
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.[--site-content-width:80rem].md:py-24",
+   "b": [
+    0,
+    57,
+    390,
+    4824
+   ],
+   "p": "64px 16px",
+   "mw": "1280px"
+  },
+  {
+   "k": "h1.text-center.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    16,
+    121,
+    358,
+    36
+   ],
+   "t": "Pricing",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center"
+  },
+  {
+   "k": "section.relative.flex.h-full.flex-col.rounded-xl.border.border-border.bg-background.p-6",
+   "b": [
+    16,
+    197,
+    358,
+    364
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "12px",
+   "p": "24px",
+   "d": "flex column ai:normal jc:normal",
+   "pos": "relative"
+  },
+  {
+   "k": "h2.text-lg.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    222,
+    308,
+    28
+   ],
+   "t": "Free",
+   "f": "18px/28px 600 ls:-0.45px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.flex.items-baseline.gap-1.text-3xl.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    266,
+    308,
+    36
+   ],
+   "t": "$0",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "d": "flex row ai:baseline jc:normal gap:4px"
+  },
+  {
+   "k": "button.inline-flex.items-center.whitespace-nowrap.ring-offset-background.focus-visible:outline-none.focus-visible:ring-2.focus-visible:ring-foreground/35.focus-visible:ring-offset-2.disabled:pointer-events-none.disabled:",
+   "b": [
+    41,
+    338,
+    308,
+    36
+   ],
+   "t": "Download",
+   "f": "12px/16px 700 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center",
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "6px",
+   "p": "16px 12px",
+   "d": "inline-flex row ai:center jc:center gap:8px",
+   "cur": "pointer",
+   "ws": "nowrap"
+  },
+  {
+   "k": "ul.space-y-2.5",
+   "b": [
+    41,
+    406,
+    308,
+    130
+   ]
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    406,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    406,
+    288,
+    20
+   ],
+   "t": "Run multiple coding agents in parallel",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    436,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    436,
+    288,
+    20
+   ],
+   "t": "Local workspaces on your Mac",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    466,
+    12,
+    40
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    466,
+    288,
+    40
+   ],
+   "t": "Integrate with the newest frontier and open source models",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    516,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    516,
+    288,
+    20
+   ],
+   "t": "Bring your own subscriptions and keys",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.relative.flex.h-full.flex-col.rounded-xl.border.border-border.bg-background.p-6",
+   "b": [
+    16,
+    581,
+    358,
+    392
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "12px",
+   "p": "24px",
+   "d": "flex column ai:normal jc:normal",
+   "pos": "relative"
+  },
+  {
+   "k": "div.inline-flex.items-center.text-xs.focus:outline-none.focus:ring-2.focus:ring-ring.focus:ring-offset-2.font-mono.tracking-wider.uppercase.bg-tip-secondary.border.border-tip-secondary-border.text-tip-muted.py-0.5.absolu",
+   "b": [
+    37,
+    570,
+    111.9,
+    22
+   ],
+   "t": "Most popular",
+   "f": "12px/16px 400 ls:0.6px  uppercase ff:ui-monospace, SFMono-Regular, ",
+   "c": "rgb(125, 94, 89)",
+   "bg": "rgb(248, 247, 246)",
+   "bd": "1px 1px 1px 1px solid rgb(243, 236, 231)",
+   "rad": "8px",
+   "p": "2px 8px",
+   "d": "flex row ai:center jc:normal",
+   "pos": "absolute"
+  },
+  {
+   "k": "h2.text-lg.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    606,
+    308,
+    28
+   ],
+   "t": "Pro",
+   "f": "18px/28px 600 ls:-0.45px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.flex.items-baseline.gap-1.text-3xl.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    650,
+    308,
+    36
+   ],
+   "t": "$50",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "d": "flex row ai:baseline jc:normal gap:4px"
+  },
+  {
+   "k": "span.text-sm.font-normal.tracking-normal.text-muted-foreground",
+   "b": [
+    100.5,
+    664,
+    24.3,
+    20
+   ],
+   "t": "/mo",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.items-center.justify-center.whitespace-nowrap.ring-offset-background.focus-visible:outline-none.focus-visible:ring-2.focus-visible:ring-foreground/35.focus-visible:ring-offset-2.disabled:pointer-events-none",
+   "b": [
+    41,
+    722,
+    308,
+    36
+   ],
+   "t": "Get Pro",
+   "f": "12px/16px 700 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(255, 255, 255)",
+   "bg": "rgb(44, 40, 38)",
+   "rad": "6px",
+   "p": "16px 12px",
+   "d": "inline-flex row ai:center jc:center gap:8px",
+   "cur": "pointer",
+   "ws": "nowrap",
+   "href": "https://app.conductor.build/pro"
+  },
+  {
+   "k": "p.mb-3.text-xs.font-medium.text-foreground",
+   "b": [
+    41,
+    790,
+    308,
+    16
+   ],
+   "t": "Everything in Free, plus:",
+   "f": "12px/16px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "ul.space-y-2.5",
+   "b": [
+    41,
+    818,
+    308,
+    130
+   ]
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    818,
+    12,
+    40
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    818,
+    288,
+    40
+   ],
+   "t": "Conductor Cloud and a bunch of cloud workspace hours",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    868,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    868,
+    288,
+    20
+   ],
+   "t": "Live collaboration with up to 5 Pro users",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    898,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    898,
+    288,
+    20
+   ],
+   "t": "Conductor API",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    928,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    928,
+    288,
+    20
+   ],
+   "t": "Conductor mobile app",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.relative.flex.h-full.flex-col.rounded-xl.border.border-border.bg-background.p-6",
+   "b": [
+    16,
+    993,
+    358,
+    342
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "12px",
+   "p": "24px",
+   "d": "flex column ai:normal jc:normal",
+   "pos": "relative"
+  },
+  {
+   "k": "h2.text-lg.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    1018,
+    308,
+    28
+   ],
+   "t": "Teams",
+   "f": "18px/28px 600 ls:-0.45px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.flex.items-baseline.gap-1.text-3xl.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    1062,
+    308,
+    36
+   ],
+   "t": "$60",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "d": "flex row ai:baseline jc:normal gap:4px"
+  },
+  {
+   "k": "span.text-sm.font-normal.tracking-normal.text-muted-foreground",
+   "b": [
+    101.3,
+    1076,
+    56.6,
+    20
+   ],
+   "t": "/mo/user",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.inline-flex.items-center.justify-center.whitespace-nowrap.ring-offset-background.focus-visible:outline-none.focus-visible:ring-2.focus-visible:ring-foreground/35.focus-visible:ring-offset-2.disabled:pointer-events-none",
+   "b": [
+    41,
+    1134,
+    308,
+    36
+   ],
+   "t": "Get Teams",
+   "f": "12px/16px 700 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(255, 255, 255)",
+   "bg": "rgb(44, 40, 38)",
+   "rad": "6px",
+   "p": "16px 12px",
+   "d": "inline-flex row ai:center jc:center gap:8px",
+   "cur": "pointer",
+   "ws": "nowrap",
+   "href": "https://app.conductor.build/teams?interval=monthly"
+  },
+  {
+   "k": "p.mb-3.text-xs.font-medium.text-foreground",
+   "b": [
+    41,
+    1202,
+    308,
+    16
+   ],
+   "t": "Everything in Pro, plus:",
+   "f": "12px/16px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "ul.space-y-2.5",
+   "b": [
+    41,
+    1230,
+    308,
+    80
+   ]
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1230,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1230,
+    288,
+    20
+   ],
+   "t": "Live collaboration for teams of any size",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1260,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1260,
+    288,
+    20
+   ],
+   "t": "Admin portal",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1290,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1290,
+    288,
+    20
+   ],
+   "t": "Centralized billing",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.relative.flex.h-full.flex-col.rounded-xl.border.border-border.bg-background.p-6",
+   "b": [
+    16,
+    1355,
+    358,
+    402
+   ],
+   "bg": "rgb(255, 255, 255)",
+   "bd": "1px 1px 1px 1px solid rgb(234, 232, 230)",
+   "rad": "12px",
+   "p": "24px",
+   "d": "flex column ai:normal jc:normal",
+   "pos": "relative"
+  },
+  {
+   "k": "h2.text-lg.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    1380,
+    308,
+    28
+   ],
+   "t": "Enterprise",
+   "f": "18px/28px 600 ls:-0.45px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p.flex.items-baseline.gap-1.text-3xl.font-semibold.tracking-tight.text-foreground",
+   "b": [
+    41,
+    1424,
+    308,
+    36
+   ],
+   "t": "Custom",
+   "f": "30px/36px 600 ls:-0.75px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "d": "flex row ai:baseline jc:normal gap:4px"
+  },
+  {
+   "k": "a.inline-flex.items-center.justify-center.whitespace-nowrap.ring-offset-background.focus-visible:outline-none.focus-visible:ring-2.focus-visible:ring-foreground/35.focus-visible:ring-offset-2.disabled:pointer-events-none",
+   "b": [
+    41,
+    1496,
+    308,
+    36
+   ],
+   "t": "Learn more",
+   "f": "12px/16px 700 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(255, 255, 255)",
+   "bg": "rgb(44, 40, 38)",
+   "rad": "6px",
+   "p": "16px 12px",
+   "d": "inline-flex row ai:center jc:center gap:8px",
+   "cur": "pointer",
+   "ws": "nowrap",
+   "href": "/enterprise"
+  },
+  {
+   "k": "p.mb-3.text-xs.font-medium.text-foreground",
+   "b": [
+    41,
+    1564,
+    308,
+    16
+   ],
+   "t": "Everything in Teams, plus:",
+   "f": "12px/16px 500 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "ul.space-y-2.5",
+   "b": [
+    41,
+    1592,
+    308,
+    140
+   ]
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1592,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1592,
+    288,
+    20
+   ],
+   "t": "Data processing agreement (DPA)",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1622,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1622,
+    288,
+    20
+   ],
+   "t": "Purchase-order billing",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1652,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1652,
+    288,
+    20
+   ],
+   "t": "SAML SSO, SCIM",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1682,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1682,
+    288,
+    20
+   ],
+   "t": "Custom security and privacy settings",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    41,
+    1712,
+    12,
+    20
+   ],
+   "t": "└",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "span",
+   "b": [
+    61,
+    1712,
+    288,
+    20
+   ],
+   "t": "SLA and dedicated support channels",
+   "f": "12px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "section.px-4.pb-16.pt-6",
+   "b": [
+    16,
+    1797,
+    358,
+    220
+   ],
+   "p": "24px 16px 64px"
+  },
+  {
+   "k": "p.mb-6.w-full.text-center.text-xl.font-semibold.tracking-tight.text-foreground.sm:text-2xl",
+   "b": [
+    32,
+    1821,
+    326,
+    28
+   ],
+   "f": "20px/28px 600 ls:-0.5px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center",
+   "m": "0px 0px 24px"
+  },
+  {
+   "k": "span.sr-only",
+   "b": [
+    79.4,
+    1820,
+    1,
+    1
+   ],
+   "t": "Trusted by 100k+ builders",
+   "f": "20px/28px 600 ls:-0.5px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center",
+   "m": "-1px",
+   "pos": "absolute",
+   "ov": "hidden",
+   "ws": "nowrap"
+  },
+  {
+   "k": "span",
+   "b": [
+    80.4,
+    1823,
+    229.1,
+    23
+   ],
+   "t": "Trusted by builders",
+   "f": "20px/28px 600 ls:-0.5px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center",
+   "ah": 1
+  },
+  {
+   "k": "span.tabular-nums",
+   "b": [
+    177.2,
+    1823,
+    58,
+    23
+   ],
+   "t": "100k+",
+   "f": "20px/28px 600 ls:-0.5px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "ta": "center"
+  },
+  {
+   "k": "img.h-4.w-auto.dark:hidden.sm:h-6",
+   "b": [
+    34.8,
+    1881,
+    64,
+    16
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:400x100 alt:Linear"
+  },
+  {
+   "k": "img.h-3.5.w-auto.dark:hidden.sm:h-5",
+   "b": [
+    117.5,
+    1882,
+    69.5,
+    14
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:2048x407 alt:Vercel"
+  },
+  {
+   "k": "img.h-5.w-auto.dark:hidden.sm:h-8",
+   "b": [
+    208.9,
+    1879,
+    57.6,
+    20
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x104 alt:Notion"
+  },
+  {
+   "k": "img.h-5.w-auto.dark:hidden.sm:h-6",
+   "b": [
+    288.5,
+    1879,
+    69.5,
+    20
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x80 alt:Ramp"
+  },
+  {
+   "k": "img.h-auto.w-full.max-w-28.mix-blend-multiply.dark:mix-blend-screen.dark:invert.dark:hue-rotate-180.sm:max-w-36",
+   "b": [
+    32,
+    1930.1,
+    69.5,
+    13.9
+   ],
+   "mw": "112px",
+   "ov": "clip",
+   "mbm": "multiply",
+   "src": "https://www.conductor.build/_next/image?url=%2Flogos%2Fyc-wordmark-orange.png&w=3840&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:3208x640 alt:Y Combinator"
+  },
+  {
+   "k": "img.h-4.w-auto.dark:hidden.sm:h-6",
+   "b": [
+    120.3,
+    1929,
+    63.8,
+    16
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x75 alt:Square"
+  },
+  {
+   "k": "img.h-5.w-auto.sm:h-6",
+   "b": [
+    203,
+    1927,
+    37.1,
+    20
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/posthog-logomark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:279x150 alt:"
+  },
+  {
+   "k": "img.h-3.5.w-auto.sm:h-4",
+   "b": [
+    246.1,
+    1930,
+    56.6,
+    14
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/posthog-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x74 alt:PostHog"
+  },
+  {
+   "k": "img.h-4.w-auto.sm:h-6",
+   "b": [
+    293.7,
+    1929,
+    59.1,
+    16
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "fil": "brightness(0) saturate(1) invert(0.58) sepia(0.95) saturate(10.63) hue-rotate(87deg) brightness(0.92) contrast(0.86)",
+   "src": "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:96x26 alt:Spotify"
+  },
+  {
+   "k": "section.px-8.pt-8.text-sm.sm:pt-10",
+   "b": [
+    16,
+    2017,
+    358,
+    2800
+   ],
+   "p": "32px 32px 0px",
+   "aria": "Pricing FAQ"
+  },
+  {
+   "k": "dl.space-y-6",
+   "b": [
+    48,
+    2049,
+    294,
+    2768
+   ]
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    2049,
+    294,
+    20
+   ],
+   "t": "How do I get access to Cloud workspaces?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    2073,
+    14,
+    40
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2073,
+    272,
+    40
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2074,
+    258.2,
+    37
+   ],
+   "t": "Cloud workspaces are available to users on Pro, Teams, or Enterprise plans.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    2137,
+    294,
+    40
+   ],
+   "t": "What are the differences between Pro, Teams, and Enterprise plans?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    2181,
+    14,
+    524
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2181,
+    272,
+    200
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2182,
+    27.6,
+    17
+   ],
+   "t": "Our",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "em",
+   "b": [
+    97.6,
+    2182,
+    53.1,
+    17
+   ],
+   "t": "Pro plan",
+   "f": "14px/20px 400 ls:normal italic  ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2182,
+    267.8,
+    197
+   ],
+   "t": "is for individual users who want to get the most out of Conductor. Pro gets you access to cloud workspaces and all of our latest features like the Conductor API",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2393,
+    272,
+    180
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2394,
+    27.6,
+    17
+   ],
+   "t": "Our",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "em",
+   "b": [
+    97.6,
+    2394,
+    65.8,
+    17
+   ],
+   "t": "Team plan",
+   "f": "14px/20px 400 ls:normal italic  ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2394,
+    271.4,
+    177
+   ],
+   "t": "gets you all of Pro’s features to use across your company. And now with Conductor Multiplayer, users in the same Conductor org can collaborate live by sharing w",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2585,
+    272,
+    120
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2586,
+    27.6,
+    17
+   ],
+   "t": "Our",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "em",
+   "b": [
+    97.6,
+    2586,
+    97.4,
+    17
+   ],
+   "t": "Enterprise plan",
+   "f": "14px/20px 400 ls:normal italic  ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2586,
+    260.4,
+    117
+   ],
+   "t": "has all of Teams’ features with the additional security and privacy controls large organizations expect like automated user provisioning, SLA for dedicated supp",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    2729,
+    294,
+    40
+   ],
+   "t": "Can I have both a Pro plan and a Team plan?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    2773,
+    14,
+    172
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2773,
+    272,
+    80
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2774,
+    261,
+    77
+   ],
+   "t": "Yes. Pro is billed per person and lets you create cloud orgs with up to 5 Pro users total. It’s a good fit for small groups that don’t need centralized billing.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    2865,
+    272,
+    80
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    2866,
+    261.7,
+    77
+   ],
+   "t": "Team is billed per company. A Team seat doesn’t include Pro, so if you also want small cloud orgs outside your company, you’ll need a separate Pro plan.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    2969,
+    294,
+    40
+   ],
+   "t": "Do I have to use API keys to set up inference in cloud workspaces?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3013,
+    14,
+    60
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3013,
+    272,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3014,
+    257.4,
+    57
+   ],
+   "t": "No, just like local Conductor, you can bring your own subscriptions and/or API keys for cloud workspaces.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3097,
+    294,
+    40
+   ],
+   "t": "Do I have to pay an additional fee for cloud workspaces?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3141,
+    14,
+    60
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3141,
+    272,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3142,
+    270,
+    57
+   ],
+   "t": "Not right now, but we plan to introduce usage-based pricing for cloud compute in the future.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3225,
+    294,
+    40
+   ],
+   "t": "How are cloud workspaces different from local workspaces?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3269,
+    14,
+    192
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3269,
+    272,
+    100
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3270,
+    266.1,
+    97
+   ],
+   "t": "When you create a cloud workspace, we automatically create a Vercel sandbox for your agent to run in. Your agent works in the cloud so that even if you close th",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3381,
+    272,
+    80
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3382,
+    265,
+    77
+   ],
+   "t": "In contrast, local workspace sessions run on your local machine. When your machine shuts off or you close the app, sessions terminate.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3485,
+    294,
+    40
+   ],
+   "t": "What are the hardware specs of the sandboxes?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3529,
+    14,
+    40
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3529,
+    272,
+    40
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3530,
+    244.3,
+    37
+   ],
+   "t": "Each machine has an 8 core CPU with 16GB of RAM.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3593,
+    294,
+    40
+   ],
+   "t": "What comes pre-installed on the sandboxes?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3637,
+    14,
+    140
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3637,
+    272,
+    140
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3638,
+    268,
+    137
+   ],
+   "t": "Each machine runs Amazon Linux 2023 with the following software pre-installed: Node.js 24, npm, pnpm, Python 3, git, GitHub CLI, jq, ripgrep, git-lfs, tmux, and",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3801,
+    294,
+    40
+   ],
+   "t": "Where can I learn more about Vercel sandboxes?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3845,
+    14,
+    60
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3845,
+    272,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.underline.underline-offset-4.hover:text-foreground",
+   "b": [
+    70,
+    3846,
+    210.5,
+    17
+   ],
+   "t": "https://vercel.com/docs/sandbox",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(117, 111, 108) off:4px",
+   "cur": "pointer",
+   "href": "https://vercel.com/docs/sandbox target=_blank"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3846,
+    214.6,
+    37
+   ],
+   "t": ". Conductor Cloud was built in",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.underline.underline-offset-4.hover:text-foreground",
+   "b": [
+    70,
+    3866,
+    224.1,
+    37
+   ],
+   "t": "close collaboration with Vercel",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(117, 111, 108) off:4px",
+   "cur": "pointer",
+   "href": "https://vercel.com/customers/how-conductor-moved-parallel-coding-agents-from-the-laptop-to-the-cloud-with-vercel-sandbox target=_blank"
+  },
+  {
+   "k": "span",
+   "b": [
+    228.8,
+    3886,
+    4,
+    17
+   ],
+   "t": ".",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    3929,
+    294,
+    20
+   ],
+   "t": "Where are cloud workspaces hosted?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    3953,
+    14,
+    60
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    3953,
+    272,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    3954,
+    231.4,
+    37
+   ],
+   "t": "Our cloud workspaces are hosted in Vercel sandboxes based in the",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.underline.underline-offset-4.hover:text-foreground",
+   "b": [
+    70,
+    3974,
+    262,
+    37
+   ],
+   "t": "us-east-1 region",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(117, 111, 108) off:4px",
+   "cur": "pointer",
+   "href": "https://vercel.com/docs/regions target=_blank"
+  },
+  {
+   "k": "span",
+   "b": [
+    110.7,
+    3994,
+    4,
+    17
+   ],
+   "t": ".",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    4037,
+    294,
+    40
+   ],
+   "t": "Does Conductor have access to my data in cloud workspaces?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    4081,
+    14,
+    60
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    4081,
+    272,
+    60
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    4082,
+    271.2,
+    57
+   ],
+   "t": "Yes. Unlike with local Conductor sessions, chat messages sent in cloud workspaces are stored on Conductor’s servers.",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    4165,
+    294,
+    60
+   ],
+   "t": "Can you explain why data privacy is different between Cloud and Local Conductor?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    4229,
+    14,
+    232
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    4229,
+    272,
+    100
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "m": "0px 0px 12px"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    4230,
+    264.4,
+    97
+   ],
+   "t": "With local Conductor, your messages are sent directly to your coding model provider, and session data is stored on your device. Conductor never accesses your co",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    4341,
+    272,
+    120
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    4342,
+    267.4,
+    117
+   ],
+   "t": "With Cloud Conductor, sessions run in managed cloud sandboxes rather than on your device. As a result, Conductor must store your session inputs and outputs on o",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    4485,
+    294,
+    40
+   ],
+   "t": "Has Conductor completed a SOC 2 Type II audit?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    4529,
+    14,
+    100
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    4529,
+    272,
+    100
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    4530,
+    259.3,
+    97
+   ],
+   "t": "Yes. Conductor holds a SOC 2 Type II attestation. The full SOC 2 audit and our annual penetration test reports are available upon request through our trust cent",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.underline.underline-offset-4.hover:text-foreground",
+   "b": [
+    119.2,
+    4610,
+    134.9,
+    17
+   ],
+   "t": "trust.conductor.build",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(117, 111, 108) off:4px",
+   "cur": "pointer",
+   "href": "https://trust.conductor.build/ target=_blank"
+  },
+  {
+   "k": "dt.font-semibold.text-foreground",
+   "b": [
+    48,
+    4653,
+    294,
+    40
+   ],
+   "t": "Can I use my own cloud machines instead of Conductor’s?",
+   "f": "14px/20px 600 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "span",
+   "b": [
+    48,
+    4697,
+    14,
+    120
+   ],
+   "t": "└",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    70,
+    4697,
+    272,
+    120
+   ],
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "span",
+   "b": [
+    70,
+    4698,
+    265.3,
+    97
+   ],
+   "t": "Not at the moment, but our team is hard at work building a self-hosted cloud offering. If you are interested in exploring this as part of an Enterprise plan, pl",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)"
+  },
+  {
+   "k": "a.underline.underline-offset-4.hover:text-foreground",
+   "b": [
+    70,
+    4798,
+    251.4,
+    17
+   ],
+   "t": "https://www.conductor.build/enterprise",
+   "f": "14px/20px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "td": "underline rgb(117, 111, 108) off:4px",
+   "cur": "pointer",
+   "href": "https://www.conductor.build/enterprise target=_blank"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/pricing",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "11413"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79830"
+  },
+  {
+   "url": "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1612"
+  },
+  {
+   "url": "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "2224"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Flogos%2Fyc-wordmark-orange.png&w=3840&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "25588"
+  },
+  {
+   "url": "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1277"
+  },
+  {
+   "url": "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "897"
+  },
+  {
+   "url": "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1669"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "1348"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  }
+ ]
+}

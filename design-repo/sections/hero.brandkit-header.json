@@ -1,0 +1,85 @@
+{
+  "id": "hero.brandkit-header",
+  "category": "HERO",
+  "iaSections": [
+    "hero.brandkit-header"
+  ],
+  "purpose": "Brand-kit page header with eyebrow badge and short prose intro.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Brandkit.jsx:162",
+      "quote": "width=\"max-w-5xl\""
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:332",
+      "quote": "### 6.1 Header block"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "hero.brandkit-header"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "eyebrow": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "heading": {
+      "type": "text",
+      "maxWords": 5,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "lead": {
+      "type": "text",
+      "maxWords": 10,
+      "required": true,
+      "observedMaxWords": 8
+    },
+    "intro": {
+      "type": "text",
+      "maxWords": 40,
+      "required": true,
+      "observedMaxWords": 33
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.brandkit"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:96",
+        "quote": "There are no entrance or scroll animations"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

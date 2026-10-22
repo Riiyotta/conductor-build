@@ -1,0 +1,19 @@
+{
+  "slug": "0.32.2-bug-fixes",
+  "version": "0.32.2",
+  "versionSlug": "0.32.2",
+  "title": "Bug Fixes",
+  "fullTitle": "0.32.2: Bug Fixes",
+  "date": "Jan 23rd, 2026",
+  "dateISO": "2026-01-23",
+  "description": "Conductor 0.32.2 changelog - Bug Fixes",
+  "summary": "We've fixed a bug where messages could not be sent in a chat tab after closing it. This bug also affected archived workspaces.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.32.2-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.32.2-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.32.2-bug-fixes",
+  "headings": [],
+  "html": "<p>We&#x27;ve fixed a bug where messages could not be sent in a chat tab after closing it. This bug also affected archived workspaces.</p>",
+  "markdown": "\nWe've fixed a bug where messages could not be sent in a chat tab after closing it. This bug also affected archived workspaces.\n"
+}

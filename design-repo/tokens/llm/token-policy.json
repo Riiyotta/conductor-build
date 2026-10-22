@@ -1,0 +1,30 @@
+{
+  "version": "1.0.0",
+  "enforcement": {
+    "enforced": [
+      "Closed motion pattern/fallback enums (schema)",
+      "Closed assetRole enums and compliance pins (schema + semantic_validate.py)",
+      "maxWords per text field (semantic_validate.py)"
+    ],
+    "convention": [
+      "Reference tokens by path, never by raw value (no mechanism in a PageSpec can carry a raw value)"
+    ]
+  },
+  "rawValueRestrictions": {
+    "color": "No raw hex/rgb: reference color.* or semantic.*",
+    "fontFamily": "Only the three rendered stacks: sans, mono, prose (Geist is declared but never applied; do not ship Geist)",
+    "fontSize": "Only the measured type scale",
+    "fontWeight": "400, 500, 600, 700 (800 only for legal H1)",
+    "radius": "Only the radius scale; 6px for buttons, 8px for cards, 12px for demo/plan cards",
+    "elevation": "Only the listed shadows; no shadows on standalone pages other than the dialog",
+    "spacing": "Only the measured spacing steps"
+  },
+  "overrides": {
+    "pageSpecTokenOverrides": "none",
+    "note": "GAP, stated plainly (MASTER-GUIDE 3.21): this PageSpec schema has no per-instance style or token-override field. Styling is owned entirely by section/component contracts, so there is nothing at the PageSpec layer to validate or mutate. Token concerns are checked at the catalog/policy layer by verify_all.py (catalog recompute, policy key resolution, alias resolution) with a drift-injection test."
+  },
+  "themes": {
+    "light": "only rendered theme",
+    "dark": "not rendered on any measured route; none shipped"
+  }
+}

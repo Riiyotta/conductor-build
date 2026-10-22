@@ -1,0 +1,28 @@
+{
+  "slug": "0.38.1-0.38.2-new-terminal-perf-issues",
+  "version": "0.38.1-0.38.2",
+  "versionSlug": "0.38.1",
+  "title": "New Terminal, Perf Issues",
+  "fullTitle": "0.38.1-0.38.2: New Terminal, Perf Issues",
+  "date": "Mar 6th, 2026",
+  "dateISO": "2026-03-06",
+  "description": "Conductor 0.38.1-0.38.2 changelog - New Terminal, Perf Issues",
+  "summary": "We've rewritten the terminal from scratch for a faster, more reliable experience.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.38.1-0.38.2-new-terminal-perf-issues/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.38.1-0.38.2-new-terminal-perf-issues",
+  "sourceUrl": "https://www.conductor.build/changelog/0.38.1-0.38.2-new-terminal-perf-issues",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve rewritten the terminal from scratch for a faster, more reliable experience.</p>\n<p>We&#x27;ve also fixed a bug that could cause a runaway error loop to write huge log files. This update will limit the log file size and also clear out any large ones.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Rewrite the terminal for improved performance and reliability</li>\n<li>Update Claude Code to version 2.1.70</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix context usage parsing for the latest Claude Code output format</li>\n<li>Fix subagent rendering to recognize the latest Claude Code output format</li>\n</ul>",
+  "markdown": "\nWe've rewritten the terminal from scratch for a faster, more reliable experience.\n\nWe've also fixed a bug that could cause a runaway error loop to write huge log files. This update will limit the log file size and also clear out any large ones.\n\n## Improvements\n\n- Rewrite the terminal for improved performance and reliability\n- Update Claude Code to version 2.1.70\n\n## Fixes\n\n- Fix context usage parsing for the latest Claude Code output format\n- Fix subagent rendering to recognize the latest Claude Code output format\n"
+}

@@ -1,0 +1,52 @@
+{
+  "slug": "0.54.0-new-queue-diff-diffs",
+  "version": "0.54.0",
+  "versionSlug": "0.54.0",
+  "title": "New queue, diff diffs",
+  "fullTitle": "0.54.0: New queue, diff diffs",
+  "date": "May 18, 2026",
+  "dateISO": "2026-05-18",
+  "description": "Conductor 0.54.0 changelog - New queue, diff diffs",
+  "summary": "We’ve redesigned our message queue from the ground-up. Highlights:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.54.0/1779147467258-image.gif",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.54.0-new-queue-diff-diffs/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.54.0-new-queue-diff-diffs",
+  "sourceUrl": "https://www.conductor.build/changelog/0.54.0-new-queue-diff-diffs",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "New queue"
+    },
+    {
+      "depth": 3,
+      "title": "Diff diffs"
+    },
+    {
+      "depth": 3,
+      "title": "New provider / environment settings"
+    },
+    {
+      "depth": 3,
+      "title": "Quick links for preview deployments"
+    },
+    {
+      "depth": 3,
+      "title": "Rename workspaces"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>New queue</h3>\n<p>We’ve redesigned our message queue from the ground-up.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779147467258-image.gif\"/></figure>\nHighlights:</p>\n<ul>\n<li>Partial messages are preserved across edits</li>\n<li>Any queued message may be deleted, sent, or edited</li>\n<li>The queue pauses to prevent interruption during user edits</li>\n</ul>\n<p>With more improvements on the way!</p>\n<h3>Diff diffs</h3>\n<p>Better diffing &amp; commenting!\n“Next comment” (or ⌘⌥J) takes you to the next comment in a file\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779147467810-image.gif\"/></figure>\nDiffs may now be grouped by folder\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779147468411-image.gif\"/></figure>\nWhitespace diffs can also be hidden\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779147468742-image.gif\"/></figure></p>\n<h3>New provider / environment settings</h3>\n<p>We’ve refreshed our provider &amp; environment configuration UI to make it easier to configure by CLI &amp; API key\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779147469192-image.png\"/></figure>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779150280234-environment.gif\"/></figure></p>\n<h3>Quick links for preview deployments</h3>\n<p>Preview deployments are now linked from the git panel for faster access.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.54.0/1779148037026-image.png\"/></figure></p>\n<h3>Rename workspaces</h3>\n<p>You can now rename workspaces from the sidebar context menu.\n<figure data-asset><img alt=\"Rename workspace menu\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/workspace-rename-0.54.0.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Native <code>compact</code> support for Claude Code &amp; Codex</li>\n<li>Workspace renaming now preserves manual names and can optionally rename the local branch</li>\n<li>Prepare Conductor Cloud for release ☁️</li>\n<li>Changing tool approval mode now warns before restart</li>\n<li>Added environment diagnostics in Settings to help troubleshoot shell issues</li>\n<li>URLs in agent chat messages are now clickable</li>\n<li>Reopen the last visible workspace when Conductor relaunches</li>\n<li>The &quot;New workspace from&quot; dialog now remembers your last repo selection</li>\n<li>Added copy buttons for app log event details</li>\n<li>Added a sidebar filter option to sort workspaces by created or updated time</li>\n<li>You can now press Cmd+Shift+I to toggle writing all logs to the console</li>\n<li>Added a warning when older macOS versions may render diffs incorrectly</li>\n<li>Added PhpStorm as an Open in editor option</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where file changes for a chat turn could appear empty despite the agent having modified files</li>\n<li>Fixed an issue where sessions would get stuck in plan mode after the agent briefly entered and exited plan mode</li>\n<li>Fixed an issue where Option-key text input could be blocked in Conductor text fields</li>\n<li>Fixed an issue where Claude Code tool approvals could be skipped</li>\n<li>Fixed an issue where right-clicking near the bottom of the sidebar would sometimes activate the menu item under the cursor</li>\n<li>Fixed an issue where a restart confirmation dialog would show zero agents running</li>\n<li>Fixed an issue where messages could not be sent while the workspace setup script was running</li>\n<li>Fixed an issue where sample project onboarding could appear linked to an existing PR</li>\n<li>Fixed an issue where creating a workspace from a PR could use an older PR with the same branch name</li>\n<li>Fixed onboarding analytics so the intro step completion is logged</li>\n<li>Fixed onboarding sample project setup and sidebar state</li>\n<li>Fixed Claude login terminal behavior after successful login</li>\n<li>Fixed an issue where terminal input could appear before earlier command output finished rendering</li>\n<li>Fixed an issue where toast message text could not be selected</li>\n<li>Fixed an issue causing errors when archiving</li>\n<li>Hid scrollbars in the app log viewer</li>\n<li>Fixed an issue where workspace sidebar groups stayed expanded after switching grouping modes</li>\n<li>Fixed an issue where @ referencing files could lead to files being removed (thanks Dino Gane-Palmer)</li>\n</ul>",
+  "markdown": "\n## New queue\n\nWe’ve redesigned our message queue from the ground-up.\n![image](/assets/changelog/media/0.54.0/1779147467258-image.gif)\nHighlights:\n\n- Partial messages are preserved across edits\n- Any queued message may be deleted, sent, or edited\n- The queue pauses to prevent interruption during user edits\n\nWith more improvements on the way!\n\n## Diff diffs\n\nBetter diffing & commenting!\n“Next comment” (or ⌘⌥J) takes you to the next comment in a file\n![image](/assets/changelog/media/0.54.0/1779147467810-image.gif)\nDiffs may now be grouped by folder\n![image](/assets/changelog/media/0.54.0/1779147468411-image.gif)\nWhitespace diffs can also be hidden\n![image](/assets/changelog/media/0.54.0/1779147468742-image.gif)\n\n## New provider / environment settings\n\nWe’ve refreshed our provider & environment configuration UI to make it easier to configure by CLI & API key\n![image](/assets/changelog/media/0.54.0/1779147469192-image.png)\n![image](/assets/changelog/media/0.54.0/1779150280234-environment.gif)\n\n## Quick links for preview deployments\n\nPreview deployments are now linked from the git panel for faster access.\n![image](/assets/changelog/media/0.54.0/1779148037026-image.png)\n\n## Rename workspaces\n\nYou can now rename workspaces from the sidebar context menu.\n![Rename workspace menu](/assets/changelog/images/workspace-rename-0.54.0.png)\n\n## Improvements\n\n- Native `compact` support for Claude Code & Codex\n- Workspace renaming now preserves manual names and can optionally rename the local branch\n- Prepare Conductor Cloud for release ☁️\n- Changing tool approval mode now warns before restart\n- Added environment diagnostics in Settings to help troubleshoot shell issues\n- URLs in agent chat messages are now clickable\n- Reopen the last visible workspace when Conductor relaunches\n- The \"New workspace from\" dialog now remembers your last repo selection\n- Added copy buttons for app log event details\n- Added a sidebar filter option to sort workspaces by created or updated time\n- You can now press Cmd+Shift+I to toggle writing all logs to the console\n- Added a warning when older macOS versions may render diffs incorrectly\n- Added PhpStorm as an Open in editor option\n\n## Fixes\n\n- Fixed an issue where file changes for a chat turn could appear empty despite the agent having modified files\n- Fixed an issue where sessions would get stuck in plan mode after the agent briefly entered and exited plan mode\n- Fixed an issue where Option-key text input could be blocked in Conductor text fields\n- Fixed an issue where Claude Code tool approvals could be skipped\n- Fixed an issue where right-clicking near the bottom of the sidebar would sometimes activate the menu item under the cursor\n- Fixed an issue where a restart confirmation dialog would show zero agents running\n- Fixed an issue where messages could not be sent while the workspace setup script was running\n- Fixed an issue where sample project onboarding could appear linked to an existing PR\n- Fixed an issue where creating a workspace from a PR could use an older PR with the same branch name\n- Fixed onboarding analytics so the intro step completion is logged\n- Fixed onboarding sample project setup and sidebar state\n- Fixed Claude login terminal behavior after successful login\n- Fixed an issue where terminal input could appear before earlier command output finished rendering\n- Fixed an issue where toast message text could not be selected\n- Fixed an issue causing errors when archiving\n- Hid scrollbars in the app log viewer\n- Fixed an issue where workspace sidebar groups stayed expanded after switching grouping modes\n- Fixed an issue where @ referencing files could lead to files being removed (thanks Dino Gane-Palmer)\n"
+}

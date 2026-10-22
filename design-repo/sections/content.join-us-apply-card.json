@@ -1,0 +1,76 @@
+{
+  "id": "content.join-us-apply-card",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.join-us-apply-card"
+  ],
+  "purpose": "Single dashed call-to-apply card linking to the jobs board.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/JoinUs.jsx:176",
+      "quote": "/assets/pages/join-us/icon-arrow-up-right.svg"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:281",
+      "quote": "2. **Apply card**"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.join-us-apply-card"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 5,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "body": {
+      "type": "text",
+      "maxWords": 16,
+      "required": true,
+      "observedMaxWords": 13
+    },
+    "href": {
+      "type": "url",
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.join-us"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:283",
+        "quote": "**Hover bg rgba(250,250,249,.5)** over 150ms (measured)."
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

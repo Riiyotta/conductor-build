@@ -1,0 +1,659 @@
+{
+  "slug": "reference/harnesses/cursor",
+  "url": "/docs/reference/harnesses/cursor",
+  "title": "Cursor",
+  "description": "Details for running the Cursor Agent harness inside Conductor",
+  "meta": {
+    "title": "Cursor | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/harnesses/cursor/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Cursor"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#setup-notes",
+      "title": "Setup notes"
+    },
+    {
+      "depth": 2,
+      "url": "#mcp",
+      "title": "MCP"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/harnesses/codex",
+    "title": "Codex",
+    "description": "Details for running OpenAI Codex inside Conductor"
+  },
+  "next": {
+    "url": "/docs/reference/harnesses/opencode",
+    "title": "OpenCode",
+    "description": "Details for running the OpenCode harness inside Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor Agent is Cursor's coding harness. Conductor runs Cursor sessions through the Cursor API with the Composer model exposed by Cursor."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "div",
+      "attrs": {
+        "data-class": "not-prose my-8 space-y-10"
+      },
+      "children": [
+        {
+          "type": "element",
+          "tag": "section",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "div",
+              "attrs": {
+                "data-class": "flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "div",
+                  "attrs": {
+                    "data-class": "flex min-w-0 items-center gap-2"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "role": "img",
+                        "viewBox": "0 0 24 24",
+                        "fill": "currentColor",
+                        "focusable": "false",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tag": "h2",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Cursor"
+                        },
+                        {
+                          "type": "text",
+                          "value": " quick facts"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://cursor.com/docs/api",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Cursor API docs"
+                    },
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "xmlns": "http://www.w3.org/2000/svg",
+                        "width": 24,
+                        "height": 24,
+                        "viewBox": "0 0 24 24",
+                        "fill": "none",
+                        "stroke": "currentColor",
+                        "stroke-width": 2,
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 7h10v10"
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 17 17 7"
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "head": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Topic"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "span",
+                      "attrs": {
+                        "data-class": "flex items-center gap-2"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "svg",
+                          "attrs": {
+                            "role": "img",
+                            "viewBox": "0 0 24 24",
+                            "fill": "currentColor",
+                            "focusable": "false",
+                            "aria-hidden": "true"
+                          },
+                          "children": [
+                            {
+                              "type": "element",
+                              "tag": "path",
+                              "attrs": {
+                                "d": "M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": "Cursor"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "rows": [
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Availability"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor Agent through the Cursor API. Requires a Cursor API key."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Setup"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "CURSOR_API_KEY"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " in "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " "
+                      },
+                      {
+                        "type": "text",
+                        "value": "-> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Harnesses"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " -> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Cursor"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": ", or Conductor environment settings."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Models"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor Agent models exposed by the Cursor API."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Billing"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Cursor plan, API usage pools, API key, and on-demand usage."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Controls"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Plan Mode, Fast Mode, skills, and checkpoints are not supported today."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "setup-notes",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup notes"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor Agent sessions use the Cursor API and need a Cursor API key. The key can be added in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or set as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor's environment settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "There is no Cursor executable path to configure in Conductor settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a setup walkthrough, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers#cursor"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers: Cursor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor's editor surface remains available through "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open In"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command O",
+          "keys": [
+            "⌘",
+            "O"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": ". Opening the workspace in Cursor does not replace the Conductor workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "mcp",
+      "children": [
+        {
+          "type": "text",
+          "value": "MCP"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor Composer supports MCP through Cursor's own MCP configuration. Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for user-level servers or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".cursor/mcp.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the repository root for project-level servers."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you open a Conductor workspace in Cursor, Cursor reads project-level MCP config from that workspace checkout. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the shared reference, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/mcp#add-a-cursor-composer-mcp-server"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "MCP"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For a setup flow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/configure-mcp-servers#add-the-server-for-cursor-composer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up MCP servers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Cursor Agent is Cursor's coding harness. Conductor runs Cursor sessions through the Cursor API with the Composer model exposed by Cursor.</p><div data-class=\"not-prose my-8 space-y-10\"><section><div data-class=\"flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between\"><div data-class=\"flex min-w-0 items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23\"></path></svg><h2>Cursor quick facts</h2></div><a href=\"https://cursor.com/docs/api\" target=\"_blank\" rel=\"noopener noreferrer\">Cursor API docs<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div><table><thead><tr><th>Topic</th><th><span data-class=\"flex items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"M11.503.131 1.891 5.678a.84.84 0 0 0-.42.726v11.188c0 .3.162.575.42.724l9.609 5.55a1 1 0 0 0 .998 0l9.61-5.55a.84.84 0 0 0 .42-.724V6.404a.84.84 0 0 0-.42-.726L12.497.131a1.01 1.01 0 0 0-.996 0M2.657 6.338h18.55c.263 0 .43.287.297.515L12.23 22.918c-.062.107-.229.064-.229-.06V12.335a.59.59 0 0 0-.295-.51l-9.11-5.257c-.109-.063-.064-.23.061-.23\"></path></svg>Cursor</span></th></tr></thead><tbody><tr><td>Availability</td><td>Cursor Agent through the Cursor API. Requires a Cursor API key.</td></tr><tr><td>Setup</td><td><code>CURSOR_API_KEY</code> in <code>Settings</code> -&gt; <code>Harnesses</code> -&gt; <code>Cursor</code>, or Conductor environment settings.</td></tr><tr><td>Models</td><td>Cursor Agent models exposed by the Cursor API.</td></tr><tr><td>Billing</td><td>Cursor plan, API usage pools, API key, and on-demand usage.</td></tr><tr><td>Controls</td><td>Plan Mode, Fast Mode, skills, and checkpoints are not supported today.</td></tr></tbody></table></section></div><h2 id=\"setup-notes\"><a href=\"#setup-notes\">Setup notes</a></h2><p>Cursor Agent sessions use the Cursor API and need a Cursor API key. The key can be added in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>, or set as <code>CURSOR_API_KEY</code> in Conductor's environment settings.</p><p>There is no Cursor executable path to configure in Conductor settings.</p><p>For a setup walkthrough, see <a href=\"/docs/guides/providers#cursor\">Configure model providers: Cursor</a>.</p><p>Cursor's editor surface remains available through <code>Open In</code> or <span data-shortcut aria-label=\"Command O\"><kbd>⌘</kbd><span data-sep>+</span><kbd>O</kbd></span>. Opening the workspace in Cursor does not replace the Conductor workspace.</p><h2 id=\"mcp\"><a href=\"#mcp\">MCP</a></h2><p>Cursor Composer supports MCP through Cursor's own MCP configuration. Use <code>~/.cursor/mcp.json</code> for user-level servers or <code>.cursor/mcp.json</code> in the repository root for project-level servers.</p><p>When you open a Conductor workspace in Cursor, Cursor reads project-level MCP config from that workspace checkout. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.</p><p>For the shared reference, see <a href=\"/docs/reference/mcp#add-a-cursor-composer-mcp-server\">MCP</a>. For a setup flow, see <a href=\"/docs/guides/configure-mcp-servers#add-the-server-for-cursor-composer\">Set up MCP servers</a>.</p>",
+  "text": "Cursor Agent is Cursor's coding harness. Conductor runs Cursor sessions through the Cursor API with the Composer model exposed by Cursor.\nCursor quick facts\nCursor API docsTopicCursorAvailabilityCursor Agent through the Cursor API. Requires a Cursor API key.SetupCURSOR_API_KEY in Settings -> Harnesses -> Cursor, or Conductor environment settings.ModelsCursor Agent models exposed by the Cursor API.BillingCursor plan, API usage pools, API key, and on-demand usage.ControlsPlan Mode, Fast Mode, skills, and checkpoints are not supported today.Setup notes\nCursor Agent sessions use the Cursor API and need a Cursor API key. The key can be added in Settings -> Agents -> Cursor, or set as CURSOR_API_KEY in Conductor's environment settings.\nThere is no Cursor executable path to configure in Conductor settings.\nFor a setup walkthrough, see Configure model providers: Cursor.\nCursor's editor surface remains available through Open In or ⌘O. Opening the workspace in Cursor does not replace the Conductor workspace.\nMCP\nCursor Composer supports MCP through Cursor's own MCP configuration. Use ~/.cursor/mcp.json for user-level servers or .cursor/mcp.json in the repository root for project-level servers.\nWhen you open a Conductor workspace in Cursor, Cursor reads project-level MCP config from that workspace checkout. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.\nFor the shared reference, see MCP. For a setup flow, see Set up MCP servers.",
+  "markdown": "\n# Cursor\n\n\n\nCursor Agent is Cursor's coding harness. Conductor runs Cursor sessions through the Cursor API with the Composer model exposed by Cursor.\n\n\n\n\n## Setup notes [#setup-notes]\n\nCursor Agent sessions use the Cursor API and need a Cursor API key. The key can be added in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor), or set as `CURSOR_API_KEY` in Conductor's environment settings.\n\nThere is no Cursor executable path to configure in Conductor settings.\n\nFor a setup walkthrough, see [Configure model providers: Cursor](/docs/guides/providers#cursor).\n\nCursor's editor surface remains available through `Open In` or Command + O. Opening the workspace in Cursor does not replace the Conductor workspace.\n\n## MCP [#mcp]\n\nCursor Composer supports MCP through Cursor's own MCP configuration. Use `~/.cursor/mcp.json` for user-level servers or `.cursor/mcp.json` in the repository root for project-level servers.\n\nWhen you open a Conductor workspace in Cursor, Cursor reads project-level MCP config from that workspace checkout. Conductor-hosted Cursor sessions do not currently surface Cursor MCP server status in Conductor's MCP status UI.\n\nFor the shared reference, see [MCP](/docs/reference/mcp#add-a-cursor-composer-mcp-server). For a setup flow, see [Set up MCP servers](/docs/guides/configure-mcp-servers#add-the-server-for-cursor-composer).\n"
+}

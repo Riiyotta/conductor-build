@@ -1,0 +1,19 @@
+{
+  "slug": "0.27.2-onboarding-bug-fix",
+  "version": "0.27.2",
+  "versionSlug": "0.27.2",
+  "title": "Onboarding Bug Fix",
+  "fullTitle": "0.27.2: Onboarding Bug Fix",
+  "date": "Dec 19th, 2025",
+  "dateISO": "2025-12-19",
+  "description": "Conductor 0.27.2 changelog - Onboarding Bug Fix",
+  "summary": "We've fixed a bug that would cause Claude Code authentication to hang for some users during onboarding. This bug also resulted in slash commands not populating in new chats. Our apologies!",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.27.2-onboarding-bug-fix/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.27.2-onboarding-bug-fix",
+  "sourceUrl": "https://www.conductor.build/changelog/0.27.2-onboarding-bug-fix",
+  "headings": [],
+  "html": "<p>We&#x27;ve fixed a bug that would cause Claude Code authentication to hang for some users during onboarding. This bug also resulted in slash commands not populating in new chats. Our apologies!</p>",
+  "markdown": "\nWe've fixed a bug that would cause Claude Code authentication to hang for some users during onboarding. This bug also resulted in slash commands not populating in new chats. Our apologies!\n"
+}

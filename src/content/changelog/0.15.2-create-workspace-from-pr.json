@@ -1,0 +1,28 @@
+{
+  "slug": "0.15.2-create-workspace-from-pr",
+  "version": "0.15.2",
+  "versionSlug": "0.15.2",
+  "title": "Create workspace from PR",
+  "fullTitle": "0.15.2: Create workspace from PR",
+  "date": "Oct 20th, 2025",
+  "dateISO": "2025-10-20",
+  "description": "Conductor 0.15.2 changelog - Create workspace from PR",
+  "summary": "You can now create a workspace directly from a PR, existing branch, or Linear issue using ⌘⇧N.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.15.2-create-workspace-from-pr/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.15.2-create-workspace-from-pr",
+  "sourceUrl": "https://www.conductor.build/changelog/0.15.2-create-workspace-from-pr",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now create a workspace directly from a PR, existing branch, or Linear issue using ⌘⇧N.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added a more noticeable onboarding sequence for new users</li>\n<li>Close the new workspace popup when pressing Escape</li>\n<li>Add a <code>Learn More</code> link under Auto-Merge in settings</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix file picker not loading large file trees</li>\n<li>Fix Linear auth not redirecting users to the main app on success</li>\n<li>Fix attachments panel positioning</li>\n</ul>",
+  "markdown": "\nYou can now create a workspace directly from a PR, existing branch, or Linear issue using ⌘⇧N.\n\n## Improvements\n\n- Added a more noticeable onboarding sequence for new users\n- Close the new workspace popup when pressing Escape\n- Add a `Learn More` link under Auto-Merge in settings\n\n## Fixes\n\n- Fix file picker not loading large file trees\n- Fix Linear auth not redirecting users to the main app on success\n- Fix attachments panel positioning\n"
+}

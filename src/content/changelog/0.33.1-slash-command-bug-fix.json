@@ -1,0 +1,19 @@
+{
+  "slug": "0.33.1-slash-command-bug-fix",
+  "version": "0.33.1",
+  "versionSlug": "0.33.1",
+  "title": "Slash command bug fix",
+  "fullTitle": "0.33.1: Slash command bug fix",
+  "date": "Jan 27th, 2026",
+  "dateISO": "2026-01-27",
+  "description": "Conductor 0.33.1 changelog - Slash command bug fix",
+  "summary": "We’ve fixed a bug where certain slash commands wouldn’t be processed when thinking was enabled.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.33.1-slash-command-bug-fix/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.1-slash-command-bug-fix",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.1-slash-command-bug-fix",
+  "headings": [],
+  "html": "<p>We’ve fixed a bug where certain slash commands wouldn’t be processed when thinking was enabled.</p>",
+  "markdown": "\nWe’ve fixed a bug where certain slash commands wouldn’t be processed when thinking was enabled.\n"
+}

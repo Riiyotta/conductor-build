@@ -1,0 +1,28 @@
+{
+  "slug": "0.33.5-better-archiving",
+  "version": "0.33.5",
+  "versionSlug": "0.33.5",
+  "title": "Better archiving",
+  "fullTitle": "0.33.5: Better archiving",
+  "date": "Feb 3rd, 2026",
+  "dateISO": "2026-02-03",
+  "description": "Conductor 0.33.5 changelog - Better archiving",
+  "summary": "Conductor now automatically saves your git state when you archive, including uncommitted files.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.33.5/1770153556088-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.33.5-better-archiving/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.5-better-archiving",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.5-better-archiving",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    }
+  ],
+  "html": "<p>Conductor now automatically saves your git state when you archive, including uncommitted files.</p>\n<p>You can now organize workspaces by status: backlog, in progress, in review, and done. Go to Settings → Experimental to turn it on.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.5/1770153556088-image.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Archiving a workspace now immediately interrupts the setup script</li>\n<li>You can now always unarchive a workspace, even if the original branch has changed</li>\n<li>The code reviewer now outputs its summary in a more visible place at the end of the review</li>\n<li>Option+Left/Right in the composer now stops at punctuation (matching VSCode)</li>\n<li>We asked Claude to be less aggressive about using the “ask question” tool</li>\n<li>We now treat periods as word boundaries when navigating through text with alt+arrow</li>\n</ul>",
+  "markdown": "\nConductor now automatically saves your git state when you archive, including uncommitted files.\n\nYou can now organize workspaces by status: backlog, in progress, in review, and done. Go to Settings → Experimental to turn it on.\n![image](/assets/changelog/media/0.33.5/1770153556088-image.png)\n\n## Improvements\n\n- Archiving a workspace now immediately interrupts the setup script\n- You can now always unarchive a workspace, even if the original branch has changed\n- The code reviewer now outputs its summary in a more visible place at the end of the review\n- Option+Left/Right in the composer now stops at punctuation (matching VSCode)\n- We asked Claude to be less aggressive about using the “ask question” tool\n- We now treat periods as word boundaries when navigating through text with alt+arrow\n"
+}

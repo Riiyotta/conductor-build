@@ -1,0 +1,363 @@
+{
+ "url": "https://www.conductor.build/enterprise",
+ "title": "Enterprise | Conductor",
+ "desc": "Conductor is the best way to run multiple coding agents in parallel. Reach out to bring Conductor to your organization.",
+ "docH": 1613,
+ "docW": 1280,
+ "vw": 1280,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 1280,
+   "height": 57,
+   "top": 0,
+   "right": 1280,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 1280,
+ "footerH": 333,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Flogos%2Flife360.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://www.conductor.build/logos/reducto.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+  "https://js-na2.hsforms.net/ui-forms-embed-components-app/frame.html?_hsPortalId=246368856&_hsFormId=f1df7d97-c440-4b74-8f51-b020c9616e2f&_hsIsQa=false&_hsHublet=na2&_hsDisableScriptloader=true&_hsDisableRedirect=true&_hsInstanceId=ed6bac86-3617-408f-ba01-f9a4232fc6c5",
+  "https://www.conductor.build/about.webp",
+  "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=form-frame-load-success&count=1"
+ ],
+ "anims": [
+  {
+   "t": "nav.top-nav-scroll-mask.hidden.max-w-[calc(100vw-10rem)].items-center.gap-6.over",
+   "n": "top-nav-scroll-mask-x",
+   "d": "auto",
+   "e": "linear",
+   "it": 1,
+   "ps": "running"
+  }
+ ],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    1280,
+    1223
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    190,
+    57,
+    900,
+    1223
+   ],
+   "p": "96px 32px",
+   "m": "0px 190px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.mb-4.text-3xl.font-semibold.tracking-tight.text-foreground.sm:text-4xl",
+   "b": [
+    256,
+    153,
+    768,
+    40
+   ],
+   "t": "Conductor Enterprise",
+   "f": "36px/40px 600 ls:-0.9px   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 16px"
+  },
+  {
+   "k": "p.max-w-2xl.text-sm.leading-6.text-muted-foreground.sm:text-base",
+   "b": [
+    256,
+    209,
+    672,
+    48
+   ],
+   "t": "Conductor is the best way to run multiple coding agents in parallel. Reach out to bring Conductor to your organization.",
+   "f": "16px/24px 400 ls:normal   ff:ui-sans-serif, system-ui, sans",
+   "c": "rgb(117, 111, 108)",
+   "mw": "672px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    297,
+    768,
+    28
+   ],
+   "t": "Trusted by builders at",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 20px"
+  },
+  {
+   "k": "div.not-prose.mb-10.border-b.border-border.pb-10",
+   "b": [
+    256,
+    345,
+    768,
+    145
+   ],
+   "bd": "0px 0px 1px 0px solid rgb(234, 232, 230)",
+   "p": "0px 0px 40px",
+   "m": "0px 0px 40px"
+  },
+  {
+   "k": "img.h-4.sm:h-6.w-auto.dark:hidden",
+   "b": [
+    331,
+    353,
+    96,
+    24
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:400x100 alt:Linear"
+  },
+  {
+   "k": "img.h-3.5.sm:h-5.w-auto.dark:hidden",
+   "b": [
+    502.7,
+    355,
+    100.6,
+    20
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:2048x407 alt:Vercel"
+  },
+  {
+   "k": "img.h-5.sm:h-8.w-auto.dark:hidden",
+   "b": [
+    680.9,
+    349,
+    92.2,
+    32
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x104 alt:Notion"
+  },
+  {
+   "k": "img.h-5.sm:h-6.w-auto.dark:hidden",
+   "b": [
+    855.8,
+    353,
+    90.4,
+    24
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x80 alt:Ramp"
+  },
+  {
+   "k": "img.h-5.sm:h-6.w-auto.dark:hidden.brightness-0",
+   "b": [
+    339.3,
+    417,
+    79.4,
+    24
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "fil": "brightness(0)",
+   "src": "https://www.conductor.build/_next/image?url=%2Flogos%2Flife360.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:96x29 alt:Life360"
+  },
+  {
+   "k": "img.h-4.sm:h-6.w-auto.dark:hidden",
+   "b": [
+    505.1,
+    417,
+    95.7,
+    24
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:300x75 alt:Square"
+  },
+  {
+   "k": "img.h-4.sm:h-5.w-auto.dark:hidden",
+   "b": [
+    670.3,
+    419,
+    113.4,
+    20
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/logos/reducto.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:924x163 alt:Reducto"
+  },
+  {
+   "k": "img.h-4.sm:h-6.w-auto.dark:hidden",
+   "b": [
+    856.7,
+    417,
+    88.6,
+    24
+   ],
+   "mw": "100%",
+   "ov": "clip",
+   "src": "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK nat:96x26 alt:Spotify"
+  },
+  {
+   "k": "section.not-prose.-mb-12.-mt-4.scroll-mt-24.md:-mb-16",
+   "b": [
+    256,
+    514,
+    768,
+    734
+   ],
+   "m": "-16px 0px -64px",
+   "id": "contact-sales"
+  },
+  {
+   "k": "iframe",
+   "b": [
+    256,
+    514,
+    768,
+    734
+   ],
+   "ov": "clip"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/enterprise",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "8420"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79422"
+  },
+  {
+   "url": "https://www.conductor.build/logos/linear.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "2224"
+  },
+  {
+   "url": "https://www.conductor.build/logos/vercel-light.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1612"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Flogos%2Flife360.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "2430"
+  },
+  {
+   "url": "https://www.conductor.build/logos/square-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1669"
+  },
+  {
+   "url": "https://www.conductor.build/logos/ramp-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "897"
+  },
+  {
+   "url": "https://www.conductor.build/logos/notion-wordmark.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1277"
+  },
+  {
+   "url": "https://www.conductor.build/_next/image?url=%2Flogos%2Fspotify-wordmark.png&w=96&q=75&dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/webp",
+   "len": "1348"
+  },
+  {
+   "url": "https://www.conductor.build/logos/reducto.svg?dpl=dpl_HiRTWMZ3gL3jPVCfTprQ5YhApgeK",
+   "status": 200,
+   "type": "image/svg+xml",
+   "len": "1187"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  },
+  {
+   "url": "https://js-na2.hsforms.net/ui-forms-embed-components-app/frame.html?_hsPortalId=246368856&_hsFormId=f1df7d97-c440-4b74-8f51-b020c9616e2f&_hsIsQa=false&_hsHublet=na2&_hsDisableScriptloader=true&_hsDisableRedirect=true&_hsInstanceId=ed6bac86-3617-408f-ba01-f9a4232fc6c5",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "18450"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/render-definition/246368856/f1df7d97-c440-4b74-8f51-b020c9616e2f",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "2426"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/visitor/246368856/f1df7d97-c440-4b74-8f51-b020c9616e2f?hutk=",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "20"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v4/feature-control/246368856",
+   "status": 200,
+   "type": "application/json;charset=utf-8",
+   "len": "157"
+  },
+  {
+   "url": "https://cdn1.hubspotusercontent-na2.net/googlefonts/fonts/Geist/700.woff2",
+   "status": 200,
+   "type": "font/woff2",
+   "len": "28112"
+  },
+  {
+   "url": "https://cdn1.hubspotusercontent-na2.net/googlefonts/fonts/Geist/regular.woff2",
+   "status": 200,
+   "type": "font/woff2",
+   "len": "27408"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=developer-forms-embed-v3-developer-RENDER_SUCCESS&count=1",
+   "status": 200,
+   "type": "image/gif",
+   "len": "35"
+  },
+  {
+   "url": "https://forms-na2.hsforms.com/embed/v3/counters.gif?key=form-frame-load-success&count=1",
+   "status": 200,
+   "type": "image/gif",
+   "len": "35"
+  }
+ ]
+}

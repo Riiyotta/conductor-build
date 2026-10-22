@@ -1,0 +1,32 @@
+{
+  "slug": "0.38.4-direnv-support-opus-4-6-1m",
+  "version": "0.38.4",
+  "versionSlug": "0.38.4",
+  "title": "Direnv Support, Opus 4.6 1M",
+  "fullTitle": "0.38.4: Direnv Support, Opus 4.6 1M",
+  "date": "Mar 10th, 2026",
+  "dateISO": "2026-03-10",
+  "description": "Conductor 0.38.4 changelog - Direnv Support, Opus 4.6 1M",
+  "summary": "We now support directory-based shell tools like direnv, so your environment variables are automatically picked up per workspace.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.38.4/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png",
+    "alt": "CleanShot 2026-03-10 at 17.03.01@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.38.4-direnv-support-opus-4-6-1m/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.38.4-direnv-support-opus-4-6-1m",
+  "sourceUrl": "https://www.conductor.build/changelog/0.38.4-direnv-support-opus-4-6-1m",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We now support directory-based shell tools like direnv, so your environment variables are automatically picked up per workspace.</p>\n<p>We&#x27;ve also added Opus 4.6 (1M context). You can turn on via Settings → Claude Code → Models.</p>\n<figure data-asset><img alt=\"CleanShot 2026-03-10 at 17.03.01@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.38.4/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Directory-based shell tools like direnv are now supported</li>\n<li>Add Opus 4.6 (1M) extended context model, opt-in via Settings → Claude Code → Models</li>\n<li>Show all installed apps in the app switcher and add a close button to cycle</li>\n<li>Auto-archive setting now respects all PR merge scenarios, not just in-app merges</li>\n<li>Improve chat rendering performance</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix target branch resolution for PRs without increasing GitHub API usage</li>\n<li>Error messages now display in proper case instead of being forced to uppercase\n<figure data-asset><img alt=\"CleanShot 2026-03-10 at 17.02.34@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.38.4/1773187360353-CleanShot_2026-03-10_at_17.02.34_2x.png\"/></figure></li>\n</ul>",
+  "markdown": "\nWe now support directory-based shell tools like direnv, so your environment variables are automatically picked up per workspace.\n\nWe've also added Opus 4.6 (1M context). You can turn on via Settings → Claude Code → Models.\n\n<img\n    src=\"/assets/changelog/media/0.38.4/1773187386591-CleanShot_2026-03-10_at_17.03.01_2x.png\"\n    alt=\"CleanShot 2026-03-10 at 17.03.01@2x.png\"\n/>\n\n## Improvements\n\n- Directory-based shell tools like direnv are now supported\n- Add Opus 4.6 (1M) extended context model, opt-in via Settings → Claude Code → Models\n- Show all installed apps in the app switcher and add a close button to cycle\n- Auto-archive setting now respects all PR merge scenarios, not just in-app merges\n- Improve chat rendering performance\n\n## Fixes\n\n- Fix target branch resolution for PRs without increasing GitHub API usage\n- Error messages now display in proper case instead of being forced to uppercase\n    <img\n        src=\"/assets/changelog/media/0.38.4/1773187360353-CleanShot_2026-03-10_at_17.02.34_2x.png\"\n        alt=\"CleanShot 2026-03-10 at 17.02.34@2x.png\"\n    />\n"
+}

@@ -1,0 +1,28 @@
+{
+  "slug": "0.22.7-send-plans-to-new-chats",
+  "version": "0.22.7",
+  "versionSlug": "0.22.7",
+  "title": "Send Plans to New Chats",
+  "fullTitle": "0.22.7: Send Plans to New Chats",
+  "date": "Nov 21st, 2025",
+  "dateISO": "2025-11-21",
+  "description": "Conductor 0.22.7 changelog - Send Plans to New Chats",
+  "summary": "You can now copy a plan from Claude Code or send it to a new chat for implementation.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.7/b20dea11-2f90-4cbd-88fa-30d16938fd50.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.7-send-plans-to-new-chats/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.7-send-plans-to-new-chats",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.7-send-plans-to-new-chats",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now copy a plan from Claude Code or send it to a new chat for implementation.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.7/b20dea11-2f90-4cbd-88fa-30d16938fd50.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed Claude Code installations for new users</li>\n</ul>",
+  "markdown": "\nYou can now copy a plan from Claude Code or send it to a new chat for implementation.\n\n<img\n    width=\"1778\"\n    height=\"1478\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.7/b20dea11-2f90-4cbd-88fa-30d16938fd50.png\"\n/>\n\n## Fixes\n\n- Fixed Claude Code installations for new users\n"
+}

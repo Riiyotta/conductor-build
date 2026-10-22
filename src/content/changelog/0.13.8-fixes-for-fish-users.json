@@ -1,0 +1,19 @@
+{
+  "slug": "0.13.8-fixes-for-fish-users",
+  "version": "0.13.8",
+  "versionSlug": "0.13.8",
+  "title": "Fixes for Fish Users",
+  "fullTitle": "0.13.8: Fixes for Fish Users",
+  "date": "Oct 1st, 2025",
+  "dateISO": "2025-10-01",
+  "description": "Conductor 0.13.8 changelog - Fixes for Fish Users",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.13.8-fixes-for-fish-users/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.13.8-fixes-for-fish-users",
+  "sourceUrl": "https://www.conductor.build/changelog/0.13.8-fixes-for-fish-users",
+  "headings": [],
+  "html": "<ul>\n<li>We now always use zsh for internal shell commands so you can continue to use Conductor with fish</li>\n<li>Increased <code>gh</code> CLI auth timeout and potential bug with authentication. If Conductor is not recognizing your <code>gh</code> login, please let us know at <a href=\"/cdn-cgi/l/email-protection\" data-cfemail=\"93fbe6fef2fde0d3f0fcfdf7e6f0e7fce1bdf1e6fafff7\">[email&#160;protected]</a>!</li>\n</ul>",
+  "markdown": "\n- We now always use zsh for internal shell commands so you can continue to use Conductor with fish\n- Increased `gh` CLI auth timeout and potential bug with authentication. If Conductor is not recognizing your `gh` login, please let us know at humans@conductor.build!\n"
+}

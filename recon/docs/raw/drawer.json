@@ -1,0 +1,232 @@
+{
+ "drawer": {
+  "font-family": "ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15px",
+  "line-height": "22.5px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(255, 255, 255)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "display": "flex",
+  "width": "331.5px",
+  "max-width": "380px",
+  "height": "844px",
+  "box-shadow": "rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0) 0px 0px 0px 0px, rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.1) 0px 4px 6px -4px",
+  "animation": "0.25s fd-sidebar-in",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "position": "fixed",
+  "tab-size": "4",
+  "z-index": "40",
+  "inset-inline-start": "58.5px",
+  "rect": [
+   292.2,
+   0,
+   331.5,
+   844
+  ],
+  "tag": "aside",
+  "cls": "fixed text-[0.9375rem] flex flex-col shadow-lg border-s inset-e-0 inset-y-0 w-[85%] max-w-[380px] z-40 bg-fd-background data-[state=open]:animate-fd-sidebar-in data-[state=closed]:animate-fd-sidebar-out",
+  "text": "Reference\n\nConductor reference and concepts\n\nChang"
+ },
+ "state": "open",
+ "overlay": [
+  {
+   "font-family": "ui-sans-serif, system-ui, sans-serif",
+   "font-size": "16px",
+   "line-height": "24px",
+   "font-weight": "400",
+   "color": "rgb(44, 40, 38)",
+   "border-top": "0px solid rgb(234, 232, 230)",
+   "border-right": "0px solid rgb(234, 232, 230)",
+   "border-bottom": "0px solid rgb(234, 232, 230)",
+   "border-left": "0px solid rgb(234, 232, 230)",
+   "display": "block",
+   "width": "390px",
+   "height": "844px",
+   "animation": "0.3s fd-fade-in",
+   "text-decoration-color": "rgb(44, 40, 38)",
+   "opacity": "0.220443",
+   "position": "fixed",
+   "tab-size": "4",
+   "z-index": "40",
+   "backdrop-filter": "blur(4px)",
+   "rect": [
+    0,
+    0,
+    390,
+    844
+   ],
+   "tag": "div",
+   "cls": "fixed z-40 inset-0 backdrop-blur-xs data-[state=open]:animate-fd-fade-in data-[state=closed]:animate-fd-fade-out",
+   "text": ""
+  }
+ ],
+ "anims": [
+  {
+   "name": "fd-fade-in",
+   "dur": 300,
+   "easing": "linear",
+   "t": ""
+  },
+  {
+   "name": "fd-sidebar-in",
+   "dur": 250,
+   "easing": "linear",
+   "t": "nd-sidebar-mobile"
+  }
+ ],
+ "treeTop": {
+  "font-family": "ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15px",
+  "line-height": "22.5px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "rgb(255, 255, 255)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "padding": "16px",
+  "display": "block",
+  "width": "330.5px",
+  "height": "415px",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "mask-image": "linear-gradient(rgba(0, 0, 0, 0), rgb(255, 255, 255) 12px, rgb(255, 255, 255) calc(100% - 12px), rgba(0, 0, 0, 0))",
+  "overflow-x": "hidden",
+  "overflow-y": "scroll",
+  "tab-size": "4",
+  "rect": [
+   293.2,
+   429,
+   330.5,
+   415
+  ],
+  "tag": "div",
+  "cls": "size-full rounded-[inherit] *:flex! *:flex-col! *:gap-0.5! p-4 overscroll-contain mask-[linear-gradient(to_bottom,transparent,white_12px,white_calc(100%-12px),transparent)]",
+  "text": "Get Started\n\nIntroduction\nInstall\nYour first works"
+ },
+ "siteLink": {
+  "font-family": "ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(117, 111, 108)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "border-radius": "6px",
+  "padding": "8px 12px",
+  "display": "block",
+  "width": "298.5px",
+  "height": "36px",
+  "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  "text-decoration-color": "rgb(117, 111, 108)",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "pointer",
+  "rect": [
+   309.2,
+   132,
+   298.5,
+   36
+  ],
+  "tag": "a",
+  "cls": "rounded-md px-3 py-2 text-sm transition-colors hover:bg-fd-accent/50 text-fd-muted-foreground hover:text-fd-accent-foreground",
+  "text": "Changelog"
+ },
+ "siteLinkActive": {
+  "font-family": "ui-sans-serif, system-ui, sans-serif",
+  "font-size": "14px",
+  "line-height": "20px",
+  "font-weight": "400",
+  "color": "rgb(65, 48, 48)",
+  "border-top": "0px solid rgb(234, 232, 230)",
+  "border-right": "0px solid rgb(234, 232, 230)",
+  "border-bottom": "0px solid rgb(234, 232, 230)",
+  "border-left": "0px solid rgb(234, 232, 230)",
+  "border-radius": "6px",
+  "padding": "8px 12px",
+  "display": "block",
+  "width": "298.5px",
+  "height": "36px",
+  "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  "text-decoration-color": "rgb(65, 48, 48)",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "pointer",
+  "rect": [
+   309.2,
+   172,
+   298.5,
+   36
+  ],
+  "tag": "a",
+  "cls": "rounded-md px-3 py-2 text-sm transition-colors hover:bg-fd-accent/50 text-fd-primary",
+  "text": "Docs"
+ },
+ "tabBtn": {
+  "font-family": "ui-sans-serif, system-ui, sans-serif",
+  "font-size": "15px",
+  "line-height": "22.5px",
+  "font-weight": "400",
+  "color": "rgb(44, 40, 38)",
+  "background-color": "oklab(0.984819 -0.000328124 0.00128484 / 0.5)",
+  "border-top": "1px solid rgb(234, 232, 230)",
+  "border-right": "1px solid rgb(234, 232, 230)",
+  "border-bottom": "1px solid rgb(234, 232, 230)",
+  "border-left": "1px solid rgb(234, 232, 230)",
+  "border-radius": "8px",
+  "padding": "8px",
+  "gap": "8px",
+  "display": "flex",
+  "width": "298.5px",
+  "height": "58px",
+  "transition": "color 0.15s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), border-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), outline-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), text-decoration-color 0.15s cubic-bezier(0.4, 0, 0.2, 1), fill 0.15s cubic-bezier(0.4, 0, 0.2, 1), stroke 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-from 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-via 0.15s cubic-bezier(0.4, 0, 0.2, 1), --tw-gradient-to 0.15s cubic-bezier(0.4, 0, 0.2, 1)",
+  "text-decoration-color": "rgb(44, 40, 38)",
+  "opacity": "1",
+  "tab-size": "4",
+  "cursor": "default",
+  "rect": [
+   309.2,
+   62,
+   298.5,
+   58
+  ],
+  "tag": "button",
+  "cls": "flex items-center gap-2 rounded-lg p-2 border bg-fd-secondary/50 text-start text-fd-secondary-foreground transition-colors hover:bg-fd-accent data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground",
+  "text": "Reference\n\nConductor reference and concepts"
+ },
+ "tabBtnHTML": "<button type=\"button\" aria-haspopup=\"dialog\" aria-expanded=\"false\" data-state=\"closed\" class=\"flex items-center gap-2 rounded-lg p-2 border bg-fd-secondary/50 text-start text-fd-secondary-foreground transition-colors hover:bg-fd-accent data-[state=open]:bg-fd-accent data-[state=open]:text-fd-accent-foreground\"><div class=\"size-9 shrink-0 empty:hidden md:size-5\"></div><div><p class=\"text-sm font-medium\">Reference</p><p class=\"text-sm text-fd-muted-foreground empty:hidden md:hidden\">Conductor reference and concepts</p></div>[svg]</button>",
+ "__requests": [
+  {
+   "url": "https://www.conductor.build/docs/installation",
+   "status": 200,
+   "type": "document",
+   "ct": "text/html; charset=utf-8"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font",
+   "ct": "font/ttf"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image",
+   "ct": "image/webp"
+  },
+  {
+   "url": "https://www.conductor.build/docs-assets/images/cloud-collaboration-chat.png",
+   "status": 200,
+   "type": "image",
+   "ct": "image/png"
+  }
+ ]
+}

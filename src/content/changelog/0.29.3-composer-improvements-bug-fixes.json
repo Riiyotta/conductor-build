@@ -1,0 +1,28 @@
+{
+  "slug": "0.29.3-composer-improvements-bug-fixes",
+  "version": "0.29.3",
+  "versionSlug": "0.29.3",
+  "title": "Composer Improvements, Bug Fixes ",
+  "fullTitle": "0.29.3: Composer Improvements, Bug Fixes ",
+  "date": "Jan 10th, 2026",
+  "dateISO": "2026-01-10",
+  "description": "Conductor 0.29.3 changelog - Composer Improvements, Bug Fixes ",
+  "summary": "We’ve simplified the composer. Use the + icon to add attachments, linear issues, and more!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.29.3/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png",
+    "alt": "Composer improvements"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.29.3-composer-improvements-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.29.3-composer-improvements-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.29.3-composer-improvements-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We’ve simplified the composer. Use the <code>+</code> icon to add attachments, linear issues, and more!</p>\n<figure data-asset><img alt=\"Composer improvements\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.29.3/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the review button not being visible while the AI is working</li>\n<li>Fixed the branches tab in the create workspaces dialog crashing the app when the repository has lots of branches</li>\n<li>Checkboxes in dark mode are more legible</li>\n<li>Fixed <code>TAB</code> not working in the create workspace dialog</li>\n</ul>",
+  "markdown": "\nWe’ve simplified the composer. Use the `+` icon to add attachments, linear issues, and more!\n\n![Composer improvements](/assets/changelog/media/0.29.3/1768064957004-CleanShot_2026-01-10_at_08.40.04_2x.png)\n\n## Fixes\n\n- Fixed the review button not being visible while the AI is working\n- Fixed the branches tab in the create workspaces dialog crashing the app when the repository has lots of branches\n- Checkboxes in dark mode are more legible\n- Fixed `TAB` not working in the create workspace dialog\n"
+}

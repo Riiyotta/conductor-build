@@ -1,0 +1,23 @@
+{
+  "slug": "0.87.3-gpt-6-sol-and-gpt-6-luna",
+  "version": "0.87.3",
+  "versionSlug": "0.87.3",
+  "title": "GPT-6 Sol and GPT-6 Luna",
+  "fullTitle": "0.87.3: GPT-6 Sol and GPT-6 Luna",
+  "date": "September 22, 2026",
+  "dateISO": "2026-09-22",
+  "description": "Conductor 0.87.3 changelog - GPT-6 Sol and GPT-6 Luna",
+  "summary": "GPT-6 Sol and GPT-6 Luna are now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/gpt-6-sol-luna-0.87.3.png",
+    "alt": "GPT-6 Sol and GPT-6 Luna"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.87.3-gpt-6-sol-and-gpt-6-luna/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.87.3-gpt-6-sol-and-gpt-6-luna",
+  "sourceUrl": "https://www.conductor.build/changelog/0.87.3-gpt-6-sol-and-gpt-6-luna",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"GPT-6 Sol and GPT-6 Luna\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/gpt-6-sol-luna-0.87.3.png\"/></figure>\n<p>GPT-6 Sol and GPT-6 Luna are now available in Conductor!</p>\n<p>OpenAI&#x27;s latest frontier intelligence, costing 50% less than GPT-5.6.</p>",
+  "markdown": "\n![GPT-6 Sol and GPT-6 Luna](/assets/changelog/images/gpt-6-sol-luna-0.87.3.png)\n\nGPT-6 Sol and GPT-6 Luna are now available in Conductor!\n\nOpenAI's latest frontier intelligence, costing 50% less than GPT-5.6.\n"
+}

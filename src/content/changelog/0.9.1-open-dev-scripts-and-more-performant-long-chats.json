@@ -1,0 +1,32 @@
+{
+  "slug": "0.9.1-open-dev-scripts-and-more-performant-long-chats",
+  "version": "0.9.1",
+  "versionSlug": "0.9.1",
+  "title": "Open dev scripts and more performant long chats",
+  "fullTitle": "0.9.1: Open dev scripts and more performant long chats",
+  "date": "Sept 2nd, 2025",
+  "dateISO": "2025-09-02",
+  "description": "Conductor 0.9.1 changelog - Open dev scripts and more performant long chats",
+  "summary": "Conductor now detects when a localhost URL is running. Open it in your browser by clicking Open or ⌘+Shift+O.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.9.1/85d8953e-6136-495c-8b51-1be510cc75a2.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.9.1-open-dev-scripts-and-more-performant-long-chats/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.9.1-open-dev-scripts-and-more-performant-long-chats",
+  "sourceUrl": "https://www.conductor.build/changelog/0.9.1-open-dev-scripts-and-more-performant-long-chats",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Conductor now detects when a localhost URL is running. Open it in your browser by clicking <code>Open</code> or ⌘+Shift+O.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.1/85d8953e-6136-495c-8b51-1be510cc75a2.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Long chats now render much faster (we virtualized!)</li>\n<li>⌘+Enter shortcut to submit dialogs</li>\n<li>We now show a <code>Compact and Retry</code> button when your session runs out of context</li>\n<li>Add docs to command palette</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where thinking output would show excessive newlines</li>\n<li>Focus the run tab on run button click</li>\n<li>Updated terminal button styles for consistency</li>\n<li>Fix &quot;Open In&quot; menu apps not showing for some users</li>\n<li>Fix auto scroll not working on new messages received from the AI</li>\n<li>Fixed a bug where files selected in the filepicker with NextJS slugs wouldn&#x27;t render properly</li>\n<li>Fixed a bug where archiving a workspace would not terminate its run script</li>\n</ul>",
+  "markdown": "\nConductor now detects when a localhost URL is running. Open it in your browser by clicking `Open` or ⌘+Shift+O.\n\n<img\n    width=\"998\"\n    height=\"586\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.9.1/85d8953e-6136-495c-8b51-1be510cc75a2.png\"\n/>\n\n## Improvements\n\n- Long chats now render much faster (we virtualized!)\n- ⌘+Enter shortcut to submit dialogs\n- We now show a `Compact and Retry` button when your session runs out of context\n- Add docs to command palette\n\n## Fixes\n\n- Fixed a bug where thinking output would show excessive newlines\n- Focus the run tab on run button click\n- Updated terminal button styles for consistency\n- Fix \"Open In\" menu apps not showing for some users\n- Fix auto scroll not working on new messages received from the AI\n- Fixed a bug where files selected in the filepicker with NextJS slugs wouldn't render properly\n- Fixed a bug where archiving a workspace would not terminate its run script\n"
+}

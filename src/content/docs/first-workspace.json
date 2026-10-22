@@ -1,0 +1,905 @@
+{
+  "slug": "first-workspace",
+  "url": "/docs/first-workspace",
+  "title": "Your first workspace",
+  "description": "Import a repository, configure it, and start agent work in an isolated Conductor workspace",
+  "meta": {
+    "title": "Your first workspace | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/first-workspace/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Get Started"
+    },
+    {
+      "name": "Your first workspace"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#add-a-repository",
+      "title": "Add a repository"
+    },
+    {
+      "depth": 2,
+      "url": "#create-the-workspace",
+      "title": "Create the workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#make-it-runnable",
+      "title": "Make it runnable"
+    },
+    {
+      "depth": 2,
+      "url": "#start-work",
+      "title": "Start work"
+    },
+    {
+      "depth": 2,
+      "url": "#split-work-deliberately",
+      "title": "Split work deliberately"
+    },
+    {
+      "depth": 2,
+      "url": "#review-merge-and-archive",
+      "title": "Review, merge, and archive"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/installation",
+    "title": "Install",
+    "description": "Get Conductor running on your Mac"
+  },
+  "next": {
+    "url": "/docs/configure-your-project",
+    "title": "Configure your project",
+    "description": "Set up shared Conductor project settings for new workspaces"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A workspace is an isolated copy of your project, backed by Git, for one task or pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This guide walks through the first loop: add a repository, prepare the workspace, give an agent context, and review the result."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor workspaces isolate development state, not system permissions.\nAgents and commands still run locally with your user permissions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-a-repository",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a repository"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After you "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/installation"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "install Conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", add a repository with one of these options:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open project"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": choose an existing local repository."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open GitHub project"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": choose a repository from GitHub."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Quick start"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ": create a new repository from Conductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor uses GitHub from your terminal environment. To confirm GitHub is\navailable, run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "gh auth status"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " in your terminal."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-the-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create the workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After you add a repository, Conductor creates a workspace from it."
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/new-workspace.png",
+      "alt": "Conductor workspace screen showing the project sidebar, workspace chat, and setup checklist"
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each workspace has its own:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Working tree."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup and run context."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor copies files tracked by Git into the workspace. Ignored files, dependencies, local databases, and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " files come from your setup script or your project's setup workflow."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the underlying model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workspaces-and-branches"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Isolated workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "make-it-runnable",
+      "children": [
+        {
+          "type": "text",
+          "value": "Make it runnable"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before agents change code, make sure the workspace can install dependencies, read local config, and run the project."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "setup script"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for files and dependencies that Git does not track, such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " files, local databases, generated files, and package installs."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use an "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "action"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to launch your app, server, watcher, or tests from Conductor. Actions execute inside the workspace directory and can use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", so multiple workspaces can run beside each other."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can manage setup scripts in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=scripts",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and actions on the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Actions tab"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or share them with your team in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts/share-with-teammates"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "start-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Start work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Start a chat with Claude Code, Codex, Cursor, or OpenCode in Conductor. For a simple task, use one agent in one workspace."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you ask for changes, attach the context the agent needs:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Mention files, folders, or comments from the composer."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Attach notes, specs, screenshots, and logs."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Put uncommitted handoffs in "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the Run button for saved commands and the terminal for ad hoc commands. Commands run inside the workspace, not your original checkout. If your app cannot run cleanly from a workspace directory, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts/spotlight-testing"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Spotlight testing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "split-work-deliberately",
+      "children": [
+        {
+          "type": "text",
+          "value": "Split work deliberately"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use multiple agents in the same workspace when they should share the same branch and code state, such as one agent implementing while another reviews or fixes tests. Use separate workspaces when tasks should move independently and become separate pull requests."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create more workspaces with "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command Shift N",
+          "keys": [
+            "⌘",
+            "Shift",
+            "N"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": " or the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "..."
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " button next to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "New workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". You can start from a branch, pull request, GitHub issue, or Linear issue."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "review-merge-and-archive",
+      "children": [
+        {
+          "type": "text",
+          "value": "Review, merge, and archive"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When the workspace is ready:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open the Diff Viewer with "
+            },
+            {
+              "type": "shortcut",
+              "label": "Command Shift D",
+              "keys": [
+                "⌘",
+                "Shift",
+                "D"
+              ],
+              "separator": "+"
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Run tests through the terminal, Run button, or Spotlight testing."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open the Checks tab to review git status, CI, deployments, comments, and todos."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create a pull request, merge when ready, and archive the workspace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Next, "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/configure-your-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "configure your project"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", learn the full "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workflow"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor workflow"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and decide how to use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>A workspace is an isolated copy of your project, backed by Git, for one task or pull request.</p><p>This guide walks through the first loop: add a repository, prepare the workspace, give an agent context, and review the result.</p><div role=\"note\" data-callout=\"info\"><p>Conductor workspaces isolate development state, not system permissions.\nAgents and commands still run locally with your user permissions.</p></div><h2 id=\"add-a-repository\"><a href=\"#add-a-repository\">Add a repository</a></h2><p>After you <a href=\"/docs/installation\">install Conductor</a>, add a repository with one of these options:</p><ul><li><strong>Open project</strong>: choose an existing local repository.</li><li><strong>Open GitHub project</strong>: choose a repository from GitHub.</li><li><strong>Quick start</strong>: create a new repository from Conductor.</li></ul><div role=\"note\" data-callout=\"info\"><p>Conductor uses GitHub from your terminal environment. To confirm GitHub is\navailable, run <code>gh auth status</code> in your terminal.</p></div><h2 id=\"create-the-workspace\"><a href=\"#create-the-workspace\">Create the workspace</a></h2><p>After you add a repository, Conductor creates a workspace from it.</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/new-workspace.png\" alt=\"Conductor workspace screen showing the project sidebar, workspace chat, and setup checklist\" /></figure><p>Each workspace has its own:</p><ul><li>Branch.</li><li>Working tree.</li><li>Setup and run context.</li></ul><p>Conductor copies files tracked by Git into the workspace. Ignored files, dependencies, local databases, and <code>.env</code> files come from your setup script or your project's setup workflow.</p><p>For the underlying model, see <a href=\"/docs/concepts/workspaces-and-branches\">Isolated workspaces</a>.</p><h2 id=\"make-it-runnable\"><a href=\"#make-it-runnable\">Make it runnable</a></h2><p>Before agents change code, make sure the workspace can install dependencies, read local config, and run the project.</p><p>Use a <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> for files and dependencies that Git does not track, such as <code>.env</code> files, local databases, generated files, and package installs.</p><p>Use an <a href=\"/docs/reference/scripts#run-scripts\">action</a> to launch your app, server, watcher, or tests from Conductor. Actions execute inside the workspace directory and can use <code>CONDUCTOR_PORT</code>, so multiple workspaces can run beside each other.</p><p>You can manage setup scripts in <a href=\"https://app.conductor.build/settings/repos?section=scripts\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> and actions on the <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\">Actions tab</a>, or share them with your team in <a href=\"/docs/reference/scripts/share-with-teammates\"><code>.conductor/settings.toml</code></a>.</p><h2 id=\"start-work\"><a href=\"#start-work\">Start work</a></h2><p>Start a chat with Claude Code, Codex, Cursor, or OpenCode in Conductor. For a simple task, use one agent in one workspace.</p><p>Before you ask for changes, attach the context the agent needs:</p><ul><li>Mention files, folders, or comments from the composer.</li><li>Attach notes, specs, screenshots, and logs.</li><li>Put uncommitted handoffs in <code>.context</code>.</li></ul><p>Use the Run button for saved commands and the terminal for ad hoc commands. Commands run inside the workspace, not your original checkout. If your app cannot run cleanly from a workspace directory, use <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</p><h2 id=\"split-work-deliberately\"><a href=\"#split-work-deliberately\">Split work deliberately</a></h2><p>Use multiple agents in the same workspace when they should share the same branch and code state, such as one agent implementing while another reviews or fixes tests. Use separate workspaces when tasks should move independently and become separate pull requests.</p><p>Create more workspaces with <span data-shortcut aria-label=\"Command Shift N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>N</kbd></span> or the <code>...</code> button next to <code>New workspace</code>. You can start from a branch, pull request, GitHub issue, or Linear issue.</p><h2 id=\"review-merge-and-archive\"><a href=\"#review-merge-and-archive\">Review, merge, and archive</a></h2><p>When the workspace is ready:</p><ol><li>Open the Diff Viewer with <span data-shortcut aria-label=\"Command Shift D\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>D</kbd></span>.</li><li>Run tests through the terminal, Run button, or Spotlight testing.</li><li>Open the Checks tab to review git status, CI, deployments, comments, and todos.</li><li>Create a pull request, merge when ready, and archive the workspace.</li></ol><p>Next, <a href=\"/docs/configure-your-project\">configure your project</a>, learn the full <a href=\"/docs/concepts/workflow\">Conductor workflow</a>, and decide how to use <a href=\"/docs/concepts/parallel-agents\">parallel agents</a>.</p>",
+  "text": "A workspace is an isolated copy of your project, backed by Git, for one task or pull request.\nThis guide walks through the first loop: add a repository, prepare the workspace, give an agent context, and review the result.\nConductor workspaces isolate development state, not system permissions.\nAgents and commands still run locally with your user permissions.\nAdd a repository\nAfter you install Conductor, add a repository with one of these options:\nOpen project: choose an existing local repository.\nOpen GitHub project: choose a repository from GitHub.\nQuick start: create a new repository from Conductor.\nConductor uses GitHub from your terminal environment. To confirm GitHub is\navailable, run gh auth status in your terminal.\nCreate the workspace\nAfter you add a repository, Conductor creates a workspace from it.\nEach workspace has its own:\nBranch.\nWorking tree.\nSetup and run context.\nConductor copies files tracked by Git into the workspace. Ignored files, dependencies, local databases, and .env files come from your setup script or your project's setup workflow.\nFor the underlying model, see Isolated workspaces.\nMake it runnable\nBefore agents change code, make sure the workspace can install dependencies, read local config, and run the project.\nUse a setup script for files and dependencies that Git does not track, such as .env files, local databases, generated files, and package installs.\nUse an action to launch your app, server, watcher, or tests from Conductor. Actions execute inside the workspace directory and can use CONDUCTOR_PORT, so multiple workspaces can run beside each other.\nYou can manage setup scripts in Repository Settings and actions on the Actions tab, or share them with your team in .conductor/settings.toml.\nStart work\nStart a chat with Claude Code, Codex, Cursor, or OpenCode in Conductor. For a simple task, use one agent in one workspace.\nBefore you ask for changes, attach the context the agent needs:\nMention files, folders, or comments from the composer.\nAttach notes, specs, screenshots, and logs.\nPut uncommitted handoffs in .context.\nUse the Run button for saved commands and the terminal for ad hoc commands. Commands run inside the workspace, not your original checkout. If your app cannot run cleanly from a workspace directory, use Spotlight testing.\nSplit work deliberately\nUse multiple agents in the same workspace when they should share the same branch and code state, such as one agent implementing while another reviews or fixes tests. Use separate workspaces when tasks should move independently and become separate pull requests.\nCreate more workspaces with ⌘ShiftN or the ... button next to New workspace. You can start from a branch, pull request, GitHub issue, or Linear issue.\nReview, merge, and archive\nWhen the workspace is ready:\nOpen the Diff Viewer with ⌘ShiftD.\nRun tests through the terminal, Run button, or Spotlight testing.\nOpen the Checks tab to review git status, CI, deployments, comments, and todos.\nCreate a pull request, merge when ready, and archive the workspace.\nNext, configure your project, learn the full Conductor workflow, and decide how to use parallel agents.",
+  "markdown": "\n# Your first workspace\n\n\n\nA workspace is an isolated copy of your project, backed by Git, for one task or pull request.\n\nThis guide walks through the first loop: add a repository, prepare the workspace, give an agent context, and review the result.\n\nConductor workspaces isolate development state, not system permissions.\nAgents and commands still run locally with your user permissions.\n\n## Add a repository [#add-a-repository]\n\nAfter you [install Conductor](/docs/installation), add a repository with one of these options:\n\n* **Open project**: choose an existing local repository.\n* **Open GitHub project**: choose a repository from GitHub.\n* **Quick start**: create a new repository from Conductor.\n\nConductor uses GitHub from your terminal environment. To confirm GitHub is\navailable, run `gh auth status` in your terminal.\n\n## Create the workspace [#create-the-workspace]\n\nAfter you add a repository, Conductor creates a workspace from it.\n\n\n\n\nEach workspace has its own:\n\n* Branch.\n* Working tree.\n* Setup and run context.\n\nConductor copies files tracked by Git into the workspace. Ignored files, dependencies, local databases, and `.env` files come from your setup script or your project's setup workflow.\n\nFor the underlying model, see [Isolated workspaces](/docs/concepts/workspaces-and-branches).\n\n## Make it runnable [#make-it-runnable]\n\nBefore agents change code, make sure the workspace can install dependencies, read local config, and run the project.\n\nUse a [setup script](/docs/reference/scripts#setup-scripts) for files and dependencies that Git does not track, such as `.env` files, local databases, generated files, and package installs.\n\nUse an [action](/docs/reference/scripts#run-scripts) to launch your app, server, watcher, or tests from Conductor. Actions execute inside the workspace directory and can use `CONDUCTOR_PORT`, so multiple workspaces can run beside each other.\n\nYou can manage setup scripts in [Repository Settings](https://app.conductor.build/settings/repos?section=scripts) and actions on the [Actions tab](https://app.conductor.build/settings/repos?section=actions), or share them with your team in [`.conductor/settings.toml`](/docs/reference/scripts/share-with-teammates).\n\n## Start work [#start-work]\n\nStart a chat with Claude Code, Codex, Cursor, or OpenCode in Conductor. For a simple task, use one agent in one workspace.\n\nBefore you ask for changes, attach the context the agent needs:\n\n* Mention files, folders, or comments from the composer.\n* Attach notes, specs, screenshots, and logs.\n* Put uncommitted handoffs in `.context`.\n\nUse the Run button for saved commands and the terminal for ad hoc commands. Commands run inside the workspace, not your original checkout. If your app cannot run cleanly from a workspace directory, use [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n\n## Split work deliberately [#split-work-deliberately]\n\nUse multiple agents in the same workspace when they should share the same branch and code state, such as one agent implementing while another reviews or fixes tests. Use separate workspaces when tasks should move independently and become separate pull requests.\n\nCreate more workspaces with Command + Shift + N or the `...` button next to `New workspace`. You can start from a branch, pull request, GitHub issue, or Linear issue.\n\n## Review, merge, and archive [#review-merge-and-archive]\n\nWhen the workspace is ready:\n\n1. Open the Diff Viewer with Command + Shift + D.\n2. Run tests through the terminal, Run button, or Spotlight testing.\n3. Open the Checks tab to review git status, CI, deployments, comments, and todos.\n4. Create a pull request, merge when ready, and archive the workspace.\n\nNext, [configure your project](/docs/configure-your-project), learn the full [Conductor workflow](/docs/concepts/workflow), and decide how to use [parallel agents](/docs/concepts/parallel-agents).\n"
+}

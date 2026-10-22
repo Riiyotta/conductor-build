@@ -1,0 +1,40 @@
+{
+  "slug": "0.56.0-settings-scrolls",
+  "version": "0.56.0",
+  "versionSlug": "0.56.0",
+  "title": "Settings & scrolls",
+  "fullTitle": "0.56.0: Settings & scrolls",
+  "date": "May 21, 2026",
+  "dateISO": "2026-05-21",
+  "description": "Conductor 0.56.0 changelog - Settings & scrolls",
+  "summary": "The side nav now has a nice mask on scroll for a smooth, continuous feel. Shout out to Tim Wilson for the inspo!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.56.0/1779475000000-scroll-masks-0.56.0.gif",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.56.0-settings-scrolls/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.56.0-settings-scrolls",
+  "sourceUrl": "https://www.conductor.build/changelog/0.56.0-settings-scrolls",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Scroll masks"
+    },
+    {
+      "depth": 3,
+      "title": "Provider settings"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Scroll masks</h3>\n<p>The side nav now has a nice mask on scroll for a smooth, continuous feel.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.56.0/1779475000000-scroll-masks-0.56.0.gif\"/></figure>\nShout out to <a href=\"https://x.com/actualTimWilson/status/2056803280651772296?s=20\" target=\"_blank\" rel=\"noopener noreferrer\">Tim Wilson</a> for the inspo!</p>\n<h3>Provider settings</h3>\n<p>Provider configurations get even better, with quick links to your Claude &amp; Codex settings files.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.56.0/1779475000001-provider-settings-0.56.0.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Added quick links to Claude and Codex settings files.</li>\n<li>Cloud workspaces received reliability, sync, loading, status, and settings polish.</li>\n<li>Added the draft PR option to compact Create PR buttons.</li>\n<li>Added a bundled Conductor skill for configuring conductor.json and orienting agents inside workspaces.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where Conductor could delay showing a PR after switching workspaces.</li>\n<li>Fixed an issue where slow git operations could fail after 10 seconds.</li>\n<li>Fixed an issue where workspace creation could show a generic script failure instead of explaining a Git branch name conflict.</li>\n<li>Fixed an issue where shared workspace access could use stale permissions.</li>\n<li>Fixed an issue where the Vercel preview button could overlap other git panel controls.</li>\n<li>Fixed an issue where linked directories added with /add-dir were not available to agents in local workspaces.</li>\n<li>Fixed an issue where diff comment line selections did not appear until after dragging finished.</li>\n<li>Prompt submissions no longer include diagnostic logs.</li>\n<li>Fixed an issue where long links in chat messages could make the message view scroll sideways.</li>\n<li>Fixed an issue where the Option+U shortcut and other dead-key shortcuts could insert stray accent characters into the terminal, composer, or file editor.</li>\n<li>Fixed an issue where composer @ suggestions could stop appearing.</li>\n<li>Fixed an issue where the sidebar educational popup could appear above the workspace list fade.</li>\n<li>Fixed an issue where Conductor could show a branch as ahead after its commits were pushed.</li>\n</ul>",
+  "markdown": "\n## Scroll masks\n\nThe side nav now has a nice mask on scroll for a smooth, continuous feel.\n![image](/assets/changelog/media/0.56.0/1779475000000-scroll-masks-0.56.0.gif)\nShout out to [Tim Wilson](https://x.com/actualTimWilson/status/2056803280651772296?s=20) for the inspo!\n\n## Provider settings\n\nProvider configurations get even better, with quick links to your Claude & Codex settings files.\n![image](/assets/changelog/media/0.56.0/1779475000001-provider-settings-0.56.0.png)\n\n## Improvements\n\n- Added quick links to Claude and Codex settings files.\n- Cloud workspaces received reliability, sync, loading, status, and settings polish.\n- Added the draft PR option to compact Create PR buttons.\n- Added a bundled Conductor skill for configuring conductor.json and orienting agents inside workspaces.\n\n## Fixes\n\n- Fixed an issue where Conductor could delay showing a PR after switching workspaces.\n- Fixed an issue where slow git operations could fail after 10 seconds.\n- Fixed an issue where workspace creation could show a generic script failure instead of explaining a Git branch name conflict.\n- Fixed an issue where shared workspace access could use stale permissions.\n- Fixed an issue where the Vercel preview button could overlap other git panel controls.\n- Fixed an issue where linked directories added with /add-dir were not available to agents in local workspaces.\n- Fixed an issue where diff comment line selections did not appear until after dragging finished.\n- Prompt submissions no longer include diagnostic logs.\n- Fixed an issue where long links in chat messages could make the message view scroll sideways.\n- Fixed an issue where the Option+U shortcut and other dead-key shortcuts could insert stray accent characters into the terminal, composer, or file editor.\n- Fixed an issue where composer @ suggestions could stop appearing.\n- Fixed an issue where the sidebar educational popup could appear above the workspace list fade.\n- Fixed an issue where Conductor could show a branch as ahead after its commits were pushed.\n"
+}

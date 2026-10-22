@@ -1,0 +1,164 @@
+{
+  "slug": "reference/scripts/setup",
+  "url": "/docs/reference/scripts/setup",
+  "title": "Setup script reference",
+  "description": "Setup scripts are covered in the project scripts reference",
+  "meta": {
+    "title": "Setup script reference | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/scripts/setup/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Setup script reference"
+    }
+  ],
+  "toc": [],
+  "tocStyle": "clerk",
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup scripts are now covered in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Project scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use a setup script when a new workspace needs commands, generated files, symlinks, or workspace-specific resources. Configure it with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scripts.setup"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or open "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=scripts",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", select the project, and edit the setup script."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For static gitignored files such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/files-to-copy"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Files to copy"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Setup scripts are now covered in <a href=\"/docs/reference/scripts#setup-scripts\">Project scripts</a>.</p><p>Use a setup script when a new workspace needs commands, generated files, symlinks, or workspace-specific resources. Configure it with <code>scripts.setup</code> in <code>.conductor/settings.toml</code>, or open <a href=\"https://app.conductor.build/settings/repos?section=scripts\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a>, select the project, and edit the setup script.</p><p>For static gitignored files such as <code>.env.local</code>, use <a href=\"/docs/reference/files-to-copy\">Files to copy</a> instead.</p>",
+  "text": "Setup scripts are now covered in Project scripts.\nUse a setup script when a new workspace needs commands, generated files, symlinks, or workspace-specific resources. Configure it with scripts.setup in .conductor/settings.toml, or open Settings, select the project, and edit the setup script.\nFor static gitignored files such as .env.local, use Files to copy instead.",
+  "markdown": "\n# Setup script reference\n\n\n\nSetup scripts are now covered in [Project scripts](/docs/reference/scripts#setup-scripts).\n\nUse a setup script when a new workspace needs commands, generated files, symlinks, or workspace-specific resources. Configure it with `scripts.setup` in `.conductor/settings.toml`, or open [`Settings`](https://app.conductor.build/settings/repos?section=scripts), select the project, and edit the setup script.\n\nFor static gitignored files such as `.env.local`, use [Files to copy](/docs/reference/files-to-copy) instead.\n"
+}

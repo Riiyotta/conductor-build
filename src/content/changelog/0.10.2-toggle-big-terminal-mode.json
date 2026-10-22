@@ -1,0 +1,32 @@
+{
+  "slug": "0.10.2-toggle-big-terminal-mode",
+  "version": "0.10.2",
+  "versionSlug": "0.10.2",
+  "title": "Toggle Big Terminal Mode",
+  "fullTitle": "0.10.2: Toggle Big Terminal Mode",
+  "date": "Sept 10th, 2025",
+  "dateISO": "2025-09-10",
+  "description": "Conductor 0.10.2 changelog - Toggle Big Terminal Mode",
+  "summary": "",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.10.2/11177c6c-cdd8-4732-aa76-84e46cfae4bd.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.10.2-toggle-big-terminal-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.10.2-toggle-big-terminal-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.10.2-toggle-big-terminal-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.10.2/11177c6c-cdd8-4732-aa76-84e46cfae4bd.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Switch to Big Terminal mode within a workspace</li>\n<li>Focus on the composer when the diff viewer closes</li>\n<li>Unified view for added/deleted files in the diff viewer</li>\n<li>Faster Linear issue loading</li>\n<li>Improved diff viewer code theme</li>\n<li>New &quot;thinking&quot; interface</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix binary file line counting</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"486\"\n    height=\"310\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.10.2/11177c6c-cdd8-4732-aa76-84e46cfae4bd.png\"\n/>\n\n## Improvements\n\n- Switch to Big Terminal mode within a workspace\n- Focus on the composer when the diff viewer closes\n- Unified view for added/deleted files in the diff viewer\n- Faster Linear issue loading\n- Improved diff viewer code theme\n- New \"thinking\" interface\n\n## Fixes\n\n- Fix binary file line counting\n"
+}

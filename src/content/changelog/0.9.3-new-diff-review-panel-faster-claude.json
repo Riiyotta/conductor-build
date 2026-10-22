@@ -1,0 +1,32 @@
+{
+  "slug": "0.9.3-new-diff-review-panel-faster-claude",
+  "version": "0.9.3",
+  "versionSlug": "0.9.3",
+  "title": "New Diff Review Panel, Faster Claude",
+  "fullTitle": "0.9.3: New Diff Review Panel, Faster Claude",
+  "date": "Sept 6th, 2025",
+  "dateISO": "2025-09-06",
+  "description": "Conductor 0.9.3 changelog - New Diff Review Panel, Faster Claude",
+  "summary": "We've upgrade the diff review panel. It's now much more performant and easy to read.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.9.3/9dfeb99a-c08f-4930-8eb5-2f8844f72728.png",
+    "alt": "CleanShot 2025-09-06 at 14 08 23@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.9.3-new-diff-review-panel-faster-claude/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.9.3-new-diff-review-panel-faster-claude",
+  "sourceUrl": "https://www.conductor.build/changelog/0.9.3-new-diff-review-panel-faster-claude",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve upgrade the diff review panel. It&#x27;s now much more performant and easy to read.</p>\n<figure data-asset><img alt=\"CleanShot 2025-09-06 at 14 08 23@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.9.3/9dfeb99a-c08f-4930-8eb5-2f8844f72728.png\"/></figure>\n<p>Claude&#x27;s response times are now just as fast as in the CLI! Conductor now installs Claude Code via the native binary installation, so Claude responds faster and you no longer need <code>npm</code>.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Open files in preferred editor from the file preview</li>\n<li>Send messages with attachments only</li>\n<li>Added bash syntax highlighting to setup/run/archive scripts</li>\n<li>Ready to run empty state is now clickable</li>\n<li>Detect agents in nested folders within ~/.claude/agents</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Added docs and feedback links to help menu button</li>\n</ul>",
+  "markdown": "\nWe've upgrade the diff review panel. It's now much more performant and easy to read.\n\n<img\n    width=\"3024\"\n    height=\"1824\"\n    alt=\"CleanShot 2025-09-06 at 14 08 23@2x\"\n    src=\"/assets/changelog/media/0.9.3/9dfeb99a-c08f-4930-8eb5-2f8844f72728.png\"\n/>\n\nClaude's response times are now just as fast as in the CLI! Conductor now installs Claude Code via the native binary installation, so Claude responds faster and you no longer need `npm`.\n\n## Improvements\n\n- Open files in preferred editor from the file preview\n- Send messages with attachments only\n- Added bash syntax highlighting to setup/run/archive scripts\n- Ready to run empty state is now clickable\n- Detect agents in nested folders within ~/.claude/agents\n\n## Fixes\n\n- Added docs and feedback links to help menu button\n"
+}

@@ -1,0 +1,64 @@
+{
+  "slug": "0.61.0-ultracode-git-improve",
+  "version": "0.61.0",
+  "versionSlug": "0.61.0",
+  "title": "ultracode && git --improve",
+  "fullTitle": "0.61.0: ultracode && git --improve",
+  "date": "May 29, 2026",
+  "dateISO": "2026-05-29",
+  "description": "Conductor 0.61.0 changelog - ultracode && git --improve",
+  "summary": "Ultracode effort is live in Conductor! Ultracode combines x-high effort and dynamic workflow orchestration to help Claude take on the hardest tasks. We don’t know if it’s better yet but it’s cool.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.61.0/1780099515800-image.png",
+    "alt": ""
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.61.0-ultracode-git-improve/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.61.0-ultracode-git-improve",
+  "sourceUrl": "https://www.conductor.build/changelog/0.61.0-ultracode-git-improve",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Ultracode"
+    },
+    {
+      "depth": 3,
+      "title": "Git improvements"
+    },
+    {
+      "depth": 3,
+      "title": "New homepage preview"
+    },
+    {
+      "depth": 3,
+      "title": "Prompt Requests"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.61.1"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.61.2"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.61.3"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.61.4"
+    }
+  ],
+  "html": "<h3>Ultracode</h3>\n<p>Ultracode effort is live in Conductor! Ultracode combines x-high effort and <a href=\"https://claude.com/blog/introducing-dynamic-workflows-in-claude-code\" target=\"_blank\" rel=\"noopener noreferrer\">dynamic workflow orchestration</a> to help Claude take on the hardest tasks. We don’t know if it’s better yet but it’s cool.\n<figure data-asset><img alt=\"\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.61.0/1780099515800-image.png\"/></figure></p>\n<h3>Git improvements</h3>\n<p>We’ve made a number of improvements to our Git behavior - both locally &amp; remotely.</p>\n<ul>\n<li>Git changes appear faster after agent turns.</li>\n<li>Workspace lists do less background Git polling, helping Conductor stay more responsive.</li>\n<li>Git operations in separate workspaces can run with less unnecessary blocking.</li>\n<li>The Git panel shows remote file sync status labels correctly.</li>\n<li>The Git panel keeps PR info visible while Git status is loading.</li>\n<li>Conductor can find PR status for workspaces without an upstream branch.</li>\n<li>A clearer error appears when GitHub permissions prevent fetching PR data.</li>\n<li>Workspace creation handles concurrent Git fetch ref-lock races more reliably.</li>\n</ul>\n<h3>New homepage preview</h3>\n<p>The <a href=\"/\" target=\"_blank\" rel=\"noopener noreferrer\">conductor.build</a> homepage now features an interactive product tour - your friends and family can try out Conductor before they even download the app!</p>\n<figure data-asset><img alt=\"\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.61.0/1780099516542-image.gif\"/></figure>\n<h3>Prompt Requests</h3>\n<ul>\n<li><a href=\"https://x.com/mattt\" target=\"_blank\" rel=\"noopener noreferrer\">Mattt</a>: Disable macOS system one-time SMS and email autofills from popping up into prompt text box and other inputs.</li>\n</ul>\n<h3>Improvements</h3>\n<ul>\n<li>Prep ☁️ for launch</li>\n<li>Workspace names can use text from attached files.</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Terminal arrow keys no longer print escape sequences instead of navigating command history.</li>\n<li>Unreadable grayscale terminal text in dark mode has been fixed.</li>\n<li>The terminal no longer hides the bottom of the last line.</li>\n<li>Terminal history snapshots now survive resizing more reliably.</li>\n<li>Restored terminals now show restart output without requiring Enter.</li>\n<li>Agent responses no longer appear under the wrong chat turn.</li>\n<li>Synced cloud workspace files now run the setup script the first time they are mirrored locally.</li>\n<li>Remote workspaces no longer show their workspace ID instead of their name.</li>\n<li>Conductor no longer gets stuck on startup while refreshing account data.</li>\n<li>Quick dispatcher submissions no longer create duplicate workspaces.</li>\n<li>The Changes tab no longer briefly shows inconsistent file counts.</li>\n<li>Sidebar change counts now handle untracked files and ignored directories correctly.</li>\n<li>Big Terminal Claude and Codex presets now respect tool approval settings.</li>\n<li>The product tour no longer always shows the same background image.</li>\n<li>Sending feedback with app logs no longer fails in the fixed case.</li>\n<li>Sandbox log links now open the correct destination.</li>\n<li>Duplicate Remote File Sync completion logs have been reduced.</li>\n<li>Noisy Roundhouse and workspace connection errors are no longer reported to PostHog.</li>\n<li>Cmd+Shift+I no longer sends all app logs to the console.</li>\n</ul>\n<h4>New in 0.61.1</h4>\n<ul>\n<li>Bumped the Claude Code binary to 2.1.156 to fix Opus 4.8 thinking-block 400 errors.</li>\n</ul>\n<h4>New in 0.61.2</h4>\n<ul>\n<li>Fixed an issue with linking workspaces.</li>\n<li>Fixed an issue where the agent could hang when it used its question-asking tool several times in parallel.</li>\n<li>Fixed an issue where the plan approval message might appear out of order.</li>\n</ul>\n<h4>New in 0.61.3</h4>\n<ul>\n<li>Fixed model selection on Bedrock, Vertex, and Foundry. The model picker now shows the model each option resolves to and honors your <code>ANTHROPIC_DEFAULT_*_MODEL</code> environment variables.</li>\n</ul>\n<h4>New in 0.61.4</h4>\n<ul>\n<li>Fixed an issue where starting a new workspace after opening an existing workspace could skip repository selection.</li>\n</ul>",
+  "markdown": "\n## Ultracode\n\nUltracode effort is live in Conductor! Ultracode combines x-high effort and [dynamic workflow orchestration](https://claude.com/blog/introducing-dynamic-workflows-in-claude-code) to help Claude take on the hardest tasks. We don’t know if it’s better yet but it’s cool.\n![](/assets/changelog/media/0.61.0/1780099515800-image.png)\n\n## Git improvements\n\nWe’ve made a number of improvements to our Git behavior - both locally & remotely.\n\n- Git changes appear faster after agent turns.\n- Workspace lists do less background Git polling, helping Conductor stay more responsive.\n- Git operations in separate workspaces can run with less unnecessary blocking.\n- The Git panel shows remote file sync status labels correctly.\n- The Git panel keeps PR info visible while Git status is loading.\n- Conductor can find PR status for workspaces without an upstream branch.\n- A clearer error appears when GitHub permissions prevent fetching PR data.\n- Workspace creation handles concurrent Git fetch ref-lock races more reliably.\n\n## New homepage preview\n\nThe [conductor.build](/) homepage now features an interactive product tour - your friends and family can try out Conductor before they even download the app!\n\n![](/assets/changelog/media/0.61.0/1780099516542-image.gif)\n\n## Prompt Requests\n\n- [Mattt](https://x.com/mattt): Disable macOS system one-time SMS and email autofills from popping up into prompt text box and other inputs.\n\n## Improvements\n\n- Prep ☁️ for launch\n- Workspace names can use text from attached files.\n\n## Fixes\n\n- Terminal arrow keys no longer print escape sequences instead of navigating command history.\n- Unreadable grayscale terminal text in dark mode has been fixed.\n- The terminal no longer hides the bottom of the last line.\n- Terminal history snapshots now survive resizing more reliably.\n- Restored terminals now show restart output without requiring Enter.\n- Agent responses no longer appear under the wrong chat turn.\n- Synced cloud workspace files now run the setup script the first time they are mirrored locally.\n- Remote workspaces no longer show their workspace ID instead of their name.\n- Conductor no longer gets stuck on startup while refreshing account data.\n- Quick dispatcher submissions no longer create duplicate workspaces.\n- The Changes tab no longer briefly shows inconsistent file counts.\n- Sidebar change counts now handle untracked files and ignored directories correctly.\n- Big Terminal Claude and Codex presets now respect tool approval settings.\n- The product tour no longer always shows the same background image.\n- Sending feedback with app logs no longer fails in the fixed case.\n- Sandbox log links now open the correct destination.\n- Duplicate Remote File Sync completion logs have been reduced.\n- Noisy Roundhouse and workspace connection errors are no longer reported to PostHog.\n- Cmd+Shift+I no longer sends all app logs to the console.\n\n### New in 0.61.1\n\n- Bumped the Claude Code binary to 2.1.156 to fix Opus 4.8 thinking-block 400 errors.\n\n### New in 0.61.2\n\n- Fixed an issue with linking workspaces.\n- Fixed an issue where the agent could hang when it used its question-asking tool several times in parallel.\n- Fixed an issue where the plan approval message might appear out of order.\n\n### New in 0.61.3\n\n- Fixed model selection on Bedrock, Vertex, and Foundry. The model picker now shows the model each option resolves to and honors your `ANTHROPIC_DEFAULT_*_MODEL` environment variables.\n\n### New in 0.61.4\n\n- Fixed an issue where starting a new workspace after opening an existing workspace could skip repository selection.\n"
+}

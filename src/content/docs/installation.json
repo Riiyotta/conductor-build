@@ -1,0 +1,415 @@
+{
+  "slug": "installation",
+  "url": "/docs/installation",
+  "title": "Install",
+  "description": "Get Conductor running on your Mac",
+  "meta": {
+    "title": "Install | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/installation/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Get Started"
+    },
+    {
+      "name": "Install"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#download-for-mac",
+      "title": "Download for Mac"
+    },
+    {
+      "depth": 2,
+      "url": "#setup-checks",
+      "title": "Setup checks"
+    },
+    {
+      "depth": 2,
+      "url": "#next-step",
+      "title": "Next step"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs",
+    "title": "Introduction",
+    "description": "Learn what Conductor is and where to start in the docs"
+  },
+  "next": {
+    "url": "/docs/first-workspace",
+    "title": "Your first workspace",
+    "description": "Import a repository, configure it, and start agent work in an isolated Conductor workspace"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor is available for macOS. Install the app, then let Conductor check that your Mac is ready to create workspaces and run agents."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "download-for-mac",
+      "children": [
+        {
+          "type": "text",
+          "value": "Download for Mac"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Press "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "D"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " or click "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Download Conductor"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Drag the Conductor app to your Applications folder."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open Conductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor is not available for Windows or Linux yet. "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM/viewform",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Sign up\nhere"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "\nand we will let you know when it is ready."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "setup-checks",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup checks"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you open Conductor, it checks for the tools and credentials it needs. If anything is missing, Conductor walks you through setup."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor checks for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GitHub authentication in your terminal environment. To check manually, run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "gh auth status"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Code login, if you plan to use Claude. To sign in manually, run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "claude /login"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex login, if you plan to use Codex. To sign in manually, run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "codex login"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cursor API key, if you plan to use Cursor. Add it in "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Agents"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Cursor"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You need GitHub and at least one agent provider to use Conductor."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "next-step",
+      "children": [
+        {
+          "type": "text",
+          "value": "Next step"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After Conductor confirms your setup, create "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/first-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "your first workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor is available for macOS. Install the app, then let Conductor check that your Mac is ready to create workspaces and run agents.</p><h2 id=\"download-for-mac\"><a href=\"#download-for-mac\">Download for Mac</a></h2><ol><li>Press <code>D</code> or click <strong>Download Conductor</strong>.</li><li>Drag the Conductor app to your Applications folder.</li><li>Open Conductor.</li></ol><div role=\"note\" data-callout=\"info\"><p>Conductor is not available for Windows or Linux yet. <a href=\"https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM/viewform\" target=\"_blank\" rel=\"noopener noreferrer\">Sign up\nhere</a>\nand we will let you know when it is ready.</p></div><h2 id=\"setup-checks\"><a href=\"#setup-checks\">Setup checks</a></h2><p>When you open Conductor, it checks for the tools and credentials it needs. If anything is missing, Conductor walks you through setup.</p><p>Conductor checks for:</p><ul><li>GitHub authentication in your terminal environment. To check manually, run <code>gh auth status</code>.</li><li>Claude Code login, if you plan to use Claude. To sign in manually, run <code>claude /login</code>.</li><li>Codex login, if you plan to use Codex. To sign in manually, run <code>codex login</code>.</li><li>Cursor API key, if you plan to use Cursor. Add it in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>.</li></ul><p>You need GitHub and at least one agent provider to use Conductor.</p><h2 id=\"next-step\"><a href=\"#next-step\">Next step</a></h2><p>After Conductor confirms your setup, create <a href=\"/docs/first-workspace\">your first workspace</a>.</p>",
+  "text": "Conductor is available for macOS. Install the app, then let Conductor check that your Mac is ready to create workspaces and run agents.\nDownload for Mac\nPress D or click Download Conductor.\nDrag the Conductor app to your Applications folder.\nOpen Conductor.\nConductor is not available for Windows or Linux yet. Sign up\nhere\nand we will let you know when it is ready.\nSetup checks\nWhen you open Conductor, it checks for the tools and credentials it needs. If anything is missing, Conductor walks you through setup.\nConductor checks for:\nGitHub authentication in your terminal environment. To check manually, run gh auth status.\nClaude Code login, if you plan to use Claude. To sign in manually, run claude /login.\nCodex login, if you plan to use Codex. To sign in manually, run codex login.\nCursor API key, if you plan to use Cursor. Add it in Settings -> Agents -> Cursor.\nYou need GitHub and at least one agent provider to use Conductor.\nNext step\nAfter Conductor confirms your setup, create your first workspace.",
+  "markdown": "\n# Install\n\n\n\nConductor is available for macOS. Install the app, then let Conductor check that your Mac is ready to create workspaces and run agents.\n\n## Download for Mac [#download-for-mac]\n\n1. Press `D` or click **Download Conductor**.\n2. Drag the Conductor app to your Applications folder.\n3. Open Conductor.\n\nConductor is not available for Windows or Linux yet. [Sign up\nhere](https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM/viewform)\nand we will let you know when it is ready.\n\n## Setup checks [#setup-checks]\n\nWhen you open Conductor, it checks for the tools and credentials it needs. If anything is missing, Conductor walks you through setup.\n\nConductor checks for:\n\n* GitHub authentication in your terminal environment. To check manually, run `gh auth status`.\n* Claude Code login, if you plan to use Claude. To sign in manually, run `claude /login`.\n* Codex login, if you plan to use Codex. To sign in manually, run `codex login`.\n* Cursor API key, if you plan to use Cursor. Add it in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor).\n\nYou need GitHub and at least one agent provider to use Conductor.\n\n## Next step [#next-step]\n\nAfter Conductor confirms your setup, create [your first workspace](/docs/first-workspace).\n"
+}

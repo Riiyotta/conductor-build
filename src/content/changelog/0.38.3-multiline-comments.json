@@ -1,0 +1,36 @@
+{
+  "slug": "0.38.3-multiline-comments",
+  "version": "0.38.3",
+  "versionSlug": "0.38.3",
+  "title": "Multiline comments",
+  "fullTitle": "0.38.3: Multiline comments",
+  "date": "Mar 10th, 2026",
+  "dateISO": "2026-03-10",
+  "description": "Conductor 0.38.3 changelog - Multiline comments",
+  "summary": "You can now click and drag to add multiline comments. Also, comments now render with markdown formatting. Comments from GitHub show the author's avatar, and disappear when they become outdated or resolved.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.38.3/1773167427543-image.png",
+    "alt": "image.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.38.3-multiline-comments/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.38.3-multiline-comments",
+  "sourceUrl": "https://www.conductor.build/changelog/0.38.3-multiline-comments",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>You can now click and drag to add multiline comments. Also, comments now render with markdown formatting. Comments from GitHub show the author&#x27;s avatar, and disappear when they become outdated or resolved.</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.38.3/1773167427543-image.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>You can now search the terminal with ⌘F</li>\n<li>You can now right-click on a chat to copy it as markdown (or ⌘⌥C)</li>\n<li>Conductor now stops idle Claude processes to reduce memory usage</li>\n<li>Conductor now detects your merge/rebase preference from git</li>\n<li>The code editor is now powered by CodeMirror, making it faster and lighter</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where Conductor would show the wrong PR base branch</li>\n<li>Fixed a UI issue from having too many repos</li>\n<li>Removed inaccurate cost information from turn hover tooltip</li>\n<li>Fixed a visual issue with tool call code output</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>When you&#x27;ve typed a message, the stop button will now be replaced by a &quot;queue&quot; button</li>\n<li>Press ⌘O and keep holding down the cmd key to see a new experiment</li>\n</ul>",
+  "markdown": "\nYou can now click and drag to add multiline comments. Also, comments now render with markdown formatting. Comments from GitHub show the author's avatar, and disappear when they become outdated or resolved.\n\n<img\n    src=\"/assets/changelog/media/0.38.3/1773167427543-image.png\"\n    alt=\"image.png\"\n/>\n\n## Improvements\n\n- You can now search the terminal with ⌘F\n- You can now right-click on a chat to copy it as markdown (or ⌘⌥C)\n- Conductor now stops idle Claude processes to reduce memory usage\n- Conductor now detects your merge/rebase preference from git\n- The code editor is now powered by CodeMirror, making it faster and lighter\n\n## Fixes\n\n- Fixed an issue where Conductor would show the wrong PR base branch\n- Fixed a UI issue from having too many repos\n- Removed inaccurate cost information from turn hover tooltip\n- Fixed a visual issue with tool call code output\n\n## Misc\n\n- When you've typed a message, the stop button will now be replaced by a \"queue\" button\n- Press ⌘O and keep holding down the cmd key to see a new experiment\n"
+}

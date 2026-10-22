@@ -1,0 +1,32 @@
+{
+  "slug": "0.24.0-improved-codex-quick-start",
+  "version": "0.24.0",
+  "versionSlug": "0.24.0",
+  "title": "Improved Codex, Quick Start",
+  "fullTitle": "0.24.0: Improved Codex, Quick Start",
+  "date": "Dec 2nd, 2025",
+  "dateISO": "2025-12-02",
+  "description": "Conductor 0.24.0 changelog - Improved Codex, Quick Start",
+  "summary": "We've improved Codex in Conductor: bash command render live, web search is enabled, and MCPs appear in the UI.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.24.0/a6d19085-480a-454e-8eb1-5b45f03de6ae.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.24.0-improved-codex-quick-start/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.24.0-improved-codex-quick-start",
+  "sourceUrl": "https://www.conductor.build/changelog/0.24.0-improved-codex-quick-start",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve improved Codex in Conductor: bash command render live, web search is enabled, and MCPs appear in the UI.</p>\n<p>We&#x27;ve also added an option to create repositories from within Conductor. Quick start creates a new repo and pushes it to GitHub.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.24.0/a6d19085-480a-454e-8eb1-5b45f03de6ae.png\"/></figure>\n<p>We&#x27;ve also made the settings page fullscreen, and made the tabs clearer and easier to navigate.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.24.0/66cb317e-b878-47d1-9551-c3b4b9955fbb.png\"/></figure>\n<p>And we&#x27;ve made fuzzy search more flexible:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.24.0/5d415c46-c420-4c12-a81d-ba4e55bebb18.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>New workspaces now show the file tree by default. They will automatically switch to show changed files once files are modified.</li>\n<li>Added the workspace branch name to macOS notifications</li>\n<li>Added previews for text attachments</li>\n<li>Added a toggle to show session cost in the top bar when using an API key</li>\n<li>Added back the scroll to bottom button</li>\n<li>Added undo toast when archiving workspaces</li>\n<li>Detect default branch automatically for Quick Start repos</li>\n<li>Open in XCode now uses <code>xed</code></li>\n<li>Add Sourcetree to apps list</li>\n<li>Various Codex chat UI improvements\n<ul>\n<li>Bash commands render as soon as they start running</li>\n<li>Remove unnecessary prefixes in bash commands</li>\n<li>Failing bash commands no longer show as empty errors</li>\n<li>Show MCP tool calls in the chat</li>\n<li>Enabled web search</li>\n</ul>\n</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Added a warning when you upload an image larger than 5MB to Claude Code chats (Claude Code will crash on large images)</li>\n<li>Fixed a bug where the incorrect workspace would occasionally be archived</li>\n<li>Fixed agent icon being incorrect in the chat tab history popover</li>\n<li>Invalid slash commands now show an error</li>\n<li>Fixed the &quot;Create workspace from&quot; button not working on the home page</li>\n<li>Fixed Claude Code downloads not working for some users</li>\n<li>Fix PR search to use GitHub search API</li>\n</ul>",
+  "markdown": "\nWe've improved Codex in Conductor: bash command render live, web search is enabled, and MCPs appear in the UI.\n\nWe've also added an option to create repositories from within Conductor. Quick start creates a new repo and pushes it to GitHub.\n\n<img\n    width=\"1030\"\n    height=\"838\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.24.0/a6d19085-480a-454e-8eb1-5b45f03de6ae.png\"\n/>\n\nWe've also made the settings page fullscreen, and made the tabs clearer and easier to navigate.\n\n<img\n    width=\"2048\"\n    height=\"1220\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.24.0/66cb317e-b878-47d1-9551-c3b4b9955fbb.png\"\n/>\n\nAnd we've made fuzzy search more flexible:\n\n<img\n    width=\"408\"\n    height=\"234\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.24.0/5d415c46-c420-4c12-a81d-ba4e55bebb18.png\"\n/>\n\n## Improvements\n\n- New workspaces now show the file tree by default. They will automatically switch to show changed files once files are modified.\n- Added the workspace branch name to macOS notifications\n- Added previews for text attachments\n- Added a toggle to show session cost in the top bar when using an API key\n- Added back the scroll to bottom button\n- Added undo toast when archiving workspaces\n- Detect default branch automatically for Quick Start repos\n- Open in XCode now uses `xed`\n- Add Sourcetree to apps list\n- Various Codex chat UI improvements\n    - Bash commands render as soon as they start running\n    - Remove unnecessary prefixes in bash commands\n    - Failing bash commands no longer show as empty errors\n    - Show MCP tool calls in the chat\n    - Enabled web search\n\n## Fixes\n\n- Added a warning when you upload an image larger than 5MB to Claude Code chats (Claude Code will crash on large images)\n- Fixed a bug where the incorrect workspace would occasionally be archived\n- Fixed agent icon being incorrect in the chat tab history popover\n- Invalid slash commands now show an error\n- Fixed the \"Create workspace from\" button not working on the home page\n- Fixed Claude Code downloads not working for some users\n- Fix PR search to use GitHub search API\n"
+}

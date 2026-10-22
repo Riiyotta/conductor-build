@@ -1,0 +1,28 @@
+{
+  "slug": "0.48.5-effort",
+  "version": "0.48.5",
+  "versionSlug": "0.48.5",
+  "title": "Effort",
+  "fullTitle": "0.48.5: Effort",
+  "date": "Apr 18, 2026",
+  "dateISO": "2026-04-18",
+  "description": "Conductor 0.48.5 changelog - Effort",
+  "summary": "We've added a toggle for effort levels! (press ⌥T to toggle)",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.48.5/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png",
+    "alt": "Effort toggle for Claude models"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.48.5-effort/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.48.5-effort",
+  "sourceUrl": "https://www.conductor.build/changelog/0.48.5-effort",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Prompt Requests"
+    }
+  ],
+  "html": "<p>We&#x27;ve added a toggle for effort levels! (press <code>⌥T</code> to toggle)</p>\n<figure data-asset><img alt=\"Effort toggle for Claude models\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.48.5/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png\"/></figure>\n<h3>Prompt Requests</h3>\n<ul>\n<li>Add Effort level. Thanks to:\n<ul>\n<li>Tim Herby</li>\n<li>David Kaye</li>\n<li>Daniël Brekelmans</li>\n<li>Valerii Kuznietsov</li>\n<li>Bunty SomRoy</li>\n<li>Kyler Mintah</li>\n<li>Ocean</li>\n</ul>\n</li>\n<li>Add a &quot;Continue&quot; button to error messages (thanks <a href=\"https://x.com/shoyer\" target=\"_blank\" rel=\"noopener noreferrer\">Stephan</a>!)</li>\n<li>Add back the discard button to the changes pane (thanks Cole!)</li>\n</ul>",
+  "markdown": "\nWe've added a toggle for effort levels! (press `⌥T` to toggle)\n\n<img\n    src=\"/assets/changelog/media/0.48.5/1776539897337-CleanShot_2026-04-18_at_12.18.00_2x.png\"\n    alt=\"Effort toggle for Claude models\"\n/>\n\n## Prompt Requests\n\n- Add Effort level. Thanks to:\n    - Tim Herby\n    - David Kaye\n    - Daniël Brekelmans\n    - Valerii Kuznietsov\n    - Bunty SomRoy\n    - Kyler Mintah\n    - Ocean\n- Add a \"Continue\" button to error messages (thanks [Stephan](https://x.com/shoyer)!)\n- Add back the discard button to the changes pane (thanks Cole!)\n"
+}

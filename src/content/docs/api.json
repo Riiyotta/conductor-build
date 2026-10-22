@@ -1,0 +1,4197 @@
+{
+  "slug": "api",
+  "url": "/docs/api",
+  "title": "Conductor API",
+  "description": "Drive Conductor cloud workspaces programmatically over HTTP",
+  "meta": {
+    "title": "Conductor API | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/api/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Conductor API"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#try-it",
+      "title": "Try it"
+    },
+    {
+      "depth": 2,
+      "url": "#authentication",
+      "title": "Authentication"
+    },
+    {
+      "depth": 2,
+      "url": "#connect-with-mcp",
+      "title": "Connect with MCP"
+    },
+    {
+      "depth": 2,
+      "url": "#quick-start-for-ai",
+      "title": "Quick start (for AI)"
+    },
+    {
+      "depth": 2,
+      "url": "#quick-start-for-humans",
+      "title": "Quick start (for humans)"
+    },
+    {
+      "depth": 2,
+      "url": "#endpoints",
+      "title": "Endpoints"
+    },
+    {
+      "depth": 3,
+      "url": "#routines",
+      "title": "Routines"
+    },
+    {
+      "depth": 3,
+      "url": "#attachments-preview",
+      "title": "Attachments (preview)"
+    },
+    {
+      "depth": 2,
+      "url": "#cookbook",
+      "title": "Cookbook"
+    },
+    {
+      "depth": 4,
+      "url": "#plan-implement",
+      "title": "Plan, Implement"
+    },
+    {
+      "depth": 4,
+      "url": "#implement-a-multi-pr-task",
+      "title": "Implement a multi-PR task"
+    },
+    {
+      "depth": 4,
+      "url": "#daily-report",
+      "title": "Daily Report"
+    },
+    {
+      "depth": 4,
+      "url": "#manage-conductor-from-your-openclaw",
+      "title": "Manage Conductor from your OpenClaw"
+    },
+    {
+      "depth": 2,
+      "url": "#tips",
+      "title": "Tips"
+    },
+    {
+      "depth": 2,
+      "url": "#calling-the-api-from-a-cloud-workspace",
+      "title": "Calling the API from a cloud workspace"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/concepts/git-worktrees",
+    "title": "Git worktrees",
+    "description": "Understand how Conductor uses Git worktrees to create isolated coding-agent workspaces"
+  },
+  "next": {
+    "url": "/docs/api/mcp",
+    "title": "Conductor MCP server",
+    "description": "Connect an MCP client to create and manage Conductor cloud workspaces"
+  },
+  "components": [
+    "ApiKeyTester",
+    "ApiAgentPrompt"
+  ],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The Conductor API lets you manage "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "cloud workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " programmatically. Use it to do things like:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create workspaces, send prompts to the coding agent, and read its replies."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Build bots that kick off agent work."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Run and manage Conductor workspaces from your OpenClaw."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Endpoints live under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "https://api.conductor.build/v0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". This page covers setup and the typical flow; for the full contract check out our "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://api.conductor.build/v0/openapi.json",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "OpenAPI spec"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The API is in beta. Request and response shapes may change. Send feedback to\n"
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "mailto:humans@conductor.build"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "humans@conductor.build"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "try-it",
+      "children": [
+        {
+          "type": "text",
+          "value": "Try it"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create an API key at "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/home/api-keys",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "app.conductor.build/home/api-keys"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", then paste it here to test it end to end: this creates a "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "real cloud workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "ApiKeyTester",
+      "props": {},
+      "children": []
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "authentication",
+      "children": [
+        {
+          "type": "text",
+          "value": "Authentication"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Pass your API key as a bearer token: "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Authorization: Bearer <your API key>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "connect-with-mcp",
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect with MCP"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect an MCP-compatible client to Conductor to manage cloud workspaces with\ntools instead of direct REST requests. See the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/api/mcp"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor MCP server"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\nfor setup instructions and the complete tool list."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "quick-start-for-ai",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quick start (for AI)"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Paste this into your Claude Code / Codex / OpenClaw agent:"
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "ApiAgentPrompt",
+      "props": {
+        "prompt": "Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \"Authorization: Bearer {{API_KEY}}\". If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes.\n\nFrom now on, when I send you a coding task for one of my repositories:\n\n1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns.\n2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request.\n3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. The status reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" before treating \"idle\" as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message.\n4. When it settles, message me a short summary of what was done, the PR link, and the workspace's deepLink.\n\nWhen I ask what my agents are up to, query POST /v0/sql (read-only, over the view session_transcripts_view) for workspaces with recent transcript activity and summarize each one.\n\nConfirm you have saved this role and are ready for the first task."
+      },
+      "children": []
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "quick-start-for-humans",
+      "children": [
+        {
+          "type": "text",
+          "value": "Quick start (for humans)"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "List projects:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl https://api.conductor.build/v0/projects \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " https://api.conductor.build/v0/projects",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create a workspace using a project ID from that response:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -X POST https://api.conductor.build/v0/workspaces \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"projectId\": \"PROJECT_ID\",\n    \"name\": \"my-workspace\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.5\"\n  }'",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " POST",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " https://api.conductor.build/v0/workspaces",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: application/json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -d",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '{",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"projectId\": \"PROJECT_ID\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"name\": \"my-workspace\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"agent\": \"codex\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"model\": \"gpt-5.5\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  }'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Then read it using the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "id"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " returned above:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl https://api.conductor.build/v0/workspaces/WORKSPACE_ID \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " https://api.conductor.build/v0/workspaces/WORKSPACE_ID",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "endpoints",
+      "children": [
+        {
+          "type": "text",
+          "value": "Endpoints"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Endpoint"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "What it does"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/projects"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List the repositories you can create workspaces in."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/projects/{id}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a project."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/projects/{id}/workspaces"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List a project's workspaces."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/workspaces"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Create a workspace and its first session."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/workspaces/{id}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/workspaces/{id}/rename"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Rename a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/workspaces/{id}/sessions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List a workspace's sessions ("
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "includeArchived=true"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " includes archived)."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/workspaces/{id}/status"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace lifecycle: "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "initializing"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "ready"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "sleeping"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "archived"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", …"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/workspaces/{id}/archive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Stop the workspace's machine and hide it in the app (restorable later)."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/workspaces/{id}/unarchive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Restore an archived workspace and start its machine."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/workspaces/{id}/sleep"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Put the workspace to sleep (it stays visible and resumable)."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sessions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Add another agent chat to a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/sessions/{id}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a session."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sessions/{id}/rename"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Rename a session."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sessions/{id}/attachments"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get an upload URL for a file to attach to a message (preview)."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sessions/{id}/messages"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Send a prompt to the agent."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/sessions/{id}/messages"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Read the session transcript."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/sessions/{id}/status"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Whether the agent is "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "idle"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "working"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or errored."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sessions/{id}/cancel"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Stop the agent's current turn and drop queued messages."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/messages/{id}"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a single transcript message."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/sql"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Search transcripts of workspaces you can access with read-only SQL."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/routines"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Create a routine that runs a prompt when its webhook URL is called."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "GET /v0/routines"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List your routines (without webhook URLs)."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "POST /v0/routines/{id}/rotate-secret"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Replace a routine's webhook URL and return the new one."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "List endpoints paginate with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "limit"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "/"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "offset"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and return "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "{ data, offset, hasMore }"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". When polling a transcript, pass "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "after=<last message id>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead of stepping "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "offset"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " — it returns only new messages. Errors from the API include a human-readable "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "userMessage"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspace responses include "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorId"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorName"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorName"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is the\ncreator's name, or their email address when they have not set a name. The\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GET /me"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " response also includes the authenticated user's optional "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "name"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\nalongside their "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "email"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "routines",
+      "children": [
+        {
+          "type": "text",
+          "value": "Routines"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A routine is a saved prompt that Conductor runs in a fresh workspace each time its webhook URL receives a JSON POST. The routine endpoints require a user API key from "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/home/api-keys",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "app.conductor.build/home/api-keys"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; the workspace-scoped "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_TOKEN"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is rejected with a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "403"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Routines belong to the user who created them and run with that user's Git and agent credentials."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Routines created through this API have exactly one webhook trigger. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GET /v0/routines"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " also lists your existing routines, which may have cron, GitHub, or multiple triggers. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "rotate-secret"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " requires exactly one trigger, and it must be a webhook; other trigger configurations return "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "409"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The webhook URL is the trigger's only credential: anyone who can POST to it can run the routine, and no other authentication is checked. The URL appears only in the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "POST /v0/routines"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "rotate-secret"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " responses — "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GET /v0/routines"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " omits it — so store it as a secret. If it leaks, call "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "rotate-secret"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to replace it. Revoking your API key does not revoke the URL."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create a routine, then call its webhook:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -X POST https://api.conductor.build/v0/routines \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"Triage customer report\",\n    \"projectId\": \"PROJECT_ID\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.6-sol\",\n    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"\n  }'\n# → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }\n\ncurl -X POST \"WEBHOOK_URL\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"report\": \"Login fails with a 500 on Safari\"}'",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " POST",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " https://api.conductor.build/v0/routines",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: application/json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -d",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '{",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"name\": \"Triage customer report\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"projectId\": \"PROJECT_ID\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"agent\": \"codex\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"model\": \"gpt-5.6-sol\",",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  }'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "# → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " POST",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \"WEBHOOK_URL\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: application/json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -d",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '{\"report\": \"Login fails with a 500 on Safari\"}'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The webhook returns "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "202"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and the JSON body is attached to the prompt. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "enabled"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " defaults to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "true"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; a disabled routine keeps its URL but answers "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "409"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "model"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "effort"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " follow the same rules as workspace creation."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The same flow with the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " CLI (set "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to your user API key first):"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor routine create \\\n  --name \"Triage customer report\" \\\n  --project-id PROJECT_ID \\\n  --agent codex \\\n  --model gpt-5.6-sol \\\n  --prompt-file ./triage-prompt.md\nconductor routine list\nconductor routine rotate-secret ROUTINE_ID",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " routine",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " create",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --name",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Triage customer report\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --project-id",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " PROJECT_ID",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --agent",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " codex",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --model",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " gpt-5.6-sol",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --prompt-file",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " ./triage-prompt.md",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "conductor",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " routine",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " list",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "conductor",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " routine",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " rotate-secret",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ROUTINE_ID",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "routine create"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "routine rotate-secret"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " print the webhook URL once; pass "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to capture the full response in a script."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "attachments-preview",
+      "children": [
+        {
+          "type": "text",
+          "value": "Attachments (preview)"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Attachments are in preview and enabled per user. Requests from users without access receive a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "403"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can attach files, such as screenshots, screen recordings, or logs, to a message in an existing session. Create the session first, upload the files, and then send the message. Attachments can't be added to the first message of "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "POST /v0/workspaces"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "POST /v0/sessions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "To upload a file, create an attachment and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "PUT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " the bytes to the returned URL within 15 minutes:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/attachments \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"filename\": \"bug.mov\", \"contentType\": \"video/quicktime\", \"byteSize\": 4823091}'\n# → { \"attachment\": { \"id\": \"ATTACHMENT_ID\", \"path\": \".context/attachments/assets/ATTACHMENT_ID/bug.mov\" },\n#     \"upload\": { \"url\": \"UPLOAD_URL\", \"headers\": { \"Content-Type\": \"video/quicktime\" }, \"expiresAt\": \"...\" } }\n\ncurl -X PUT \"UPLOAD_URL\" \\\n  -H \"Content-Type: video/quicktime\" \\\n  --data-binary @bug.mov\n\ncurl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/messages \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"message\": \"This recording shows the bug. Find the cause and fix it.\", \"attachments\": [{\"id\": \"ATTACHMENT_ID\"}]}'",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " POST",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " https://api.conductor.build/v0/sessions/SESSION_ID/attachments",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: application/json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -d",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '{\"filename\": \"bug.mov\", \"contentType\": \"video/quicktime\", \"byteSize\": 4823091}'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "# → { \"attachment\": { \"id\": \"ATTACHMENT_ID\", \"path\": \".context/attachments/assets/ATTACHMENT_ID/bug.mov\" },",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "#     \"upload\": { \"url\": \"UPLOAD_URL\", \"headers\": { \"Content-Type\": \"video/quicktime\" }, \"expiresAt\": \"...\" } }",
+              "color": "#6A737D",
+              "colorDark": "#6A737D"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " PUT",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \"UPLOAD_URL\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: video/quicktime\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --data-binary",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " @bug.mov",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -X",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " POST",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " https://api.conductor.build/v0/sessions/SESSION_ID/messages",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Content-Type: application/json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  -d",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " '{\"message\": \"This recording shows the bug. Find the cause and fix it.\", \"attachments\": [{\"id\": \"ATTACHMENT_ID\"}]}'",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "byteSize"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " must be the file's exact size in bytes. Send the headers from "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "upload.headers"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " with the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "PUT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Limits:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Files can be up to 100 MB and of any type."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A message can include up to 10 attachments."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor doesn't fetch files from URLs."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Attached files appear in the workspace under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".context/attachments/"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and the agent is told to read them. Agents read images directly. Videos and other binary files arrive as plain files, so the agent needs a tool such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "ffmpeg"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the workspace to look inside them. When you retry a message with the same "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "messageId"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", send the same text and attachments; a retry with different content is rejected."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "With the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " CLI, pass "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--attach"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " once per file:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "conductor message create --session SESSION_ID \\\n  --message \"This recording shows the bug. Find the cause and fix it.\" \\\n  --attach ./bug.mov --attach ./console.log",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "conductor",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " message",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " create",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --session",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " SESSION_ID",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --message",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"This recording shows the bug. Find the cause and fix it.\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --attach",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " ./bug.mov",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --attach",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " ./console.log",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "cookbook",
+      "children": [
+        {
+          "type": "text",
+          "value": "Cookbook"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Machine-launched cloud workspaces include an authenticated Conductor API key. In\nother workspaces, configure an API key before trying these prompts. See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "#calling-the-api-from-a-cloud-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Calling\nthe API from a cloud workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for\navailability details."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "plan-implement",
+      "children": [
+        {
+          "type": "text",
+          "value": "Plan, Implement"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "I will give you a task and a model in my next message. You handle the planning and review; the model I name does the implementation in a fresh Conductor session via the Conductor API:\n\n1. Plan first: investigate whatever you need here, then write a self-contained implementation brief — files, approach, constraints, definition of done. The implementing session shares no context with you.\n2. Find the right project with GET /v0/projects and create a workspace for the task (POST /v0/workspaces — name it after the task, with the model I name). Note the sessionId and deepLink it returns.\n3. Send the brief with POST /v0/sessions/{sessionId}/messages.\n4. Manage the session until the work actually gets done: poll GET /v0/sessions/{sessionId}/status every ~15 seconds and read new transcript messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. If the implementer stalls, drifts from the brief, or asks a question, answer or course-correct it with another message — messages sent while it works are steered into the running turn. (The session reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n5. When it settles, review the result against the brief and send follow-ups until it meets the bar. Then give me a short summary of what was done, the PR, and the deepLink.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "I will give you a task and a model in my next message. You handle the planning and review; the model I name does the implementation in a fresh Conductor session via the Conductor API:"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "1. Plan first: investigate whatever you need here, then write a self-contained implementation brief — files, approach, constraints, definition of done. The implementing session shares no context with you."
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "2. Find the right project with GET /v0/projects and create a workspace for the task (POST /v0/workspaces — name it after the task, with the model I name). Note the sessionId and deepLink it returns."
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "3. Send the brief with POST /v0/sessions/{sessionId}/messages."
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "4. Manage the session until the work actually gets done: poll GET /v0/sessions/{sessionId}/status every ~15 seconds and read new transcript messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. If the implementer stalls, drifts from the brief, or asks a question, answer or course-correct it with another message — messages sent while it works are steered into the running turn. (The session reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "5. When it settles, review the result against the brief and send follow-ups until it meets the bar. Then give me a short summary of what was done, the PR, and the deepLink."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "implement-a-multi-pr-task",
+      "children": [
+        {
+          "type": "text",
+          "value": "Implement a multi-PR task"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "I will give you a task and a model in my next message. The task is too big for one pull request — it may even span repositories — so split it up and run the pieces in parallel through the Conductor API:\n\n1. Break the task into independent pieces, each small enough for its own pull request, and decide which repository each piece belongs in (GET /v0/projects lists the repositories you can use). Write a self-contained brief for each piece — the implementing sessions share no context with you or with each other, so spell out any interfaces the pieces must agree on.\n2. For each piece, create a workspace named after it (POST /v0/workspaces, with the model I name) and send its brief to the workspace's session with POST /v0/sessions/{sessionId}/messages, asking for a PR. Kick them all off before waiting on any of them so they run in parallel.\n3. Supervise the sessions: poll GET /v0/sessions/{sessionId}/status, read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>, and steer any session that stalls or drifts with a follow-up message. (A session reports \"idle\" until its queued brief is delivered — wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n4. When everything settles, review each result against its brief, then give me a table: piece, repository, the PR, and the workspace's deepLink.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "I will give you a task and a model in my next message. The task is too big for one pull request — it may even span repositories — so split it up and run the pieces in parallel through the Conductor API:"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "1. Break the task into independent pieces, each small enough for its own pull request, and decide which repository each piece belongs in (GET /v0/projects lists the repositories you can use). Write a self-contained brief for each piece — the implementing sessions share no context with you or with each other, so spell out any interfaces the pieces must agree on."
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "2. For each piece, create a workspace named after it (POST /v0/workspaces, with the model I name) and send its brief to the workspace's session with POST /v0/sessions/{sessionId}/messages, asking for a PR. Kick them all off before waiting on any of them so they run in parallel."
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "3. Supervise the sessions: poll GET /v0/sessions/{sessionId}/status, read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>, and steer any session that stalls or drifts with a follow-up message. (A session reports \"idle\" until its queued brief is delivered — wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "4. When everything settles, review each result against its brief, then give me a table: piece, repository, the PR, and the workspace's deepLink."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "daily-report",
+      "children": [
+        {
+          "type": "text",
+          "value": "Daily Report"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "Use the Conductor API to search my organization's session transcripts with POST /v0/sql (body {\"query\": \"...\"}). Queries can only read the view session_transcripts_view; useful columns include workspace_id, workspace_name, workspace_created_at, workspace_creator_id, session_title, transcript, and transcript_updated_at.\n\nFind every workspace that was worked on in the last 24 hours — for example SELECT workspace_id, workspace_name, session_title, transcript FROM session_transcripts_view WHERE transcript_updated_at >= now() - interval '24 hours' ORDER BY transcript_updated_at DESC — then give me a report with one entry per workspace: what is being done in it (summarize the transcripts) and its deepLink (from GET /v0/workspaces/{workspaceId}) so I can open it in Conductor.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "Use the Conductor API to search my organization's session transcripts with POST /v0/sql (body {\"query\": \"...\"}). Queries can only read the view session_transcripts_view; useful columns include workspace_id, workspace_name, workspace_created_at, workspace_creator_id, session_title, transcript, and transcript_updated_at."
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "Find every workspace that was worked on in the last 24 hours — for example SELECT workspace_id, workspace_name, session_title, transcript FROM session_transcripts_view WHERE transcript_updated_at >= now() - interval '24 hours' ORDER BY transcript_updated_at DESC — then give me a report with one entry per workspace: what is being done in it (summarize the transcripts) and its deepLink (from GET /v0/workspaces/{workspaceId}) so I can open it in Conductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 4,
+      "id": "manage-conductor-from-your-openclaw",
+      "children": [
+        {
+          "type": "text",
+          "value": "Manage Conductor from your OpenClaw"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Agents running outside Conductor just need an API key. This prompt turns any personal agent into a manager for your Conductor fleet:"
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "ApiAgentPrompt",
+      "props": {
+        "prompt": "Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \"Authorization: Bearer {{API_KEY}}\". If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes.\n\nFrom now on, when I send you a coding task for one of my repositories:\n\n1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns.\n2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request.\n3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. The status reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" before treating \"idle\" as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message.\n4. When it settles, message me a short summary of what was done, the PR link, and the workspace's deepLink.\n\nWhen I ask what my agents are up to, query POST /v0/sql (read-only, over the view session_transcripts_view) for workspaces with recent transcript activity and summarize each one.\n\nConfirm you have saved this role and are ready for the first task."
+      },
+      "children": []
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "tips",
+      "children": [
+        {
+          "type": "text",
+          "value": "Tips"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Always pass an explicit "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "model"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " The defaults are conservative. Models must match the chosen "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "agent"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " ("
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "claude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "codex"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", or "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "cursor"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "); the accepted ids are enumerated in the OpenAPI document, and an invalid combination fails with a "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "400"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " naming them. An optional "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "effort"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " field sets the thinking level for "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "claude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "codex"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " sessions."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Wait for "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "working"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " before trusting "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "idle"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " A queued prompt hasn't started a turn yet, and the session reports "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "idle"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " until it does. After sending, poll session status until you've seen "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "working"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " at least once, then treat the next "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "idle"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " as done and read the reply from the transcript. A very fast turn can start and finish between polls, so if "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "idle"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " persists, check the transcript for the reply directly."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Name what you create."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " Unnamed workspaces get a random "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/cities"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "city name"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "; the workspace name also names the git branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The agent's commits are attributed to you."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " The workspace's git identity defaults to the API caller's Conductor account. You can also pass an "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "env"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " map at workspace creation to set environment variables for the setup script, agent, and terminals."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Send a "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "User-Agent"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " header from custom clients."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " The API sits behind a proxy that rejects some default client signatures — notably Python's "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "urllib"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " — with a "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "403"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "curl"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "python-requests"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " work as-is."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Check API access inside cloud workspaces."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " Every cloud workspace receives "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_API_URL"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". New machine-launched cloud workspaces—the cloud-collab experience for team organizations with cloud access—receive a workspace-scoped "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_API_TOKEN"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " by default (older workspaces set "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " instead). Each user can configure automatic API access separately for each organization in "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "strong",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings → General"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces do not receive a token automatically. "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_SESSION_ID"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " is available to agent processes on current workspaces and can be sent as the "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "X-Conductor-Session-Id"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " header to attribute a request to its session."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "calling-the-api-from-a-cloud-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Calling the API from a cloud workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the environment variables below when calling the API from a cloud workspace:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Variable"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Availability"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_URL"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set in every cloud workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_TOKEN"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "A workspace-scoped token is set by default in new machine-launched cloud workspaces. Each user can configure automatic API access separately for each organization in "
+              },
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access",
+                  "target": "_blank",
+                  "rel": "noopener noreferrer"
+                },
+                "children": [
+                  {
+                    "type": "element",
+                    "tag": "strong",
+                    "attrs": {},
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Settings → General"
+                      }
+                    ]
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ". Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces receive no token automatically."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_API_KEY"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your own Conductor API key when you configure one; it always takes precedence over the workspace token. For compatibility, workspaces that receive an automatic token also set it here when you don't supply your own."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "CONDUCTOR_SESSION_ID"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Set in agent processes on current workspaces; older workspaces may not have it. Send it as the optional "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "X-Conductor-Session-Id"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " header so Conductor can attribute the request."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "curl -H \"Authorization: Bearer ${CONDUCTOR_API_KEY:-$CONDUCTOR_API_TOKEN}\" \\\n  ${CONDUCTOR_SESSION_ID:+-H \"X-Conductor-Session-Id: $CONDUCTOR_SESSION_ID\"} \\\n  \"$CONDUCTOR_API_URL/me\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "curl",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -H",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"Authorization: Bearer ${",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "CONDUCTOR_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ":-",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "$CONDUCTOR_API_TOKEN",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "}\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  ${CONDUCTOR_SESSION_ID",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": ":",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "+-H ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"X-Conductor-Session-Id: ",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_SESSION_ID",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "} ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  \"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": "$CONDUCTOR_API_URL",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "/me\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>The Conductor API lets you manage <a href=\"/docs/cloud\">cloud workspaces</a> programmatically. Use it to do things like:</p><ul><li>Create workspaces, send prompts to the coding agent, and read its replies.</li><li>Build bots that kick off agent work.</li><li>Run and manage Conductor workspaces from your OpenClaw.</li></ul><p>Endpoints live under <code>https://api.conductor.build/v0</code>. This page covers setup and the typical flow; for the full contract check out our <a href=\"https://api.conductor.build/v0/openapi.json\" target=\"_blank\" rel=\"noopener noreferrer\">OpenAPI spec</a>.</p><div role=\"note\" data-callout=\"info\"><p>The API is in beta. Request and response shapes may change. Send feedback to\n<a href=\"mailto:humans@conductor.build\">humans@conductor.build</a>.</p></div><h2 id=\"try-it\"><a href=\"#try-it\">Try it</a></h2><p>Create an API key at <a href=\"https://app.conductor.build/home/api-keys\" target=\"_blank\" rel=\"noopener noreferrer\">app.conductor.build/home/api-keys</a>, then paste it here to test it end to end: this creates a <strong>real cloud workspace</strong>:</p><div data-component=\"ApiKeyTester\" data-props=\"{}\"></div><h2 id=\"authentication\"><a href=\"#authentication\">Authentication</a></h2><p>Pass your API key as a bearer token: <code>Authorization: Bearer &lt;your API key&gt;</code>.</p><h2 id=\"connect-with-mcp\"><a href=\"#connect-with-mcp\">Connect with MCP</a></h2><p>Connect an MCP-compatible client to Conductor to manage cloud workspaces with\ntools instead of direct REST requests. See the <a href=\"/docs/api/mcp\">Conductor MCP server</a>\nfor setup instructions and the complete tool list.</p><h2 id=\"quick-start-for-ai\"><a href=\"#quick-start-for-ai\">Quick start (for AI)</a></h2><p>Paste this into your Claude Code / Codex / OpenClaw agent:</p><div data-component=\"ApiAgentPrompt\" data-props=\"{&quot;prompt&quot;:&quot;Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \\&quot;Authorization: Bearer {{API_KEY}}\\&quot;. If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes.\\n\\nFrom now on, when I send you a coding task for one of my repositories:\\n\\n1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns.\\n2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request.\\n3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;. The status reports \\&quot;idle\\&quot; until the queued brief is delivered, so wait until you have seen \\&quot;working\\&quot; before treating \\&quot;idle\\&quot; as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message.\\n4. When it settles, message me a short summary of what was done, the PR link, and the workspace's deepLink.\\n\\nWhen I ask what my agents are up to, query POST /v0/sql (read-only, over the view session_transcripts_view) for workspaces with recent transcript activity and summarize each one.\\n\\nConfirm you have saved this role and are ready for the first task.&quot;}\"></div><h2 id=\"quick-start-for-humans\"><a href=\"#quick-start-for-humans\">Quick start (for humans)</a></h2><p>List projects:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/projects</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span></span></code></pre></figure><p>Create a workspace using a project ID from that response:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> POST</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/workspaces</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: application/json\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -d</span><span style=\"color:#032F62\"> '{</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"projectId\": \"PROJECT_ID\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"name\": \"my-workspace\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"agent\": \"codex\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"model\": \"gpt-5.5\"</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  }'</span></span></code></pre></figure><p>Then read it using the <code>id</code> returned above:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/workspaces/WORKSPACE_ID</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span></span></code></pre></figure><h2 id=\"endpoints\"><a href=\"#endpoints\">Endpoints</a></h2><table><thead><tr><th>Endpoint</th><th>What it does</th></tr></thead><tbody><tr><td><code>GET /v0/projects</code></td><td>List the repositories you can create workspaces in.</td></tr><tr><td><code>GET /v0/projects/{id}</code></td><td>Get a project.</td></tr><tr><td><code>GET /v0/projects/{id}/workspaces</code></td><td>List a project's workspaces.</td></tr><tr><td><code>POST /v0/workspaces</code></td><td>Create a workspace and its first session.</td></tr><tr><td><code>GET /v0/workspaces/{id}</code></td><td>Get a workspace.</td></tr><tr><td><code>POST /v0/workspaces/{id}/rename</code></td><td>Rename a workspace.</td></tr><tr><td><code>GET /v0/workspaces/{id}/sessions</code></td><td>List a workspace's sessions (<code>includeArchived=true</code> includes archived).</td></tr><tr><td><code>GET /v0/workspaces/{id}/status</code></td><td>Workspace lifecycle: <code>initializing</code>, <code>ready</code>, <code>sleeping</code>, <code>archived</code>, …</td></tr><tr><td><code>POST /v0/workspaces/{id}/archive</code></td><td>Stop the workspace's machine and hide it in the app (restorable later).</td></tr><tr><td><code>POST /v0/workspaces/{id}/unarchive</code></td><td>Restore an archived workspace and start its machine.</td></tr><tr><td><code>POST /v0/workspaces/{id}/sleep</code></td><td>Put the workspace to sleep (it stays visible and resumable).</td></tr><tr><td><code>POST /v0/sessions</code></td><td>Add another agent chat to a workspace.</td></tr><tr><td><code>GET /v0/sessions/{id}</code></td><td>Get a session.</td></tr><tr><td><code>POST /v0/sessions/{id}/rename</code></td><td>Rename a session.</td></tr><tr><td><code>POST /v0/sessions/{id}/attachments</code></td><td>Get an upload URL for a file to attach to a message (preview).</td></tr><tr><td><code>POST /v0/sessions/{id}/messages</code></td><td>Send a prompt to the agent.</td></tr><tr><td><code>GET /v0/sessions/{id}/messages</code></td><td>Read the session transcript.</td></tr><tr><td><code>GET /v0/sessions/{id}/status</code></td><td>Whether the agent is <code>idle</code>, <code>working</code>, or errored.</td></tr><tr><td><code>POST /v0/sessions/{id}/cancel</code></td><td>Stop the agent's current turn and drop queued messages.</td></tr><tr><td><code>GET /v0/messages/{id}</code></td><td>Get a single transcript message.</td></tr><tr><td><code>POST /v0/sql</code></td><td>Search transcripts of workspaces you can access with read-only SQL.</td></tr><tr><td><code>POST /v0/routines</code></td><td>Create a routine that runs a prompt when its webhook URL is called.</td></tr><tr><td><code>GET /v0/routines</code></td><td>List your routines (without webhook URLs).</td></tr><tr><td><code>POST /v0/routines/{id}/rotate-secret</code></td><td>Replace a routine's webhook URL and return the new one.</td></tr></tbody></table><p>List endpoints paginate with <code>limit</code>/<code>offset</code> and return <code>{ data, offset, hasMore }</code>. When polling a transcript, pass <code>after=&lt;last message id&gt;</code> instead of stepping <code>offset</code> — it returns only new messages. Errors from the API include a human-readable <code>userMessage</code>.</p><p>Workspace responses include <code>creatorId</code> and <code>creatorName</code>. <code>creatorName</code> is the\ncreator's name, or their email address when they have not set a name. The\n<code>GET /me</code> response also includes the authenticated user's optional <code>name</code>\nalongside their <code>email</code>.</p><h3 id=\"routines\"><a href=\"#routines\">Routines</a></h3><p>A routine is a saved prompt that Conductor runs in a fresh workspace each time its webhook URL receives a JSON POST. The routine endpoints require a user API key from <a href=\"https://app.conductor.build/home/api-keys\" target=\"_blank\" rel=\"noopener noreferrer\">app.conductor.build/home/api-keys</a>; the workspace-scoped <code>CONDUCTOR_API_TOKEN</code> is rejected with a <code>403</code>. Routines belong to the user who created them and run with that user's Git and agent credentials.</p><p>Routines created through this API have exactly one webhook trigger. <code>GET /v0/routines</code> also lists your existing routines, which may have cron, GitHub, or multiple triggers. <code>rotate-secret</code> requires exactly one trigger, and it must be a webhook; other trigger configurations return <code>409</code>.</p><p>The webhook URL is the trigger's only credential: anyone who can POST to it can run the routine, and no other authentication is checked. The URL appears only in the <code>POST /v0/routines</code> and <code>rotate-secret</code> responses — <code>GET /v0/routines</code> omits it — so store it as a secret. If it leaks, call <code>rotate-secret</code> to replace it. Revoking your API key does not revoke the URL.</p><p>Create a routine, then call its webhook:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> POST</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/routines</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: application/json\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -d</span><span style=\"color:#032F62\"> '{</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"name\": \"Triage customer report\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"projectId\": \"PROJECT_ID\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"agent\": \"codex\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"model\": \"gpt-5.6-sol\",</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  }'</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> POST</span><span style=\"color:#032F62\"> \"WEBHOOK_URL\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: application/json\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -d</span><span style=\"color:#032F62\"> '{\"report\": \"Login fails with a 500 on Safari\"}'</span></span></code></pre></figure><p>The webhook returns <code>202</code> and the JSON body is attached to the prompt. <code>enabled</code> defaults to <code>true</code>; a disabled routine keeps its URL but answers <code>409</code>. <code>model</code> and <code>effort</code> follow the same rules as workspace creation.</p><p>The same flow with the <code>conductor</code> CLI (set <code>CONDUCTOR_API_KEY</code> to your user API key first):</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">conductor</span><span style=\"color:#032F62\"> routine</span><span style=\"color:#032F62\"> create</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --name</span><span style=\"color:#032F62\"> \"Triage customer report\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --project-id</span><span style=\"color:#032F62\"> PROJECT_ID</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --agent</span><span style=\"color:#032F62\"> codex</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --model</span><span style=\"color:#032F62\"> gpt-5.6-sol</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --prompt-file</span><span style=\"color:#032F62\"> ./triage-prompt.md</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">conductor</span><span style=\"color:#032F62\"> routine</span><span style=\"color:#032F62\"> list</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">conductor</span><span style=\"color:#032F62\"> routine</span><span style=\"color:#032F62\"> rotate-secret</span><span style=\"color:#032F62\"> ROUTINE_ID</span></span></code></pre></figure><p><code>routine create</code> and <code>routine rotate-secret</code> print the webhook URL once; pass <code>--json</code> to capture the full response in a script.</p><h3 id=\"attachments-preview\"><a href=\"#attachments-preview\">Attachments (preview)</a></h3><p>Attachments are in preview and enabled per user. Requests from users without access receive a <code>403</code>.</p><p>You can attach files, such as screenshots, screen recordings, or logs, to a message in an existing session. Create the session first, upload the files, and then send the message. Attachments can't be added to the first message of <code>POST /v0/workspaces</code> or <code>POST /v0/sessions</code>.</p><p>To upload a file, create an attachment and <code>PUT</code> the bytes to the returned URL within 15 minutes:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> POST</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/sessions/SESSION_ID/attachments</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: application/json\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -d</span><span style=\"color:#032F62\"> '{\"filename\": \"bug.mov\", \"contentType\": \"video/quicktime\", \"byteSize\": 4823091}'</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># → { \"attachment\": { \"id\": \"ATTACHMENT_ID\", \"path\": \".context/attachments/assets/ATTACHMENT_ID/bug.mov\" },</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\">#     \"upload\": { \"url\": \"UPLOAD_URL\", \"headers\": { \"Content-Type\": \"video/quicktime\" }, \"expiresAt\": \"...\" } }</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> PUT</span><span style=\"color:#032F62\"> \"UPLOAD_URL\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: video/quicktime\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --data-binary</span><span style=\"color:#032F62\"> @bug.mov</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -X</span><span style=\"color:#032F62\"> POST</span><span style=\"color:#032F62\"> https://api.conductor.build/v0/sessions/SESSION_ID/messages</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer YOUR_API_KEY\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -H</span><span style=\"color:#032F62\"> \"Content-Type: application/json\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  -d</span><span style=\"color:#032F62\"> '{\"message\": \"This recording shows the bug. Find the cause and fix it.\", \"attachments\": [{\"id\": \"ATTACHMENT_ID\"}]}'</span></span></code></pre></figure><p><code>byteSize</code> must be the file's exact size in bytes. Send the headers from <code>upload.headers</code> with the <code>PUT</code>.</p><p>Limits:</p><ul><li>Files can be up to 100 MB and of any type.</li><li>A message can include up to 10 attachments.</li><li>Conductor doesn't fetch files from URLs.</li></ul><p>Attached files appear in the workspace under <code>.context/attachments/</code>, and the agent is told to read them. Agents read images directly. Videos and other binary files arrive as plain files, so the agent needs a tool such as <code>ffmpeg</code> in the workspace to look inside them. When you retry a message with the same <code>messageId</code>, send the same text and attachments; a retry with different content is rejected.</p><p>With the <code>conductor</code> CLI, pass <code>--attach</code> once per file:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">conductor</span><span style=\"color:#032F62\"> message</span><span style=\"color:#032F62\"> create</span><span style=\"color:#005CC5\"> --session</span><span style=\"color:#032F62\"> SESSION_ID</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --message</span><span style=\"color:#032F62\"> \"This recording shows the bug. Find the cause and fix it.\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --attach</span><span style=\"color:#032F62\"> ./bug.mov</span><span style=\"color:#005CC5\"> --attach</span><span style=\"color:#032F62\"> ./console.log</span></span></code></pre></figure><h2 id=\"cookbook\"><a href=\"#cookbook\">Cookbook</a></h2><p>Machine-launched cloud workspaces include an authenticated Conductor API key. In\nother workspaces, configure an API key before trying these prompts. See <a href=\"#calling-the-api-from-a-cloud-workspace\">Calling\nthe API from a cloud workspace</a> for\navailability details.</p><h4 id=\"plan-implement\"><a href=\"#plan-implement\">Plan, Implement</a></h4><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">I will give you a task and a model in my next message. You handle the planning and review; the model I name does the implementation in a fresh Conductor session via the Conductor API:</span>\n<span class=\"line\"></span>\n<span class=\"line\">1. Plan first: investigate whatever you need here, then write a self-contained implementation brief — files, approach, constraints, definition of done. The implementing session shares no context with you.</span>\n<span class=\"line\">2. Find the right project with GET /v0/projects and create a workspace for the task (POST /v0/workspaces — name it after the task, with the model I name). Note the sessionId and deepLink it returns.</span>\n<span class=\"line\">3. Send the brief with POST /v0/sessions/{sessionId}/messages.</span>\n<span class=\"line\">4. Manage the session until the work actually gets done: poll GET /v0/sessions/{sessionId}/status every ~15 seconds and read new transcript messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;. If the implementer stalls, drifts from the brief, or asks a question, answer or course-correct it with another message — messages sent while it works are steered into the running turn. (The session reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)</span>\n<span class=\"line\">5. When it settles, review the result against the brief and send follow-ups until it meets the bar. Then give me a short summary of what was done, the PR, and the deepLink.</span></code></pre></figure><h4 id=\"implement-a-multi-pr-task\"><a href=\"#implement-a-multi-pr-task\">Implement a multi-PR task</a></h4><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">I will give you a task and a model in my next message. The task is too big for one pull request — it may even span repositories — so split it up and run the pieces in parallel through the Conductor API:</span>\n<span class=\"line\"></span>\n<span class=\"line\">1. Break the task into independent pieces, each small enough for its own pull request, and decide which repository each piece belongs in (GET /v0/projects lists the repositories you can use). Write a self-contained brief for each piece — the implementing sessions share no context with you or with each other, so spell out any interfaces the pieces must agree on.</span>\n<span class=\"line\">2. For each piece, create a workspace named after it (POST /v0/workspaces, with the model I name) and send its brief to the workspace's session with POST /v0/sessions/{sessionId}/messages, asking for a PR. Kick them all off before waiting on any of them so they run in parallel.</span>\n<span class=\"line\">3. Supervise the sessions: poll GET /v0/sessions/{sessionId}/status, read new messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;, and steer any session that stalls or drifts with a follow-up message. (A session reports \"idle\" until its queued brief is delivered — wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)</span>\n<span class=\"line\">4. When everything settles, review each result against its brief, then give me a table: piece, repository, the PR, and the workspace's deepLink.</span></code></pre></figure><h4 id=\"daily-report\"><a href=\"#daily-report\">Daily Report</a></h4><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">Use the Conductor API to search my organization's session transcripts with POST /v0/sql (body {\"query\": \"...\"}). Queries can only read the view session_transcripts_view; useful columns include workspace_id, workspace_name, workspace_created_at, workspace_creator_id, session_title, transcript, and transcript_updated_at.</span>\n<span class=\"line\"></span>\n<span class=\"line\">Find every workspace that was worked on in the last 24 hours — for example SELECT workspace_id, workspace_name, session_title, transcript FROM session_transcripts_view WHERE transcript_updated_at &gt;= now() - interval '24 hours' ORDER BY transcript_updated_at DESC — then give me a report with one entry per workspace: what is being done in it (summarize the transcripts) and its deepLink (from GET /v0/workspaces/{workspaceId}) so I can open it in Conductor.</span></code></pre></figure><h4 id=\"manage-conductor-from-your-openclaw\"><a href=\"#manage-conductor-from-your-openclaw\">Manage Conductor from your OpenClaw</a></h4><p>Agents running outside Conductor just need an API key. This prompt turns any personal agent into a manager for your Conductor fleet:</p><div data-component=\"ApiAgentPrompt\" data-props=\"{&quot;prompt&quot;:&quot;Add a new role to your memory: you are my Conductor manager. Conductor (conductor.build) runs coding agents in isolated cloud workspaces, and you can drive it over HTTP. The API lives at https://api.conductor.build/v0 — fetch https://api.conductor.build/v0/openapi.json for the full contract, including the accepted agent and model ids. Authenticate every request with the header \\&quot;Authorization: Bearer {{API_KEY}}\\&quot;. If you don't have a valid Conductor API key, ask the user to generate you one at https://app.conductor.build/home/api-keys (note that they'll need a Conductor Pro account). Store that key in your secrets or config, not in plain conversation notes.\\n\\nFrom now on, when I send you a coding task for one of my repositories:\\n\\n1. Pick the right repository from GET /v0/projects and create a workspace named after the task (POST /v0/workspaces, with an explicit model). Note the sessionId and deepLink it returns.\\n2. Write a self-contained brief — the session shares no context with you or with me — and send it with POST /v0/sessions/{sessionId}/messages, asking for a pull request.\\n3. Supervise it: poll GET /v0/sessions/{sessionId}/status every minute or two and read new messages with GET /v0/sessions/{sessionId}/messages?after=&lt;last message id&gt;. The status reports \\&quot;idle\\&quot; until the queued brief is delivered, so wait until you have seen \\&quot;working\\&quot; before treating \\&quot;idle\\&quot; as done. If the session stalls, drifts, or asks a question, steer it with a follow-up message.\\n4. When it settles, message me a short summary of what was done, the PR link, and the workspace's deepLink.\\n\\nWhen I ask what my agents are up to, query POST /v0/sql (read-only, over the view session_transcripts_view) for workspaces with recent transcript activity and summarize each one.\\n\\nConfirm you have saved this role and are ready for the first task.&quot;}\"></div><h2 id=\"tips\"><a href=\"#tips\">Tips</a></h2><ul><li><strong>Always pass an explicit <code>model</code>.</strong> The defaults are conservative. Models must match the chosen <code>agent</code> (<code>claude</code>, <code>codex</code>, or <code>cursor</code>); the accepted ids are enumerated in the OpenAPI document, and an invalid combination fails with a <code>400</code> naming them. An optional <code>effort</code> field sets the thinking level for <code>claude</code> and <code>codex</code> sessions.</li><li><strong>Wait for <code>working</code> before trusting <code>idle</code>.</strong> A queued prompt hasn't started a turn yet, and the session reports <code>idle</code> until it does. After sending, poll session status until you've seen <code>working</code> at least once, then treat the next <code>idle</code> as done and read the reply from the transcript. A very fast turn can start and finish between polls, so if <code>idle</code> persists, check the transcript for the reply directly.</li><li><strong>Name what you create.</strong> Unnamed workspaces get a random <a href=\"/docs/reference/cities\">city name</a>; the workspace name also names the git branch.</li><li><strong>The agent's commits are attributed to you.</strong> The workspace's git identity defaults to the API caller's Conductor account. You can also pass an <code>env</code> map at workspace creation to set environment variables for the setup script, agent, and terminals.</li><li><strong>Send a <code>User-Agent</code> header from custom clients.</strong> The API sits behind a proxy that rejects some default client signatures — notably Python's <code>urllib</code> — with a <code>403</code>. <code>curl</code> and <code>python-requests</code> work as-is.</li><li><strong>Check API access inside cloud workspaces.</strong> Every cloud workspace receives <code>CONDUCTOR_API_URL</code>. New machine-launched cloud workspaces—the cloud-collab experience for team organizations with cloud access—receive a workspace-scoped <code>CONDUCTOR_API_TOKEN</code> by default (older workspaces set <code>CONDUCTOR_API_KEY</code> instead). Each user can configure automatic API access separately for each organization in <a href=\"https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Settings → General</strong></a>. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces do not receive a token automatically. <code>CONDUCTOR_SESSION_ID</code> is available to agent processes on current workspaces and can be sent as the <code>X-Conductor-Session-Id</code> header to attribute a request to its session.</li></ul><h2 id=\"calling-the-api-from-a-cloud-workspace\"><a href=\"#calling-the-api-from-a-cloud-workspace\">Calling the API from a cloud workspace</a></h2><p>Use the environment variables below when calling the API from a cloud workspace:</p><table><thead><tr><th>Variable</th><th>Availability</th></tr></thead><tbody><tr><td><code>CONDUCTOR_API_URL</code></td><td>Set in every cloud workspace.</td></tr><tr><td><code>CONDUCTOR_API_TOKEN</code></td><td>A workspace-scoped token is set by default in new machine-launched cloud workspaces. Each user can configure automatic API access separately for each organization in <a href=\"https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access\" target=\"_blank\" rel=\"noopener noreferrer\"><strong>Settings → General</strong></a>. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces receive no token automatically.</td></tr><tr><td><code>CONDUCTOR_API_KEY</code></td><td>Your own Conductor API key when you configure one; it always takes precedence over the workspace token. For compatibility, workspaces that receive an automatic token also set it here when you don't supply your own.</td></tr><tr><td><code>CONDUCTOR_SESSION_ID</code></td><td>Set in agent processes on current workspaces; older workspaces may not have it. Send it as the optional <code>X-Conductor-Session-Id</code> header so Conductor can attribute the request.</td></tr></tbody></table><p>For example:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">curl</span><span style=\"color:#005CC5\"> -H</span><span style=\"color:#032F62\"> \"Authorization: Bearer ${</span><span style=\"color:#24292E\">CONDUCTOR_API_KEY</span><span style=\"color:#D73A49\">:-</span><span style=\"color:#24292E\">$CONDUCTOR_API_TOKEN</span><span style=\"color:#032F62\">}\"</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">  ${CONDUCTOR_SESSION_ID</span><span style=\"color:#D73A49\">:</span><span style=\"color:#24292E\">+-H </span><span style=\"color:#032F62\">\"X-Conductor-Session-Id: </span><span style=\"color:#24292E\">$CONDUCTOR_SESSION_ID</span><span style=\"color:#032F62\">\"</span><span style=\"color:#24292E\">} </span><span style=\"color:#005CC5\">\\</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  \"</span><span style=\"color:#24292E\">$CONDUCTOR_API_URL</span><span style=\"color:#032F62\">/me\"</span></span></code></pre></figure>",
+  "text": "The Conductor API lets you manage cloud workspaces programmatically. Use it to do things like:\nCreate workspaces, send prompts to the coding agent, and read its replies.\nBuild bots that kick off agent work.\nRun and manage Conductor workspaces from your OpenClaw.\nEndpoints live under https://api.conductor.build/v0. This page covers setup and the typical flow; for the full contract check out our OpenAPI spec.\nThe API is in beta. Request and response shapes may change. Send feedback to\nhumans@conductor.build.\nTry it\nCreate an API key at app.conductor.build/home/api-keys, then paste it here to test it end to end: this creates a real cloud workspace:\nAuthentication\nPass your API key as a bearer token: Authorization: Bearer <your API key>.\nConnect with MCP\nConnect an MCP-compatible client to Conductor to manage cloud workspaces with\ntools instead of direct REST requests. See the Conductor MCP server\nfor setup instructions and the complete tool list.\nQuick start (for AI)\nPaste this into your Claude Code / Codex / OpenClaw agent:\nQuick start (for humans)\nList projects:\ncurl https://api.conductor.build/v0/projects \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"Create a workspace using a project ID from that response:\ncurl -X POST https://api.conductor.build/v0/workspaces \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"projectId\": \"PROJECT_ID\",\n    \"name\": \"my-workspace\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.5\"\n  }'Then read it using the id returned above:\ncurl https://api.conductor.build/v0/workspaces/WORKSPACE_ID \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"Endpoints\nEndpointWhat it doesGET /v0/projectsList the repositories you can create workspaces in.GET /v0/projects/{id}Get a project.GET /v0/projects/{id}/workspacesList a project's workspaces.POST /v0/workspacesCreate a workspace and its first session.GET /v0/workspaces/{id}Get a workspace.POST /v0/workspaces/{id}/renameRename a workspace.GET /v0/workspaces/{id}/sessionsList a workspace's sessions (includeArchived=true includes archived).GET /v0/workspaces/{id}/statusWorkspace lifecycle: initializing, ready, sleeping, archived, …POST /v0/workspaces/{id}/archiveStop the workspace's machine and hide it in the app (restorable later).POST /v0/workspaces/{id}/unarchiveRestore an archived workspace and start its machine.POST /v0/workspaces/{id}/sleepPut the workspace to sleep (it stays visible and resumable).POST /v0/sessionsAdd another agent chat to a workspace.GET /v0/sessions/{id}Get a session.POST /v0/sessions/{id}/renameRename a session.POST /v0/sessions/{id}/attachmentsGet an upload URL for a file to attach to a message (preview).POST /v0/sessions/{id}/messagesSend a prompt to the agent.GET /v0/sessions/{id}/messagesRead the session transcript.GET /v0/sessions/{id}/statusWhether the agent is idle, working, or errored.POST /v0/sessions/{id}/cancelStop the agent's current turn and drop queued messages.GET /v0/messages/{id}Get a single transcript message.POST /v0/sqlSearch transcripts of workspaces you can access with read-only SQL.POST /v0/routinesCreate a routine that runs a prompt when its webhook URL is called.GET /v0/routinesList your routines (without webhook URLs).POST /v0/routines/{id}/rotate-secretReplace a routine's webhook URL and return the new one.List endpoints paginate with limit/offset and return { data, offset, hasMore }. When polling a transcript, pass after=<last message id> instead of stepping offset — it returns only new messages. Errors from the API include a human-readable userMessage.\nWorkspace responses include creatorId and creatorName. creatorName is the\ncreator's name, or their email address when they have not set a name. The\nGET /me response also includes the authenticated user's optional name\nalongside their email.\nRoutines\nA routine is a saved prompt that Conductor runs in a fresh workspace each time its webhook URL receives a JSON POST. The routine endpoints require a user API key from app.conductor.build/home/api-keys; the workspace-scoped CONDUCTOR_API_TOKEN is rejected with a 403. Routines belong to the user who created them and run with that user's Git and agent credentials.\nRoutines created through this API have exactly one webhook trigger. GET /v0/routines also lists your existing routines, which may have cron, GitHub, or multiple triggers. rotate-secret requires exactly one trigger, and it must be a webhook; other trigger configurations return 409.\nThe webhook URL is the trigger's only credential: anyone who can POST to it can run the routine, and no other authentication is checked. The URL appears only in the POST /v0/routines and rotate-secret responses — GET /v0/routines omits it — so store it as a secret. If it leaks, call rotate-secret to replace it. Revoking your API key does not revoke the URL.\nCreate a routine, then call its webhook:\ncurl -X POST https://api.conductor.build/v0/routines \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"Triage customer report\",\n    \"projectId\": \"PROJECT_ID\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.6-sol\",\n    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"\n  }'\n# → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }\ncurl -X POST \"WEBHOOK_URL\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"report\": \"Login fails with a 500 on Safari\"}'The webhook returns 202 and the JSON body is attached to the prompt. enabled defaults to true; a disabled routine keeps its URL but answers 409. model and effort follow the same rules as workspace creation.\nThe same flow with the conductor CLI (set CONDUCTOR_API_KEY to your user API key first):\nconductor routine create \\\n  --name \"Triage customer report\" \\\n  --project-id PROJECT_ID \\\n  --agent codex \\\n  --model gpt-5.6-sol \\\n  --prompt-file ./triage-prompt.md\nconductor routine list\nconductor routine rotate-secret ROUTINE_IDroutine create and routine rotate-secret print the webhook URL once; pass --json to capture the full response in a script.\nAttachments (preview)\nAttachments are in preview and enabled per user. Requests from users without access receive a 403.\nYou can attach files, such as screenshots, screen recordings, or logs, to a message in an existing session. Create the session first, upload the files, and then send the message. Attachments can't be added to the first message of POST /v0/workspaces or POST /v0/sessions.\nTo upload a file, create an attachment and PUT the bytes to the returned URL within 15 minutes:\ncurl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/attachments \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"filename\": \"bug.mov\", \"contentType\": \"video/quicktime\", \"byteSize\": 4823091}'\n# → { \"attachment\": { \"id\": \"ATTACHMENT_ID\", \"path\": \".context/attachments/assets/ATTACHMENT_ID/bug.mov\" },\n#     \"upload\": { \"url\": \"UPLOAD_URL\", \"headers\": { \"Content-Type\": \"video/quicktime\" }, \"expiresAt\": \"...\" } }\ncurl -X PUT \"UPLOAD_URL\" \\\n  -H \"Content-Type: video/quicktime\" \\\n  --data-binary @bug.mov\ncurl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/messages \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"message\": \"This recording shows the bug. Find the cause and fix it.\", \"attachments\": [{\"id\": \"ATTACHMENT_ID\"}]}'byteSize must be the file's exact size in bytes. Send the headers from upload.headers with the PUT.\nLimits:\nFiles can be up to 100 MB and of any type.\nA message can include up to 10 attachments.\nConductor doesn't fetch files from URLs.\nAttached files appear in the workspace under .context/attachments/, and the agent is told to read them. Agents read images directly. Videos and other binary files arrive as plain files, so the agent needs a tool such as ffmpeg in the workspace to look inside them. When you retry a message with the same messageId, send the same text and attachments; a retry with different content is rejected.\nWith the conductor CLI, pass --attach once per file:\nconductor message create --session SESSION_ID \\\n  --message \"This recording shows the bug. Find the cause and fix it.\" \\\n  --attach ./bug.mov --attach ./console.logCookbook\nMachine-launched cloud workspaces include an authenticated Conductor API key. In\nother workspaces, configure an API key before trying these prompts. See Calling\nthe API from a cloud workspace for\navailability details.\nPlan, Implement\nI will give you a task and a model in my next message. You handle the planning and review; the model I name does the implementation in a fresh Conductor session via the Conductor API:\n1. Plan first: investigate whatever you need here, then write a self-contained implementation brief — files, approach, constraints, definition of done. The implementing session shares no context with you.\n2. Find the right project with GET /v0/projects and create a workspace for the task (POST /v0/workspaces — name it after the task, with the model I name). Note the sessionId and deepLink it returns.\n3. Send the brief with POST /v0/sessions/{sessionId}/messages.\n4. Manage the session until the work actually gets done: poll GET /v0/sessions/{sessionId}/status every ~15 seconds and read new transcript messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. If the implementer stalls, drifts from the brief, or asks a question, answer or course-correct it with another message — messages sent while it works are steered into the running turn. (The session reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n5. When it settles, review the result against the brief and send follow-ups until it meets the bar. Then give me a short summary of what was done, the PR, and the deepLink.Implement a multi-PR task\nI will give you a task and a model in my next message. The task is too big for one pull request — it may even span repositories — so split it up and run the pieces in parallel through the Conductor API:\n1. Break the task into independent pieces, each small enough for its own pull request, and decide which repository each piece belongs in (GET /v0/projects lists the repositories you can use). Write a self-contained brief for each piece — the implementing sessions share no context with you or with each other, so spell out any interfaces the pieces must agree on.\n2. For each piece, create a workspace named after it (POST /v0/workspaces, with the model I name) and send its brief to the workspace's session with POST /v0/sessions/{sessionId}/messages, asking for a PR. Kick them all off before waiting on any of them so they run in parallel.\n3. Supervise the sessions: poll GET /v0/sessions/{sessionId}/status, read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>, and steer any session that stalls or drifts with a follow-up message. (A session reports \"idle\" until its queued brief is delivered — wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n4. When everything settles, review each result against its brief, then give me a table: piece, repository, the PR, and the workspace's deepLink.Daily Report\nUse the Conductor API to search my organization's session transcripts with POST /v0/sql (body {\"query\": \"...\"}). Queries can only read the view session_transcripts_view; useful columns include workspace_id, workspace_name, workspace_created_at, workspace_creator_id, session_title, transcript, and transcript_updated_at.\nFind every workspace that was worked on in the last 24 hours — for example SELECT workspace_id, workspace_name, session_title, transcript FROM session_transcripts_view WHERE transcript_updated_at >= now() - interval '24 hours' ORDER BY transcript_updated_at DESC — then give me a report with one entry per workspace: what is being done in it (summarize the transcripts) and its deepLink (from GET /v0/workspaces/{workspaceId}) so I can open it in Conductor.Manage Conductor from your OpenClaw\nAgents running outside Conductor just need an API key. This prompt turns any personal agent into a manager for your Conductor fleet:\nTips\nAlways pass an explicit model. The defaults are conservative. Models must match the chosen agent (claude, codex, or cursor); the accepted ids are enumerated in the OpenAPI document, and an invalid combination fails with a 400 naming them. An optional effort field sets the thinking level for claude and codex sessions.\nWait for working before trusting idle. A queued prompt hasn't started a turn yet, and the session reports idle until it does. After sending, poll session status until you've seen working at least once, then treat the next idle as done and read the reply from the transcript. A very fast turn can start and finish between polls, so if idle persists, check the transcript for the reply directly.\nName what you create. Unnamed workspaces get a random city name; the workspace name also names the git branch.\nThe agent's commits are attributed to you. The workspace's git identity defaults to the API caller's Conductor account. You can also pass an env map at workspace creation to set environment variables for the setup script, agent, and terminals.\nSend a User-Agent header from custom clients. The API sits behind a proxy that rejects some default client signatures — notably Python's urllib — with a 403. curl and python-requests work as-is.\nCheck API access inside cloud workspaces. Every cloud workspace receives CONDUCTOR_API_URL. New machine-launched cloud workspaces—the cloud-collab experience for team organizations with cloud access—receive a workspace-scoped CONDUCTOR_API_TOKEN by default (older workspaces set CONDUCTOR_API_KEY instead). Each user can configure automatic API access separately for each organization in Settings → General. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces do not receive a token automatically. CONDUCTOR_SESSION_ID is available to agent processes on current workspaces and can be sent as the X-Conductor-Session-Id header to attribute a request to its session.\nCalling the API from a cloud workspace\nUse the environment variables below when calling the API from a cloud workspace:\nVariableAvailabilityCONDUCTOR_API_URLSet in every cloud workspace.CONDUCTOR_API_TOKENA workspace-scoped token is set by default in new machine-launched cloud workspaces. Each user can configure automatic API access separately for each organization in Settings → General. Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces receive no token automatically.CONDUCTOR_API_KEYYour own Conductor API key when you configure one; it always takes precedence over the workspace token. For compatibility, workspaces that receive an automatic token also set it here when you don't supply your own.CONDUCTOR_SESSION_IDSet in agent processes on current workspaces; older workspaces may not have it. Send it as the optional X-Conductor-Session-Id header so Conductor can attribute the request.For example:\ncurl -H \"Authorization: Bearer ${CONDUCTOR_API_KEY:-$CONDUCTOR_API_TOKEN}\" \\\n  ${CONDUCTOR_SESSION_ID:+-H \"X-Conductor-Session-Id: $CONDUCTOR_SESSION_ID\"} \\\n  \"$CONDUCTOR_API_URL/me\"",
+  "markdown": "\n# Conductor API\n\n\n\nThe Conductor API lets you manage [cloud workspaces](/docs/cloud) programmatically. Use it to do things like:\n\n* Create workspaces, send prompts to the coding agent, and read its replies.\n* Build bots that kick off agent work.\n* Run and manage Conductor workspaces from your OpenClaw.\n\nEndpoints live under `https://api.conductor.build/v0`. This page covers setup and the typical flow; for the full contract check out our [OpenAPI spec](https://api.conductor.build/v0/openapi.json).\n\nThe API is in beta. Request and response shapes may change. Send feedback to\n[humans@conductor.build](mailto:humans@conductor.build).\n\n## Try it [#try-it]\n\nCreate an API key at [app.conductor.build/home/api-keys](https://app.conductor.build/home/api-keys), then paste it here to test it end to end: this creates a **real cloud workspace**:\n\n\n\n\n## Authentication [#authentication]\n\nPass your API key as a bearer token: `Authorization: Bearer <your API key>`.\n\n## Connect with MCP [#connect-with-mcp]\n\nConnect an MCP-compatible client to Conductor to manage cloud workspaces with\ntools instead of direct REST requests. See the [Conductor MCP server](/docs/api/mcp)\nfor setup instructions and the complete tool list.\n\n## Quick start (for AI) [#quick-start-for-ai]\n\nPaste this into your Claude Code / Codex / OpenClaw agent:\n\n\n\n\n## Quick start (for humans) [#quick-start-for-humans]\n\nList projects:\n\n```bash\ncurl https://api.conductor.build/v0/projects \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"\n```\n\nCreate a workspace using a project ID from that response:\n\n```bash\ncurl -X POST https://api.conductor.build/v0/workspaces \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"projectId\": \"PROJECT_ID\",\n    \"name\": \"my-workspace\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.5\"\n  }'\n```\n\nThen read it using the `id` returned above:\n\n```bash\ncurl https://api.conductor.build/v0/workspaces/WORKSPACE_ID \\\n  -H \"Authorization: Bearer YOUR_API_KEY\"\n```\n\n## Endpoints [#endpoints]\n\n| Endpoint                               | What it does                                                            |\n| -------------------------------------- | ----------------------------------------------------------------------- |\n| `GET /v0/projects`                     | List the repositories you can create workspaces in.                     |\n| `GET /v0/projects/{id}`                | Get a project.                                                          |\n| `GET /v0/projects/{id}/workspaces`     | List a project's workspaces.                                            |\n| `POST /v0/workspaces`                  | Create a workspace and its first session.                               |\n| `GET /v0/workspaces/{id}`              | Get a workspace.                                                        |\n| `POST /v0/workspaces/{id}/rename`      | Rename a workspace.                                                     |\n| `GET /v0/workspaces/{id}/sessions`     | List a workspace's sessions (`includeArchived=true` includes archived). |\n| `GET /v0/workspaces/{id}/status`       | Workspace lifecycle: `initializing`, `ready`, `sleeping`, `archived`, … |\n| `POST /v0/workspaces/{id}/archive`     | Stop the workspace's machine and hide it in the app (restorable later). |\n| `POST /v0/workspaces/{id}/unarchive`   | Restore an archived workspace and start its machine.                    |\n| `POST /v0/workspaces/{id}/sleep`       | Put the workspace to sleep (it stays visible and resumable).            |\n| `POST /v0/sessions`                    | Add another agent chat to a workspace.                                  |\n| `GET /v0/sessions/{id}`                | Get a session.                                                          |\n| `POST /v0/sessions/{id}/rename`        | Rename a session.                                                       |\n| `POST /v0/sessions/{id}/attachments`   | Get an upload URL for a file to attach to a message (preview).          |\n| `POST /v0/sessions/{id}/messages`      | Send a prompt to the agent.                                             |\n| `GET /v0/sessions/{id}/messages`       | Read the session transcript.                                            |\n| `GET /v0/sessions/{id}/status`         | Whether the agent is `idle`, `working`, or errored.                     |\n| `POST /v0/sessions/{id}/cancel`        | Stop the agent's current turn and drop queued messages.                 |\n| `GET /v0/messages/{id}`                | Get a single transcript message.                                        |\n| `POST /v0/sql`                         | Search transcripts of workspaces you can access with read-only SQL.     |\n| `POST /v0/routines`                    | Create a routine that runs a prompt when its webhook URL is called.     |\n| `GET /v0/routines`                     | List your routines (without webhook URLs).                              |\n| `POST /v0/routines/{id}/rotate-secret` | Replace a routine's webhook URL and return the new one.                 |\n\nList endpoints paginate with `limit`/`offset` and return `{ data, offset, hasMore }`. When polling a transcript, pass `after=<last message id>` instead of stepping `offset` — it returns only new messages. Errors from the API include a human-readable `userMessage`.\n\nWorkspace responses include `creatorId` and `creatorName`. `creatorName` is the\ncreator's name, or their email address when they have not set a name. The\n`GET /me` response also includes the authenticated user's optional `name`\nalongside their `email`.\n\n### Routines [#routines]\n\nA routine is a saved prompt that Conductor runs in a fresh workspace each time its webhook URL receives a JSON POST. The routine endpoints require a user API key from [app.conductor.build/home/api-keys](https://app.conductor.build/home/api-keys); the workspace-scoped `CONDUCTOR_API_TOKEN` is rejected with a `403`. Routines belong to the user who created them and run with that user's Git and agent credentials.\n\nRoutines created through this API have exactly one webhook trigger. `GET /v0/routines` also lists your existing routines, which may have cron, GitHub, or multiple triggers. `rotate-secret` requires exactly one trigger, and it must be a webhook; other trigger configurations return `409`.\n\nThe webhook URL is the trigger's only credential: anyone who can POST to it can run the routine, and no other authentication is checked. The URL appears only in the `POST /v0/routines` and `rotate-secret` responses — `GET /v0/routines` omits it — so store it as a secret. If it leaks, call `rotate-secret` to replace it. Revoking your API key does not revoke the URL.\n\nCreate a routine, then call its webhook:\n\n```bash\ncurl -X POST https://api.conductor.build/v0/routines \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\n    \"name\": \"Triage customer report\",\n    \"projectId\": \"PROJECT_ID\",\n    \"agent\": \"codex\",\n    \"model\": \"gpt-5.6-sol\",\n    \"prompt\": \"Investigate the attached customer report and open a PR with a fix.\"\n  }'\n# → { \"id\": \"...\", \"triggers\": [{ \"type\": \"webhook\", \"webhookUrl\": \"https://api.conductor.build/automations/hooks/...\" }], ... }\n\ncurl -X POST \"WEBHOOK_URL\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"report\": \"Login fails with a 500 on Safari\"}'\n```\n\nThe webhook returns `202` and the JSON body is attached to the prompt. `enabled` defaults to `true`; a disabled routine keeps its URL but answers `409`. `model` and `effort` follow the same rules as workspace creation.\n\nThe same flow with the `conductor` CLI (set `CONDUCTOR_API_KEY` to your user API key first):\n\n```bash\nconductor routine create \\\n  --name \"Triage customer report\" \\\n  --project-id PROJECT_ID \\\n  --agent codex \\\n  --model gpt-5.6-sol \\\n  --prompt-file ./triage-prompt.md\nconductor routine list\nconductor routine rotate-secret ROUTINE_ID\n```\n\n`routine create` and `routine rotate-secret` print the webhook URL once; pass `--json` to capture the full response in a script.\n\n### Attachments (preview) [#attachments-preview]\n\nAttachments are in preview and enabled per user. Requests from users without access receive a `403`.\n\nYou can attach files, such as screenshots, screen recordings, or logs, to a message in an existing session. Create the session first, upload the files, and then send the message. Attachments can't be added to the first message of `POST /v0/workspaces` or `POST /v0/sessions`.\n\nTo upload a file, create an attachment and `PUT` the bytes to the returned URL within 15 minutes:\n\n```bash\ncurl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/attachments \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"filename\": \"bug.mov\", \"contentType\": \"video/quicktime\", \"byteSize\": 4823091}'\n# → { \"attachment\": { \"id\": \"ATTACHMENT_ID\", \"path\": \".context/attachments/assets/ATTACHMENT_ID/bug.mov\" },\n#     \"upload\": { \"url\": \"UPLOAD_URL\", \"headers\": { \"Content-Type\": \"video/quicktime\" }, \"expiresAt\": \"...\" } }\n\ncurl -X PUT \"UPLOAD_URL\" \\\n  -H \"Content-Type: video/quicktime\" \\\n  --data-binary @bug.mov\n\ncurl -X POST https://api.conductor.build/v0/sessions/SESSION_ID/messages \\\n  -H \"Authorization: Bearer YOUR_API_KEY\" \\\n  -H \"Content-Type: application/json\" \\\n  -d '{\"message\": \"This recording shows the bug. Find the cause and fix it.\", \"attachments\": [{\"id\": \"ATTACHMENT_ID\"}]}'\n```\n\n`byteSize` must be the file's exact size in bytes. Send the headers from `upload.headers` with the `PUT`.\n\nLimits:\n\n* Files can be up to 100 MB and of any type.\n* A message can include up to 10 attachments.\n* Conductor doesn't fetch files from URLs.\n\nAttached files appear in the workspace under `.context/attachments/`, and the agent is told to read them. Agents read images directly. Videos and other binary files arrive as plain files, so the agent needs a tool such as `ffmpeg` in the workspace to look inside them. When you retry a message with the same `messageId`, send the same text and attachments; a retry with different content is rejected.\n\nWith the `conductor` CLI, pass `--attach` once per file:\n\n```bash\nconductor message create --session SESSION_ID \\\n  --message \"This recording shows the bug. Find the cause and fix it.\" \\\n  --attach ./bug.mov --attach ./console.log\n```\n\n## Cookbook [#cookbook]\n\nMachine-launched cloud workspaces include an authenticated Conductor API key. In\nother workspaces, configure an API key before trying these prompts. See [Calling\nthe API from a cloud workspace](#calling-the-api-from-a-cloud-workspace) for\navailability details.\n\n#### Plan, Implement [#plan-implement]\n\n```text\nI will give you a task and a model in my next message. You handle the planning and review; the model I name does the implementation in a fresh Conductor session via the Conductor API:\n\n1. Plan first: investigate whatever you need here, then write a self-contained implementation brief — files, approach, constraints, definition of done. The implementing session shares no context with you.\n2. Find the right project with GET /v0/projects and create a workspace for the task (POST /v0/workspaces — name it after the task, with the model I name). Note the sessionId and deepLink it returns.\n3. Send the brief with POST /v0/sessions/{sessionId}/messages.\n4. Manage the session until the work actually gets done: poll GET /v0/sessions/{sessionId}/status every ~15 seconds and read new transcript messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>. If the implementer stalls, drifts from the brief, or asks a question, answer or course-correct it with another message — messages sent while it works are steered into the running turn. (The session reports \"idle\" until the queued brief is delivered, so wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n5. When it settles, review the result against the brief and send follow-ups until it meets the bar. Then give me a short summary of what was done, the PR, and the deepLink.\n```\n\n#### Implement a multi-PR task [#implement-a-multi-pr-task]\n\n```text\nI will give you a task and a model in my next message. The task is too big for one pull request — it may even span repositories — so split it up and run the pieces in parallel through the Conductor API:\n\n1. Break the task into independent pieces, each small enough for its own pull request, and decide which repository each piece belongs in (GET /v0/projects lists the repositories you can use). Write a self-contained brief for each piece — the implementing sessions share no context with you or with each other, so spell out any interfaces the pieces must agree on.\n2. For each piece, create a workspace named after it (POST /v0/workspaces, with the model I name) and send its brief to the workspace's session with POST /v0/sessions/{sessionId}/messages, asking for a PR. Kick them all off before waiting on any of them so they run in parallel.\n3. Supervise the sessions: poll GET /v0/sessions/{sessionId}/status, read new messages with GET /v0/sessions/{sessionId}/messages?after=<last message id>, and steer any session that stalls or drifts with a follow-up message. (A session reports \"idle\" until its queued brief is delivered — wait until you have seen \"working\" and it settles back to \"idle\", or until the reply is already in the transcript.)\n4. When everything settles, review each result against its brief, then give me a table: piece, repository, the PR, and the workspace's deepLink.\n```\n\n#### Daily Report [#daily-report]\n\n```text\nUse the Conductor API to search my organization's session transcripts with POST /v0/sql (body {\"query\": \"...\"}). Queries can only read the view session_transcripts_view; useful columns include workspace_id, workspace_name, workspace_created_at, workspace_creator_id, session_title, transcript, and transcript_updated_at.\n\nFind every workspace that was worked on in the last 24 hours — for example SELECT workspace_id, workspace_name, session_title, transcript FROM session_transcripts_view WHERE transcript_updated_at >= now() - interval '24 hours' ORDER BY transcript_updated_at DESC — then give me a report with one entry per workspace: what is being done in it (summarize the transcripts) and its deepLink (from GET /v0/workspaces/{workspaceId}) so I can open it in Conductor.\n```\n\n#### Manage Conductor from your OpenClaw [#manage-conductor-from-your-openclaw]\n\nAgents running outside Conductor just need an API key. This prompt turns any personal agent into a manager for your Conductor fleet:\n\n\n\n\n## Tips [#tips]\n\n* **Always pass an explicit `model`.** The defaults are conservative. Models must match the chosen `agent` (`claude`, `codex`, or `cursor`); the accepted ids are enumerated in the OpenAPI document, and an invalid combination fails with a `400` naming them. An optional `effort` field sets the thinking level for `claude` and `codex` sessions.\n* **Wait for `working` before trusting `idle`.** A queued prompt hasn't started a turn yet, and the session reports `idle` until it does. After sending, poll session status until you've seen `working` at least once, then treat the next `idle` as done and read the reply from the transcript. A very fast turn can start and finish between polls, so if `idle` persists, check the transcript for the reply directly.\n* **Name what you create.** Unnamed workspaces get a random [city name](/docs/reference/cities); the workspace name also names the git branch.\n* **The agent's commits are attributed to you.** The workspace's git identity defaults to the API caller's Conductor account. You can also pass an `env` map at workspace creation to set environment variables for the setup script, agent, and terminals.\n* **Send a `User-Agent` header from custom clients.** The API sits behind a proxy that rejects some default client signatures — notably Python's `urllib` — with a `403`. `curl` and `python-requests` work as-is.\n* **Check API access inside cloud workspaces.** Every cloud workspace receives `CONDUCTOR_API_URL`. New machine-launched cloud workspaces—the cloud-collab experience for team organizations with cloud access—receive a workspace-scoped `CONDUCTOR_API_TOKEN` by default (older workspaces set `CONDUCTOR_API_KEY` instead). Each user can configure automatic API access separately for each organization in [**Settings → General**](https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access). Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces do not receive a token automatically. `CONDUCTOR_SESSION_ID` is available to agent processes on current workspaces and can be sent as the `X-Conductor-Session-Id` header to attribute a request to its session.\n\n## Calling the API from a cloud workspace [#calling-the-api-from-a-cloud-workspace]\n\nUse the environment variables below when calling the API from a cloud workspace:\n\n| Variable               | Availability                                                                                                                                                                                                                                                                                                                                                                                                                        |\n| ---------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |\n| `CONDUCTOR_API_URL`    | Set in every cloud workspace.                                                                                                                                                                                                                                                                                                                                                                                                       |\n| `CONDUCTOR_API_TOKEN`  | A workspace-scoped token is set by default in new machine-launched cloud workspaces. Each user can configure automatic API access separately for each organization in [**Settings → General**](https://app.conductor.build/settings/user/general?scrollTo=general%3Aworkspace-api-access). Changes affect only new workspaces; existing workspaces and tokens are unchanged. Other cloud workspaces receive no token automatically. |\n| `CONDUCTOR_API_KEY`    | Your own Conductor API key when you configure one; it always takes precedence over the workspace token. For compatibility, workspaces that receive an automatic token also set it here when you don't supply your own.                                                                                                                                                                                                              |\n| `CONDUCTOR_SESSION_ID` | Set in agent processes on current workspaces; older workspaces may not have it. Send it as the optional `X-Conductor-Session-Id` header so Conductor can attribute the request.                                                                                                                                                                                                                                                     |\n\nFor example:\n\n```bash\ncurl -H \"Authorization: Bearer ${CONDUCTOR_API_KEY:-$CONDUCTOR_API_TOKEN}\" \\\n  ${CONDUCTOR_SESSION_ID:+-H \"X-Conductor-Session-Id: $CONDUCTOR_SESSION_ID\"} \\\n  \"$CONDUCTOR_API_URL/me\"\n```\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.20.0-file-picker-and-chat-titles",
+  "version": "0.20.0",
+  "versionSlug": "0.20.0",
+  "title": "File picker and chat titles",
+  "fullTitle": "0.20.0: File picker and chat titles",
+  "date": "Nov 7th, 2025",
+  "dateISO": "2025-11-07",
+  "description": "Conductor 0.20.0 changelog - File picker and chat titles",
+  "summary": "We've added a new file opener. Use ⌘P to search files across your workspace!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.20.0/010a79a1-2d66-40e5-bd7e-6eef5e3118d2.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.20.0-file-picker-and-chat-titles/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.20.0-file-picker-and-chat-titles",
+  "sourceUrl": "https://www.conductor.build/changelog/0.20.0-file-picker-and-chat-titles",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve added a new file opener. Use ⌘P to search files across your workspace!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.20.0/010a79a1-2d66-40e5-bd7e-6eef5e3118d2.png\"/></figure>\n<p>We now automatically generate chat titles for your tabs:</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-07 at 14 27 13@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.20.0/94131afa-daf6-4f10-80a3-69cf1ef63b9e.png\"/></figure>\n<p>We&#x27;ve also removed some unnecessary GitHub API usage (to avoid hitting rate limits) and improved autoscrolling in chats.</p>\n<h3>Improvements</h3>\n<ul>\n<li>We now use Gemini to generate a chat title based on your first message. To disable, pick &quot;Strict data privacy&quot; in Settings → General.</li>\n<li>Add toggle buttons for the left sidebar</li>\n<li>Add Codex thinking levels</li>\n<li>Chains of empty directories are now squashed together in the file tree</li>\n<li>Show when PRs are awaiting manual review</li>\n<li>Improved TODO tool rendering</li>\n<li>Revamped command palette UI</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed unclear Claude Code installation UX</li>\n<li>Fixed incorrect <code>Unable to merge</code> statuses in the UI</li>\n<li>Fixed terminal text wrapping being lossy</li>\n<li>Improved turn rendering logic</li>\n</ul>",
+  "markdown": "\nWe've added a new file opener. Use ⌘P to search files across your workspace!\n\n<img\n    width=\"1752\"\n    height=\"1357\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.20.0/010a79a1-2d66-40e5-bd7e-6eef5e3118d2.png\"\n/>\n\nWe now automatically generate chat titles for your tabs:\n\n<img\n    width=\"996\"\n    height=\"320\"\n    alt=\"CleanShot 2025-11-07 at 14 27 13@2x\"\n    src=\"/assets/changelog/media/0.20.0/94131afa-daf6-4f10-80a3-69cf1ef63b9e.png\"\n/>\n\nWe've also removed some unnecessary GitHub API usage (to avoid hitting rate limits) and improved autoscrolling in chats.\n\n## Improvements\n\n- We now use Gemini to generate a chat title based on your first message. To disable, pick \"Strict data privacy\" in Settings → General.\n- Add toggle buttons for the left sidebar\n- Add Codex thinking levels\n- Chains of empty directories are now squashed together in the file tree\n- Show when PRs are awaiting manual review\n- Improved TODO tool rendering\n- Revamped command palette UI\n\n## Fixes\n\n- Fixed unclear Claude Code installation UX\n- Fixed incorrect `Unable to merge` statuses in the UI\n- Fixed terminal text wrapping being lossy\n- Improved turn rendering logic\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.35.0-workspace-status",
+  "version": "0.35.0",
+  "versionSlug": "0.35.0",
+  "title": "Workspace Status",
+  "fullTitle": "0.35.0: Workspace Status",
+  "date": "Feb 11th, 2026",
+  "dateISO": "2026-02-11",
+  "description": "Conductor 0.35.0 changelog - Workspace Status",
+  "summary": "Workspaces are now organized by status: backlog, in progress, in review, and done. Workspaces are also labeled by PR title when available.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.35.0/1770849671156-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.35.0-workspace-status/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.35.0-workspace-status",
+  "sourceUrl": "https://www.conductor.build/changelog/0.35.0-workspace-status",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Workspaces are now organized by status: backlog, in progress, in review, and done. Workspaces are also labeled by PR title when available.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.35.0/1770849671156-image.png\"/></figure></p>\n<p>You can now customize the repository when using <code>⌘⇧N</code> to create a workspace.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.35.0/1770849671510-image.png\"/></figure></p>\n<h4>Improvements</h4>\n<ul>\n<li>Added tooltips on hover for truncated workspace titles</li>\n</ul>\n<h4>Fixes</h4>\n<ul>\n<li>Fixed incorrect line stats and diffs for uncommitted files</li>\n<li>Fixed PR metadata and comments not clearing when continuing in a workspace</li>\n<li>Fixed file mentions with parentheses and percentages not rendering properly</li>\n<li>Fixed the “Open in browser” shortcut conflicting</li>\n<li>Fixed workspace action tooltips flickering</li>\n<li>Skipped attaching PR templates when a custom PR description is provided</li>\n</ul>",
+  "markdown": "\nWorkspaces are now organized by status: backlog, in progress, in review, and done. Workspaces are also labeled by PR title when available.\n![image](/assets/changelog/media/0.35.0/1770849671156-image.png)\n\nYou can now customize the repository when using `⌘⇧N` to create a workspace.\n![image](/assets/changelog/media/0.35.0/1770849671510-image.png)\n\n#### Improvements\n\n- Added tooltips on hover for truncated workspace titles\n\n#### Fixes\n\n- Fixed incorrect line stats and diffs for uncommitted files\n- Fixed PR metadata and comments not clearing when continuing in a workspace\n- Fixed file mentions with parentheses and percentages not rendering properly\n- Fixed the “Open in browser” shortcut conflicting\n- Fixed workspace action tooltips flickering\n- Skipped attaching PR templates when a custom PR description is provided\n"
+}

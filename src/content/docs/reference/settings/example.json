@@ -1,0 +1,1738 @@
+{
+  "slug": "reference/settings/example",
+  "url": "/docs/reference/settings/example",
+  "title": "Sample settings configurations",
+  "description": "Example repository settings files for Conductor",
+  "meta": {
+    "title": "Sample settings configurations | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/settings/example/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Sample settings configurations"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#minimal-script-only-example",
+      "title": "Minimal script-only example"
+    },
+    {
+      "depth": 2,
+      "url": "#more-examples",
+      "title": "More examples"
+    },
+    {
+      "depth": 2,
+      "url": "#what-to-add-next",
+      "title": "What to add next"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/settings/reference",
+    "title": "Reference",
+    "description": "Conductor settings keys by scope"
+  },
+  "next": {
+    "url": "/docs/reference/scripts/share-with-teammates",
+    "title": "How to share settings",
+    "description": "Commit .conductor/settings.toml so a repository can share Conductor scripts and settings"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Start with the smallest "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file that makes your project runnable. Add sections only when the project needs them."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the settings should travel with the project. Add "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".gitignore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for project overrides."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "minimal-script-only-example",
+      "children": [
+        {
+          "type": "text",
+          "value": "Minimal script-only example"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Most repositories only need scripts at first:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this when:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "pnpm install"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " prepares a fresh workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "pnpm dev"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " starts the app or server."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The project can run multiple workspaces at once by using "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_PORT"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "run_mode = \"nonconcurrent\""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead when the project depends on one fixed port, one local database, one Docker stack, or another shared resource."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "more-examples",
+      "children": [
+        {
+          "type": "text",
+          "value": "More examples"
+        }
+      ]
+    },
+    {
+      "type": "accordions",
+      "accordionType": "single",
+      "children": [
+        {
+          "type": "accordion",
+          "title": "Complete repository example",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use this as a reference for the sections a larger project might configure. Remove anything your project does not need."
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "toml",
+              "title": ".conductor/settings.toml",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n# Disable Conductor features that require external AI providers.\nenterprise_data_privacy = false\n\n# Copy these gitignored files into each new local workspace when\n# .worktreeinclude is not present.\nfile_include_globs = \".env*\\nconfig/*.local.json\\n\"\n\n[scripts]\n# Runs after Conductor creates a workspace.\nsetup = \"pnpm install\"\n\n# Runs before Conductor archives a workspace.\narchive = \"./script/workspace-archive.sh\"\n\n# Use \"nonconcurrent\" if the project depends on a fixed port, one local\n# database, one Docker stack, or another shared resource.\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\n# Runs from the Run button. Use CONDUCTOR_PORT so multiple workspaces\n# can run their own dev servers.\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[scripts.run.test]\ncommand = \"pnpm test --watch\"\nicon = \"test-tube\"\n\n[environment_variables]\n# Top-level variables apply to local and cloud agents.\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n\n[environment_variables.local]\n# Local-only variables apply when agents run on your Mac.\nLOCAL_AGENT_MODE = \"1\"\n\n[environment_variables.cloud]\n# Cloud-only variables apply when agents run in cloud workspaces.\nOPENAI_BASE_URL = \"https://openai.example.com\"\n\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"\ncreate_pr = \"Write a concise PR description with test results.\"\nfix_errors = \"Explain the likely cause before changing code.\"\nresolve_merge_conflicts = \"Preserve user changes unless the conflict proves they are obsolete.\"\nrename_branch = \"Use a short kebab-case branch name.\"\n\n[git]\narchive_on_merge = true\ndelete_branch_on_archive = false\nworktree_push_auto_setup_remote = true\nbranch_prefix_type = \"custom\"\nbranch_prefix = \"agent\"",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "\"$schema\" = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Disable Conductor features that require external AI providers.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "enterprise_data_privacy = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "false",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Copy these gitignored files into each new local workspace when",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# .worktreeinclude is not present.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "file_include_globs = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\".env*",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "\\n",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": "config/*.local.json",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": "\\n",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": "\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "scripts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Runs after Conductor creates a workspace.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "setup = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"pnpm install\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Runs before Conductor archives a workspace.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "archive = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"./script/workspace-archive.sh\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Use \"nonconcurrent\" if the project depends on a fixed port, one local",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# database, one Docker stack, or another shared resource.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "run_mode = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"concurrent\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "scripts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "run",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "dev",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Runs from the Run button. Use CONDUCTOR_PORT so multiple workspaces",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# can run their own dev servers.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "command = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "default = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "true",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "icon = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"play\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "scripts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "run",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "test",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "command = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"pnpm test --watch\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "icon = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"test-tube\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "environment_variables",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Top-level variables apply to local and cloud agents.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "ANTHROPIC_BASE_URL = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"https://api.example.com\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "environment_variables",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "local",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Local-only variables apply when agents run on your Mac.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "LOCAL_AGENT_MODE = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"1\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "environment_variables",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "cloud",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "# Cloud-only variables apply when agents run in cloud workspaces.",
+                      "color": "#6A737D",
+                      "colorDark": "#6A737D"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "OPENAI_BASE_URL = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"https://openai.example.com\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "prompts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "general = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Prefer small, reviewable changes and run the narrowest relevant tests.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "code_review = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Focus on correctness, behavior changes, and missing tests.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "create_pr = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Write a concise PR description with test results.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "fix_errors = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Explain the likely cause before changing code.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "resolve_merge_conflicts = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Preserve user changes unless the conflict proves they are obsolete.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "rename_branch = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"Use a short kebab-case branch name.\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "git",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "archive_on_merge = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "true",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "delete_branch_on_archive = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "false",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "worktree_push_auto_setup_remote = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "true",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "branch_prefix_type = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"custom\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "branch_prefix = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"agent\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "accordion",
+          "title": "Local override example",
+          "children": [
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".conductor/settings.local.toml"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " when your machine needs a different command or provider value. Add it to "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".gitignore"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " from the repository root:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "bash",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+              "code": "touch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "touch",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " .gitignore",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "grep",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " -qxF",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \".conductor/settings.local.toml\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " .gitignore",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " ||",
+                      "color": "#D73A49",
+                      "colorDark": "#F97583"
+                    },
+                    {
+                      "text": " printf",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \"\\n.conductor/settings.local.toml\\n\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " >>",
+                      "color": "#D73A49",
+                      "colorDark": "#F97583"
+                    },
+                    {
+                      "text": " .gitignore",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "toml",
+              "title": ".conductor/settings.local.toml",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "\"$schema\" = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "scripts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "run_mode = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"concurrent\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "scripts",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "run",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": ".",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "dev",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "command = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "default = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "true",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "icon = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"play\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": []
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "[",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "environment_variables",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": "]",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "ANTHROPIC_BASE_URL = ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "\"http://127.0.0.1:4000\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "The local file overrides matching values from "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".conductor/settings.toml"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " on your machine only."
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-to-add-next",
+      "children": [
+        {
+          "type": "text",
+          "value": "What to add next"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add sections only when you need them:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "archive"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when archiving a workspace should clean up project-specific resources."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "file_include_globs"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when you need Conductor to copy gitignored files and you are not using "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".worktreeinclude"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "environment_variables"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when agents need repository-specific variables that should not come from the normal shell environment."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "prompts"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the repository needs custom agent instructions."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "git"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " settings when the repository should override Conductor's Git defaults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the full settings model, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For supported keys, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Start with the smallest <code>.conductor/settings.toml</code> file that makes your project runnable. Add sections only when the project needs them.</p><p>Commit <code>.conductor/settings.toml</code> when the settings should travel with the project. Add <code>.conductor/settings.local.toml</code> to <code>.gitignore</code> for project overrides.</p><h2 id=\"minimal-script-only-example\"><a href=\"#minimal-script-only-example\">Minimal script-only example</a></h2><p>Most repositories only need scripts at first:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>Use this when:</p><ul><li><code>pnpm install</code> prepares a fresh workspace.</li><li><code>pnpm dev</code> starts the app or server.</li><li>The project can run multiple workspaces at once by using <code>CONDUCTOR_PORT</code>.</li></ul><p>Use <code>run_mode = \"nonconcurrent\"</code> instead when the project depends on one fixed port, one local database, one Docker stack, or another shared resource.</p><h2 id=\"more-examples\"><a href=\"#more-examples\">More examples</a></h2><div data-accordions=\"single\"><details data-accordion><summary>Complete repository example</summary><p>Use this as a reference for the sections a larger project might configure. Remove anything your project does not need.</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Disable Conductor features that require external AI providers.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">false</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Copy these gitignored files into each new local workspace when</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># .worktreeinclude is not present.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">file_include_globs = </span><span style=\"color:#032F62\">\".env*</span><span style=\"color:#005CC5\">\\n</span><span style=\"color:#032F62\">config/*.local.json</span><span style=\"color:#005CC5\">\\n</span><span style=\"color:#032F62\">\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Runs after Conductor creates a workspace.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Runs before Conductor archives a workspace.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Use \"nonconcurrent\" if the project depends on a fixed port, one local</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># database, one Docker stack, or another shared resource.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Runs from the Run button. Use CONDUCTOR_PORT so multiple workspaces</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># can run their own dev servers.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">test</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm test --watch\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"test-tube\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Top-level variables apply to local and cloud agents.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL = </span><span style=\"color:#032F62\">\"https://api.example.com\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">local</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Local-only variables apply when agents run on your Mac.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">LOCAL_AGENT_MODE = </span><span style=\"color:#032F62\">\"1\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">cloud</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#6A737D\"># Cloud-only variables apply when agents run in cloud workspaces.</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">OPENAI_BASE_URL = </span><span style=\"color:#032F62\">\"https://openai.example.com\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">prompts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">general = </span><span style=\"color:#032F62\">\"Prefer small, reviewable changes and run the narrowest relevant tests.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">code_review = </span><span style=\"color:#032F62\">\"Focus on correctness, behavior changes, and missing tests.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">create_pr = </span><span style=\"color:#032F62\">\"Write a concise PR description with test results.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">fix_errors = </span><span style=\"color:#032F62\">\"Explain the likely cause before changing code.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">resolve_merge_conflicts = </span><span style=\"color:#032F62\">\"Preserve user changes unless the conflict proves they are obsolete.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">rename_branch = </span><span style=\"color:#032F62\">\"Use a short kebab-case branch name.\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">git</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive_on_merge = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">delete_branch_on_archive = </span><span style=\"color:#005CC5\">false</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">worktree_push_auto_setup_remote = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">branch_prefix_type = </span><span style=\"color:#032F62\">\"custom\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">branch_prefix = </span><span style=\"color:#032F62\">\"agent\"</span></span></code></pre></figure></details><details data-accordion><summary>Local override example</summary><p>Use <code>.conductor/settings.local.toml</code> when your machine needs a different command or provider value. Add it to <code>.gitignore</code> from the repository root:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">touch</span><span style=\"color:#032F62\"> .gitignore</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">grep</span><span style=\"color:#005CC5\"> -qxF</span><span style=\"color:#032F62\"> \".conductor/settings.local.toml\"</span><span style=\"color:#032F62\"> .gitignore</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> printf</span><span style=\"color:#032F62\"> \"\\n.conductor/settings.local.toml\\n\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> .gitignore</span></span></code></pre></figure><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.local.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL = </span><span style=\"color:#032F62\">\"http://127.0.0.1:4000\"</span></span></code></pre></figure><p>The local file overrides matching values from <code>.conductor/settings.toml</code> on your machine only.</p></details></div><h2 id=\"what-to-add-next\"><a href=\"#what-to-add-next\">What to add next</a></h2><p>Add sections only when you need them:</p><ul><li>Add <code>archive</code> when archiving a workspace should clean up project-specific resources.</li><li>Add <code>file_include_globs</code> when you need Conductor to copy gitignored files and you are not using <code>.worktreeinclude</code>.</li><li>Add <code>environment_variables</code> when agents need repository-specific variables that should not come from the normal shell environment.</li><li>Add <code>prompts</code> when the repository needs custom agent instructions.</li><li>Add <code>git</code> settings when the repository should override Conductor's Git defaults.</li></ul><p>For the full settings model, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>. For supported keys, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>.</p>",
+  "text": "Start with the smallest .conductor/settings.toml file that makes your project runnable. Add sections only when the project needs them.\nCommit .conductor/settings.toml when the settings should travel with the project. Add .conductor/settings.local.toml to .gitignore for project overrides.\nMinimal script-only example\nMost repositories only need scripts at first:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"Use this when:\npnpm install prepares a fresh workspace.\npnpm dev starts the app or server.\nThe project can run multiple workspaces at once by using CONDUCTOR_PORT.\nUse run_mode = \"nonconcurrent\" instead when the project depends on one fixed port, one local database, one Docker stack, or another shared resource.\nMore examples\nComplete repository exampleUse this as a reference for the sections a larger project might configure. Remove anything your project does not need.\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n# Disable Conductor features that require external AI providers.\nenterprise_data_privacy = false\n# Copy these gitignored files into each new local workspace when\n# .worktreeinclude is not present.\nfile_include_globs = \".env*\\nconfig/*.local.json\\n\"\n[scripts]\n# Runs after Conductor creates a workspace.\nsetup = \"pnpm install\"\n# Runs before Conductor archives a workspace.\narchive = \"./script/workspace-archive.sh\"\n# Use \"nonconcurrent\" if the project depends on a fixed port, one local\n# database, one Docker stack, or another shared resource.\nrun_mode = \"concurrent\"\n[scripts.run.dev]\n# Runs from the Run button. Use CONDUCTOR_PORT so multiple workspaces\n# can run their own dev servers.\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n[scripts.run.test]\ncommand = \"pnpm test --watch\"\nicon = \"test-tube\"\n[environment_variables]\n# Top-level variables apply to local and cloud agents.\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n[environment_variables.local]\n# Local-only variables apply when agents run on your Mac.\nLOCAL_AGENT_MODE = \"1\"\n[environment_variables.cloud]\n# Cloud-only variables apply when agents run in cloud workspaces.\nOPENAI_BASE_URL = \"https://openai.example.com\"\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"\ncreate_pr = \"Write a concise PR description with test results.\"\nfix_errors = \"Explain the likely cause before changing code.\"\nresolve_merge_conflicts = \"Preserve user changes unless the conflict proves they are obsolete.\"\nrename_branch = \"Use a short kebab-case branch name.\"\n[git]\narchive_on_merge = true\ndelete_branch_on_archive = false\nworktree_push_auto_setup_remote = true\nbranch_prefix_type = \"custom\"\nbranch_prefix = \"agent\"Local override exampleUse .conductor/settings.local.toml when your machine needs a different command or provider value. Add it to .gitignore from the repository root:\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"The local file overrides matching values from .conductor/settings.toml on your machine only.\nWhat to add next\nAdd sections only when you need them:\nAdd archive when archiving a workspace should clean up project-specific resources.\nAdd file_include_globs when you need Conductor to copy gitignored files and you are not using .worktreeinclude.\nAdd environment_variables when agents need repository-specific variables that should not come from the normal shell environment.\nAdd prompts when the repository needs custom agent instructions.\nAdd git settings when the repository should override Conductor's Git defaults.\nFor the full settings model, see User and project settings. For supported keys, see Settings reference.",
+  "markdown": "\n# Sample settings configurations\n\n\n\nStart with the smallest `.conductor/settings.toml` file that makes your project runnable. Add sections only when the project needs them.\n\nCommit `.conductor/settings.toml` when the settings should travel with the project. Add `.conductor/settings.local.toml` to `.gitignore` for project overrides.\n\n## Minimal script-only example [#minimal-script-only-example]\n\nMost repositories only need scripts at first:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nsetup = \"pnpm install\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nUse this when:\n\n* `pnpm install` prepares a fresh workspace.\n* `pnpm dev` starts the app or server.\n* The project can run multiple workspaces at once by using `CONDUCTOR_PORT`.\n\nUse `run_mode = \"nonconcurrent\"` instead when the project depends on one fixed port, one local database, one Docker stack, or another shared resource.\n\n## More examples [#more-examples]\n\nUse this as a reference for the sections a larger project might configure. Remove anything your project does not need.\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n# Disable Conductor features that require external AI providers.\nenterprise_data_privacy = false\n\n# Copy these gitignored files into each new local workspace when\n# .worktreeinclude is not present.\nfile_include_globs = \".env*\\nconfig/*.local.json\\n\"\n\n[scripts]\n# Runs after Conductor creates a workspace.\nsetup = \"pnpm install\"\n\n# Runs before Conductor archives a workspace.\narchive = \"./script/workspace-archive.sh\"\n\n# Use \"nonconcurrent\" if the project depends on a fixed port, one local\n# database, one Docker stack, or another shared resource.\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\n# Runs from the Run button. Use CONDUCTOR_PORT so multiple workspaces\n# can run their own dev servers.\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[scripts.run.test]\ncommand = \"pnpm test --watch\"\nicon = \"test-tube\"\n\n[environment_variables]\n# Top-level variables apply to local and cloud agents.\nANTHROPIC_BASE_URL = \"https://api.example.com\"\n\n[environment_variables.local]\n# Local-only variables apply when agents run on your Mac.\nLOCAL_AGENT_MODE = \"1\"\n\n[environment_variables.cloud]\n# Cloud-only variables apply when agents run in cloud workspaces.\nOPENAI_BASE_URL = \"https://openai.example.com\"\n\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"\ncreate_pr = \"Write a concise PR description with test results.\"\nfix_errors = \"Explain the likely cause before changing code.\"\nresolve_merge_conflicts = \"Preserve user changes unless the conflict proves they are obsolete.\"\nrename_branch = \"Use a short kebab-case branch name.\"\n\n[git]\narchive_on_merge = true\ndelete_branch_on_archive = false\nworktree_push_auto_setup_remote = true\nbranch_prefix_type = \"custom\"\nbranch_prefix = \"agent\"\n```\n\nUse `.conductor/settings.local.toml` when your machine needs a different command or provider value. Add it to `.gitignore` from the repository root:\n\n```bash\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\n```\n\n```toml title=\".conductor/settings.local.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"\n```\n\nThe local file overrides matching values from `.conductor/settings.toml` on your machine only.\n\n## What to add next [#what-to-add-next]\n\nAdd sections only when you need them:\n\n* Add `archive` when archiving a workspace should clean up project-specific resources.\n* Add `file_include_globs` when you need Conductor to copy gitignored files and you are not using `.worktreeinclude`.\n* Add `environment_variables` when agents need repository-specific variables that should not come from the normal shell environment.\n* Add `prompts` when the repository needs custom agent instructions.\n* Add `git` settings when the repository should override Conductor's Git defaults.\n\nFor the full settings model, see [User and project settings](/docs/reference/settings/user-project). For supported keys, see [Settings reference](/docs/reference/settings/reference).\n"
+}

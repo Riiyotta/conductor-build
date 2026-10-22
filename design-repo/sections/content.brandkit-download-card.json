@@ -1,0 +1,87 @@
+{
+  "id": "content.brandkit-download-card",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.brandkit-download-card"
+  ],
+  "purpose": "One-click download of the full brand asset pack.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Brandkit.jsx:157",
+      "quote": "export default function Brandkit() {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:338",
+      "quote": "### 6.2 Download card (y=394, 836x90)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.brandkit-download-card"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 4,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "caption": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 7
+    },
+    "buttonLabel": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "file": {
+      "type": "media",
+      "roles": [
+        "brand-mark"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "instant-hover"
+    ],
+    "defaultPatterns": [
+      "instant-hover"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:344",
+        "quote": "**Hover bg rgba(44,40,38,.9)** (measured, instant)."
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Distributes Conductor trademarks."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "brand-mark"
+  ]
+}

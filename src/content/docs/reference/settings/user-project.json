@@ -1,0 +1,2147 @@
+{
+  "slug": "reference/settings/user-project",
+  "url": "/docs/reference/settings/user-project",
+  "title": "User and project settings",
+  "description": "Reference for Conductor user, project, and local project settings",
+  "meta": {
+    "title": "User and project settings | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/settings/user-project/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "User and project settings"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#file-locations",
+      "title": "File locations"
+    },
+    {
+      "depth": 2,
+      "url": "#precedence",
+      "title": "Precedence"
+    },
+    {
+      "depth": 2,
+      "url": "#when-file-changes-apply",
+      "title": "When file changes apply"
+    },
+    {
+      "depth": 2,
+      "url": "#repository-shared-settings",
+      "title": "Repository shared settings"
+    },
+    {
+      "depth": 2,
+      "url": "#project-overrides",
+      "title": "Project overrides"
+    },
+    {
+      "depth": 2,
+      "url": "#user-settings",
+      "title": "User settings"
+    },
+    {
+      "depth": 2,
+      "url": "#schemas-and-legacy-files",
+      "title": "Schemas and legacy files"
+    },
+    {
+      "depth": 2,
+      "url": "#related-pages",
+      "title": "Related pages"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/settings",
+    "title": "Overview",
+    "description": "How Conductor settings configure workspaces, scripts, agents, and projects"
+  },
+  "next": {
+    "url": "/docs/reference/settings/managed",
+    "title": "Managed",
+    "description": "Reference for organization-managed Conductor settings"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "User and project settings are the files most people manage directly. Use this reference when you need to choose a settings tier or understand precedence. For the complete key list, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a step-by-step setup flow, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/configure-settings"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "file-locations",
+      "children": [
+        {
+          "type": "text",
+          "value": "File locations"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Most users work with these files:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Scope"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "File"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Use it for"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Commit it?"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "User shared"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your defaults across all repositories"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "No"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Project overrides"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.local.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Your override for one project"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "No"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Repository shared"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Team defaults after the change is merged to "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "main"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Yes"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Organizations can also provide a managed settings file at "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.conductor/settings.managed.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Managed settings override user and project settings. See "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/managed"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Managed settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when you need organization-controlled configuration."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "precedence",
+      "children": [
+        {
+          "type": "text",
+          "value": "Precedence"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When more than one settings layer configures the same setting, Conductor uses the first matching value in this order:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Managed settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Project overrides."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository shared settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "User shared settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Built-in defaults."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Most users will not have managed settings. When no managed file is present, project overrides are the highest layer."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": "~/.conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts.run.dev]\ncommand = \"pnpm dev\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": "<repo>/.conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For that repository, the Run button uses "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "pnpm dev --port $CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " because the repository shared file overrides the user shared file for repository-configurable settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If your local file also defines the same action, it wins for your machine:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": "<repo>/.conductor/settings.local.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[scripts.run.dev]\ncommand = \"pnpm dev:local\"\ndefault = true\nicon = \"play\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev:local\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "when-file-changes-apply",
+      "children": [
+        {
+          "type": "text",
+          "value": "When file changes apply"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For most action changes, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " > "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Repo"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " > "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Actions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor. The UI writes the right settings layer and updates workspaces without making you reason about file propagation."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "<repo>/.conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for machine-specific changes and local action experiments. These changes are not tracked by Git and are only reflected on your machine."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repository-shared-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository shared settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "<repo>/.conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when a repository should define shared Conductor behavior for everyone. Commit this file when the settings should travel with the project, and merge the change to the repository's default branch before expecting Conductor to reflect it as shared project settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Common repository shared settings include setup scripts, actions, archive scripts, run mode, Files to copy patterns, Enterprise data privacy, action prompts, Git behavior, provider executable paths, and repository environment variables."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "enterprise_data_privacy = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "setup = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm install\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "archive = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"./script/workspace-archive.sh\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "prompts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "general = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"Prefer small, reviewable changes and run the narrowest relevant tests.\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "code_review = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"Focus on correctness, behavior changes, and missing tests.\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "run_mode = \"nonconcurrent\""
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "project-overrides",
+      "children": [
+        {
+          "type": "text",
+          "value": "Project overrides"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "<repo>/.conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for settings that should apply only on your machine. Add it to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".gitignore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " from the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "touch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "touch",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "grep",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " -qxF",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \".conductor/settings.local.toml\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " ||",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " printf",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " \"\\n.conductor/settings.local.toml\\n\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " >>",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " .gitignore",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Project overrides are useful when your local environment differs from the project's shared setup."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.local.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "run_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"concurrent\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "scripts",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "run",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "dev",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "command = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "icon = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"play\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "environment_variables",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "ANTHROPIC_BASE_URL = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"http://127.0.0.1:4000\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This overrides the shared repository action and environment variable values on your machine only."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "user-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "User settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for personal defaults that should apply across repositories. User settings include every file-backed setting, including settings that repositories cannot control."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Example:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": "~/.conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.schema.json\"\n\n[models]\ndefault = \"gpt-5.5\"\nreview = \"sonnet-4-6\"\ndefault_plan_mode = true\n\n[models.codex]\ndefault_thinking_level = \"high\"\npersonality = \"direct\"\n\n[models.claude_code]\ndefault_effort_level = \"normal\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "models",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"gpt-5.5\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "review = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"sonnet-4-6\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default_plan_mode = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "models",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default_thinking_level = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"high\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "personality = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"direct\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "models",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": ".",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "claude_code",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "default_effort_level = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"normal\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Common user-only settings include model defaults, model reasoning defaults, tool approvals, and the default workspace location. If you put these settings in a repository file, Conductor ignores them because repositories are not allowed to set them."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "schemas-and-legacy-files",
+      "children": [
+        {
+          "type": "text",
+          "value": "Schemas and legacy files"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a schema URL to a settings file for editor autocomplete and validation. Schema URLs are listed in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/reference"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Within one scope, Conductor reads legacy "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " settings files first and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " settings files second. If both exist, TOML wins. Conductor writes new settings files as TOML."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Legacy "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is separate from these settings files. New shared repository settings should use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For migration details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/conductor-json"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "conductor.json"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "related-pages",
+      "children": [
+        {
+          "type": "text",
+          "value": "Related pages"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings quickstart"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/guides/configure-settings"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Configure settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/reference"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings reference"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/managed"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Managed settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/settings/example"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Sample settings configurations"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts/share-with-teammates"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Share repository settings with teammates"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Scripts"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/files-to-copy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Files to copy"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>User and project settings are the files most people manage directly. Use this reference when you need to choose a settings tier or understand precedence. For the complete key list, see <a href=\"/docs/reference/settings/reference\">Settings reference</a>.</p><p>For a step-by-step setup flow, see <a href=\"/docs/guides/configure-settings\">Configure settings</a>.</p><h2 id=\"file-locations\"><a href=\"#file-locations\">File locations</a></h2><p>Most users work with these files:</p><table><thead><tr><th>Scope</th><th>File</th><th>Use it for</th><th>Commit it?</th></tr></thead><tbody><tr><td>User shared</td><td><code>~/.conductor/settings.toml</code></td><td>Your defaults across all repositories</td><td>No</td></tr><tr><td>Project overrides</td><td><code>&lt;repo&gt;/.conductor/settings.local.toml</code></td><td>Your override for one project</td><td>No</td></tr><tr><td>Repository shared</td><td><code>&lt;repo&gt;/.conductor/settings.toml</code></td><td>Team defaults after the change is merged to <code>main</code></td><td>Yes</td></tr></tbody></table><p>Organizations can also provide a managed settings file at <code>~/.conductor/settings.managed.toml</code>. Managed settings override user and project settings. See <a href=\"/docs/reference/settings/managed\">Managed settings</a> when you need organization-controlled configuration.</p><h2 id=\"precedence\"><a href=\"#precedence\">Precedence</a></h2><p>When more than one settings layer configures the same setting, Conductor uses the first matching value in this order:</p><ol><li>Managed settings.</li><li>Project overrides.</li><li>Repository shared settings.</li><li>User shared settings.</li><li>Built-in defaults.</li></ol><p>Most users will not have managed settings. When no managed file is present, project overrides are the highest layer.</p><p>Example:</p><figure data-code data-lang=\"toml\" data-title=\"~/.conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><figure data-code data-lang=\"toml\" data-title=\"&lt;repo&gt;/.conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><p>For that repository, the Run button uses <code>pnpm dev --port $CONDUCTOR_PORT</code> because the repository shared file overrides the user shared file for repository-configurable settings.</p><p>If your local file also defines the same action, it wins for your machine:</p><figure data-code data-lang=\"toml\" data-title=\"&lt;repo&gt;/.conductor/settings.local.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev:local\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span></code></pre></figure><h2 id=\"when-file-changes-apply\"><a href=\"#when-file-changes-apply\">When file changes apply</a></h2><p>For most action changes, use <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> &gt; <code>Repo</code> &gt; <code>Actions</code></a> in Conductor. The UI writes the right settings layer and updates workspaces without making you reason about file propagation.</p><p>Use <code>&lt;repo&gt;/.conductor/settings.local.toml</code> for machine-specific changes and local action experiments. These changes are not tracked by Git and are only reflected on your machine.</p><h2 id=\"repository-shared-settings\"><a href=\"#repository-shared-settings\">Repository shared settings</a></h2><p>Use <code>&lt;repo&gt;/.conductor/settings.toml</code> when a repository should define shared Conductor behavior for everyone. Commit this file when the settings should travel with the project, and merge the change to the repository's default branch before expecting Conductor to reflect it as shared project settings.</p><p>Common repository shared settings include setup scripts, actions, archive scripts, run mode, Files to copy patterns, Enterprise data privacy, action prompts, Git behavior, provider executable paths, and repository environment variables.</p><p>Example:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">enterprise_data_privacy = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">setup = </span><span style=\"color:#032F62\">\"pnpm install\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">archive = </span><span style=\"color:#032F62\">\"./script/workspace-archive.sh\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">prompts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">general = </span><span style=\"color:#032F62\">\"Prefer small, reviewable changes and run the narrowest relevant tests.\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">code_review = </span><span style=\"color:#032F62\">\"Focus on correctness, behavior changes, and missing tests.\"</span></span></code></pre></figure><p>Use <code>run_mode = \"nonconcurrent\"</code> when the project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.</p><h2 id=\"project-overrides\"><a href=\"#project-overrides\">Project overrides</a></h2><p>Use <code>&lt;repo&gt;/.conductor/settings.local.toml</code> for settings that should apply only on your machine. Add it to <code>.gitignore</code> from the repository root:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">touch</span><span style=\"color:#032F62\"> .gitignore</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">grep</span><span style=\"color:#005CC5\"> -qxF</span><span style=\"color:#032F62\"> \".conductor/settings.local.toml\"</span><span style=\"color:#032F62\"> .gitignore</span><span style=\"color:#D73A49\"> ||</span><span style=\"color:#005CC5\"> printf</span><span style=\"color:#032F62\"> \"\\n.conductor/settings.local.toml\\n\"</span><span style=\"color:#D73A49\"> &gt;&gt;</span><span style=\"color:#032F62\"> .gitignore</span></span></code></pre></figure><p>Project overrides are useful when your local environment differs from the project's shared setup.</p><p>Example:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.local.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">run_mode = </span><span style=\"color:#032F62\">\"concurrent\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">scripts</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">run</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">dev</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">command = </span><span style=\"color:#032F62\">\"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">icon = </span><span style=\"color:#032F62\">\"play\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">environment_variables</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">ANTHROPIC_BASE_URL = </span><span style=\"color:#032F62\">\"http://127.0.0.1:4000\"</span></span></code></pre></figure><p>This overrides the shared repository action and environment variable values on your machine only.</p><h2 id=\"user-settings\"><a href=\"#user-settings\">User settings</a></h2><p>Use <code>~/.conductor/settings.toml</code> for personal defaults that should apply across repositories. User settings include every file-backed setting, including settings that repositories cannot control.</p><p>Example:</p><figure data-code data-lang=\"toml\" data-title=\"~/.conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">models</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default = </span><span style=\"color:#032F62\">\"gpt-5.5\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">review = </span><span style=\"color:#032F62\">\"sonnet-4-6\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default_plan_mode = </span><span style=\"color:#005CC5\">true</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">models</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">codex</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default_thinking_level = </span><span style=\"color:#032F62\">\"high\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">personality = </span><span style=\"color:#032F62\">\"direct\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[</span><span style=\"color:#6F42C1\">models</span><span style=\"color:#24292E\">.</span><span style=\"color:#6F42C1\">claude_code</span><span style=\"color:#24292E\">]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">default_effort_level = </span><span style=\"color:#032F62\">\"normal\"</span></span></code></pre></figure><p>Common user-only settings include model defaults, model reasoning defaults, tool approvals, and the default workspace location. If you put these settings in a repository file, Conductor ignores them because repositories are not allowed to set them.</p><h2 id=\"schemas-and-legacy-files\"><a href=\"#schemas-and-legacy-files\">Schemas and legacy files</a></h2><p>Add a schema URL to a settings file for editor autocomplete and validation. Schema URLs are listed in <a href=\"/docs/reference/settings/reference\">Settings reference</a>.</p><p>Within one scope, Conductor reads legacy <code>.json</code> settings files first and <code>.toml</code> settings files second. If both exist, TOML wins. Conductor writes new settings files as TOML.</p><p>Legacy <code>conductor.json</code> is separate from these settings files. New shared repository settings should use <code>.conductor/settings.toml</code>. For migration details, see <a href=\"/docs/reference/conductor-json\">conductor.json</a>.</p><h2 id=\"related-pages\"><a href=\"#related-pages\">Related pages</a></h2><ul><li><a href=\"/docs/reference/settings\">Settings quickstart</a></li><li><a href=\"/docs/guides/configure-settings\">Configure settings</a></li><li><a href=\"/docs/reference/settings/reference\">Settings reference</a></li><li><a href=\"/docs/reference/settings/managed\">Managed settings</a></li><li><a href=\"/docs/reference/settings/example\">Sample settings configurations</a></li><li><a href=\"/docs/reference/scripts/share-with-teammates\">Share repository settings with teammates</a></li><li><a href=\"/docs/reference/scripts\">Scripts</a></li><li><a href=\"/docs/reference/files-to-copy\">Files to copy</a></li></ul>",
+  "text": "User and project settings are the files most people manage directly. Use this reference when you need to choose a settings tier or understand precedence. For the complete key list, see Settings reference.\nFor a step-by-step setup flow, see Configure settings.\nFile locations\nMost users work with these files:\nScopeFileUse it forCommit it?User shared~/.conductor/settings.tomlYour defaults across all repositoriesNoProject overrides<repo>/.conductor/settings.local.tomlYour override for one projectNoRepository shared<repo>/.conductor/settings.tomlTeam defaults after the change is merged to mainYesOrganizations can also provide a managed settings file at ~/.conductor/settings.managed.toml. Managed settings override user and project settings. See Managed settings when you need organization-controlled configuration.\nPrecedence\nWhen more than one settings layer configures the same setting, Conductor uses the first matching value in this order:\nManaged settings.\nProject overrides.\nRepository shared settings.\nUser shared settings.\nBuilt-in defaults.\nMost users will not have managed settings. When no managed file is present, project overrides are the highest layer.\nExample:\n[scripts.run.dev]\ncommand = \"pnpm dev\"\ndefault = true\nicon = \"play\"[scripts]\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"For that repository, the Run button uses pnpm dev --port $CONDUCTOR_PORT because the repository shared file overrides the user shared file for repository-configurable settings.\nIf your local file also defines the same action, it wins for your machine:\n[scripts.run.dev]\ncommand = \"pnpm dev:local\"\ndefault = true\nicon = \"play\"When file changes apply\nFor most action changes, use Settings > Repo > Actions in Conductor. The UI writes the right settings layer and updates workspaces without making you reason about file propagation.\nUse <repo>/.conductor/settings.local.toml for machine-specific changes and local action experiments. These changes are not tracked by Git and are only reflected on your machine.\nRepository shared settings\nUse <repo>/.conductor/settings.toml when a repository should define shared Conductor behavior for everyone. Commit this file when the settings should travel with the project, and merge the change to the repository's default branch before expecting Conductor to reflect it as shared project settings.\nCommon repository shared settings include setup scripts, actions, archive scripts, run mode, Files to copy patterns, Enterprise data privacy, action prompts, Git behavior, provider executable paths, and repository environment variables.\nExample:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"Use run_mode = \"nonconcurrent\" when the project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\nProject overrides\nUse <repo>/.conductor/settings.local.toml for settings that should apply only on your machine. Add it to .gitignore from the repository root:\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignoreProject overrides are useful when your local environment differs from the project's shared setup.\nExample:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n[scripts]\nrun_mode = \"concurrent\"\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"This overrides the shared repository action and environment variable values on your machine only.\nUser settings\nUse ~/.conductor/settings.toml for personal defaults that should apply across repositories. User settings include every file-backed setting, including settings that repositories cannot control.\nExample:\n\"$schema\" = \"https://conductor.build/schemas/settings.schema.json\"\n[models]\ndefault = \"gpt-5.5\"\nreview = \"sonnet-4-6\"\ndefault_plan_mode = true\n[models.codex]\ndefault_thinking_level = \"high\"\npersonality = \"direct\"\n[models.claude_code]\ndefault_effort_level = \"normal\"Common user-only settings include model defaults, model reasoning defaults, tool approvals, and the default workspace location. If you put these settings in a repository file, Conductor ignores them because repositories are not allowed to set them.\nSchemas and legacy files\nAdd a schema URL to a settings file for editor autocomplete and validation. Schema URLs are listed in Settings reference.\nWithin one scope, Conductor reads legacy .json settings files first and .toml settings files second. If both exist, TOML wins. Conductor writes new settings files as TOML.\nLegacy conductor.json is separate from these settings files. New shared repository settings should use .conductor/settings.toml. For migration details, see conductor.json.\nRelated pages\nSettings quickstart\nConfigure settings\nSettings reference\nManaged settings\nSample settings configurations\nShare repository settings with teammates\nScripts\nFiles to copy",
+  "markdown": "\n# User and project settings\n\n\n\nUser and project settings are the files most people manage directly. Use this reference when you need to choose a settings tier or understand precedence. For the complete key list, see [Settings reference](/docs/reference/settings/reference).\n\nFor a step-by-step setup flow, see [Configure settings](/docs/guides/configure-settings).\n\n## File locations [#file-locations]\n\nMost users work with these files:\n\n| Scope             | File                                    | Use it for                                         | Commit it? |\n| ----------------- | --------------------------------------- | -------------------------------------------------- | ---------- |\n| User shared       | `~/.conductor/settings.toml`            | Your defaults across all repositories              | No         |\n| Project overrides | `<repo>/.conductor/settings.local.toml` | Your override for one project                      | No         |\n| Repository shared | `<repo>/.conductor/settings.toml`       | Team defaults after the change is merged to `main` | Yes        |\n\nOrganizations can also provide a managed settings file at `~/.conductor/settings.managed.toml`. Managed settings override user and project settings. See [Managed settings](/docs/reference/settings/managed) when you need organization-controlled configuration.\n\n## Precedence [#precedence]\n\nWhen more than one settings layer configures the same setting, Conductor uses the first matching value in this order:\n\n1. Managed settings.\n2. Project overrides.\n3. Repository shared settings.\n4. User shared settings.\n5. Built-in defaults.\n\nMost users will not have managed settings. When no managed file is present, project overrides are the highest layer.\n\nExample:\n\n```toml title=\"~/.conductor/settings.toml\"\n[scripts.run.dev]\ncommand = \"pnpm dev\"\ndefault = true\nicon = \"play\"\n```\n\n```toml title=\"<repo>/.conductor/settings.toml\"\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n```\n\nFor that repository, the Run button uses `pnpm dev --port $CONDUCTOR_PORT` because the repository shared file overrides the user shared file for repository-configurable settings.\n\nIf your local file also defines the same action, it wins for your machine:\n\n```toml title=\"<repo>/.conductor/settings.local.toml\"\n[scripts.run.dev]\ncommand = \"pnpm dev:local\"\ndefault = true\nicon = \"play\"\n```\n\n## When file changes apply [#when-file-changes-apply]\n\nFor most action changes, use [`Settings` > `Repo` > `Actions`](https://app.conductor.build/settings/repos?section=actions) in Conductor. The UI writes the right settings layer and updates workspaces without making you reason about file propagation.\n\nUse `<repo>/.conductor/settings.local.toml` for machine-specific changes and local action experiments. These changes are not tracked by Git and are only reflected on your machine.\n\n## Repository shared settings [#repository-shared-settings]\n\nUse `<repo>/.conductor/settings.toml` when a repository should define shared Conductor behavior for everyone. Commit this file when the settings should travel with the project, and merge the change to the repository's default branch before expecting Conductor to reflect it as shared project settings.\n\nCommon repository shared settings include setup scripts, actions, archive scripts, run mode, Files to copy patterns, Enterprise data privacy, action prompts, Git behavior, provider executable paths, and repository environment variables.\n\nExample:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nenterprise_data_privacy = true\n\n[scripts]\nsetup = \"pnpm install\"\narchive = \"./script/workspace-archive.sh\"\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[prompts]\ngeneral = \"Prefer small, reviewable changes and run the narrowest relevant tests.\"\ncode_review = \"Focus on correctness, behavior changes, and missing tests.\"\n```\n\nUse `run_mode = \"nonconcurrent\"` when the project depends on one fixed port, one local database, one Docker stack, or another shared resource that multiple workspaces cannot use at the same time.\n\n## Project overrides [#project-overrides]\n\nUse `<repo>/.conductor/settings.local.toml` for settings that should apply only on your machine. Add it to `.gitignore` from the repository root:\n\n```bash\ntouch .gitignore\ngrep -qxF \".conductor/settings.local.toml\" .gitignore || printf \"\\n.conductor/settings.local.toml\\n\" >> .gitignore\n```\n\nProject overrides are useful when your local environment differs from the project's shared setup.\n\nExample:\n\n```toml title=\".conductor/settings.local.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\n[scripts]\nrun_mode = \"concurrent\"\n\n[scripts.run.dev]\ncommand = \"pnpm dev --host 127.0.0.1 --port $CONDUCTOR_PORT\"\ndefault = true\nicon = \"play\"\n\n[environment_variables]\nANTHROPIC_BASE_URL = \"http://127.0.0.1:4000\"\n```\n\nThis overrides the shared repository action and environment variable values on your machine only.\n\n## User settings [#user-settings]\n\nUse `~/.conductor/settings.toml` for personal defaults that should apply across repositories. User settings include every file-backed setting, including settings that repositories cannot control.\n\nExample:\n\n```toml title=\"~/.conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.schema.json\"\n\n[models]\ndefault = \"gpt-5.5\"\nreview = \"sonnet-4-6\"\ndefault_plan_mode = true\n\n[models.codex]\ndefault_thinking_level = \"high\"\npersonality = \"direct\"\n\n[models.claude_code]\ndefault_effort_level = \"normal\"\n```\n\nCommon user-only settings include model defaults, model reasoning defaults, tool approvals, and the default workspace location. If you put these settings in a repository file, Conductor ignores them because repositories are not allowed to set them.\n\n## Schemas and legacy files [#schemas-and-legacy-files]\n\nAdd a schema URL to a settings file for editor autocomplete and validation. Schema URLs are listed in [Settings reference](/docs/reference/settings/reference).\n\nWithin one scope, Conductor reads legacy `.json` settings files first and `.toml` settings files second. If both exist, TOML wins. Conductor writes new settings files as TOML.\n\nLegacy `conductor.json` is separate from these settings files. New shared repository settings should use `.conductor/settings.toml`. For migration details, see [conductor.json](/docs/reference/conductor-json).\n\n## Related pages [#related-pages]\n\n* [Settings quickstart](/docs/reference/settings)\n* [Configure settings](/docs/guides/configure-settings)\n* [Settings reference](/docs/reference/settings/reference)\n* [Managed settings](/docs/reference/settings/managed)\n* [Sample settings configurations](/docs/reference/settings/example)\n* [Share repository settings with teammates](/docs/reference/scripts/share-with-teammates)\n* [Scripts](/docs/reference/scripts)\n* [Files to copy](/docs/reference/files-to-copy)\n"
+}

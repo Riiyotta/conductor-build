@@ -1,0 +1,113 @@
+{
+  "id": "conversion.enterprise-contact-form",
+  "category": "CONVERSION",
+  "iaSections": [
+    "conversion.enterprise-contact-form"
+  ],
+  "purpose": "Capture an enterprise sales lead.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Enterprise.jsx:45",
+      "quote": "<HubSpotForm variant=\"enterprise\""
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:213",
+      "quote": "### 2.2 HubSpot form (enterprise)"
+    },
+    {
+      "ref": "src/components/pages/HubSpotForm.jsx:7",
+      "quote": "NOTE: this form intentionally does NOT post to HubSpot or any other endpoint."
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "conversion.enterprise-contact-form"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "fields": {
+      "type": "list",
+      "items": {
+        "type": "enum",
+        "values": [
+          "firstname",
+          "lastname",
+          "jobtitle",
+          "email",
+          "company_name",
+          "company_size",
+          "message"
+        ],
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 7,
+      "required": true
+    },
+    "submitLabel": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "successTitle": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "successBody": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 7
+    },
+    "endpoint": {
+      "type": "endpoint",
+      "roles": [
+        "form-endpoint"
+      ],
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustPrecedeFooter": true,
+    "allowedTemplates": [
+      "template.enterprise"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "src/components/pages/HubSpotForm.jsx:17",
+        "quote": "Submit: hover translateY(-1px), active translateY(1px), bg unchanged;"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "Original posts to a live HubSpot portal; the clone is local-only. endpoint.assetRole form-endpoint is pinned must-not-reuse-live-endpoint."
+  ],
+  "assetRoles": [
+    "form-endpoint"
+  ]
+}

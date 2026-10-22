@@ -1,0 +1,33 @@
+{
+  "id": "icon",
+  "kind": "primitive",
+  "purpose": "Line icon (lucide, ISC licence) rendered as a CSS mask over currentColor.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Icon.jsx:26",
+      "quote": "export default function Icon({ name, src, className = '', style, ...rest }) {"
+    }
+  ],
+  "tokens": [
+    "{iconSize.14}",
+    "{iconSize.16}",
+    "{iconSize.18}",
+    "{iconSize.20}"
+  ],
+  "variants": [
+    "14",
+    "16",
+    "18",
+    "20"
+  ],
+  "states": [
+    "rest"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:121",
+      "quote": "trailing lucide arrow-right 16px"
+    }
+  ],
+  "accessibility": "aria-hidden unless it is the only label."
+}

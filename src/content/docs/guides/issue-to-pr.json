@@ -1,0 +1,696 @@
+{
+  "slug": "guides/issue-to-pr",
+  "url": "/docs/guides/issue-to-pr",
+  "title": "From issue to PR",
+  "description": "Take a GitHub or Linear issue through implementation, review, and pull request",
+  "meta": {
+    "title": "From issue to PR | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/issue-to-pr/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Workspace"
+    },
+    {
+      "name": "From issue to PR"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#decide-the-shape-of-the-work",
+      "title": "Decide the shape of the work"
+    },
+    {
+      "depth": 2,
+      "url": "#start-from-an-issue",
+      "title": "Start from an issue"
+    },
+    {
+      "depth": 2,
+      "url": "#ask-for-a-plan",
+      "title": "Ask for a plan"
+    },
+    {
+      "depth": 2,
+      "url": "#implement-and-test",
+      "title": "Implement and test"
+    },
+    {
+      "depth": 2,
+      "url": "#review-the-diff",
+      "title": "Review the diff"
+    },
+    {
+      "depth": 2,
+      "url": "#create-the-pull-request",
+      "title": "Create the pull request"
+    },
+    {
+      "depth": 2,
+      "url": "#merge-and-archive",
+      "title": "Merge and archive"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/parallel-agents/run-multiple-cursor-sessions",
+    "title": "Run multiple Cursor sessions",
+    "description": "Use Conductor workspaces to run several Cursor tasks at once with separate branches, files, terminals, and review state"
+  },
+  "next": {
+    "url": "/docs/guides/review-and-merge",
+    "title": "Review and merge a workspace",
+    "description": "Use Conductor's review, checks, and PR tools before merging"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide when a GitHub or Linear issue should become a pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This is the issue-specific version of the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/workflow"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor workflow"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ": start from issue context, let agents implement and verify the change in an isolated workspace, then use the branch and pull request to integrate the result."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "2fkwP_xuE9Q",
+      "title": "Kickstart agents from GitHub or Linear",
+      "thumbnail": "/assets/docs/youtube/2fkwP_xuE9Q-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "decide-the-shape-of-the-work",
+      "children": [
+        {
+          "type": "text",
+          "value": "Decide the shape of the work"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you create the workspace, decide whether the issue should become one pull request or several."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use one workspace when the issue has one reviewable outcome, one branch, and one pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Split the issue into multiple workspaces when it contains independent features, risky experiments, or changes that should be reviewed and merged separately."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For more detail on choosing between shared and separate workspaces, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "start-from-an-issue",
+      "children": [
+        {
+          "type": "text",
+          "value": "Start from an issue"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create a workspace from the issue when you want the agent to inherit the issue title, description, and context."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Click the "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "..."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " button next to "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "New workspace"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", or press "
+            },
+            {
+              "type": "shortcut",
+              "label": "Command Shift N",
+              "keys": [
+                "⌘",
+                "Shift",
+                "N"
+              ],
+              "separator": "+"
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Choose a GitHub issue or Linear issue."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the repository and workspace."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Wait for Conductor to create the workspace and branch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If the issue does not appear, check GitHub or Linear authentication."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "ask-for-a-plan",
+      "children": [
+        {
+          "type": "text",
+          "value": "Ask for a plan"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Plan Mode when the issue is broad or ambiguous. Ask the agent to summarize the issue, inspect the relevant code, and propose an implementation plan before editing files."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Approve the plan when it matches the intended scope for this workspace. Give feedback if the plan misses requirements, tests, rollout constraints, or work that belongs in a separate workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "implement-and-test",
+      "children": [
+        {
+          "type": "text",
+          "value": "Implement and test"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Let the agent make the change inside the isolated workspace, then test from that workspace:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Run the project with an "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts#run-scripts"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "action"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", terminal command, or "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/scripts/spotlight-testing"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Spotlight testing"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Ask the agent to fix errors with logs or failing output attached."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Keep todos updated for work that must be complete before merge."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "review-the-diff",
+      "children": [
+        {
+          "type": "text",
+          "value": "Review the diff"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the Diff Viewer with "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command Shift D",
+          "keys": [
+            "⌘",
+            "Shift",
+            "D"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Review:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Whether the change solves the issue."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Whether unrelated files changed."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Whether tests or docs need updates."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Whether comments or todos are still open."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Send review comments to the agent when you want it to revise the diff."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/checks"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Checks tab"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to watch git status, CI, deployments, comments, and todos. If there are conflicts, ask the agent to help resolve them, then rerun tests and review the diff again before creating or merging the pull request."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-the-pull-request",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create the pull request"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When the workspace is ready, click "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create PR"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or use "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command Shift P",
+          "keys": [
+            "⌘",
+            "Shift",
+            "P"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": ". Conductor sends the current diff and repository context to the agent so it can draft the pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After the PR exists, keep using the Checks tab and Diff Viewer to respond to CI, deployments, review comments, and todos."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "merge-and-archive",
+      "children": [
+        {
+          "type": "text",
+          "value": "Merge and archive"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Merge when checks pass, review comments are resolved, and todos are complete. Archive the workspace after merge so it leaves your active work list."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For more detail on the final review pass, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/review-and-merge"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Review and merge a workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide when a GitHub or Linear issue should become a pull request.</p><p>This is the issue-specific version of the <a href=\"/docs/concepts/workflow\">Conductor workflow</a>: start from issue context, let agents implement and verify the change in an isolated workspace, then use the branch and pull request to integrate the result.</p><div data-youtube=\"2fkwP_xuE9Q\" data-title=\"Kickstart agents from GitHub or Linear\" data-thumbnail=\"/assets/docs/youtube/2fkwP_xuE9Q-sddefault.webp\"></div><h2 id=\"decide-the-shape-of-the-work\"><a href=\"#decide-the-shape-of-the-work\">Decide the shape of the work</a></h2><p>Before you create the workspace, decide whether the issue should become one pull request or several.</p><p>Use one workspace when the issue has one reviewable outcome, one branch, and one pull request.</p><p>Split the issue into multiple workspaces when it contains independent features, risky experiments, or changes that should be reviewed and merged separately.</p><p>For more detail on choosing between shared and separate workspaces, see <a href=\"/docs/concepts/parallel-agents\">Parallel agents</a>.</p><h2 id=\"start-from-an-issue\"><a href=\"#start-from-an-issue\">Start from an issue</a></h2><p>Create a workspace from the issue when you want the agent to inherit the issue title, description, and context.</p><ol><li>Click the <code>...</code> button next to <code>New workspace</code>, or press <span data-shortcut aria-label=\"Command Shift N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>N</kbd></span>.</li><li>Choose a GitHub issue or Linear issue.</li><li>Confirm the repository and workspace.</li><li>Wait for Conductor to create the workspace and branch.</li></ol><p>If the issue does not appear, check GitHub or Linear authentication.</p><h2 id=\"ask-for-a-plan\"><a href=\"#ask-for-a-plan\">Ask for a plan</a></h2><p>Use Plan Mode when the issue is broad or ambiguous. Ask the agent to summarize the issue, inspect the relevant code, and propose an implementation plan before editing files.</p><p>Approve the plan when it matches the intended scope for this workspace. Give feedback if the plan misses requirements, tests, rollout constraints, or work that belongs in a separate workspace.</p><h2 id=\"implement-and-test\"><a href=\"#implement-and-test\">Implement and test</a></h2><p>Let the agent make the change inside the isolated workspace, then test from that workspace:</p><ol><li>Run the project with an <a href=\"/docs/reference/scripts#run-scripts\">action</a>, terminal command, or <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</li><li>Ask the agent to fix errors with logs or failing output attached.</li><li>Keep todos updated for work that must be complete before merge.</li></ol><h2 id=\"review-the-diff\"><a href=\"#review-the-diff\">Review the diff</a></h2><p>Open the Diff Viewer with <span data-shortcut aria-label=\"Command Shift D\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>D</kbd></span>.</p><p>Review:</p><ul><li>Whether the change solves the issue.</li><li>Whether unrelated files changed.</li><li>Whether tests or docs need updates.</li><li>Whether comments or todos are still open.</li></ul><p>Send review comments to the agent when you want it to revise the diff.</p><p>Use the <a href=\"/docs/reference/checks\">Checks tab</a> to watch git status, CI, deployments, comments, and todos. If there are conflicts, ask the agent to help resolve them, then rerun tests and review the diff again before creating or merging the pull request.</p><h2 id=\"create-the-pull-request\"><a href=\"#create-the-pull-request\">Create the pull request</a></h2><p>When the workspace is ready, click <code>Create PR</code> or use <span data-shortcut aria-label=\"Command Shift P\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>P</kbd></span>. Conductor sends the current diff and repository context to the agent so it can draft the pull request.</p><p>After the PR exists, keep using the Checks tab and Diff Viewer to respond to CI, deployments, review comments, and todos.</p><h2 id=\"merge-and-archive\"><a href=\"#merge-and-archive\">Merge and archive</a></h2><p>Merge when checks pass, review comments are resolved, and todos are complete. Archive the workspace after merge so it leaves your active work list.</p><p>For more detail on the final review pass, see <a href=\"/docs/guides/review-and-merge\">Review and merge a workspace</a>.</p>",
+  "text": "Use this guide when a GitHub or Linear issue should become a pull request.\nThis is the issue-specific version of the Conductor workflow: start from issue context, let agents implement and verify the change in an isolated workspace, then use the branch and pull request to integrate the result.\nDecide the shape of the work\nBefore you create the workspace, decide whether the issue should become one pull request or several.\nUse one workspace when the issue has one reviewable outcome, one branch, and one pull request.\nSplit the issue into multiple workspaces when it contains independent features, risky experiments, or changes that should be reviewed and merged separately.\nFor more detail on choosing between shared and separate workspaces, see Parallel agents.\nStart from an issue\nCreate a workspace from the issue when you want the agent to inherit the issue title, description, and context.\nClick the ... button next to New workspace, or press ⌘ShiftN.\nChoose a GitHub issue or Linear issue.\nConfirm the repository and workspace.\nWait for Conductor to create the workspace and branch.\nIf the issue does not appear, check GitHub or Linear authentication.\nAsk for a plan\nUse Plan Mode when the issue is broad or ambiguous. Ask the agent to summarize the issue, inspect the relevant code, and propose an implementation plan before editing files.\nApprove the plan when it matches the intended scope for this workspace. Give feedback if the plan misses requirements, tests, rollout constraints, or work that belongs in a separate workspace.\nImplement and test\nLet the agent make the change inside the isolated workspace, then test from that workspace:\nRun the project with an action, terminal command, or Spotlight testing.\nAsk the agent to fix errors with logs or failing output attached.\nKeep todos updated for work that must be complete before merge.\nReview the diff\nOpen the Diff Viewer with ⌘ShiftD.\nReview:\nWhether the change solves the issue.\nWhether unrelated files changed.\nWhether tests or docs need updates.\nWhether comments or todos are still open.\nSend review comments to the agent when you want it to revise the diff.\nUse the Checks tab to watch git status, CI, deployments, comments, and todos. If there are conflicts, ask the agent to help resolve them, then rerun tests and review the diff again before creating or merging the pull request.\nCreate the pull request\nWhen the workspace is ready, click Create PR or use ⌘ShiftP. Conductor sends the current diff and repository context to the agent so it can draft the pull request.\nAfter the PR exists, keep using the Checks tab and Diff Viewer to respond to CI, deployments, review comments, and todos.\nMerge and archive\nMerge when checks pass, review comments are resolved, and todos are complete. Archive the workspace after merge so it leaves your active work list.\nFor more detail on the final review pass, see Review and merge a workspace.",
+  "markdown": "\n# From issue to PR\n\n\n\nUse this guide when a GitHub or Linear issue should become a pull request.\n\nThis is the issue-specific version of the [Conductor workflow](/docs/concepts/workflow): start from issue context, let agents implement and verify the change in an isolated workspace, then use the branch and pull request to integrate the result.\n\n\n\n\n## Decide the shape of the work [#decide-the-shape-of-the-work]\n\nBefore you create the workspace, decide whether the issue should become one pull request or several.\n\nUse one workspace when the issue has one reviewable outcome, one branch, and one pull request.\n\nSplit the issue into multiple workspaces when it contains independent features, risky experiments, or changes that should be reviewed and merged separately.\n\nFor more detail on choosing between shared and separate workspaces, see [Parallel agents](/docs/concepts/parallel-agents).\n\n## Start from an issue [#start-from-an-issue]\n\nCreate a workspace from the issue when you want the agent to inherit the issue title, description, and context.\n\n1. Click the `...` button next to `New workspace`, or press Command + Shift + N.\n2. Choose a GitHub issue or Linear issue.\n3. Confirm the repository and workspace.\n4. Wait for Conductor to create the workspace and branch.\n\nIf the issue does not appear, check GitHub or Linear authentication.\n\n## Ask for a plan [#ask-for-a-plan]\n\nUse Plan Mode when the issue is broad or ambiguous. Ask the agent to summarize the issue, inspect the relevant code, and propose an implementation plan before editing files.\n\nApprove the plan when it matches the intended scope for this workspace. Give feedback if the plan misses requirements, tests, rollout constraints, or work that belongs in a separate workspace.\n\n## Implement and test [#implement-and-test]\n\nLet the agent make the change inside the isolated workspace, then test from that workspace:\n\n1. Run the project with an [action](/docs/reference/scripts#run-scripts), terminal command, or [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n2. Ask the agent to fix errors with logs or failing output attached.\n3. Keep todos updated for work that must be complete before merge.\n\n## Review the diff [#review-the-diff]\n\nOpen the Diff Viewer with Command + Shift + D.\n\nReview:\n\n* Whether the change solves the issue.\n* Whether unrelated files changed.\n* Whether tests or docs need updates.\n* Whether comments or todos are still open.\n\nSend review comments to the agent when you want it to revise the diff.\n\nUse the [Checks tab](/docs/reference/checks) to watch git status, CI, deployments, comments, and todos. If there are conflicts, ask the agent to help resolve them, then rerun tests and review the diff again before creating or merging the pull request.\n\n## Create the pull request [#create-the-pull-request]\n\nWhen the workspace is ready, click `Create PR` or use Command + Shift + P. Conductor sends the current diff and repository context to the agent so it can draft the pull request.\n\nAfter the PR exists, keep using the Checks tab and Diff Viewer to respond to CI, deployments, review comments, and todos.\n\n## Merge and archive [#merge-and-archive]\n\nMerge when checks pass, review comments are resolved, and todos are complete. Archive the workspace after merge so it leaves your active work list.\n\nFor more detail on the final review pass, see [Review and merge a workspace](/docs/guides/review-and-merge).\n"
+}

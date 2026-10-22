@@ -1,0 +1,166 @@
+{
+  "id": "content.pricing-plans",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.pricing-plans"
+  ],
+  "purpose": "Let a visitor compare plans and act on one.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Pricing.jsx:85",
+      "quote": "function PlanCard({ plan }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:135",
+      "quote": "### 1.2 Plan card"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.pricing-plans"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "plans": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "name": {
+            "type": "text",
+            "maxWords": 2,
+            "required": true,
+            "observedMaxWords": 1
+          },
+          "price": {
+            "type": "text",
+            "maxWords": 2,
+            "required": true,
+            "observedMaxWords": 1
+          },
+          "suffix": {
+            "type": "text",
+            "maxWords": 2,
+            "required": false,
+            "observedMaxWords": 1
+          },
+          "badge": {
+            "type": "text",
+            "maxWords": 3,
+            "required": false,
+            "observedMaxWords": 2
+          },
+          "action": {
+            "type": "object",
+            "fields": {
+              "label": {
+                "type": "text",
+                "maxWords": 3,
+                "required": true,
+                "observedMaxWords": 2
+              },
+              "behavior": {
+                "type": "enum",
+                "values": [
+                  "opens-download-dialog",
+                  "link"
+                ],
+                "required": true
+              },
+              "href": {
+                "type": "url",
+                "required": false
+              }
+            },
+            "required": true
+          },
+          "lead": {
+            "type": "text",
+            "maxWords": 5,
+            "required": false,
+            "observedMaxWords": 4
+          },
+          "features": {
+            "type": "list",
+            "items": {
+              "type": "text",
+              "maxWords": 12,
+              "required": true,
+              "observedMaxWords": 9
+            },
+            "minItems": 1,
+            "maxItems": 6,
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 4,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.pricing"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "instant-hover"
+    ],
+    "defaultPatterns": [
+      "instant-hover"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:100",
+        "quote": "Pricing buttons have **no transition class**, so their hover is instant."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "1"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "minWidth": 1024,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "4"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

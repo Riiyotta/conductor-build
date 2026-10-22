@@ -1,0 +1,560 @@
+{
+  "slug": "cloud/working-with-cloud-workspaces",
+  "url": "/docs/cloud/working-with-cloud-workspaces",
+  "title": "Work with cloud workspaces",
+  "description": "Use workspace status, SSH, file sync, terminals, and forwarded ports",
+  "meta": {
+    "title": "Work with cloud workspaces | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/working-with-cloud-workspaces/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Work with cloud workspaces"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#open-the-workspace-over-ssh",
+      "title": "Open the workspace over SSH"
+    },
+    {
+      "depth": 2,
+      "url": "#sync-files-to-your-mac",
+      "title": "Sync files to your Mac"
+    },
+    {
+      "depth": 2,
+      "url": "#open-terminals",
+      "title": "Open terminals"
+    },
+    {
+      "depth": 2,
+      "url": "#forward-a-development-port",
+      "title": "Forward a development port"
+    },
+    {
+      "depth": 2,
+      "url": "#sleep-and-maximum-lifetime",
+      "title": "Sleep and maximum lifetime"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud/getting-started",
+    "title": "Set up cloud",
+    "description": "Connect GitHub, add an agent credential, and set up your Cloud Computer"
+  },
+  "next": {
+    "url": "/docs/cloud/collaboration",
+    "title": "Multiplayer",
+    "description": "Find team work, share chats, follow workspaces, and hand work to a teammate"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud workspaces keep the chat, diff, git, terminal, and pull request workflow\nyou know from local workspaces. This page covers what's different: connecting\nyour Mac and local tools to the Linux sandbox where the workspace runs."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Click the workspace name in the top bar to open the workspace details:\nsandbox status, CPU, and memory, plus "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Restart"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open via SSH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Sync\nto a local directory"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", and "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Forward ports"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "open-the-workspace-over-ssh",
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the workspace over SSH"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open via SSH"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to point a local editor (through Remote SSH) or an SSH\nterminal at the files in the sandbox. Choosing it wakes a sleeping workspace\nautomatically."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "sync-files-to-your-mac",
+      "children": [
+        {
+          "type": "text",
+          "value": "Sync files to your Mac"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Turn on "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Sync to a local directory"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to mirror the cloud workspace into a\nlocal folder, for Mac tools that can't connect over SSH. Sync is one-way,\ncloud to Mac: local changes don't sync back and may be overwritten. Use SSH\nwhen a local tool needs to change workspace files."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Sync is per-member — turning it on doesn't affect teammates."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "open-terminals",
+      "children": [
+        {
+          "type": "text",
+          "value": "Open terminals"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "+"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the workspace tab bar for a "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Cloud terminal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " (a shell inside\nthe sandbox, against the live checkout) or a "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Local terminal"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " (a shell on\nyour Mac in the synced directory)."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "forward-a-development-port",
+      "children": [
+        {
+          "type": "text",
+          "value": "Forward a development port"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud workspaces don't receive "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " — start your server on an\nexplicit port, listening on "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "127.0.0.1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "0.0.0.0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "npm run dev -- --host 0.0.0.0 --port 3000",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "npm",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " run",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " dev",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " --host",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " 0.0.0.0",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " --port",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " 3000",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Then add the port under "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Forward ports"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in the workspace details and click\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open localhost:<local-port>"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". The local port usually differs from the sandbox\nport, so use the displayed mapping, such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "3000 → localhost:52143"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Port\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "22"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is reserved for SSH."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "sleep-and-maximum-lifetime",
+      "children": [
+        {
+          "type": "text",
+          "value": "Sleep and maximum lifetime"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor puts a cloud workspace to sleep after four hours without agent or\nterminal activity. (Keeping it open in a focused Conductor window counts as\nactivity.) Separately, every sandbox stops at its maximum lifetime of 23 hours\nand 50 minutes, even if active — which can interrupt running processes and\nagent turns."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Files and chat history survive sleep; running processes don't. Opening the\nworkspace wakes it automatically — then restart any interrupted server or\nbuild, and resend an interrupted agent turn. While the sandbox is asleep or\nunreachable, cloud terminals become read only, but cached git information and\nsynced local files remain available."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If a workspace doesn't wake or shows "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Unresponsive"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", click the workspace\nname in the top bar to open the workspace details, then click "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Restart"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Cloud workspaces keep the chat, diff, git, terminal, and pull request workflow\nyou know from local workspaces. This page covers what's different: connecting\nyour Mac and local tools to the Linux sandbox where the workspace runs.</p><p>Click the workspace name in the top bar to open the workspace details:\nsandbox status, CPU, and memory, plus <strong>Restart</strong>, <strong>Open via SSH</strong>, <strong>Sync\nto a local directory</strong>, and <strong>Forward ports</strong>.</p><h2 id=\"open-the-workspace-over-ssh\"><a href=\"#open-the-workspace-over-ssh\">Open the workspace over SSH</a></h2><p>Use <strong>Open via SSH</strong> to point a local editor (through Remote SSH) or an SSH\nterminal at the files in the sandbox. Choosing it wakes a sleeping workspace\nautomatically.</p><h2 id=\"sync-files-to-your-mac\"><a href=\"#sync-files-to-your-mac\">Sync files to your Mac</a></h2><p>Turn on <strong>Sync to a local directory</strong> to mirror the cloud workspace into a\nlocal folder, for Mac tools that can't connect over SSH. Sync is one-way,\ncloud to Mac: local changes don't sync back and may be overwritten. Use SSH\nwhen a local tool needs to change workspace files.</p><p>Sync is per-member — turning it on doesn't affect teammates.</p><h2 id=\"open-terminals\"><a href=\"#open-terminals\">Open terminals</a></h2><p>Choose <strong>+</strong> in the workspace tab bar for a <strong>Cloud terminal</strong> (a shell inside\nthe sandbox, against the live checkout) or a <strong>Local terminal</strong> (a shell on\nyour Mac in the synced directory).</p><h2 id=\"forward-a-development-port\"><a href=\"#forward-a-development-port\">Forward a development port</a></h2><p>Cloud workspaces don't receive <code>CONDUCTOR_PORT</code> — start your server on an\nexplicit port, listening on <code>127.0.0.1</code> or <code>0.0.0.0</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">npm</span><span style=\"color:#032F62\"> run</span><span style=\"color:#032F62\"> dev</span><span style=\"color:#005CC5\"> --</span><span style=\"color:#005CC5\"> --host</span><span style=\"color:#005CC5\"> 0.0.0.0</span><span style=\"color:#005CC5\"> --port</span><span style=\"color:#005CC5\"> 3000</span></span></code></pre></figure><p>Then add the port under <strong>Forward ports</strong> in the workspace details and click\n<code>Open localhost:&lt;local-port&gt;</code>. The local port usually differs from the sandbox\nport, so use the displayed mapping, such as <code>3000 → localhost:52143</code>. Port\n<code>22</code> is reserved for SSH.</p><h2 id=\"sleep-and-maximum-lifetime\"><a href=\"#sleep-and-maximum-lifetime\">Sleep and maximum lifetime</a></h2><p>Conductor puts a cloud workspace to sleep after four hours without agent or\nterminal activity. (Keeping it open in a focused Conductor window counts as\nactivity.) Separately, every sandbox stops at its maximum lifetime of 23 hours\nand 50 minutes, even if active — which can interrupt running processes and\nagent turns.</p><p>Files and chat history survive sleep; running processes don't. Opening the\nworkspace wakes it automatically — then restart any interrupted server or\nbuild, and resend an interrupted agent turn. While the sandbox is asleep or\nunreachable, cloud terminals become read only, but cached git information and\nsynced local files remain available.</p><p>If a workspace doesn't wake or shows <strong>Unresponsive</strong>, click the workspace\nname in the top bar to open the workspace details, then click <strong>Restart</strong>.</p>",
+  "text": "Cloud workspaces keep the chat, diff, git, terminal, and pull request workflow\nyou know from local workspaces. This page covers what's different: connecting\nyour Mac and local tools to the Linux sandbox where the workspace runs.\nClick the workspace name in the top bar to open the workspace details:\nsandbox status, CPU, and memory, plus Restart, Open via SSH, Sync\nto a local directory, and Forward ports.\nOpen the workspace over SSH\nUse Open via SSH to point a local editor (through Remote SSH) or an SSH\nterminal at the files in the sandbox. Choosing it wakes a sleeping workspace\nautomatically.\nSync files to your Mac\nTurn on Sync to a local directory to mirror the cloud workspace into a\nlocal folder, for Mac tools that can't connect over SSH. Sync is one-way,\ncloud to Mac: local changes don't sync back and may be overwritten. Use SSH\nwhen a local tool needs to change workspace files.\nSync is per-member — turning it on doesn't affect teammates.\nOpen terminals\nChoose + in the workspace tab bar for a Cloud terminal (a shell inside\nthe sandbox, against the live checkout) or a Local terminal (a shell on\nyour Mac in the synced directory).\nForward a development port\nCloud workspaces don't receive CONDUCTOR_PORT — start your server on an\nexplicit port, listening on 127.0.0.1 or 0.0.0.0:\nnpm run dev -- --host 0.0.0.0 --port 3000Then add the port under Forward ports in the workspace details and click\nOpen localhost:<local-port>. The local port usually differs from the sandbox\nport, so use the displayed mapping, such as 3000 → localhost:52143. Port\n22 is reserved for SSH.\nSleep and maximum lifetime\nConductor puts a cloud workspace to sleep after four hours without agent or\nterminal activity. (Keeping it open in a focused Conductor window counts as\nactivity.) Separately, every sandbox stops at its maximum lifetime of 23 hours\nand 50 minutes, even if active — which can interrupt running processes and\nagent turns.\nFiles and chat history survive sleep; running processes don't. Opening the\nworkspace wakes it automatically — then restart any interrupted server or\nbuild, and resend an interrupted agent turn. While the sandbox is asleep or\nunreachable, cloud terminals become read only, but cached git information and\nsynced local files remain available.\nIf a workspace doesn't wake or shows Unresponsive, click the workspace\nname in the top bar to open the workspace details, then click Restart.",
+  "markdown": "\n# Work with cloud workspaces\n\n\n\nCloud workspaces keep the chat, diff, git, terminal, and pull request workflow\nyou know from local workspaces. This page covers what's different: connecting\nyour Mac and local tools to the Linux sandbox where the workspace runs.\n\nClick the workspace name in the top bar to open the workspace details:\nsandbox status, CPU, and memory, plus **Restart**, **Open via SSH**, **Sync\nto a local directory**, and **Forward ports**.\n\n## Open the workspace over SSH [#open-the-workspace-over-ssh]\n\nUse **Open via SSH** to point a local editor (through Remote SSH) or an SSH\nterminal at the files in the sandbox. Choosing it wakes a sleeping workspace\nautomatically.\n\n## Sync files to your Mac [#sync-files-to-your-mac]\n\nTurn on **Sync to a local directory** to mirror the cloud workspace into a\nlocal folder, for Mac tools that can't connect over SSH. Sync is one-way,\ncloud to Mac: local changes don't sync back and may be overwritten. Use SSH\nwhen a local tool needs to change workspace files.\n\nSync is per-member — turning it on doesn't affect teammates.\n\n## Open terminals [#open-terminals]\n\nChoose &#x2A;*+** in the workspace tab bar for a **Cloud terminal** (a shell inside\nthe sandbox, against the live checkout) or a **Local terminal** (a shell on\nyour Mac in the synced directory).\n\n## Forward a development port [#forward-a-development-port]\n\nCloud workspaces don't receive `CONDUCTOR_PORT` — start your server on an\nexplicit port, listening on `127.0.0.1` or `0.0.0.0`:\n\n```bash\nnpm run dev -- --host 0.0.0.0 --port 3000\n```\n\nThen add the port under **Forward ports** in the workspace details and click\n`Open localhost:<local-port>`. The local port usually differs from the sandbox\nport, so use the displayed mapping, such as `3000 → localhost:52143`. Port\n`22` is reserved for SSH.\n\n## Sleep and maximum lifetime [#sleep-and-maximum-lifetime]\n\nConductor puts a cloud workspace to sleep after four hours without agent or\nterminal activity. (Keeping it open in a focused Conductor window counts as\nactivity.) Separately, every sandbox stops at its maximum lifetime of 23 hours\nand 50 minutes, even if active — which can interrupt running processes and\nagent turns.\n\nFiles and chat history survive sleep; running processes don't. Opening the\nworkspace wakes it automatically — then restart any interrupted server or\nbuild, and resend an interrupted agent turn. While the sandbox is asleep or\nunreachable, cloud terminals become read only, but cached git information and\nsynced local files remain available.\n\nIf a workspace doesn't wake or shows **Unresponsive**, click the workspace\nname in the top bar to open the workspace details, then click **Restart**.\n"
+}

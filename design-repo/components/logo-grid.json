@@ -1,0 +1,27 @@
+{
+  "id": "logo-grid",
+  "kind": "component",
+  "purpose": "Grid of 8 logo-image cells (4 columns, 3 or 4 on mobile).",
+  "implementedBy": [
+    {
+      "ref": "src/components/Logos.jsx:39",
+      "quote": "{ threshold: 0.4 },"
+    }
+  ],
+  "tokens": [
+    "{layout.container.max-2xl}"
+  ],
+  "variants": [
+    "strip-4col",
+    "enterprise-3-4col"
+  ],
+  "states": [
+    "rest"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:136",
+      "quote": "Grid `mx-auto max-w-2xl grid-cols-4`, gap 24px at sm+ (16px below)."
+    }
+  ]
+}

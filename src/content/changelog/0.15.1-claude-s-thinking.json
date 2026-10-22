@@ -1,0 +1,32 @@
+{
+  "slug": "0.15.1-claude-s-thinking",
+  "version": "0.15.1",
+  "versionSlug": "0.15.1",
+  "title": "Claude's Thinking",
+  "fullTitle": "0.15.1: Claude's Thinking",
+  "date": "Oct 18th, 2025",
+  "dateISO": "2025-10-18",
+  "description": "Conductor 0.15.1 changelog - Claude's Thinking",
+  "summary": "You can now see Claude's thinking. Press ⌘⇧. to toggle.",
+  "hero": {
+    "type": "image",
+    "src": "https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.15.1-claude-s-thinking/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.15.1-claude-s-thinking",
+  "sourceUrl": "https://www.conductor.build/changelog/0.15.1-claude-s-thinking",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now see Claude&#x27;s thinking. Press <code>⌘⇧.</code> to toggle.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Open workspaces via keyboard (<code>⌘</code> + workspace number)</li>\n<li>Fuzzy search for files in file picker</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the command palette matching for archived workspaces</li>\n</ul>",
+  "markdown": "\nYou can now see Claude's thinking. Press `⌘⇧.` to toggle.\n\n<img\n    width=\"1478\"\n    height=\"938\"\n    alt=\"image\"\n    src=\"https://github.com/user-attachments/assets/e0ee2f88-b979-41e2-9cfa-4eac1f02cce5\"\n/>\n\n## Improvements\n\n- Open workspaces via keyboard (`⌘` + workspace number)\n- Fuzzy search for files in file picker\n\n## Fixes\n\n- Fixed the command palette matching for archived workspaces\n"
+}

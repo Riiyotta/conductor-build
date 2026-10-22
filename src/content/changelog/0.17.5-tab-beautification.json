@@ -1,0 +1,32 @@
+{
+  "slug": "0.17.5-tab-beautification",
+  "version": "0.17.5",
+  "versionSlug": "0.17.5",
+  "title": "Tab Beautification",
+  "fullTitle": "0.17.5: Tab Beautification",
+  "date": "Oct 28th, 2025",
+  "dateISO": "2025-10-28",
+  "description": "Conductor 0.17.5 changelog - Tab Beautification",
+  "summary": "We've improved the UI for chat tabs:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.17.5/8436493a-311b-4d6b-bd03-45174cd8dcc2.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.17.5-tab-beautification/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.17.5-tab-beautification",
+  "sourceUrl": "https://www.conductor.build/changelog/0.17.5-tab-beautification",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve improved the UI for chat tabs:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.17.5/8436493a-311b-4d6b-bd03-45174cd8dcc2.png\"/></figure>\n<p>We also now save chat history, so you can restore previous tabs:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.17.5/e4686ede-aeb1-445b-8be9-8e6d0b0d609c.png\"/></figure>\n<p>You can also now edit branch names in the top bar:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.17.5/c4455295-6256-4a2a-82d0-92e26552d103.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Window size and location now persists across restart</li>\n<li>Wider chats on large screens</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>File names will always be visible when expanding tool calls</li>\n<li>Prevent <code>enter</code> key from closing alert dialogs</li>\n<li>Fix mutations causing UI lag</li>\n<li>Fix drag regions in the top bar</li>\n</ul>",
+  "markdown": "\nWe've improved the UI for chat tabs:\n\n<img\n    width=\"1674\"\n    height=\"940\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.17.5/8436493a-311b-4d6b-bd03-45174cd8dcc2.png\"\n/>\n\nWe also now save chat history, so you can restore previous tabs:\n\n<img\n    width=\"646\"\n    height=\"522\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.17.5/e4686ede-aeb1-445b-8be9-8e6d0b0d609c.png\"\n/>\n\nYou can also now edit branch names in the top bar:\n\n<img\n    width=\"600\"\n    height=\"356\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.17.5/c4455295-6256-4a2a-82d0-92e26552d103.png\"\n/>\n\n## Improvements\n\n- Window size and location now persists across restart\n- Wider chats on large screens\n\n## Fixes\n\n- File names will always be visible when expanding tool calls\n- Prevent `enter` key from closing alert dialogs\n- Fix mutations causing UI lag\n- Fix drag regions in the top bar\n"
+}

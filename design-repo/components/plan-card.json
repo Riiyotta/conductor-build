@@ -1,0 +1,29 @@
+{
+  "id": "plan-card",
+  "kind": "component",
+  "purpose": "Pricing plan card: name, price + suffix, action button, lead line, tree-bullet feature list, optional badge.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Pricing.jsx:85",
+      "quote": "function PlanCard({ plan }) {"
+    }
+  ],
+  "tokens": [
+    "{component.card.plan}",
+    "{component.badge.most-popular}"
+  ],
+  "variants": [
+    "free",
+    "paid",
+    "featured"
+  ],
+  "states": [
+    "rest (no hover)"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:135",
+      "quote": "### 1.2 Plan card"
+    }
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.23.3-repo-details",
+  "version": "0.23.3",
+  "versionSlug": "0.23.3",
+  "title": "Repo Details",
+  "fullTitle": "0.23.3: Repo Details",
+  "date": "Nov 26th, 2025",
+  "dateISO": "2025-11-26",
+  "description": "Conductor 0.23.3 changelog - Repo Details",
+  "summary": "We've revamped the repo details view. You can now browse and restore archived workspaces from there.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.23.3/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d.png",
+    "alt": "CleanShot 2025-11-26 at 12 11 14@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.23.3-repo-details/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.23.3-repo-details",
+  "sourceUrl": "https://www.conductor.build/changelog/0.23.3-repo-details",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve revamped the repo details view. You can now browse and restore archived workspaces from there.</p>\n<p>Hover over a repo name and click the settings icon to get started.</p>\n<p>We removed the old archived workspaces view.</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-26 at 12 11 14@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.23.3/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Conductor will now ask for confirmation before closing a chat tab that&#x27;s running</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix git panel actions sometimes being sent to the wrong workspace</li>\n<li>Fix redirection after archiving a workspace</li>\n<li>Fix notification sounds not playing when the app isn&#x27;t focused</li>\n<li>Fix long user messages not wrapping in the chat</li>\n<li>Fix overflows in the settings dialog</li>\n</ul>",
+  "markdown": "\nWe've revamped the repo details view. You can now browse and restore archived workspaces from there.\n\nHover over a repo name and click the settings icon to get started.\n\nWe removed the old archived workspaces view.\n\n<img\n    width=\"1522\"\n    height=\"1084\"\n    alt=\"CleanShot 2025-11-26 at 12 11 14@2x\"\n    src=\"/assets/changelog/media/0.23.3/9c6575a1-b3f1-4561-b7a7-6cd1b52f917d.png\"\n/>\n\n## Improvements\n\n- Conductor will now ask for confirmation before closing a chat tab that's running\n\n## Fixes\n\n- Fix git panel actions sometimes being sent to the wrong workspace\n- Fix redirection after archiving a workspace\n- Fix notification sounds not playing when the app isn't focused\n- Fix long user messages not wrapping in the chat\n- Fix overflows in the settings dialog\n"
+}

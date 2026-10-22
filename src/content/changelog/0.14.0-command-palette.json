@@ -1,0 +1,32 @@
+{
+  "slug": "0.14.0-command-palette",
+  "version": "0.14.0",
+  "versionSlug": "0.14.0",
+  "title": "Command Palette",
+  "fullTitle": "0.14.0: Command Palette",
+  "date": "Oct 14th, 2025",
+  "dateISO": "2025-10-14",
+  "description": "Conductor 0.14.0 changelog - Command Palette",
+  "summary": "Press ⌘K to open the command palette!",
+  "hero": {
+    "type": "image",
+    "src": "https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.14.0-command-palette/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.0-command-palette",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.0-command-palette",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Press ⌘K to open the command palette!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a\"/></figure>\n<p>Workspaces can now be archived from the context menu, or from the command palette.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Better rendering of failed Bash commands</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed <code>gh pr view</code> prompting Claude to authenticate with GitHub</li>\n</ul>",
+  "markdown": "\nPress ⌘K to open the command palette!\n\n<img\n    width=\"626\"\n    height=\"454\"\n    alt=\"image\"\n    src=\"https://github.com/user-attachments/assets/63b6eeba-e3fc-4910-b576-9b59b2ab2f5a\"\n/>\n\nWorkspaces can now be archived from the context menu, or from the command palette.\n\n## Improvements\n\n- Better rendering of failed Bash commands\n\n## Fixes\n\n- Fixed `gh pr view` prompting Claude to authenticate with GitHub\n"
+}

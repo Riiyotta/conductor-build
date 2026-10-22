@@ -1,0 +1,105 @@
+{
+  "id": "docs.toc",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.toc"
+  ],
+  "purpose": "On-this-page navigation with scroll-spy.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Toc.jsx:45",
+      "quote": "export default function Toc({ items }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:187",
+      "quote": "### 1.5 Right TOC (`#nd-toc`, Fumadocs \"clerk\" style; xl+ only)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.toc"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "items": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "depth": {
+            "type": "enum",
+            "values": [
+              2,
+              3
+            ],
+            "required": true
+          },
+          "title": {
+            "type": "text",
+            "maxWords": 16,
+            "required": true,
+            "observedMaxWords": 14
+          }
+        },
+        "required": true
+      },
+      "minItems": 0,
+      "maxItems": 40,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "scroll-spy"
+    ],
+    "defaultPatterns": [
+      "scroll-spy"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:198",
+        "quote": "Every heading currently inside the viewport is active."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "display",
+          "value": "none"
+        }
+      ]
+    },
+    {
+      "minWidth": 1280,
+      "changes": [
+        {
+          "property": "display",
+          "value": "268px right column"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

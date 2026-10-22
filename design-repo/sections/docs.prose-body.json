@@ -1,0 +1,131 @@
+{
+  "id": "docs.prose-body",
+  "category": "DOCS",
+  "iaSections": [
+    "docs.prose-body"
+  ],
+  "purpose": "The documentation content itself, as typed MDX-style blocks.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Body.jsx:91",
+      "quote": "export function Nodes({ nodes }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:278",
+      "quote": "## 3. Docs MDX components (all measured at 1440 unless noted)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "docs.prose-body"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "blocks": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "paragraph",
+              "heading",
+              "list",
+              "code",
+              "code-tabs",
+              "callout",
+              "steps",
+              "accordions",
+              "table",
+              "image",
+              "video",
+              "youtube",
+              "cards",
+              "shortcut",
+              "site-component"
+            ],
+            "required": true
+          },
+          "text": {
+            "type": "text",
+            "maxWords": 65,
+            "required": false,
+            "observedMaxWords": 58
+          },
+          "media": {
+            "type": "media",
+            "roles": [
+              "product-screenshot",
+              "demo-video"
+            ],
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 200,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.docs-page"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none",
+      "folder-collapse"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:336",
+        "quote": "### 3.5 Accordions"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "mediaMaxHeight",
+          "value": "min(48vh, 24rem)"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "mediaMaxHeight",
+          "value": "min(56vh, 30rem)"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "New docs text may be generated; Conductor's proprietary docs text must not be copied."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "demo-video",
+    "product-screenshot"
+  ]
+}

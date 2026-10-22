@@ -1,0 +1,28 @@
+{
+  "slug": "0.13.2-sonnet-4-5-new-workspace-page",
+  "version": "0.13.2",
+  "versionSlug": "0.13.2",
+  "title": "Sonnet 4.5 + new workspace page",
+  "fullTitle": "0.13.2: Sonnet 4.5 + new workspace page",
+  "date": "Sept 29th, 2025",
+  "dateISO": "2025-09-29",
+  "description": "Conductor 0.13.2 changelog - Sonnet 4.5 + new workspace page",
+  "summary": "Sonnet 4.5, the best coding model in the world, is now live in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.13.2/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.13.2-sonnet-4-5-new-workspace-page/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.13.2-sonnet-4-5-new-workspace-page",
+  "sourceUrl": "https://www.conductor.build/changelog/0.13.2-sonnet-4-5-new-workspace-page",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.13.2/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5.png\"/></figure>\n<p>Sonnet 4.5, the best coding model in the world, is now live in Conductor!</p>\n<p>Introducing our new workspace page! We&#x27;ve made making new workspaces faster and easier to understand.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.13.2/44d6a6e6-2619-41c8-9b3e-929c7af99819.png\"/></figure>\n<p>Name your workspace/branch with the inline editor and see at a glance what happened during workspace setup.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.13.2/29e6baa4-4a7d-45d3-a294-ca2ca2e64db0.png\"/></figure>\n<p>We&#x27;ve also made it more intuitive to link Linear issues. Press ⌘I to link from the composer.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.13.2/ddba9e61-05fb-4581-9c8c-8b77c8fbe1c9.png\"/></figure>\n<p>Finally, we&#x27;ve made cancellations much more reliable. It should work instantly wherever you are in the chat.</p>\n<h3>Fixes</h3>\n<ul>\n<li>Detect conductor.json in repo root</li>\n<li>Reliable cancellation</li>\n<li>⌘R to focus run tab</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"3840\"\n    height=\"2160\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.13.2/0536fa4e-38b7-4f32-879d-f6d4f7f5d4d5.png\"\n/>\n\nSonnet 4.5, the best coding model in the world, is now live in Conductor!\n\nIntroducing our new workspace page! We've made making new workspaces faster and easier to understand.\n\n<img\n    width=\"2048\"\n    height=\"1567\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.13.2/44d6a6e6-2619-41c8-9b3e-929c7af99819.png\"\n/>\n\nName your workspace/branch with the inline editor and see at a glance what happened during workspace setup.\n\n<img\n    width=\"836\"\n    height=\"254\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.13.2/29e6baa4-4a7d-45d3-a294-ca2ca2e64db0.png\"\n/>\n\nWe've also made it more intuitive to link Linear issues. Press ⌘I to link from the composer.\n\n<img\n    width=\"804\"\n    height=\"338\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.13.2/ddba9e61-05fb-4581-9c8c-8b77c8fbe1c9.png\"\n/>\n\nFinally, we've made cancellations much more reliable. It should work instantly wherever you are in the chat.\n\n## Fixes\n\n- Detect conductor.json in repo root\n- Reliable cancellation\n- ⌘R to focus run tab\n"
+}

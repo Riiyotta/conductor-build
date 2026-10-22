@@ -1,0 +1,28 @@
+{
+  "id": "code-block",
+  "kind": "component",
+  "purpose": "Shiki github-light code figure with title bar and copy button.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/CodeFigure.jsx:32",
+      "quote": "export function CodeFigure({ title, icon, copyText, inTab = false, children }) {"
+    }
+  ],
+  "tokens": [
+    "{typography.fontFamily.mono}"
+  ],
+  "variants": [
+    "single",
+    "tabbed"
+  ],
+  "states": [
+    "rest",
+    "copied"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:281",
+      "quote": "### 3.1 Code block (`node: code`): Fumadocs `CodeBlock`"
+    }
+  ]
+}

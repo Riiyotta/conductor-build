@@ -1,0 +1,32 @@
+{
+  "slug": "0.72.0-polish-and-fixes",
+  "version": "0.72.0",
+  "versionSlug": "0.72.0",
+  "title": "Polish and fixes",
+  "fullTitle": "0.72.0: Polish and fixes",
+  "date": "July 3, 2026",
+  "dateISO": "2026-07-03",
+  "description": "Conductor 0.72.0 changelog - Polish and fixes",
+  "summary": "Conductor figures out which agent messages are most important and collapses the rest. We have a new algorithm that is more accurate (especially with Claude Code background agents) and will more often highlight the most important messages.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.72.0-polish-and-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.72.0-polish-and-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.72.0-polish-and-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.72.1"
+    }
+  ],
+  "html": "<p>Conductor figures out which agent messages are most important and collapses the rest. We have a new algorithm that is more accurate (especially with Claude Code background agents) and will more often highlight the most important messages.</p>\n<p>(To see all messages without collapsing any you can always hit <code>⌃O</code>.)</p>\n<h3>Improvements</h3>\n<ul>\n<li>You can now interrupt Cursor agent while it&#x27;s working</li>\n<li>You can now stop a setup script while it&#x27;s running</li>\n<li>You can now read chats in archived workspaces without unarchiving them</li>\n<li>In provider settings, you can now see, change, and remove a configured API key for Claude Code, Codex, and Cursor</li>\n<li>The model picker now offers preview Codex models when your OpenAI account has access to them</li>\n<li>You can now hover image attachments to see a preview</li>\n<li>Clicking &quot;Continue&quot; after merging a PR now attaches a note to the chat explaining what happened</li>\n<li>File suggestions in the @ mention menu now appear faster, especially in cloud workspaces</li>\n<li>The dialog for creating new workspaces is more reliable and will always save your drafts</li>\n<li>Reduced CPU usage from cloud workspace file sync when workspaces are idle or in the background</li>\n<li>Workspace and chat links now render as clickable links</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed alignment of the sidebar toggle button with the traffic light buttons</li>\n<li>Fixed Composer (Cursor) being unable to read files or run tools</li>\n<li>Fixed an issue where in-app browser previews could send requests from the wrong localhost port</li>\n<li>Fixed an issue where copy buttons could fail in Conductor</li>\n<li>Fixed an issue where &quot;Open in Zed&quot; did nothing when Zed was already running</li>\n<li>Fixed an issue where archived cloud workspaces could reappear after archiving</li>\n<li>Fixed an issue where diffs and files showed &quot;Failed to load&quot; errors while a cloud workspace was restarting</li>\n<li>Fixed an issue where sending a message in a cloud workspace could intermittently fail with a network error</li>\n<li>Fixed an issue where the working animation next to a workspace in the sidebar could show as empty space while the agent was running</li>\n<li>Fixed an issue where run scripts wouldn&#x27;t automatically start after workspace setup</li>\n<li>Fixed a bug where messages with text directly after an attachment could be misrendered</li>\n</ul>\n<h4>New in 0.72.1</h4>\n<ul>\n<li>Fixed the app opening to a blank window on the first launch after a fresh install</li>\n</ul>",
+  "markdown": "\nConductor figures out which agent messages are most important and collapses the rest. We have a new algorithm that is more accurate (especially with Claude Code background agents) and will more often highlight the most important messages.\n\n(To see all messages without collapsing any you can always hit `⌃O`.)\n\n## Improvements\n\n- You can now interrupt Cursor agent while it's working\n- You can now stop a setup script while it's running\n- You can now read chats in archived workspaces without unarchiving them\n- In provider settings, you can now see, change, and remove a configured API key for Claude Code, Codex, and Cursor\n- The model picker now offers preview Codex models when your OpenAI account has access to them\n- You can now hover image attachments to see a preview\n- Clicking \"Continue\" after merging a PR now attaches a note to the chat explaining what happened\n- File suggestions in the @ mention menu now appear faster, especially in cloud workspaces\n- The dialog for creating new workspaces is more reliable and will always save your drafts\n- Reduced CPU usage from cloud workspace file sync when workspaces are idle or in the background\n- Workspace and chat links now render as clickable links\n\n## Fixes\n\n- Fixed alignment of the sidebar toggle button with the traffic light buttons\n- Fixed Composer (Cursor) being unable to read files or run tools\n- Fixed an issue where in-app browser previews could send requests from the wrong localhost port\n- Fixed an issue where copy buttons could fail in Conductor\n- Fixed an issue where \"Open in Zed\" did nothing when Zed was already running\n- Fixed an issue where archived cloud workspaces could reappear after archiving\n- Fixed an issue where diffs and files showed \"Failed to load\" errors while a cloud workspace was restarting\n- Fixed an issue where sending a message in a cloud workspace could intermittently fail with a network error\n- Fixed an issue where the working animation next to a workspace in the sidebar could show as empty space while the agent was running\n- Fixed an issue where run scripts wouldn't automatically start after workspace setup\n- Fixed a bug where messages with text directly after an attachment could be misrendered\n\n### New in 0.72.1\n\n- Fixed the app opening to a blank window on the first launch after a fresh install\n"
+}

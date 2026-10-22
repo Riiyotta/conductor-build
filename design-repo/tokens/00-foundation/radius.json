@@ -1,0 +1,85 @@
+{
+  "$description": "Radius scale (Tailwind v4 semantics: rounded-xs=2px, rounded-sm=4px). Recon histogram (recon/raw-1440-loaded.json): 6px x12, 8px x6, 12px x5, 3px x4, 2px x3, full x30.",
+  "radius": {
+    "xs": {
+      "$value": "2px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:86",
+          "quote": "xs: '2px',"
+        }
+      ]
+    },
+    "icon": {
+      "$value": "3px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:91",
+          "quote": "icon: '3px',"
+        }
+      ]
+    },
+    "sm": {
+      "$value": "4px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:87",
+          "quote": "sm: '4px',"
+        }
+      ]
+    },
+    "md": {
+      "$value": "6px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:88",
+          "quote": "md: '6px',"
+        }
+      ]
+    },
+    "lg": {
+      "$value": "8px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:89",
+          "quote": "lg: '8px',"
+        }
+      ]
+    },
+    "xl": {
+      "$value": "12px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "tailwind.config.cjs:90",
+          "quote": "xl: '12px',"
+        }
+      ]
+    },
+    "asset-frame": {
+      "$value": "20px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:13",
+          "quote": "--docs-asset-frame-radius: 1.25rem;"
+        }
+      ]
+    },
+    "full": {
+      "$value": "9999px",
+      "$type": "dimension",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:53",
+          "quote": "`rounded-xl` 12px (demo cards, hero app shot), `rounded-full`"
+        }
+      ]
+    }
+  }
+}

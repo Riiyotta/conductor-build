@@ -1,0 +1,451 @@
+{
+  "slug": "guides/review-and-merge",
+  "url": "/docs/guides/review-and-merge",
+  "title": "Review and merge a workspace",
+  "description": "Use Conductor's review, checks, and PR tools before merging",
+  "meta": {
+    "title": "Review and merge a workspace | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/review-and-merge/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Workspace"
+    },
+    {
+      "name": "Review and merge a workspace"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#review-the-diff",
+      "title": "Review the diff"
+    },
+    {
+      "depth": 2,
+      "url": "#ask-for-review",
+      "title": "Ask for review"
+    },
+    {
+      "depth": 2,
+      "url": "#check-merge-readiness",
+      "title": "Check merge readiness"
+    },
+    {
+      "depth": 2,
+      "url": "#create-or-update-the-pr",
+      "title": "Create or update the PR"
+    },
+    {
+      "depth": 2,
+      "url": "#merge-and-archive",
+      "title": "Merge and archive"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/issue-to-pr",
+    "title": "From issue to PR",
+    "description": "Take a GitHub or Linear issue through implementation, review, and pull request"
+  },
+  "next": {
+    "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+    "title": "Run Claude Code with Git worktrees",
+    "description": "Use Claude Code in Conductor workspaces so parallel sessions get separate branches, files, and setup"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this guide after an agent or teammate has changed code in a workspace."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "review-the-diff",
+      "children": [
+        {
+          "type": "text",
+          "value": "Review the diff"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the Diff Viewer with "
+        },
+        {
+          "type": "shortcut",
+          "label": "Command Shift D",
+          "keys": [
+            "⌘",
+            "Shift",
+            "D"
+          ],
+          "separator": "+"
+        },
+        {
+          "type": "text",
+          "value": ". Review the changed files before you ask Conductor to create or merge a pull request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In the Diff Viewer, you can:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Inspect file changes."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Leave comments on changed lines."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Send comments back to the agent."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Resolve GitHub review threads when they no longer apply."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Revert files when you do not want to keep a change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "ask-for-review",
+      "children": [
+        {
+          "type": "text",
+          "value": "Ask for review"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Review"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " action when you want an agent to inspect the current diff. Add repository-specific review guidance in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions&scrollTo=custom_prompt_code_review",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " under "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Code review preferences"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Good review prompts are specific. Tell the agent what to prioritize, such as correctness, migration safety, UI regressions, tests, or security-sensitive behavior."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "check-merge-readiness",
+      "children": [
+        {
+          "type": "text",
+          "value": "Check merge readiness"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Open the Checks tab before you merge. It gathers the state that usually determines whether a workspace is ready:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Git status"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Pull request metadata"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CI and status checks"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Deployments"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "GitHub and review comments"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Todos"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Treat unresolved comments, failing checks, and open todos as blockers until you intentionally clear them."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-or-update-the-pr",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create or update the PR"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Create PR"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the workspace is ready for review. Conductor sends the current diff and repository context to the agent so it can draft a pull request description."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you already have a PR, use the Checks tab and Diff Viewer to keep responding to review comments and status changes."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "merge-and-archive",
+      "children": [
+        {
+          "type": "text",
+          "value": "Merge and archive"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Merge when the PR is approved, checks are green, comments are handled, and todos are complete. After merge, archive the workspace so it leaves your active work list."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you need to revisit the work later, restore the workspace from the History pane in the sidebar."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use this guide after an agent or teammate has changed code in a workspace.</p><h2 id=\"review-the-diff\"><a href=\"#review-the-diff\">Review the diff</a></h2><p>Open the Diff Viewer with <span data-shortcut aria-label=\"Command Shift D\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>D</kbd></span>. Review the changed files before you ask Conductor to create or merge a pull request.</p><p>In the Diff Viewer, you can:</p><ul><li>Inspect file changes.</li><li>Leave comments on changed lines.</li><li>Send comments back to the agent.</li><li>Resolve GitHub review threads when they no longer apply.</li><li>Revert files when you do not want to keep a change.</li></ul><h2 id=\"ask-for-review\"><a href=\"#ask-for-review\">Ask for review</a></h2><p>Use the <code>Review</code> action when you want an agent to inspect the current diff. Add repository-specific review guidance in <a href=\"https://app.conductor.build/settings/repos?section=actions&amp;scrollTo=custom_prompt_code_review\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> under <code>Code review preferences</code>.</p><p>Good review prompts are specific. Tell the agent what to prioritize, such as correctness, migration safety, UI regressions, tests, or security-sensitive behavior.</p><h2 id=\"check-merge-readiness\"><a href=\"#check-merge-readiness\">Check merge readiness</a></h2><p>Open the Checks tab before you merge. It gathers the state that usually determines whether a workspace is ready:</p><ul><li>Git status</li><li>Pull request metadata</li><li>CI and status checks</li><li>Deployments</li><li>GitHub and review comments</li><li>Todos</li></ul><p>Treat unresolved comments, failing checks, and open todos as blockers until you intentionally clear them.</p><h2 id=\"create-or-update-the-pr\"><a href=\"#create-or-update-the-pr\">Create or update the PR</a></h2><p>Use <code>Create PR</code> when the workspace is ready for review. Conductor sends the current diff and repository context to the agent so it can draft a pull request description.</p><p>If you already have a PR, use the Checks tab and Diff Viewer to keep responding to review comments and status changes.</p><h2 id=\"merge-and-archive\"><a href=\"#merge-and-archive\">Merge and archive</a></h2><p>Merge when the PR is approved, checks are green, comments are handled, and todos are complete. After merge, archive the workspace so it leaves your active work list.</p><p>If you need to revisit the work later, restore the workspace from the History pane in the sidebar.</p>",
+  "text": "Use this guide after an agent or teammate has changed code in a workspace.\nReview the diff\nOpen the Diff Viewer with ⌘ShiftD. Review the changed files before you ask Conductor to create or merge a pull request.\nIn the Diff Viewer, you can:\nInspect file changes.\nLeave comments on changed lines.\nSend comments back to the agent.\nResolve GitHub review threads when they no longer apply.\nRevert files when you do not want to keep a change.\nAsk for review\nUse the Review action when you want an agent to inspect the current diff. Add repository-specific review guidance in Repository Settings under Code review preferences.\nGood review prompts are specific. Tell the agent what to prioritize, such as correctness, migration safety, UI regressions, tests, or security-sensitive behavior.\nCheck merge readiness\nOpen the Checks tab before you merge. It gathers the state that usually determines whether a workspace is ready:\nGit status\nPull request metadata\nCI and status checks\nDeployments\nGitHub and review comments\nTodos\nTreat unresolved comments, failing checks, and open todos as blockers until you intentionally clear them.\nCreate or update the PR\nUse Create PR when the workspace is ready for review. Conductor sends the current diff and repository context to the agent so it can draft a pull request description.\nIf you already have a PR, use the Checks tab and Diff Viewer to keep responding to review comments and status changes.\nMerge and archive\nMerge when the PR is approved, checks are green, comments are handled, and todos are complete. After merge, archive the workspace so it leaves your active work list.\nIf you need to revisit the work later, restore the workspace from the History pane in the sidebar.",
+  "markdown": "\n# Review and merge a workspace\n\n\n\nUse this guide after an agent or teammate has changed code in a workspace.\n\n## Review the diff [#review-the-diff]\n\nOpen the Diff Viewer with Command + Shift + D. Review the changed files before you ask Conductor to create or merge a pull request.\n\nIn the Diff Viewer, you can:\n\n* Inspect file changes.\n* Leave comments on changed lines.\n* Send comments back to the agent.\n* Resolve GitHub review threads when they no longer apply.\n* Revert files when you do not want to keep a change.\n\n## Ask for review [#ask-for-review]\n\nUse the `Review` action when you want an agent to inspect the current diff. Add repository-specific review guidance in [Repository Settings](https://app.conductor.build/settings/repos?section=actions\\&scrollTo=custom_prompt_code_review) under `Code review preferences`.\n\nGood review prompts are specific. Tell the agent what to prioritize, such as correctness, migration safety, UI regressions, tests, or security-sensitive behavior.\n\n## Check merge readiness [#check-merge-readiness]\n\nOpen the Checks tab before you merge. It gathers the state that usually determines whether a workspace is ready:\n\n* Git status\n* Pull request metadata\n* CI and status checks\n* Deployments\n* GitHub and review comments\n* Todos\n\nTreat unresolved comments, failing checks, and open todos as blockers until you intentionally clear them.\n\n## Create or update the PR [#create-or-update-the-pr]\n\nUse `Create PR` when the workspace is ready for review. Conductor sends the current diff and repository context to the agent so it can draft a pull request description.\n\nIf you already have a PR, use the Checks tab and Diff Viewer to keep responding to review comments and status changes.\n\n## Merge and archive [#merge-and-archive]\n\nMerge when the PR is approved, checks are green, comments are handled, and todos are complete. After merge, archive the workspace so it leaves your active work list.\n\nIf you need to revisit the work later, restore the workspace from the History pane in the sidebar.\n"
+}

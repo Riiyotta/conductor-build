@@ -1,0 +1,144 @@
+{
+  "id": "content.changelog-preview",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.changelog-preview"
+  ],
+  "purpose": "Show shipping velocity: latest releases and a link to the full changelog.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Changelog.jsx:13",
+      "quote": "export default function Changelog() {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:253",
+      "quote": "## 9. Changelog"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.changelog-preview"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "heading": {
+      "type": "text",
+      "maxWords": 2,
+      "required": true,
+      "observedMaxWords": 1
+    },
+    "quote": {
+      "type": "object",
+      "fields": {
+        "text": {
+          "type": "text",
+          "maxWords": 18,
+          "required": true,
+          "observedMaxWords": 14
+        },
+        "href": {
+          "type": "url",
+          "required": true
+        }
+      },
+      "required": true
+    },
+    "cards": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "version": {
+            "type": "pattern",
+            "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+            "required": true
+          },
+          "date": {
+            "type": "text",
+            "maxWords": 4,
+            "required": true,
+            "observedMaxWords": 3
+          },
+          "title": {
+            "type": "text",
+            "maxWords": 14,
+            "required": true,
+            "observedMaxWords": 12
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 3,
+      "maxItems": 3,
+      "required": true
+    },
+    "viewAllLabel": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color",
+      "arrow-nudge-hover"
+    ],
+    "defaultPatterns": [
+      "hover-color",
+      "arrow-nudge-hover"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC.md:258",
+        "quote": "**Hover: border-color rgba(44,40,38,.3) (transition-colors 150ms); h3 opacity .7.**"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "cards",
+          "value": "horizontal snap scroller, cards min(82vw,24rem)"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "cards",
+          "value": "3-column grid"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real release titles and a real third-party quote."
+  },
+  "quirks": [
+    "Version badge renders SANS here (homepage font override), MONO on /changelog."
+  ],
+  "assetRoles": []
+}

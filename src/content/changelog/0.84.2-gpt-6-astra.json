@@ -1,0 +1,23 @@
+{
+  "slug": "0.84.2-gpt-6-astra",
+  "version": "0.84.2",
+  "versionSlug": "0.84.2",
+  "title": "GPT-6 Astra",
+  "fullTitle": "0.84.2: GPT-6 Astra",
+  "date": "September 4, 2026",
+  "dateISO": "2026-09-04",
+  "description": "Conductor 0.84.2 changelog - GPT-6 Astra",
+  "summary": "GPT-6 Astra is now available in Conductor! It's OpenAI's new smartest model, best for long-running tasks.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/gpt-6-astra-0.84.2.png",
+    "alt": "GPT-6 Astra"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.84.2-gpt-6-astra/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.84.2-gpt-6-astra",
+  "sourceUrl": "https://www.conductor.build/changelog/0.84.2-gpt-6-astra",
+  "headings": [],
+  "html": "<figure data-asset><img alt=\"GPT-6 Astra\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/gpt-6-astra-0.84.2.png\"/></figure>\n<p>GPT-6 Astra is now available in Conductor! It&#x27;s OpenAI&#x27;s new smartest model, best for long-running tasks.</p>",
+  "markdown": "\n![GPT-6 Astra](/assets/changelog/images/gpt-6-astra-0.84.2.png)\n\nGPT-6 Astra is now available in Conductor! It's OpenAI's new smartest model, best for long-running tasks.\n"
+}

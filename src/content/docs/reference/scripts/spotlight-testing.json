@@ -1,0 +1,781 @@
+{
+  "slug": "reference/scripts/spotlight-testing",
+  "url": "/docs/reference/scripts/spotlight-testing",
+  "title": "Spotlight testing",
+  "description": "Test one workspace from the repository root",
+  "meta": {
+    "title": "Spotlight testing | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/scripts/spotlight-testing/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Spotlight testing"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#spotlight-testing-or-actions",
+      "title": "Spotlight testing or actions"
+    },
+    {
+      "depth": 2,
+      "url": "#configure-spotlight-testing",
+      "title": "Configure Spotlight testing"
+    },
+    {
+      "depth": 2,
+      "url": "#spotlight-a-workspace",
+      "title": "Spotlight a workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#how-it-works",
+      "title": "How it works"
+    },
+    {
+      "depth": 2,
+      "url": "#troubleshooting",
+      "title": "Troubleshooting"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/shells",
+    "title": "Shell configuration",
+    "description": "Configure shell setup"
+  },
+  "next": {
+    "url": "/docs/reference/cities",
+    "title": "Cities",
+    "description": "How Conductor names workspaces after cities"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing syncs one workspace back to your repository root so you can test from the root directory instead of the workspace directory."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Spotlight testing when your project needs the root checkout, a fixed local resource, or one heavy local stack that should stay running while you switch between workspace changes."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "R21ghifdrXg",
+      "title": "Use Spotlight to run heavy projects in Conductor",
+      "thumbnail": "/assets/docs/youtube/R21ghifdrXg-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "spotlight-testing-or-actions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing or actions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use normal "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "actions"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when each workspace can run its own copy of the project. Actions are the default testing path because each workspace gets its own process, paths, and allocated ports."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Spotlight testing when the project needs to run from the repository root, or when running one full stack per workspace would be too expensive. Spotlight testing is a good fit for:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Directory-dependent applications that assume they run from the repository root."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Projects with expensive initial builds that can reuse build artifacts in the repository root."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Apps that depend on a fixed port, one local database, or another single shared local resource."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Docker-heavy or microservice projects where running one full stack per workspace would consume too much CPU, memory, disk, or battery."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Apps that take a long time to start but can hot reload quickly once the root process is running."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Dev scripts with hard-coded local values that are difficult to make workspace-specific."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing only tests one workspace at a time. If your project only needs to prevent multiple actions from sharing one port or database, consider "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "nonconcurrent"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-mode"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "run mode"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " first."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cloud workspaces are another option when local resource usage is the main problem. Spotlight is most useful when you want to keep agents working in local workspaces while only one local application stack runs from the repository root."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "configure-spotlight-testing",
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure Spotlight testing"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can configure Spotlight testing in Conductor or in a settings file:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the app, open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/repos?section=actions&scrollTo=spotlight_testing",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", select the project, and turn on "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Use spotlight testing"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In the repository, add "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "spotlight_testing"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".conductor/settings.toml"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " when the same testing workflow should be shared with teammates."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this repository configuration when every teammate should test this project from the repository root:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nspotlight_testing = true",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "\"$schema\" = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://conductor.build/schemas/settings.repo.schema.json\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "spotlight_testing = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "true",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Commit "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when every teammate should use Spotlight testing for the repository. For settings file locations and precedence, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing only changes testing for that project. Other projects can keep using normal actions and workspace isolation."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "spotlight-a-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight a workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you start Spotlight, run your application from the repository root in Conductor. For example, start the Docker stack, dev server, or other long-running process from the root checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Then click the Spotlight button from the workspace you want to test. Conductor copies that workspace's tracked changes back to the repository root so the root process can run them."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you turn Spotlight mode off, Conductor restores the original repository root state."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "While Spotlight is on:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The project runs from the repository root, not the workspace directory."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Tracked workspace changes are swapped into the root as the workspace changes."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Switching Spotlight to another workspace replaces the root with that workspace's tracked changes."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Existing root build caches and long-running processes can keep hot reloading instead of starting from scratch."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can keep creating branches, chatting with agents, and preparing pull requests from separate workspaces. Spotlight only changes which workspace's tracked changes are active in the root process."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-it-works",
+      "children": [
+        {
+          "type": "text",
+          "value": "How it works"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing watches your workspace for changes. When files change, Conductor creates a "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/checkpoints"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "checkpoint"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " commit of your workspace and checks it out in the repository root."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Only files tracked in git are copied back to the repository root. Build artifacts such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "node_modules"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " are not copied."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing is a one-way sync. Changes in the repository root are not copied back to your workspace. Edit files in the workspace so Conductor can sync them to the repository root."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "troubleshooting",
+      "children": [
+        {
+          "type": "text",
+          "value": "Troubleshooting"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If Spotlight cannot start, check whether the workspace or repository root has a rebase or merge in progress."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Finish the operation with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git rebase --continue"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git merge --continue"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or cancel it with "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git rebase --abort"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "git merge --abort"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Run the command in the directory that has the pending operation."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Spotlight testing syncs one workspace back to your repository root so you can test from the root directory instead of the workspace directory.</p><p>Use Spotlight testing when your project needs the root checkout, a fixed local resource, or one heavy local stack that should stay running while you switch between workspace changes.</p><div data-youtube=\"R21ghifdrXg\" data-title=\"Use Spotlight to run heavy projects in Conductor\" data-thumbnail=\"/assets/docs/youtube/R21ghifdrXg-sddefault.webp\"></div><h2 id=\"spotlight-testing-or-actions\"><a href=\"#spotlight-testing-or-actions\">Spotlight testing or actions</a></h2><p>Use normal <a href=\"/docs/reference/scripts#run-scripts\">actions</a> when each workspace can run its own copy of the project. Actions are the default testing path because each workspace gets its own process, paths, and allocated ports.</p><p>Use Spotlight testing when the project needs to run from the repository root, or when running one full stack per workspace would be too expensive. Spotlight testing is a good fit for:</p><ul><li>Directory-dependent applications that assume they run from the repository root.</li><li>Projects with expensive initial builds that can reuse build artifacts in the repository root.</li><li>Apps that depend on a fixed port, one local database, or another single shared local resource.</li><li>Docker-heavy or microservice projects where running one full stack per workspace would consume too much CPU, memory, disk, or battery.</li><li>Apps that take a long time to start but can hot reload quickly once the root process is running.</li><li>Dev scripts with hard-coded local values that are difficult to make workspace-specific.</li></ul><p>Spotlight testing only tests one workspace at a time. If your project only needs to prevent multiple actions from sharing one port or database, consider <code>nonconcurrent</code> <a href=\"/docs/reference/scripts#run-mode\">run mode</a> first.</p><p>Cloud workspaces are another option when local resource usage is the main problem. Spotlight is most useful when you want to keep agents working in local workspaces while only one local application stack runs from the repository root.</p><h2 id=\"configure-spotlight-testing\"><a href=\"#configure-spotlight-testing\">Configure Spotlight testing</a></h2><p>You can configure Spotlight testing in Conductor or in a settings file:</p><ul><li>In the app, open <a href=\"https://app.conductor.build/settings/repos?section=actions&amp;scrollTo=spotlight_testing\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a>, select the project, and turn on <code>Use spotlight testing</code>.</li><li>In the repository, add <code>spotlight_testing</code> to <code>.conductor/settings.toml</code> when the same testing workflow should be shared with teammates.</li></ul><p>Use this repository configuration when every teammate should test this project from the repository root:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">\"$schema\" = </span><span style=\"color:#032F62\">\"https://conductor.build/schemas/settings.repo.schema.json\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">spotlight_testing = </span><span style=\"color:#005CC5\">true</span></span></code></pre></figure><p>Commit <code>.conductor/settings.toml</code> when every teammate should use Spotlight testing for the repository. For settings file locations and precedence, see <a href=\"/docs/reference/settings/user-project\">User and project settings</a>.</p><p>Spotlight testing only changes testing for that project. Other projects can keep using normal actions and workspace isolation.</p><h2 id=\"spotlight-a-workspace\"><a href=\"#spotlight-a-workspace\">Spotlight a workspace</a></h2><p>Before you start Spotlight, run your application from the repository root in Conductor. For example, start the Docker stack, dev server, or other long-running process from the root checkout.</p><p>Then click the Spotlight button from the workspace you want to test. Conductor copies that workspace's tracked changes back to the repository root so the root process can run them.</p><p>When you turn Spotlight mode off, Conductor restores the original repository root state.</p><p>While Spotlight is on:</p><ul><li>The project runs from the repository root, not the workspace directory.</li><li>Tracked workspace changes are swapped into the root as the workspace changes.</li><li>Switching Spotlight to another workspace replaces the root with that workspace's tracked changes.</li><li>Existing root build caches and long-running processes can keep hot reloading instead of starting from scratch.</li></ul><p>You can keep creating branches, chatting with agents, and preparing pull requests from separate workspaces. Spotlight only changes which workspace's tracked changes are active in the root process.</p><h2 id=\"how-it-works\"><a href=\"#how-it-works\">How it works</a></h2><p>Spotlight testing watches your workspace for changes. When files change, Conductor creates a <a href=\"/docs/reference/checkpoints\">checkpoint</a> commit of your workspace and checks it out in the repository root.</p><p>Only files tracked in git are copied back to the repository root. Build artifacts such as <code>node_modules</code> are not copied.</p><p>Spotlight testing is a one-way sync. Changes in the repository root are not copied back to your workspace. Edit files in the workspace so Conductor can sync them to the repository root.</p><h2 id=\"troubleshooting\"><a href=\"#troubleshooting\">Troubleshooting</a></h2><p>If Spotlight cannot start, check whether the workspace or repository root has a rebase or merge in progress.</p><p>Finish the operation with <code>git rebase --continue</code> or <code>git merge --continue</code>, or cancel it with <code>git rebase --abort</code> or <code>git merge --abort</code>. Run the command in the directory that has the pending operation.</p>",
+  "text": "Spotlight testing syncs one workspace back to your repository root so you can test from the root directory instead of the workspace directory.\nUse Spotlight testing when your project needs the root checkout, a fixed local resource, or one heavy local stack that should stay running while you switch between workspace changes.\nSpotlight testing or actions\nUse normal actions when each workspace can run its own copy of the project. Actions are the default testing path because each workspace gets its own process, paths, and allocated ports.\nUse Spotlight testing when the project needs to run from the repository root, or when running one full stack per workspace would be too expensive. Spotlight testing is a good fit for:\nDirectory-dependent applications that assume they run from the repository root.\nProjects with expensive initial builds that can reuse build artifacts in the repository root.\nApps that depend on a fixed port, one local database, or another single shared local resource.\nDocker-heavy or microservice projects where running one full stack per workspace would consume too much CPU, memory, disk, or battery.\nApps that take a long time to start but can hot reload quickly once the root process is running.\nDev scripts with hard-coded local values that are difficult to make workspace-specific.\nSpotlight testing only tests one workspace at a time. If your project only needs to prevent multiple actions from sharing one port or database, consider nonconcurrent run mode first.\nCloud workspaces are another option when local resource usage is the main problem. Spotlight is most useful when you want to keep agents working in local workspaces while only one local application stack runs from the repository root.\nConfigure Spotlight testing\nYou can configure Spotlight testing in Conductor or in a settings file:\nIn the app, open Settings, select the project, and turn on Use spotlight testing.\nIn the repository, add spotlight_testing to .conductor/settings.toml when the same testing workflow should be shared with teammates.\nUse this repository configuration when every teammate should test this project from the repository root:\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\nspotlight_testing = trueCommit .conductor/settings.toml when every teammate should use Spotlight testing for the repository. For settings file locations and precedence, see User and project settings.\nSpotlight testing only changes testing for that project. Other projects can keep using normal actions and workspace isolation.\nSpotlight a workspace\nBefore you start Spotlight, run your application from the repository root in Conductor. For example, start the Docker stack, dev server, or other long-running process from the root checkout.\nThen click the Spotlight button from the workspace you want to test. Conductor copies that workspace's tracked changes back to the repository root so the root process can run them.\nWhen you turn Spotlight mode off, Conductor restores the original repository root state.\nWhile Spotlight is on:\nThe project runs from the repository root, not the workspace directory.\nTracked workspace changes are swapped into the root as the workspace changes.\nSwitching Spotlight to another workspace replaces the root with that workspace's tracked changes.\nExisting root build caches and long-running processes can keep hot reloading instead of starting from scratch.\nYou can keep creating branches, chatting with agents, and preparing pull requests from separate workspaces. Spotlight only changes which workspace's tracked changes are active in the root process.\nHow it works\nSpotlight testing watches your workspace for changes. When files change, Conductor creates a checkpoint commit of your workspace and checks it out in the repository root.\nOnly files tracked in git are copied back to the repository root. Build artifacts such as node_modules are not copied.\nSpotlight testing is a one-way sync. Changes in the repository root are not copied back to your workspace. Edit files in the workspace so Conductor can sync them to the repository root.\nTroubleshooting\nIf Spotlight cannot start, check whether the workspace or repository root has a rebase or merge in progress.\nFinish the operation with git rebase --continue or git merge --continue, or cancel it with git rebase --abort or git merge --abort. Run the command in the directory that has the pending operation.",
+  "markdown": "\n# Spotlight testing\n\n\n\nSpotlight testing syncs one workspace back to your repository root so you can test from the root directory instead of the workspace directory.\n\nUse Spotlight testing when your project needs the root checkout, a fixed local resource, or one heavy local stack that should stay running while you switch between workspace changes.\n\n\n\n\n## Spotlight testing or actions [#spotlight-testing-or-actions]\n\nUse normal [actions](/docs/reference/scripts#run-scripts) when each workspace can run its own copy of the project. Actions are the default testing path because each workspace gets its own process, paths, and allocated ports.\n\nUse Spotlight testing when the project needs to run from the repository root, or when running one full stack per workspace would be too expensive. Spotlight testing is a good fit for:\n\n* Directory-dependent applications that assume they run from the repository root.\n* Projects with expensive initial builds that can reuse build artifacts in the repository root.\n* Apps that depend on a fixed port, one local database, or another single shared local resource.\n* Docker-heavy or microservice projects where running one full stack per workspace would consume too much CPU, memory, disk, or battery.\n* Apps that take a long time to start but can hot reload quickly once the root process is running.\n* Dev scripts with hard-coded local values that are difficult to make workspace-specific.\n\nSpotlight testing only tests one workspace at a time. If your project only needs to prevent multiple actions from sharing one port or database, consider `nonconcurrent` [run mode](/docs/reference/scripts#run-mode) first.\n\nCloud workspaces are another option when local resource usage is the main problem. Spotlight is most useful when you want to keep agents working in local workspaces while only one local application stack runs from the repository root.\n\n## Configure Spotlight testing [#configure-spotlight-testing]\n\nYou can configure Spotlight testing in Conductor or in a settings file:\n\n* In the app, open [`Settings`](https://app.conductor.build/settings/repos?section=actions\\&scrollTo=spotlight_testing), select the project, and turn on `Use spotlight testing`.\n* In the repository, add `spotlight_testing` to `.conductor/settings.toml` when the same testing workflow should be shared with teammates.\n\nUse this repository configuration when every teammate should test this project from the repository root:\n\n```toml title=\".conductor/settings.toml\"\n\"$schema\" = \"https://conductor.build/schemas/settings.repo.schema.json\"\n\nspotlight_testing = true\n```\n\nCommit `.conductor/settings.toml` when every teammate should use Spotlight testing for the repository. For settings file locations and precedence, see [User and project settings](/docs/reference/settings/user-project).\n\nSpotlight testing only changes testing for that project. Other projects can keep using normal actions and workspace isolation.\n\n## Spotlight a workspace [#spotlight-a-workspace]\n\nBefore you start Spotlight, run your application from the repository root in Conductor. For example, start the Docker stack, dev server, or other long-running process from the root checkout.\n\nThen click the Spotlight button from the workspace you want to test. Conductor copies that workspace's tracked changes back to the repository root so the root process can run them.\n\nWhen you turn Spotlight mode off, Conductor restores the original repository root state.\n\nWhile Spotlight is on:\n\n* The project runs from the repository root, not the workspace directory.\n* Tracked workspace changes are swapped into the root as the workspace changes.\n* Switching Spotlight to another workspace replaces the root with that workspace's tracked changes.\n* Existing root build caches and long-running processes can keep hot reloading instead of starting from scratch.\n\nYou can keep creating branches, chatting with agents, and preparing pull requests from separate workspaces. Spotlight only changes which workspace's tracked changes are active in the root process.\n\n## How it works [#how-it-works]\n\nSpotlight testing watches your workspace for changes. When files change, Conductor creates a [checkpoint](/docs/reference/checkpoints) commit of your workspace and checks it out in the repository root.\n\nOnly files tracked in git are copied back to the repository root. Build artifacts such as `node_modules` are not copied.\n\nSpotlight testing is a one-way sync. Changes in the repository root are not copied back to your workspace. Edit files in the workspace so Conductor can sync them to the repository root.\n\n## Troubleshooting [#troubleshooting]\n\nIf Spotlight cannot start, check whether the workspace or repository root has a rebase or merge in progress.\n\nFinish the operation with `git rebase --continue` or `git merge --continue`, or cancel it with `git rebase --abort` or `git merge --abort`. Run the command in the directory that has the pending operation.\n"
+}

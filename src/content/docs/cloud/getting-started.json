@@ -1,0 +1,509 @@
+{
+  "slug": "cloud/getting-started",
+  "url": "/docs/cloud/getting-started",
+  "title": "Set up cloud",
+  "description": "Connect GitHub, add an agent credential, and set up your Cloud Computer",
+  "meta": {
+    "title": "Set up cloud | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/cloud/getting-started/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Cloud"
+    },
+    {
+      "name": "Set up cloud"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#create-or-select-the-organization",
+      "title": "Create or select the organization"
+    },
+    {
+      "depth": 2,
+      "url": "#choose-the-computer-color",
+      "title": "Choose the computer color"
+    },
+    {
+      "depth": 2,
+      "url": "#connect-github-and-choose-repositories",
+      "title": "Connect GitHub and choose repositories"
+    },
+    {
+      "depth": 2,
+      "url": "#add-an-agent",
+      "title": "Add an agent"
+    },
+    {
+      "depth": 2,
+      "url": "#set-up-the-computer-with-the-agent",
+      "title": "Set up the computer with the agent"
+    },
+    {
+      "depth": 2,
+      "url": "#create-your-first-workspace",
+      "title": "Create your first workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#next-steps",
+      "title": "Next steps"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud",
+    "title": "What is Conductor Cloud?",
+    "description": "Run coding agents in shared cloud workspaces with your team"
+  },
+  "next": {
+    "url": "/docs/cloud/working-with-cloud-workspaces",
+    "title": "Work with cloud workspaces",
+    "description": "Use workspace status, SSH, file sync, terminals, and forwarded ports"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This tutorial takes you through Cloud onboarding, ending with an agent ready\nto set up your organization's development environment."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You need access to Conductor Cloud, a GitHub repository, and a subscription or\nAPI key for at least one supported agent."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-or-select-the-organization",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create or select the organization"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Sign in to the Conductor Mac app."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open the organization switcher and choose "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create organization"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Name the organization and optionally invite teammates in the browser, then\nchoose "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Continue in Conductor"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you're joining an organization that has already finished onboarding, you\ncan create a workspace right away — just add your agent credential when\nprompted."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "choose-the-computer-color",
+      "children": [
+        {
+          "type": "text",
+          "value": "Choose the computer color"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This is just for fun :)"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "connect-github-and-choose-repositories",
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect GitHub and choose repositories"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect the Conductor GitHub App if prompted, then select at least one\nrepository to clone onto the Cloud Computer. Conductor starts building the\ncomputer when you continue."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can add repositories later, and connect the GitHub App to additional\nGitHub organizations."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "add-an-agent",
+      "children": [
+        {
+          "type": "text",
+          "value": "Add an agent"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add a personal subscription token or API key for at least one agent. If you\nalready configured credentials in local Conductor, use "
+        },
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Import"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when it is\navailable."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Organization admins can also add shared API keys in\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Settings → Organization → Agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for everyone in the organization to use. A\nshared key takes precedence over a member's personal API key for the same\nagent."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Finish"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " becomes available once your credential is ready and the computer\nbuild has succeeded."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "set-up-the-computer-with-the-agent",
+      "children": [
+        {
+          "type": "text",
+          "value": "Set up the computer with the agent"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Finishing onboarding opens an Admin workspace with a suggested first prompt:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "blockquote",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Set up this computer for development. Check that you can run tests and\napplications in all the repos."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Edit it if you like, then send it. The agent can test your repositories,\nupdate install and setup scripts, and run builds — without asking you to\nconfirm each step. See\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/cloud/cloud-computer#edit-settings-with-an-agent"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Edit settings with an agent"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "create-your-first-workspace",
+      "children": [
+        {
+          "type": "text",
+          "value": "Create your first workspace"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When the agent is done, press "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "⌘N"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Pick a repository and an optional starting\nbranch, pull request, or issue, then send the agent its first task."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "next-steps",
+      "children": [
+        {
+          "type": "text",
+          "value": "Next steps"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/cloud/working-with-cloud-workspaces"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Work with cloud workspaces"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/cloud/collaboration"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Multiplayer"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/cloud/cloud-computer"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Configure the Cloud Computer"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "html": "<p>This tutorial takes you through Cloud onboarding, ending with an agent ready\nto set up your organization's development environment.</p><p>You need access to Conductor Cloud, a GitHub repository, and a subscription or\nAPI key for at least one supported agent.</p><h2 id=\"create-or-select-the-organization\"><a href=\"#create-or-select-the-organization\">Create or select the organization</a></h2><ol><li>Sign in to the Conductor Mac app.</li><li>Open the organization switcher and choose <strong>Create organization</strong>.</li><li>Name the organization and optionally invite teammates in the browser, then\nchoose <strong>Continue in Conductor</strong>.</li></ol><p>If you're joining an organization that has already finished onboarding, you\ncan create a workspace right away — just add your agent credential when\nprompted.</p><h2 id=\"choose-the-computer-color\"><a href=\"#choose-the-computer-color\">Choose the computer color</a></h2><p>This is just for fun :)</p><h2 id=\"connect-github-and-choose-repositories\"><a href=\"#connect-github-and-choose-repositories\">Connect GitHub and choose repositories</a></h2><p>Connect the Conductor GitHub App if prompted, then select at least one\nrepository to clone onto the Cloud Computer. Conductor starts building the\ncomputer when you continue.</p><p>You can add repositories later, and connect the GitHub App to additional\nGitHub organizations.</p><h2 id=\"add-an-agent\"><a href=\"#add-an-agent\">Add an agent</a></h2><p>Add a personal subscription token or API key for at least one agent. If you\nalready configured credentials in local Conductor, use <strong>Import</strong> when it is\navailable.</p><p>Organization admins can also add shared API keys in\n<code>Settings → Organization → Agents</code> for everyone in the organization to use. A\nshared key takes precedence over a member's personal API key for the same\nagent.</p><p><strong>Finish</strong> becomes available once your credential is ready and the computer\nbuild has succeeded.</p><h2 id=\"set-up-the-computer-with-the-agent\"><a href=\"#set-up-the-computer-with-the-agent\">Set up the computer with the agent</a></h2><p>Finishing onboarding opens an Admin workspace with a suggested first prompt:</p><blockquote><p>Set up this computer for development. Check that you can run tests and\napplications in all the repos.</p></blockquote><p>Edit it if you like, then send it. The agent can test your repositories,\nupdate install and setup scripts, and run builds — without asking you to\nconfirm each step. See\n<a href=\"/docs/cloud/cloud-computer#edit-settings-with-an-agent\">Edit settings with an agent</a>.</p><h2 id=\"create-your-first-workspace\"><a href=\"#create-your-first-workspace\">Create your first workspace</a></h2><p>When the agent is done, press <code>⌘N</code>. Pick a repository and an optional starting\nbranch, pull request, or issue, then send the agent its first task.</p><h2 id=\"next-steps\"><a href=\"#next-steps\">Next steps</a></h2><ul><li><a href=\"/docs/cloud/working-with-cloud-workspaces\">Work with cloud workspaces</a></li><li><a href=\"/docs/cloud/collaboration\">Multiplayer</a></li><li><a href=\"/docs/cloud/cloud-computer\">Configure the Cloud Computer</a></li></ul>",
+  "text": "This tutorial takes you through Cloud onboarding, ending with an agent ready\nto set up your organization's development environment.\nYou need access to Conductor Cloud, a GitHub repository, and a subscription or\nAPI key for at least one supported agent.\nCreate or select the organization\nSign in to the Conductor Mac app.\nOpen the organization switcher and choose Create organization.\nName the organization and optionally invite teammates in the browser, then\nchoose Continue in Conductor.\nIf you're joining an organization that has already finished onboarding, you\ncan create a workspace right away — just add your agent credential when\nprompted.\nChoose the computer color\nThis is just for fun :)\nConnect GitHub and choose repositories\nConnect the Conductor GitHub App if prompted, then select at least one\nrepository to clone onto the Cloud Computer. Conductor starts building the\ncomputer when you continue.\nYou can add repositories later, and connect the GitHub App to additional\nGitHub organizations.\nAdd an agent\nAdd a personal subscription token or API key for at least one agent. If you\nalready configured credentials in local Conductor, use Import when it is\navailable.\nOrganization admins can also add shared API keys in\nSettings → Organization → Agents for everyone in the organization to use. A\nshared key takes precedence over a member's personal API key for the same\nagent.\nFinish becomes available once your credential is ready and the computer\nbuild has succeeded.\nSet up the computer with the agent\nFinishing onboarding opens an Admin workspace with a suggested first prompt:\nSet up this computer for development. Check that you can run tests and\napplications in all the repos.\nEdit it if you like, then send it. The agent can test your repositories,\nupdate install and setup scripts, and run builds — without asking you to\nconfirm each step. See\nEdit settings with an agent.\nCreate your first workspace\nWhen the agent is done, press ⌘N. Pick a repository and an optional starting\nbranch, pull request, or issue, then send the agent its first task.\nNext steps\nWork with cloud workspaces\nMultiplayer\nConfigure the Cloud Computer",
+  "markdown": "\n# Set up cloud\n\n\n\nThis tutorial takes you through Cloud onboarding, ending with an agent ready\nto set up your organization's development environment.\n\nYou need access to Conductor Cloud, a GitHub repository, and a subscription or\nAPI key for at least one supported agent.\n\n## Create or select the organization [#create-or-select-the-organization]\n\n1. Sign in to the Conductor Mac app.\n2. Open the organization switcher and choose **Create organization**.\n3. Name the organization and optionally invite teammates in the browser, then\n   choose **Continue in Conductor**.\n\nIf you're joining an organization that has already finished onboarding, you\ncan create a workspace right away — just add your agent credential when\nprompted.\n\n## Choose the computer color [#choose-the-computer-color]\n\nThis is just for fun :)\n\n## Connect GitHub and choose repositories [#connect-github-and-choose-repositories]\n\nConnect the Conductor GitHub App if prompted, then select at least one\nrepository to clone onto the Cloud Computer. Conductor starts building the\ncomputer when you continue.\n\nYou can add repositories later, and connect the GitHub App to additional\nGitHub organizations.\n\n## Add an agent [#add-an-agent]\n\nAdd a personal subscription token or API key for at least one agent. If you\nalready configured credentials in local Conductor, use **Import** when it is\navailable.\n\nOrganization admins can also add shared API keys in\n`Settings → Organization → Agents` for everyone in the organization to use. A\nshared key takes precedence over a member's personal API key for the same\nagent.\n\n**Finish** becomes available once your credential is ready and the computer\nbuild has succeeded.\n\n## Set up the computer with the agent [#set-up-the-computer-with-the-agent]\n\nFinishing onboarding opens an Admin workspace with a suggested first prompt:\n\n> Set up this computer for development. Check that you can run tests and\n> applications in all the repos.\n\nEdit it if you like, then send it. The agent can test your repositories,\nupdate install and setup scripts, and run builds — without asking you to\nconfirm each step. See\n[Edit settings with an agent](/docs/cloud/cloud-computer#edit-settings-with-an-agent).\n\n## Create your first workspace [#create-your-first-workspace]\n\nWhen the agent is done, press `⌘N`. Pick a repository and an optional starting\nbranch, pull request, or issue, then send the agent its first task.\n\n## Next steps [#next-steps]\n\n* [Work with cloud workspaces](/docs/cloud/working-with-cloud-workspaces)\n* [Multiplayer](/docs/cloud/collaboration)\n* [Configure the Cloud Computer](/docs/cloud/cloud-computer)\n"
+}

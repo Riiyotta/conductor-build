@@ -1,0 +1,28 @@
+{
+  "slug": "0.14.5-zoom-improvements",
+  "version": "0.14.5",
+  "versionSlug": "0.14.5",
+  "title": "Zoom Improvements",
+  "fullTitle": "0.14.5: Zoom Improvements",
+  "date": "Oct 9th, 2025",
+  "dateISO": "2025-10-09",
+  "description": "Conductor 0.14.5 changelog - Zoom Improvements",
+  "summary": "We've fixed a bug with zoom controls (⌘-, ⌘+) that would cause dragging elements to break.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.14.5-zoom-improvements/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.14.5-zoom-improvements",
+  "sourceUrl": "https://www.conductor.build/changelog/0.14.5-zoom-improvements",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a bug with zoom controls (<code>⌘-</code>, <code>⌘+</code>) that would cause dragging elements to break.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Made arrow key navigation between files in the diff more obvious</li>\n<li>Updated git diff empty state</li>\n<li>Focus the composer when closing the <code>Link Issue</code> dialog</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Prevent tooltips from going outside the app</li>\n<li>Hide system reminders from the <code>Read</code> tool in the UI</li>\n</ul>",
+  "markdown": "\nWe've fixed a bug with zoom controls (`⌘-`, `⌘+`) that would cause dragging elements to break.\n\n## Improvements\n\n- Made arrow key navigation between files in the diff more obvious\n- Updated git diff empty state\n- Focus the composer when closing the `Link Issue` dialog\n\n## Fixes\n\n- Prevent tooltips from going outside the app\n- Hide system reminders from the `Read` tool in the UI\n"
+}

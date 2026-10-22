@@ -1,0 +1,28 @@
+{
+  "slug": "0.13.6-run-on-bedrock-vertex-or-custom-provider",
+  "version": "0.13.6",
+  "versionSlug": "0.13.6",
+  "title": "Run on Bedrock, Vertex, or custom provider",
+  "fullTitle": "0.13.6: Run on Bedrock, Vertex, or custom provider",
+  "date": "Sept 30th, 2025",
+  "dateISO": "2025-09-30",
+  "description": "Conductor 0.13.6 changelog - Run on Bedrock, Vertex, or custom provider",
+  "summary": "You can now set up Claude Code to run via an alternate provider, like Bedrock, Vertex, or any Anthropic compatible URL.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.13.6/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.13.6-run-on-bedrock-vertex-or-custom-provider/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.13.6-run-on-bedrock-vertex-or-custom-provider",
+  "sourceUrl": "https://www.conductor.build/changelog/0.13.6-run-on-bedrock-vertex-or-custom-provider",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.13.6/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0.png\"/></figure>\n<p>You can now set up Claude Code to run via an alternate provider, like Bedrock, Vertex, or any Anthropic compatible URL.</p>\n<h3>Fixes</h3>\n<ul>\n<li>More reliable auto-updater</li>\n<li>Fixed width of &quot;Open In&quot; buttons</li>\n<li>Added privacy link to onboarding</li>\n<li>Added some tips on using <a href=\"/docs/guides/migrate-from-cursor#open-workspaces-in-cursor-or-vs-code\" target=\"_blank\" rel=\"noopener noreferrer\">Conductor with Cursor and VS Code</a>.</li>\n</ul>",
+  "markdown": "\n<img\n    width=\"1644\"\n    height=\"1454\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.13.6/d9888c2a-1849-4dc1-8ddb-0d9ef8c1e3f0.png\"\n/>\n\nYou can now set up Claude Code to run via an alternate provider, like Bedrock, Vertex, or any Anthropic compatible URL.\n\n## Fixes\n\n- More reliable auto-updater\n- Fixed width of \"Open In\" buttons\n- Added privacy link to onboarding\n- Added some tips on using [Conductor with Cursor and VS Code](/docs/guides/migrate-from-cursor#open-workspaces-in-cursor-or-vs-code).\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.22.4-expand-terminal-env-vars-and-github-enterprise",
+  "version": "0.22.4",
+  "versionSlug": "0.22.4",
+  "title": "Expand Terminal, Env Vars, and GitHub Enterprise",
+  "fullTitle": "0.22.4: Expand Terminal, Env Vars, and GitHub Enterprise",
+  "date": "Nov 18th, 2025",
+  "dateISO": "2025-11-18",
+  "description": "Conductor 0.22.4 changelog - Expand Terminal, Env Vars, and GitHub Enterprise",
+  "summary": "You can now expand the terminal to full height. Try Gemini 3 via the gemini cli:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.4/a070a527-3c35-4763-a58e-b75235882554.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.4-expand-terminal-env-vars-and-github-enterprise/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.4-expand-terminal-env-vars-and-github-enterprise",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.4-expand-terminal-env-vars-and-github-enterprise",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now expand the terminal to full height. Try Gemini 3 via the <a href=\"https://github.com/google-gemini/gemini-cli\" target=\"_blank\" rel=\"noopener noreferrer\">gemini cli</a>:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.4/a070a527-3c35-4763-a58e-b75235882554.png\"/></figure>\n<p>You can also now set env variables in Claude Code&#x27;s environment in <code>Settings</code> → <code>Env</code>. This is useful for <a href=\"/docs/guides/providers\" target=\"_blank\" rel=\"noopener noreferrer\">configuring third-party providers</a> or providing Claude with specific env values.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.4/402cb134-94d3-4010-8ded-35de9869d7bf.png\"/></figure>\n<p>If you&#x27;ve previously set a provider in the <code>Settings</code> → <code>Provider</code> tab, we automatically migrate your env variables to the new <code>Env</code> section.</p>\n<p>We&#x27;ve also added incremental expansion to our diff viewer:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.4/7536bf9a-7008-47b9-a1da-4733a2dd1912.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Support for GitHub enterprise login</li>\n<li>Expand terminal to full screen</li>\n<li>Add more PR template locations (<code>./pull_request_template.md</code>, <code>.github/pull_request_template.md</code>, <code>docs/pull_request_template.md</code>)</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Sidebar background color fix</li>\n</ul>",
+  "markdown": "\nYou can now expand the terminal to full height. Try Gemini 3 via the [gemini cli](https://github.com/google-gemini/gemini-cli):\n\n<img\n    width=\"2048\"\n    height=\"1373\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.4/a070a527-3c35-4763-a58e-b75235882554.png\"\n/>\n\nYou can also now set env variables in Claude Code's environment in `Settings` → `Env`. This is useful for [configuring third-party providers](/docs/guides/providers) or providing Claude with specific env values.\n\n<img\n    width=\"1718\"\n    height=\"960\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.4/402cb134-94d3-4010-8ded-35de9869d7bf.png\"\n/>\n\nIf you've previously set a provider in the `Settings` → `Provider` tab, we automatically migrate your env variables to the new `Env` section.\n\nWe've also added incremental expansion to our diff viewer:\n\n<img\n    width=\"1454\"\n    height=\"338\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.4/7536bf9a-7008-47b9-a1da-4733a2dd1912.png\"\n/>\n\n## Improvements\n\n- Support for GitHub enterprise login\n- Expand terminal to full screen\n- Add more PR template locations (`./pull_request_template.md`, `.github/pull_request_template.md`, `docs/pull_request_template.md`)\n\n## Fixes\n\n- Sidebar background color fix\n"
+}

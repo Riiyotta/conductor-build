@@ -1,0 +1,492 @@
+{
+  "$description": "Semantic roles. Every value is an alias into tokens/00-foundation; themes/light.json resolves them.",
+  "semantic": {
+    "text": {
+      "primary": {
+        "$value": "{color.foreground}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:29",
+            "quote": "| --foreground | `#2c2826` rgb(44,40,38) | primary text"
+          }
+        ]
+      },
+      "secondary": {
+        "$value": "{color.muted-foreground}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:34",
+            "quote": "| --muted-foreground | `#756f6c` rgb(117,111,108) | body copy, captions"
+          }
+        ]
+      },
+      "nav": {
+        "$value": "{color.foreground-70}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:30",
+            "quote": "| foreground/70 | rgba(44,40,38,0.7) | nav links"
+          }
+        ]
+      },
+      "inverse": {
+        "$value": "{color.background}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:101",
+            "quote": "bg #2c2826, text #fff, 14px weight 500"
+          }
+        ]
+      },
+      "badge": {
+        "$value": "{color.tip-muted}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:42",
+            "quote": "| --tip-muted | `#7d5e59` rgb(125,94,89) | changelog badge text"
+          }
+        ]
+      },
+      "positive": {
+        "$value": "{color.positive}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:38",
+            "quote": "| --positive | `#16a249`"
+          }
+        ]
+      },
+      "highlight": {
+        "$value": "{color.highlight-foreground}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:37",
+            "quote": "| --highlight-foreground | `#594545`"
+          }
+        ]
+      },
+      "docs-active": {
+        "$value": "{color.primary}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:46",
+            "quote": "active sidebar link text, active TOC link"
+          }
+        ]
+      },
+      "on-image": {
+        "$value": "{color.background}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:74",
+            "quote": "| CTA H2 \"Be like this guy.\" | 36px/40px, centered | **700** | -0.9px | #fff"
+          }
+        ]
+      },
+      "form-label": {
+        "$value": "{color.hubspot-label}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:215",
+            "quote": "Field label: 16px/21px weight 400, #212d3a"
+          }
+        ]
+      },
+      "form-error": {
+        "$value": "{color.hubspot-error}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:215",
+            "quote": "Required `*` is #e51520"
+          }
+        ]
+      }
+    },
+    "surface": {
+      "page": {
+        "$value": "{color.background}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:28",
+            "quote": "| --background | `#ffffff` | page, header, cards"
+          }
+        ]
+      },
+      "muted": {
+        "$value": "{color.muted}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:33",
+            "quote": "| --muted | `#fafaf9` rgb(250,250,249) | footer bg"
+          }
+        ]
+      },
+      "muted-hover-soft": {
+        "$value": "{color.muted-50}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:85",
+            "quote": "join-us \"Apply to join us\" card hover bg"
+          }
+        ]
+      },
+      "muted-hover-lighter": {
+        "$value": "{color.muted-80}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:86",
+            "quote": "brandkit link rows hover bg"
+          }
+        ]
+      },
+      "highlight": {
+        "$value": "{color.highlight}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:36",
+            "quote": "| --highlight | `#faf7f5` rgb(250,247,245) | chat bubbles"
+          }
+        ]
+      },
+      "inverse": {
+        "$value": "{color.foreground}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:29",
+            "quote": "nav Download button bg"
+          }
+        ]
+      },
+      "inverse-hover": {
+        "$value": "{color.foreground-90}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:31",
+            "quote": "| foreground/90 | rgba(44,40,38,0.9) | dark button hover bg"
+          }
+        ]
+      },
+      "badge": {
+        "$value": "{color.tip-secondary}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:40",
+            "quote": "| --tip-secondary | `#f8f7f6` | changelog badge bg"
+          }
+        ]
+      },
+      "brand-dark-panel": {
+        "$value": "{color.brand-dark}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:88",
+            "quote": "| `#282423` (literal `bg-[#282423]`) | brandkit dark preview panels"
+          }
+        ]
+      },
+      "apply-tile": {
+        "$value": "{color.apply-tile}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:87",
+            "quote": "| `#F5F5F5` (literal `bg-[#F5F5F5]`) | join-us apply-card icon tile"
+          }
+        ]
+      },
+      "docs-active": {
+        "$value": "{color.primary-10}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:47",
+            "quote": "| fd-primary/10 |"
+          }
+        ]
+      },
+      "docs-table": {
+        "$value": "{color.docs-table-shell}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:53",
+            "quote": "| --docs-table-shell | `#fdfcfc` | table container bg"
+          }
+        ]
+      },
+      "docs-table-header": {
+        "$value": "{color.docs-table-header}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:54",
+            "quote": "| --docs-table-header | `#f8f7f6` | th bg"
+          }
+        ]
+      },
+      "docs-callout": {
+        "$value": "{color.docs-callout-surface}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:56",
+            "quote": "| --docs-callout-surface | `#f9f7f6` | callout bg"
+          }
+        ]
+      }
+    },
+    "border": {
+      "default": {
+        "$value": "{color.border}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:35",
+            "quote": "| --border | `#eae8e6` rgb(234,232,230) | all 1px borders"
+          }
+        ]
+      },
+      "subtle": {
+        "$value": "{color.border-40}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:65",
+            "quote": "changelog article separators, pager top border"
+          }
+        ]
+      },
+      "card": {
+        "$value": "{color.border-80}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:64",
+            "quote": "cards, table shell, YouTube frame"
+          }
+        ]
+      },
+      "card-hover": {
+        "$value": "{color.foreground-30}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:32",
+            "quote": "| foreground/30 | rgba(44,40,38,0.3) | changelog card hover border"
+          }
+        ]
+      },
+      "badge": {
+        "$value": "{color.tip-secondary-border}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:41",
+            "quote": "| --tip-secondary-border | `#f3ece7` | changelog badge border"
+          }
+        ]
+      },
+      "docs-table": {
+        "$value": "{color.docs-table-border}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:55",
+            "quote": "| --docs-table-border | `#e3e0de`"
+          }
+        ]
+      },
+      "docs-callout": {
+        "$value": "{color.docs-callout-border}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:57",
+            "quote": "| --docs-callout-border | `#ece4df`"
+          }
+        ]
+      },
+      "form-input": {
+        "$value": "{color.hubspot-border}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:216",
+            "quote": "1px solid #959494, radius 3"
+          }
+        ]
+      }
+    },
+    "overlay": {
+      "dialog": {
+        "$value": "{color.black-50}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:47",
+            "quote": "| black/50 | rgba(0,0,0,0.5) | download dialog backdrop"
+          }
+        ]
+      },
+      "image": {
+        "$value": "{color.black-40}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:46",
+            "quote": "| black/40 | rgba(0,0,0,0.4) | CTA image overlay"
+          }
+        ]
+      },
+      "search": {
+        "$value": "{color.black-20}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:50",
+            "quote": "search dialog backdrop"
+          }
+        ]
+      }
+    },
+    "link": {
+      "underline": {
+        "$value": "{color.foreground-55}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:89",
+            "quote": "| foreground/55 = rgba(44,40,38,.55) | prose link underline color"
+          }
+        ]
+      }
+    },
+    "status": {
+      "presence": {
+        "$value": "{color.presence}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:43",
+            "quote": "multiplayer presence dots"
+          }
+        ]
+      }
+    },
+    "accent": {
+      "docs-callout": {
+        "$value": "{color.docs-callout-accent}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:59",
+            "quote": "| --docs-callout-accent | `#6e5149`"
+          }
+        ]
+      },
+      "fable-mark": {
+        "$value": "{color.fable}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:45",
+            "quote": "| Fable/Claude mark | `#D97757` | orchestration demo icon"
+          }
+        ]
+      }
+    },
+    "font": {
+      "body": {
+        "$value": "{typography.fontFamily.sans}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:18",
+            "quote": "**Computed font-family for all sans text:**"
+          }
+        ]
+      },
+      "mono": {
+        "$value": "{typography.fontFamily.mono}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:19",
+            "quote": "**Mono text** (only elements using"
+          }
+        ]
+      },
+      "prose": {
+        "$value": "{typography.fontFamily.prose}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:34",
+            "quote": "**Docs prose (`.prose`) uses a different stack**"
+          }
+        ]
+      },
+      "footer-home": {
+        "$value": "{typography.fontFamily.sans}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:283",
+            "quote": "Font is sans (see 0.1). Inner is `max-w-6xl` (1152)."
+          }
+        ]
+      },
+      "footer-other": {
+        "$value": "{typography.fontFamily.mono}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_PAGES.md:31",
+            "quote": "**FOOTER RENDERS IN REAL MONO ON ALL 8 SUBPAGES.**"
+          }
+        ],
+        "note": "Applies to all 305 non-home routes (8 standalone pages + 69 docs + 228 changelog)."
+      },
+      "version-badge-home": {
+        "$value": "{typography.fontFamily.sans}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC.md:87",
+            "quote": "| Changelog version badge | 12px/16px UPPERCASE, sans"
+          }
+        ]
+      },
+      "version-badge-changelog": {
+        "$value": "{typography.fontFamily.mono}",
+        "$type": "alias",
+        "measuredFrom": [
+          {
+            "ref": "CLONE_SPEC_DOCS.md:40",
+            "quote": "**Changelog version badges render in MONO on /changelog**"
+          }
+        ]
+      }
+    }
+  }
+}

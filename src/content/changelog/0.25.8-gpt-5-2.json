@@ -1,0 +1,32 @@
+{
+  "slug": "0.25.8-gpt-5-2",
+  "version": "0.25.8",
+  "versionSlug": "0.25.8",
+  "title": "GPT-5.2",
+  "fullTitle": "0.25.8: GPT-5.2",
+  "date": "Dec 11th, 2025",
+  "dateISO": "2025-12-11",
+  "description": "Conductor 0.25.8 changelog - GPT-5.2",
+  "summary": "OpenAI's latest frontier model is now available in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.25.8/55c5394f-cfb6-44bd-87e8-ba27c3d7a023.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.25.8-gpt-5-2/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.8-gpt-5-2",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.8-gpt-5-2",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>OpenAI&#x27;s latest frontier model is now available in Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.25.8/55c5394f-cfb6-44bd-87e8-ba27c3d7a023.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>The review button is now more obvious</li>\n<li>Improved rendering when Claude is checking background process status</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Reverted scrollbar click target changes that affected resizing panels</li>\n<li>Fixed costs sometimes showing incorrectly in the top bar</li>\n</ul>",
+  "markdown": "\nOpenAI's latest frontier model is now available in Conductor!\n\n<img\n    width=\"472\"\n    height=\"274\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.25.8/55c5394f-cfb6-44bd-87e8-ba27c3d7a023.png\"\n/>\n\n## Improvements\n\n- The review button is now more obvious\n- Improved rendering when Claude is checking background process status\n\n## Fixes\n\n- Reverted scrollbar click target changes that affected resizing panels\n- Fixed costs sometimes showing incorrectly in the top bar\n"
+}

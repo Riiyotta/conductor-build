@@ -1,0 +1,86 @@
+{
+  "id": "hero.pricing-title",
+  "category": "HERO",
+  "iaSections": [
+    "hero.pricing-title"
+  ],
+  "purpose": "Single centered page title for the pricing page.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Pricing.jsx:259",
+      "quote": "export default function Pricing() {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:123",
+      "quote": "1. **H1 \"Pricing\"**: centered"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "hero.pricing-title"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "heading": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 1
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.pricing"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "none"
+    ],
+    "defaultPatterns": [
+      "none"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:95",
+        "quote": "### 0.5 Motion on these pages"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "30px/36px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "h1",
+          "value": "36px/40px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

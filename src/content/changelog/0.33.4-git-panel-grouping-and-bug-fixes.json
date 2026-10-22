@@ -1,0 +1,32 @@
+{
+  "slug": "0.33.4-git-panel-grouping-and-bug-fixes",
+  "version": "0.33.4",
+  "versionSlug": "0.33.4",
+  "title": " Git Panel Grouping and Bug Fixes",
+  "fullTitle": "0.33.4:  Git Panel Grouping and Bug Fixes",
+  "date": "Jan 31st, 2026",
+  "dateISO": "2026-01-31",
+  "description": "Conductor 0.33.4 changelog -  Git Panel Grouping and Bug Fixes",
+  "summary": "The git panel changes tab now groups files into \"Uncommitted\" and \"Committed\" sections:",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.33.4/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png",
+    "alt": "CleanShot 2026-01-30 at 10.31.26@2x.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.33.4-git-panel-grouping-and-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.33.4-git-panel-grouping-and-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.33.4-git-panel-grouping-and-bug-fixes",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "Improvements:"
+    },
+    {
+      "depth": 4,
+      "title": "Fixes:"
+    }
+  ],
+  "html": "<p>The git panel changes tab now groups files into &quot;Uncommitted&quot; and &quot;Committed&quot; sections:</p>\n<figure data-asset><img alt=\"CleanShot 2026-01-30 at 10.31.26@2x.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.33.4/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png\"/></figure>\n<h4>Improvements:</h4>\n<ul>\n<li>You can now link GitHub issues without needing Linear authentication</li>\n<li>Creating a workspace from a PR now shows the correct diff (previously it could show extra unrelated files)</li>\n</ul>\n<h4>Fixes:</h4>\n<ul>\n<li>Fixed &quot;Open in&quot; detection for JetBrains IDEs installed through Toolbox</li>\n<li>Fixed extra blank space appearing at the bottom of the chat</li>\n<li>Fixed authentication failure message</li>\n</ul>",
+  "markdown": "\nThe git panel changes tab now groups files into \"Uncommitted\" and \"Committed\" sections:\n\n<img\n    src=\"/assets/changelog/media/0.33.4/1769882301424-CleanShot_2026-01-30_at_10.31.26_2x.png\"\n    alt=\"CleanShot 2026-01-30 at 10.31.26@2x.png\"\n/>\n\n### Improvements:\n\n- You can now link GitHub issues without needing Linear authentication\n- Creating a workspace from a PR now shows the correct diff (previously it could show extra unrelated files)\n\n### Fixes:\n\n- Fixed \"Open in\" detection for JetBrains IDEs installed through Toolbox\n- Fixed extra blank space appearing at the bottom of the chat\n- Fixed authentication failure message\n"
+}

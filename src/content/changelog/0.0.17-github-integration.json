@@ -1,0 +1,32 @@
+{
+  "slug": "0.0.17-github-integration",
+  "version": "0.0.17",
+  "versionSlug": "0.0.17",
+  "title": "GitHub Integration",
+  "fullTitle": "0.0.17: GitHub Integration",
+  "date": "July 19th, 2025",
+  "dateISO": "2025-07-19",
+  "description": "Conductor 0.0.17 changelog - GitHub Integration",
+  "summary": "Conductor now integrates with your GitHub account. Start working on issues in one click, and easily add your private repositories.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.0.17/1541d4ee-8efb-4050-9412-d7d10632b94e.png",
+    "alt": "CleanShot 2025-07-19 at 09 42 50@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.0.17-github-integration/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.0.17-github-integration",
+  "sourceUrl": "https://www.conductor.build/changelog/0.0.17-github-integration",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Conductor now integrates with your GitHub account. Start working on issues in one click, and easily add your private repositories.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-19 at 09 42 50@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.17/1541d4ee-8efb-4050-9412-d7d10632b94e.png\"/></figure>\n<figure data-asset><img alt=\"CleanShot 2025-07-19 at 09 50 26@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.17/79ec33e1-ce33-4196-885e-e5e016db0949.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Integrate with GitHub</li>\n<li>Refreshed design of the left sidebar</li>\n<li>Terminal processes now use your native shell instead of forcing zsh</li>\n<li><code>Ctrl+D</code> now force restarts the current terminal process</li>\n<li>Added a button to provide feedback in-app</li>\n<li>⌘N to start a new workspace in your current repository</li>\n<li>Sleeker home page animation</li>\n<li>Added system theme</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed the highlight color in the terminal</li>\n<li>Fixed the right panel closing when dismissing the settings dialog</li>\n</ul>",
+  "markdown": "\nConductor now integrates with your GitHub account. Start working on issues in one click, and easily add your private repositories.\n\n<img\n    width=\"1638\"\n    height=\"1036\"\n    alt=\"CleanShot 2025-07-19 at 09 42 50@2x\"\n    src=\"/assets/changelog/media/0.0.17/1541d4ee-8efb-4050-9412-d7d10632b94e.png\"\n/>\n\n<img\n    width=\"1216\"\n    height=\"860\"\n    alt=\"CleanShot 2025-07-19 at 09 50 26@2x\"\n    src=\"/assets/changelog/media/0.0.17/79ec33e1-ce33-4196-885e-e5e016db0949.png\"\n/>\n\n## Improvements\n\n- Integrate with GitHub\n- Refreshed design of the left sidebar\n- Terminal processes now use your native shell instead of forcing zsh\n- `Ctrl+D` now force restarts the current terminal process\n- Added a button to provide feedback in-app\n- ⌘N to start a new workspace in your current repository\n- Sleeker home page animation\n- Added system theme\n\n## Fixes\n\n- Fixed the highlight color in the terminal\n- Fixed the right panel closing when dismissing the settings dialog\n"
+}

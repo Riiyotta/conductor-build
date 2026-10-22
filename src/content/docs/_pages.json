@@ -1,0 +1,565 @@
+[
+  {
+    "slug": "index",
+    "url": "/docs",
+    "title": "Introduction",
+    "description": "Learn what Conductor is and where to start in the docs",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "api",
+    "url": "/docs/api",
+    "title": "Conductor API",
+    "description": "Drive Conductor cloud workspaces programmatically over HTTP",
+    "components": [
+      "ApiKeyTester",
+      "ApiAgentPrompt"
+    ],
+    "headings": 15
+  },
+  {
+    "slug": "api/mcp",
+    "url": "/docs/api/mcp",
+    "title": "Conductor MCP server",
+    "description": "Connect an MCP client to create and manage Conductor cloud workspaces",
+    "components": [
+      "ApiAgentPrompt"
+    ],
+    "headings": 11
+  },
+  {
+    "slug": "cloud",
+    "url": "/docs/cloud",
+    "title": "What is Conductor Cloud?",
+    "description": "Run coding agents in shared cloud workspaces with your team",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "cloud/cloud-computer",
+    "url": "/docs/cloud/cloud-computer",
+    "title": "Cloud Computer",
+    "description": "Configure the shared repositories, environment, software, and builds for your organization",
+    "components": [],
+    "headings": 8
+  },
+  {
+    "slug": "cloud/collaboration",
+    "url": "/docs/cloud/collaboration",
+    "title": "Multiplayer",
+    "description": "Find team work, share chats, follow workspaces, and hand work to a teammate",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "cloud/environment-variables",
+    "url": "/docs/cloud/environment-variables",
+    "title": "Cloud workspace environment variables",
+    "description": "Variables available to Cloud Computer builds, setup scripts, agents, and terminals",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "cloud/faq",
+    "url": "/docs/cloud/faq",
+    "title": "Cloud FAQ",
+    "description": "Plans, specifications, pricing, and security for Conductor Cloud",
+    "components": [],
+    "headings": 18
+  },
+  {
+    "slug": "cloud/getting-started",
+    "url": "/docs/cloud/getting-started",
+    "title": "Set up cloud",
+    "description": "Connect GitHub, add an agent credential, and set up your Cloud Computer",
+    "components": [],
+    "headings": 7
+  },
+  {
+    "slug": "cloud/working-with-cloud-workspaces",
+    "url": "/docs/cloud/working-with-cloud-workspaces",
+    "title": "Work with cloud workspaces",
+    "description": "Use workspace status, SSH, file sync, terminals, and forwarded ports",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "concepts/agent-modes",
+    "url": "/docs/concepts/agent-modes",
+    "title": "Agent modes",
+    "description": "Understand Plan Mode, Fast Mode, reasoning controls, and agent-specific session controls",
+    "components": [],
+    "headings": 9
+  },
+  {
+    "slug": "concepts/git-worktrees",
+    "url": "/docs/concepts/git-worktrees",
+    "title": "Git worktrees",
+    "description": "Understand how Conductor uses Git worktrees to create isolated coding-agent workspaces",
+    "components": [],
+    "headings": 7
+  },
+  {
+    "slug": "concepts/parallel-agents",
+    "url": "/docs/concepts/parallel-agents",
+    "title": "Parallel agents",
+    "description": "Choose when to split work across workspaces or inside one workspace",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "concepts/testing",
+    "url": "/docs/concepts/testing",
+    "title": "Testing",
+    "description": "Automate testing in Conductor",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "concepts/workflow",
+    "url": "/docs/concepts/workflow",
+    "title": "Workflow",
+    "description": "How Conductor turns isolated workspace streams into reviewed pull requests",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "concepts/workspaces-and-branches",
+    "url": "/docs/concepts/workspaces-and-branches",
+    "title": "Isolated workspaces",
+    "description": "Understand projects, repositories, workspaces, branches, working trees, and running environments",
+    "components": [],
+    "headings": 7
+  },
+  {
+    "slug": "configure-your-project",
+    "url": "/docs/configure-your-project",
+    "title": "Configure your project",
+    "description": "Set up shared Conductor project settings for new workspaces",
+    "components": [
+      "ConfigureProjectPrompt"
+    ],
+    "headings": 8
+  },
+  {
+    "slug": "faq",
+    "url": "/docs/faq",
+    "title": "FAQ",
+    "description": "Frequently asked questions about Conductor",
+    "components": [],
+    "headings": 10
+  },
+  {
+    "slug": "first-workspace",
+    "url": "/docs/first-workspace",
+    "title": "Your first workspace",
+    "description": "Import a repository, configure it, and start agent work in an isolated Conductor workspace",
+    "components": [],
+    "headings": 6
+  },
+  {
+    "slug": "guides/configure-mcp-servers",
+    "url": "/docs/guides/configure-mcp-servers",
+    "title": "Set up MCP servers",
+    "description": "Add MCP servers for Claude Code, Codex, and Cursor Composer workflows so agents can use shared tools and context",
+    "components": [],
+    "headings": 11
+  },
+  {
+    "slug": "guides/configure-settings",
+    "url": "/docs/guides/configure-settings",
+    "title": "Configure settings",
+    "description": "Set personal defaults, project settings, and local project overrides in Conductor",
+    "components": [],
+    "headings": 15
+  },
+  {
+    "slug": "guides/git-worktrees/run-claude-code-with-git-worktrees",
+    "url": "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees",
+    "title": "Run Claude Code with Git worktrees",
+    "description": "Use Claude Code in Conductor workspaces so parallel sessions get separate branches, files, and setup",
+    "components": [],
+    "headings": 8
+  },
+  {
+    "slug": "guides/git-worktrees/run-codex-with-git-worktrees",
+    "url": "/docs/guides/git-worktrees/run-codex-with-git-worktrees",
+    "title": "Run Codex with Git worktrees",
+    "description": "Use Codex in Conductor workspaces so each task gets its own branch, files, and run environment",
+    "components": [],
+    "headings": 8
+  },
+  {
+    "slug": "guides/issue-to-pr",
+    "url": "/docs/guides/issue-to-pr",
+    "title": "From issue to PR",
+    "description": "Take a GitHub or Linear issue through implementation, review, and pull request",
+    "components": [],
+    "headings": 7
+  },
+  {
+    "slug": "guides/migrate-from-cursor",
+    "url": "/docs/guides/migrate-from-cursor",
+    "title": "Work with Cursor",
+    "description": "Run Cursor sessions in Conductor, open workspaces in Cursor or VS Code, and bring Cursor MCP servers and rules into Conductor",
+    "components": [],
+    "headings": 12
+  },
+  {
+    "slug": "guides/parallel-agents/run-multiple-claude-code-sessions",
+    "url": "/docs/guides/parallel-agents/run-multiple-claude-code-sessions",
+    "title": "Run multiple Claude Code sessions in parallel",
+    "description": "Use Conductor workspaces to run several Claude Code tasks at once without sharing one checkout, branch, or review path",
+    "components": [],
+    "headings": 9
+  },
+  {
+    "slug": "guides/parallel-agents/run-multiple-codex-sessions",
+    "url": "/docs/guides/parallel-agents/run-multiple-codex-sessions",
+    "title": "Run multiple Codex sessions in parallel",
+    "description": "Use Conductor workspaces to run several Codex tasks at once with separate branches, files, terminals, and review state",
+    "components": [],
+    "headings": 9
+  },
+  {
+    "slug": "guides/parallel-agents/run-multiple-cursor-sessions",
+    "url": "/docs/guides/parallel-agents/run-multiple-cursor-sessions",
+    "title": "Run multiple Cursor sessions in parallel",
+    "description": "Use Conductor workspaces to run several Cursor tasks at once with separate branches, files, terminals, and review state",
+    "components": [],
+    "headings": 10
+  },
+  {
+    "slug": "guides/providers",
+    "url": "/docs/guides/providers",
+    "title": "Configure model providers",
+    "description": "Set up Claude Code, Codex, OpenCode, and Cursor credentials in Conductor",
+    "components": [],
+    "headings": 9
+  },
+  {
+    "slug": "guides/repositories/linking-multiple-directories",
+    "url": "/docs/guides/repositories/linking-multiple-directories",
+    "title": "Linking multiple directories",
+    "description": "Let one workspace read and edit code across related repositories",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "guides/repositories/monorepos",
+    "url": "/docs/guides/repositories/monorepos",
+    "title": "Work in monorepos",
+    "description": "Control which directories agents can see in a monorepo workspace",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "guides/review-and-merge",
+    "url": "/docs/guides/review-and-merge",
+    "title": "Review and merge a workspace",
+    "description": "Use Conductor's review, checks, and PR tools before merging",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "guides/use-files-to-copy",
+    "url": "/docs/guides/use-files-to-copy",
+    "title": "Use Files to copy",
+    "description": "Copy .env files and other gitignored local config into local Conductor workspaces",
+    "components": [],
+    "headings": 8
+  },
+  {
+    "slug": "installation",
+    "url": "/docs/installation",
+    "title": "Install",
+    "description": "Get Conductor running on your Mac",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/agent-behavior",
+    "url": "/docs/reference/agent-behavior",
+    "title": "Agent behavior",
+    "description": "Reference for agent instructions, modes, permissions, and checkpoints",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "reference/big-terminal-mode",
+    "url": "/docs/reference/big-terminal-mode",
+    "title": "Big Terminal Mode",
+    "description": "Use a full terminal in the center panel",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/checkpoints",
+    "url": "/docs/reference/checkpoints",
+    "title": "Checkpoints",
+    "description": "View turn by turn changes in a workspace and revert to previous turns",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/checks",
+    "url": "/docs/reference/checks",
+    "title": "Checks",
+    "description": "Reference for merge readiness signals in a workspace",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/cities",
+    "url": "/docs/reference/cities",
+    "title": "Cities",
+    "description": "How Conductor names workspaces after cities",
+    "components": [
+      "CityProbabilityCurve"
+    ],
+    "headings": 5
+  },
+  {
+    "slug": "reference/conductor-json",
+    "url": "/docs/reference/conductor-json",
+    "title": "conductor.json",
+    "description": "Legacy repository configuration file for Conductor",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "reference/deep-links",
+    "url": "/docs/reference/deep-links",
+    "title": "Deep links",
+    "description": "Open Conductor and trigger actions via conductor:// URLs",
+    "components": [],
+    "headings": 10
+  },
+  {
+    "slug": "reference/diff-viewer",
+    "url": "/docs/reference/diff-viewer",
+    "title": "Diff viewer",
+    "description": "Review workspace changes, comments, and PR-ready diffs",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/environment-variables",
+    "url": "/docs/reference/environment-variables",
+    "title": "Conductor environment variables",
+    "description": "Variables available to workspace terminals, agents, and scripts",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/files-to-copy",
+    "url": "/docs/reference/files-to-copy",
+    "title": "Files to copy",
+    "description": "Configure gitignored files that Conductor copies into new workspaces",
+    "components": [],
+    "headings": 6
+  },
+  {
+    "slug": "reference/harnesses",
+    "url": "/docs/reference/harnesses",
+    "title": "Overview",
+    "description": "Compare the harnesses Conductor can run and where each one is configured",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/harnesses/claude-code",
+    "url": "/docs/reference/harnesses/claude-code",
+    "title": "Claude Code",
+    "description": "Details for running Claude Code inside Conductor",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/harnesses/codex",
+    "url": "/docs/reference/harnesses/codex",
+    "title": "Codex",
+    "description": "Details for running OpenAI Codex inside Conductor",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/harnesses/cursor",
+    "url": "/docs/reference/harnesses/cursor",
+    "title": "Cursor",
+    "description": "Details for running the Cursor Agent harness inside Conductor",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/harnesses/opencode",
+    "url": "/docs/reference/harnesses/opencode",
+    "title": "OpenCode",
+    "description": "Details for running the OpenCode harness inside Conductor",
+    "components": [],
+    "headings": 2
+  },
+  {
+    "slug": "reference/keyboard-shortcuts",
+    "url": "/docs/reference/keyboard-shortcuts",
+    "title": "Keyboard shortcuts",
+    "description": "Conductor shortcuts for navigation, workspaces, chat, review, Git, terminal, and app actions",
+    "components": [
+      "KeyboardShortcutsCheatsheetOverlay"
+    ],
+    "headings": 0
+  },
+  {
+    "slug": "reference/mcp",
+    "url": "/docs/reference/mcp",
+    "title": "MCP",
+    "description": "Configure Model Context Protocol servers for Claude Code, Codex, and Cursor Composer workflows",
+    "components": [],
+    "headings": 10
+  },
+  {
+    "slug": "reference/privacy",
+    "url": "/docs/reference/privacy",
+    "title": "Privacy",
+    "description": "What we do (and don't do) with your data.",
+    "components": [],
+    "headings": 7
+  },
+  {
+    "slug": "reference/remote-control",
+    "url": "/docs/reference/remote-control",
+    "title": "Remote Control",
+    "description": "Control your Mac's local workspaces from the Conductor iOS app",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "reference/scripts",
+    "url": "/docs/reference/scripts",
+    "title": "Scripts",
+    "description": "Reference for setup scripts, archive scripts, and actions",
+    "components": [],
+    "headings": 12
+  },
+  {
+    "slug": "reference/scripts/run",
+    "url": "/docs/reference/scripts/run",
+    "title": "Actions reference",
+    "description": "Actions are covered in the project scripts reference",
+    "components": [],
+    "headings": 0
+  },
+  {
+    "slug": "reference/scripts/setup",
+    "url": "/docs/reference/scripts/setup",
+    "title": "Setup script reference",
+    "description": "Setup scripts are covered in the project scripts reference",
+    "components": [],
+    "headings": 0
+  },
+  {
+    "slug": "reference/scripts/share-with-teammates",
+    "url": "/docs/reference/scripts/share-with-teammates",
+    "title": "Share repository settings with teammates",
+    "description": "Commit .conductor/settings.toml so a repository can share Conductor scripts and settings",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "reference/scripts/spotlight-testing",
+    "url": "/docs/reference/scripts/spotlight-testing",
+    "title": "Spotlight testing",
+    "description": "Test one workspace from the repository root",
+    "components": [],
+    "headings": 5
+  },
+  {
+    "slug": "reference/security-and-permissions",
+    "url": "/docs/reference/security-and-permissions",
+    "title": "Security and permissions",
+    "description": "How execution, tool approvals, macOS permissions, and network traffic work.",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "reference/settings",
+    "url": "/docs/reference/settings",
+    "title": "Settings",
+    "description": "How Conductor settings configure workspaces, scripts, agents, and projects",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "reference/settings/example",
+    "url": "/docs/reference/settings/example",
+    "title": "Sample settings configurations",
+    "description": "Example repository settings files for Conductor",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/settings/managed",
+    "url": "/docs/reference/settings/managed",
+    "title": "Managed settings",
+    "description": "Reference for organization-managed Conductor settings",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "reference/settings/reference",
+    "url": "/docs/reference/settings/reference",
+    "title": "Settings reference",
+    "description": "Conductor settings keys by scope",
+    "components": [],
+    "headings": 13
+  },
+  {
+    "slug": "reference/settings/user-project",
+    "url": "/docs/reference/settings/user-project",
+    "title": "User and project settings",
+    "description": "Reference for Conductor user, project, and local project settings",
+    "components": [],
+    "headings": 8
+  },
+  {
+    "slug": "reference/shells",
+    "url": "/docs/reference/shells",
+    "title": "Shell configuration",
+    "description": "Configure shell setup",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/slash-commands",
+    "url": "/docs/reference/slash-commands",
+    "title": "Slash commands",
+    "description": "Reusable prompt commands for agent chats",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/todos",
+    "url": "/docs/reference/todos",
+    "title": "Todos",
+    "description": "Track merge-blocking work in a workspace",
+    "components": [],
+    "headings": 3
+  },
+  {
+    "slug": "reference/worktreeinclude",
+    "url": "/docs/reference/worktreeinclude",
+    "title": ".worktreeinclude",
+    "description": "Project file format for shared Files to copy patterns",
+    "components": [],
+    "headings": 4
+  },
+  {
+    "slug": "troubleshooting/issues",
+    "url": "/docs/troubleshooting/issues",
+    "title": "Troubleshooting issues",
+    "description": "Fix common authentication, agent, script, workspace, review, and known product issues",
+    "components": [],
+    "headings": 29
+  }
+]

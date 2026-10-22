@@ -1,0 +1,28 @@
+{
+  "slug": "0.22.6-conversation-summaries-codex-diffs-and-custom-review-models",
+  "version": "0.22.6",
+  "versionSlug": "0.22.6",
+  "title": "Conversation Summaries, Codex Diffs, and Custom Review Models",
+  "fullTitle": "0.22.6: Conversation Summaries, Codex Diffs, and Custom Review Models",
+  "date": "Nov 20th, 2025",
+  "dateISO": "2025-11-20",
+  "description": "Conductor 0.22.6 changelog - Conversation Summaries, Codex Diffs, and Custom Review Models",
+  "summary": "You can now attach a summary of your previous chats in new tabs.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.22.6/6ebca22f-7ea4-4408-af65-a4d8d96477da.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.22.6-conversation-summaries-codex-diffs-and-custom-review-models/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.22.6-conversation-summaries-codex-diffs-and-custom-review-models",
+  "sourceUrl": "https://www.conductor.build/changelog/0.22.6-conversation-summaries-codex-diffs-and-custom-review-models",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now attach a summary of your previous chats in new tabs.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.6/6ebca22f-7ea4-4408-af65-a4d8d96477da.png\"/></figure>\n<p>Conductor now shows Codex&#x27;s changes after each turn.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.6/945cb1fe-4a19-4325-88ef-5f7ef06a3c5a.png\"/></figure>\n<p>Also, select your default model and thinking level for reviews.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.22.6/1ea3a260-a233-4876-be07-319aac3c79d1.png\"/></figure>\n<h3>Fixes</h3>\n<ul>\n<li>Fix the retry button</li>\n<li>Prevent the escape key from cancelling the agent while editing the branch name</li>\n</ul>",
+  "markdown": "\nYou can now attach a summary of your previous chats in new tabs.\n\n<img\n    width=\"1018\"\n    height=\"316\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.6/6ebca22f-7ea4-4408-af65-a4d8d96477da.png\"\n/>\n\nConductor now shows Codex's changes after each turn.\n\n<img\n    width=\"1452\"\n    height=\"1240\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.6/945cb1fe-4a19-4325-88ef-5f7ef06a3c5a.png\"\n/>\n\nAlso, select your default model and thinking level for reviews.\n\n<img\n    width=\"1520\"\n    height=\"1376\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.22.6/1ea3a260-a233-4876-be07-319aac3c79d1.png\"\n/>\n\n## Fixes\n\n- Fix the retry button\n- Prevent the escape key from cancelling the agent while editing the branch name\n"
+}

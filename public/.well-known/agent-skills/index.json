@@ -1,0 +1,15 @@
+{
+    "$schema": "https://schemas.agentskills.io/discovery/0.2.0/schema.json",
+    "skills": [
+        {
+            "name": "conductor",
+            "type": "skill-md",
+            "description": "Configure, operate, and troubleshoot Conductor — workspaces, repository settings.toml files, scripts, files to copy, managed settings, agent controls, and review workflows. Use when helping someone set up or operate Conductor.",
+            "url": "/.well-known/agent-skills/conductor/SKILL.md",
+            "files": [
+                "SKILL.md"
+            ],
+            "digest": "sha256:f1011cd54fec859966c95a6ea18f999546aa88030a2128f3f90e2567bc799e5c"
+        }
+    ]
+}

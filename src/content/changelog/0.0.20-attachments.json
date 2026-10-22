@@ -1,0 +1,36 @@
+{
+  "slug": "0.0.20-attachments",
+  "version": "0.0.20",
+  "versionSlug": "0.0.20",
+  "title": "Attachments",
+  "fullTitle": "0.0.20: Attachments",
+  "date": "July 22nd, 2025",
+  "dateISO": "2025-07-22",
+  "description": "Conductor 0.0.20 changelog - Attachments",
+  "summary": "Conductor now supports attachments!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.0.20/73322103-6874-4eac-a2d9-16da5692586e.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.0.20-attachments/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.0.20-attachments",
+  "sourceUrl": "https://www.conductor.build/changelog/0.0.20-attachments",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Conductor now supports attachments!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.0.20/73322103-6874-4eac-a2d9-16da5692586e.png\"/></figure>\n<p>Upload files by pasting (<code>⌘+V</code>), dragging and dropping, or clicking the paperclip icon in the Composer.</p>\n<h3>Improvements</h3>\n<ul>\n<li>The default branch can now be configured per repository\n<ul>\n<li>Select a repository in the sidebar to configure its default branch, or use &quot;More Options&quot; when adding a new repository</li>\n</ul>\n</li>\n<li>Added an option to open a workspace in Warp</li>\n<li>Added a button to copy a chat compaction summary</li>\n<li>Added a list of all in-app shortcuts accessible via <code>Cmd+/</code></li>\n<li>The archive confirmation dialog now closes immediately when &quot;Archive Anyway&quot; is clicked</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Optimized the rendering performance of workspaces with long chat histories</li>\n<li>Fixed a bug where workspace setup scripts wouldn&#x27;t run when creating a workspace from a GitHub Issue</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Disabled the &quot;Create PR&quot; button while Claude is sending messages</li>\n</ul>",
+  "markdown": "\nConductor now supports attachments!\n\n<img\n    width=\"1754\"\n    height=\"478\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.0.20/73322103-6874-4eac-a2d9-16da5692586e.png\"\n/>\n\nUpload files by pasting (`⌘+V`), dragging and dropping, or clicking the paperclip icon in the Composer.\n\n## Improvements\n\n- The default branch can now be configured per repository\n    - Select a repository in the sidebar to configure its default branch, or use \"More Options\" when adding a new repository\n- Added an option to open a workspace in Warp\n- Added a button to copy a chat compaction summary\n- Added a list of all in-app shortcuts accessible via `Cmd+/`\n- The archive confirmation dialog now closes immediately when \"Archive Anyway\" is clicked\n\n## Fixes\n\n- Optimized the rendering performance of workspaces with long chat histories\n- Fixed a bug where workspace setup scripts wouldn't run when creating a workspace from a GitHub Issue\n\n## Misc\n\n- Disabled the \"Create PR\" button while Claude is sending messages\n"
+}

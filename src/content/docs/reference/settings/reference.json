@@ -1,0 +1,2943 @@
+{
+  "slug": "reference/settings/reference",
+  "url": "/docs/reference/settings/reference",
+  "title": "Settings reference",
+  "description": "Conductor settings keys by scope",
+  "meta": {
+    "title": "Settings reference | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/settings/reference/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Settings reference"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#repository-settings",
+      "title": "Repository settings"
+    },
+    {
+      "depth": 3,
+      "url": "#scripts",
+      "title": "Scripts"
+    },
+    {
+      "depth": 3,
+      "url": "#actions",
+      "title": "Actions"
+    },
+    {
+      "depth": 3,
+      "url": "#workspace-behavior",
+      "title": "Workspace behavior"
+    },
+    {
+      "depth": 3,
+      "url": "#preview-urls",
+      "title": "Preview URLs"
+    },
+    {
+      "depth": 3,
+      "url": "#environment-variables",
+      "title": "Environment variables"
+    },
+    {
+      "depth": 3,
+      "url": "#prompts",
+      "title": "Prompts"
+    },
+    {
+      "depth": 3,
+      "url": "#harnesses",
+      "title": "Harnesses"
+    },
+    {
+      "depth": 3,
+      "url": "#git",
+      "title": "Git"
+    },
+    {
+      "depth": 2,
+      "url": "#user-only-settings",
+      "title": "User-only settings"
+    },
+    {
+      "depth": 2,
+      "url": "#managed-settings",
+      "title": "Managed settings"
+    },
+    {
+      "depth": 2,
+      "url": "#unsupported-by-scope",
+      "title": "Unsupported by scope"
+    },
+    {
+      "depth": 2,
+      "url": "#schema-urls",
+      "title": "Schema URLs"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/settings/managed",
+    "title": "Managed",
+    "description": "Reference for organization-managed Conductor settings"
+  },
+  "next": {
+    "url": "/docs/reference/settings/example",
+    "title": "Sample configs",
+    "description": "Example repository settings files for Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use this page as the key reference for Conductor settings files. For the layered settings model, file locations, and precedence rules, start with "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/user-project"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "User and project settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "repository-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Repository settings apply to "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "<repo>/.conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "<repo>/.conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". They support workspace and repository behavior, not every user preference."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "scripts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Scripts"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.setup"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Command to run when Conductor creates a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.archive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Command to run before Conductor archives a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run_mode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "concurrent"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "nonconcurrent"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "actions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.command"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Command to run from the Run button."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.args"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string array"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Optional arguments passed with the command."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.options.cwd"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Optional working directory relative to the workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.default"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Selects this action by default when the project has many actions."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.icon"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Lucide icon name shown with the action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.hide"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Hides the action from the Run button. Overridable per layer, so a local layer can hide a shared action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>.available_in"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string or string array"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "local"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "cloud"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": ", or both."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Legacy single action. Use "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "scripts.run.<id>"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " for multiple actions."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "workspace-behavior",
+      "children": [
+        {
+          "type": "text",
+          "value": "Workspace behavior"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "enterprise_data_privacy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Enables Enterprise data privacy for the repository."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "spotlight_testing"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Uses Spotlight testing for projects that must run from the repository root."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "file_include_globs"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Files to copy patterns used when "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": ".worktreeinclude"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " is not present."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "preview_urls"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "array"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "URLs opened from the terminal panel."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "preview-urls",
+      "children": [
+        {
+          "type": "text",
+          "value": "Preview URLs"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "preview_urls"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " configures the terminal panel's Open button. The first URL is the default; additional URLs appear in its menu. Each entry accepts a "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "url"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and an optional "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "name"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "toml",
+      "title": ".conductor/settings.toml",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "[[preview_urls]]\nname = \"Web\"\nurl = \"http://localhost:$CONDUCTOR_PORT\"\n\n[[preview_urls]]\nname = \"API\"\nurl = \"http://localhost:$((CONDUCTOR_PORT + 1))\"",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "[[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "preview_urls",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "name = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"Web\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "url = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"http://localhost:$CONDUCTOR_PORT\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": []
+        },
+        {
+          "tokens": [
+            {
+              "text": "[[",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "preview_urls",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": "]]",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "name = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"API\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "url = ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"http://localhost:$((CONDUCTOR_PORT + 1))\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor replaces environment variables in Preview URLs. Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$((CONDUCTOR_PORT + 1))"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " through "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$((CONDUCTOR_PORT + 9))"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the other ports allocated to a local workspace. Preview URLs support only this port-offset expression; they are not shell commands."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "environment-variables",
+      "children": [
+        {
+          "type": "text",
+          "value": "Environment variables"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "environment_variables"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment variables passed to local and cloud agents in this repository."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "environment_variables.local"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment variables passed to local agents only."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "environment_variables.cloud"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Environment variables passed to cloud agents only."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "prompts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Prompts"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.general"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Added to agent sessions for this repository."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.code_review"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom prompt for the code review action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.create_pr"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom prompt for the create PR action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.fix_errors"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom prompt for the fix errors action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.resolve_merge_conflicts"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom prompt for the resolve merge conflicts action."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "prompts.rename_branch"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom prompt for branch naming."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "harnesses",
+      "children": [
+        {
+          "type": "text",
+          "value": "Harnesses"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude_code_executable_path"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Override the Claude Code executable path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex_executable_path"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Override the Codex executable path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude_provider"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Provider backing Claude, such as Anthropic, Bedrock, or Vertex."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "codex_provider"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Provider backing Codex."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "bedrock_region"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "AWS Bedrock region for Claude."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "vertex_project_id"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Google Vertex project ID for Claude."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "ssh_key_path"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Path to the SSH private key used for cloud workspaces."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "git",
+      "children": [
+        {
+          "type": "text",
+          "value": "Git"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git.delete_branch_on_archive"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Delete the workspace branch when archiving."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git.archive_on_merge"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Archive a workspace automatically when its pull request merges."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git.worktree_push_auto_setup_remote"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Automatically configure the upstream remote on first push."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git.branch_prefix_type"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "How branch name prefixes are generated."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "git.branch_prefix"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Custom branch name prefix."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "user-only-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "User-only settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "User settings in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.conductor/settings.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " support every file-backed setting. These settings are user-only and are ignored in repository settings files."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.default"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Default model for new chats."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.review"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Model used for code reviews."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.default_fast_mode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Enable fast mode by default for new chats."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.default_plan_mode"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Start new chats in plan mode by default."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.codex.default_thinking_level"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Default Codex thinking level for new chats."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.codex.review_thinking_level"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Codex thinking level used for code reviews."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.codex.personality"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Default Codex personality."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.codex.tool_approval_policy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Whether Conductor automatically approves Codex tool requests: "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "default"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": " or "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "always_approve"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.claude_code.default_effort_level"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Default Claude effort level for new chats."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.claude_code.review_effort_level"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Claude effort level used for code reviews."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "tool_approvals_enabled"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Require approval before agents run tools."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "managed-settings",
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed settings"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Managed settings are for organizations. They live in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.conductor/settings.managed.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and override user and repository settings."
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "TOML key"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Type"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "enterprise_data_privacy"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "boolean"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Enables Enterprise data privacy."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "claude_code_executable_path"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Overrides the Claude Code executable path."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "models.default"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "string"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Sets the default model."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "environmentVariables.local"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Sets managed environment variables for local agents."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "environmentVariables.cloud"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "table"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Sets managed environment variables for cloud agents."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For managed file behavior and examples, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/settings/managed"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Managed settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "unsupported-by-scope",
+      "children": [
+        {
+          "type": "text",
+          "value": "Unsupported by scope"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Case"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Behavior"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "User-only settings in a repository file"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Conductor ignores them. Put model defaults, tool approvals, and default workspace location in "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.conductor/settings.toml"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Unknown keys in a repository settings file"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Conductor rejects keys that are not in the repository schema."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Unknown keys in a managed settings file"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Conductor ignores unsupported managed keys and applies recognized valid keys."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "schema-urls",
+      "children": [
+        {
+          "type": "text",
+          "value": "Schema URLs"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "File"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Schema"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "https://conductor.build/schemas/settings.schema.json"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "https://conductor.build/schemas/settings.repo.schema.json"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "<repo>/.conductor/settings.local.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "https://conductor.build/schemas/settings.repo.schema.json"
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "~/.conductor/settings.managed.toml"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "https://conductor.build/schemas/settings.toml.json"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      ]
+    }
+  ],
+  "html": "<p>Use this page as the key reference for Conductor settings files. For the layered settings model, file locations, and precedence rules, start with <a href=\"/docs/reference/settings/user-project\">User and project settings</a>.</p><h2 id=\"repository-settings\"><a href=\"#repository-settings\">Repository settings</a></h2><p>Repository settings apply to <code>&lt;repo&gt;/.conductor/settings.toml</code> and <code>&lt;repo&gt;/.conductor/settings.local.toml</code>. They support workspace and repository behavior, not every user preference.</p><h3 id=\"scripts\"><a href=\"#scripts\">Scripts</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>scripts.setup</code></td><td>string</td><td>Command to run when Conductor creates a workspace.</td></tr><tr><td><code>scripts.archive</code></td><td>string</td><td>Command to run before Conductor archives a workspace.</td></tr><tr><td><code>scripts.run_mode</code></td><td>string</td><td><code>concurrent</code> or <code>nonconcurrent</code>.</td></tr></tbody></table><h3 id=\"actions\"><a href=\"#actions\">Actions</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>scripts.run.&lt;id&gt;.command</code></td><td>string</td><td>Command to run from the Run button.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.args</code></td><td>string array</td><td>Optional arguments passed with the command.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.options.cwd</code></td><td>string</td><td>Optional working directory relative to the workspace.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.default</code></td><td>boolean</td><td>Selects this action by default when the project has many actions.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.icon</code></td><td>string</td><td>Lucide icon name shown with the action.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.hide</code></td><td>boolean</td><td>Hides the action from the Run button. Overridable per layer, so a local layer can hide a shared action.</td></tr><tr><td><code>scripts.run.&lt;id&gt;.available_in</code></td><td>string or string array</td><td><code>local</code>, <code>cloud</code>, or both.</td></tr><tr><td><code>scripts.run</code></td><td>string</td><td>Legacy single action. Use <code>scripts.run.&lt;id&gt;</code> for multiple actions.</td></tr></tbody></table><h3 id=\"workspace-behavior\"><a href=\"#workspace-behavior\">Workspace behavior</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>enterprise_data_privacy</code></td><td>boolean</td><td>Enables Enterprise data privacy for the repository.</td></tr><tr><td><code>spotlight_testing</code></td><td>boolean</td><td>Uses Spotlight testing for projects that must run from the repository root.</td></tr><tr><td><code>file_include_globs</code></td><td>string</td><td>Files to copy patterns used when <code>.worktreeinclude</code> is not present.</td></tr><tr><td><code>preview_urls</code></td><td>array</td><td>URLs opened from the terminal panel.</td></tr></tbody></table><h3 id=\"preview-urls\"><a href=\"#preview-urls\">Preview URLs</a></h3><p><code>preview_urls</code> configures the terminal panel's Open button. The first URL is the default; additional URLs appear in its menu. Each entry accepts a <code>url</code> and an optional <code>name</code>:</p><figure data-code data-lang=\"toml\" data-title=\".conductor/settings.toml\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">[[</span><span style=\"color:#6F42C1\">preview_urls</span><span style=\"color:#24292E\">]]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">name = </span><span style=\"color:#032F62\">\"Web\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">url = </span><span style=\"color:#032F62\">\"http://localhost:$CONDUCTOR_PORT\"</span></span>\n<span class=\"line\"></span>\n<span class=\"line\"><span style=\"color:#24292E\">[[</span><span style=\"color:#6F42C1\">preview_urls</span><span style=\"color:#24292E\">]]</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">name = </span><span style=\"color:#032F62\">\"API\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">url = </span><span style=\"color:#032F62\">\"http://localhost:$((CONDUCTOR_PORT + 1))\"</span></span></code></pre></figure><p>Conductor replaces environment variables in Preview URLs. Use <code>$((CONDUCTOR_PORT + 1))</code> through <code>$((CONDUCTOR_PORT + 9))</code> for the other ports allocated to a local workspace. Preview URLs support only this port-offset expression; they are not shell commands.</p><h3 id=\"environment-variables\"><a href=\"#environment-variables\">Environment variables</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>environment_variables</code></td><td>table</td><td>Environment variables passed to local and cloud agents in this repository.</td></tr><tr><td><code>environment_variables.local</code></td><td>table</td><td>Environment variables passed to local agents only.</td></tr><tr><td><code>environment_variables.cloud</code></td><td>table</td><td>Environment variables passed to cloud agents only.</td></tr></tbody></table><h3 id=\"prompts\"><a href=\"#prompts\">Prompts</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>prompts.general</code></td><td>string</td><td>Added to agent sessions for this repository.</td></tr><tr><td><code>prompts.code_review</code></td><td>string</td><td>Custom prompt for the code review action.</td></tr><tr><td><code>prompts.create_pr</code></td><td>string</td><td>Custom prompt for the create PR action.</td></tr><tr><td><code>prompts.fix_errors</code></td><td>string</td><td>Custom prompt for the fix errors action.</td></tr><tr><td><code>prompts.resolve_merge_conflicts</code></td><td>string</td><td>Custom prompt for the resolve merge conflicts action.</td></tr><tr><td><code>prompts.rename_branch</code></td><td>string</td><td>Custom prompt for branch naming.</td></tr></tbody></table><h3 id=\"harnesses\"><a href=\"#harnesses\">Harnesses</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>claude_code_executable_path</code></td><td>string</td><td>Override the Claude Code executable path.</td></tr><tr><td><code>codex_executable_path</code></td><td>string</td><td>Override the Codex executable path.</td></tr><tr><td><code>claude_provider</code></td><td>string</td><td>Provider backing Claude, such as Anthropic, Bedrock, or Vertex.</td></tr><tr><td><code>codex_provider</code></td><td>string</td><td>Provider backing Codex.</td></tr><tr><td><code>bedrock_region</code></td><td>string</td><td>AWS Bedrock region for Claude.</td></tr><tr><td><code>vertex_project_id</code></td><td>string</td><td>Google Vertex project ID for Claude.</td></tr><tr><td><code>ssh_key_path</code></td><td>string</td><td>Path to the SSH private key used for cloud workspaces.</td></tr></tbody></table><h3 id=\"git\"><a href=\"#git\">Git</a></h3><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>git.delete_branch_on_archive</code></td><td>boolean</td><td>Delete the workspace branch when archiving.</td></tr><tr><td><code>git.archive_on_merge</code></td><td>boolean</td><td>Archive a workspace automatically when its pull request merges.</td></tr><tr><td><code>git.worktree_push_auto_setup_remote</code></td><td>boolean</td><td>Automatically configure the upstream remote on first push.</td></tr><tr><td><code>git.branch_prefix_type</code></td><td>string</td><td>How branch name prefixes are generated.</td></tr><tr><td><code>git.branch_prefix</code></td><td>string</td><td>Custom branch name prefix.</td></tr></tbody></table><h2 id=\"user-only-settings\"><a href=\"#user-only-settings\">User-only settings</a></h2><p>User settings in <code>~/.conductor/settings.toml</code> support every file-backed setting. These settings are user-only and are ignored in repository settings files.</p><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>models.default</code></td><td>string</td><td>Default model for new chats.</td></tr><tr><td><code>models.review</code></td><td>string</td><td>Model used for code reviews.</td></tr><tr><td><code>models.default_fast_mode</code></td><td>boolean</td><td>Enable fast mode by default for new chats.</td></tr><tr><td><code>models.default_plan_mode</code></td><td>boolean</td><td>Start new chats in plan mode by default.</td></tr><tr><td><code>models.codex.default_thinking_level</code></td><td>string</td><td>Default Codex thinking level for new chats.</td></tr><tr><td><code>models.codex.review_thinking_level</code></td><td>string</td><td>Codex thinking level used for code reviews.</td></tr><tr><td><code>models.codex.personality</code></td><td>string</td><td>Default Codex personality.</td></tr><tr><td><code>models.codex.tool_approval_policy</code></td><td>string</td><td>Whether Conductor automatically approves Codex tool requests: <code>default</code> or <code>always_approve</code>.</td></tr><tr><td><code>models.claude_code.default_effort_level</code></td><td>string</td><td>Default Claude effort level for new chats.</td></tr><tr><td><code>models.claude_code.review_effort_level</code></td><td>string</td><td>Claude effort level used for code reviews.</td></tr><tr><td><code>tool_approvals_enabled</code></td><td>boolean</td><td>Require approval before agents run tools.</td></tr></tbody></table><h2 id=\"managed-settings\"><a href=\"#managed-settings\">Managed settings</a></h2><p>Managed settings are for organizations. They live in <code>~/.conductor/settings.managed.toml</code> and override user and repository settings.</p><table><thead><tr><th>TOML key</th><th>Type</th><th>Description</th></tr></thead><tbody><tr><td><code>enterprise_data_privacy</code></td><td>boolean</td><td>Enables Enterprise data privacy.</td></tr><tr><td><code>claude_code_executable_path</code></td><td>string</td><td>Overrides the Claude Code executable path.</td></tr><tr><td><code>models.default</code></td><td>string</td><td>Sets the default model.</td></tr><tr><td><code>environmentVariables.local</code></td><td>table</td><td>Sets managed environment variables for local agents.</td></tr><tr><td><code>environmentVariables.cloud</code></td><td>table</td><td>Sets managed environment variables for cloud agents.</td></tr></tbody></table><p>For managed file behavior and examples, see <a href=\"/docs/reference/settings/managed\">Managed settings</a>.</p><h2 id=\"unsupported-by-scope\"><a href=\"#unsupported-by-scope\">Unsupported by scope</a></h2><table><thead><tr><th>Case</th><th>Behavior</th></tr></thead><tbody><tr><td>User-only settings in a repository file</td><td>Conductor ignores them. Put model defaults, tool approvals, and default workspace location in <code>~/.conductor/settings.toml</code>.</td></tr><tr><td>Unknown keys in a repository settings file</td><td>Conductor rejects keys that are not in the repository schema.</td></tr><tr><td>Unknown keys in a managed settings file</td><td>Conductor ignores unsupported managed keys and applies recognized valid keys.</td></tr></tbody></table><h2 id=\"schema-urls\"><a href=\"#schema-urls\">Schema URLs</a></h2><table><thead><tr><th>File</th><th>Schema</th></tr></thead><tbody><tr><td><code>~/.conductor/settings.toml</code></td><td><code>https://conductor.build/schemas/settings.schema.json</code></td></tr><tr><td><code>&lt;repo&gt;/.conductor/settings.toml</code></td><td><code>https://conductor.build/schemas/settings.repo.schema.json</code></td></tr><tr><td><code>&lt;repo&gt;/.conductor/settings.local.toml</code></td><td><code>https://conductor.build/schemas/settings.repo.schema.json</code></td></tr><tr><td><code>~/.conductor/settings.managed.toml</code></td><td><code>https://conductor.build/schemas/settings.toml.json</code></td></tr></tbody></table>",
+  "text": "Use this page as the key reference for Conductor settings files. For the layered settings model, file locations, and precedence rules, start with User and project settings.\nRepository settings\nRepository settings apply to <repo>/.conductor/settings.toml and <repo>/.conductor/settings.local.toml. They support workspace and repository behavior, not every user preference.\nScripts\nTOML keyTypeDescriptionscripts.setupstringCommand to run when Conductor creates a workspace.scripts.archivestringCommand to run before Conductor archives a workspace.scripts.run_modestringconcurrent or nonconcurrent.Actions\nTOML keyTypeDescriptionscripts.run.<id>.commandstringCommand to run from the Run button.scripts.run.<id>.argsstring arrayOptional arguments passed with the command.scripts.run.<id>.options.cwdstringOptional working directory relative to the workspace.scripts.run.<id>.defaultbooleanSelects this action by default when the project has many actions.scripts.run.<id>.iconstringLucide icon name shown with the action.scripts.run.<id>.hidebooleanHides the action from the Run button. Overridable per layer, so a local layer can hide a shared action.scripts.run.<id>.available_instring or string arraylocal, cloud, or both.scripts.runstringLegacy single action. Use scripts.run.<id> for multiple actions.Workspace behavior\nTOML keyTypeDescriptionenterprise_data_privacybooleanEnables Enterprise data privacy for the repository.spotlight_testingbooleanUses Spotlight testing for projects that must run from the repository root.file_include_globsstringFiles to copy patterns used when .worktreeinclude is not present.preview_urlsarrayURLs opened from the terminal panel.Preview URLs\npreview_urls configures the terminal panel's Open button. The first URL is the default; additional URLs appear in its menu. Each entry accepts a url and an optional name:\n[[preview_urls]]\nname = \"Web\"\nurl = \"http://localhost:$CONDUCTOR_PORT\"\n[[preview_urls]]\nname = \"API\"\nurl = \"http://localhost:$((CONDUCTOR_PORT + 1))\"Conductor replaces environment variables in Preview URLs. Use $((CONDUCTOR_PORT + 1)) through $((CONDUCTOR_PORT + 9)) for the other ports allocated to a local workspace. Preview URLs support only this port-offset expression; they are not shell commands.\nEnvironment variables\nTOML keyTypeDescriptionenvironment_variablestableEnvironment variables passed to local and cloud agents in this repository.environment_variables.localtableEnvironment variables passed to local agents only.environment_variables.cloudtableEnvironment variables passed to cloud agents only.Prompts\nTOML keyTypeDescriptionprompts.generalstringAdded to agent sessions for this repository.prompts.code_reviewstringCustom prompt for the code review action.prompts.create_prstringCustom prompt for the create PR action.prompts.fix_errorsstringCustom prompt for the fix errors action.prompts.resolve_merge_conflictsstringCustom prompt for the resolve merge conflicts action.prompts.rename_branchstringCustom prompt for branch naming.Harnesses\nTOML keyTypeDescriptionclaude_code_executable_pathstringOverride the Claude Code executable path.codex_executable_pathstringOverride the Codex executable path.claude_providerstringProvider backing Claude, such as Anthropic, Bedrock, or Vertex.codex_providerstringProvider backing Codex.bedrock_regionstringAWS Bedrock region for Claude.vertex_project_idstringGoogle Vertex project ID for Claude.ssh_key_pathstringPath to the SSH private key used for cloud workspaces.Git\nTOML keyTypeDescriptiongit.delete_branch_on_archivebooleanDelete the workspace branch when archiving.git.archive_on_mergebooleanArchive a workspace automatically when its pull request merges.git.worktree_push_auto_setup_remotebooleanAutomatically configure the upstream remote on first push.git.branch_prefix_typestringHow branch name prefixes are generated.git.branch_prefixstringCustom branch name prefix.User-only settings\nUser settings in ~/.conductor/settings.toml support every file-backed setting. These settings are user-only and are ignored in repository settings files.\nTOML keyTypeDescriptionmodels.defaultstringDefault model for new chats.models.reviewstringModel used for code reviews.models.default_fast_modebooleanEnable fast mode by default for new chats.models.default_plan_modebooleanStart new chats in plan mode by default.models.codex.default_thinking_levelstringDefault Codex thinking level for new chats.models.codex.review_thinking_levelstringCodex thinking level used for code reviews.models.codex.personalitystringDefault Codex personality.models.codex.tool_approval_policystringWhether Conductor automatically approves Codex tool requests: default or always_approve.models.claude_code.default_effort_levelstringDefault Claude effort level for new chats.models.claude_code.review_effort_levelstringClaude effort level used for code reviews.tool_approvals_enabledbooleanRequire approval before agents run tools.Managed settings\nManaged settings are for organizations. They live in ~/.conductor/settings.managed.toml and override user and repository settings.\nTOML keyTypeDescriptionenterprise_data_privacybooleanEnables Enterprise data privacy.claude_code_executable_pathstringOverrides the Claude Code executable path.models.defaultstringSets the default model.environmentVariables.localtableSets managed environment variables for local agents.environmentVariables.cloudtableSets managed environment variables for cloud agents.For managed file behavior and examples, see Managed settings.\nUnsupported by scope\nCaseBehaviorUser-only settings in a repository fileConductor ignores them. Put model defaults, tool approvals, and default workspace location in ~/.conductor/settings.toml.Unknown keys in a repository settings fileConductor rejects keys that are not in the repository schema.Unknown keys in a managed settings fileConductor ignores unsupported managed keys and applies recognized valid keys.Schema URLs\nFileSchema~/.conductor/settings.tomlhttps://conductor.build/schemas/settings.schema.json<repo>/.conductor/settings.tomlhttps://conductor.build/schemas/settings.repo.schema.json<repo>/.conductor/settings.local.tomlhttps://conductor.build/schemas/settings.repo.schema.json~/.conductor/settings.managed.tomlhttps://conductor.build/schemas/settings.toml.json",
+  "markdown": "\n# Settings reference\n\n\n\nUse this page as the key reference for Conductor settings files. For the layered settings model, file locations, and precedence rules, start with [User and project settings](/docs/reference/settings/user-project).\n\n## Repository settings [#repository-settings]\n\nRepository settings apply to `<repo>/.conductor/settings.toml` and `<repo>/.conductor/settings.local.toml`. They support workspace and repository behavior, not every user preference.\n\n### Scripts [#scripts]\n\n| TOML key           | Type   | Description                                           |\n| ------------------ | ------ | ----------------------------------------------------- |\n| `scripts.setup`    | string | Command to run when Conductor creates a workspace.    |\n| `scripts.archive`  | string | Command to run before Conductor archives a workspace. |\n| `scripts.run_mode` | string | `concurrent` or `nonconcurrent`.                      |\n\n### Actions [#actions]\n\n| TOML key                        | Type                   | Description                                                                                             |\n| ------------------------------- | ---------------------- | ------------------------------------------------------------------------------------------------------- |\n| `scripts.run.<id>.command`      | string                 | Command to run from the Run button.                                                                     |\n| `scripts.run.<id>.args`         | string array           | Optional arguments passed with the command.                                                             |\n| `scripts.run.<id>.options.cwd`  | string                 | Optional working directory relative to the workspace.                                                   |\n| `scripts.run.<id>.default`      | boolean                | Selects this action by default when the project has many actions.                                       |\n| `scripts.run.<id>.icon`         | string                 | Lucide icon name shown with the action.                                                                 |\n| `scripts.run.<id>.hide`         | boolean                | Hides the action from the Run button. Overridable per layer, so a local layer can hide a shared action. |\n| `scripts.run.<id>.available_in` | string or string array | `local`, `cloud`, or both.                                                                              |\n| `scripts.run`                   | string                 | Legacy single action. Use `scripts.run.<id>` for multiple actions.                                      |\n\n### Workspace behavior [#workspace-behavior]\n\n| TOML key                  | Type    | Description                                                                 |\n| ------------------------- | ------- | --------------------------------------------------------------------------- |\n| `enterprise_data_privacy` | boolean | Enables Enterprise data privacy for the repository.                         |\n| `spotlight_testing`       | boolean | Uses Spotlight testing for projects that must run from the repository root. |\n| `file_include_globs`      | string  | Files to copy patterns used when `.worktreeinclude` is not present.         |\n| `preview_urls`            | array   | URLs opened from the terminal panel.                                        |\n\n### Preview URLs [#preview-urls]\n\n`preview_urls` configures the terminal panel's Open button. The first URL is the default; additional URLs appear in its menu. Each entry accepts a `url` and an optional `name`:\n\n```toml title=\".conductor/settings.toml\"\n[[preview_urls]]\nname = \"Web\"\nurl = \"http://localhost:$CONDUCTOR_PORT\"\n\n[[preview_urls]]\nname = \"API\"\nurl = \"http://localhost:$((CONDUCTOR_PORT + 1))\"\n```\n\nConductor replaces environment variables in Preview URLs. Use `$((CONDUCTOR_PORT + 1))` through `$((CONDUCTOR_PORT + 9))` for the other ports allocated to a local workspace. Preview URLs support only this port-offset expression; they are not shell commands.\n\n### Environment variables [#environment-variables]\n\n| TOML key                      | Type  | Description                                                                |\n| ----------------------------- | ----- | -------------------------------------------------------------------------- |\n| `environment_variables`       | table | Environment variables passed to local and cloud agents in this repository. |\n| `environment_variables.local` | table | Environment variables passed to local agents only.                         |\n| `environment_variables.cloud` | table | Environment variables passed to cloud agents only.                         |\n\n### Prompts [#prompts]\n\n| TOML key                          | Type   | Description                                           |\n| --------------------------------- | ------ | ----------------------------------------------------- |\n| `prompts.general`                 | string | Added to agent sessions for this repository.          |\n| `prompts.code_review`             | string | Custom prompt for the code review action.             |\n| `prompts.create_pr`               | string | Custom prompt for the create PR action.               |\n| `prompts.fix_errors`              | string | Custom prompt for the fix errors action.              |\n| `prompts.resolve_merge_conflicts` | string | Custom prompt for the resolve merge conflicts action. |\n| `prompts.rename_branch`           | string | Custom prompt for branch naming.                      |\n\n### Harnesses [#harnesses]\n\n| TOML key                      | Type   | Description                                                     |\n| ----------------------------- | ------ | --------------------------------------------------------------- |\n| `claude_code_executable_path` | string | Override the Claude Code executable path.                       |\n| `codex_executable_path`       | string | Override the Codex executable path.                             |\n| `claude_provider`             | string | Provider backing Claude, such as Anthropic, Bedrock, or Vertex. |\n| `codex_provider`              | string | Provider backing Codex.                                         |\n| `bedrock_region`              | string | AWS Bedrock region for Claude.                                  |\n| `vertex_project_id`           | string | Google Vertex project ID for Claude.                            |\n| `ssh_key_path`                | string | Path to the SSH private key used for cloud workspaces.          |\n\n### Git [#git]\n\n| TOML key                              | Type    | Description                                                     |\n| ------------------------------------- | ------- | --------------------------------------------------------------- |\n| `git.delete_branch_on_archive`        | boolean | Delete the workspace branch when archiving.                     |\n| `git.archive_on_merge`                | boolean | Archive a workspace automatically when its pull request merges. |\n| `git.worktree_push_auto_setup_remote` | boolean | Automatically configure the upstream remote on first push.      |\n| `git.branch_prefix_type`              | string  | How branch name prefixes are generated.                         |\n| `git.branch_prefix`                   | string  | Custom branch name prefix.                                      |\n\n## User-only settings [#user-only-settings]\n\nUser settings in `~/.conductor/settings.toml` support every file-backed setting. These settings are user-only and are ignored in repository settings files.\n\n| TOML key                                  | Type    | Description                                                                                  |\n| ----------------------------------------- | ------- | -------------------------------------------------------------------------------------------- |\n| `models.default`                          | string  | Default model for new chats.                                                                 |\n| `models.review`                           | string  | Model used for code reviews.                                                                 |\n| `models.default_fast_mode`                | boolean | Enable fast mode by default for new chats.                                                   |\n| `models.default_plan_mode`                | boolean | Start new chats in plan mode by default.                                                     |\n| `models.codex.default_thinking_level`     | string  | Default Codex thinking level for new chats.                                                  |\n| `models.codex.review_thinking_level`      | string  | Codex thinking level used for code reviews.                                                  |\n| `models.codex.personality`                | string  | Default Codex personality.                                                                   |\n| `models.codex.tool_approval_policy`       | string  | Whether Conductor automatically approves Codex tool requests: `default` or `always_approve`. |\n| `models.claude_code.default_effort_level` | string  | Default Claude effort level for new chats.                                                   |\n| `models.claude_code.review_effort_level`  | string  | Claude effort level used for code reviews.                                                   |\n| `tool_approvals_enabled`                  | boolean | Require approval before agents run tools.                                                    |\n\n## Managed settings [#managed-settings]\n\nManaged settings are for organizations. They live in `~/.conductor/settings.managed.toml` and override user and repository settings.\n\n| TOML key                      | Type    | Description                                          |\n| ----------------------------- | ------- | ---------------------------------------------------- |\n| `enterprise_data_privacy`     | boolean | Enables Enterprise data privacy.                     |\n| `claude_code_executable_path` | string  | Overrides the Claude Code executable path.           |\n| `models.default`              | string  | Sets the default model.                              |\n| `environmentVariables.local`  | table   | Sets managed environment variables for local agents. |\n| `environmentVariables.cloud`  | table   | Sets managed environment variables for cloud agents. |\n\nFor managed file behavior and examples, see [Managed settings](/docs/reference/settings/managed).\n\n## Unsupported by scope [#unsupported-by-scope]\n\n| Case                                       | Behavior                                                                                                                    |\n| ------------------------------------------ | --------------------------------------------------------------------------------------------------------------------------- |\n| User-only settings in a repository file    | Conductor ignores them. Put model defaults, tool approvals, and default workspace location in `~/.conductor/settings.toml`. |\n| Unknown keys in a repository settings file | Conductor rejects keys that are not in the repository schema.                                                               |\n| Unknown keys in a managed settings file    | Conductor ignores unsupported managed keys and applies recognized valid keys.                                               |\n\n## Schema URLs [#schema-urls]\n\n| File                                    | Schema                                                      |\n| --------------------------------------- | ----------------------------------------------------------- |\n| `~/.conductor/settings.toml`            | `https://conductor.build/schemas/settings.schema.json`      |\n| `<repo>/.conductor/settings.toml`       | `https://conductor.build/schemas/settings.repo.schema.json` |\n| `<repo>/.conductor/settings.local.toml` | `https://conductor.build/schemas/settings.repo.schema.json` |\n| `~/.conductor/settings.managed.toml`    | `https://conductor.build/schemas/settings.toml.json`        |\n"
+}

@@ -1,0 +1,32 @@
+{
+  "slug": "0.40.1-fast-mode",
+  "version": "0.40.1",
+  "versionSlug": "0.40.1",
+  "title": "Fast Mode",
+  "fullTitle": "0.40.1: Fast Mode",
+  "date": "Mar 16th, 2026",
+  "dateISO": "2026-03-16",
+  "description": "Conductor 0.40.1 changelog - Fast Mode",
+  "summary": "Opus 4.6 fast mode is live in Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.40.1/1773698681114-image.png",
+    "alt": "image.png"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.40.1-fast-mode/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.40.1-fast-mode",
+  "sourceUrl": "https://www.conductor.build/changelog/0.40.1-fast-mode",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Opus 4.6 fast mode is live in Conductor!</p>\n<figure data-asset><img alt=\"image.png\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.40.1/1773698681114-image.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>You can now unarchive workspaces from the command palette (⌘K) </li>\n<li>Conductor can now show diffs for very large files with small changes </li>\n<li>Improved parsing for file links in agent output </li>\n<li>Refreshed the look of the app switcher (hold ⌘ press O to activate) </li>\n<li>Improved sorting for command palette results </li>\n<li>New loading indicator when archiving a workspace in the sidebar </li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Improved undo handling when typing messages to the agents </li>\n<li>Fixed an expensive search query that would run on every keystroke in command palette </li>\n<li>Fixed a UI glitch where chat tabs would shift right after a tab was closed </li>\n<li>Fixed an issue where hidden review comments would unhide themselves </li>\n</ul>",
+  "markdown": "\nOpus 4.6 fast mode is live in Conductor!\n\n<img\n    src=\"/assets/changelog/media/0.40.1/1773698681114-image.png\"\n    alt=\"image.png\"\n/>\n\n## Improvements\n\n- You can now unarchive workspaces from the command palette (⌘K) <!-- [36] -->\n- Conductor can now show diffs for very large files with small changes <!-- [23] -->\n- Improved parsing for file links in agent output <!-- [14] -->\n- Refreshed the look of the app switcher (hold ⌘ press O to activate) <!-- [10] -->\n- Improved sorting for command palette results <!-- [35] -->\n- New loading indicator when archiving a workspace in the sidebar <!-- [24] -->\n\n## Fixes\n\n- Improved undo handling when typing messages to the agents <!-- [8] -->\n- Fixed an expensive search query that would run on every keystroke in command palette <!-- [37] -->\n- Fixed a UI glitch where chat tabs would shift right after a tab was closed <!-- [40] -->\n- Fixed an issue where hidden review comments would unhide themselves <!-- [21] -->\n\n<!--\nPR citations\n[1] #3018 https://github.com/meltylabs/conductor/pull/3018\n[2] #3016 https://github.com/meltylabs/conductor/pull/3016\n[3] #3015 https://github.com/meltylabs/conductor/pull/3015\n[4] #3014 https://github.com/meltylabs/conductor/pull/3014\n[5] #2823 https://github.com/meltylabs/conductor/pull/2823\n[6] #2984 https://github.com/meltylabs/conductor/pull/2984\n[7] #3013 https://github.com/meltylabs/conductor/pull/3013\n[8] #3005 https://github.com/meltylabs/conductor/pull/3005\n[10] #2842 https://github.com/meltylabs/conductor/pull/2842\n[12] #3008 https://github.com/meltylabs/conductor/pull/3008\n[14] #3007 https://github.com/meltylabs/conductor/pull/3007\n[15] #3004 https://github.com/meltylabs/conductor/pull/3004\n[17] #3003 https://github.com/meltylabs/conductor/pull/3003\n[21] #3001 https://github.com/meltylabs/conductor/pull/3001\n[23] #2995 https://github.com/meltylabs/conductor/pull/2995\n[24] #2998 https://github.com/meltylabs/conductor/pull/2998\n[25] #2986 https://github.com/meltylabs/conductor/pull/2986\n[26] #2993 https://github.com/meltylabs/conductor/pull/2993\n[29] #2989 https://github.com/meltylabs/conductor/pull/2989\n[30] #2990 https://github.com/meltylabs/conductor/pull/2990\n[33] #2985 https://github.com/meltylabs/conductor/pull/2985\n[34] #2983 https://github.com/meltylabs/conductor/pull/2983\n[35] #2978 https://github.com/meltylabs/conductor/pull/2978\n[36] #2977 https://github.com/meltylabs/conductor/pull/2977\n[37] #2974 https://github.com/meltylabs/conductor/pull/2974\n[38] #2976 https://github.com/meltylabs/conductor/pull/2976\n[39] #2973 https://github.com/meltylabs/conductor/pull/2973\n[40] #2982 https://github.com/meltylabs/conductor/pull/2982\n-->\n"
+}

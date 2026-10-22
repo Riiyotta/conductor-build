@@ -1,0 +1,269 @@
+{
+  "slug": "concepts/testing",
+  "url": "/docs/concepts/testing",
+  "title": "Testing",
+  "description": "Automate testing in Conductor",
+  "meta": {
+    "title": "Testing | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/concepts/testing/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Concepts"
+    },
+    {
+      "name": "Testing"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#actions",
+      "title": "Actions"
+    },
+    {
+      "depth": 2,
+      "url": "#spotlight-testing",
+      "title": "Spotlight testing"
+    },
+    {
+      "depth": 2,
+      "url": "#running-microservices-at-once",
+      "title": "Running microservices at once"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/concepts/parallel-agents",
+    "title": "Parallel agents",
+    "description": "Choose when to split work across workspaces or inside one workspace"
+  },
+  "next": {
+    "url": "/docs/concepts/git-worktrees",
+    "title": "Git worktrees",
+    "description": "Understand how Conductor uses Git worktrees to create isolated coding-agent workspaces"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After you make changes in a workspace, test them with either an action or Spotlight testing."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions test from the workspace directory. Spotlight testing syncs one workspace back to the repository root and tests from there."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "actions",
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use an action to launch your web server, app, test watcher, or unit tests from the Run button in Conductor's workspace toolbar."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions execute in the workspace directory. They can use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "$CONDUCTOR_PORT"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", so multiple workspaces can run their own copy of the app without fighting for the same port."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For setup details, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Actions reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "spotlight-testing",
+      "children": [
+        {
+          "type": "text",
+          "value": "Spotlight testing"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Spotlight testing when your project needs to run from the repository root instead of the workspace directory. Enable it in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions&scrollTo=spotlight_testing",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for the project you want to test, then use the Spotlight button from the workspace toolbar."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When Spotlight is on, Conductor syncs tracked workspace changes back to the repository root and opens a terminal there. Because Spotlight testing is configured per repository, you can decide which projects use root-based testing and which projects keep isolated workspace actions."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For when to use Spotlight instead of an action, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts/spotlight-testing"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Spotlight testing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "running-microservices-at-once",
+      "children": [
+        {
+          "type": "text",
+          "value": "Running microservices at once"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor only supports automating testing one service at a time. If your application requires microservices to be tested at once, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/repositories/linking-multiple-directories"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Linking multiple directories"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>After you make changes in a workspace, test them with either an action or Spotlight testing.</p><p>Actions test from the workspace directory. Spotlight testing syncs one workspace back to the repository root and tests from there.</p><h2 id=\"actions\"><a href=\"#actions\">Actions</a></h2><p>Use an action to launch your web server, app, test watcher, or unit tests from the Run button in Conductor's workspace toolbar.</p><p>Actions execute in the workspace directory. They can use <code>$CONDUCTOR_PORT</code>, so multiple workspaces can run their own copy of the app without fighting for the same port.</p><p>For setup details, see <a href=\"/docs/reference/scripts#run-scripts\">Actions reference</a>.</p><h2 id=\"spotlight-testing\"><a href=\"#spotlight-testing\">Spotlight testing</a></h2><p>Use Spotlight testing when your project needs to run from the repository root instead of the workspace directory. Enable it in <a href=\"https://app.conductor.build/settings/repos?section=actions&amp;scrollTo=spotlight_testing\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> for the project you want to test, then use the Spotlight button from the workspace toolbar.</p><p>When Spotlight is on, Conductor syncs tracked workspace changes back to the repository root and opens a terminal there. Because Spotlight testing is configured per repository, you can decide which projects use root-based testing and which projects keep isolated workspace actions.</p><p>For when to use Spotlight instead of an action, see <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</p><h2 id=\"running-microservices-at-once\"><a href=\"#running-microservices-at-once\">Running microservices at once</a></h2><p>Conductor only supports automating testing one service at a time. If your application requires microservices to be tested at once, see <a href=\"/docs/guides/repositories/linking-multiple-directories\">Linking multiple directories</a>.</p>",
+  "text": "After you make changes in a workspace, test them with either an action or Spotlight testing.\nActions test from the workspace directory. Spotlight testing syncs one workspace back to the repository root and tests from there.\nActions\nUse an action to launch your web server, app, test watcher, or unit tests from the Run button in Conductor's workspace toolbar.\nActions execute in the workspace directory. They can use $CONDUCTOR_PORT, so multiple workspaces can run their own copy of the app without fighting for the same port.\nFor setup details, see Actions reference.\nSpotlight testing\nUse Spotlight testing when your project needs to run from the repository root instead of the workspace directory. Enable it in Repository Settings for the project you want to test, then use the Spotlight button from the workspace toolbar.\nWhen Spotlight is on, Conductor syncs tracked workspace changes back to the repository root and opens a terminal there. Because Spotlight testing is configured per repository, you can decide which projects use root-based testing and which projects keep isolated workspace actions.\nFor when to use Spotlight instead of an action, see Spotlight testing.\nRunning microservices at once\nConductor only supports automating testing one service at a time. If your application requires microservices to be tested at once, see Linking multiple directories.",
+  "markdown": "\n# Testing\n\n\n\nAfter you make changes in a workspace, test them with either an action or Spotlight testing.\n\nActions test from the workspace directory. Spotlight testing syncs one workspace back to the repository root and tests from there.\n\n## Actions [#actions]\n\nUse an action to launch your web server, app, test watcher, or unit tests from the Run button in Conductor's workspace toolbar.\n\nActions execute in the workspace directory. They can use `$CONDUCTOR_PORT`, so multiple workspaces can run their own copy of the app without fighting for the same port.\n\nFor setup details, see [Actions reference](/docs/reference/scripts#run-scripts).\n\n## Spotlight testing [#spotlight-testing]\n\nUse Spotlight testing when your project needs to run from the repository root instead of the workspace directory. Enable it in [Repository Settings](https://app.conductor.build/settings/repos?section=actions\\&scrollTo=spotlight_testing) for the project you want to test, then use the Spotlight button from the workspace toolbar.\n\nWhen Spotlight is on, Conductor syncs tracked workspace changes back to the repository root and opens a terminal there. Because Spotlight testing is configured per repository, you can decide which projects use root-based testing and which projects keep isolated workspace actions.\n\nFor when to use Spotlight instead of an action, see [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n\n## Running microservices at once [#running-microservices-at-once]\n\nConductor only supports automating testing one service at a time. If your application requires microservices to be tested at once, see [Linking multiple directories](/docs/guides/repositories/linking-multiple-directories).\n"
+}

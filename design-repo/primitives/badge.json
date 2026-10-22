@@ -1,0 +1,35 @@
+{
+  "id": "badge",
+  "kind": "primitive",
+  "purpose": "Small uppercase label: changelog version badge, pricing 'Most popular', brandkit eyebrow.",
+  "implementedBy": [
+    {
+      "ref": "src/components/changelog/ChangelogEntry.jsx:8",
+      "quote": "const BADGE ="
+    }
+  ],
+  "tokens": [
+    "{component.badge.version}",
+    "{component.badge.most-popular}"
+  ],
+  "variants": [
+    "version",
+    "most-popular",
+    "eyebrow"
+  ],
+  "states": [
+    "rest",
+    "hover text #2c2826 (changelog index only)"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:260",
+      "quote": "Badge: 12px/16px uppercase tracking 0.6px, bg #f8f7f6"
+    },
+    {
+      "ref": "CLONE_SPEC_DOCS.md:40",
+      "quote": "**Changelog version badges render in MONO on /changelog**"
+    }
+  ],
+  "note": "Font differs by context: sans in the homepage changelog section, real mono on /changelog and on standalone pages."
+}

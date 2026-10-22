@@ -1,0 +1,32 @@
+{
+  "slug": "0.15.0-linear",
+  "version": "0.15.0",
+  "versionSlug": "0.15.0",
+  "title": "Linear",
+  "fullTitle": "0.15.0: Linear",
+  "date": "Oct 17th, 2025",
+  "dateISO": "2025-10-17",
+  "description": "Conductor 0.15.0 changelog - Linear",
+  "summary": "You can now connect Linear to Conductor!",
+  "hero": {
+    "type": "image",
+    "src": "https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.15.0-linear/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.15.0-linear",
+  "sourceUrl": "https://www.conductor.build/changelog/0.15.0-linear",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>You can now connect Linear to Conductor!</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce\"/></figure>\n<p>You can also use the file picker to attach images and files to your messages:</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"https://github.com/user-attachments/assets/d44ef61d-b7cf-4b86-b2af-ce9d6e59e70b\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Arrow key navigation in the command palette and file picker</li>\n<li>Drag and drop files from Finder or other apps</li>\n<li>@-mention files in your message</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed creating a new workspace while booting not redirecting correctly</li>\n</ul>",
+  "markdown": "\nYou can now connect Linear to Conductor!\n\n<img\n    width=\"1912\"\n    height=\"1310\"\n    alt=\"image\"\n    src=\"https://github.com/user-attachments/assets/27d78c8d-cf35-4bc9-844a-9a97f0bc62ce\"\n/>\n\nYou can also use the file picker to attach images and files to your messages:\n\n<img\n    width=\"1146\"\n    height=\"676\"\n    alt=\"image\"\n    src=\"https://github.com/user-attachments/assets/d44ef61d-b7cf-4b86-b2af-ce9d6e59e70b\"\n/>\n\n## Improvements\n\n- Arrow key navigation in the command palette and file picker\n- Drag and drop files from Finder or other apps\n- @-mention files in your message\n\n## Fixes\n\n- Fixed creating a new workspace while booting not redirecting correctly\n"
+}

@@ -1,0 +1,29 @@
+{
+  "id": "arrow-link",
+  "kind": "component",
+  "purpose": "Underlined text link with trailing arrow that nudges 4px on hover.",
+  "implementedBy": [
+    {
+      "ref": "src/components/ArrowLink.jsx:27",
+      "quote": "export default function ArrowLink({ href, external, className = '', children }) {"
+    }
+  ],
+  "tokens": [
+    "{motion.distance.arrow-nudge}",
+    "{motion.duration.arrow-nudge}"
+  ],
+  "variants": [
+    "underlined",
+    "muted-view-all"
+  ],
+  "states": [
+    "rest",
+    "hover"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:250",
+      "quote": "Footer link `mt-12` (48px): \"See what people are saying\""
+    }
+  ]
+}

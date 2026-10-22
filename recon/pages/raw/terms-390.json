@@ -1,0 +1,2528 @@
+{
+ "url": "https://www.conductor.build/terms",
+ "title": "Terms of service | Conductor",
+ "desc": "Customer terms and conditions for using Conductor.",
+ "docH": 26350,
+ "docW": 390,
+ "vw": 390,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 390,
+   "height": 57,
+   "top": 0,
+   "right": 390,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 25841,
+ "footerH": 509,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/about.webp"
+ ],
+ "anims": [],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    390,
+    25784
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    0,
+    57,
+    390,
+    25784
+   ],
+   "p": "64px 16px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    16,
+    121,
+    358,
+    72
+   ],
+   "f": "30px/36px 800 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 24px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "customer-terms-and-conditions"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    16,
+    121,
+    336,
+    72
+   ],
+   "t": "Customer Terms and Conditions",
+   "f": "30px/36px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#customer-terms-and-conditions"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    360,
+    150,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    217,
+    358,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "em",
+   "b": [
+    16,
+    220,
+    198,
+    17
+   ],
+   "t": "Last Modified: March 30, 2026",
+   "f": "14px/24.0001px 400 ls:normal italic  ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    257,
+    358,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    16,
+    260,
+    154.4,
+    17
+   ],
+   "t": "Welcome to Conductor",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    297,
+    358,
+    408
+   ],
+   "t": "These Customer Terms and Conditions (this \"\"), effective as of the date on which you click a button or check a box acknowledging your acceptance of this Agreeme",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    22.5,
+    324,
+    74.5,
+    17
+   ],
+   "t": "Agreement",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    137.3,
+    420,
+    94.9,
+    17
+   ],
+   "t": "Effective Date",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    93.2,
+    492,
+    71.6,
+    17
+   ],
+   "t": "Conductor",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    129.6,
+    540,
+    66.2,
+    17
+   ],
+   "t": "Customer",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    141.9,
+    660,
+    47.4,
+    17
+   ],
+   "t": "Parties",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    22.5,
+    684,
+    36,
+    17
+   ],
+   "t": "Party",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    721,
+    358,
+    120
+   ],
+   "t": "PLEASE READ THESE TERMS CAREFULLY TO ENSURE THAT YOU UNDERSTAND EACH PROVISION. THESE TERMS CONTAIN A MANDATORY ARBITRATION PROVISION THAT REQUIRES THE USE OF A",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    16,
+    857,
+    358,
+    24
+   ],
+   "t": "The Parties agree as follows:",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "ol",
+   "b": [
+    16,
+    897,
+    358,
+    24864
+   ],
+   "p": "0px 0px 0px 22px",
+   "m": "16px 0px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    897,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    900,
+    77.4,
+    17
+   ],
+   "t": "Definitions.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    937,
+    330,
+    96
+   ],
+   "t": "\"\" means Customer's employees, consultants, contractors, and agents who are authorized by Customer to use the Platform under this Agreement.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    940,
+    109.3,
+    17
+   ],
+   "t": "Authorized User",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    1049,
+    330,
+    96
+   ],
+   "t": "\"\" means any Conductor software that Conductor distributes to Customer for use on systems under Customer's administrative control.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    1052,
+    140.2,
+    17
+   ],
+   "t": "Client-Side Software",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    1161,
+    330,
+    192
+   ],
+   "t": "\"\" means the Platform, and any and all intellectual property provided to Customer or any Authorized User in connection with the foregoing. For the avoidance of ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    1164,
+    88.3,
+    17
+   ],
+   "t": "Conductor IP",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    1369,
+    330,
+    168
+   ],
+   "t": "\"\" means information, data, and other content, in any form or medium, that is submitted, posted, or otherwise transmitted by or on behalf of Customer or an Auth",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    1372,
+    101.2,
+    17
+   ],
+   "t": "Customer Data",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    1553,
+    330,
+    192
+   ],
+   "t": "\"\" means Customer's information technology infrastructure, including computers, software, databases, electronic systems (including database management systems),",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    1556,
+    127.8,
+    17
+   ],
+   "t": "Customer Systems",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    1761,
+    330,
+    264
+   ],
+   "t": "\"\" means any software, hardware, or other technology, device, or means, including any virus, worm, malware, or other malicious computer code, the purpose or eff",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    1764,
+    93.5,
+    17
+   ],
+   "t": "Harmful Code",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2041,
+    330,
+    72
+   ],
+   "t": "\"\" means any Conductor software in a Conductor-hosted environment that Conductor makes available to Customer.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2044,
+    113.4,
+    17
+   ],
+   "t": "Hosted Software",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2129,
+    330,
+    168
+   ],
+   "t": "\"\" means: (i) a purchase order, order form, or other ordering document entered into by the Parties that incorporates this Agreement by reference; or (ii) if Cus",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2132,
+    38.9,
+    17
+   ],
+   "t": "Order",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2313,
+    330,
+    96
+   ],
+   "t": "\"\" means Conductor's proprietary hosted AI automation software platform, which may include (i) the Client-Side Software, and (ii) the Hosted Software.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2316,
+    58.1,
+    17
+   ],
+   "t": "Platform",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2425,
+    330,
+    192
+   ],
+   "t": "\"\" means any information that, individually or in combination, does or can identify a specific individual or by or from which a specific individual may be ident",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2428,
+    93.6,
+    17
+   ],
+   "t": "Personal Data",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2633,
+    330,
+    120
+   ],
+   "t": "\"\" means training, migration, implementation, integration, or other professional services that are memorialized in writing in a Statement of Work and provided t",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2636,
+    145.2,
+    17
+   ],
+   "t": "Professional Services",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    2769,
+    330,
+    456
+   ],
+   "t": "\"\" means: (i) special categories of data enumerated in European Union Regulation 2016/679, Article 9(1) or any successor legislation; (ii) protected health info",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    2772,
+    96.7,
+    17
+   ],
+   "t": "Sensitive Data",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    119.7,
+    2892,
+    42.8,
+    17
+   ],
+   "t": "HIPAA",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    55.7,
+    3108,
+    48.3,
+    17
+   ],
+   "t": "COPPA",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    55.7,
+    3132,
+    37.7,
+    17
+   ],
+   "t": "GLBA",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    3241,
+    330,
+    96
+   ],
+   "t": "\"\" means a written statement of work for Professional Services executed by both Parties that incorporates this Agreement by reference.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    3244,
+    126.4,
+    17
+   ],
+   "t": "Statement of Work",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    3353,
+    330,
+    96
+   ],
+   "t": "\"\" means the time period identified on the Order during which Customer's Authorized Users may access and use the Platform.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    3356,
+    133,
+    17
+   ],
+   "t": "Subscription Period",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    3465,
+    330,
+    192
+   ],
+   "t": "\"\" means products, services, and applications provided by a third party and used by Customer in connection with the Platform. For purposes of clarity, Third-Par",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    3468,
+    142.7,
+    17
+   ],
+   "t": "Third-Party Products",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    3673,
+    330,
+    192
+   ],
+   "t": "\"\" means usage data collected and processed by Conductor in connection with Customer's use of the Platform, including without limitation, telemetry data, data u",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    3676,
+    77.7,
+    17
+   ],
+   "t": "Usage Data",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    3881,
+    330,
+    144
+   ],
+   "t": "\"\" means the usage limitations set forth in this Agreement and the Order, including without limitation any limitations on the number of Authorized Users (if any",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    3884,
+    121.1,
+    17
+   ],
+   "t": "Usage Limitations",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    4041,
+    330,
+    72
+   ],
+   "t": "Subject to and conditioned on Customer's compliance with the terms and conditions of this Agreement:",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    4044,
+    108.9,
+    17
+   ],
+   "t": "Platform Usage.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    4129,
+    330,
+    360
+   ],
+   "t": "2.1. If Conductor provides to Customer any Client-Side Software, Conductor hereby grants to Customer a non-transferable (except in accordance with Section 13.8)",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.5,
+    4132,
+    144.7,
+    17
+   ],
+   "t": "Client-Side Software.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    4505,
+    330,
+    408
+   ],
+   "t": "2.2. If Conductor provides to Customer any Hosted Software, Customer may, solely through its Authorized Users, access and use the Platform during the Subscripti",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.7,
+    4508,
+    117.9,
+    17
+   ],
+   "t": "Hosted Software.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    4929,
+    330,
+    1224
+   ],
+   "t": "2.3. Customer shall not at any time, directly or indirectly, and shall not permit any Authorized Users to: (i) copy, modify, or create derivative works of any C",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.6,
+    4932,
+    85.6,
+    17
+   ],
+   "t": "Restrictions.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288.8,
+    5532,
+    30.6,
+    17
+   ],
+   "t": "APIs",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    333.9,
+    6084,
+    13.9,
+    17
+   ],
+   "t": "AI",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    6169,
+    330,
+    96
+   ],
+   "t": "2.4. This Section 2.4 applies solely to the extent that Conductor provides, and Customer uses, any Hosted Software under the Agreement.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.9,
+    6172,
+    169.6,
+    17
+   ],
+   "t": "Data Rights and Outputs.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    6281,
+    330,
+    144
+   ],
+   "t": "(a) Customer hereby grants to Conductor a non-exclusive, royalty-free, worldwide license to reproduce, distribute, and otherwise use and display the Customer Da",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    65.8,
+    6284,
+    105.7,
+    17
+   ],
+   "t": "Customer Data.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    6441,
+    330,
+    456
+   ],
+   "t": "(b) Conductor shall use commercially reasonable efforts to maintain the security and integrity of the Platform and the Customer Data. Customer acknowledges and ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    66.6,
+    6444,
+    130,
+    17
+   ],
+   "t": "Security Measures.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    6913,
+    330,
+    336
+   ],
+   "t": "(c) Conductor's rights and obligations with respect to Personal Data that it collects directly from individuals are set forth in Conductor's . Personal Data pro",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    6916,
+    303.3,
+    41
+   ],
+   "t": "Processing of Personal Data; No Sensitive Data.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "a",
+   "b": [
+    44,
+    7012,
+    95.3,
+    17
+   ],
+   "t": "Privacy Notice",
+   "f": "14px/24.0001px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.52px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "/privacy"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    7265,
+    330,
+    24
+   ],
+   "t": "2.5.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.5,
+    7268,
+    111.3,
+    17
+   ],
+   "t": "AI Technologies.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    7305,
+    330,
+    384
+   ],
+   "t": "(a) The Platform includes features and functionalities supported by AI technologies. Customer may submit inputs via the Platform (\"\") and receive outputs from t",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    65.8,
+    7308,
+    126.5,
+    17
+   ],
+   "t": "Inputs and Output.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    114.2,
+    7380,
+    42.5,
+    17
+   ],
+   "t": "Inputs",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    7404,
+    47.2,
+    17
+   ],
+   "t": "Output",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    7705,
+    330,
+    408
+   ],
+   "t": "(b) As between Conductor and Customer, and to the extent permitted by applicable law, Customer: (i) retains all ownership rights in its Inputs; and (ii) owns al",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    66.6,
+    7708,
+    230.6,
+    17
+   ],
+   "t": "Ownership and Usage Limitations.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    8129,
+    330,
+    336
+   ],
+   "t": "(c) Customer acknowledges that Output may not be unique and other users may receive similar content from the Platform, and such similar content is not considere",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    65.7,
+    8132,
+    83.1,
+    17
+   ],
+   "t": "Disclaimers.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    8481,
+    330,
+    192
+   ],
+   "t": "2.6. Conductor reserves all rights not expressly granted to Customer in this Agreement. Except for the limited rights and licenses expressly granted under this ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.6,
+    8484,
+    148.7,
+    17
+   ],
+   "t": "Reservation of Rights.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    8689,
+    330,
+    1080
+   ],
+   "t": "2.7. Notwithstanding anything to the contrary in this Agreement, Conductor may temporarily suspend Customer's and any Authorized User's access to any portion or",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.7,
+    8692,
+    83,
+    17
+   ],
+   "t": "Suspension.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    131.9,
+    9412,
+    140.2,
+    17
+   ],
+   "t": "Platform Suspension",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    9785,
+    330,
+    168
+   ],
+   "t": "2.8. Notwithstanding anything to the contrary in this Agreement, Conductor may process Usage Data to monitor, maintain, and optimize the Platform and for any ot",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.7,
+    9788,
+    82.2,
+    17
+   ],
+   "t": "Usage Data.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    9969,
+    330,
+    600
+   ],
+   "t": "2.9. Certain aspects of the Platform, such as the Client-Side Software, may contain or be distributed with open source software code or libraries (\"\"). Conducto",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.5,
+    9972,
+    181.3,
+    17
+   ],
+   "t": "Open Source Components.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    10044,
+    266.9,
+    41
+   ],
+   "t": "Open Source Components",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    10585,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    10588,
+    180.7,
+    17
+   ],
+   "t": "Customer Responsibilities.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    10625,
+    330,
+    384
+   ],
+   "t": "3.1. Customer is responsible and liable for all uses of the Platform resulting from access provided by Customer, directly or indirectly, whether such access or ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.5,
+    10628,
+    56.9,
+    17
+   ],
+   "t": "General.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    11025,
+    330,
+    528
+   ],
+   "t": "3.2. Conductor may from time to time make Third-Party Products available to Customer or Conductor may allow for certain Third-Party Products to be integrated wi",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.8,
+    11028,
+    147.2,
+    17
+   ],
+   "t": "Third-Party Products.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    11569,
+    330,
+    360
+   ],
+   "t": "3.3. Customer has and will retain sole responsibility for: (i) all Customer Data, including its content and use; (ii) all information, instructions, and materia",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.7,
+    11572,
+    250.5,
+    17
+   ],
+   "t": "Customer Control and Responsibility.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    11945,
+    330,
+    144
+   ],
+   "t": "During the Subscription Period, Conductor will use commercially reasonable efforts to provide Customer with basic customer support via Conductor's standard supp",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    11948,
+    59.1,
+    17
+   ],
+   "t": "Support.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    12105,
+    330,
+    456
+   ],
+   "t": "Conductor will perform Professional Services as described in an Order or Statement of Work. Customer will provide Conductor all reasonable cooperation required ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    12108,
+    149.7,
+    17
+   ],
+   "t": "Professional Services.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    12420,
+    265.7,
+    41
+   ],
+   "t": "Work Product",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    12577,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    12580,
+    107.3,
+    17
+   ],
+   "t": "Fees and Taxes.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    12617,
+    330,
+    672
+   ],
+   "t": "6.1. The Platform may be provided for a fee or other charge. Customer shall pay Conductor the fees (\"\") identified in the Order without offset or deduction at t",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.7,
+    12620,
+    36.4,
+    17
+   ],
+   "t": "Fees.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    87,
+    12668,
+    31.9,
+    17
+   ],
+   "t": "Fees",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    13305,
+    330,
+    216
+   ],
+   "t": "6.2. All Fees and other amounts payable by Customer under this Agreement are exclusive of taxes and similar assessments. Customer is responsible for all sales, ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.9,
+    13308,
+    43.1,
+    17
+   ],
+   "t": "Taxes.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    13537,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    13540,
+    168.3,
+    17
+   ],
+   "t": "Confidential Information.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    13577,
+    330,
+    576
+   ],
+   "t": "7.1. From time to time during the Subscription Period, either Party may disclose or make available to the other Party information about its business affairs, pr",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    67.7,
+    13580,
+    69.9,
+    17
+   ],
+   "t": "Definition.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    134.7,
+    13916,
+    163.8,
+    17
+   ],
+   "t": "Confidential Information",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    14169,
+    330,
+    696
+   ],
+   "t": "7.2. The receiving Party shall not use the disclosing Party's Confidential Information except to perform its obligations and exercise its rights hereunder nor s",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.9,
+    14172,
+    35.5,
+    17
+   ],
+   "t": "Duty.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    125.8,
+    14388,
+    109.4,
+    17
+   ],
+   "t": "Representatives",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    14881,
+    330,
+    528
+   ],
+   "t": "7.3. On the expiration or termination of the Agreement, the receiving Party shall promptly return to the disclosing Party all copies, whether in written, electr",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    14884,
+    227.8,
+    41
+   ],
+   "t": "Return of Materials; Effects of Termination/Expiration.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    15425,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    15428,
+    292.4,
+    17
+   ],
+   "t": "Intellectual Property Ownership; Feedback.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    15465,
+    330,
+    192
+   ],
+   "t": "8.1. Customer acknowledges that, as between Customer and Conductor, Conductor owns all right, title, and interest, including all intellectual property rights, i",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    69.7,
+    15468,
+    91.3,
+    17
+   ],
+   "t": "Conductor IP.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    15673,
+    330,
+    120
+   ],
+   "t": "8.2. Conductor acknowledges that, as between Conductor and Customer, Customer owns all right, title, and interest, including all intellectual property rights, i",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.9,
+    15676,
+    185.1,
+    17
+   ],
+   "t": "Customer Data and Output.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    15809,
+    330,
+    264
+   ],
+   "t": "8.3. If Customer or any of its employees or contractors sends or transmits any communications or materials to Conductor by mail, email, telephone, or otherwise,",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    71.8,
+    15812,
+    70.3,
+    17
+   ],
+   "t": "Feedback.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    279.9,
+    15980,
+    65.8,
+    17
+   ],
+   "t": "Feedback",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    16089,
+    330,
+    480
+   ],
+   "t": "THE CONDUCTOR IP IS PROVIDED \"AS IS\" AND CONDUCTOR HEREBY DISCLAIMS ALL WARRANTIES, WHETHER EXPRESS, IMPLIED, STATUTORY, OR OTHERWISE. CONDUCTOR SPECIFICALLY DI",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    16092,
+    140.2,
+    17
+   ],
+   "t": "Warranty Disclaimer.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    16585,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    16588,
+    109.4,
+    17
+   ],
+   "t": "Indemnification.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    16625,
+    330,
+    24
+   ],
+   "t": "10.1.",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    75.8,
+    16628,
+    184.6,
+    17
+   ],
+   "t": "Conductor Indemnification.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    16665,
+    330,
+    360
+   ],
+   "t": "(a) Conductor shall indemnify, defend, and hold harmless Customer from and against any and all losses, damages, liabilities, costs (including reasonable attorne",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    235.7,
+    16740,
+    46.8,
+    17
+   ],
+   "t": "Losses",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    55.7,
+    16812,
+    119.7,
+    17
+   ],
+   "t": "Third-Party Claim",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    17041,
+    330,
+    264
+   ],
+   "t": "(b) If such a claim is made or appears possible, Customer agrees to permit Conductor, at Conductor's sole discretion: to (i) modify or replace the Platform, or ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    17321,
+    330,
+    192
+   ],
+   "t": "(c) This Section 10.1 will not apply to the extent that the alleged infringement arises from: (i) use of the Platform in combination with data, software, hardwa",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    17529,
+    330,
+    552
+   ],
+   "t": "10.2. Customer shall indemnify, hold harmless, and, at Conductor's option, defend Conductor from and against any Losses resulting from any Third-Party Claim all",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78.1,
+    17532,
+    179.2,
+    17
+   ],
+   "t": "Customer Indemnification.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    18097,
+    330,
+    192
+   ],
+   "t": "10.3. THIS SECTION 10 SETS FORTH CUSTOMER'S SOLE REMEDIES AND CONDUCTOR'S SOLE LIABILITY AND OBLIGATION FOR ANY ACTUAL, THREATENED, OR ALLEGED CLAIMS THAT THE S",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    18100,
+    91.3,
+    17
+   ],
+   "t": "Sole Remedy.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    18305,
+    330,
+    768
+   ],
+   "t": "IN NO EVENT WILL CONDUCTOR BE LIABLE UNDER OR IN CONNECTION WITH THIS AGREEMENT UNDER ANY LEGAL OR EQUITABLE THEORY, INCLUDING BREACH OF CONTRACT, TORT (INCLUDI",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    18308,
+    152.2,
+    17
+   ],
+   "t": "Limitations of Liability.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19089,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    19092,
+    249.9,
+    17
+   ],
+   "t": "Subscription Period and Termination.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19129,
+    330,
+    360
+   ],
+   "t": "12.1. The initial term of this Agreement begins on the Effective Date and, unless terminated earlier pursuant to this Agreement's express provisions, will conti",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    75.8,
+    19132,
+    137.5,
+    17
+   ],
+   "t": "Subscription Period.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    19252,
+    173.6,
+    17
+   ],
+   "t": "Initial Subscription Period",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    19420,
+    259,
+    41
+   ],
+   "t": "Renewal Subscription Period",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    209.6,
+    19468,
+    133,
+    17
+   ],
+   "t": "Subscription Period",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19505,
+    330,
+    48
+   ],
+   "t": "12.2. In addition to any other express termination right set forth in this Agreement:",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    19508,
+    84.6,
+    17
+   ],
+   "t": "Termination.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19569,
+    330,
+    168
+   ],
+   "t": "(a) Conductor may terminate this Agreement, effective on written notice to Customer, if Customer: (i) fails to pay any amount when due hereunder, and such failu",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19753,
+    330,
+    192
+   ],
+   "t": "(b) either Party may terminate this Agreement, effective on written notice to the other Party, if the other Party materially breaches this Agreement, and such b",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    19961,
+    330,
+    384
+   ],
+   "t": "(c) either Party may terminate this Agreement, effective immediately upon written notice to the other Party, if the other Party: (i) becomes insolvent or is gen",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    20361,
+    330,
+    288
+   ],
+   "t": "12.3. Upon expiration or earlier termination of this Agreement, Customer shall immediately discontinue use of the Conductor IP and, without limiting Customer's ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    20364,
+    235.1,
+    17
+   ],
+   "t": "Effect of Expiration or Termination.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    20665,
+    330,
+    120
+   ],
+   "t": "12.4. This Section 12.4 and Sections 1, 5, 7, 8, 9, 10, 11, 12.3, and 13 survive any termination or expiration of this Agreement. No other provisions of this Ag",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78.2,
+    20668,
+    58.6,
+    17
+   ],
+   "t": "Survival.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    20801,
+    330,
+    24
+   ],
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    44,
+    20804,
+    100.6,
+    17
+   ],
+   "t": "Miscellaneous.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    20841,
+    330,
+    480
+   ],
+   "t": "13.1. This Agreement, together with any other documents incorporated herein by reference, constitutes the sole and entire agreement of the Parties with respect ",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    75.9,
+    20844,
+    122.1,
+    17
+   ],
+   "t": "Entire Agreement.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    21337,
+    330,
+    432
+   ],
+   "t": "13.2. All notices, requests, consents, claims, demands, waivers, and other communications hereunder (each, a \"\") must be in writing and addressed to the Parties",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78.1,
+    21340,
+    56.1,
+    17
+   ],
+   "t": "Notices.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    285.8,
+    21388,
+    44,
+    17
+   ],
+   "t": "Notice",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    21785,
+    330,
+    336
+   ],
+   "t": "13.3. In no event shall either Party be liable to the other Party, or be deemed to have breached this Agreement, for any failure or delay in performing its obli",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    21788,
+    100.3,
+    17
+   ],
+   "t": "Force Majeure.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    22137,
+    330,
+    432
+   ],
+   "t": "13.4. Conductor may change this Agreement (except for any Orders) from time to time at its discretion. The date on which the Agreement was last modified will be",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78.3,
+    22140,
+    203.2,
+    17
+   ],
+   "t": "Amendment and Modification.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    22585,
+    330,
+    168
+   ],
+   "t": "13.5. No failure or delay by either Party in exercising any right or remedy available to it in connection with this Agreement will constitute a waiver of such r",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    77.9,
+    22588,
+    49.3,
+    17
+   ],
+   "t": "Waiver.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    22769,
+    330,
+    360
+   ],
+   "t": "13.6. If any provision of this Agreement is invalid, illegal, or unenforceable in any jurisdiction, such invalidity, illegality, or unenforceability will not af",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    22772,
+    83,
+    17
+   ],
+   "t": "Severability.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    23145,
+    330,
+    168
+   ],
+   "t": "13.7. This Agreement is governed by and construed in accordance with the internal laws of the State of California without giving effect to any choice or conflic",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    76.1,
+    23148,
+    103.4,
+    17
+   ],
+   "t": "Governing Law.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    23329,
+    330,
+    576
+   ],
+   "t": "13.8. For any dispute in connection with this Agreement, the Parties agree to first attempt to mutually resolve the dispute informally via negotiation. If the d",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78.1,
+    23332,
+    131.5,
+    17
+   ],
+   "t": "Dispute Resolution.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "strong",
+   "b": [
+    50.5,
+    23572,
+    45.7,
+    17
+   ],
+   "t": "Claims",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    23921,
+    330,
+    288
+   ],
+   "t": "13.9. Customer may not assign any of its rights or delegate any of its obligations hereunder, in each case whether voluntarily, involuntarily, by operation of l",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    78,
+    23924,
+    84.5,
+    17
+   ],
+   "t": "Assignment.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    24225,
+    330,
+    432
+   ],
+   "t": "13.10. The Platform utilizes software and technology that may be subject to US export control laws, including the US Export Administration Act and its associate",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    84.3,
+    24228,
+    124.6,
+    17
+   ],
+   "t": "Export Regulation.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    24673,
+    330,
+    384
+   ],
+   "t": "13.11. Each of the software components that constitute the Platform is a \"commercial item\" as that term is defined at 48 C.F.R. § 2.101, consisting of \"commerci",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    82.2,
+    24676,
+    157.2,
+    17
+   ],
+   "t": "US Government Rights.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    25073,
+    330,
+    408
+   ],
+   "t": "13.12. Each Party acknowledges and agrees that a breach or threatened breach by such Party of any of its obligations under Section 7 or, in the case of Customer",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    84.3,
+    25076,
+    108.8,
+    17
+   ],
+   "t": "Equitable Relief.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    44,
+    25497,
+    330,
+    264
+   ],
+   "t": "13.13. Conductor may identify Customer as a user of the Platform and may use Customer's name, logo, and other trademarks in Conductor's customer list, press rel",
+   "f": "14px/24.0001px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "16px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    84.4,
+    25500,
+    62.3,
+    17
+   ],
+   "t": "Publicity.",
+   "f": "14px/24.0001px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/terms",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "27120"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79554"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  }
+ ]
+}

@@ -1,0 +1,220 @@
+{
+  "version": "1.0.0",
+  "$description": "Closed motion vocabulary. Techniques on the original: CSS transitions/keyframes, setInterval timers, requestAnimationFrame, IntersectionObserver. No framer-motion, GSAP or Lottie. The animate-in/fade-in/slide-in-* classes are INERT on the original and are not patterns. schema enum + sections must equal this key set (verify_all.py).",
+  "continuousPatterns": [
+    "scramble-cycle",
+    "demo-loop-on-view",
+    "shimmer-loader",
+    "typewriter-terminal",
+    "video-autoplay-loop"
+  ],
+  "patterns": {
+    "animated-webp-mask-once": {
+      "description": "Animated WebP used as a mask that plays once (loop count 1) then rests on its final frame.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:319",
+          "quote": "| M2 | Hero wordmark |"
+        }
+      ]
+    },
+    "arrow-nudge-hover": {
+      "description": "Trailing arrow moves 4px via the CSS translate property over 200ms on hover.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/ArrowLink.jsx:17",
+          "quote": "duration-200 group-hover:[translate:0.25rem_0]"
+        }
+      ]
+    },
+    "count-up-on-view": {
+      "description": "1400ms easeOutCubic count-up at IntersectionObserver threshold 0.4; skipped if already in view on load.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Logos.jsx:33",
+          "quote": "const p = Math.min((t - start) / 1400, 1)"
+        }
+      ]
+    },
+    "demo-loop-on-view": {
+      "description": "Timer-driven demo loop started by IntersectionObserver (threshold 0.3). Multiplayer 1400/2600ms; sandbox phases [350,1400,250,900,900,2800]; orchestration 450/500/2800ms and LOOPS forever.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Sandbox.jsx:70",
+          "quote": "const PHASE_MS = [350, 1400, 250, 900, 900, 2800]"
+        }
+      ]
+    },
+    "drawer-slide": {
+      "description": "Docs mobile drawer slide-in/out, 250ms ease.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:193",
+          "quote": "animation: fd-sidebar-in 250ms ease;"
+        }
+      ]
+    },
+    "fade-in-on-mount": {
+      "description": "Opacity 0 to 1 on first rAF, 500ms cubic-bezier(0,0,.2,1).",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Hero.jsx:35",
+          "quote": "transition-opacity duration-500 ease-out"
+        }
+      ]
+    },
+    "folder-collapse": {
+      "description": "Docs folder height collapse, 150ms.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/Collapsible.jsx:11",
+          "quote": "duration = 150,"
+        }
+      ]
+    },
+    "hover-color": {
+      "description": "Colour/background/border change on hover or focus, 150ms cubic-bezier(.4,0,.2,1) (prose links: opacity .8 over 200ms).",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:65",
+          "quote": "`transition-colors` = color/background-color/border-color/outline-color/text-decoration-color, `150ms cubic-bezier(0.4,0,0.2,1)`."
+        }
+      ]
+    },
+    "hover-opacity": {
+      "description": "Group hover drops meta/title opacity to .7 over 150ms.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Testimonials.jsx:86",
+          "quote": "transition-opacity duration-150 group-hover:opacity-70"
+        }
+      ]
+    },
+    "icon-swap-hover": {
+      "description": "Download icon and arrow-down swap with 8px vertical travel over 200ms.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:279",
+          "quote": "`transition: all 200ms cubic-bezier(.4,0,.2,1)`. Hover bg stays #fff."
+        }
+      ]
+    },
+    "instant-hover": {
+      "description": "Hover state with NO transition (header Download, hero Get Conductor, pricing and brandkit buttons).",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:100",
+          "quote": "Pricing buttons have **no transition class**, so their hover is instant."
+        }
+      ]
+    },
+    "instant-toggle": {
+      "description": "Open/close with no animation (mobile menu, download dialog).",
+      "measuredFrom": [
+        {
+          "ref": "src/components/DownloadDialog.jsx:19",
+          "quote": "Net effect: the dialog appears and disappears instantly"
+        }
+      ]
+    },
+    "none": {
+      "description": "No motion.",
+      "measuredFrom": []
+    },
+    "reveal-stagger-on-view": {
+      "description": "Per-card fade + 16px rise, 500ms ease-out, 50ms stagger, IntersectionObserver threshold 0.1, fires once.",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Testimonials.jsx:111",
+          "quote": "style={{ transitionDelay: `${index * 50}ms` }}"
+        }
+      ]
+    },
+    "scramble-cycle": {
+      "description": "Hero H1 phrase cycle every 3000ms with a left-to-right a-z character scramble (~470-650ms).",
+      "measuredFrom": [
+        {
+          "ref": "src/components/Hero.jsx:31",
+          "quote": "useInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 3000)"
+        }
+      ]
+    },
+    "scroll-mask-nav": {
+      "description": "CSS scroll-driven edge mask on the header nav when it overflows.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:327",
+          "quote": "| M10 | Header nav overflow mask |"
+        }
+      ]
+    },
+    "scroll-spy": {
+      "description": "TOC scroll-spy: every heading in view is active; SVG track and 4px dot follow.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:198",
+          "quote": "Every heading currently inside the viewport is active."
+        }
+      ]
+    },
+    "search-dialog-fade": {
+      "description": "Search overlay open/close 300ms (fade + dialog keyframes).",
+      "measuredFrom": [
+        {
+          "ref": "src/components/docs/docs.css:181",
+          "quote": "animation: fd-dialog-in 300ms cubic-bezier(0.16, 1, 0.3, 1);"
+        }
+      ]
+    },
+    "shimmer-loader": {
+      "description": "SVG dot loader shimmer keyframes, 916.67ms infinite (disabled under reduced motion).",
+      "measuredFrom": [
+        {
+          "ref": "src/index.css:101",
+          "quote": "animation: cloud-loader-dot-shimmer 916.6666666666667ms"
+        }
+      ]
+    },
+    "sticky-meta": {
+      "description": "Changelog meta column sticks at top 96px from 768px.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:451",
+          "quote": "sticks at **top 96px** while the article scrolls"
+        }
+      ]
+    },
+    "tooltip-hover": {
+      "description": "Avatar tooltip: opacity + 4px translate over 150ms on hover/focus-visible.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC.md:168",
+          "quote": "**Hover tooltip** (`role=tooltip`)"
+        }
+      ]
+    },
+    "typewriter-terminal": {
+      "description": "Typewriter text with blinking block cursor (530ms) on the download/404 terminal.",
+      "measuredFrom": [
+        {
+          "ref": "src/pages/NotFound.jsx:8",
+          "quote": "block cursor blinking every 530ms"
+        }
+      ]
+    },
+    "video-autoplay-loop": {
+      "description": "Muted autoplay looping video inside changelog entries.",
+      "measuredFrom": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:508",
+          "quote": "Videos autoplay muted and loop."
+        }
+      ]
+    }
+  },
+  "reducedMotionFallbacks": {
+    "static-no-motion-needed": "Nothing animates in the default state, so the reduced-motion state is identical.",
+    "final-state-no-motion": "Jump straight to the final state; timers and loops stop.",
+    "poster-or-first-frame": "Show the video poster / first frame instead of autoplaying."
+  }
+}

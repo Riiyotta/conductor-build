@@ -1,0 +1,28 @@
+{
+  "slug": "0.25.9-onboarding-bug-fixes",
+  "version": "0.25.9",
+  "versionSlug": "0.25.9",
+  "title": "Onboarding Bug Fixes",
+  "fullTitle": "0.25.9: Onboarding Bug Fixes",
+  "date": "Dec 11th, 2025",
+  "dateISO": "2025-12-11",
+  "description": "Conductor 0.25.9 changelog - Onboarding Bug Fixes",
+  "summary": "We've fixed a bug that broke onboarding for users who weren't authenticated with Claude Code or Codex.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.25.9-onboarding-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.25.9-onboarding-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.25.9-onboarding-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a bug that broke onboarding for users who weren&#x27;t authenticated with Claude Code or Codex.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Added more western US cities!</li>\n<li>Standardized copy buttons throughout the app</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed Claude Code account detection logic in onboarding</li>\n</ul>",
+  "markdown": "\nWe've fixed a bug that broke onboarding for users who weren't authenticated with Claude Code or Codex.\n\n## Improvements\n\n- Added more western US cities!\n- Standardized copy buttons throughout the app\n\n## Fixes\n\n- Fixed Claude Code account detection logic in onboarding\n"
+}

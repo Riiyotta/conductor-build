@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Scroll-driven nav mask (CLONE_SPEC M10) */
+@property --top-nav-scroll-mask-l-from {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+@property --top-nav-scroll-mask-r-from {
+  syntax: '<length-percentage>';
+  inherits: false;
+  initial-value: 100%;
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+  }
+  /* §0.1: <body> computes to the mono stack; every visible element sits in a font-sans wrapper. */
+  body {
+    @apply bg-background font-mono text-foreground antialiased;
+  }
+}
+
+@layer components {
+  /* Icon / animated-WebP masks over bg-current */
+  .mask-icon {
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+  }
+
+  /* §2.1 hero background fade */
+  .hero-bg-mask {
+    -webkit-mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 0%, #000 60%, transparent 100%);
+  }
+
+  /* Post-download terminal screen CRT scanlines (original: bg-[repeating-linear-gradient(...)]) */
+  .terminal-scanlines {
+    background-image: repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15) 1px, transparent 1px, transparent 2px);
+  }
+
+  /* §10 CTA background fade */
+  .cta-bg-mask {
+    -webkit-mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.12) 3%, rgba(0, 0, 0, 0.35) 7%, rgba(0, 0, 0, 0.65) 12%, rgba(0, 0, 0, 0.88) 16%, #000 20%, #000 100%);
+    mask-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.12) 3%, rgba(0, 0, 0, 0.35) 7%, rgba(0, 0, 0, 0.65) 12%, rgba(0, 0, 0, 0.88) 16%, #000 20%, #000 100%);
+  }
+
+  /* §1 / M10: header nav overflow mask (rules copied from the original's stylesheet).
+     Only takes effect when the nav overflows: otherwise the scroll timeline is inactive and
+     both custom properties stay at their 100% initial value (no fade). */
+  .top-nav-scroll-mask {
+    scrollbar-width: none;
+  }
+  .top-nav-scroll-mask::-webkit-scrollbar {
+    display: none;
+  }
+  @supports (animation-timeline: scroll()) {
+    .top-nav-scroll-mask {
+      --top-nav-scroll-mask-l: linear-gradient(to left, black, black var(--top-nav-scroll-mask-l-from), transparent);
+      --top-nav-scroll-mask-r: linear-gradient(to right, black, black var(--top-nav-scroll-mask-r-from), transparent);
+      -webkit-mask-image: var(--top-nav-scroll-mask-l), var(--top-nav-scroll-mask-r);
+      mask-image: var(--top-nav-scroll-mask-l), var(--top-nav-scroll-mask-r);
+      -webkit-mask-composite: source-in;
+      mask-composite: intersect;
+      animation: top-nav-scroll-mask-x linear;
+      animation-timeline: scroll(self inline);
+    }
+  }
+}
+
+@keyframes top-nav-scroll-mask-x {
+  0% {
+    --top-nav-scroll-mask-l-from: 100%;
+  }
+  10%,
+  100% {
+    --top-nav-scroll-mask-l-from: calc(100% - var(--top-nav-scroll-mask-size, 1.5rem));
+  }
+  0%,
+  90% {
+    --top-nav-scroll-mask-r-from: calc(100% - var(--top-nav-scroll-mask-size, 1.5rem));
+  }
+  100% {
+    --top-nav-scroll-mask-r-from: 100%;
+  }
+}
+
+/* M8 cloud loader */
+.cloud-loader-dot {
+  transform-box: fill-box;
+  transform-origin: center;
+}
+.cloud-loader-dot-loading {
+  animation: cloud-loader-dot-shimmer 916.6666666666667ms cubic-bezier(0.333, 0, 0.667, 1) infinite;
+  will-change: opacity, transform;
+}
+@keyframes cloud-loader-dot-shimmer {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  10.91% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
+  25.45% {
+    opacity: 0.58;
+    transform: scale(0.88);
+  }
+  41.82% {
+    opacity: 0.2;
+    transform: scale(0.78);
+  }
+  56.36% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.72);
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .cloud-loader-dot-loading {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+}

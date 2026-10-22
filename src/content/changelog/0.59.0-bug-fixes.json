@@ -1,0 +1,32 @@
+{
+  "slug": "0.59.0-bug-fixes",
+  "version": "0.59.0",
+  "versionSlug": "0.59.0",
+  "title": "Bug fixes",
+  "fullTitle": "0.59.0: Bug fixes",
+  "date": "May 27, 2026",
+  "dateISO": "2026-05-27",
+  "description": "Conductor 0.59.0 changelog - Bug fixes",
+  "summary": "Fixed bugs.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/opus-4-8-0.59.1.png",
+    "alt": "Claude Opus 4.8 in the model picker"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.59.0-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.59.0-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.59.0-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 4,
+      "title": "New in 0.59.1"
+    }
+  ],
+  "html": "<p>Fixed bugs.</p>\n<h3>Fixes</h3>\n<ul>\n<li>Reduced background git polling from workspace lists to keep Conductor more responsive.</li>\n<li>Fixed an issue where sending feedback with app logs could fail.</li>\n<li>Fixed a bug where creating a terminal tab wouldn&#x27;t always focus the terminal.</li>\n<li>Fixed an issue where rerun checks could make a PR look failed after the latest run passed.</li>\n<li>Fixed chat tab renaming so Rename chat opens a dialog consistently.</li>\n</ul>\n<h4>New in 0.59.1</h4>\n<p>Claude Opus 4.8 is now available in Conductor!</p>\n<figure data-asset><img alt=\"Claude Opus 4.8 in the model picker\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/opus-4-8-0.59.1.png\"/></figure>",
+  "markdown": "\nFixed bugs.\n\n## Fixes\n\n- Reduced background git polling from workspace lists to keep Conductor more responsive.\n- Fixed an issue where sending feedback with app logs could fail.\n- Fixed a bug where creating a terminal tab wouldn't always focus the terminal.\n- Fixed an issue where rerun checks could make a PR look failed after the latest run passed.\n- Fixed chat tab renaming so Rename chat opens a dialog consistently.\n\n### New in 0.59.1\n\nClaude Opus 4.8 is now available in Conductor!\n\n![Claude Opus 4.8 in the model picker](/assets/changelog/images/opus-4-8-0.59.1.png)\n"
+}

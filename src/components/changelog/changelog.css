@@ -1,0 +1,76 @@
+/*
+ * Changelog (CLONE_SPEC_DOCS.md §5). Imported by src/components/changelog/* only.
+ * Rules copied from the original stylesheet (25q8hi5g3_2_6.css); asset-frame rules are scoped to
+ * the changelog so they can't collide with the docs build.
+ */
+
+/* §5.1 `.changelog-container` (--site-content-width: 56.25rem) */
+.changelog-container {
+  width: 100%;
+  max-width: theme('maxWidth.site');
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+@media (min-width: 768px) {
+  .changelog-container {
+    max-width: calc(theme('maxWidth.site') + 11.5rem);
+    padding-left: 13rem;
+    padding-right: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .changelog-container {
+    max-width: calc(theme('maxWidth.site') + 11rem);
+    padding-left: 13rem;
+    padding-right: 2rem;
+  }
+}
+
+/* §5.2 image / video frame = docs §3.7 (.docs-asset-*) */
+.changelog-container .docs-asset-shell {
+  width: 100%;
+}
+.changelog-container .docs-asset-frame {
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  max-width: min(100%, 46rem);
+  margin-inline: auto;
+  overflow: hidden;
+  /* color-mix(var(--border) 88%, transparent) */
+  border: 1px solid rgba(234, 232, 230, 0.88);
+  border-radius: 1.25rem;
+  /* color-mix(in srgb, var(--muted) 86%, var(--background)) */
+  background: color-mix(in srgb, theme('colors.muted.DEFAULT') 86%, theme('colors.background'));
+  padding: 0.5rem;
+}
+.changelog-container .docs-asset-media {
+  display: block;
+  aspect-ratio: auto;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  /* Original: base min(48vh, var(--docs-asset-max-height) = 24rem); min(56vh, 30rem) only inside
+     @media (min-width:768px) (the spec omits the media query; verified live: 384px at 390x844). */
+  max-height: min(48vh, 24rem);
+  object-fit: contain;
+  border-radius: calc(1.25rem - 0.5rem);
+  margin-inline: auto;
+}
+@media (min-width: 768px) {
+  .changelog-container .docs-asset-media {
+    max-height: min(56vh, 30rem);
+  }
+}
+
+/* Original <body> is `flex min-h-screen flex-col` and main is `flex-1`, so on short posts (e.g.
+   0.13.8) the footer sits at the viewport bottom. The clone's #root has no such layout (global
+   gap, reported); scoped here to changelog pages only. */
+#root:has(.changelog-container) {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+#root:has(.changelog-container) main:has(> .changelog-container) {
+  flex: 1 1 0%;
+}

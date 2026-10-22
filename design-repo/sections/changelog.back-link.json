@@ -1,0 +1,70 @@
+{
+  "id": "changelog.back-link",
+  "category": "CHANGELOG",
+  "iaSections": [
+    "changelog.back-link"
+  ],
+  "purpose": "Return from a single post to the index.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/changelog/ChangelogPost.jsx:55",
+      "quote": "Back to changelog"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:494",
+      "quote": "### 5.4 Post page (`/changelog/<urlSlug>`)"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "changelog.back-link"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "label": {
+      "type": "text",
+      "maxWords": 4,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "href": {
+      "type": "url",
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.changelog-post"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:495",
+        "quote": "hover:text-foreground.transition-colors.mb-8"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [],
+  "assetRoles": []
+}

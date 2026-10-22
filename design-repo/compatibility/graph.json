@@ -1,0 +1,126 @@
+{
+  "version": "1.0.0",
+  "$description": "Rhythm and position rules JSON Schema cannot express. Each id must have an implementation in schema/semantic_validate.py (RULE_IMPLS); verify_all.py fails if the two sets diverge. Rules were checked against the real node sequences in templates/templates.json when written.",
+  "rules": [
+    {
+      "id": "ONE_HERO",
+      "severity": "error",
+      "description": "At most one HERO-category section per page.",
+      "exceptions": [],
+      "checkedAgainst": "all 11 templates have 0 or 1 hero"
+    },
+    {
+      "id": "REQUIRES_HERO",
+      "severity": "warn",
+      "description": "Pages should open with a HERO-category section.",
+      "exceptions": [
+        "template.changelog-index",
+        "template.changelog-post",
+        "template.docs-page",
+        "template.legal"
+      ],
+      "exceptionReason": "Legal, docs and changelog templates are hero-less by design: they start with body content directly under the header (CLONE_SPEC_PAGES.md section 7; CLONE_SPEC_DOCS.md 5.1: 'There is no page title or hero on the changelog index')."
+    },
+    {
+      "id": "HEADER_FIRST",
+      "severity": "error",
+      "description": "shell.header must be the first node.",
+      "exceptions": []
+    },
+    {
+      "id": "FOOTER_LAST_IN_FLOW",
+      "severity": "error",
+      "description": "The footer is the last node whose slot is 'flow'; overlay nodes may follow it.",
+      "exceptions": []
+    },
+    {
+      "id": "NO_ADJACENT_SAME_CATEGORY",
+      "severity": "warn",
+      "description": "Adjacent flow sections should not share a category.",
+      "exceptionsByCategory": {
+        "CHANGELOG": [
+          "template.changelog-index",
+          "template.changelog-post"
+        ],
+        "CONTENT": [
+          "template.brandkit",
+          "template.join-us"
+        ],
+        "DOCS": [
+          "template.docs-page"
+        ],
+        "FEATURES": [
+          "template.home"
+        ]
+      },
+      "exceptionReason": "Measured real adjacencies: the four homepage feature shells, the stacked brandkit/join-us CONTENT cards, and the docs/changelog shell parts are genuinely adjacent on the original."
+    },
+    {
+      "id": "ONE_PER_PAGE",
+      "severity": "error",
+      "description": "A section whose contract sets constraints.onePerPage appears at most once.",
+      "exceptions": []
+    },
+    {
+      "id": "MAX_PER_PAGE_UNIQUE_VARIANT",
+      "severity": "error",
+      "description": "A section with constraints.maxPerPage (features.feature-shell: 4) may repeat only with distinct variants, keyed on (section, variant).",
+      "exceptions": []
+    },
+    {
+      "id": "MUST_FOLLOW",
+      "severity": "error",
+      "description": "constraints.mustFollow: the immediately preceding node is the named section (mobile-menu after header; pagination after entry-list).",
+      "exceptions": []
+    },
+    {
+      "id": "MUST_FOLLOW_NAV",
+      "severity": "error",
+      "description": "constraints.mustFollowNav: every node before it is slot 'chrome'.",
+      "exceptions": []
+    },
+    {
+      "id": "MUST_PRECEDE_FOOTER",
+      "severity": "error",
+      "description": "constraints.mustPrecedeFooter: the section appears before the footer.",
+      "exceptions": []
+    },
+    {
+      "id": "SECTION_ALLOWED_IN_TEMPLATE",
+      "severity": "error",
+      "description": "A section may only be used in the templates listed in constraints.allowedTemplates (route restriction; e.g. hero.home only on template.home, HubSpot-replica forms only on enterprise/team-plan).",
+      "exceptions": []
+    },
+    {
+      "id": "ROUTE_MATCHES_TEMPLATE",
+      "severity": "error",
+      "description": "PageSpec.route must belong to the declared template (exact list or regex).",
+      "exceptions": []
+    },
+    {
+      "id": "MOTION_BUDGET",
+      "severity": "warn",
+      "description": "At most 5 nodes per page may use a continuous pattern.",
+      "params": {
+        "max": 5,
+        "continuousPatterns": [
+          "scramble-cycle",
+          "demo-loop-on-view",
+          "shimmer-loader",
+          "typewriter-terminal",
+          "video-autoplay-loop"
+        ]
+      },
+      "exceptions": []
+    }
+  ],
+  "notApplicable": {
+    "NO_CONSECUTIVE_SCROLL_STAGES": "The original has no scroll-linked section motion (CLONE_SPEC.md section 12: 'No parallax, no marquee, no scroll-linked transforms'), and the motion enum has no scroll-stage pattern."
+  },
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:332",
+      "quote": "No parallax, no marquee, no scroll-linked transforms on page sections."
+    }
+  ]
+}

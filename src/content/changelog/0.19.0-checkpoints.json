@@ -1,0 +1,32 @@
+{
+  "slug": "0.19.0-checkpoints",
+  "version": "0.19.0",
+  "versionSlug": "0.19.0",
+  "title": "Checkpoints",
+  "fullTitle": "0.19.0: Checkpoints",
+  "date": "Nov 5th, 2025",
+  "dateISO": "2025-11-05",
+  "description": "Conductor 0.19.0 changelog - Checkpoints",
+  "summary": "Revert your chat to a previous turn, wiping the conversation history and changes.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.19.0/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f.png",
+    "alt": "CleanShot 2025-11-05 at 14 38 56@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.19.0-checkpoints/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.19.0-checkpoints",
+  "sourceUrl": "https://www.conductor.build/changelog/0.19.0-checkpoints",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>Revert your chat to a previous turn, wiping the conversation history and changes.</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-05 at 14 38 56@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.19.0/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f.png\"/></figure>\n<p>Also, view at a glance changes in Claude&#x27;s most recent turn.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.19.0/703b0edd-f4f0-4f4b-bd7f-c3c53aa29371.png\"/></figure>\n<p>Learn more about checkpointing <a href=\"/docs/reference/checkpoints\" target=\"_blank\" rel=\"noopener noreferrer\">in our docs</a>.</p>\n<p>You can now also close the left sidebar. Press ⌘B to toggle the left sidebar, and ⌥⌘B to toggle right.</p>\n<p>Or, turn on Zen Mode with CTRL+Z to hide both at once.</p>\n<figure data-asset><img alt=\"CleanShot 2025-11-05 at 13 36 47@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.19.0/0a81e613-2241-4aa0-bd98-2224a943d39d.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Clicking file badges will now show you the file in Conductor</li>\n<li>Selecting a model now closes the model picker and focuses the composer</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fix <code>model not found</code> error in older chats</li>\n<li>Improve resource teardown logic on app close</li>\n<li>Fix hover mask for tabs with long file names</li>\n<li>Fix <code>not_found_error</code> when setting <code>gpt-5-codex</code> as the default model in Settings</li>\n</ul>",
+  "markdown": "\nRevert your chat to a previous turn, wiping the conversation history and changes.\n\n<img\n    width=\"684\"\n    height=\"240\"\n    alt=\"CleanShot 2025-11-05 at 14 38 56@2x\"\n    src=\"/assets/changelog/media/0.19.0/4ce9afbd-5782-402e-a8a8-fcc51b4ddb1f.png\"\n/>\n\nAlso, view at a glance changes in Claude's most recent turn.\n\n<img\n    width=\"746\"\n    height=\"216\"\n    alt=\"image\"\n    src=\"/assets/changelog/media/0.19.0/703b0edd-f4f0-4f4b-bd7f-c3c53aa29371.png\"\n/>\n\nLearn more about checkpointing [in our docs](/docs/reference/checkpoints).\n\nYou can now also close the left sidebar. Press ⌘B to toggle the left sidebar, and ⌥⌘B to toggle right.\n\nOr, turn on Zen Mode with CTRL+Z to hide both at once.\n\n<img\n    width=\"2598\"\n    height=\"2038\"\n    alt=\"CleanShot 2025-11-05 at 13 36 47@2x\"\n    src=\"/assets/changelog/media/0.19.0/0a81e613-2241-4aa0-bd98-2224a943d39d.png\"\n/>\n\n## Improvements\n\n- Clicking file badges will now show you the file in Conductor\n- Selecting a model now closes the model picker and focuses the composer\n\n## Fixes\n\n- Fix `model not found` error in older chats\n- Improve resource teardown logic on app close\n- Fix hover mask for tabs with long file names\n- Fix `not_found_error` when setting `gpt-5-codex` as the default model in Settings\n"
+}

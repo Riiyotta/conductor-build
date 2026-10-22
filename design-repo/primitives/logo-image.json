@@ -1,0 +1,27 @@
+{
+  "id": "logo-image",
+  "kind": "primitive",
+  "purpose": "Third-party wordmark slot inside logo grids. Content is governed by assetRole customer-logo (never reproduce real logos).",
+  "implementedBy": [
+    {
+      "ref": "src/components/Logos.jsx:100",
+      "quote": "alt=\"Spotify\""
+    }
+  ],
+  "tokens": [
+    "{layout.container.max-2xl}"
+  ],
+  "variants": [
+    "strip",
+    "enterprise-grid"
+  ],
+  "states": [
+    "rest (no hover)"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:146",
+      "quote": "No hover effects on logos."
+    }
+  ]
+}

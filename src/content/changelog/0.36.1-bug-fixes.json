@@ -1,0 +1,28 @@
+{
+  "slug": "0.36.1-bug-fixes",
+  "version": "0.36.1",
+  "versionSlug": "0.36.1",
+  "title": " Bug Fixes",
+  "fullTitle": "0.36.1:  Bug Fixes",
+  "date": "Feb 17th, 2026",
+  "dateISO": "2026-02-17",
+  "description": "Conductor 0.36.1 changelog -  Bug Fixes",
+  "summary": "We've fixed a bug that caused increased background resource usage. More performance improvements coming soon.",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.36.1-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.1-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.1-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve fixed a bug that caused increased background resource usage. More performance improvements coming soon.</p>\n<h3>Improvements</h3>\n<ul>\n<li>Re-added the inline &quot;New workspace&quot; button</li>\n<li>Chat overview bars are now capped at 50 turns for better readability</li>\n<li>&quot;Open in&quot; button in the top bar now always shows the workspace directory</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Improved Xcode installation detection</li>\n</ul>",
+  "markdown": "\nWe've fixed a bug that caused increased background resource usage. More performance improvements coming soon.\n\n## Improvements\n\n- Re-added the inline \"New workspace\" button\n- Chat overview bars are now capped at 50 turns for better readability\n- \"Open in\" button in the top bar now always shows the workspace directory\n\n## Fixes\n\n- Improved Xcode installation detection\n"
+}

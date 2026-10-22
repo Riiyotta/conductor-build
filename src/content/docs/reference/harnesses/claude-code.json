@@ -1,0 +1,673 @@
+{
+  "slug": "reference/harnesses/claude-code",
+  "url": "/docs/reference/harnesses/claude-code",
+  "title": "Claude Code",
+  "description": "Details for running Claude Code inside Conductor",
+  "meta": {
+    "title": "Claude Code | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/harnesses/claude-code/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Claude Code"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#setup-notes",
+      "title": "Setup notes"
+    },
+    {
+      "depth": 2,
+      "url": "#auth-path",
+      "title": "Auth path"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/harnesses",
+    "title": "Overview",
+    "description": "Compare the harnesses Conductor can run and where each one is configured"
+  },
+  "next": {
+    "url": "/docs/reference/harnesses/codex",
+    "title": "Codex",
+    "description": "Details for running OpenAI Codex inside Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code is Anthropic's coding harness for interacting with Claude models. Conductor comes with Claude Code preinstalled and allows you to use an Anthropic API key or existing subscription from within the app."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "div",
+      "attrs": {
+        "data-class": "not-prose my-8 space-y-10"
+      },
+      "children": [
+        {
+          "type": "element",
+          "tag": "section",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "div",
+              "attrs": {
+                "data-class": "flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "div",
+                  "attrs": {
+                    "data-class": "flex min-w-0 items-center gap-2"
+                  },
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "role": "img",
+                        "viewBox": "0 0 24 24",
+                        "fill": "currentColor",
+                        "focusable": "false",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"
+                          },
+                          "children": []
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tag": "h2",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Claude Code"
+                        },
+                        {
+                          "type": "text",
+                          "value": " quick facts"
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "https://support.claude.com/en/articles/11940350-claude-code-model-configuration",
+                    "target": "_blank",
+                    "rel": "noopener noreferrer"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Anthropic Claude Code model configuration"
+                    },
+                    {
+                      "type": "element",
+                      "tag": "svg",
+                      "attrs": {
+                        "xmlns": "http://www.w3.org/2000/svg",
+                        "width": 24,
+                        "height": 24,
+                        "viewBox": "0 0 24 24",
+                        "fill": "none",
+                        "stroke": "currentColor",
+                        "stroke-width": 2,
+                        "stroke-linecap": "round",
+                        "stroke-linejoin": "round",
+                        "aria-hidden": "true"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 7h10v10"
+                          },
+                          "children": []
+                        },
+                        {
+                          "type": "element",
+                          "tag": "path",
+                          "attrs": {
+                            "d": "M7 17 17 7"
+                          },
+                          "children": []
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "table",
+              "head": [
+                {
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Topic"
+                    }
+                  ]
+                },
+                {
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "span",
+                      "attrs": {
+                        "data-class": "flex items-center gap-2"
+                      },
+                      "children": [
+                        {
+                          "type": "element",
+                          "tag": "svg",
+                          "attrs": {
+                            "role": "img",
+                            "viewBox": "0 0 24 24",
+                            "fill": "currentColor",
+                            "focusable": "false",
+                            "aria-hidden": "true"
+                          },
+                          "children": [
+                            {
+                              "type": "element",
+                              "tag": "path",
+                              "attrs": {
+                                "d": "m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z"
+                              },
+                              "children": []
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": "Claude Code"
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ],
+              "rows": [
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Availability"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Conductor includes a managed Claude Code executable. You can use your own Claude Code install instead."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Setup"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Auth in "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " ->"
+                      },
+                      {
+                        "type": "text",
+                        "value": " "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Harnesses"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": ". Provider environment variables in "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Settings"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": " -> "
+                      },
+                      {
+                        "type": "element",
+                        "tag": "code",
+                        "attrs": {},
+                        "children": [
+                          {
+                            "type": "text",
+                            "value": "Environment"
+                          }
+                        ]
+                      },
+                      {
+                        "type": "text",
+                        "value": "."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Models"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude models available to the active account, subscription, API key, or provider."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Billing"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Claude subscription, Claude Console or API credits, or provider billing."
+                      }
+                    ]
+                  }
+                ],
+                [
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Controls"
+                      }
+                    ]
+                  },
+                  {
+                    "children": [
+                      {
+                        "type": "text",
+                        "value": "Plan Mode, Fast Mode, effort controls, checkpoints, and skills when supported by the setup."
+                      }
+                    ]
+                  }
+                ]
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "setup-notes",
+      "children": [
+        {
+          "type": "text",
+          "value": "Setup notes"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor can use the bundled Claude Code binary or a configured system Claude Code binary."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code auth status appears in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=claude",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Claude Code"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code can authenticate through:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "a Claude Pro or Max subscription connected to Claude Code"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Claude Console or Anthropic API billing"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "supported third-party or cloud providers configured through environment variables"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Provider environment variables can be configured in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". For setup examples, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/guides/providers#claude-code"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Configure model providers: Claude Code"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "auth-path",
+      "children": [
+        {
+          "type": "text",
+          "value": "Auth path"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code can use a subscription path or an API/provider path."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "warning",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "If "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "ANTHROPIC_API_KEY"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use that API key instead of Claude\nsubscription usage. That can result in API charges."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code's "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "/status"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " command reports the active account and remaining allocation when available."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Claude Code is Anthropic's coding harness for interacting with Claude models. Conductor comes with Claude Code preinstalled and allows you to use an Anthropic API key or existing subscription from within the app.</p><div data-class=\"not-prose my-8 space-y-10\"><section><div data-class=\"flex flex-col gap-3 pb-5 md:flex-row md:items-start md:justify-between\"><div data-class=\"flex min-w-0 items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z\"></path></svg><h2>Claude Code quick facts</h2></div><a href=\"https://support.claude.com/en/articles/11940350-claude-code-model-configuration\" target=\"_blank\" rel=\"noopener noreferrer\">Anthropic Claude Code model configuration<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"24\" height=\"24\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"2\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\"><path d=\"M7 7h10v10\"></path><path d=\"M7 17 17 7\"></path></svg></a></div><table><thead><tr><th>Topic</th><th><span data-class=\"flex items-center gap-2\"><svg role=\"img\" viewBox=\"0 0 24 24\" fill=\"currentColor\" focusable=\"false\" aria-hidden=\"true\"><path d=\"m4.7144 15.9555 4.7174-2.6471.079-.2307-.079-.1275h-.2307l-.7893-.0486-2.6956-.0729-2.3375-.0971-2.2646-.1214-.5707-.1215-.5343-.7042.0546-.3522.4797-.3218.686.0608 1.5179.1032 2.2767.1578 1.6514.0972 2.4468.255h.3886l.0546-.1579-.1336-.0971-.1032-.0972L6.973 9.8356l-2.55-1.6879-1.3356-.9714-.7225-.4918-.3643-.4614-.1578-1.0078.6557-.7225.8803.0607.2246.0607.8925.686 1.9064 1.4754 2.4893 1.8336.3643.3035.1457-.1032.0182-.0728-.164-.2733-1.3539-2.4467-1.445-2.4893-.6435-1.032-.17-.6194c-.0607-.255-.1032-.4674-.1032-.7285L6.287.1335 6.6997 0l.9957.1336.419.3642.6192 1.4147 1.0018 2.2282 1.5543 3.0296.4553.8985.2429.8318.091.255h.1579v-.1457l.1275-1.706.2368-2.0947.2307-2.6957.0789-.7589.3764-.9107.7468-.4918.5828.2793.4797.686-.0668.4433-.2853 1.8517-.5586 2.9021-.3643 1.9429h.2125l.2429-.2429.9835-1.3053 1.6514-2.0643.7286-.8196.85-.9046.5464-.4311h1.0321l.759 1.1293-.34 1.1657-1.0625 1.3478-.8804 1.1414-1.2628 1.7-.7893 1.36.0729.1093.1882-.0183 2.8535-.607 1.5421-.2794 1.8396-.3157.8318.3886.091.3946-.3278.8075-1.967.4857-2.3072.4614-3.4364.8136-.0425.0304.0486.0607 1.5482.1457.6618.0364h1.621l3.0175.2247.7892.522.4736.6376-.079.4857-1.2142.6193-1.6393-.3886-3.825-.9107-1.3113-.3279h-.1822v.1093l1.0929 1.0686 2.0035 1.8092 2.5075 2.3314.1275.5768-.3218.4554-.34-.0486-2.2039-1.6575-.85-.7468-1.9246-1.621h-.1275v.17l.4432.6496 2.3436 3.5214.1214 1.0807-.17.3521-.6071.2125-.6679-.1214-1.3721-1.9246L14.38 17.959l-1.1414-1.9428-.1397.079-.674 7.2552-.3156.3703-.7286.2793-.6071-.4614-.3218-.7468.3218-1.4753.3886-1.9246.3157-1.53.2853-1.9004.17-.6314-.0121-.0425-.1397.0182-1.4328 1.9672-2.1796 2.9446-1.7243 1.8456-.4128.164-.7164-.3704.0667-.6618.4008-.5889 2.386-3.0357 1.4389-1.882.929-1.0868-.0062-.1579h-.0546l-6.3385 4.1164-1.1293.1457-.4857-.4554.0608-.7467.2307-.2429 1.9064-1.3114Z\"></path></svg>Claude Code</span></th></tr></thead><tbody><tr><td>Availability</td><td>Conductor includes a managed Claude Code executable. You can use your own Claude Code install instead.</td></tr><tr><td>Setup</td><td>Auth in <code>Settings</code> -&gt; <code>Harnesses</code>. Provider environment variables in <code>Settings</code> -&gt; <code>Environment</code>.</td></tr><tr><td>Models</td><td>Claude models available to the active account, subscription, API key, or provider.</td></tr><tr><td>Billing</td><td>Claude subscription, Claude Console or API credits, or provider billing.</td></tr><tr><td>Controls</td><td>Plan Mode, Fast Mode, effort controls, checkpoints, and skills when supported by the setup.</td></tr></tbody></table></section></div><h2 id=\"setup-notes\"><a href=\"#setup-notes\">Setup notes</a></h2><p>Conductor can use the bundled Claude Code binary or a configured system Claude Code binary.</p><p>Claude Code auth status appears in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=claude\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Claude Code</code></a>.</p><p>Claude Code can authenticate through:</p><ul><li>a Claude Pro or Max subscription connected to Claude Code</li><li>Claude Console or Anthropic API billing</li><li>supported third-party or cloud providers configured through environment variables</li></ul><p>Provider environment variables can be configured in <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>. For setup examples, see <a href=\"/docs/guides/providers#claude-code\">Configure model providers: Claude Code</a>.</p><h2 id=\"auth-path\"><a href=\"#auth-path\">Auth path</a></h2><p>Claude Code can use a subscription path or an API/provider path.</p><div role=\"note\" data-callout=\"warning\"><p>If <code>ANTHROPIC_API_KEY</code> is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use that API key instead of Claude\nsubscription usage. That can result in API charges.</p></div><p>Claude Code's <code>/status</code> command reports the active account and remaining allocation when available.</p>",
+  "text": "Claude Code is Anthropic's coding harness for interacting with Claude models. Conductor comes with Claude Code preinstalled and allows you to use an Anthropic API key or existing subscription from within the app.\nClaude Code quick facts\nAnthropic Claude Code model configurationTopicClaude CodeAvailabilityConductor includes a managed Claude Code executable. You can use your own Claude Code install instead.SetupAuth in Settings -> Harnesses. Provider environment variables in Settings -> Environment.ModelsClaude models available to the active account, subscription, API key, or provider.BillingClaude subscription, Claude Console or API credits, or provider billing.ControlsPlan Mode, Fast Mode, effort controls, checkpoints, and skills when supported by the setup.Setup notes\nConductor can use the bundled Claude Code binary or a configured system Claude Code binary.\nClaude Code auth status appears in Settings -> Agents -> Claude Code.\nClaude Code can authenticate through:\na Claude Pro or Max subscription connected to Claude Code\nClaude Console or Anthropic API billing\nsupported third-party or cloud providers configured through environment variables\nProvider environment variables can be configured in Settings -> Environment. For setup examples, see Configure model providers: Claude Code.\nAuth path\nClaude Code can use a subscription path or an API/provider path.\nIf ANTHROPIC_API_KEY is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use that API key instead of Claude\nsubscription usage. That can result in API charges.\nClaude Code's /status command reports the active account and remaining allocation when available.",
+  "markdown": "\n# Claude Code\n\n\n\nClaude Code is Anthropic's coding harness for interacting with Claude models. Conductor comes with Claude Code preinstalled and allows you to use an Anthropic API key or existing subscription from within the app.\n\n\n\n\n## Setup notes [#setup-notes]\n\nConductor can use the bundled Claude Code binary or a configured system Claude Code binary.\n\nClaude Code auth status appears in [`Settings` -> `Agents` -> `Claude Code`](https://app.conductor.build/settings/user/providers?providerTab=claude).\n\nClaude Code can authenticate through:\n\n* a Claude Pro or Max subscription connected to Claude Code\n* Claude Console or Anthropic API billing\n* supported third-party or cloud providers configured through environment variables\n\nProvider environment variables can be configured in [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment). For setup examples, see [Configure model providers: Claude Code](/docs/guides/providers#claude-code).\n\n## Auth path [#auth-path]\n\nClaude Code can use a subscription path or an API/provider path.\n\nIf `ANTHROPIC_API_KEY` is set in Conductor or in the shell environment that\nlaunches Conductor, Claude Code may use that API key instead of Claude\nsubscription usage. That can result in API charges.\n\nClaude Code's `/status` command reports the active account and remaining allocation when available.\n"
+}

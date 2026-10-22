@@ -1,0 +1,32 @@
+{
+  "slug": "0.6.0-a-new-look",
+  "version": "0.6.0",
+  "versionSlug": "0.6.0",
+  "title": "A New Look",
+  "fullTitle": "0.6.0: A New Look",
+  "date": "August 9th, 2025",
+  "dateISO": "2025-08-09",
+  "description": "Conductor 0.6.0 changelog - A New Look",
+  "summary": "We've overhauled Conductor's design. It's now sleeker, more intuitive, and feels right at home on your Mac.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.6.0/036c1352-3d84-4989-95df-91edd3a22347.png",
+    "alt": "CleanShot 2025-08-09 at 13 49 21@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.6.0-a-new-look/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.6.0-a-new-look",
+  "sourceUrl": "https://www.conductor.build/changelog/0.6.0-a-new-look",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>We&#x27;ve overhauled Conductor&#x27;s design. It&#x27;s now sleeker, more intuitive, and feels right at home on your Mac.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-09 at 13 49 21@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.6.0/036c1352-3d84-4989-95df-91edd3a22347.png\"/></figure>\n<p>The sidebar is now easier to parse. Get a clear view of what your agents are working on at a glance.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-09 at 14 23 55@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.6.0/7da2fa87-22ad-4287-8dc6-3a194101bdef.png\"/></figure>\n<p>Messages display more consistently and are easier to read. We auto-collapse Claude&#x27;s tools, but you can always peek under the hood.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-09 at 14 02 32@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.6.0/95f43b66-ca6b-4457-b34c-b98f244a25e6.png\"/></figure>\n<p>We&#x27;ve also redesigned the repository details page and added a configurable archive script:</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-09 at 14 22 31@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.6.0/eb957581-1633-4929-8649-c193f77d7100.png\"/></figure>\n<p>And you can now make multiple tabs in your terminal.</p>\n<figure data-asset><img alt=\"CleanShot 2025-08-09 at 14 06 11@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.6.0/d090d73b-d4d1-47ab-b011-7b4144b63e40.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Support for multiple terminal tabs</li>\n<li>Added optional archive script</li>\n<li>Added a max height for composer</li>\n<li>Support for .log file attachments</li>\n<li>Added JetBrains Rider to the &quot;Open&quot; menu</li>\n<li>New workspaces are now prefixed with your git username instead of <code>conductor/</code></li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed issue where GitHub repos failed to load</li>\n</ul>",
+  "markdown": "\nWe've overhauled Conductor's design. It's now sleeker, more intuitive, and feels right at home on your Mac.\n\n<img\n    width=\"2972\"\n    height=\"1758\"\n    alt=\"CleanShot 2025-08-09 at 13 49 21@2x\"\n    src=\"/assets/changelog/media/0.6.0/036c1352-3d84-4989-95df-91edd3a22347.png\"\n/>\n\nThe sidebar is now easier to parse. Get a clear view of what your agents are working on at a glance.\n\n<img\n    width=\"480\"\n    height=\"1282\"\n    alt=\"CleanShot 2025-08-09 at 14 23 55@2x\"\n    src=\"/assets/changelog/media/0.6.0/7da2fa87-22ad-4287-8dc6-3a194101bdef.png\"\n/>\n\nMessages display more consistently and are easier to read. We auto-collapse Claude's tools, but you can always peek under the hood.\n\n<img\n    width=\"1092\"\n    height=\"762\"\n    alt=\"CleanShot 2025-08-09 at 14 02 32@2x\"\n    src=\"/assets/changelog/media/0.6.0/95f43b66-ca6b-4457-b34c-b98f244a25e6.png\"\n/>\n\nWe've also redesigned the repository details page and added a configurable archive script:\n\n<img\n    width=\"2926\"\n    height=\"1728\"\n    alt=\"CleanShot 2025-08-09 at 14 22 31@2x\"\n    src=\"/assets/changelog/media/0.6.0/eb957581-1633-4929-8649-c193f77d7100.png\"\n/>\n\nAnd you can now make multiple tabs in your terminal.\n\n<img\n    width=\"824\"\n    height=\"796\"\n    alt=\"CleanShot 2025-08-09 at 14 06 11@2x\"\n    src=\"/assets/changelog/media/0.6.0/d090d73b-d4d1-47ab-b011-7b4144b63e40.png\"\n/>\n\n## Improvements\n\n- Support for multiple terminal tabs\n- Added optional archive script\n- Added a max height for composer\n- Support for .log file attachments\n- Added JetBrains Rider to the \"Open\" menu\n- New workspaces are now prefixed with your git username instead of `conductor/`\n\n## Fixes\n\n- Fixed issue where GitHub repos failed to load\n"
+}

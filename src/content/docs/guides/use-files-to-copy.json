@@ -1,0 +1,1292 @@
+{
+  "slug": "guides/use-files-to-copy",
+  "url": "/docs/guides/use-files-to-copy",
+  "title": "Use Files to copy",
+  "description": "Copy .env files and other gitignored local config into local Conductor workspaces",
+  "meta": {
+    "title": "Use Files to copy | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/guides/use-files-to-copy/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Setup"
+    },
+    {
+      "name": "Use Files to copy"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#before-you-start",
+      "title": "Before you start"
+    },
+    {
+      "depth": 2,
+      "url": "#set-up-files-to-copy",
+      "title": "Set up Files to copy"
+    },
+    {
+      "depth": 3,
+      "url": "#choose-the-files",
+      "title": "Choose the files"
+    },
+    {
+      "depth": 3,
+      "url": "#create-worktreeinclude",
+      "title": "Create .worktreeinclude"
+    },
+    {
+      "depth": 3,
+      "url": "#commit-the-patterns",
+      "title": "Commit the patterns"
+    },
+    {
+      "depth": 3,
+      "url": "#create-a-new-workspace",
+      "title": "Create a new workspace"
+    },
+    {
+      "depth": 3,
+      "url": "#verify-the-workspace",
+      "title": "Verify the workspace"
+    },
+    {
+      "depth": 2,
+      "url": "#personal-patterns",
+      "title": "Personal patterns"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/guides/configure-settings",
+    "title": "Configure settings",
+    "description": "Set personal defaults, project settings, and local project overrides in Conductor"
+  },
+  "next": {
+    "url": "/docs/guides/providers",
+    "title": "Configure model providers",
+    "description": "Set up Claude Code, Codex, OpenCode, and Cursor credentials in Conductor"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use Files to copy when every new local Conductor workspace needs the same gitignored local files before the app can run."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The common case is "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ": it should not be committed, but local workspaces still need it. A shared "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " file lets Conductor copy it automatically."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "Uz6TfQWFdIg",
+      "title": "Automatically copy files in your worktrees",
+      "thumbnail": "/assets/docs/youtube/Uz6TfQWFdIg-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "before-you-start",
+      "children": [
+        {
+          "type": "text",
+          "value": "Before you start"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You need:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A repository already added to Conductor."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A local Mac workspace. Files to copy does not currently run for cloud workspaces."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A local file that exists in your main checkout, such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".env.local"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "A "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".gitignore"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " rule that ignores that file."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Git worktrees start with tracked files only. They do not copy untracked files, gitignored files, local credentials, local config, generated files, dependency folders, or caches from your main checkout."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor's default Files to copy pattern is "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env*"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", so gitignored files like "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".env.local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " are copied by default. Files outside that pattern are not copied unless you add matching Files to copy or "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " patterns. Files to copy only copies files that Git already ignores. If the file is tracked, it will already be present in new worktrees."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "set-up-files-to-copy",
+      "children": [
+        {
+          "type": "text",
+          "value": "Set up Files to copy"
+        }
+      ]
+    },
+    {
+      "type": "steps",
+      "children": [
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "choose-the-files",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Choose the files"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Start with the files your app needs to boot in a new local workspace:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "txt",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": ".env.local\nconfig/local.json\ncerts/local.pem",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": ".env.local"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "config/local.json"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "certs/local.pem"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Do not include dependency folders or generated build outputs unless you have a strong reason. A "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/scripts#setup-scripts"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "setup script"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " is usually better for generated workspace state."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-worktreeinclude",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create .worktreeinclude"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " at the repo root:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "txt",
+              "title": ".worktreeinclude",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": ".env.local\nconfig/local.json\ncerts/local.pem",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": ".env.local"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "config/local.json"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "certs/local.pem"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "You can also use "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".gitignore"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " syntax:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "txt",
+              "title": ".worktreeinclude",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+              "code": ".env*\nconfig/**/local.json\ncerts/**\n!certs/**/*.example",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": ".env*"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "config/**/local.json"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "certs/**"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "!certs/**/*.example"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "For the full syntax, including nested globs and negation, see the "
+                },
+                {
+                  "type": "element",
+                  "tag": "a",
+                  "attrs": {
+                    "href": "/docs/reference/files-to-copy"
+                  },
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Files to copy reference"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "commit-the-patterns",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Commit the patterns"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Commit "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " so the project shares the same copy rules:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "sh",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+              "code": "git add .worktreeinclude\ngit commit -m \"Add worktree include patterns\"",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "git",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " add",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " .worktreeinclude",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                },
+                {
+                  "tokens": [
+                    {
+                      "text": "git",
+                      "color": "#6F42C1",
+                      "colorDark": "#B392F0"
+                    },
+                    {
+                      "text": " commit",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " -m",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \"Add worktree include patterns\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Do not commit the files matched by "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ". They should stay gitignored."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "create-a-new-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a new workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Create a new Conductor workspace with "
+                },
+                {
+                  "type": "shortcut",
+                  "label": "Command N",
+                  "keys": [
+                    "⌘",
+                    "N"
+                  ],
+                  "separator": "+"
+                },
+                {
+                  "type": "text",
+                  "value": "."
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "When Conductor creates the local workspace, it checks the repo root for "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": ".worktreeinclude"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": ", lists gitignored files, and copies matching files into the new workspace."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "step",
+          "children": [
+            {
+              "type": "heading",
+              "depth": 3,
+              "id": "verify-the-workspace",
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Verify the workspace"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Open the terminal in the new local workspace and check for one expected file:"
+                }
+              ]
+            },
+            {
+              "type": "code",
+              "lang": "sh",
+              "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+              "code": "test -f .env.local && echo \"Copied\"",
+              "lines": [
+                {
+                  "tokens": [
+                    {
+                      "text": "test",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " -f",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " .env.local",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    },
+                    {
+                      "text": " && ",
+                      "color": "#24292E",
+                      "colorDark": "#E1E4E8"
+                    },
+                    {
+                      "text": "echo",
+                      "color": "#005CC5",
+                      "colorDark": "#79B8FF"
+                    },
+                    {
+                      "text": " \"Copied\"",
+                      "color": "#032F62",
+                      "colorDark": "#9ECBFF"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "p",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "If the file is missing, check these first:"
+                }
+              ]
+            },
+            {
+              "type": "element",
+              "tag": "ul",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "code",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": ".worktreeinclude"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "text",
+                      "value": " is at the repo root."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The pattern matches the path from the repo root."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The target file exists in the main checkout."
+                    }
+                  ]
+                },
+                {
+                  "type": "element",
+                  "tag": "li",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "The target file is ignored by Git."
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "accordions",
+              "accordionType": "single",
+              "children": [
+                {
+                  "type": "accordion",
+                  "title": "Check whether Git ignores the file",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Run this from the main checkout:"
+                        }
+                      ]
+                    },
+                    {
+                      "type": "code",
+                      "lang": "sh",
+                      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+                      "code": "git check-ignore -v .env.local",
+                      "lines": [
+                        {
+                          "tokens": [
+                            {
+                              "text": "git",
+                              "color": "#6F42C1",
+                              "colorDark": "#B392F0"
+                            },
+                            {
+                              "text": " check-ignore",
+                              "color": "#032F62",
+                              "colorDark": "#9ECBFF"
+                            },
+                            {
+                              "text": " -v",
+                              "color": "#005CC5",
+                              "colorDark": "#79B8FF"
+                            },
+                            {
+                              "text": " .env.local",
+                              "color": "#032F62",
+                              "colorDark": "#9ECBFF"
+                            }
+                          ]
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "If Git prints a matching ignore rule, the file is eligible for Files to copy. If Git prints nothing, add or fix the "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": ".gitignore"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " rule first."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "accordion",
+                  "title": "Check whether the pattern matches the repo-root path",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "Patterns are evaluated from the repository root. A leading "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "/"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " anchors a pattern to the root, and nested globs such as "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "config/**/local.json"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " can match deeper paths."
+                        }
+                      ]
+                    },
+                    {
+                      "type": "element",
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "For example, "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "/config/local.json"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " matches only "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "config/local.json"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " at the repo root. It does not match "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": "packages/api/config/local.json"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": "."
+                        }
+                      ]
+                    }
+                  ]
+                },
+                {
+                  "type": "accordion",
+                  "title": "Check whether the default .env* pattern was replaced",
+                  "children": [
+                    {
+                      "type": "element",
+                      "tag": "p",
+                      "attrs": {},
+                      "children": [
+                        {
+                          "type": "text",
+                          "value": "The default pattern is "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": ".env*"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": ", but "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": ".worktreeinclude"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " and repo settings replace that default. If you add custom patterns and still want environment files copied, include "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": ".env*"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " in your "
+                        },
+                        {
+                          "type": "element",
+                          "tag": "code",
+                          "attrs": {},
+                          "children": [
+                            {
+                              "type": "text",
+                              "value": ".worktreeinclude"
+                            }
+                          ]
+                        },
+                        {
+                          "type": "text",
+                          "value": " file."
+                        }
+                      ]
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "personal-patterns",
+      "children": [
+        {
+          "type": "text",
+          "value": "Personal patterns"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you do not want to commit shared patterns, use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=misc&scrollTo=file_include_globs",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Repository Settings"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open Settings."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Select the repository."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Add one pattern per line in Files to copy."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " exists at the repo root, it takes precedence and the settings UI becomes read-only for that repository."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For the underlying model and tradeoffs, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/worktreeinclude"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Manage secrets with .worktreeinclude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Use Files to copy when every new local Conductor workspace needs the same gitignored local files before the app can run.</p><p>The common case is <code>.env.local</code>: it should not be committed, but local workspaces still need it. A shared <code>.worktreeinclude</code> file lets Conductor copy it automatically.</p><div data-youtube=\"Uz6TfQWFdIg\" data-title=\"Automatically copy files in your worktrees\" data-thumbnail=\"/assets/docs/youtube/Uz6TfQWFdIg-sddefault.webp\"></div><h2 id=\"before-you-start\"><a href=\"#before-you-start\">Before you start</a></h2><p>You need:</p><ul><li>A repository already added to Conductor.</li><li>A local Mac workspace. Files to copy does not currently run for cloud workspaces.</li><li>A local file that exists in your main checkout, such as <code>.env.local</code>.</li><li>A <code>.gitignore</code> rule that ignores that file.</li></ul><p>Git worktrees start with tracked files only. They do not copy untracked files, gitignored files, local credentials, local config, generated files, dependency folders, or caches from your main checkout.</p><p>Conductor's default Files to copy pattern is <code>.env*</code>, so gitignored files like <code>.env.local</code> are copied by default. Files outside that pattern are not copied unless you add matching Files to copy or <code>.worktreeinclude</code> patterns. Files to copy only copies files that Git already ignores. If the file is tracked, it will already be present in new worktrees.</p><h2 id=\"set-up-files-to-copy\"><a href=\"#set-up-files-to-copy\">Set up Files to copy</a></h2><div data-steps><div data-step><h3 id=\"choose-the-files\"><a href=\"#choose-the-files\">Choose the files</a></h3><p>Start with the files your app needs to boot in a new local workspace:</p><figure data-code data-lang=\"txt\"><pre><code><span class=\"line\">.env.local</span>\n<span class=\"line\">config/local.json</span>\n<span class=\"line\">certs/local.pem</span></code></pre></figure><p>Do not include dependency folders or generated build outputs unless you have a strong reason. A <a href=\"/docs/reference/scripts#setup-scripts\">setup script</a> is usually better for generated workspace state.</p></div><div data-step><h3 id=\"create-worktreeinclude\"><a href=\"#create-worktreeinclude\">Create .worktreeinclude</a></h3><p>Create <code>.worktreeinclude</code> at the repo root:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.env.local</span>\n<span class=\"line\">config/local.json</span>\n<span class=\"line\">certs/local.pem</span></code></pre></figure><p>You can also use <code>.gitignore</code> syntax:</p><figure data-code data-lang=\"txt\" data-title=\".worktreeinclude\"><pre><code><span class=\"line\">.env*</span>\n<span class=\"line\">config/**/local.json</span>\n<span class=\"line\">certs/**</span>\n<span class=\"line\">!certs/**/*.example</span></code></pre></figure><p>For the full syntax, including nested globs and negation, see the <a href=\"/docs/reference/files-to-copy\">Files to copy reference</a>.</p></div><div data-step><h3 id=\"commit-the-patterns\"><a href=\"#commit-the-patterns\">Commit the patterns</a></h3><p>Commit <code>.worktreeinclude</code> so the project shares the same copy rules:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> .worktreeinclude</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> commit</span><span style=\"color:#005CC5\"> -m</span><span style=\"color:#032F62\"> \"Add worktree include patterns\"</span></span></code></pre></figure><p>Do not commit the files matched by <code>.worktreeinclude</code>. They should stay gitignored.</p></div><div data-step><h3 id=\"create-a-new-workspace\"><a href=\"#create-a-new-workspace\">Create a new workspace</a></h3><p>Create a new Conductor workspace with <span data-shortcut aria-label=\"Command N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>N</kbd></span>.</p><p>When Conductor creates the local workspace, it checks the repo root for <code>.worktreeinclude</code>, lists gitignored files, and copies matching files into the new workspace.</p></div><div data-step><h3 id=\"verify-the-workspace\"><a href=\"#verify-the-workspace\">Verify the workspace</a></h3><p>Open the terminal in the new local workspace and check for one expected file:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#005CC5\">test</span><span style=\"color:#005CC5\"> -f</span><span style=\"color:#032F62\"> .env.local</span><span style=\"color:#24292E\"> &amp;&amp; </span><span style=\"color:#005CC5\">echo</span><span style=\"color:#032F62\"> \"Copied\"</span></span></code></pre></figure><p>If the file is missing, check these first:</p><ul><li><code>.worktreeinclude</code> is at the repo root.</li><li>The pattern matches the path from the repo root.</li><li>The target file exists in the main checkout.</li><li>The target file is ignored by Git.</li></ul><div data-accordions=\"single\"><details data-accordion><summary>Check whether Git ignores the file</summary><p>Run this from the main checkout:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> check-ignore</span><span style=\"color:#005CC5\"> -v</span><span style=\"color:#032F62\"> .env.local</span></span></code></pre></figure><p>If Git prints a matching ignore rule, the file is eligible for Files to copy. If Git prints nothing, add or fix the <code>.gitignore</code> rule first.</p></details><details data-accordion><summary>Check whether the pattern matches the repo-root path</summary><p>Patterns are evaluated from the repository root. A leading <code>/</code> anchors a pattern to the root, and nested globs such as <code>config/**/local.json</code> can match deeper paths.</p><p>For example, <code>/config/local.json</code> matches only <code>config/local.json</code> at the repo root. It does not match <code>packages/api/config/local.json</code>.</p></details><details data-accordion><summary>Check whether the default .env* pattern was replaced</summary><p>The default pattern is <code>.env*</code>, but <code>.worktreeinclude</code> and repo settings replace that default. If you add custom patterns and still want environment files copied, include <code>.env*</code> in your <code>.worktreeinclude</code> file.</p></details></div></div></div><h2 id=\"personal-patterns\"><a href=\"#personal-patterns\">Personal patterns</a></h2><p>If you do not want to commit shared patterns, use <a href=\"https://app.conductor.build/settings/repos?section=misc&amp;scrollTo=file_include_globs\" target=\"_blank\" rel=\"noopener noreferrer\">Repository Settings</a> instead:</p><ol><li>Open Settings.</li><li>Select the repository.</li><li>Add one pattern per line in Files to copy.</li></ol><p>When <code>.worktreeinclude</code> exists at the repo root, it takes precedence and the settings UI becomes read-only for that repository.</p><p>For the underlying model and tradeoffs, see <a href=\"/docs/reference/worktreeinclude\">Manage secrets with .worktreeinclude</a>.</p>",
+  "text": "Use Files to copy when every new local Conductor workspace needs the same gitignored local files before the app can run.\nThe common case is .env.local: it should not be committed, but local workspaces still need it. A shared .worktreeinclude file lets Conductor copy it automatically.\nBefore you start\nYou need:\nA repository already added to Conductor.\nA local Mac workspace. Files to copy does not currently run for cloud workspaces.\nA local file that exists in your main checkout, such as .env.local.\nA .gitignore rule that ignores that file.\nGit worktrees start with tracked files only. They do not copy untracked files, gitignored files, local credentials, local config, generated files, dependency folders, or caches from your main checkout.\nConductor's default Files to copy pattern is .env*, so gitignored files like .env.local are copied by default. Files outside that pattern are not copied unless you add matching Files to copy or .worktreeinclude patterns. Files to copy only copies files that Git already ignores. If the file is tracked, it will already be present in new worktrees.\nSet up Files to copy\nChoose the files\nStart with the files your app needs to boot in a new local workspace:\n.env.local\nconfig/local.json\ncerts/local.pemDo not include dependency folders or generated build outputs unless you have a strong reason. A setup script is usually better for generated workspace state.\nCreate .worktreeinclude\nCreate .worktreeinclude at the repo root:\n.env.local\nconfig/local.json\ncerts/local.pemYou can also use .gitignore syntax:\n.env*\nconfig/**/local.json\ncerts/**\n!certs/**/*.exampleFor the full syntax, including nested globs and negation, see the Files to copy reference.\nCommit the patterns\nCommit .worktreeinclude so the project shares the same copy rules:\ngit add .worktreeinclude\ngit commit -m \"Add worktree include patterns\"Do not commit the files matched by .worktreeinclude. They should stay gitignored.\nCreate a new workspace\nCreate a new Conductor workspace with ⌘N.\nWhen Conductor creates the local workspace, it checks the repo root for .worktreeinclude, lists gitignored files, and copies matching files into the new workspace.\nVerify the workspace\nOpen the terminal in the new local workspace and check for one expected file:\ntest -f .env.local && echo \"Copied\"If the file is missing, check these first:\n.worktreeinclude is at the repo root.\nThe pattern matches the path from the repo root.\nThe target file exists in the main checkout.\nThe target file is ignored by Git.\nCheck whether Git ignores the fileRun this from the main checkout:\ngit check-ignore -v .env.localIf Git prints a matching ignore rule, the file is eligible for Files to copy. If Git prints nothing, add or fix the .gitignore rule first.\nCheck whether the pattern matches the repo-root pathPatterns are evaluated from the repository root. A leading / anchors a pattern to the root, and nested globs such as config/**/local.json can match deeper paths.\nFor example, /config/local.json matches only config/local.json at the repo root. It does not match packages/api/config/local.json.\nCheck whether the default .env* pattern was replacedThe default pattern is .env*, but .worktreeinclude and repo settings replace that default. If you add custom patterns and still want environment files copied, include .env* in your .worktreeinclude file.\nPersonal patterns\nIf you do not want to commit shared patterns, use Repository Settings instead:\nOpen Settings.\nSelect the repository.\nAdd one pattern per line in Files to copy.\nWhen .worktreeinclude exists at the repo root, it takes precedence and the settings UI becomes read-only for that repository.\nFor the underlying model and tradeoffs, see Manage secrets with .worktreeinclude.",
+  "markdown": "\n# Use Files to copy\n\n\n\nUse Files to copy when every new local Conductor workspace needs the same gitignored local files before the app can run.\n\nThe common case is `.env.local`: it should not be committed, but local workspaces still need it. A shared `.worktreeinclude` file lets Conductor copy it automatically.\n\n\n\n\n## Before you start [#before-you-start]\n\nYou need:\n\n* A repository already added to Conductor.\n* A local Mac workspace. Files to copy does not currently run for cloud workspaces.\n* A local file that exists in your main checkout, such as `.env.local`.\n* A `.gitignore` rule that ignores that file.\n\nGit worktrees start with tracked files only. They do not copy untracked files, gitignored files, local credentials, local config, generated files, dependency folders, or caches from your main checkout.\n\nConductor's default Files to copy pattern is `.env*`, so gitignored files like `.env.local` are copied by default. Files outside that pattern are not copied unless you add matching Files to copy or `.worktreeinclude` patterns. Files to copy only copies files that Git already ignores. If the file is tracked, it will already be present in new worktrees.\n\n## Set up Files to copy [#set-up-files-to-copy]\n\n### Choose the files [#choose-the-files]\n\nStart with the files your app needs to boot in a new local workspace:\n\n```txt\n.env.local\nconfig/local.json\ncerts/local.pem\n```\n\nDo not include dependency folders or generated build outputs unless you have a strong reason. A [setup script](/docs/reference/scripts#setup-scripts) is usually better for generated workspace state.\n\n### Create .worktreeinclude [#create-worktreeinclude]\n\nCreate `.worktreeinclude` at the repo root:\n\n```txt title=\".worktreeinclude\"\n.env.local\nconfig/local.json\ncerts/local.pem\n```\n\nYou can also use `.gitignore` syntax:\n\n```txt title=\".worktreeinclude\"\n.env*\nconfig/**/local.json\ncerts/**\n!certs/**/*.example\n```\n\nFor the full syntax, including nested globs and negation, see the [Files to copy reference](/docs/reference/files-to-copy).\n\n### Commit the patterns [#commit-the-patterns]\n\nCommit `.worktreeinclude` so the project shares the same copy rules:\n\n```sh\ngit add .worktreeinclude\ngit commit -m \"Add worktree include patterns\"\n```\n\nDo not commit the files matched by `.worktreeinclude`. They should stay gitignored.\n\n### Create a new workspace [#create-a-new-workspace]\n\nCreate a new Conductor workspace with Command + N.\n\nWhen Conductor creates the local workspace, it checks the repo root for `.worktreeinclude`, lists gitignored files, and copies matching files into the new workspace.\n\n### Verify the workspace [#verify-the-workspace]\n\nOpen the terminal in the new local workspace and check for one expected file:\n\n```sh\ntest -f .env.local && echo \"Copied\"\n```\n\nIf the file is missing, check these first:\n\n* `.worktreeinclude` is at the repo root.\n* The pattern matches the path from the repo root.\n* The target file exists in the main checkout.\n* The target file is ignored by Git.\n\nRun this from the main checkout:\n\n```sh\ngit check-ignore -v .env.local\n```\n\nIf Git prints a matching ignore rule, the file is eligible for Files to copy. If Git prints nothing, add or fix the `.gitignore` rule first.\n\nPatterns are evaluated from the repository root. A leading `/` anchors a pattern to the root, and nested globs such as `config/**/local.json` can match deeper paths.\n\nFor example, `/config/local.json` matches only `config/local.json` at the repo root. It does not match `packages/api/config/local.json`.\n\nThe default pattern is `.env*`, but `.worktreeinclude` and repo settings replace that default. If you add custom patterns and still want environment files copied, include `.env*` in your `.worktreeinclude` file.\n\n## Personal patterns [#personal-patterns]\n\nIf you do not want to commit shared patterns, use [Repository Settings](https://app.conductor.build/settings/repos?section=misc\\&scrollTo=file_include_globs) instead:\n\n1. Open Settings.\n2. Select the repository.\n3. Add one pattern per line in Files to copy.\n\nWhen `.worktreeinclude` exists at the repo root, it takes precedence and the settings UI becomes read-only for that repository.\n\nFor the underlying model and tradeoffs, see [Manage secrets with .worktreeinclude](/docs/reference/worktreeinclude).\n"
+}

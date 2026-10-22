@@ -1,0 +1,1120 @@
+{
+  "slug": "concepts/workspaces-and-branches",
+  "url": "/docs/concepts/workspaces-and-branches",
+  "title": "Isolated workspaces",
+  "description": "Understand projects, repositories, workspaces, branches, working trees, and running environments",
+  "meta": {
+    "title": "Isolated workspaces | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/concepts/workspaces-and-branches/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Concepts"
+    },
+    {
+      "name": "Isolated workspaces"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#the-core-model",
+      "title": "The core model"
+    },
+    {
+      "depth": 2,
+      "url": "#what-isolation-gives-you",
+      "title": "What isolation gives you"
+    },
+    {
+      "depth": 2,
+      "url": "#branches-and-review",
+      "title": "Branches and review"
+    },
+    {
+      "depth": 2,
+      "url": "#switching-branches",
+      "title": "Switching branches"
+    },
+    {
+      "depth": 2,
+      "url": "#starting-from-an-existing-branch",
+      "title": "Starting from an existing branch"
+    },
+    {
+      "depth": 2,
+      "url": "#one-workspace-per-branch",
+      "title": "One workspace per branch"
+    },
+    {
+      "depth": 2,
+      "url": "#where-to-go-next",
+      "title": "Where to go next"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/cloud/faq",
+    "title": "Cloud FAQ",
+    "description": "Plans, specifications, pricing, and security for Conductor Cloud"
+  },
+  "next": {
+    "url": "/docs/concepts/workflow",
+    "title": "Workflow",
+    "description": "How Conductor turns isolated workspace streams into reviewed pull requests"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "An isolated workspace is a separate, git-backed copy of a project for one stream of work."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor uses workspaces so agents can change code, run commands, and build context without colliding with your main checkout or with agents working in other workspaces."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "the-core-model",
+      "children": [
+        {
+          "type": "text",
+          "value": "The core model"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "These terms build on each other from the Conductor project down to the files and processes inside one workspace:"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Term"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "What it means in Conductor"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Relationship"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Project"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The Conductor entry for a codebase. It holds Repository Settings, scripts, instructions, and the list of workspaces for that codebase."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 project contains 1 repository"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Repository"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The Git codebase behind a project. It can come from an existing local folder, GitHub project, or Quick start."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 repository contains many workspaces"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Workspace"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "An isolated copy of a project and repository for one task, issue, experiment, or pull request."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 workspace maps to 1 branch"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Branch"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The Git branch checked out inside a workspace. This is usually the review and PR unit."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 branch has 1 working tree"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Working tree"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The files on disk for one workspace. Conductor creates these separate checkouts with "
+              },
+              {
+                "type": "element",
+                "tag": "a",
+                "attrs": {
+                  "href": "/docs/concepts/git-worktrees"
+                },
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "Git worktrees"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 working tree belongs to 1 workspace"
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Running environment"
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "The app, server, watchers, tests, and terminal commands running inside a workspace."
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "1 workspace can run many processes"
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The easiest way to identify a workspace is often by its branch. For instance, this workspace is on the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scroll-to-bottom-btn"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " branch:"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "src": "/assets/docs/images/sidebar1.png",
+      "alt": "Conductor sidebar showing the scroll-to-bottom-btn workspace on the warsaw-v2 directory"
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The secondary name, such as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "warsaw-v2"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", is the workspace directory name."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-isolation-gives-you",
+      "children": [
+        {
+          "type": "text",
+          "value": "What isolation gives you"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each workspace gives an agent a separate place to work:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Code changes stay on that workspace's branch."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "File edits happen in that workspace's working tree."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup scripts and actions execute from that workspace directory."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "App processes can use workspace-specific environment variables such as "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "CONDUCTOR_PORT"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Notes and handoffs can live in the workspace's "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": ".context"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " folder without being committed."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "This is why Conductor works well for parallel agent work. You can put independent tasks in independent workspaces, run each one, review each branch, and merge work when it is ready."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Workspace isolation is development isolation, not a security boundary.\nAgents and commands still run on your Mac with your user permissions."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "branches-and-review",
+      "children": [
+        {
+          "type": "text",
+          "value": "Branches and review"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor wraps common GitHub and branch tasks in the app UI, but the branch is still the core unit that explains what a workspace is and how it fits into review and PR flow."
+        }
+      ]
+    },
+    {
+      "type": "youtube",
+      "videoId": "IkkTL21jGW0",
+      "title": "Use Conductor, automate GitHub",
+      "thumbnail": "/assets/docs/youtube/IkkTL21jGW0-sddefault.webp",
+      "framed": true
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When you create a new workspace, Conductor will create a new branch for it. When you start your first chat, Conductor will instruct the agent to rename this branch to match what you're working on."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor bases the new branch on the repository's configured base branch (for example "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "origin/main"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "), and it fetches from "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "origin"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " first. So a new workspace always starts from the latest remote commit, even if your local checkout is behind. To keep the branch in your root checkout current as well, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#setup-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Setup script reference"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "switching-branches",
+      "children": [
+        {
+          "type": "text",
+          "value": "Switching branches"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If what you're working on changes, you can check out a different branch:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "sh",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "git checkout some-other-feature",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " checkout",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " some-other-feature",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "...or rename the current branch:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "sh",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "git branch -m new-name",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " branch",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -m",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " new-name",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "...or create a new branch:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "sh",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "git checkout -b new-branch",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "git",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " checkout",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " -b",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " new-branch",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "starting-from-an-existing-branch",
+      "children": [
+        {
+          "type": "text",
+          "value": "Starting from an existing branch"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you have an existing branch and you want to start a new workspace from it, you can follow these steps:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Use "
+            },
+            {
+              "type": "shortcut",
+              "label": "Command Shift N",
+              "keys": [
+                "⌘",
+                "Shift",
+                "N"
+              ],
+              "separator": "+"
+            },
+            {
+              "type": "text",
+              "value": " or click the "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "..."
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " icon next to the \"New workspace\" button"
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Choose the \"Branches\" tab and select a branch"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You could also create a new workspace and then switch to the branch you want using the instructions in the \"Switching branches\" section above."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "one-workspace-per-branch",
+      "children": [
+        {
+          "type": "text",
+          "value": "One workspace per branch"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "A branch can only be checked out in one workspace at a time."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you want to check out the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "scroll-to-bottom-btn"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " branch in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "tokyo"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", but you already have\nthat branch checked out in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "warsaw"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", try one of these:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "tokyo"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "git checkout -b scroll-to-bottom-btn-2 scroll-to-bottom-btn"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to create a new branch based off of "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "scroll-to-bottom-btn"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "warsaw"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", switch to any other branch (e.g., "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "git checkout -b dummy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "), then in "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "tokyo"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " run "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "git checkout scroll-to-bottom-btn"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "where-to-go-next",
+      "children": [
+        {
+          "type": "text",
+          "value": "Where to go next"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Create your "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/first-workspace"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "first workspace"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", then use "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/parallel-agents"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Parallel agents"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to decide whether work belongs in one workspace or across several workspaces. If you want the broader Git model behind these workflows, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/concepts/git-worktrees"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Git Worktrees"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>An isolated workspace is a separate, git-backed copy of a project for one stream of work.</p><p>Conductor uses workspaces so agents can change code, run commands, and build context without colliding with your main checkout or with agents working in other workspaces.</p><h2 id=\"the-core-model\"><a href=\"#the-core-model\">The core model</a></h2><p>These terms build on each other from the Conductor project down to the files and processes inside one workspace:</p><table><thead><tr><th>Term</th><th>What it means in Conductor</th><th>Relationship</th></tr></thead><tbody><tr><td>Project</td><td>The Conductor entry for a codebase. It holds Repository Settings, scripts, instructions, and the list of workspaces for that codebase.</td><td>1 project contains 1 repository</td></tr><tr><td>Repository</td><td>The Git codebase behind a project. It can come from an existing local folder, GitHub project, or Quick start.</td><td>1 repository contains many workspaces</td></tr><tr><td>Workspace</td><td>An isolated copy of a project and repository for one task, issue, experiment, or pull request.</td><td>1 workspace maps to 1 branch</td></tr><tr><td>Branch</td><td>The Git branch checked out inside a workspace. This is usually the review and PR unit.</td><td>1 branch has 1 working tree</td></tr><tr><td>Working tree</td><td>The files on disk for one workspace. Conductor creates these separate checkouts with <a href=\"/docs/concepts/git-worktrees\">Git worktrees</a>.</td><td>1 working tree belongs to 1 workspace</td></tr><tr><td>Running environment</td><td>The app, server, watchers, tests, and terminal commands running inside a workspace.</td><td>1 workspace can run many processes</td></tr></tbody></table><p>The easiest way to identify a workspace is often by its branch. For instance, this workspace is on the <code>scroll-to-bottom-btn</code> branch:</p><figure data-asset=\"image\"><img src=\"/assets/docs/images/sidebar1.png\" alt=\"Conductor sidebar showing the scroll-to-bottom-btn workspace on the warsaw-v2 directory\" /></figure><p>The secondary name, such as <code>warsaw-v2</code>, is the workspace directory name.</p><h2 id=\"what-isolation-gives-you\"><a href=\"#what-isolation-gives-you\">What isolation gives you</a></h2><p>Each workspace gives an agent a separate place to work:</p><ul><li>Code changes stay on that workspace's branch.</li><li>File edits happen in that workspace's working tree.</li><li>Setup scripts and actions execute from that workspace directory.</li><li>App processes can use workspace-specific environment variables such as <code>CONDUCTOR_PORT</code>.</li><li>Notes and handoffs can live in the workspace's <code>.context</code> folder without being committed.</li></ul><p>This is why Conductor works well for parallel agent work. You can put independent tasks in independent workspaces, run each one, review each branch, and merge work when it is ready.</p><div role=\"note\" data-callout=\"info\"><p>Workspace isolation is development isolation, not a security boundary.\nAgents and commands still run on your Mac with your user permissions.</p></div><h2 id=\"branches-and-review\"><a href=\"#branches-and-review\">Branches and review</a></h2><p>Conductor wraps common GitHub and branch tasks in the app UI, but the branch is still the core unit that explains what a workspace is and how it fits into review and PR flow.</p><div data-youtube=\"IkkTL21jGW0\" data-title=\"Use Conductor, automate GitHub\" data-thumbnail=\"/assets/docs/youtube/IkkTL21jGW0-sddefault.webp\"></div><p>When you create a new workspace, Conductor will create a new branch for it. When you start your first chat, Conductor will instruct the agent to rename this branch to match what you're working on.</p><p>Conductor bases the new branch on the repository's configured base branch (for example <code>origin/main</code>), and it fetches from <code>origin</code> first. So a new workspace always starts from the latest remote commit, even if your local checkout is behind. To keep the branch in your root checkout current as well, see <a href=\"/docs/reference/scripts#setup-scripts\">Setup script reference</a>.</p><h2 id=\"switching-branches\"><a href=\"#switching-branches\">Switching branches</a></h2><p>If what you're working on changes, you can check out a different branch:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> checkout</span><span style=\"color:#032F62\"> some-other-feature</span></span></code></pre></figure><p>...or rename the current branch:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> branch</span><span style=\"color:#005CC5\"> -m</span><span style=\"color:#032F62\"> new-name</span></span></code></pre></figure><p>...or create a new branch:</p><figure data-code data-lang=\"sh\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">git</span><span style=\"color:#032F62\"> checkout</span><span style=\"color:#005CC5\"> -b</span><span style=\"color:#032F62\"> new-branch</span></span></code></pre></figure><h2 id=\"starting-from-an-existing-branch\"><a href=\"#starting-from-an-existing-branch\">Starting from an existing branch</a></h2><p>If you have an existing branch and you want to start a new workspace from it, you can follow these steps:</p><ol><li>Use <span data-shortcut aria-label=\"Command Shift N\"><kbd>⌘</kbd><span data-sep>+</span><kbd>Shift</kbd><span data-sep>+</span><kbd>N</kbd></span> or click the <code>...</code> icon next to the \"New workspace\" button</li><li>Choose the \"Branches\" tab and select a branch</li></ol><p>You could also create a new workspace and then switch to the branch you want using the instructions in the \"Switching branches\" section above.</p><h2 id=\"one-workspace-per-branch\"><a href=\"#one-workspace-per-branch\">One workspace per branch</a></h2><p>A branch can only be checked out in one workspace at a time.</p><p>If you want to check out the <code>scroll-to-bottom-btn</code> branch in <code>tokyo</code>, but you already have\nthat branch checked out in <code>warsaw</code>, try one of these:</p><ul><li>In <code>tokyo</code>, run <code>git checkout -b scroll-to-bottom-btn-2 scroll-to-bottom-btn</code> to create a new branch based off of <code>scroll-to-bottom-btn</code></li><li>In <code>warsaw</code>, switch to any other branch (e.g., <code>git checkout -b dummy</code>), then in <code>tokyo</code> run <code>git checkout scroll-to-bottom-btn</code></li></ul><h2 id=\"where-to-go-next\"><a href=\"#where-to-go-next\">Where to go next</a></h2><p>Create your <a href=\"/docs/first-workspace\">first workspace</a>, then use <a href=\"/docs/concepts/parallel-agents\">Parallel agents</a> to decide whether work belongs in one workspace or across several workspaces. If you want the broader Git model behind these workflows, see <a href=\"/docs/concepts/git-worktrees\">Git Worktrees</a>.</p>",
+  "text": "An isolated workspace is a separate, git-backed copy of a project for one stream of work.\nConductor uses workspaces so agents can change code, run commands, and build context without colliding with your main checkout or with agents working in other workspaces.\nThe core model\nThese terms build on each other from the Conductor project down to the files and processes inside one workspace:\nTermWhat it means in ConductorRelationshipProjectThe Conductor entry for a codebase. It holds Repository Settings, scripts, instructions, and the list of workspaces for that codebase.1 project contains 1 repositoryRepositoryThe Git codebase behind a project. It can come from an existing local folder, GitHub project, or Quick start.1 repository contains many workspacesWorkspaceAn isolated copy of a project and repository for one task, issue, experiment, or pull request.1 workspace maps to 1 branchBranchThe Git branch checked out inside a workspace. This is usually the review and PR unit.1 branch has 1 working treeWorking treeThe files on disk for one workspace. Conductor creates these separate checkouts with Git worktrees.1 working tree belongs to 1 workspaceRunning environmentThe app, server, watchers, tests, and terminal commands running inside a workspace.1 workspace can run many processesThe easiest way to identify a workspace is often by its branch. For instance, this workspace is on the scroll-to-bottom-btn branch:\nThe secondary name, such as warsaw-v2, is the workspace directory name.\nWhat isolation gives you\nEach workspace gives an agent a separate place to work:\nCode changes stay on that workspace's branch.\nFile edits happen in that workspace's working tree.\nSetup scripts and actions execute from that workspace directory.\nApp processes can use workspace-specific environment variables such as CONDUCTOR_PORT.\nNotes and handoffs can live in the workspace's .context folder without being committed.\nThis is why Conductor works well for parallel agent work. You can put independent tasks in independent workspaces, run each one, review each branch, and merge work when it is ready.\nWorkspace isolation is development isolation, not a security boundary.\nAgents and commands still run on your Mac with your user permissions.\nBranches and review\nConductor wraps common GitHub and branch tasks in the app UI, but the branch is still the core unit that explains what a workspace is and how it fits into review and PR flow.\nWhen you create a new workspace, Conductor will create a new branch for it. When you start your first chat, Conductor will instruct the agent to rename this branch to match what you're working on.\nConductor bases the new branch on the repository's configured base branch (for example origin/main), and it fetches from origin first. So a new workspace always starts from the latest remote commit, even if your local checkout is behind. To keep the branch in your root checkout current as well, see Setup script reference.\nSwitching branches\nIf what you're working on changes, you can check out a different branch:\ngit checkout some-other-feature...or rename the current branch:\ngit branch -m new-name...or create a new branch:\ngit checkout -b new-branchStarting from an existing branch\nIf you have an existing branch and you want to start a new workspace from it, you can follow these steps:\nUse ⌘ShiftN or click the ... icon next to the \"New workspace\" button\nChoose the \"Branches\" tab and select a branch\nYou could also create a new workspace and then switch to the branch you want using the instructions in the \"Switching branches\" section above.\nOne workspace per branch\nA branch can only be checked out in one workspace at a time.\nIf you want to check out the scroll-to-bottom-btn branch in tokyo, but you already have\nthat branch checked out in warsaw, try one of these:\nIn tokyo, run git checkout -b scroll-to-bottom-btn-2 scroll-to-bottom-btn to create a new branch based off of scroll-to-bottom-btn\nIn warsaw, switch to any other branch (e.g., git checkout -b dummy), then in tokyo run git checkout scroll-to-bottom-btn\nWhere to go next\nCreate your first workspace, then use Parallel agents to decide whether work belongs in one workspace or across several workspaces. If you want the broader Git model behind these workflows, see Git Worktrees.",
+  "markdown": "\n# Isolated workspaces\n\n\n\nAn isolated workspace is a separate, git-backed copy of a project for one stream of work.\n\nConductor uses workspaces so agents can change code, run commands, and build context without colliding with your main checkout or with agents working in other workspaces.\n\n## The core model [#the-core-model]\n\nThese terms build on each other from the Conductor project down to the files and processes inside one workspace:\n\n| Term                | What it means in Conductor                                                                                                             | Relationship                          |\n| ------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------- |\n| Project             | The Conductor entry for a codebase. It holds Repository Settings, scripts, instructions, and the list of workspaces for that codebase. | 1 project contains 1 repository       |\n| Repository          | The Git codebase behind a project. It can come from an existing local folder, GitHub project, or Quick start.                          | 1 repository contains many workspaces |\n| Workspace           | An isolated copy of a project and repository for one task, issue, experiment, or pull request.                                         | 1 workspace maps to 1 branch          |\n| Branch              | The Git branch checked out inside a workspace. This is usually the review and PR unit.                                                 | 1 branch has 1 working tree           |\n| Working tree        | The files on disk for one workspace. Conductor creates these separate checkouts with [Git worktrees](/docs/concepts/git-worktrees).    | 1 working tree belongs to 1 workspace |\n| Running environment | The app, server, watchers, tests, and terminal commands running inside a workspace.                                                    | 1 workspace can run many processes    |\n\nThe easiest way to identify a workspace is often by its branch. For instance, this workspace is on the `scroll-to-bottom-btn` branch:\n\n\n\n\nThe secondary name, such as `warsaw-v2`, is the workspace directory name.\n\n## What isolation gives you [#what-isolation-gives-you]\n\nEach workspace gives an agent a separate place to work:\n\n* Code changes stay on that workspace's branch.\n* File edits happen in that workspace's working tree.\n* Setup scripts and actions execute from that workspace directory.\n* App processes can use workspace-specific environment variables such as `CONDUCTOR_PORT`.\n* Notes and handoffs can live in the workspace's `.context` folder without being committed.\n\nThis is why Conductor works well for parallel agent work. You can put independent tasks in independent workspaces, run each one, review each branch, and merge work when it is ready.\n\nWorkspace isolation is development isolation, not a security boundary.\nAgents and commands still run on your Mac with your user permissions.\n\n## Branches and review [#branches-and-review]\n\nConductor wraps common GitHub and branch tasks in the app UI, but the branch is still the core unit that explains what a workspace is and how it fits into review and PR flow.\n\n\n\n\nWhen you create a new workspace, Conductor will create a new branch for it. When you start your first chat, Conductor will instruct the agent to rename this branch to match what you're working on.\n\nConductor bases the new branch on the repository's configured base branch (for example `origin/main`), and it fetches from `origin` first. So a new workspace always starts from the latest remote commit, even if your local checkout is behind. To keep the branch in your root checkout current as well, see [Setup script reference](/docs/reference/scripts#setup-scripts).\n\n## Switching branches [#switching-branches]\n\nIf what you're working on changes, you can check out a different branch:\n\n```sh\ngit checkout some-other-feature\n```\n\n...or rename the current branch:\n\n```sh\ngit branch -m new-name\n```\n\n...or create a new branch:\n\n```sh\ngit checkout -b new-branch\n```\n\n## Starting from an existing branch [#starting-from-an-existing-branch]\n\nIf you have an existing branch and you want to start a new workspace from it, you can follow these steps:\n\n1. Use Command + Shift + N or click the `...` icon next to the \"New workspace\" button\n2. Choose the \"Branches\" tab and select a branch\n\nYou could also create a new workspace and then switch to the branch you want using the instructions in the \"Switching branches\" section above.\n\n## One workspace per branch [#one-workspace-per-branch]\n\nA branch can only be checked out in one workspace at a time.\n\nIf you want to check out the `scroll-to-bottom-btn` branch in `tokyo`, but you already have\nthat branch checked out in `warsaw`, try one of these:\n\n* In `tokyo`, run `git checkout -b scroll-to-bottom-btn-2 scroll-to-bottom-btn` to create a new branch based off of `scroll-to-bottom-btn`\n* In `warsaw`, switch to any other branch (e.g., `git checkout -b dummy`), then in `tokyo` run `git checkout scroll-to-bottom-btn`\n\n## Where to go next [#where-to-go-next]\n\nCreate your [first workspace](/docs/first-workspace), then use [Parallel agents](/docs/concepts/parallel-agents) to decide whether work belongs in one workspace or across several workspaces. If you want the broader Git model behind these workflows, see [Git Worktrees](/docs/concepts/git-worktrees).\n"
+}

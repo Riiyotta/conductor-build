@@ -1,0 +1,188 @@
+{
+  "id": "proof.testimonials",
+  "category": "PROOF",
+  "iaSections": [
+    "proof.testimonials"
+  ],
+  "purpose": "Peer validation from named builders.",
+  "implementedBy": [
+    {
+      "ref": "src/components/Testimonials.jsx:146",
+      "quote": "export default function Testimonials() {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:231",
+      "quote": "## 8. Testimonials"
+    },
+    {
+      "ref": "CLONE_SPEC.md:321",
+      "quote": "| M4 | Testimonial cards |"
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "proof.testimonials"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "items": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "quote": {
+            "type": "text",
+            "maxWords": 28,
+            "required": true,
+            "observedMaxWords": 21
+          },
+          "name": {
+            "type": "text",
+            "maxWords": 4,
+            "required": true,
+            "observedMaxWords": 2
+          },
+          "subtitle": {
+            "type": "text",
+            "maxWords": 7,
+            "required": true,
+            "observedMaxWords": 5
+          },
+          "avatar": {
+            "type": "media",
+            "roles": [
+              "person-avatar"
+            ],
+            "required": true
+          },
+          "companyIcon": {
+            "type": "media",
+            "roles": [
+              "customer-logo"
+            ],
+            "required": false
+          },
+          "verified": {
+            "type": "boolean",
+            "required": true
+          },
+          "href": {
+            "type": "url",
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 2,
+      "maxItems": 6,
+      "required": true
+    },
+    "moreLink": {
+      "type": "object",
+      "fields": {
+        "label": {
+          "type": "text",
+          "maxWords": 6,
+          "required": true,
+          "observedMaxWords": 5
+        },
+        "href": {
+          "type": "url",
+          "required": true
+        }
+      },
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.home"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "reveal-stagger-on-view",
+      "hover-opacity",
+      "arrow-nudge-hover"
+    ],
+    "defaultPatterns": [
+      "reveal-stagger-on-view",
+      "hover-opacity",
+      "arrow-nudge-hover"
+    ],
+    "reducedMotionFallback": "final-state-no-motion",
+    "evidence": [
+      {
+        "ref": "src/components/Testimonials.jsx:64",
+        "quote": "M4: per-card IO threshold .1, fires once; 500ms ease-out, delay index*50ms."
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "1"
+        },
+        {
+          "property": "quote",
+          "value": "20px/28px"
+        },
+        {
+          "property": "paddingBlock",
+          "value": "96px"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "quote",
+          "value": "24px/32px"
+        },
+        {
+          "property": "paddingBlock",
+          "value": "128px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "columns",
+          "value": "2"
+        }
+      ]
+    },
+    {
+      "minWidth": 1024,
+      "changes": [
+        {
+          "property": "columnGap",
+          "value": "96px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Real testimonials from real, named people with real photos: generated pages may only use placeholders or quotes supplied with the quoted person's consent. Never fabricate a testimonial."
+  },
+  "quirks": [],
+  "assetRoles": [
+    "customer-logo",
+    "person-avatar"
+  ]
+}

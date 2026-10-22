@@ -1,0 +1,2249 @@
+{
+ "url": "https://www.conductor.build/privacy",
+ "title": "Privacy notice | Conductor",
+ "desc": "How Conductor collects, uses, discloses, and otherwise processes personal data.",
+ "docH": 12070,
+ "docW": 1280,
+ "vw": 1280,
+ "header": {
+  "k": "header.sticky.z-40.font-sans",
+  "b": {
+   "x": 0,
+   "y": 0,
+   "width": 1280,
+   "height": 57,
+   "top": 0,
+   "right": 1280,
+   "bottom": 57,
+   "left": 0
+  },
+  "pos": "sticky",
+  "bg": "rgba(0, 0, 0, 0)",
+  "bd": "0px rgb(234, 232, 230)"
+ },
+ "footerY": 11737,
+ "footerH": 333,
+ "res": [
+  "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+  "https://www.conductor.build/about.webp"
+ ],
+ "anims": [
+  {
+   "t": "nav.top-nav-scroll-mask.hidden.max-w-[calc(100vw-10rem)].items-center.gap-6.over",
+   "n": "top-nav-scroll-mask-x",
+   "d": "auto",
+   "e": "linear",
+   "it": 1,
+   "ps": "running"
+  }
+ ],
+ "fonts": [
+  "geistSans:unloaded",
+  "geistSans Fallback:unloaded"
+ ],
+ "els": [
+  {
+   "k": "main.bg-background.font-sans",
+   "b": [
+    0,
+    57,
+    1280,
+    11680
+   ],
+   "bg": "rgb(255, 255, 255)"
+  },
+  {
+   "k": "section.site-container.py-16.md:py-24",
+   "b": [
+    190,
+    57,
+    900,
+    11680
+   ],
+   "p": "96px 32px",
+   "m": "0px 190px",
+   "mw": "900px"
+  },
+  {
+   "k": "h1.flex.scroll-m-28.flex-row.items-center.gap-2",
+   "b": [
+    256,
+    153,
+    768,
+    40
+   ],
+   "f": "36px/40px 800 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "0px 0px 32px",
+   "d": "flex row ai:center jc:normal gap:8px",
+   "id": "privacy-notice"
+  },
+  {
+   "k": "a.peer",
+   "b": [
+    256,
+    153,
+    228,
+    40
+   ],
+   "t": "Privacy Notice",
+   "f": "36px/40px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "cur": "pointer",
+   "href": "#privacy-notice"
+  },
+  {
+   "k": "svg.lucide.lucide-link.size-3.5.shrink-0.text-fd-muted-foreground.opacity-0.transition-opacity.peer-hover:opacity-100",
+   "b": [
+    492,
+    166,
+    14,
+    14
+   ],
+   "tr": "opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1) 0s",
+   "op": "0",
+   "ov": "hidden",
+   "svg": "0 0 24 24 lucide lucide-link size-3.5 shrink-0 text-fd-muted-foreground opacity-0 transition-opacity peer-hover:opacity-100 fill:none stroke:rgb(117, 111, 108) sw:2px",
+   "ah": 1
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    225,
+    768,
+    28
+   ],
+   "t": ": June 12, 2026",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    230,
+    101.8,
+    18
+   ],
+   "t": "Last Updated",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    273,
+    768,
+    84
+   ],
+   "t": "This Privacy Notice explains how Melty, Inc. (\"\") collects, uses, discloses, and otherwise processes personal data in connection with any specific product, serv",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    587.7,
+    278,
+    80.6,
+    18
+   ],
+   "t": "Conductor",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    377,
+    768,
+    140
+   ],
+   "t": "This Privacy Notice does not address our privacy practices relating to Conductor job applicants, employees and other employment-related individuals, nor data th",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    537,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    542,
+    279.8,
+    18
+   ],
+   "t": "Our Role in Processing Personal Data",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    585,
+    768,
+    112
+   ],
+   "t": "Data protection laws sometimes differentiate between \"controllers\" and \"processors\" of personal data. A \"controller\" determines the purposes and means (the why ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    717,
+    768,
+    112
+   ],
+   "t": "This Privacy Notice describes our privacy practices where we are acting as the controller of personal data. However, this Privacy Notice does not cover or addre",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    849,
+    768,
+    168
+   ],
+   "t": "We primarily act as a controller of personal data we collect through our website (), personal data we collect about representatives of our customers (such as na",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "a",
+   "b": [
+    261.8,
+    882,
+    210,
+    18
+   ],
+   "t": "https://www.conductor.build",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://www.conductor.build target=_blank"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1037,
+    768,
+    56
+   ],
+   "t": "We act as a processor on behalf of our customers for all data processed through the Conductor application to which we have access.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1113,
+    768,
+    196
+   ],
+   "t": "This data is limited for on-prem deployments of Conductor because the application stores code and chat history locally on our customers' systems. Conductor does",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1329,
+    768,
+    112
+   ],
+   "t": "For Conductor Cloud, Conductor has additional technical access to data (including code, logs, chat history, and certain interactions between customers and third",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1461,
+    768,
+    56
+   ],
+   "t": "Answers to FAQs about data processing in connection with the Conductor application are available here: /docs/reference/privacy.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1537,
+    768,
+    140
+   ],
+   "t": "Where we are acting as a processor, we recommend referring to the privacy notice of the customer with which you have a relationship for information on how they ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1697,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    1702,
+    302.5,
+    18
+   ],
+   "t": "Our Collection and Use of Personal Data",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1745,
+    768,
+    84
+   ],
+   "t": "The categories of personal data we collect depend on how you interact with us and our services. For example, you may provide us your personal data directly when",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1849,
+    768,
+    56
+   ],
+   "t": "We also collect personal data automatically when you interact with our websites and other services and may also collect personal data from other sources and thi",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1925,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    1930,
+    284.8,
+    18
+   ],
+   "t": "Personal Data Provided by Individuals",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    1973,
+    768,
+    28
+   ],
+   "t": "We collect the following categories of personal data individuals provide us:",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    2021,
+    768,
+    892
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    2021,
+    736,
+    84
+   ],
+   "t": ", including first and last name, email address, and communication preferences. We use this information primarily to fulfill your request or transaction, to comm",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    2026,
+    152.1,
+    18
+   ],
+   "t": "Contact Information",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    2125,
+    736,
+    112
+   ],
+   "t": ", including job title, company name, professional background, and the nature of your relationship with us. We use this information primarily to fulfill your req",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    2130,
+    185.4,
+    18
+   ],
+   "t": "Professional Information",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    2257,
+    736,
+    140
+   ],
+   "t": ", including first and last name, email address, profile image, account credentials or one-time passcodes, and the products or services you are interested in, pu",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    2262,
+    154.7,
+    18
+   ],
+   "t": "Account Information",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    2417,
+    736,
+    196
+   ],
+   "t": ", including payment card information, billing address, and other financial information (such as, routing and account number). Please note that we use third-part",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    2422,
+    158.2,
+    18
+   ],
+   "t": "Payment Information",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "a",
+   "b": [
+    806.6,
+    2590,
+    71.3,
+    18
+   ],
+   "t": "click here",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://stripe.com/privacy target=_blank"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    2633,
+    736,
+    280
+   ],
+   "t": ", including the contents of custom messages you choose to send us through the forms, customer support chat platforms, including online live chat or automated ch",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    2638,
+    263.5,
+    18
+   ],
+   "t": "Feedback and Support Information",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    2933,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    2938,
+    289.5,
+    18
+   ],
+   "t": "Personal Data Automatically Collected",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    2981,
+    768,
+    224
+   ],
+   "t": "We, and our third-party partners, automatically collect information you provide to us and information about how you access and use our website, products and ser",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    3225,
+    768,
+    56
+   ],
+   "t": "We, and our third-party partners, use automatic data collection technologies to automatically collect the following data when you use our website, products and ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    3301,
+    768,
+    680
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    3301,
+    736,
+    168
+   ],
+   "t": ", including the device type, manufacturer, and model, operating system, IP address, browser type, Internet service provider, and unique identifiers associated w",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    3306,
+    332.1,
+    18
+   ],
+   "t": "Information About Your Device and Network",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    3489,
+    736,
+    28
+   ],
+   "t": ":",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px 12px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    3494,
+    582,
+    18
+   ],
+   "t": "Information About the Way Individuals Use Our Services and Interact With Us",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "ul",
+   "b": [
+    288,
+    3529,
+    736,
+    376
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    3529,
+    704,
+    280
+   ],
+   "t": "For our website, this includes the site from which you came, the site to which you are going when you leave our website, how frequently you access our website, ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    3821,
+    704,
+    84
+   ],
+   "t": "For the Conductor application, this is limited to information about how and when you use the application, what features of the application you use, errors or is",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    3925,
+    736,
+    56
+   ],
+   "t": ", including general geographic location that we or our third-party providers may derive from your IP address.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    3930,
+    245.2,
+    18
+   ],
+   "t": "Information About Your Location",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    4001,
+    768,
+    308
+   ],
+   "t": "All of the information collected automatically through these tools allows us to improve your experience. For example, we may use this information to enhance and",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    4329,
+    768,
+    56
+   ],
+   "t": "For information about the choices you may have in relation to our use of automatic data collection technologies, please refer to the Your Privacy Choices sectio",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    4405,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    4410,
+    391.2,
+    18
+   ],
+   "t": "Personal Data from Other Sources and Third Parties",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    4453,
+    768,
+    56
+   ],
+   "t": "We may receive the same categories of personal data as described above from the following sources and other parties:",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    4529,
+    768,
+    1044
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    4529,
+    736,
+    168
+   ],
+   "t": ": We may provide you the ability to log in to our services through certain third-party accounts you maintain. When you use these single sign-on protocols to acc",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    4534,
+    113.7,
+    18
+   ],
+   "t": "Single Sign-On",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    4717,
+    736,
+    56
+   ],
+   "t": ": We may receive your personal data from our other customers. For example, a customer may provide us with your contact information as a part of a referral.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    4722,
+    130.1,
+    18
+   ],
+   "t": "Other Customers",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    4793,
+    736,
+    280
+   ],
+   "t": ": When you interact with our services through social media networks, such as when you follow us or share our content on other social networks, we may receive so",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    4798,
+    95.8,
+    18
+   ],
+   "t": "Social Media",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5093,
+    736,
+    112
+   ],
+   "t": ": We engage in advertising through third-party services. Advertisers, influencers, and publishers may share personal data with us in connection with our adverti",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    5098,
+    302.1,
+    18
+   ],
+   "t": "Advertisers, Influencers, and Publishers",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5225,
+    736,
+    140
+   ],
+   "t": ": We may receive your information from integration partners, such as companies that offer their products and/or services as a part of or in connection with our ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    5230,
+    151.8,
+    18
+   ],
+   "t": "Integration Partners",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5385,
+    736,
+    112
+   ],
+   "t": ": Our service providers that perform services on our behalf, such as analytics, cloud hosting, and certain marketing providers, collect personal data and often ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    5390,
+    133,
+    18
+   ],
+   "t": "Service Providers",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5517,
+    736,
+    56
+   ],
+   "t": ": We may also collect personal data about you from other sources, including through transactions such as mergers and acquisitions.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    5522,
+    109.2,
+    18
+   ],
+   "t": "Other Sources",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    5593,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    5598,
+    247,
+    18
+   ],
+   "t": "Additional Uses of Personal Data",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    5641,
+    768,
+    56
+   ],
+   "t": "In addition to the primary purposes for using personal data described above, we may also use personal data we collect to:",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    5717,
+    768,
+    1476
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5717,
+    736,
+    56
+   ],
+   "t": "Fulfill or meet the reason the information was provided, such as to fulfill our contractual obligations, to facilitate payment for our products and services, or",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5793,
+    736,
+    28
+   ],
+   "t": "Manage our organization and its day-to-day operations;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5841,
+    736,
+    28
+   ],
+   "t": "Communicate with you, including via email;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5889,
+    736,
+    28
+   ],
+   "t": "Facilitate the relationship we have with you and, where applicable, the company you represent;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5937,
+    736,
+    28
+   ],
+   "t": "Request you provide us feedback about our product and service offerings;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    5985,
+    736,
+    56
+   ],
+   "t": "Address inquiries or complaints made by or about an individual in connection with our products or services;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6061,
+    736,
+    28
+   ],
+   "t": "Create and maintain accounts for our users;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6109,
+    736,
+    28
+   ],
+   "t": "Verify your identity and entitlement to our products and services;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6157,
+    736,
+    28
+   ],
+   "t": "Market our products and services to you, including through email;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6205,
+    736,
+    56
+   ],
+   "t": "Administer, improve, and personalize our products and services, including by recognizing you and remembering your information when you return to our products an",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6281,
+    736,
+    56
+   ],
+   "t": "Develop, operate, improve, maintain, protect, and provide the features and functionality of our products and services;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6357,
+    736,
+    28
+   ],
+   "t": "Identify and analyze how you use our products and services;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6405,
+    736,
+    56
+   ],
+   "t": "Infer additional information about you from your use of our products and services, such as your interests;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6481,
+    736,
+    56
+   ],
+   "t": "Create aggregated or de-identified information that cannot reasonably be used to identify you, which information we may use for purposes outside the scope of th",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6557,
+    736,
+    56
+   ],
+   "t": "Conduct research and analytics on our user base and our products and services, including to better understand the demographics of our users;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6633,
+    736,
+    56
+   ],
+   "t": "Improve and customize our products and services to address the needs and interests of our user base and other individuals we interact with;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6709,
+    736,
+    56
+   ],
+   "t": "Test, enhance, update, and monitor the products and services, or diagnose or fix technology problems;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6785,
+    736,
+    56
+   ],
+   "t": "Help maintain and enhance the safety, security, and integrity of our property, products, services, technology, assets, and business;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6861,
+    736,
+    84
+   ],
+   "t": "Defend, protect, or enforce our rights or applicable contracts and agreements (including our Terms and Conditions), as well as to resolve disputes, to carry out",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    6965,
+    736,
+    56
+   ],
+   "t": "Detect, prevent, investigate, or provide notice of security incidents or other malicious, deceptive, fraudulent, or illegal activity and protect the rights and ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7041,
+    736,
+    28
+   ],
+   "t": "Facilitate business transactions and reorganizations impacting the structure of our business;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7089,
+    736,
+    28
+   ],
+   "t": "Comply with contractual and legal obligations and requirements;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7137,
+    736,
+    56
+   ],
+   "t": "Fulfill any other purpose for which you provide your personal data, or for which you have otherwise consented.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    7213,
+    768,
+    252
+   ],
+   "t": "Please note we do not use customer data, including any customer personal data, processed through the Conductor application for purposes of training or fine-tuni",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    7485,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    7490,
+    240.5,
+    18
+   ],
+   "t": "Our Disclosure of Personal Data",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    7533,
+    768,
+    28
+   ],
+   "t": "We disclose or otherwise make available personal data in the following ways:",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    7581,
+    768,
+    1344
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7581,
+    736,
+    56
+   ],
+   "t": "We coordinate and share personal data with our marketing providers in order to advertise and communicate with you about the products and services we make availa",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    7586,
+    179.4,
+    18
+   ],
+   "t": "To Marketing Providers:",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7657,
+    736,
+    168
+   ],
+   "t": ": We work with third-party ad networks and advertising partners to deliver advertising and personalized content on other websites and services, and across other",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    7662,
+    310.5,
+    18
+   ],
+   "t": "To Ad Networks and Advertising Partners",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    7845,
+    736,
+    140
+   ],
+   "t": ": When you choose to activate a specific integration feature, we may share personal data with our relevant integration partners, or we may allow our relevant in",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    7850,
+    173.8,
+    18
+   ],
+   "t": "To Integration Partners",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    8005,
+    736,
+    112
+   ],
+   "t": "We engage other third parties to perform certain services on our behalf in connection with the uses of personal data described in the sections above. Depending ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    8010,
+    159.9,
+    18
+   ],
+   "t": "To Service Providers:",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    8137,
+    736,
+    84
+   ],
+   "t": ": We may share personal data with third parties you engage with through our services or as needed to fulfill a request or transaction including, for example, pa",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    8142,
+    389.5,
+    18
+   ],
+   "t": "To Other Businesses as Needed to Provide Services",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    8241,
+    736,
+    196
+   ],
+   "t": "We may take part in or be involved with a business transaction or reorganization, such as a merger, acquisition, joint venture, or financing or sale of company ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    8246,
+    462.3,
+    18
+   ],
+   "t": "In Connection with a Business Transaction or Reorganization:",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    8457,
+    736,
+    56
+   ],
+   "t": "We may disclose personal data to third parties, such as legal advisors and law enforcement:",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px 12px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    8462,
+    315.8,
+    18
+   ],
+   "t": "To Facilitate Legal Obligations and Rights:",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "ul",
+   "b": [
+    288,
+    8525,
+    736,
+    296
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8525,
+    704,
+    28
+   ],
+   "t": "in connection with the establishment, exercise, or defense of legal claims;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8565,
+    704,
+    28
+   ],
+   "t": "to comply with laws or to respond to lawful requests and legal process;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8605,
+    704,
+    56
+   ],
+   "t": "to protect our rights and property and the rights and property of our agents, customers, and others, including to enforce our agreements, policies, and terms of",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8673,
+    704,
+    28
+   ],
+   "t": "to detect, suppress, or prevent fraud;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8713,
+    704,
+    28
+   ],
+   "t": "to reduce credit risk and collect debts owed to us;",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8753,
+    704,
+    28
+   ],
+   "t": "to protect the health and safety of us, our customers, or any person; or",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    320,
+    8793,
+    704,
+    28
+   ],
+   "t": "as otherwise required by applicable law.",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "12px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    8841,
+    736,
+    84
+   ],
+   "t": "We may disclose your personal data to certain other third parties or publicly with your consent or direction. For example, with your permission, we may post you",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    8846,
+    238.9,
+    18
+   ],
+   "t": "With Your Consent or Direction:",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    8945,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    8950,
+    159.6,
+    18
+   ],
+   "t": "Your Privacy Choices",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    8993,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    8998,
+    215,
+    18
+   ],
+   "t": "Communication Preferences",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    9041,
+    768,
+    112
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "li",
+   "b": [
+    282,
+    9041,
+    742,
+    112
+   ],
+   "t": ": You can stop receiving promotional email communications from us by clicking on the \"unsubscribe\" link provided in any of our email communications. Please note",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "p": "0px 0px 0px 6px",
+   "m": "8px 0px",
+   "d": "list-item"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    9046,
+    259.9,
+    18
+   ],
+   "t": "Email Communication Preferences",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    9173,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    9178,
+    293.1,
+    18
+   ],
+   "t": "Automatic Data Collection Preferences",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    9221,
+    768,
+    308
+   ],
+   "t": "You may be able to utilize third-party tools and features to restrict our use of automatic data collection technologies. For example, (i) most browsers allow yo",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    9549,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    9554,
+    253.9,
+    18
+   ],
+   "t": "Targeted Advertising Preferences",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    9597,
+    768,
+    308
+   ],
+   "t": "We engage third parties to help us facilitate targeted advertising designed to show you personalized ads based on predictions of your preferences and interests ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    9925,
+    768,
+    84
+   ],
+   "t": "In addition to taking the steps set forth in the Automatic Data Collection Preferences section above, you may be able to further exercise control over the adver",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "ul",
+   "b": [
+    256,
+    10029,
+    768,
+    564
+   ],
+   "p": "0px 0px 0px 26px",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    10029,
+    736,
+    140
+   ],
+   "t": ": Certain devices provide individuals the option to turn off targeted advertising for the entire device (such as Apple devices through their App Tracking Transp",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    10034,
+    264.5,
+    18
+   ],
+   "t": "Device-Specific Opt-Out Programs",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    10189,
+    736,
+    168
+   ],
+   "t": ": The allows individuals to opt out of receiving online interest-based targeted advertisements from companies that participate in their program. Please follow t",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    10194,
+    203.2,
+    18
+   ],
+   "t": "Digital Advertising Alliance",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "a",
+   "b": [
+    531.8,
+    10194,
+    197.8,
+    18
+   ],
+   "t": "Digital Advertising Alliance",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://digitaladvertisingalliance.org/ target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    522,
+    10250,
+    323.7,
+    18
+   ],
+   "t": "https://optout.aboutads.info/?c=2&lang=EN",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://optout.aboutads.info/?c=2&lang=EN target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    403.6,
+    10278,
+    328,
+    18
+   ],
+   "t": "https://www.youradchoices.com/appchoices",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://www.youradchoices.com/appchoices target=_blank"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    10377,
+    736,
+    84
+   ],
+   "t": ": The also provides individuals instructions for further controlling how information is used for online advertising. Please follow the instructions at to exerci",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    10382,
+    223.7,
+    18
+   ],
+   "t": "Network Advertising Initiative",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "a",
+   "b": [
+    552.2,
+    10382,
+    217.5,
+    18
+   ],
+   "t": "Network Advertising Initiative",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://thenai.org/ target=_blank"
+  },
+  {
+   "k": "a",
+   "b": [
+    395.5,
+    10438,
+    253.5,
+    18
+   ],
+   "t": "https://thenai.org/how-to-opt-out/",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "https://thenai.org/how-to-opt-out/ target=_blank"
+  },
+  {
+   "k": "p",
+   "b": [
+    288,
+    10481,
+    736,
+    112
+   ],
+   "t": ": Certain third-party platforms provide individuals the option to turn off targeted advertising for the entire platform (such as certain social media platforms)",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    288,
+    10486,
+    278.3,
+    18
+   ],
+   "t": "Platform-Specific Opt-Out Programs",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    10613,
+    768,
+    224
+   ],
+   "t": "Please note that when you opt out of receiving interest-based advertisements through one of these programs, this does not mean you will no longer see advertisem",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    10857,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    10862,
+    186.6,
+    18
+   ],
+   "t": "Children's Personal Data",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    10905,
+    768,
+    168
+   ],
+   "t": "Our services are not directed to, and we do not intend to, or knowingly, collect or solicit personal data from children under the age of 13. If an individual is",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11093,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    11098,
+    263.1,
+    18
+   ],
+   "t": "Third-Party Websites and Services",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11141,
+    768,
+    168
+   ],
+   "t": "Our websites and other services may include links to or redirect you to third-party websites, plug-ins, applications, or other services, including social media ",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11329,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    11334,
+    232.9,
+    18
+   ],
+   "t": "Updates to This Privacy Notice",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11377,
+    768,
+    140
+   ],
+   "t": "We may update this Privacy Notice from time to time. When we make changes to this Privacy Notice, we will change the date at the beginning of this Privacy Notic",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11537,
+    768,
+    28
+   ],
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px"
+  },
+  {
+   "k": "strong",
+   "b": [
+    256,
+    11542,
+    84.6,
+    18
+   ],
+   "t": "Contact Us",
+   "f": "16px/28px 600 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)"
+  },
+  {
+   "k": "p",
+   "b": [
+    256,
+    11585,
+    768,
+    56
+   ],
+   "t": "If you have any questions or requests in connection with this Privacy Notice or other privacy-related matters, please contact us at: .",
+   "f": "16px/28px 400 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "m": "20px 0px 0px"
+  },
+  {
+   "k": "a",
+   "b": [
+    475,
+    11618,
+    189.6,
+    18
+   ],
+   "t": "humans@conductor.build",
+   "f": "16px/28px 500 ls:normal   ff:Geist, -apple-system, \"system-",
+   "c": "rgb(44, 40, 38)",
+   "td": "underline color(srgb 0.172549 0.156863 0.14902 / 0.55) off:2.88px",
+   "tr": "opacity 0.2s ease 0s",
+   "cur": "pointer",
+   "href": "mailto:humans@conductor.build"
+  }
+ ],
+ "responses": [
+  {
+   "url": "https://www.conductor.build/privacy",
+   "status": 200,
+   "type": "text/html; charset=utf-8",
+   "len": "19850"
+  },
+  {
+   "url": "https://www.conductor.build/_next/static/immutable/media/Geist_VariableFont_wght-s.p.0ugx-h7ejvw7_.ttf",
+   "status": 200,
+   "type": "font/ttf",
+   "len": "79437"
+  },
+  {
+   "url": "https://www.conductor.build/about.webp",
+   "status": 200,
+   "type": "image/webp",
+   "len": "212674"
+  }
+ ]
+}

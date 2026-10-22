@@ -1,0 +1,730 @@
+{
+  "slug": "reference/remote-control",
+  "url": "/docs/reference/remote-control",
+  "title": "Remote Control",
+  "description": "Control your Mac's local workspaces from the Conductor iOS app",
+  "meta": {
+    "title": "Remote Control | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/remote-control/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Remote Control"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#set-up",
+      "title": "Set up"
+    },
+    {
+      "depth": 2,
+      "url": "#requirements",
+      "title": "Requirements"
+    },
+    {
+      "depth": 2,
+      "url": "#known-limitations",
+      "title": "Known limitations"
+    },
+    {
+      "depth": 2,
+      "url": "#security",
+      "title": "Security"
+    },
+    {
+      "depth": 2,
+      "url": "#remove-a-device",
+      "title": "Remove a device"
+    }
+  ],
+  "tocStyle": "clerk",
+  "components": [],
+  "body": [
+    {
+      "type": "callout",
+      "calloutType": "warning",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Remote control is experimental. Report bugs from "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Help"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Send Feedback"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "\nin Conductor."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Remote control lets you use the Conductor iOS app to work in the local workspaces on your Mac. You can browse and create workspaces, read chats, send messages, pick models, stop agents, and archive workspaces from your phone."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "set-up",
+      "children": [
+        {
+          "type": "text",
+          "value": "Set up"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "On your Mac, turn on "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/experimental?scrollTo=internal_desktop_remote_access",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Experimental"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Remote control"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "With a local organization selected, open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Remote control"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and click "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " under "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Devices that can control this Mac"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". Conductor shows a QR code."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "On your iPhone, open the Conductor app and sign in with the same account you use on your Mac."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open the account menu, then "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Remote control"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Pair a Mac"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and scan the QR code. You can also scan it with the iPhone Camera app."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Confirm the Mac's name and tap "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Pair"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Your Mac now appears in the iOS app's organization switcher, and the app opens its local workspaces."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "requirements",
+      "children": [
+        {
+          "type": "text",
+          "value": "Requirements"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Conductor must be open on your Mac, and your Mac must be awake and online."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Both devices must be signed in to the same Conductor account."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Remote control works with local workspaces only. On your Mac, "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/remote-control",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Remote control"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " appears when a local organization is selected."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Remote control is off while "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "/docs/reference/privacy#enterprise-data-privacy"
+              },
+              "children": [
+                {
+                  "type": "text",
+                  "value": "enterprise data privacy"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " is on."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "known-limitations",
+      "children": [
+        {
+          "type": "text",
+          "value": "Known limitations"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "In chats from before Conductor 0.91, your iPhone only shows messages sent after you updated."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "security",
+      "children": [
+        {
+          "type": "text",
+          "value": "Security"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Traffic between your iPhone and your Mac is end-to-end encrypted. It passes through Conductor's relay, which can't read it. Each pairing code works once and expires after 10 minutes."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "remove-a-device",
+      "children": [
+        {
+          "type": "text",
+          "value": "Remove a device"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "On your Mac, open "
+            },
+            {
+              "type": "element",
+              "tag": "a",
+              "attrs": {
+                "href": "https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices",
+                "target": "_blank",
+                "rel": "noopener noreferrer"
+              },
+              "children": [
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Settings"
+                    }
+                  ]
+                },
+                {
+                  "type": "text",
+                  "value": " -> "
+                },
+                {
+                  "type": "element",
+                  "tag": "code",
+                  "attrs": {},
+                  "children": [
+                    {
+                      "type": "text",
+                      "value": "Remote control"
+                    }
+                  ]
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " and click "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Revoke access"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " next to the device."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "On your iPhone, open "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Remote control"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ", tap the Mac, and tap "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Forget"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Turning off "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/remote-control",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Remote control"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " on your Mac disconnects every paired device. They reconnect when you turn it back on."
+        }
+      ]
+    }
+  ],
+  "html": "<div role=\"note\" data-callout=\"warning\"><p>Remote control is experimental. Report bugs from <code>Help</code> -&gt; <code>Send Feedback</code>\nin Conductor.</p></div><p>Remote control lets you use the Conductor iOS app to work in the local workspaces on your Mac. You can browse and create workspaces, read chats, send messages, pick models, stop agents, and archive workspaces from your phone.</p><h2 id=\"set-up\"><a href=\"#set-up\">Set up</a></h2><ol><li>On your Mac, turn on <a href=\"https://app.conductor.build/settings/user/experimental?scrollTo=internal_desktop_remote_access\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Experimental</code> -&gt; <code>Remote control</code></a>.</li><li>With a local organization selected, open <a href=\"https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Remote control</code></a> and click <code>Add</code> under <code>Devices that can control this Mac</code>. Conductor shows a QR code.</li><li>On your iPhone, open the Conductor app and sign in with the same account you use on your Mac.</li><li>Open the account menu, then <code>Settings</code> -&gt; <code>Remote control</code> -&gt; <code>Pair a Mac</code> and scan the QR code. You can also scan it with the iPhone Camera app.</li><li>Confirm the Mac's name and tap <code>Pair</code>.</li></ol><p>Your Mac now appears in the iOS app's organization switcher, and the app opens its local workspaces.</p><h2 id=\"requirements\"><a href=\"#requirements\">Requirements</a></h2><ul><li>Conductor must be open on your Mac, and your Mac must be awake and online.</li><li>Both devices must be signed in to the same Conductor account.</li><li>Remote control works with local workspaces only. On your Mac, <a href=\"https://app.conductor.build/settings/user/remote-control\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Remote control</code></a> appears when a local organization is selected.</li><li>Remote control is off while <a href=\"/docs/reference/privacy#enterprise-data-privacy\">enterprise data privacy</a> is on.</li></ul><h2 id=\"known-limitations\"><a href=\"#known-limitations\">Known limitations</a></h2><ul><li>In chats from before Conductor 0.91, your iPhone only shows messages sent after you updated.</li></ul><h2 id=\"security\"><a href=\"#security\">Security</a></h2><p>Traffic between your iPhone and your Mac is end-to-end encrypted. It passes through Conductor's relay, which can't read it. Each pairing code works once and expires after 10 minutes.</p><h2 id=\"remove-a-device\"><a href=\"#remove-a-device\">Remove a device</a></h2><ul><li>On your Mac, open <a href=\"https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Remote control</code></a> and click <code>Revoke access</code> next to the device.</li><li>On your iPhone, open <code>Settings</code> -&gt; <code>Remote control</code>, tap the Mac, and tap <code>Forget</code>.</li></ul><p>Turning off <a href=\"https://app.conductor.build/settings/user/remote-control\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Remote control</code></a> on your Mac disconnects every paired device. They reconnect when you turn it back on.</p>",
+  "text": "Remote control is experimental. Report bugs from Help -> Send Feedback\nin Conductor.\nRemote control lets you use the Conductor iOS app to work in the local workspaces on your Mac. You can browse and create workspaces, read chats, send messages, pick models, stop agents, and archive workspaces from your phone.\nSet up\nOn your Mac, turn on Settings -> Experimental -> Remote control.\nWith a local organization selected, open Settings -> Remote control and click Add under Devices that can control this Mac. Conductor shows a QR code.\nOn your iPhone, open the Conductor app and sign in with the same account you use on your Mac.\nOpen the account menu, then Settings -> Remote control -> Pair a Mac and scan the QR code. You can also scan it with the iPhone Camera app.\nConfirm the Mac's name and tap Pair.\nYour Mac now appears in the iOS app's organization switcher, and the app opens its local workspaces.\nRequirements\nConductor must be open on your Mac, and your Mac must be awake and online.\nBoth devices must be signed in to the same Conductor account.\nRemote control works with local workspaces only. On your Mac, Settings -> Remote control appears when a local organization is selected.\nRemote control is off while enterprise data privacy is on.\nKnown limitations\nIn chats from before Conductor 0.91, your iPhone only shows messages sent after you updated.\nSecurity\nTraffic between your iPhone and your Mac is end-to-end encrypted. It passes through Conductor's relay, which can't read it. Each pairing code works once and expires after 10 minutes.\nRemove a device\nOn your Mac, open Settings -> Remote control and click Revoke access next to the device.\nOn your iPhone, open Settings -> Remote control, tap the Mac, and tap Forget.\nTurning off Remote control on your Mac disconnects every paired device. They reconnect when you turn it back on.",
+  "markdown": "\n# Remote Control\n\n\n\nRemote control is experimental. Report bugs from `Help` -> `Send Feedback`\nin Conductor.\n\nRemote control lets you use the Conductor iOS app to work in the local workspaces on your Mac. You can browse and create workspaces, read chats, send messages, pick models, stop agents, and archive workspaces from your phone.\n\n## Set up [#set-up]\n\n1. On your Mac, turn on [`Settings` -> `Experimental` -> `Remote control`](https://app.conductor.build/settings/user/experimental?scrollTo=internal_desktop_remote_access).\n2. With a local organization selected, open [`Settings` -> `Remote control`](https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices) and click `Add` under `Devices that can control this Mac`. Conductor shows a QR code.\n3. On your iPhone, open the Conductor app and sign in with the same account you use on your Mac.\n4. Open the account menu, then `Settings` -> `Remote control` -> `Pair a Mac` and scan the QR code. You can also scan it with the iPhone Camera app.\n5. Confirm the Mac's name and tap `Pair`.\n\nYour Mac now appears in the iOS app's organization switcher, and the app opens its local workspaces.\n\n## Requirements [#requirements]\n\n* Conductor must be open on your Mac, and your Mac must be awake and online.\n* Both devices must be signed in to the same Conductor account.\n* Remote control works with local workspaces only. On your Mac, [`Settings` -> `Remote control`](https://app.conductor.build/settings/user/remote-control) appears when a local organization is selected.\n* Remote control is off while [enterprise data privacy](/docs/reference/privacy#enterprise-data-privacy) is on.\n\n## Known limitations [#known-limitations]\n\n* In chats from before Conductor 0.91, your iPhone only shows messages sent after you updated.\n\n## Security [#security]\n\nTraffic between your iPhone and your Mac is end-to-end encrypted. It passes through Conductor's relay, which can't read it. Each pairing code works once and expires after 10 minutes.\n\n## Remove a device [#remove-a-device]\n\n* On your Mac, open [`Settings` -> `Remote control`](https://app.conductor.build/settings/user/remote-control?scrollTo=remote-control%3Adevices) and click `Revoke access` next to the device.\n* On your iPhone, open `Settings` -> `Remote control`, tap the Mac, and tap `Forget`.\n\nTurning off [`Remote control`](https://app.conductor.build/settings/user/remote-control) on your Mac disconnects every paired device. They reconnect when you turn it back on.\n"
+}

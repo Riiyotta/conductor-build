@@ -1,0 +1,1161 @@
+{
+  "slug": "faq",
+  "url": "/docs/faq",
+  "title": "FAQ",
+  "description": "Frequently asked questions about Conductor",
+  "meta": {
+    "title": "FAQ | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/faq/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Troubleshooting"
+    },
+    {
+      "name": "FAQ"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#what-are-the-city-names",
+      "title": "What are the city names?"
+    },
+    {
+      "depth": 2,
+      "url": "#how-does-conductor-authenticate-to-claude-code-codex-cursor-and-opencode",
+      "title": "How does Conductor authenticate to Claude Code, Codex, Cursor, and OpenCode?"
+    },
+    {
+      "depth": 2,
+      "url": "#what-permissions-do-agents-have",
+      "title": "What permissions do agents have?"
+    },
+    {
+      "depth": 2,
+      "url": "#does-conductor-add-its-own-system-prompts",
+      "title": "Does Conductor add its own system prompts?"
+    },
+    {
+      "depth": 2,
+      "url": "#why-does-conductor-request-access-to-downloads-reminders-etc",
+      "title": "Why does Conductor request access to Downloads, Reminders, etc.?"
+    },
+    {
+      "depth": 2,
+      "url": "#how-does-conductor-make-money",
+      "title": "How does Conductor make money?"
+    },
+    {
+      "depth": 2,
+      "url": "#which-versions-of-claude-code-codex-and-opencode-does-conductor-use",
+      "title": "Which versions of Claude Code, Codex, and OpenCode does Conductor use?"
+    },
+    {
+      "depth": 2,
+      "url": "#does-conductor-support-claude-code-agent-teams",
+      "title": "Does Conductor support Claude Code agent teams?"
+    },
+    {
+      "depth": 2,
+      "url": "#where-does-conductor-get-the-repo-icon",
+      "title": "Where does Conductor get the repo icon?"
+    },
+    {
+      "depth": 2,
+      "url": "#im-moving-to-a-new-computer-how-can-i-transfer-my-chats",
+      "title": "I'm moving to a new computer, how can I transfer my chats?"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/reference/privacy",
+    "title": "Privacy",
+    "description": "Previous Page"
+  },
+  "next": {
+    "url": "/docs/troubleshooting/issues",
+    "title": "Troubleshooting issues",
+    "description": "Fix common authentication, agent, script, workspace, review, and known product issues"
+  },
+  "components": [],
+  "body": [
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-are-the-city-names",
+      "children": [
+        {
+          "type": "text",
+          "value": "What are the city names?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Each workspace in Conductor is named after a city. We use cities as memorable, distinct names for different workspaces."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The city also serves as a stable name for the workspace directory, which lets your files live in a consistent place where coding agents and other programs can always find them."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "In addition to the city, we also identify a workspace by its branch name or PR title. In the left sidebar, you'll see the PR title (if a PR is open) or the branch name."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor always runs on your Mac, wherever you are. It doesn't actually run in the city, although that would be cool."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "You can see all the cities you've visited in Conductor at cmd+K -> Passport."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-does-conductor-authenticate-to-claude-code-codex-cursor-and-opencode",
+      "children": [
+        {
+          "type": "text",
+          "value": "How does Conductor authenticate to Claude Code, Codex, Cursor, and OpenCode?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "By default, Conductor uses the auth tokens already saved on your machine. If you're logged into Claude Code with an API key, Conductor uses that; if you're logged in with Claude Pro or Max, Conductor uses that. You can also override this by choosing API key mode in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", then setting the key in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions use a Cursor API key. Add it in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=cursor",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Cursor"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or set "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CURSOR_API_KEY"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " in Conductor's environment settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode sessions use OpenCode provider credentials and models. Add provider API keys in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/providers?providerTab=opencode",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Agents"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "OpenCode"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", or configure OpenCode through its own provider setup."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For setup and billing details by agent, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/harnesses"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Harnesses"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "what-permissions-do-agents-have",
+      "children": [
+        {
+          "type": "text",
+          "value": "What permissions do agents have?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Agents in Conductor run with the same permissions as your user account. They can read and write files, run shell commands, and access anything you can access on your machine."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Agents run directly on your system without sandboxing."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Most users don't experience any problems with this. If you want to be extra safe, you can run Conductor on a separate machine or VM dedicated to development work."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "does-conductor-add-its-own-system-prompts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Does Conductor add its own system prompts?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Yes. Conductor injects system prompts that explain to the agent that it's running inside Conductor, what a workspace is, and other context. It also injects prompts in response to various actions you take in the Conductor UI (e.g., creating a new workspace, or clicking \"Create PR\"); you can see and customize these prompts in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> your repository -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Actions"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "why-does-conductor-request-access-to-downloads-reminders-etc",
+      "children": [
+        {
+          "type": "text",
+          "value": "Why does Conductor request access to Downloads, Reminders, etc.?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "When an agent or your shell tries to read a file in one of macOS's protected folders, the system displays a permissions pop-up. Conductor itself doesn't need access; it appears as \"Conductor\" because it's running the agent. Nothing unusual is happening on our end, and we're working to improve the user experience."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "how-does-conductor-make-money",
+      "children": [
+        {
+          "type": "text",
+          "value": "How does Conductor make money?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Right now we don't. We're a small team running on seed funding from a few great investors who believe in our vision. At some point we plan to charge for collaboration features that help teams make the most of AI agents, but for now we're focused on making Conductor an amazing free tool."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "which-versions-of-claude-code-codex-and-opencode-does-conductor-use",
+      "children": [
+        {
+          "type": "text",
+          "value": "Which versions of Claude Code, Codex, and OpenCode does Conductor use?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor comes bundled with its own installation of Claude Code and Codex, so that we can ensure compatibility. You can find them at "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/Library/Application Support/com.conductor.app/bin"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Do not update or modify them, or they might be incompatible with Conductor."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor sessions use Conductor's Cursor integration and your Cursor API key. There is no Cursor executable path to configure in Conductor settings."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OpenCode sessions use Conductor's managed OpenCode integration unless you configure a custom OpenCode executable path."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "does-conductor-support-claude-code-agent-teams",
+      "children": [
+        {
+          "type": "text",
+          "value": "Does Conductor support Claude Code agent teams?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Yes! In "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/user/environment",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " -> "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Environment"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", add "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to enable Claude Code's experimental agent teams feature."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "where-does-conductor-get-the-repo-icon",
+      "children": [
+        {
+          "type": "text",
+          "value": "Where does Conductor get the repo icon?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor looks for an icon file in your repository root. It checks for common icon filenames in this order:"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ul",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/apple-touch-icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "apple-touch-icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/favicon.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "favicon.svg"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/favicon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/logo.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "favicon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "app/icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "src/app/icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "public/favicon.ico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "favicon.ico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "app/favicon.ico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "static/favicon.ico"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "src-tauri/icons/icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "assets/icon.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "src/assets/icon.png"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The first match is used as the icon shown in the sidebar next to your repo name."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "im-moving-to-a-new-computer-how-can-i-transfer-my-chats",
+      "children": [
+        {
+          "type": "text",
+          "value": "I'm moving to a new computer, how can I transfer my chats?"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The easiest way is to use Apple's Migration Assistant to transfer all your files. This will let you pick up exactly where you left off."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "If you're up for an adventure, you can also manually copy all files Conductor depends on. Conductor stores files at "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/Library/Application Support/com.conductor.app"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/conductor"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Claude Code and Codex store files in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.claude"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.codex"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". Make sure to copy while Conductor, Codex, and Claude Code are not running, and to use exactly the same destination paths."
+        }
+      ]
+    }
+  ],
+  "html": "<h2 id=\"what-are-the-city-names\"><a href=\"#what-are-the-city-names\">What are the city names?</a></h2><p>Each workspace in Conductor is named after a city. We use cities as memorable, distinct names for different workspaces.</p><p>The city also serves as a stable name for the workspace directory, which lets your files live in a consistent place where coding agents and other programs can always find them.</p><p>In addition to the city, we also identify a workspace by its branch name or PR title. In the left sidebar, you'll see the PR title (if a PR is open) or the branch name.</p><p>Conductor always runs on your Mac, wherever you are. It doesn't actually run in the city, although that would be cool.</p><p>You can see all the cities you've visited in Conductor at cmd+K -&gt; Passport.</p><h2 id=\"how-does-conductor-authenticate-to-claude-code-codex-cursor-and-opencode\"><a href=\"#how-does-conductor-authenticate-to-claude-code-codex-cursor-and-opencode\">How does Conductor authenticate to Claude Code, Codex, Cursor, and OpenCode?</a></h2><p>By default, Conductor uses the auth tokens already saved on your machine. If you're logged into Claude Code with an API key, Conductor uses that; if you're logged in with Claude Pro or Max, Conductor uses that. You can also override this by choosing API key mode in <a href=\"https://app.conductor.build/settings/user/providers\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code></a>, then setting the key in <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>.</p><p>Cursor sessions use a Cursor API key. Add it in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=cursor\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>Cursor</code></a>, or set <code>CURSOR_API_KEY</code> in Conductor's environment settings.</p><p>OpenCode sessions use OpenCode provider credentials and models. Add provider API keys in <a href=\"https://app.conductor.build/settings/user/providers?providerTab=opencode\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Agents</code> -&gt; <code>OpenCode</code></a>, or configure OpenCode through its own provider setup.</p><p>For setup and billing details by agent, see <a href=\"/docs/reference/harnesses\">Harnesses</a>.</p><h2 id=\"what-permissions-do-agents-have\"><a href=\"#what-permissions-do-agents-have\">What permissions do agents have?</a></h2><p>Agents in Conductor run with the same permissions as your user account. They can read and write files, run shell commands, and access anything you can access on your machine.</p><p>Agents run directly on your system without sandboxing.</p><p>Most users don't experience any problems with this. If you want to be extra safe, you can run Conductor on a separate machine or VM dedicated to development work.</p><h2 id=\"does-conductor-add-its-own-system-prompts\"><a href=\"#does-conductor-add-its-own-system-prompts\">Does Conductor add its own system prompts?</a></h2><p>Yes. Conductor injects system prompts that explain to the agent that it's running inside Conductor, what a workspace is, and other context. It also injects prompts in response to various actions you take in the Conductor UI (e.g., creating a new workspace, or clicking \"Create PR\"); you can see and customize these prompts in <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; your repository -&gt; <code>Actions</code></a>.</p><h2 id=\"why-does-conductor-request-access-to-downloads-reminders-etc\"><a href=\"#why-does-conductor-request-access-to-downloads-reminders-etc\">Why does Conductor request access to Downloads, Reminders, etc.?</a></h2><p>When an agent or your shell tries to read a file in one of macOS's protected folders, the system displays a permissions pop-up. Conductor itself doesn't need access; it appears as \"Conductor\" because it's running the agent. Nothing unusual is happening on our end, and we're working to improve the user experience.</p><h2 id=\"how-does-conductor-make-money\"><a href=\"#how-does-conductor-make-money\">How does Conductor make money?</a></h2><p>Right now we don't. We're a small team running on seed funding from a few great investors who believe in our vision. At some point we plan to charge for collaboration features that help teams make the most of AI agents, but for now we're focused on making Conductor an amazing free tool.</p><h2 id=\"which-versions-of-claude-code-codex-and-opencode-does-conductor-use\"><a href=\"#which-versions-of-claude-code-codex-and-opencode-does-conductor-use\">Which versions of Claude Code, Codex, and OpenCode does Conductor use?</a></h2><p>Conductor comes bundled with its own installation of Claude Code and Codex, so that we can ensure compatibility. You can find them at <code>~/Library/Application Support/com.conductor.app/bin</code>. Do not update or modify them, or they might be incompatible with Conductor.</p><p>Cursor sessions use Conductor's Cursor integration and your Cursor API key. There is no Cursor executable path to configure in Conductor settings.</p><p>OpenCode sessions use Conductor's managed OpenCode integration unless you configure a custom OpenCode executable path.</p><h2 id=\"does-conductor-support-claude-code-agent-teams\"><a href=\"#does-conductor-support-claude-code-agent-teams\">Does Conductor support Claude Code agent teams?</a></h2><p>Yes! In <a href=\"https://app.conductor.build/settings/user/environment\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code> -&gt; <code>Environment</code></a>, add <code>CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1</code> to enable Claude Code's experimental agent teams feature.</p><h2 id=\"where-does-conductor-get-the-repo-icon\"><a href=\"#where-does-conductor-get-the-repo-icon\">Where does Conductor get the repo icon?</a></h2><p>Conductor looks for an icon file in your repository root. It checks for common icon filenames in this order:</p><ul><li><code>public/apple-touch-icon.png</code></li><li><code>apple-touch-icon.png</code></li><li><code>public/favicon.svg</code></li><li><code>favicon.svg</code></li><li><code>public/favicon.png</code></li><li><code>public/icon.png</code></li><li><code>public/logo.png</code></li><li><code>favicon.png</code></li><li><code>app/icon.png</code></li><li><code>src/app/icon.png</code></li><li><code>public/favicon.ico</code></li><li><code>favicon.ico</code></li><li><code>app/favicon.ico</code></li><li><code>static/favicon.ico</code></li><li><code>src-tauri/icons/icon.png</code></li><li><code>assets/icon.png</code></li><li><code>src/assets/icon.png</code></li></ul><p>The first match is used as the icon shown in the sidebar next to your repo name.</p><h2 id=\"im-moving-to-a-new-computer-how-can-i-transfer-my-chats\"><a href=\"#im-moving-to-a-new-computer-how-can-i-transfer-my-chats\">I'm moving to a new computer, how can I transfer my chats?</a></h2><p>The easiest way is to use Apple's Migration Assistant to transfer all your files. This will let you pick up exactly where you left off.</p><p>If you're up for an adventure, you can also manually copy all files Conductor depends on. Conductor stores files at <code>~/Library/Application Support/com.conductor.app</code> and <code>~/conductor</code>. Claude Code and Codex store files in <code>~/.claude</code> and <code>~/.codex</code>. Make sure to copy while Conductor, Codex, and Claude Code are not running, and to use exactly the same destination paths.</p>",
+  "text": "What are the city names?\nEach workspace in Conductor is named after a city. We use cities as memorable, distinct names for different workspaces.\nThe city also serves as a stable name for the workspace directory, which lets your files live in a consistent place where coding agents and other programs can always find them.\nIn addition to the city, we also identify a workspace by its branch name or PR title. In the left sidebar, you'll see the PR title (if a PR is open) or the branch name.\nConductor always runs on your Mac, wherever you are. It doesn't actually run in the city, although that would be cool.\nYou can see all the cities you've visited in Conductor at cmd+K -> Passport.\nHow does Conductor authenticate to Claude Code, Codex, Cursor, and OpenCode?\nBy default, Conductor uses the auth tokens already saved on your machine. If you're logged into Claude Code with an API key, Conductor uses that; if you're logged in with Claude Pro or Max, Conductor uses that. You can also override this by choosing API key mode in Settings -> Agents, then setting the key in Settings -> Environment.\nCursor sessions use a Cursor API key. Add it in Settings -> Agents -> Cursor, or set CURSOR_API_KEY in Conductor's environment settings.\nOpenCode sessions use OpenCode provider credentials and models. Add provider API keys in Settings -> Agents -> OpenCode, or configure OpenCode through its own provider setup.\nFor setup and billing details by agent, see Harnesses.\nWhat permissions do agents have?\nAgents in Conductor run with the same permissions as your user account. They can read and write files, run shell commands, and access anything you can access on your machine.\nAgents run directly on your system without sandboxing.\nMost users don't experience any problems with this. If you want to be extra safe, you can run Conductor on a separate machine or VM dedicated to development work.\nDoes Conductor add its own system prompts?\nYes. Conductor injects system prompts that explain to the agent that it's running inside Conductor, what a workspace is, and other context. It also injects prompts in response to various actions you take in the Conductor UI (e.g., creating a new workspace, or clicking \"Create PR\"); you can see and customize these prompts in Settings -> your repository -> Actions.\nWhy does Conductor request access to Downloads, Reminders, etc.?\nWhen an agent or your shell tries to read a file in one of macOS's protected folders, the system displays a permissions pop-up. Conductor itself doesn't need access; it appears as \"Conductor\" because it's running the agent. Nothing unusual is happening on our end, and we're working to improve the user experience.\nHow does Conductor make money?\nRight now we don't. We're a small team running on seed funding from a few great investors who believe in our vision. At some point we plan to charge for collaboration features that help teams make the most of AI agents, but for now we're focused on making Conductor an amazing free tool.\nWhich versions of Claude Code, Codex, and OpenCode does Conductor use?\nConductor comes bundled with its own installation of Claude Code and Codex, so that we can ensure compatibility. You can find them at ~/Library/Application Support/com.conductor.app/bin. Do not update or modify them, or they might be incompatible with Conductor.\nCursor sessions use Conductor's Cursor integration and your Cursor API key. There is no Cursor executable path to configure in Conductor settings.\nOpenCode sessions use Conductor's managed OpenCode integration unless you configure a custom OpenCode executable path.\nDoes Conductor support Claude Code agent teams?\nYes! In Settings -> Environment, add CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1 to enable Claude Code's experimental agent teams feature.\nWhere does Conductor get the repo icon?\nConductor looks for an icon file in your repository root. It checks for common icon filenames in this order:\npublic/apple-touch-icon.png\napple-touch-icon.png\npublic/favicon.svg\nfavicon.svg\npublic/favicon.png\npublic/icon.png\npublic/logo.png\nfavicon.png\napp/icon.png\nsrc/app/icon.png\npublic/favicon.ico\nfavicon.ico\napp/favicon.ico\nstatic/favicon.ico\nsrc-tauri/icons/icon.png\nassets/icon.png\nsrc/assets/icon.png\nThe first match is used as the icon shown in the sidebar next to your repo name.\nI'm moving to a new computer, how can I transfer my chats?\nThe easiest way is to use Apple's Migration Assistant to transfer all your files. This will let you pick up exactly where you left off.\nIf you're up for an adventure, you can also manually copy all files Conductor depends on. Conductor stores files at ~/Library/Application Support/com.conductor.app and ~/conductor. Claude Code and Codex store files in ~/.claude and ~/.codex. Make sure to copy while Conductor, Codex, and Claude Code are not running, and to use exactly the same destination paths.",
+  "markdown": "\n# FAQ\n\n\n\n## What are the city names? [#what-are-the-city-names]\n\nEach workspace in Conductor is named after a city. We use cities as memorable, distinct names for different workspaces.\n\nThe city also serves as a stable name for the workspace directory, which lets your files live in a consistent place where coding agents and other programs can always find them.\n\nIn addition to the city, we also identify a workspace by its branch name or PR title. In the left sidebar, you'll see the PR title (if a PR is open) or the branch name.\n\nConductor always runs on your Mac, wherever you are. It doesn't actually run in the city, although that would be cool.\n\nYou can see all the cities you've visited in Conductor at cmd+K -> Passport.\n\n## How does Conductor authenticate to Claude Code, Codex, Cursor, and OpenCode? [#how-does-conductor-authenticate-to-claude-code-codex-cursor-and-opencode]\n\nBy default, Conductor uses the auth tokens already saved on your machine. If you're logged into Claude Code with an API key, Conductor uses that; if you're logged in with Claude Pro or Max, Conductor uses that. You can also override this by choosing API key mode in [`Settings` -> `Agents`](https://app.conductor.build/settings/user/providers), then setting the key in [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment).\n\nCursor sessions use a Cursor API key. Add it in [`Settings` -> `Agents` -> `Cursor`](https://app.conductor.build/settings/user/providers?providerTab=cursor), or set `CURSOR_API_KEY` in Conductor's environment settings.\n\nOpenCode sessions use OpenCode provider credentials and models. Add provider API keys in [`Settings` -> `Agents` -> `OpenCode`](https://app.conductor.build/settings/user/providers?providerTab=opencode), or configure OpenCode through its own provider setup.\n\nFor setup and billing details by agent, see [Harnesses](/docs/reference/harnesses).\n\n## What permissions do agents have? [#what-permissions-do-agents-have]\n\nAgents in Conductor run with the same permissions as your user account. They can read and write files, run shell commands, and access anything you can access on your machine.\n\nAgents run directly on your system without sandboxing.\n\nMost users don't experience any problems with this. If you want to be extra safe, you can run Conductor on a separate machine or VM dedicated to development work.\n\n## Does Conductor add its own system prompts? [#does-conductor-add-its-own-system-prompts]\n\nYes. Conductor injects system prompts that explain to the agent that it's running inside Conductor, what a workspace is, and other context. It also injects prompts in response to various actions you take in the Conductor UI (e.g., creating a new workspace, or clicking \"Create PR\"); you can see and customize these prompts in [`Settings` -> your repository -> `Actions`](https://app.conductor.build/settings/repos?section=actions).\n\n## Why does Conductor request access to Downloads, Reminders, etc.? [#why-does-conductor-request-access-to-downloads-reminders-etc]\n\nWhen an agent or your shell tries to read a file in one of macOS's protected folders, the system displays a permissions pop-up. Conductor itself doesn't need access; it appears as \"Conductor\" because it's running the agent. Nothing unusual is happening on our end, and we're working to improve the user experience.\n\n## How does Conductor make money? [#how-does-conductor-make-money]\n\nRight now we don't. We're a small team running on seed funding from a few great investors who believe in our vision. At some point we plan to charge for collaboration features that help teams make the most of AI agents, but for now we're focused on making Conductor an amazing free tool.\n\n## Which versions of Claude Code, Codex, and OpenCode does Conductor use? [#which-versions-of-claude-code-codex-and-opencode-does-conductor-use]\n\nConductor comes bundled with its own installation of Claude Code and Codex, so that we can ensure compatibility. You can find them at `~/Library/Application Support/com.conductor.app/bin`. Do not update or modify them, or they might be incompatible with Conductor.\n\nCursor sessions use Conductor's Cursor integration and your Cursor API key. There is no Cursor executable path to configure in Conductor settings.\n\nOpenCode sessions use Conductor's managed OpenCode integration unless you configure a custom OpenCode executable path.\n\n## Does Conductor support Claude Code agent teams? [#does-conductor-support-claude-code-agent-teams]\n\nYes! In [`Settings` -> `Environment`](https://app.conductor.build/settings/user/environment), add `CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1` to enable Claude Code's experimental agent teams feature.\n\n## Where does Conductor get the repo icon? [#where-does-conductor-get-the-repo-icon]\n\nConductor looks for an icon file in your repository root. It checks for common icon filenames in this order:\n\n* `public/apple-touch-icon.png`\n* `apple-touch-icon.png`\n* `public/favicon.svg`\n* `favicon.svg`\n* `public/favicon.png`\n* `public/icon.png`\n* `public/logo.png`\n* `favicon.png`\n* `app/icon.png`\n* `src/app/icon.png`\n* `public/favicon.ico`\n* `favicon.ico`\n* `app/favicon.ico`\n* `static/favicon.ico`\n* `src-tauri/icons/icon.png`\n* `assets/icon.png`\n* `src/assets/icon.png`\n\nThe first match is used as the icon shown in the sidebar next to your repo name.\n\n## I'm moving to a new computer, how can I transfer my chats? [#im-moving-to-a-new-computer-how-can-i-transfer-my-chats]\n\nThe easiest way is to use Apple's Migration Assistant to transfer all your files. This will let you pick up exactly where you left off.\n\nIf you're up for an adventure, you can also manually copy all files Conductor depends on. Conductor stores files at `~/Library/Application Support/com.conductor.app` and `~/conductor`. Claude Code and Codex store files in `~/.claude` and `~/.codex`. Make sure to copy while Conductor, Codex, and Claude Code are not running, and to use exactly the same destination paths.\n"
+}

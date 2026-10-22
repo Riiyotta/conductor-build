@@ -1,0 +1,52 @@
+{
+  "slug": "0.55.0-per-repo-spotlight-html-previews",
+  "version": "0.55.0",
+  "versionSlug": "0.55.0",
+  "title": "Per-repo Spotlight, HTML previews",
+  "fullTitle": "0.55.0: Per-repo Spotlight, HTML previews",
+  "date": "May 20, 2026",
+  "dateISO": "2026-05-20",
+  "description": "Conductor 0.55.0 changelog - Per-repo Spotlight, HTML previews",
+  "summary": "Spotlight testing is now configured per repository instead of globally - that means you can control workspace isolation per-project. Spotlight is a useful feature for managing complex developer workflows - it allows you to run a single instance of your project and hot-swap branches, rather than running multiple branches in parallel.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.55.0/1779307966900-image.png",
+    "alt": "image"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.55.0-per-repo-spotlight-html-previews/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.55.0-per-repo-spotlight-html-previews",
+  "sourceUrl": "https://www.conductor.build/changelog/0.55.0-per-repo-spotlight-html-previews",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Spotlight"
+    },
+    {
+      "depth": 3,
+      "title": "The unreasonable effectiveness of HTML"
+    },
+    {
+      "depth": 3,
+      "title": "Automerge"
+    },
+    {
+      "depth": 3,
+      "title": "Merge queue status"
+    },
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<h3>Spotlight</h3>\n<p><a href=\"/docs/concepts/testing#spotlight-testing\" target=\"_blank\" rel=\"noopener noreferrer\">Spotlight testing</a> is now configured per repository instead of globally - that means you can control workspace isolation per-project.\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.55.0/1779307966900-image.png\"/></figure>\nSpotlight is a useful feature for managing complex developer workflows - it allows you to run a single instance of your project and hot-swap branches, rather than running multiple branches in parallel.</p>\n<h3>The unreasonable effectiveness of HTML</h3>\n<p>We&#x27;ve added HTML previews. Thanks <a href=\"https://x.com/trq212/status/2052809885763747935?s=20\" target=\"_blank\" rel=\"noopener noreferrer\">Thariq</a> for the inspiration!</p>\n\n<figure data-asset><video src=\"/assets/changelog/media/0.55.0/1779307967770-video.mp4\" autoplay muted loop playsinline></video></figure>\n<h3>Automerge</h3>\n<p>You can now automerge PR&#x27;s so they merge when CI passes.</p>\n<figure data-asset><img alt=\"image\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.55.0/1779310379139-CleanShot_2026-05-20_at_13.52.35_2x.png\"/></figure>\n<h3>Merge queue status</h3>\n<p>PRs in the merge queue now show their queued status in the git panel.\n<figure data-asset><img alt=\"Merge queue checks pending\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/merge-queue-rendering-0.55.0.png\"/></figure></p>\n<h3>Improvements</h3>\n<ul>\n<li>Moved the Automerge setting from Experimental to Git in Settings</li>\n<li>Request metadata now shows Claude Code response speed</li>\n<li>Click an image in chat to open it as a file tab in the top bar</li>\n<li>Cloud beta just keeps getting better 🙂</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed an issue where Conductor would not show the restart prompt after a manually checked update finished downloading</li>\n<li>Fixed an issue where the embedded Claude login terminal could disappear before login finished</li>\n<li>Fixed an issue where pasted images could appear only after workspace setup finished</li>\n<li>Fixed an issue where Claude fast mode credit limits were not surfaced in the composer</li>\n<li>Fixed remote workspace image previews for attachments and markdown images</li>\n<li>Fixed an issue where editing CRLF files could rewrite every line ending</li>\n<li>Fixed diff header toggle spacing</li>\n<li>Fixed an issue where plain git push in new Conductor workspaces did not set the branch upstream</li>\n<li>Fixed an issue where @ referencing files could lead to files being removed</li>\n<li>Fixed file sync startup so remote workspaces no longer require SSH config</li>\n<li>Fixed an issue where sleeping cloud workspaces could fail to archive</li>\n<li>Fixed an issue where typing in the file editor with Find (⌘F) open would scroll the line being edited to the top of the viewport</li>\n<li>Fixed an issue where queued PRs could briefly appear merged in Conductor</li>\n<li>Fixed an issue where sending a queued message immediately could miss newly added attachment uploads</li>\n<li>Fixed an issue where queued messages could be hidden while Conductor downloads an agent</li>\n<li>Fixed an issue where Conductor showed agent binary downloads and held messages even when a custom executable was configured</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>You now see a heads-up toast when changing model or effort level mid-chat that the next response will be slower</li>\n<li>Aligned the context usage control in the composer</li>\n</ul>",
+  "markdown": "\n## Spotlight\n\n[Spotlight testing](/docs/concepts/testing#spotlight-testing) is now configured per repository instead of globally - that means you can control workspace isolation per-project.\n![image](/assets/changelog/media/0.55.0/1779307966900-image.png)\nSpotlight is a useful feature for managing complex developer workflows - it allows you to run a single instance of your project and hot-swap branches, rather than running multiple branches in parallel.\n\n## The unreasonable effectiveness of HTML\n\nWe've added HTML previews. Thanks [Thariq](https://x.com/trq212/status/2052809885763747935?s=20) for the inspiration!\n\n<!-- prettier-ignore -->\n<video src=\"/assets/changelog/media/0.55.0/1779307967770-video.mp4\" autoplay muted loop playsinline></video>\n\n## Automerge\n\nYou can now automerge PR's so they merge when CI passes.\n\n![image](/assets/changelog/media/0.55.0/1779310379139-CleanShot_2026-05-20_at_13.52.35_2x.png)\n\n## Merge queue status\n\nPRs in the merge queue now show their queued status in the git panel.\n![Merge queue checks pending](/assets/changelog/images/merge-queue-rendering-0.55.0.png)\n\n## Improvements\n\n- Moved the Automerge setting from Experimental to Git in Settings\n- Request metadata now shows Claude Code response speed\n- Click an image in chat to open it as a file tab in the top bar\n- Cloud beta just keeps getting better 🙂\n\n## Fixes\n\n- Fixed an issue where Conductor would not show the restart prompt after a manually checked update finished downloading\n- Fixed an issue where the embedded Claude login terminal could disappear before login finished\n- Fixed an issue where pasted images could appear only after workspace setup finished\n- Fixed an issue where Claude fast mode credit limits were not surfaced in the composer\n- Fixed remote workspace image previews for attachments and markdown images\n- Fixed an issue where editing CRLF files could rewrite every line ending\n- Fixed diff header toggle spacing\n- Fixed an issue where plain git push in new Conductor workspaces did not set the branch upstream\n- Fixed an issue where @ referencing files could lead to files being removed\n- Fixed file sync startup so remote workspaces no longer require SSH config\n- Fixed an issue where sleeping cloud workspaces could fail to archive\n- Fixed an issue where typing in the file editor with Find (⌘F) open would scroll the line being edited to the top of the viewport\n- Fixed an issue where queued PRs could briefly appear merged in Conductor\n- Fixed an issue where sending a queued message immediately could miss newly added attachment uploads\n- Fixed an issue where queued messages could be hidden while Conductor downloads an agent\n- Fixed an issue where Conductor showed agent binary downloads and held messages even when a custom executable was configured\n\n## Misc\n\n- You now see a heads-up toast when changing model or effort level mid-chat that the next response will be slower\n- Aligned the context usage control in the composer\n"
+}

@@ -1,0 +1,2118 @@
+{
+  "slug": "api/mcp",
+  "url": "/docs/api/mcp",
+  "title": "Conductor MCP server",
+  "description": "Connect an MCP client to create and manage Conductor cloud workspaces",
+  "meta": {
+    "title": "Conductor MCP server | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/api/mcp/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Conductor MCP server"
+    }
+  ],
+  "toc": [
+    {
+      "depth": 2,
+      "url": "#connect-with-an-agent",
+      "title": "Connect with an agent"
+    },
+    {
+      "depth": 2,
+      "url": "#connect-manually",
+      "title": "Connect manually"
+    },
+    {
+      "depth": 3,
+      "url": "#chatgpt",
+      "title": "ChatGPT"
+    },
+    {
+      "depth": 3,
+      "url": "#cursor",
+      "title": "Cursor"
+    },
+    {
+      "depth": 3,
+      "url": "#claude-code",
+      "title": "Claude Code"
+    },
+    {
+      "depth": 3,
+      "url": "#codex",
+      "title": "Codex"
+    },
+    {
+      "depth": 3,
+      "url": "#other-mcp-clients",
+      "title": "Other MCP clients"
+    },
+    {
+      "depth": 2,
+      "url": "#connect-with-an-api-key",
+      "title": "Connect with an API key"
+    },
+    {
+      "depth": 2,
+      "url": "#example-prompts",
+      "title": "Example prompts"
+    },
+    {
+      "depth": 2,
+      "url": "#tool-reference",
+      "title": "Tool reference"
+    },
+    {
+      "depth": 2,
+      "url": "#access-and-safety",
+      "title": "Access and safety"
+    }
+  ],
+  "tocStyle": "clerk",
+  "previous": {
+    "url": "/docs/api",
+    "title": "Conductor API",
+    "description": "Drive Conductor cloud workspaces programmatically over HTTP"
+  },
+  "next": {
+    "url": "/docs/reference/scripts",
+    "title": "Project scripts",
+    "description": "Reference for setup scripts, archive scripts, and actions"
+  },
+  "components": [
+    "ApiAgentPrompt"
+  ],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Conductor's hosted Model Context Protocol (MCP) server lets ChatGPT, Claude,\nCodex, and other MCP clients manage your cloud workspaces. Connect once, then\nask your client to create workspaces, delegate tasks to coding agents, follow\ntheir progress, and read the results."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "strong",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Server URL:"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "https://api.conductor.build/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "The server uses Streamable HTTP. Connect with OAuth when your client supports\nit; your client opens Conductor in a browser so you can sign in, choose an\norganization, and approve access. You do not need to create or paste an API\nkey."
+        }
+      ]
+    },
+    {
+      "type": "callout",
+      "calloutType": "info",
+      "children": [
+        {
+          "type": "element",
+          "tag": "p",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "The Conductor API and hosted MCP server are in beta. Tools and input shapes\nmay change."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "connect-with-an-agent",
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect with an agent"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Copy this prompt into an agent that can manage MCP servers:"
+        }
+      ]
+    },
+    {
+      "type": "component",
+      "name": "ApiAgentPrompt",
+      "props": {
+        "prompt": "Add the Conductor MCP server at https://api.conductor.build/mcp and authenticate with OAuth."
+      },
+      "children": []
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "connect-manually",
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect manually"
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "chatgpt",
+      "children": [
+        {
+          "type": "text",
+          "value": "ChatGPT"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings → Plugins"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open the "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " menu and select "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Add MCP server"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Enter "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Conductor"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " as the server name."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Switch the server type from "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "STDIO"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " to "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Streamable HTTP"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Enter "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "https://api.conductor.build/mcp"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " as the server URL and select\n"
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Save"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Sign in to Conductor, choose an organization, and approve access."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "cursor",
+      "children": [
+        {
+          "type": "text",
+          "value": "Cursor"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {},
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Open "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Customize"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Select "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "MCPs"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Select "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "New MCP Server"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": ". Cursor opens "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "~/.cursor/mcp.json"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": "."
+            }
+          ]
+        },
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Paste this configuration into the file and save it:"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "json",
+      "title": "~/.cursor/mcp.json",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "{\n    \"mcpServers\": {\n        \"conductor\": {\n            \"url\": \"https://api.conductor.build/mcp\"\n        }\n    }\n}",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "{",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    \"mcpServers\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        \"conductor\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": {",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "            \"url\"",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": ": ",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "\"https://api.conductor.build/mcp\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "        }",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "    }",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "}",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "ol",
+      "attrs": {
+        "start": "5"
+      },
+      "children": [
+        {
+          "type": "element",
+          "tag": "li",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "Select "
+            },
+            {
+              "type": "element",
+              "tag": "strong",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Authenticate"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " for the "
+            },
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "conductor"
+                }
+              ]
+            },
+            {
+              "type": "text",
+              "value": " server, then sign in to\nConductor, choose an organization, and approve access."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "See the "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://cursor.com/docs/mcp",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Cursor MCP documentation"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for other\nconfiguration options."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "claude-code",
+      "children": [
+        {
+          "type": "text",
+          "value": "Claude Code"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add the server to your user configuration, then complete OAuth in your browser:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "claude mcp add --transport http --scope user conductor \\\n  https://api.conductor.build/mcp\nclaude mcp login conductor",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "claude",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --transport",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " http",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --scope",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " user",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " conductor",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  https://api.conductor.build/mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "claude",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " login",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " conductor",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--scope local"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead of "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "--scope user"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " when the connection should apply\nonly to the current project. Run "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "claude mcp list"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to check the connection."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "codex",
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Add the server and sign in with OAuth:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "codex mcp add conductor --url https://api.conductor.build/mcp\ncodex mcp login conductor",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " conductor",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " --url",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://api.conductor.build/mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " login",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " conductor",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Codex stores the connection in "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "~/.codex/config.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ". The Codex CLI, IDE\nextension, and ChatGPT desktop app share this configuration. Run\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "codex mcp list"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " to check the connection. See the\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://developers.openai.com/codex/mcp",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Codex MCP documentation"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for other\nconfiguration options."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 3,
+      "id": "other-mcp-clients",
+      "children": [
+        {
+          "type": "text",
+          "value": "Other MCP clients"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Configure a remote Streamable HTTP server with this URL:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "https://api.conductor.build/mcp",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "https://api.conductor.build/mcp"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For browser sign-in, the client must support OAuth for protected MCP servers.\nConductor supports Dynamic Client Registration, PKCE authorization codes, and\nrefresh tokens. The OAuth grant is limited to the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "mcp:tools"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " scope and the\norganization you choose during sign-in."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "connect-with-an-api-key",
+      "children": [
+        {
+          "type": "text",
+          "value": "Connect with an API key"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use an API key when your MCP client supports bearer authentication but cannot\ncomplete browser OAuth. Create a key at\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/home/api-keys",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "app.conductor.build/home/api-keys"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "\nand treat it like a password."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For Codex, keep the key in an environment variable instead of putting it in\n"
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "config.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ":"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "bash",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"m 4,4 a 1,1 0 0 0 -0.7070312,0.2929687 1,1 0 0 0 0,1.4140625 L 8.5859375,11 3.2929688,16.292969 a 1,1 0 0 0 0,1.414062 1,1 0 0 0 1.4140624,0 l 5.9999998,-6 a 1.0001,1.0001 0 0 0 0,-1.414062 L 4.7070312,4.2929687 A 1,1 0 0 0 4,4 Z m 8,14 a 1,1 0 0 0 -1,1 1,1 0 0 0 1,1 h 8 a 1,1 0 0 0 1,-1 1,1 0 0 0 -1,-1 z\" fill=\"currentColor\" /></svg>",
+      "code": "export CONDUCTOR_API_KEY=\"YOUR_API_KEY\"\ncodex mcp add conductor \\\n  --url https://api.conductor.build/mcp \\\n  --bearer-token-env-var CONDUCTOR_API_KEY",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "export",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": " CONDUCTOR_API_KEY",
+              "color": "#24292E",
+              "colorDark": "#E1E4E8"
+            },
+            {
+              "text": "=",
+              "color": "#D73A49",
+              "colorDark": "#F97583"
+            },
+            {
+              "text": "\"YOUR_API_KEY\"",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "codex",
+              "color": "#6F42C1",
+              "colorDark": "#B392F0"
+            },
+            {
+              "text": " mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " add",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " conductor",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --url",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " https://api.conductor.build/mcp",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            },
+            {
+              "text": " \\",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "  --bearer-token-env-var",
+              "color": "#005CC5",
+              "colorDark": "#79B8FF"
+            },
+            {
+              "text": " CONDUCTOR_API_KEY",
+              "color": "#032F62",
+              "colorDark": "#9ECBFF"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For a client with a generic HTTP configuration, send the key on every request:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "Authorization: Bearer YOUR_API_KEY",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "Authorization: Bearer YOUR_API_KEY"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "example-prompts",
+      "children": [
+        {
+          "type": "text",
+          "value": "Example prompts"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "After connecting, try:"
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "List my Conductor projects and the models I can use.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "List my Conductor projects and the models I can use."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "Create a workspace in the my most recent project and ask me what I want to work on and what model to use, then start the workspace.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "Create a workspace in the my most recent project and ask me what I want to work on and what model to use, then start the workspace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "code",
+      "lang": "text",
+      "icon": "<svg viewBox=\"0 0 24 24\"><path d=\"M 6,1 C 4.354992,1 3,2.354992 3,4 v 16 c 0,1.645008 1.354992,3 3,3 h 12 c 1.645008,0 3,-1.354992 3,-3 V 8 7 A 1.0001,1.0001 0 0 0 20.707031,6.2929687 l -5,-5 A 1.0001,1.0001 0 0 0 15,1 h -1 z m 0,2 h 7 v 3 c 0,1.645008 1.354992,3 3,3 h 3 v 11 c 0,0.564129 -0.435871,1 -1,1 H 6 C 5.4358712,21 5,20.564129 5,20 V 4 C 5,3.4358712 5.4358712,3 6,3 Z M 15,3.4140625 18.585937,7 H 16 C 15.435871,7 15,6.5641288 15,6 Z\" fill=\"currentColor\" /></svg>",
+      "code": "Find the Conductor workspaces active in the last 24 hours and summarize what\neach agent accomplished. Include a link to each workspace.",
+      "lines": [
+        {
+          "tokens": [
+            {
+              "text": "Find the Conductor workspaces active in the last 24 hours and summarize what"
+            }
+          ]
+        },
+        {
+          "tokens": [
+            {
+              "text": "each agent accomplished. Include a link to each workspace."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "tool-reference",
+      "children": [
+        {
+          "type": "text",
+          "value": "Tool reference"
+        }
+      ]
+    },
+    {
+      "type": "table",
+      "head": [
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Tool"
+            }
+          ]
+        },
+        {
+          "children": [
+            {
+              "type": "text",
+              "value": "Description"
+            }
+          ]
+        }
+      ],
+      "rows": [
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "whoami"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get the authenticated Conductor identity and organization."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "list_models"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List supported agents, model IDs, effort levels, defaults, and fast-mode support."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "list_projects"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List projects visible to the connected account."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_project"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a project by ID."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "list_project_workspaces"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List the workspaces in a project."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "create_workspace"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Create an isolated cloud workspace and its first session from a project ID or repository URL."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_workspace"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a workspace by ID."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_workspace_status"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a workspace's lifecycle status."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "rename_workspace"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Rename a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "archive_workspace"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Archive a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "unarchive_workspace"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Restore an archived workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "list_workspace_sessions"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List the sessions in a workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "create_session"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Create another agent session in an existing workspace."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_session"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a session by ID."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_session_status"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get a session's current agent status."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "cancel_session"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Cancel the current agent turn and discard queued messages."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "send_message"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Send or queue a prompt for a session."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "list_messages"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "List transcript messages, optionally only those after a message cursor."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "get_message"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Get one transcript message by ID."
+              }
+            ]
+          }
+        ],
+        [
+          {
+            "children": [
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "run_sql"
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "children": [
+              {
+                "type": "text",
+                "value": "Run a read-only query against "
+              },
+              {
+                "type": "element",
+                "tag": "code",
+                "attrs": {},
+                "children": [
+                  {
+                    "type": "text",
+                    "value": "session_transcripts_view"
+                  }
+                ]
+              },
+              {
+                "type": "text",
+                "value": "."
+              }
+            ]
+          }
+        ]
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "List tools are paginated. Ask the client to continue while "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "hasMore"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " is true\nwhen you need a complete result. For transcripts, use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "list_messages"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " with the\nlast message ID as "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "after"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " instead of repeatedly paging from the beginning."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "MCP tools return the same response objects as the "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "/v0"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " API. Workspace tools\ninclude "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorId"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " and "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorName"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "; "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "creatorName"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " falls back to the creator's\nemail when they have not set a name. "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "whoami"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " includes the authenticated user's\noptional "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "name"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " alongside their "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": "email"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "heading",
+      "depth": 2,
+      "id": "access-and-safety",
+      "children": [
+        {
+          "type": "text",
+          "value": "Access and safety"
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "OAuth access is bound to the organization selected during sign-in. The tools\nact with your Conductor permissions and include write actions such as creating\nworkspaces, sending prompts, canceling sessions, and archiving workspaces.\nReview tool calls before approving them, especially when a client proposes an\naction you did not request."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Disconnect the server in your MCP client's settings to stop that client from\nusing it. If you connected with an API key, delete or rotate the key from the\n"
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/home/api-keys",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "API keys page"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Conductor's hosted Model Context Protocol (MCP) server lets ChatGPT, Claude,\nCodex, and other MCP clients manage your cloud workspaces. Connect once, then\nask your client to create workspaces, delegate tasks to coding agents, follow\ntheir progress, and read the results.</p><p><strong>Server URL:</strong> <code>https://api.conductor.build/mcp</code></p><p>The server uses Streamable HTTP. Connect with OAuth when your client supports\nit; your client opens Conductor in a browser so you can sign in, choose an\norganization, and approve access. You do not need to create or paste an API\nkey.</p><div role=\"note\" data-callout=\"info\"><p>The Conductor API and hosted MCP server are in beta. Tools and input shapes\nmay change.</p></div><h2 id=\"connect-with-an-agent\"><a href=\"#connect-with-an-agent\">Connect with an agent</a></h2><p>Copy this prompt into an agent that can manage MCP servers:</p><div data-component=\"ApiAgentPrompt\" data-props=\"{&quot;prompt&quot;:&quot;Add the Conductor MCP server at https://api.conductor.build/mcp and authenticate with OAuth.&quot;}\"></div><h2 id=\"connect-manually\"><a href=\"#connect-manually\">Connect manually</a></h2><h3 id=\"chatgpt\"><a href=\"#chatgpt\">ChatGPT</a></h3><ol><li>Open <strong>Settings → Plugins</strong>.</li><li>Open the <strong>Add</strong> menu and select <strong>Add MCP server</strong>.</li><li>Enter <code>Conductor</code> as the server name.</li><li>Switch the server type from <strong>STDIO</strong> to <strong>Streamable HTTP</strong>.</li><li>Enter <code>https://api.conductor.build/mcp</code> as the server URL and select\n<strong>Save</strong>.</li><li>Sign in to Conductor, choose an organization, and approve access.</li></ol><h3 id=\"cursor\"><a href=\"#cursor\">Cursor</a></h3><ol><li>Open <strong>Customize</strong>.</li><li>Select <strong>MCPs</strong>.</li><li>Select <strong>New MCP Server</strong>. Cursor opens <code>~/.cursor/mcp.json</code>.</li><li>Paste this configuration into the file and save it:</li></ol><figure data-code data-lang=\"json\" data-title=\"~/.cursor/mcp.json\"><pre><code><span class=\"line\"><span style=\"color:#24292E\">{</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">    \"mcpServers\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">        \"conductor\"</span><span style=\"color:#24292E\">: {</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">            \"url\"</span><span style=\"color:#24292E\">: </span><span style=\"color:#032F62\">\"https://api.conductor.build/mcp\"</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">        }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">    }</span></span>\n<span class=\"line\"><span style=\"color:#24292E\">}</span></span></code></pre></figure><ol start=\"5\"><li>Select <strong>Authenticate</strong> for the <code>conductor</code> server, then sign in to\nConductor, choose an organization, and approve access.</li></ol><p>See the <a href=\"https://cursor.com/docs/mcp\" target=\"_blank\" rel=\"noopener noreferrer\">Cursor MCP documentation</a> for other\nconfiguration options.</p><h3 id=\"claude-code\"><a href=\"#claude-code\">Claude Code</a></h3><p>Add the server to your user configuration, then complete OAuth in your browser:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">claude</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#005CC5\"> --transport</span><span style=\"color:#032F62\"> http</span><span style=\"color:#005CC5\"> --scope</span><span style=\"color:#032F62\"> user</span><span style=\"color:#032F62\"> conductor</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#032F62\">  https://api.conductor.build/mcp</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">claude</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> login</span><span style=\"color:#032F62\"> conductor</span></span></code></pre></figure><p>Use <code>--scope local</code> instead of <code>--scope user</code> when the connection should apply\nonly to the current project. Run <code>claude mcp list</code> to check the connection.</p><h3 id=\"codex\"><a href=\"#codex\">Codex</a></h3><p>Add the server and sign in with OAuth:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> conductor</span><span style=\"color:#005CC5\"> --url</span><span style=\"color:#032F62\"> https://api.conductor.build/mcp</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> login</span><span style=\"color:#032F62\"> conductor</span></span></code></pre></figure><p>Codex stores the connection in <code>~/.codex/config.toml</code>. The Codex CLI, IDE\nextension, and ChatGPT desktop app share this configuration. Run\n<code>codex mcp list</code> to check the connection. See the\n<a href=\"https://developers.openai.com/codex/mcp\" target=\"_blank\" rel=\"noopener noreferrer\">Codex MCP documentation</a> for other\nconfiguration options.</p><h3 id=\"other-mcp-clients\"><a href=\"#other-mcp-clients\">Other MCP clients</a></h3><p>Configure a remote Streamable HTTP server with this URL:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">https://api.conductor.build/mcp</span></code></pre></figure><p>For browser sign-in, the client must support OAuth for protected MCP servers.\nConductor supports Dynamic Client Registration, PKCE authorization codes, and\nrefresh tokens. The OAuth grant is limited to the <code>mcp:tools</code> scope and the\norganization you choose during sign-in.</p><h2 id=\"connect-with-an-api-key\"><a href=\"#connect-with-an-api-key\">Connect with an API key</a></h2><p>Use an API key when your MCP client supports bearer authentication but cannot\ncomplete browser OAuth. Create a key at\n<a href=\"https://app.conductor.build/home/api-keys\" target=\"_blank\" rel=\"noopener noreferrer\">app.conductor.build/home/api-keys</a>\nand treat it like a password.</p><p>For Codex, keep the key in an environment variable instead of putting it in\n<code>config.toml</code>:</p><figure data-code data-lang=\"bash\"><pre><code><span class=\"line\"><span style=\"color:#D73A49\">export</span><span style=\"color:#24292E\"> CONDUCTOR_API_KEY</span><span style=\"color:#D73A49\">=</span><span style=\"color:#032F62\">\"YOUR_API_KEY\"</span></span>\n<span class=\"line\"><span style=\"color:#6F42C1\">codex</span><span style=\"color:#032F62\"> mcp</span><span style=\"color:#032F62\"> add</span><span style=\"color:#032F62\"> conductor</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --url</span><span style=\"color:#032F62\"> https://api.conductor.build/mcp</span><span style=\"color:#005CC5\"> \\</span></span>\n<span class=\"line\"><span style=\"color:#005CC5\">  --bearer-token-env-var</span><span style=\"color:#032F62\"> CONDUCTOR_API_KEY</span></span></code></pre></figure><p>For a client with a generic HTTP configuration, send the key on every request:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">Authorization: Bearer YOUR_API_KEY</span></code></pre></figure><h2 id=\"example-prompts\"><a href=\"#example-prompts\">Example prompts</a></h2><p>After connecting, try:</p><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">List my Conductor projects and the models I can use.</span></code></pre></figure><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">Create a workspace in the my most recent project and ask me what I want to work on and what model to use, then start the workspace.</span></code></pre></figure><figure data-code data-lang=\"text\"><pre><code><span class=\"line\">Find the Conductor workspaces active in the last 24 hours and summarize what</span>\n<span class=\"line\">each agent accomplished. Include a link to each workspace.</span></code></pre></figure><h2 id=\"tool-reference\"><a href=\"#tool-reference\">Tool reference</a></h2><table><thead><tr><th>Tool</th><th>Description</th></tr></thead><tbody><tr><td><code>whoami</code></td><td>Get the authenticated Conductor identity and organization.</td></tr><tr><td><code>list_models</code></td><td>List supported agents, model IDs, effort levels, defaults, and fast-mode support.</td></tr><tr><td><code>list_projects</code></td><td>List projects visible to the connected account.</td></tr><tr><td><code>get_project</code></td><td>Get a project by ID.</td></tr><tr><td><code>list_project_workspaces</code></td><td>List the workspaces in a project.</td></tr><tr><td><code>create_workspace</code></td><td>Create an isolated cloud workspace and its first session from a project ID or repository URL.</td></tr><tr><td><code>get_workspace</code></td><td>Get a workspace by ID.</td></tr><tr><td><code>get_workspace_status</code></td><td>Get a workspace's lifecycle status.</td></tr><tr><td><code>rename_workspace</code></td><td>Rename a workspace.</td></tr><tr><td><code>archive_workspace</code></td><td>Archive a workspace.</td></tr><tr><td><code>unarchive_workspace</code></td><td>Restore an archived workspace.</td></tr><tr><td><code>list_workspace_sessions</code></td><td>List the sessions in a workspace.</td></tr><tr><td><code>create_session</code></td><td>Create another agent session in an existing workspace.</td></tr><tr><td><code>get_session</code></td><td>Get a session by ID.</td></tr><tr><td><code>get_session_status</code></td><td>Get a session's current agent status.</td></tr><tr><td><code>cancel_session</code></td><td>Cancel the current agent turn and discard queued messages.</td></tr><tr><td><code>send_message</code></td><td>Send or queue a prompt for a session.</td></tr><tr><td><code>list_messages</code></td><td>List transcript messages, optionally only those after a message cursor.</td></tr><tr><td><code>get_message</code></td><td>Get one transcript message by ID.</td></tr><tr><td><code>run_sql</code></td><td>Run a read-only query against <code>session_transcripts_view</code>.</td></tr></tbody></table><p>List tools are paginated. Ask the client to continue while <code>hasMore</code> is true\nwhen you need a complete result. For transcripts, use <code>list_messages</code> with the\nlast message ID as <code>after</code> instead of repeatedly paging from the beginning.</p><p>MCP tools return the same response objects as the <code>/v0</code> API. Workspace tools\ninclude <code>creatorId</code> and <code>creatorName</code>; <code>creatorName</code> falls back to the creator's\nemail when they have not set a name. <code>whoami</code> includes the authenticated user's\noptional <code>name</code> alongside their <code>email</code>.</p><h2 id=\"access-and-safety\"><a href=\"#access-and-safety\">Access and safety</a></h2><p>OAuth access is bound to the organization selected during sign-in. The tools\nact with your Conductor permissions and include write actions such as creating\nworkspaces, sending prompts, canceling sessions, and archiving workspaces.\nReview tool calls before approving them, especially when a client proposes an\naction you did not request.</p><p>Disconnect the server in your MCP client's settings to stop that client from\nusing it. If you connected with an API key, delete or rotate the key from the\n<a href=\"https://app.conductor.build/home/api-keys\" target=\"_blank\" rel=\"noopener noreferrer\">API keys page</a>.</p>",
+  "text": "Conductor's hosted Model Context Protocol (MCP) server lets ChatGPT, Claude,\nCodex, and other MCP clients manage your cloud workspaces. Connect once, then\nask your client to create workspaces, delegate tasks to coding agents, follow\ntheir progress, and read the results.\nServer URL: https://api.conductor.build/mcp\nThe server uses Streamable HTTP. Connect with OAuth when your client supports\nit; your client opens Conductor in a browser so you can sign in, choose an\norganization, and approve access. You do not need to create or paste an API\nkey.\nThe Conductor API and hosted MCP server are in beta. Tools and input shapes\nmay change.\nConnect with an agent\nCopy this prompt into an agent that can manage MCP servers:\nConnect manually\nChatGPT\nOpen Settings → Plugins.\nOpen the Add menu and select Add MCP server.\nEnter Conductor as the server name.\nSwitch the server type from STDIO to Streamable HTTP.\nEnter https://api.conductor.build/mcp as the server URL and select\nSave.\nSign in to Conductor, choose an organization, and approve access.\nCursor\nOpen Customize.\nSelect MCPs.\nSelect New MCP Server. Cursor opens ~/.cursor/mcp.json.\nPaste this configuration into the file and save it:\n{\n    \"mcpServers\": {\n        \"conductor\": {\n            \"url\": \"https://api.conductor.build/mcp\"\n        }\n    }\n}Select Authenticate for the conductor server, then sign in to\nConductor, choose an organization, and approve access.\nSee the Cursor MCP documentation for other\nconfiguration options.\nClaude Code\nAdd the server to your user configuration, then complete OAuth in your browser:\nclaude mcp add --transport http --scope user conductor \\\n  https://api.conductor.build/mcp\nclaude mcp login conductorUse --scope local instead of --scope user when the connection should apply\nonly to the current project. Run claude mcp list to check the connection.\nCodex\nAdd the server and sign in with OAuth:\ncodex mcp add conductor --url https://api.conductor.build/mcp\ncodex mcp login conductorCodex stores the connection in ~/.codex/config.toml. The Codex CLI, IDE\nextension, and ChatGPT desktop app share this configuration. Run\ncodex mcp list to check the connection. See the\nCodex MCP documentation for other\nconfiguration options.\nOther MCP clients\nConfigure a remote Streamable HTTP server with this URL:\nhttps://api.conductor.build/mcpFor browser sign-in, the client must support OAuth for protected MCP servers.\nConductor supports Dynamic Client Registration, PKCE authorization codes, and\nrefresh tokens. The OAuth grant is limited to the mcp:tools scope and the\norganization you choose during sign-in.\nConnect with an API key\nUse an API key when your MCP client supports bearer authentication but cannot\ncomplete browser OAuth. Create a key at\napp.conductor.build/home/api-keys\nand treat it like a password.\nFor Codex, keep the key in an environment variable instead of putting it in\nconfig.toml:\nexport CONDUCTOR_API_KEY=\"YOUR_API_KEY\"\ncodex mcp add conductor \\\n  --url https://api.conductor.build/mcp \\\n  --bearer-token-env-var CONDUCTOR_API_KEYFor a client with a generic HTTP configuration, send the key on every request:\nAuthorization: Bearer YOUR_API_KEYExample prompts\nAfter connecting, try:\nList my Conductor projects and the models I can use.Create a workspace in the my most recent project and ask me what I want to work on and what model to use, then start the workspace.Find the Conductor workspaces active in the last 24 hours and summarize what\neach agent accomplished. Include a link to each workspace.Tool reference\nToolDescriptionwhoamiGet the authenticated Conductor identity and organization.list_modelsList supported agents, model IDs, effort levels, defaults, and fast-mode support.list_projectsList projects visible to the connected account.get_projectGet a project by ID.list_project_workspacesList the workspaces in a project.create_workspaceCreate an isolated cloud workspace and its first session from a project ID or repository URL.get_workspaceGet a workspace by ID.get_workspace_statusGet a workspace's lifecycle status.rename_workspaceRename a workspace.archive_workspaceArchive a workspace.unarchive_workspaceRestore an archived workspace.list_workspace_sessionsList the sessions in a workspace.create_sessionCreate another agent session in an existing workspace.get_sessionGet a session by ID.get_session_statusGet a session's current agent status.cancel_sessionCancel the current agent turn and discard queued messages.send_messageSend or queue a prompt for a session.list_messagesList transcript messages, optionally only those after a message cursor.get_messageGet one transcript message by ID.run_sqlRun a read-only query against session_transcripts_view.List tools are paginated. Ask the client to continue while hasMore is true\nwhen you need a complete result. For transcripts, use list_messages with the\nlast message ID as after instead of repeatedly paging from the beginning.\nMCP tools return the same response objects as the /v0 API. Workspace tools\ninclude creatorId and creatorName; creatorName falls back to the creator's\nemail when they have not set a name. whoami includes the authenticated user's\noptional name alongside their email.\nAccess and safety\nOAuth access is bound to the organization selected during sign-in. The tools\nact with your Conductor permissions and include write actions such as creating\nworkspaces, sending prompts, canceling sessions, and archiving workspaces.\nReview tool calls before approving them, especially when a client proposes an\naction you did not request.\nDisconnect the server in your MCP client's settings to stop that client from\nusing it. If you connected with an API key, delete or rotate the key from the\nAPI keys page.",
+  "markdown": "\n# Conductor MCP server\n\n\n\nConductor's hosted Model Context Protocol (MCP) server lets ChatGPT, Claude,\nCodex, and other MCP clients manage your cloud workspaces. Connect once, then\nask your client to create workspaces, delegate tasks to coding agents, follow\ntheir progress, and read the results.\n\n**Server URL:** `https://api.conductor.build/mcp`\n\nThe server uses Streamable HTTP. Connect with OAuth when your client supports\nit; your client opens Conductor in a browser so you can sign in, choose an\norganization, and approve access. You do not need to create or paste an API\nkey.\n\nThe Conductor API and hosted MCP server are in beta. Tools and input shapes\nmay change.\n\n## Connect with an agent [#connect-with-an-agent]\n\nCopy this prompt into an agent that can manage MCP servers:\n\n\n\n\n## Connect manually [#connect-manually]\n\n### ChatGPT [#chatgpt]\n\n1. Open **Settings → Plugins**.\n2. Open the **Add** menu and select **Add MCP server**.\n3. Enter `Conductor` as the server name.\n4. Switch the server type from **STDIO** to **Streamable HTTP**.\n5. Enter `https://api.conductor.build/mcp` as the server URL and select\n   **Save**.\n6. Sign in to Conductor, choose an organization, and approve access.\n\n### Cursor [#cursor]\n\n1. Open **Customize**.\n2. Select **MCPs**.\n3. Select **New MCP Server**. Cursor opens `~/.cursor/mcp.json`.\n4. Paste this configuration into the file and save it:\n\n```json title=\"~/.cursor/mcp.json\"\n{\n    \"mcpServers\": {\n        \"conductor\": {\n            \"url\": \"https://api.conductor.build/mcp\"\n        }\n    }\n}\n```\n\n5. Select **Authenticate** for the `conductor` server, then sign in to\n   Conductor, choose an organization, and approve access.\n\nSee the [Cursor MCP documentation](https://cursor.com/docs/mcp) for other\nconfiguration options.\n\n### Claude Code [#claude-code]\n\nAdd the server to your user configuration, then complete OAuth in your browser:\n\n```bash\nclaude mcp add --transport http --scope user conductor \\\n  https://api.conductor.build/mcp\nclaude mcp login conductor\n```\n\nUse `--scope local` instead of `--scope user` when the connection should apply\nonly to the current project. Run `claude mcp list` to check the connection.\n\n### Codex [#codex]\n\nAdd the server and sign in with OAuth:\n\n```bash\ncodex mcp add conductor --url https://api.conductor.build/mcp\ncodex mcp login conductor\n```\n\nCodex stores the connection in `~/.codex/config.toml`. The Codex CLI, IDE\nextension, and ChatGPT desktop app share this configuration. Run\n`codex mcp list` to check the connection. See the\n[Codex MCP documentation](https://developers.openai.com/codex/mcp) for other\nconfiguration options.\n\n### Other MCP clients [#other-mcp-clients]\n\nConfigure a remote Streamable HTTP server with this URL:\n\n```text\nhttps://api.conductor.build/mcp\n```\n\nFor browser sign-in, the client must support OAuth for protected MCP servers.\nConductor supports Dynamic Client Registration, PKCE authorization codes, and\nrefresh tokens. The OAuth grant is limited to the `mcp:tools` scope and the\norganization you choose during sign-in.\n\n## Connect with an API key [#connect-with-an-api-key]\n\nUse an API key when your MCP client supports bearer authentication but cannot\ncomplete browser OAuth. Create a key at\n[app.conductor.build/home/api-keys](https://app.conductor.build/home/api-keys)\nand treat it like a password.\n\nFor Codex, keep the key in an environment variable instead of putting it in\n`config.toml`:\n\n```bash\nexport CONDUCTOR_API_KEY=\"YOUR_API_KEY\"\ncodex mcp add conductor \\\n  --url https://api.conductor.build/mcp \\\n  --bearer-token-env-var CONDUCTOR_API_KEY\n```\n\nFor a client with a generic HTTP configuration, send the key on every request:\n\n```text\nAuthorization: Bearer YOUR_API_KEY\n```\n\n## Example prompts [#example-prompts]\n\nAfter connecting, try:\n\n```text\nList my Conductor projects and the models I can use.\n```\n\n```text\nCreate a workspace in the my most recent project and ask me what I want to work on and what model to use, then start the workspace.\n```\n\n```text\nFind the Conductor workspaces active in the last 24 hours and summarize what\neach agent accomplished. Include a link to each workspace.\n```\n\n## Tool reference [#tool-reference]\n\n| Tool                      | Description                                                                                   |\n| ------------------------- | --------------------------------------------------------------------------------------------- |\n| `whoami`                  | Get the authenticated Conductor identity and organization.                                    |\n| `list_models`             | List supported agents, model IDs, effort levels, defaults, and fast-mode support.             |\n| `list_projects`           | List projects visible to the connected account.                                               |\n| `get_project`             | Get a project by ID.                                                                          |\n| `list_project_workspaces` | List the workspaces in a project.                                                             |\n| `create_workspace`        | Create an isolated cloud workspace and its first session from a project ID or repository URL. |\n| `get_workspace`           | Get a workspace by ID.                                                                        |\n| `get_workspace_status`    | Get a workspace's lifecycle status.                                                           |\n| `rename_workspace`        | Rename a workspace.                                                                           |\n| `archive_workspace`       | Archive a workspace.                                                                          |\n| `unarchive_workspace`     | Restore an archived workspace.                                                                |\n| `list_workspace_sessions` | List the sessions in a workspace.                                                             |\n| `create_session`          | Create another agent session in an existing workspace.                                        |\n| `get_session`             | Get a session by ID.                                                                          |\n| `get_session_status`      | Get a session's current agent status.                                                         |\n| `cancel_session`          | Cancel the current agent turn and discard queued messages.                                    |\n| `send_message`            | Send or queue a prompt for a session.                                                         |\n| `list_messages`           | List transcript messages, optionally only those after a message cursor.                       |\n| `get_message`             | Get one transcript message by ID.                                                             |\n| `run_sql`                 | Run a read-only query against `session_transcripts_view`.                                     |\n\nList tools are paginated. Ask the client to continue while `hasMore` is true\nwhen you need a complete result. For transcripts, use `list_messages` with the\nlast message ID as `after` instead of repeatedly paging from the beginning.\n\nMCP tools return the same response objects as the `/v0` API. Workspace tools\ninclude `creatorId` and `creatorName`; `creatorName` falls back to the creator's\nemail when they have not set a name. `whoami` includes the authenticated user's\noptional `name` alongside their `email`.\n\n## Access and safety [#access-and-safety]\n\nOAuth access is bound to the organization selected during sign-in. The tools\nact with your Conductor permissions and include write actions such as creating\nworkspaces, sending prompts, canceling sessions, and archiving workspaces.\nReview tool calls before approving them, especially when a client proposes an\naction you did not request.\n\nDisconnect the server in your MCP client's settings to stop that client from\nusing it. If you connected with an API key, delete or rotate the key from the\n[API keys page](https://app.conductor.build/home/api-keys).\n"
+}

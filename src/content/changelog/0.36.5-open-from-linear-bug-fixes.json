@@ -1,0 +1,32 @@
+{
+  "slug": "0.36.5-open-from-linear-bug-fixes",
+  "version": "0.36.5",
+  "versionSlug": "0.36.5",
+  "title": "Open from Linear, Bug Fixes",
+  "fullTitle": "0.36.5: Open from Linear, Bug Fixes",
+  "date": "Feb 26th, 2026",
+  "dateISO": "2026-02-26",
+  "description": "Conductor 0.36.5 changelog - Open from Linear, Bug Fixes",
+  "summary": "For Linear users: you can now open a Conductor workspace from a Linear issue! Check out Deeplink to AI Coding Tools to learn more.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.36.5/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png",
+    "alt": "Open from Linear"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.36.5-open-from-linear-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.36.5-open-from-linear-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.36.5-open-from-linear-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<p>For Linear users: you can now open a Conductor workspace from a Linear issue! Check out <a href=\"https://linear.app/changelog/2026-02-26-deeplink-to-ai-coding-tools\" target=\"_blank\" rel=\"noopener noreferrer\">Deeplink to AI Coding Tools</a> to learn more.</p>\n<figure data-asset><img alt=\"Open from Linear\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.5/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png\"/></figure>\n<p>We’ve reduced the number of background GitHub <code>gh</code> requests, and added back the context meter.</p>\n<figure data-asset><img alt=\"Context meter\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.36.5/1772151034572-CleanShot_2026-02-26_at_16.10.08_2x.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>You can now see and select GitHub issues directly from the create workspace dialog</li>\n<li>Updated Claude Code SDK and bundled binaries to 2.1.59</li>\n<li>Animated settings switch toggles</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Reduced GitHub polling for workspaces that are not active</li>\n</ul>",
+  "markdown": "\nFor Linear users: you can now open a Conductor workspace from a Linear issue! Check out [Deeplink to AI Coding Tools](https://linear.app/changelog/2026-02-26-deeplink-to-ai-coding-tools) to learn more.\n\n![Open from Linear](/assets/changelog/media/0.36.5/1772149665699-CleanShot_2026-02-26_at_10.28.07_2x.png)\n\nWe’ve reduced the number of background GitHub `gh` requests, and added back the context meter.\n\n![Context meter](/assets/changelog/media/0.36.5/1772151034572-CleanShot_2026-02-26_at_16.10.08_2x.png)\n\n## Improvements\n\n- You can now see and select GitHub issues directly from the create workspace dialog\n- Updated Claude Code SDK and bundled binaries to 2.1.59\n- Animated settings switch toggles\n\n## Fixes\n\n- Reduced GitHub polling for workspaces that are not active\n"
+}

@@ -1,0 +1,134 @@
+{
+  "slug": "reference/scripts/run",
+  "url": "/docs/reference/scripts/run",
+  "title": "Actions reference",
+  "description": "Actions are covered in the project scripts reference",
+  "meta": {
+    "title": "Actions reference | Conductor Docs",
+    "ogImage": "https://www.conductor.build/og/docs/reference/scripts/run/image.webp"
+  },
+  "breadcrumb": [
+    {
+      "name": "Reference"
+    },
+    {
+      "name": "Actions reference"
+    }
+  ],
+  "toc": [],
+  "tocStyle": "clerk",
+  "components": [],
+  "body": [
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Actions are now covered in "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts#run-scripts"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Project scripts"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "Use an action when the Run button should start your app, server, test watcher, worker, or another long-running command from the active workspace. Open "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "https://app.conductor.build/settings/repos?section=actions",
+            "target": "_blank",
+            "rel": "noopener noreferrer"
+          },
+          "children": [
+            {
+              "type": "element",
+              "tag": "code",
+              "attrs": {},
+              "children": [
+                {
+                  "type": "text",
+                  "value": "Settings"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": ", select the project, and edit Custom actions on the Actions tab, or use "
+        },
+        {
+          "type": "element",
+          "tag": "code",
+          "attrs": {},
+          "children": [
+            {
+              "type": "text",
+              "value": ".conductor/settings.local.toml"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": " for local file-backed changes."
+        }
+      ]
+    },
+    {
+      "type": "element",
+      "tag": "p",
+      "attrs": {},
+      "children": [
+        {
+          "type": "text",
+          "value": "For projects that cannot run cleanly from a workspace directory, see "
+        },
+        {
+          "type": "element",
+          "tag": "a",
+          "attrs": {
+            "href": "/docs/reference/scripts/spotlight-testing"
+          },
+          "children": [
+            {
+              "type": "text",
+              "value": "Spotlight testing"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "value": "."
+        }
+      ]
+    }
+  ],
+  "html": "<p>Actions are now covered in <a href=\"/docs/reference/scripts#run-scripts\">Project scripts</a>.</p><p>Use an action when the Run button should start your app, server, test watcher, worker, or another long-running command from the active workspace. Open <a href=\"https://app.conductor.build/settings/repos?section=actions\" target=\"_blank\" rel=\"noopener noreferrer\"><code>Settings</code></a>, select the project, and edit Custom actions on the Actions tab, or use <code>.conductor/settings.local.toml</code> for local file-backed changes.</p><p>For projects that cannot run cleanly from a workspace directory, see <a href=\"/docs/reference/scripts/spotlight-testing\">Spotlight testing</a>.</p>",
+  "text": "Actions are now covered in Project scripts.\nUse an action when the Run button should start your app, server, test watcher, worker, or another long-running command from the active workspace. Open Settings, select the project, and edit Custom actions on the Actions tab, or use .conductor/settings.local.toml for local file-backed changes.\nFor projects that cannot run cleanly from a workspace directory, see Spotlight testing.",
+  "markdown": "\n# Actions reference\n\n\n\nActions are now covered in [Project scripts](/docs/reference/scripts#run-scripts).\n\nUse an action when the Run button should start your app, server, test watcher, worker, or another long-running command from the active workspace. Open [`Settings`](https://app.conductor.build/settings/repos?section=actions), select the project, and edit Custom actions on the Actions tab, or use `.conductor/settings.local.toml` for local file-backed changes.\n\nFor projects that cannot run cleanly from a workspace directory, see [Spotlight testing](/docs/reference/scripts/spotlight-testing).\n"
+}

@@ -1,0 +1,173 @@
+{
+  "id": "content.brandkit-about",
+  "category": "CONTENT",
+  "iaSections": [
+    "content.brandkit-about"
+  ],
+  "purpose": "Canonical product description, facts and official links for press and agents.",
+  "implementedBy": [
+    {
+      "ref": "src/pages/Brandkit.jsx:135",
+      "quote": "function OfficialLink({ l }) {"
+    }
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_PAGES.md:367",
+      "quote": "### 6.4 \"About Conductor\""
+    }
+  ],
+  "variants": {
+    "default": {
+      "iaSection": "content.brandkit-about"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "heading": {
+      "type": "text",
+      "maxWords": 3,
+      "required": true,
+      "observedMaxWords": 2
+    },
+    "description": {
+      "type": "list",
+      "items": {
+        "type": "text",
+        "maxWords": 40,
+        "required": true,
+        "observedMaxWords": 33
+      },
+      "minItems": 1,
+      "maxItems": 3,
+      "required": true
+    },
+    "shortDescription": {
+      "type": "text",
+      "maxWords": 24,
+      "required": true,
+      "observedMaxWords": 18
+    },
+    "facts": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "term": {
+            "type": "text",
+            "maxWords": 3,
+            "required": true,
+            "observedMaxWords": 2
+          },
+          "value": {
+            "type": "text",
+            "maxWords": 8,
+            "required": true,
+            "observedMaxWords": 5
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 8,
+      "required": true
+    },
+    "agentResources": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "label": {
+            "type": "text",
+            "maxWords": 2,
+            "required": true,
+            "observedMaxWords": 1
+          },
+          "path": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 0,
+      "maxItems": 3,
+      "required": true
+    },
+    "officialLinks": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "title": {
+            "type": "text",
+            "maxWords": 3,
+            "required": true,
+            "observedMaxWords": 2
+          },
+          "href": {
+            "type": "url",
+            "required": true
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 6,
+      "required": true
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "allowedTemplates": [
+      "template.brandkit"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:390",
+        "quote": "- **Row hover** (Agent resources and Official links)"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "grid",
+          "value": "1 column"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "grid",
+          "value": "2 columns"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": false,
+    "allowedProvenance": [
+      "generated-new",
+      "placeholder",
+      "rights-holder-supplied"
+    ]
+  },
+  "quirks": [
+    "At 390px the cards overflow to 483.9px and the page is 500px wide (missing min-w-0); replicated."
+  ],
+  "assetRoles": []
+}

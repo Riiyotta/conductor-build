@@ -1,0 +1,28 @@
+{
+  "id": "toc-rail",
+  "kind": "component",
+  "purpose": "Clerk-style table of contents with SVG track and scroll-spy.",
+  "implementedBy": [
+    {
+      "ref": "src/components/docs/Toc.jsx:45",
+      "quote": "export default function Toc({ items }) {"
+    }
+  ],
+  "tokens": [
+    "{color.foreground-10}",
+    "{semantic.text.docs-active}"
+  ],
+  "variants": [
+    "clerk"
+  ],
+  "states": [
+    "inactive",
+    "active (several at once)"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC_DOCS.md:198",
+      "quote": "Every heading currently inside the viewport is active."
+    }
+  ]
+}

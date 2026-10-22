@@ -1,0 +1,28 @@
+{
+  "slug": "0.16.1-diff-viewer-bug-fixes",
+  "version": "0.16.1",
+  "versionSlug": "0.16.1",
+  "title": "Diff Viewer Bug Fixes",
+  "fullTitle": "0.16.1: Diff Viewer Bug Fixes",
+  "date": "Oct 23rd, 2025",
+  "dateISO": "2025-10-23",
+  "description": "Conductor 0.16.1 changelog - Diff Viewer Bug Fixes",
+  "summary": "",
+  "hero": null,
+  "ogImage": "https://www.conductor.build/changelog/0.16.1-diff-viewer-bug-fixes/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.16.1-diff-viewer-bug-fixes",
+  "sourceUrl": "https://www.conductor.build/changelog/0.16.1-diff-viewer-bug-fixes",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    }
+  ],
+  "html": "<h3>Improvements</h3>\n<ul>\n<li>Switching between models in the middle of a session is now much faster</li>\n<li>We&#x27;ve refreshed our accent color scale</li>\n<li>Add Android Studio to the Open In menu</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed files not refreshing in diffs</li>\n<li>Fixed deleted files not rendering in diffs</li>\n<li>Navigate away from a workspace if its repository is deleted</li>\n<li>Fix bottom padding on single file diffs</li>\n<li>Focus the chat tab when sending a message</li>\n<li>Disable arrow key shortcuts when focused on the composer</li>\n</ul>",
+  "markdown": "\n## Improvements\n\n- Switching between models in the middle of a session is now much faster\n- We've refreshed our accent color scale\n- Add Android Studio to the Open In menu\n\n## Fixes\n\n- Fixed files not refreshing in diffs\n- Fixed deleted files not rendering in diffs\n- Navigate away from a workspace if its repository is deleted\n- Fix bottom padding on single file diffs\n- Focus the chat tab when sending a message\n- Disable arrow key shortcuts when focused on the composer\n"
+}

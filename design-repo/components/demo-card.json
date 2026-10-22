@@ -1,0 +1,27 @@
+{
+  "id": "demo-card",
+  "kind": "component",
+  "purpose": "Bordered 12px card that hosts a feature demo (chat, sandbox window, orchestration steps, image).",
+  "implementedBy": [
+    {
+      "ref": "src/components/FeatureShell.jsx:2",
+      "quote": "export default function FeatureShell({ title, titleExtra, body, demo, children }) {"
+    }
+  ],
+  "tokens": [
+    "{component.card.demo}"
+  ],
+  "variants": [
+    "aspect-video",
+    "aspect-8-5"
+  ],
+  "states": [
+    "rest"
+  ],
+  "measuredFrom": [
+    {
+      "ref": "CLONE_SPEC.md:152",
+      "quote": "Demo cards: `rounded-xl` 12px, `border 1px #eae8e6`, `bg #fff`, `overflow-hidden`."
+    }
+  ]
+}

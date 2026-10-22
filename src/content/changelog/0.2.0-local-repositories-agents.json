@@ -1,0 +1,36 @@
+{
+  "slug": "0.2.0-local-repositories-agents",
+  "version": "0.2.0",
+  "versionSlug": "0.2.0",
+  "title": "Local Repositories + Agents",
+  "fullTitle": "0.2.0: Local Repositories + Agents",
+  "date": "July 29th, 2025",
+  "dateISO": "2025-07-29",
+  "description": "Conductor 0.2.0 changelog - Local Repositories + Agents",
+  "summary": "Conductor now supports local repositories! You can add a new repository from your local filesystem, GitHub, or any Git URL.",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/media/0.2.0/7d7b21c1-3b16-4667-bbec-075d429da05b.png",
+    "alt": "CleanShot 2025-07-29 at 21 46 34@2x"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.2.0-local-repositories-agents/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.2.0-local-repositories-agents",
+  "sourceUrl": "https://www.conductor.build/changelog/0.2.0-local-repositories-agents",
+  "headings": [
+    {
+      "depth": 3,
+      "title": "Improvements"
+    },
+    {
+      "depth": 3,
+      "title": "Fixes"
+    },
+    {
+      "depth": 3,
+      "title": "Misc"
+    }
+  ],
+  "html": "<p>Conductor now supports local repositories! You can add a new repository from your local filesystem, GitHub, or any Git URL.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-29 at 21 46 34@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.2.0/7d7b21c1-3b16-4667-bbec-075d429da05b.png\"/></figure>\n<p>We&#x27;ve also added <a href=\"https://docs.anthropic.com/en/docs/claude-code/sub-agents\" target=\"_blank\" rel=\"noopener noreferrer\">agents</a>. Conductor can now call custom agents to perform specialized tasks like code review and test automation. Create one in Settings → Agents.</p>\n<figure data-asset><img alt=\"CleanShot 2025-07-29 at 23 12 10@2x\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/media/0.2.0/7ea6bce3-55b9-4fdd-a38f-7c145a014059.png\"/></figure>\n<h3>Improvements</h3>\n<ul>\n<li>Revamped repository page</li>\n<li>Added <code>/compact</code> and <code>/clear</code> commands</li>\n<li>Model configurations are now stored per workspace instead of globally</li>\n<li>Simplified API key configuration and added HTTP proxy support</li>\n<li>Added copy button to all chat messages</li>\n<li>Repositories are now highlighted when selected in the sidebar</li>\n<li>URLs are now clickable in terminal output</li>\n</ul>\n<h3>Fixes</h3>\n<ul>\n<li>Fixed a bug where Conductor wouldn&#x27;t check for auto-compaction between each message in the queue</li>\n<li>Fixed a bug where cancelling would leave queued messages in a bad state</li>\n<li>Fixed a bug where session notifications would be sent while there are queued messages</li>\n<li>Composer buttons are now accessible while sending queued messages</li>\n<li>Fixed Bash commands rendering overlapping content</li>\n<li>Several stability improvements to sending and persisting user messages</li>\n<li>Always use local Git authentication</li>\n<li>Fixed a bug where workspaces couldn&#x27;t be archived due to PATH issues</li>\n</ul>\n<h3>Misc</h3>\n<ul>\n<li>Updated the shortcut to cancel a message from <code>⌘+Del</code> to <code>esc</code>.</li>\n<li>Show minutes on the loading indicator</li>\n</ul>",
+  "markdown": "\nConductor now supports local repositories! You can add a new repository from your local filesystem, GitHub, or any Git URL.\n\n<img\n    width=\"1234\"\n    height=\"748\"\n    alt=\"CleanShot 2025-07-29 at 21 46 34@2x\"\n    src=\"/assets/changelog/media/0.2.0/7d7b21c1-3b16-4667-bbec-075d429da05b.png\"\n/>\n\nWe've also added [agents](https://docs.anthropic.com/en/docs/claude-code/sub-agents). Conductor can now call custom agents to perform specialized tasks like code review and test automation. Create one in Settings → Agents.\n\n<img\n    width=\"1690\"\n    height=\"1030\"\n    alt=\"CleanShot 2025-07-29 at 23 12 10@2x\"\n    src=\"/assets/changelog/media/0.2.0/7ea6bce3-55b9-4fdd-a38f-7c145a014059.png\"\n/>\n\n## Improvements\n\n- Revamped repository page\n- Added `/compact` and `/clear` commands\n- Model configurations are now stored per workspace instead of globally\n- Simplified API key configuration and added HTTP proxy support\n- Added copy button to all chat messages\n- Repositories are now highlighted when selected in the sidebar\n- URLs are now clickable in terminal output\n\n## Fixes\n\n- Fixed a bug where Conductor wouldn't check for auto-compaction between each message in the queue\n- Fixed a bug where cancelling would leave queued messages in a bad state\n- Fixed a bug where session notifications would be sent while there are queued messages\n- Composer buttons are now accessible while sending queued messages\n- Fixed Bash commands rendering overlapping content\n- Several stability improvements to sending and persisting user messages\n- Always use local Git authentication\n- Fixed a bug where workspaces couldn't be archived due to PATH issues\n\n## Misc\n\n- Updated the shortcut to cancel a message from `⌘+Del` to `esc`.\n- Show minutes on the loading indicator\n"
+}

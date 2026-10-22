@@ -1,0 +1,28 @@
+{
+  "slug": "0.70.1-claude-sonnet-5",
+  "version": "0.70.1",
+  "versionSlug": "0.70.1",
+  "title": "Claude Sonnet 5",
+  "fullTitle": "0.70.1: Claude Sonnet 5",
+  "date": "June 30, 2026",
+  "dateISO": "2026-06-30",
+  "description": "Conductor 0.70.1 changelog - Claude Sonnet 5",
+  "summary": "Introducing Claude Sonnet 5, Anthropic's newest model, now in Conductor. Performance is much closer to Opus 4.8 while being significantly cheaper. Give it a try!",
+  "hero": {
+    "type": "image",
+    "src": "/assets/changelog/images/sonnet-5-0.70.1.png",
+    "alt": "Claude Sonnet 5 in the model picker"
+  },
+  "ogImage": "https://www.conductor.build/changelog/0.70.1-claude-sonnet-5/opengraph-image",
+  "authors": [],
+  "url": "/changelog/0.70.1-claude-sonnet-5",
+  "sourceUrl": "https://www.conductor.build/changelog/0.70.1-claude-sonnet-5",
+  "headings": [
+    {
+      "depth": 4,
+      "title": "New in 0.70.2"
+    }
+  ],
+  "html": "<figure data-asset><img alt=\"Claude Sonnet 5 in the model picker\" loading=\"lazy\" width=\"800\" height=\"450\" src=\"/assets/changelog/images/sonnet-5-0.70.1.png\"/></figure>\n<p>Introducing Claude Sonnet 5, Anthropic&#x27;s newest model, now in Conductor. Performance is much closer to Opus 4.8 while being significantly cheaper. Give it a try!</p>\n<h4>New in 0.70.2</h4>\n<ul>\n<li>Brought back the &quot;Add project&quot; button in the sidebar.</li>\n<li>Added &quot;Add project&quot; to the command palette.</li>\n</ul>",
+  "markdown": "\n![Claude Sonnet 5 in the model picker](/assets/changelog/images/sonnet-5-0.70.1.png)\n\nIntroducing Claude Sonnet 5, Anthropic's newest model, now in Conductor. Performance is much closer to Opus 4.8 while being significantly cheaper. Give it a try!\n\n### New in 0.70.2\n\n- Brought back the \"Add project\" button in the sidebar.\n- Added \"Add project\" to the command palette.\n"
+}
