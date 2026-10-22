@@ -1,0 +1,509 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.home",
+  "route": "/",
+  "nodes": [
+    {
+      "type": "section",
+      "section": "shell.header",
+      "variant": "default",
+      "content": {
+        "navLinks": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Join Us",
+            "href": "/join-us"
+          }
+        ],
+        "activeLabel": "Docs",
+        "downloadLabel": "Download"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "instant-hover",
+          "scroll-mask-nav"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.mobile-menu",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Join Us",
+            "href": "/join-us"
+          }
+        ],
+        "downloadLabel": "Download"
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "hero.home",
+      "variant": "default",
+      "content": {
+        "wordmark": {
+          "assetRole": "brand-mark",
+          "source": "placeholder"
+        },
+        "headingLead": "Run a team of coding agents",
+        "rotatingPhrases": [
+          "in the cloud.",
+          "on your Mac.",
+          "from your iPhone."
+        ],
+        "primaryCta": {
+          "label": "Get Conductor",
+          "href": "/pricing"
+        },
+        "quote": {
+          "text": "Placeholder customer quote goes here",
+          "authorName": "Placeholder",
+          "authorRole": "Role, Company",
+          "avatar": {
+            "assetRole": "person-avatar",
+            "source": "placeholder"
+          }
+        },
+        "background": {
+          "assetRole": "decorative-background",
+          "source": "placeholder"
+        },
+        "screenshot": {
+          "assetRole": "product-screenshot",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "scramble-cycle",
+          "fade-in-on-mount",
+          "animated-webp-mask-once",
+          "arrow-nudge-hover"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "proof.trusted-logo-strip",
+      "variant": "default",
+      "content": {
+        "headingPrefix": "Trusted by",
+        "count": {
+          "value": 100,
+          "suffix": "k+"
+        },
+        "headingSuffix": "builders",
+        "logos": [
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          },
+          {
+            "assetRole": "customer-logo",
+            "source": "placeholder"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "count-up-on-view"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "features.feature-shell",
+      "variant": "multiplayer",
+      "content": {
+        "title": "Multiplayer chat demo",
+        "body": "Placeholder body describing a shared workspace feature.",
+        "demo": {
+          "kind": "multiplayer-chat"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "demo-loop-on-view",
+          "tooltip-hover"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "features.feature-shell",
+      "variant": "cloud-sandbox",
+      "content": {
+        "title": "Cloud sandbox demo",
+        "body": "Placeholder body describing isolated cloud workspaces.",
+        "demo": {
+          "kind": "sandbox-phases"
+        },
+        "link": {
+          "label": "Learn more",
+          "href": "/docs"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "demo-loop-on-view",
+          "shimmer-loader",
+          "arrow-nudge-hover"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "features.feature-shell",
+      "variant": "byok",
+      "content": {
+        "title": "Bring your own keys",
+        "body": "Placeholder body describing agent and key choices.",
+        "demo": {
+          "kind": "orchestration-steps"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "demo-loop-on-view"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "features.feature-shell",
+      "variant": "anywhere",
+      "content": {
+        "title": "Conduct from anywhere.",
+        "body": "Placeholder body describing desktop, mobile and API access.",
+        "demo": {
+          "kind": "static-image",
+          "media": {
+            "assetRole": "product-screenshot",
+            "source": "placeholder"
+          }
+        },
+        "platformButtons": [
+          "macOS",
+          "iOS",
+          "API"
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "proof.testimonials",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "quote": "Placeholder testimonial text 1",
+            "name": "Placeholder Name",
+            "subtitle": "Role, Company",
+            "avatar": {
+              "assetRole": "person-avatar",
+              "source": "placeholder"
+            },
+            "verified": false
+          },
+          {
+            "quote": "Placeholder testimonial text 2",
+            "name": "Placeholder Name",
+            "subtitle": "Role, Company",
+            "avatar": {
+              "assetRole": "person-avatar",
+              "source": "placeholder"
+            },
+            "verified": false
+          }
+        ],
+        "moreLink": {
+          "label": "See what people say",
+          "href": "/"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "reveal-stagger-on-view",
+          "hover-opacity",
+          "arrow-nudge-hover"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "content.changelog-preview",
+      "variant": "default",
+      "content": {
+        "heading": "Changelog",
+        "quote": {
+          "text": "Placeholder third-party quote",
+          "href": "/changelog"
+        },
+        "cards": [
+          {
+            "version": "0.0.3",
+            "date": "January 1, 2026",
+            "title": "Placeholder release title",
+            "href": "/changelog"
+          },
+          {
+            "version": "0.0.2",
+            "date": "January 1, 2026",
+            "title": "Placeholder release title",
+            "href": "/changelog"
+          },
+          {
+            "version": "0.0.1",
+            "date": "January 1, 2026",
+            "title": "Placeholder release title",
+            "href": "/changelog"
+          }
+        ],
+        "viewAllLabel": "View all"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "arrow-nudge-hover"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "conversion.be-like-this-guy",
+      "variant": "default",
+      "content": {
+        "headingLines": [
+          "Try Conductor."
+        ],
+        "buttonLabel": "Download now",
+        "background": {
+          "assetRole": "decorative-background",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "icon-swap-hover"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.footer-sans",
+      "variant": "default",
+      "content": {
+        "columns": [
+          {
+            "heading": "[Company]",
+            "links": [
+              {
+                "label": "Enterprise",
+                "href": "/enterprise"
+              },
+              {
+                "label": "Join us",
+                "href": "/join-us"
+              }
+            ]
+          },
+          {
+            "heading": "[Resources]",
+            "links": [
+              {
+                "label": "Docs",
+                "href": "/docs"
+              },
+              {
+                "label": "Changelog",
+                "href": "/changelog"
+              },
+              {
+                "label": "Brand kit",
+                "href": "/brandkit"
+              }
+            ]
+          },
+          {
+            "heading": "[Legal]",
+            "links": [
+              {
+                "label": "Privacy",
+                "href": "/privacy"
+              },
+              {
+                "label": "Terms",
+                "href": "/terms"
+              }
+            ]
+          },
+          {
+            "heading": "[Connect]",
+            "links": [
+              {
+                "label": "X",
+                "href": "https://example.com/x"
+              },
+              {
+                "label": "Discord",
+                "href": "https://example.com/chat"
+              }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Company Name",
+        "complianceLink": {
+          "label": "SOC 2 Type II",
+          "href": "https://example.com/trust"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.download-dialog",
+      "variant": "default",
+      "content": {
+        "title": "Download Conductor",
+        "description": "Choose the build for your Mac.",
+        "primaryAction": {
+          "label": "Download for Mac",
+          "sublabel": "Apple silicon",
+          "endpoint": {
+            "assetRole": "download-endpoint",
+            "target": "deployer-configured"
+          }
+        },
+        "waitlistAction": {
+          "label": "Join waitlist",
+          "endpoint": {
+            "assetRole": "form-endpoint",
+            "target": "local-only-no-submit"
+          }
+        },
+        "footnote": "Mac older than November 2020?",
+        "fallbackAction": {
+          "label": "Download for Intel",
+          "endpoint": {
+            "assetRole": "download-endpoint",
+            "target": "deployer-configured"
+          }
+        }
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.downloading-screen",
+      "variant": "default",
+      "content": {
+        "lines": [
+          "Downloading...",
+          "DOWNLOAD STARTED"
+        ],
+        "brandMark": {
+          "assetRole": "brand-mark",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter-terminal"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    }
+  ]
+}

@@ -1,0 +1,180 @@
+{
+  "repositoryId": "conductor-build-clone-design-repo",
+  "repositoryVersion": "0.1.0",
+  "pageSpecVersion": "1.0.0",
+  "allowlistVersion": "1.0.0",
+  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails the run if it differs from tokens/llm/component-allowlist.json. pageSpecVersion is checked only against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker that nothing verifies; do not read it as an enforcement guarantee.",
+  "status": "design-review-pending",
+  "productionApproved": false,
+  "defaultTheme": "light",
+  "schemaValidatedThemes": [
+    "light"
+  ],
+  "sourceProject": {
+    "description": "Local React replica of a real, live company site (Melty Labs / Conductor, YC S24). Snapshot taken 2026-10-22; the replica can change after this snapshot, re-diff before trusting stated versions.",
+    "routeSource": "ia.json in the sibling project (306 routes, 11 templates, 44 sections)"
+  },
+  "sourceStack": {
+    "react": "18",
+    "vite": "5",
+    "tailwindcss": "3",
+    "react-router-dom": "6"
+  },
+  "licensing": {
+    "sourceIsRealCompany": true,
+    "summary": "This repo encodes structure and contracts only. It ships no logos, photos, testimonials, brand files, docs text or changelog text, and its asset-role contract forbids a generator from reproducing real customer logos, real people's photos or likenesses, real testimonials, Conductor's trademarks, or Conductor's proprietary docs/changelog text, and from reusing the live HubSpot/Google Form endpoints or the vendor download CDN. Treat the repo as private until the owner has reviewed it; nothing here grants any licence to the source company's marks or content."
+  },
+  "outOfIaSpecialRoutes": [
+    "404 terminal page (src/pages/NotFound.jsx): not in the sitemap, not counted in routes"
+  ],
+  "counts": {
+    "tokens": 213,
+    "primitives": 11,
+    "components": 18,
+    "sectionContracts": 41,
+    "iaSections": 44,
+    "templates": 11,
+    "routes": 306,
+    "graphRules": 13,
+    "assetRoles": 12,
+    "adversarialMutations": 51,
+    "adversarialControls": 12
+  },
+  "entryPoints": {
+    "schema": [
+      "schema/pagespec.schema.json"
+    ],
+    "schemaBuilder": [
+      "schema/build_schema.py"
+    ],
+    "example": [
+      "schema/example.pagespec.json"
+    ],
+    "semanticValidator": [
+      "schema/semantic_validate.py"
+    ],
+    "adversarialTest": [
+      "schema/tests/adversarial_test.py"
+    ],
+    "verifyAll": [
+      "extraction/verify_all.py"
+    ],
+    "proveDrift": [
+      "extraction/prove_drift.py"
+    ],
+    "measuredValues": [
+      "extraction/measured-values.json"
+    ],
+    "tokenCatalog": [
+      "tokens/llm/token-catalog.json"
+    ],
+    "tokenPolicy": [
+      "tokens/llm/token-policy.json"
+    ],
+    "componentAllowlist": [
+      "tokens/llm/component-allowlist.json"
+    ],
+    "motionPatterns": [
+      "tokens/llm/motion-patterns.json"
+    ],
+    "compatibilityGraph": [
+      "compatibility/graph.json"
+    ],
+    "templates": [
+      "templates/templates.json"
+    ],
+    "assetRoles": [
+      "assets/asset-roles.json"
+    ],
+    "tokens": [
+      "tokens/00-foundation/breakpoint.json",
+      "tokens/00-foundation/color.json",
+      "tokens/00-foundation/elevation.json",
+      "tokens/00-foundation/icon-size.json",
+      "tokens/00-foundation/motion.json",
+      "tokens/00-foundation/radius.json",
+      "tokens/00-foundation/spacing.json",
+      "tokens/00-foundation/typography.json",
+      "tokens/10-semantic/semantic.json",
+      "tokens/20-component/component.json",
+      "tokens/30-layout/layout.json",
+      "tokens/themes/light.json"
+    ],
+    "primitives": [
+      "primitives/avatar.json",
+      "primitives/badge.json",
+      "primitives/button.json",
+      "primitives/icon.json",
+      "primitives/input.json",
+      "primitives/kbd.json",
+      "primitives/logo-image.json",
+      "primitives/select.json",
+      "primitives/text-link.json",
+      "primitives/textarea.json",
+      "primitives/tooltip.json"
+    ],
+    "components": [
+      "components/accordion.json",
+      "components/arrow-link.json",
+      "components/callout.json",
+      "components/changelog-card.json",
+      "components/code-block.json",
+      "components/copy-button.json",
+      "components/data-table.json",
+      "components/demo-card.json",
+      "components/logo-grid.json",
+      "components/media-frame.json",
+      "components/nav-tree.json",
+      "components/pager.json",
+      "components/plan-card.json",
+      "components/prose-heading-anchor.json",
+      "components/team-card.json",
+      "components/testimonial-card.json",
+      "components/toc-rail.json",
+      "components/tree-bullet-list.json"
+    ],
+    "sections": [
+      "sections/changelog.back-link.json",
+      "sections/changelog.entry-list.json",
+      "sections/changelog.pagination.json",
+      "sections/changelog.post-entry.json",
+      "sections/content.brandkit-about.json",
+      "sections/content.brandkit-asset-cards.json",
+      "sections/content.brandkit-download-card.json",
+      "sections/content.changelog-preview.json",
+      "sections/content.join-us-apply-card.json",
+      "sections/content.join-us-team-cards.json",
+      "sections/content.join-us-team-photo.json",
+      "sections/content.legal-prose.json",
+      "sections/content.pricing-faq.json",
+      "sections/content.pricing-plans.json",
+      "sections/content.prose-article.json",
+      "sections/conversion.be-like-this-guy.json",
+      "sections/conversion.enterprise-contact-form.json",
+      "sections/conversion.team-plan-form-scrollbox.json",
+      "sections/docs.breadcrumb.json",
+      "sections/docs.mobile-drawer.json",
+      "sections/docs.page-title.json",
+      "sections/docs.prev-next.json",
+      "sections/docs.prose-body.json",
+      "sections/docs.search-dialog.json",
+      "sections/docs.sidebar.json",
+      "sections/docs.toc.json",
+      "sections/features.feature-shell.json",
+      "sections/hero.brandkit-header.json",
+      "sections/hero.home.json",
+      "sections/hero.page-header.json",
+      "sections/hero.pricing-title.json",
+      "sections/proof.enterprise-logo-grid.json",
+      "sections/proof.testimonials.json",
+      "sections/proof.trusted-logo-strip.json",
+      "sections/shell.docs-subnav.json",
+      "sections/shell.download-dialog.json",
+      "sections/shell.downloading-screen.json",
+      "sections/shell.footer-mono.json",
+      "sections/shell.footer-sans.json",
+      "sections/shell.header.json",
+      "sections/shell.mobile-menu.json"
+    ]
+  }
+}

@@ -35,6 +35,13 @@ COMPLIANCE_PINS = {
     "download-endpoint": "must-not-reuse-live-endpoint",
 }
 
+# The allowed sources/targets of the two pinned policies are also code, so loosening assets/asset-roles.json
+# cannot relax them (verify_all.py fails if the JSON disagrees).
+PINNED_POLICY_ALLOWED = {
+    "must-not-reproduce": {"allowedSources": ["placeholder", "rights-holder-supplied"]},
+    "must-not-reuse-live-endpoint": {"allowedTargets": ["local-only-no-submit", "deployer-configured", "opens-download-dialog"]},
+}
+
 _cache = {}
 
 
@@ -72,6 +79,15 @@ def _policy_of(role, roles_doc):
     return COMPLIANCE_PINS.get(role) or (doc or {}).get("generationPolicy")
 
 
+def _allowed(pol, key, roles_doc):
+    return PINNED_POLICY_ALLOWED.get(pol, roles_doc["policies"].get(pol, {})).get(key, [])
+
+
+def _pin_drift(role, path, roles_doc, errs):
+    if role in COMPLIANCE_PINS and roles_doc["roles"].get(role, {}).get("generationPolicy") != COMPLIANCE_PINS[role]:
+        errs.append(f"ASSET_PIN_DRIFT {path}: asset-roles.json says {role}={roles_doc['roles'].get(role, {}).get('generationPolicy')!r}, pin is {COMPLIANCE_PINS[role]!r}")
+
+
 def walk_content(fields, value, path, roles_doc, errs):
     if not isinstance(value, dict):
         return
@@ -93,9 +109,8 @@ def walk_field(f, v, path, roles_doc, errs):
             errs.append(f"ASSET_ROLE {path}: role {role!r} not allowed here (allowed {f['roles']})")
             return
         pol = _policy_of(role, roles_doc)
-        allowed = roles_doc["policies"].get(pol, {}).get("allowedSources", [])
-        if role in COMPLIANCE_PINS and roles_doc["roles"][role]["generationPolicy"] != COMPLIANCE_PINS[role]:
-            errs.append(f"ASSET_PIN_DRIFT {path}: asset-roles.json says {role}={roles_doc['roles'][role]['generationPolicy']!r}, pin is {COMPLIANCE_PINS[role]!r}")
+        allowed = _allowed(pol, "allowedSources", roles_doc)
+        _pin_drift(role, path, roles_doc, errs)
         if src not in allowed:
             errs.append(f"ASSET_PIN {path}: role {role!r} is pinned {pol!r}; source {src!r} not allowed (allowed {allowed})")
     elif t == "endpoint" and isinstance(v, dict):
@@ -104,7 +119,8 @@ def walk_field(f, v, path, roles_doc, errs):
             errs.append(f"ASSET_ROLE {path}: role {role!r} not allowed here")
             return
         pol = _policy_of(role, roles_doc)
-        allowed = roles_doc["policies"].get(pol, {}).get("allowedTargets", [])
+        allowed = _allowed(pol, "allowedTargets", roles_doc)
+        _pin_drift(role, path, roles_doc, errs)
         if tgt not in allowed:
             errs.append(f"ASSET_PIN {path}: endpoint role {role!r} is pinned {pol!r}; target {tgt!r} not allowed (allowed {allowed})")
     elif t == "object":

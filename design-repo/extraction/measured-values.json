@@ -1,0 +1,507 @@
+{
+  "version": "1.0.0",
+  "$description": "Evidence ledger. Every {ref, quote} object here (and in every other JSON file in the repo) is a path:line[-line] citation into the sibling source project; verify_all.py checks the range AND that the quote occurs in those lines, and degrades to warnings when the sibling tree is absent. Corrections are MORE AUTHORITATIVE than the spec text they contradict.",
+  "sourceProject": {
+    "name": "local React replica of a real, live company site (Melty Labs / Conductor, YC S24); not affiliated with this repo's authors",
+    "snapshotDate": "2026-10-22",
+    "isGitRepoAtBuild": false
+  },
+  "authoritativeSources": {
+    "tokens": [
+      "tailwind.config.cjs",
+      "src/index.css",
+      "src/components/pages/pages.css",
+      "src/components/docs/docs.css",
+      "src/components/changelog/changelog.css"
+    ],
+    "specs": [
+      "CLONE_SPEC.md",
+      "CLONE_SPEC_PAGES.md",
+      "CLONE_SPEC_DOCS.md"
+    ],
+    "routeMap": "ia.json",
+    "assetManifests": [
+      "ASSETS.md",
+      "ASSETS_PAGES.md",
+      "ASSETS_DOCS.md"
+    ],
+    "rawMeasurements": [
+      "recon/raw-*.json",
+      "recon/pages/raw/",
+      "recon/docs/raw/"
+    ],
+    "screenshots": [
+      "recon/*.png",
+      "recon/pages/*.png",
+      "recon/docs/*.png"
+    ],
+    "auditDumps": [
+      ".playwright-mcp/audit/"
+    ]
+  },
+  "corrections": [
+    {
+      "id": "fonts-geist-never-applied",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:23",
+        "quote": "- Local file `/assets/fonts/Geist-VariableFont_wght.ttf` is downloaded but **not needed for fidelity**."
+      },
+      "corrected": "Geist is declared but never applied. Everything renders in the system sans stack (ui-sans-serif, system-ui, sans-serif). Docs and standalone-page prose declare 'Geist, -apple-system, ...' which ALSO falls back to system sans (a DOM width test matched). Do not ship Geist.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC.md:16",
+          "quote": "`document.fonts` reports `geistSans: unloaded`."
+        },
+        {
+          "ref": "CLONE_SPEC_PAGES.md:58",
+          "quote": "A DOM width test gave the prose stack 389.14px"
+        },
+        {
+          "ref": "tailwind.config.cjs:55",
+          "quote": "sans: ['ui-sans-serif', 'system-ui', 'sans-serif'],"
+        }
+      ],
+      "affectsFiles": [
+        "tokens/00-foundation/typography.json",
+        "tokens/10-semantic/semantic.json"
+      ]
+    },
+    {
+      "id": "footer-font-home-vs-rest",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC_DOCS.md:41",
+        "quote": "- The footer on these pages computes to the mono stack at the `<footer>` element (`font-mono`), the same as the homepage."
+      },
+      "corrected": "The footer is SANS only on the homepage (font-mono remapped by the sans wrapper) and real MONO on the other 305 routes. CLONE_SPEC_DOCS.md 0.1 wrongly says docs/changelog match the homepage.",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC_PAGES.md:31",
+          "quote": "**FOOTER RENDERS IN REAL MONO ON ALL 8 SUBPAGES.**"
+        },
+        {
+          "ref": "src/components/pages/PageShell.jsx:20",
+          "quote": "<Footer mono />"
+        },
+        {
+          "ref": "src/pages/docs/DocsPage.jsx:161",
+          "quote": "<Footer mono />"
+        },
+        {
+          "ref": "src/pages/Home.jsx:29",
+          "quote": "<Footer />"
+        }
+      ],
+      "affectsFiles": [
+        "sections/shell.footer-sans.json",
+        "sections/shell.footer-mono.json",
+        "tokens/10-semantic/semantic.json"
+      ]
+    },
+    {
+      "id": "changelog-badge-font",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:87",
+        "quote": "| Changelog version badge | 12px/16px UPPERCASE, sans |"
+      },
+      "corrected": "Version badges are sans in the homepage changelog section but MONO on /changelog (index and posts).",
+      "evidence": [
+        {
+          "ref": "CLONE_SPEC_DOCS.md:40",
+          "quote": "**Changelog version badges render in MONO on /changelog**"
+        },
+        {
+          "ref": "src/components/changelog/ChangelogEntry.jsx:9",
+          "quote": "text-xs font-mono tracking-wider uppercase"
+        },
+        {
+          "ref": "src/components/Changelog.jsx:38",
+          "quote": "font-sans text-xs uppercase tracking-wider tabular-nums"
+        }
+      ],
+      "affectsFiles": [
+        "sections/content.changelog-preview.json",
+        "primitives/badge.json",
+        "tokens/10-semantic/semantic.json"
+      ]
+    },
+    {
+      "id": "orchestration-loops",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:326",
+        "quote": "| M9 | Orchestration demo | IntersectionObserver threshold 0.3, **starts once and never resets** |"
+      },
+      "corrected": "The orchestration demo LOOPS forever (phase 7 -> 0, 450/500/2800ms). 'Starts once and never resets' describes only the IntersectionObserver trigger; an earlier reading took it as run-once.",
+      "evidence": [
+        {
+          "ref": "src/components/Orchestration.jsx:63",
+          "quote": "() => setPhase((u) => (u === 7 ? 0 : u + 1)),"
+        },
+        {
+          "ref": "src/components/Orchestration.jsx:64",
+          "quote": "phase === 7 ? 2800 : phase === 0 ? 450 : 500"
+        }
+      ],
+      "affectsFiles": [
+        "sections/features.feature-shell.json",
+        "tokens/llm/motion-patterns.json"
+      ]
+    },
+    {
+      "id": "download-dialog-no-animation",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:329",
+        "quote": "Backdrop opacity 0→1 over 200ms; popup opacity 0→1 + scale .95→1 over 200ms `cubic-bezier(.4,0,.2,1)`; reversed on close."
+      },
+      "corrected": "The dialog has NO enter/exit animation (mounts already open, unmounts in the same commit); the first open per page load is delayed ~300ms (React 19 Suspense reveal throttle on the original).",
+      "evidence": [
+        {
+          "ref": "src/components/DownloadDialog.jsx:19",
+          "quote": "Net effect: the dialog appears and disappears instantly"
+        },
+        {
+          "ref": "src/components/DownloadDialog.jsx:31",
+          "quote": "const FIRST_REVEAL_DELAY = 300"
+        }
+      ],
+      "affectsFiles": [
+        "sections/shell.download-dialog.json",
+        "tokens/00-foundation/motion.json"
+      ]
+    },
+    {
+      "id": "button-transitions-none",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:101",
+        "quote": "**Hover bg rgba(44,40,38,.9)**. Opens the Download dialog (§11)."
+      },
+      "corrected": "Header Download and hero Get Conductor buttons have NO background transition (instant hover); only text links and some cards use 150ms transition-colors. The arrow nudge is 4px over 200ms using the CSS translate property.",
+      "evidence": [
+        {
+          "ref": "src/components/Header.jsx:63",
+          "quote": "hover:bg-foreground/90 focus-visible:outline-none"
+        },
+        {
+          "ref": "src/components/ArrowLink.jsx:17",
+          "quote": "duration-200 group-hover:[translate:0.25rem_0]"
+        }
+      ],
+      "affectsFiles": [
+        "primitives/button.json",
+        "tokens/20-component/component.json"
+      ]
+    },
+    {
+      "id": "inert-animate-in",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:312",
+        "quote": "**Important:** the `animate-in fade-in slide-in-from-bottom-1 / slide-in-from-left-1 / fill-mode-backwards` classes in the markup have **no CSS rules**"
+      },
+      "corrected": "The animate-in / fade-in / slide-in-* classes are INERT on the original and are not modelled as motion anywhere in this repo.",
+      "evidence": [
+        {
+          "ref": "src/components/Orchestration.jsx:27",
+          "quote": "The original's `animate-in fade-in slide-in-from-bottom-1` classes are inert"
+        }
+      ],
+      "affectsFiles": [
+        "tokens/00-foundation/motion.json",
+        "tokens/llm/motion-patterns.json"
+      ]
+    },
+    {
+      "id": "container-padding-steps",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC_PAGES.md:39",
+        "quote": "with padding 96px 32px at md+ and 64px 16px below md."
+      },
+      "corrected": "Container inline padding is 16px, then 24px from 768px, then 32px from 1280px (block padding 64px, 96px from md). Content width 900px by default, 1280px on pricing.",
+      "evidence": [
+        {
+          "ref": "src/components/pages/PageContainer.jsx:3",
+          "quote": "(original CSS: .site-container{padding-inline:1rem} @768 1.5rem @1280 2rem)"
+        },
+        {
+          "ref": "src/components/pages/PageContainer.jsx:6",
+          "quote": "px-4 py-16 md:px-6 md:py-24 xl:px-8"
+        }
+      ],
+      "affectsFiles": [
+        "tokens/30-layout/layout.json"
+      ]
+    },
+    {
+      "id": "media-max-height-breakpoint",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC_DOCS.md:370",
+        "quote": "`max-height: min(56vh, 30rem)` (the later rule wins): 480px at 900 tall, 472.6px at 844 tall."
+      },
+      "corrected": "Docs/changelog media max-height is min(48vh,24rem) below 768px and min(56vh,30rem) from 768px up.",
+      "evidence": [
+        {
+          "ref": "src/components/docs/docs.css:664",
+          "quote": "max-height: min(48vh, 24rem);"
+        },
+        {
+          "ref": "src/components/docs/docs.css:673",
+          "quote": "max-height: min(56vh, 30rem);"
+        },
+        {
+          "ref": "src/components/changelog/changelog.css:55",
+          "quote": "max-height: min(48vh, 24rem);"
+        }
+      ],
+      "affectsFiles": [
+        "tokens/30-layout/layout.json",
+        "components/media-frame.json",
+        "sections/docs.prose-body.json"
+      ]
+    },
+    {
+      "id": "footer-placement-flex",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC_PAGES.md:24",
+        "quote": "<main class=\"flex flex-1 flex-col\">            (font-family computes MONO here; body is mono)"
+      },
+      "corrected": "body is flex min-h-screen flex-col, so on short pages the footer sits at the viewport bottom.",
+      "evidence": [
+        {
+          "ref": "src/components/pages/PageShell.jsx:13",
+          "quote": "so on short pages / tall viewports the footer sits at the viewport bottom."
+        }
+      ],
+      "affectsFiles": [
+        "tokens/30-layout/layout.json",
+        "sections/shell.footer-mono.json"
+      ]
+    },
+    {
+      "id": "presence-and-traffic-hex",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:43",
+        "quote": "| green-500 | `#00c758` (lab(70.55 -66.51 45.81)) | multiplayer presence dots |"
+      },
+      "corrected": "The measured computed lab values convert to #00c950 (presence), #ff6467 / #ffb900 / #05df72 (traffic lights); the spec's #00c758 / #ff6568 / #fcbb00 hex are slightly off. Tailwind config already carries the corrected values.",
+      "evidence": [
+        {
+          "ref": "tailwind.config.cjs:28",
+          "quote": "presence: '#00c950',"
+        },
+        {
+          "ref": "recon/raw-1440-loaded.json:1",
+          "quote": "lab(70.5521 -66.5147 45.8073)"
+        }
+      ],
+      "affectsFiles": [
+        "tokens/00-foundation/color.json"
+      ]
+    },
+    {
+      "id": "download-url-verification",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC.md:380",
+        "quote": "- **Apple-silicon download URL** is not captured, because the button triggers JS (PostHog event + download)."
+      },
+      "corrected": "A later pixel-audit verified the Apple-silicon button navigates to the vendor CDN (302). Both download targets are therefore live third-party endpoints, pinned must-not-reuse-live-endpoint (the URLs themselves are deliberately not stored in this repo).",
+      "evidence": [
+        {
+          "ref": "src/components/DownloadDialog.jsx:7",
+          "quote": "Verified live (pixel-audit): the primary button navigates to APPLE_SILICON_URL"
+        }
+      ],
+      "affectsFiles": [
+        "assets/asset-roles.json",
+        "sections/shell.download-dialog.json"
+      ]
+    },
+    {
+      "id": "hubspot-forms-local-only",
+      "kind": "spec-correction",
+      "specClaim": {
+        "ref": "CLONE_SPEC_PAGES.md:230",
+        "quote": "- **Build recommendation:** embed the real HubSpot form"
+      },
+      "corrected": "The spec recommended embedding the live HubSpot form. The clone deliberately does NOT: forms are native local-only replicas that never POST anywhere. The form endpoint role is pinned must-not-reuse-live-endpoint.",
+      "evidence": [
+        {
+          "ref": "src/components/pages/HubSpotForm.jsx:7",
+          "quote": "NOTE: this form intentionally does NOT post to HubSpot or any other endpoint."
+        }
+      ],
+      "affectsFiles": [
+        "assets/asset-roles.json",
+        "sections/conversion.enterprise-contact-form.json",
+        "sections/conversion.team-plan-form-scrollbox.json"
+      ]
+    }
+  ],
+  "facts": {
+    "stack": {
+      "react": {
+        "ref": "package.json:12",
+        "quote": "\"react\": \"^18.3.1\""
+      },
+      "vite": {
+        "ref": "package.json:22",
+        "quote": "\"vite\": \"^5.4.10\""
+      },
+      "tailwindcss": {
+        "ref": "package.json:21",
+        "quote": "\"tailwindcss\": \"^3.4.14\""
+      },
+      "reactRouterDom": {
+        "ref": "package.json:14",
+        "quote": "\"react-router-dom\": \"^6.30.6\""
+      }
+    },
+    "iaCounts": {
+      "routes": {
+        "ref": "ia.json:8",
+        "quote": "\"totalRoutes\": 306"
+      },
+      "templates": {
+        "ref": "ia.json:9",
+        "quote": "\"totalTemplates\": 11"
+      }
+    },
+    "routeSource": {
+      "ref": "ia.json:2",
+      "quote": "Routes come from https://www.conductor.build/sitemap.xml (306 URLs"
+    },
+    "notFoundOutOfIA": [
+      {
+        "ref": "src/App.jsx:56",
+        "quote": "<Route path=\"*\" element={<NotFound />} />"
+      },
+      {
+        "ref": "src/pages/NotFound.jsx:5",
+        "quote": "// 404: replica of the original's `NotFoundTerminal`"
+      }
+    ],
+    "mediaWeight": {
+      "claim": {
+        "ref": "CLONE_SPEC_DOCS.md:568",
+        "quote": "337 downloaded (316 images + 21 videos, ≈1.14 GB)."
+      },
+      "largeVideos": {
+        "ref": "CLONE_SPEC_DOCS.md:587",
+        "quote": "`workflow.mp4` is 771 MB and `ConductorAdvancedSetup.mp4` is 172 MB."
+      },
+      "measuredByDu_2026-10-22": {
+        "public/assets/docs": "950712 KiB",
+        "public/assets/changelog": "212704 KiB",
+        "public/assets": "1168872 KiB",
+        "largestFiles": [
+          "771097315 bytes",
+          "172032208 bytes"
+        ]
+      },
+      "deliveryConcern": "Never bundle docs/changelog media into a generated page or into this repo; the repo ships contracts only. The two videos total ~900 MB (decimal)."
+    },
+    "motion": {
+      "scrambleCycle": {
+        "ref": "src/components/Hero.jsx:31",
+        "quote": "useInterval(() => setIndex((i) => (i + 1) % PHRASES.length), 3000)"
+      },
+      "scrambleRange": {
+        "ref": "CLONE_SPEC.md:318",
+        "quote": "range:[97,122] (a–z)"
+      },
+      "countUp": {
+        "ref": "src/components/Logos.jsx:33",
+        "quote": "const p = Math.min((t - start) / 1400, 1)"
+      },
+      "sandboxPhases": {
+        "ref": "src/components/Sandbox.jsx:70",
+        "quote": "const PHASE_MS = [350, 1400, 250, 900, 900, 2800]"
+      },
+      "multiplayer": {
+        "ref": "src/components/Multiplayer.jsx:148",
+        "quote": "visible ? (active === undefined ? 1400 : 2600) : null,"
+      },
+      "testimonialsReveal": {
+        "ref": "src/components/Testimonials.jsx:111",
+        "quote": "style={{ transitionDelay: `${index * 50}ms` }}"
+      },
+      "libraries": "CSS transitions, @keyframes, setInterval, requestAnimationFrame, IntersectionObserver only. No framer-motion, GSAP or Lottie.",
+      "librariesEvidence": {
+        "ref": "CLONE_SPEC.md:310",
+        "quote": "**No framer-motion, GSAP or Lottie.**"
+      }
+    }
+  },
+  "quirksReplicatedDeliberately": [
+    {
+      "id": "home-390-overflow",
+      "value": "402px",
+      "evidence": {
+        "ref": "CLONE_SPEC.md:374",
+        "quote": "at 390 the document `scrollWidth` is **402px**"
+      }
+    },
+    {
+      "id": "brandkit-390-overflow",
+      "value": "500px",
+      "evidence": {
+        "ref": "CLONE_SPEC_PAGES.md:400",
+        "quote": "Document `scrollWidth` is **500**"
+      }
+    },
+    {
+      "id": "team-plan-scroll-box",
+      "value": "450px clip",
+      "evidence": {
+        "ref": "src/pages/TeamPlan.jsx:23",
+        "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+      }
+    },
+    {
+      "id": "pricing-faq-static",
+      "value": "dl/dt/dd, not an accordion",
+      "evidence": {
+        "ref": "CLONE_SPEC_PAGES.md:156",
+        "quote": "### 1.3 FAQ (static, **not an accordion**; no toggles, no buttons)"
+      }
+    },
+    {
+      "id": "legal-titles-bold-paragraphs",
+      "value": "p>strong, no h2/h3",
+      "evidence": {
+        "ref": "CLONE_SPEC_PAGES.md:407",
+        "quote": "**Section titles are bold paragraphs (`<p><strong>…</strong></p>`), not headings.**"
+      }
+    },
+    {
+      "id": "brandkit-copy-no-feedback",
+      "value": "no visual feedback",
+      "evidence": {
+        "ref": "CLONE_SPEC_PAGES.md:397",
+        "quote": "**No visual feedback:** no icon swap"
+      }
+    }
+  ],
+  "gaps": [
+    "Dark theme: tokens exist in the original CSS but no measured route renders them; none is shipped (CLONE_SPEC.md 0.2).",
+    "768-1023px (md) behaviour of standalone pages is taken from class names, not measured (CLONE_SPEC_PAGES.md 9).",
+    "HubSpot dropdown open state and post-submit text come from the form definition, not live measurement (CLONE_SPEC_PAGES.md 9).",
+    "Docs interactive components (ApiKeyTester, CityProbabilityCurve, KeyboardShortcutsCheatsheetOverlay): behaviour not reverse-engineered, only static markup (CLONE_SPEC_DOCS.md 7.4); no section contract models their behaviour.",
+    "Source licensing of the demo avatars (portraits), hero sky background and CTA photograph is not established anywhere in the project; roles are pinned conservatively (must-not-reproduce / may-generate-new).",
+    "Origin/licence of the verified-badge SVG is not established; filed under vendor-mark (must-not-reproduce).",
+    "observedMaxWords on text fields were measured by scanning recon/pages/content/*.html, src/content/docs and src/content/changelog with a one-off script (whitespace-split word counts); maxWords adds headroom. The script is not shipped, so these numbers are a snapshot.",
+    "Live data (100k+ figure, latest changelog cards, team list, legal dates) will drift from the original; only structure is encoded.",
+    "5 changelog images 404 on the live site too (CLONE_SPEC_DOCS.md 7.6); ten older posts render literal escaped <video> text (7.11). Neither is modelled.",
+    "The sitemap itself is not stored in the project; ia.json is the authoritative route source, and verify_all.py re-derives routes from src/content when present.",
+    "ia.json's own validate.mjs prints soft notes that scope text for changelog.entry-list says [2] but computes 21 routes; hard invariants pass. Not a contradiction in this repo (21 is used)."
+  ]
+}
