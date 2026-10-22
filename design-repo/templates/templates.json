@@ -127,7 +127,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:290",
+          "ref": "ia.json:302",
           "quote": "\"id\": \"template.home\""
         },
         {
@@ -221,7 +221,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:314",
+          "ref": "ia.json:326",
           "quote": "\"id\": \"template.pricing\""
         },
         {
@@ -315,7 +315,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:333",
+          "ref": "ia.json:345",
           "quote": "\"id\": \"template.enterprise\""
         },
         {
@@ -393,7 +393,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:352",
+          "ref": "ia.json:364",
           "quote": "\"id\": \"template.team-plan\""
         },
         {
@@ -471,7 +471,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:369",
+          "ref": "ia.json:381",
           "quote": "\"id\": \"template.prose-page\""
         },
         {
@@ -573,7 +573,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:386",
+          "ref": "ia.json:398",
           "quote": "\"id\": \"template.join-us\""
         },
         {
@@ -667,7 +667,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:406",
+          "ref": "ia.json:418",
           "quote": "\"id\": \"template.brandkit\""
         },
         {
@@ -704,9 +704,17 @@
           "slot": "chrome"
         },
         {
-          "section": "content.legal-prose",
+          "section": "content.legal-header",
           "variant": "default",
-          "iaSection": "content.legal-prose",
+          "iaSection": "content.legal-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "content.legal-body",
+          "variant": "default",
+          "iaSection": "content.legal-body",
           "required": true,
           "repeatable": false,
           "slot": "flow"
@@ -738,7 +746,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:425",
+          "ref": "ia.json:437",
           "quote": "\"id\": \"template.legal\""
         },
         {
@@ -872,7 +880,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:441",
+          "ref": "ia.json:454",
           "quote": "\"id\": \"template.docs-page\""
         },
         {
@@ -916,11 +924,19 @@
           "slot": "chrome"
         },
         {
-          "section": "changelog.entry-list",
-          "variant": "default",
-          "iaSection": "changelog.entry-list",
+          "section": "changelog.entry-header",
+          "variant": "index",
+          "iaSection": "changelog.entry-header",
           "required": true,
-          "repeatable": false,
+          "repeatable": true,
+          "slot": "flow"
+        },
+        {
+          "section": "changelog.entry-body",
+          "variant": "default",
+          "iaSection": "changelog.entry-body",
+          "required": true,
+          "repeatable": true,
           "slot": "flow"
         },
         {
@@ -958,7 +974,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:473",
+          "ref": "ia.json:486",
           "quote": "\"id\": \"template.changelog-index\""
         },
         {
@@ -1007,9 +1023,17 @@
           "slot": "flow"
         },
         {
-          "section": "changelog.post-entry",
+          "section": "changelog.entry-header",
+          "variant": "post",
+          "iaSection": "changelog.post-header",
+          "required": true,
+          "repeatable": false,
+          "slot": "flow"
+        },
+        {
+          "section": "changelog.entry-body",
           "variant": "default",
-          "iaSection": "changelog.post-entry",
+          "iaSection": "changelog.entry-body",
           "required": true,
           "repeatable": false,
           "slot": "flow"
@@ -1041,7 +1065,7 @@
       ],
       "measuredFrom": [
         {
-          "ref": "ia.json:492",
+          "ref": "ia.json:506",
           "quote": "\"id\": \"template.changelog-post\""
         },
         {

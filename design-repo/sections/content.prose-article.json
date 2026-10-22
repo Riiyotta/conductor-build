@@ -1,22 +1,29 @@
 {
   "id": "content.prose-article",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.prose-article"
-  ],
+  "semantic": {
+    "semanticId": "content.prose-article",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.prose-article"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/pages/Prose.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/pages/Prose.jsx:6",
+        "quote": "export default function Prose({ as: Tag = 'article', maxWidth = '!max-w-3xl', className = '', children }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:55",
+        "quote": "### 0.3 Shared \"Prose\" article (slack, join-us, enterprise intro, brandkit intro, privacy, terms)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Long-form explanatory copy in the shared typography article.",
-  "implementedBy": [
-    {
-      "ref": "src/components/pages/Prose.jsx:6",
-      "quote": "export default function Prose({ as: Tag = 'article', maxWidth = '!max-w-3xl', className = '', children }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:55",
-      "quote": "### 0.3 Shared \"Prose\" article (slack, join-us, enterprise intro, brandkit intro, privacy, terms)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.prose-article"
@@ -112,7 +119,10 @@
       "rights-holder-supplied"
     ]
   },
-  "quirks": [],
+  "quirks": [
+    "Single body by design, not a whole-page wrapper: the page header (H1 + lead) is already its own hero.page-header node, and the article has no distinct header or footer parts of its own (measured, see extraction/measured-values.json sectionHeights). Where other nodes share the same article element (enterprise: logo grid and HubSpot form; join-us: apply card, team photo, team cards) they are modelled as their own nodes and are excluded from this node's height.",
+    "Measured at 1440px: 28px on /enterprise (only the 'Trusted by builders at' label), 887px on /join-us (the intro and the two headed prose runs, 26% of the page) and 1249px on /slack (63% of its 1975px page: prose by nature, whitelisted with justification in wrapperGate.whitelist)."
+  ],
   "assetRoles": [
     "product-screenshot"
   ]

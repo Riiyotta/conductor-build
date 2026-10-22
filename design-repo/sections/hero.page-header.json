@@ -1,22 +1,29 @@
 {
   "id": "hero.page-header",
-  "category": "HERO",
-  "iaSections": [
-    "hero.page-header"
-  ],
+  "semantic": {
+    "semanticId": "hero.page-header",
+    "category": "HERO",
+    "iaSections": [
+      "hero.page-header"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/pages/PageHeader.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/pages/PageHeader.jsx:3",
+        "quote": "export default function PageHeader({ title, lead, width = 'max-w-3xl', eyebrow = null }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:45",
+        "quote": "### 0.2 Shared \"PageHeader\" block (enterprise, team-plan, slack, join-us, brandkit)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Left-aligned page title and lead paragraph for a standalone page.",
-  "implementedBy": [
-    {
-      "ref": "src/components/pages/PageHeader.jsx:3",
-      "quote": "export default function PageHeader({ title, lead, width = 'max-w-3xl', eyebrow = null }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:45",
-      "quote": "### 0.2 Shared \"PageHeader\" block (enterprise, team-plan, slack, join-us, brandkit)"
-    }
-  ],
   "variants": {
     "max-w-3xl": {
       "iaSection": "hero.page-header",

@@ -1,30 +1,37 @@
 {
   "id": "hero.home",
-  "category": "HERO",
-  "iaSections": [
-    "hero.home"
-  ],
+  "semantic": {
+    "semanticId": "hero.home",
+    "category": "HERO",
+    "iaSections": [
+      "hero.home"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Hero.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Hero.jsx:48",
+        "quote": "export default function Hero() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:104",
+        "quote": "## 2. Hero"
+      },
+      {
+        "ref": "CLONE_SPEC.md:318",
+        "quote": "| M1 | Hero H1 line 2 scramble |"
+      },
+      {
+        "ref": "CLONE_SPEC.md:320",
+        "quote": "| M3 | Hero H1 fade |"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Homepage promise: rotating headline, primary CTA and one customer quote over the product screenshot.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Hero.jsx:48",
-      "quote": "export default function Hero() {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:104",
-      "quote": "## 2. Hero"
-    },
-    {
-      "ref": "CLONE_SPEC.md:318",
-      "quote": "| M1 | Hero H1 line 2 scramble |"
-    },
-    {
-      "ref": "CLONE_SPEC.md:320",
-      "quote": "| M3 | Hero H1 fade |"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "hero.home"

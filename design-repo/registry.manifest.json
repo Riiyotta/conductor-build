@@ -1,6 +1,6 @@
 {
   "repositoryId": "conductor-build-clone-design-repo",
-  "repositoryVersion": "0.1.0",
+  "repositoryVersion": "0.2.0",
   "pageSpecVersion": "1.0.0",
   "allowlistVersion": "1.0.0",
   "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails the run if it differs from tokens/llm/component-allowlist.json. pageSpecVersion is checked only against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker that nothing verifies; do not read it as an enforcement guarantee.",
@@ -12,7 +12,7 @@
   ],
   "sourceProject": {
     "description": "Local React replica of a real, live company site (Melty Labs / Conductor, YC S24). Snapshot taken 2026-10-22; the replica can change after this snapshot, re-diff before trusting stated versions.",
-    "routeSource": "ia.json in the sibling project (306 routes, 11 templates, 44 sections)"
+    "routeSource": "ia.json in the sibling project (306 routes, 11 templates, 46 sections)"
   },
   "sourceStack": {
     "react": "18",
@@ -31,18 +31,21 @@
     "tokens": 213,
     "primitives": 11,
     "components": 18,
-    "sectionContracts": 41,
-    "iaSections": 44,
+    "sectionContracts": 42,
+    "iaSections": 46,
     "templates": 11,
     "routes": 306,
     "graphRules": 13,
     "assetRoles": 12,
-    "adversarialMutations": 51,
-    "adversarialControls": 12
+    "adversarialMutations": 95,
+    "adversarialControls": 15
   },
   "entryPoints": {
     "schema": [
       "schema/pagespec.schema.json"
+    ],
+    "contractSchema": [
+      "schema/section-contract.schema.json"
     ],
     "schemaBuilder": [
       "schema/build_schema.py"
@@ -135,9 +138,9 @@
     ],
     "sections": [
       "sections/changelog.back-link.json",
-      "sections/changelog.entry-list.json",
+      "sections/changelog.entry-body.json",
+      "sections/changelog.entry-header.json",
       "sections/changelog.pagination.json",
-      "sections/changelog.post-entry.json",
       "sections/content.brandkit-about.json",
       "sections/content.brandkit-asset-cards.json",
       "sections/content.brandkit-download-card.json",
@@ -145,7 +148,8 @@
       "sections/content.join-us-apply-card.json",
       "sections/content.join-us-team-cards.json",
       "sections/content.join-us-team-photo.json",
-      "sections/content.legal-prose.json",
+      "sections/content.legal-body.json",
+      "sections/content.legal-header.json",
       "sections/content.pricing-faq.json",
       "sections/content.pricing-plans.json",
       "sections/content.prose-article.json",
@@ -175,6 +179,15 @@
       "sections/shell.footer-sans.json",
       "sections/shell.header.json",
       "sections/shell.mobile-menu.json"
+    ],
+    "examples": [
+      "schema/example.changelog-index.pagespec.json",
+      "schema/example.changelog-post.pagespec.json",
+      "schema/example.legal.pagespec.json",
+      "schema/example.pagespec.json"
+    ],
+    "measureSections": [
+      "extraction/measure_sections.mjs"
     ]
   }
 }

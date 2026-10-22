@@ -1,22 +1,29 @@
 {
   "id": "changelog.back-link",
-  "category": "CHANGELOG",
-  "iaSections": [
-    "changelog.back-link"
-  ],
+  "semantic": {
+    "semanticId": "changelog.back-link",
+    "category": "CHANGELOG",
+    "iaSections": [
+      "changelog.back-link"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/changelog/ChangelogPost.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/changelog/ChangelogPost.jsx:55",
+        "quote": "Back to changelog"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:494",
+        "quote": "### 5.4 Post page (`/changelog/<urlSlug>`)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Return from a single post to the index.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/changelog/ChangelogPost.jsx:55",
-      "quote": "Back to changelog"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:494",
-      "quote": "### 5.4 Post page (`/changelog/<urlSlug>`)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "changelog.back-link"

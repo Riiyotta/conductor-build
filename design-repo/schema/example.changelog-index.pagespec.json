@@ -1,0 +1,326 @@
+{
+  "pageSpecVersion": "1.0.0",
+  "template": "template.changelog-index",
+  "route": "/changelog",
+  "nodes": [
+    {
+      "type": "section",
+      "section": "shell.header",
+      "variant": "default",
+      "content": {
+        "navLinks": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Join Us",
+            "href": "/join-us"
+          }
+        ],
+        "activeLabel": "Docs",
+        "downloadLabel": "Download"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "instant-hover",
+          "scroll-mask-nav"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.mobile-menu",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Enterprise",
+            "href": "/enterprise"
+          },
+          {
+            "label": "Join Us",
+            "href": "/join-us"
+          }
+        ],
+        "downloadLabel": "Download"
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-header",
+      "variant": "index",
+      "content": {
+        "version": "0.0.2",
+        "date": "Month D, YYYY",
+        "title": "Placeholder release title 2",
+        "href": "/changelog/0.0.2-placeholder"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "sticky-meta"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder summary sentence for the release."
+          },
+          {
+            "kind": "heading",
+            "text": "Improvements"
+          },
+          {
+            "kind": "list-item",
+            "text": "Placeholder improvement one."
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "poster-or-first-frame"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-header",
+      "variant": "index",
+      "content": {
+        "version": "0.0.1",
+        "date": "Month D, YYYY",
+        "title": "Placeholder release title 1",
+        "href": "/changelog/0.0.1-placeholder"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "sticky-meta"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "Placeholder summary sentence for the release."
+          },
+          {
+            "kind": "heading",
+            "text": "Improvements"
+          },
+          {
+            "kind": "list-item",
+            "text": "Placeholder improvement one."
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "poster-or-first-frame"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.pagination",
+      "variant": "default",
+      "content": {
+        "currentPage": 1,
+        "totalPages": 21,
+        "previousLabel": "Previous",
+        "nextLabel": "Next"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.footer-mono",
+      "variant": "default",
+      "content": {
+        "columns": [
+          {
+            "heading": "[Company]",
+            "links": [
+              {
+                "label": "Enterprise",
+                "href": "/enterprise"
+              },
+              {
+                "label": "Join us",
+                "href": "/join-us"
+              }
+            ]
+          },
+          {
+            "heading": "[Resources]",
+            "links": [
+              {
+                "label": "Docs",
+                "href": "/docs"
+              },
+              {
+                "label": "Changelog",
+                "href": "/changelog"
+              },
+              {
+                "label": "Brand kit",
+                "href": "/brandkit"
+              }
+            ]
+          },
+          {
+            "heading": "[Legal]",
+            "links": [
+              {
+                "label": "Privacy",
+                "href": "/privacy"
+              },
+              {
+                "label": "Terms",
+                "href": "/terms"
+              }
+            ]
+          },
+          {
+            "heading": "[Connect]",
+            "links": [
+              {
+                "label": "X",
+                "href": "https://example.com/x"
+              },
+              {
+                "label": "Discord",
+                "href": "https://example.com/chat"
+              }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Company Name",
+        "complianceLink": {
+          "label": "SOC 2 Type II",
+          "href": "https://example.com/trust"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.download-dialog",
+      "variant": "default",
+      "content": {
+        "title": "Download Conductor",
+        "description": "Choose the build for your Mac.",
+        "primaryAction": {
+          "label": "Download for Mac",
+          "sublabel": "Apple silicon",
+          "endpoint": {
+            "assetRole": "download-endpoint",
+            "target": "deployer-configured"
+          }
+        },
+        "waitlistAction": {
+          "label": "Join waitlist",
+          "endpoint": {
+            "assetRole": "form-endpoint",
+            "target": "local-only-no-submit"
+          }
+        },
+        "footnote": "Mac older than November 2020?",
+        "fallbackAction": {
+          "label": "Download for Intel",
+          "endpoint": {
+            "assetRole": "download-endpoint",
+            "target": "deployer-configured"
+          }
+        }
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.downloading-screen",
+      "variant": "default",
+      "content": {
+        "lines": [
+          "Downloading...",
+          "DOWNLOAD STARTED"
+        ],
+        "brandMark": {
+          "assetRole": "brand-mark",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter-terminal"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    }
+  ]
+}

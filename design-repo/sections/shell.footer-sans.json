@@ -1,26 +1,33 @@
 {
   "id": "shell.footer-sans",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.footer-sans"
-  ],
+  "semantic": {
+    "semanticId": "shell.footer-sans",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.footer-sans"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Footer.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Footer.jsx:44",
+        "quote": "export default function Footer({ mono = false }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:282",
+        "quote": "## 11. Footer"
+      },
+      {
+        "ref": "src/pages/Home.jsx:16",
+        "quote": "<div className=\"bg-background font-sans\">"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Site footer as rendered on the homepage: system sans because of the homepage's font-mono -> sans override wrapper.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Footer.jsx:44",
-      "quote": "export default function Footer({ mono = false }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:282",
-      "quote": "## 11. Footer"
-    },
-    {
-      "ref": "src/pages/Home.jsx:16",
-      "quote": "<div className=\"bg-background font-sans\">"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.footer-sans"

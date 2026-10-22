@@ -2,7 +2,7 @@
 
 Source: https://www.conductor.build (sitemap.xml + Playwright recon specs) · Local React 18 + Vite + Tailwind v3 clone at http://localhost:5220
 Status: **measured-from-live-site** · production approved: **false**
-306 routes · 11 templates · 44 unique sections
+306 routes · 11 templates · 46 unique sections
 
 > Generated from `ia.json` by `build.mjs`. Edit the JSON, not this file.
 
@@ -46,8 +46,9 @@ component library or stays local to its page.
 | `shell.downloading-screen` | SHELL | 11 | 306 | `src/components/DownloadDialog.jsx > DownloadingScreen` | Reachable after a download click on all 306 routes. |
 | `shell.footer-mono` | SHELL | 10 | 305 | `src/components/Footer.jsx (mono prop)` | Every route except the homepage (305 routes): standalone pages, docs and changelog. |
 | `shell.mobile-menu` | SHELL | 10 | 237 | `src/components/Header.jsx` | All 237 non-docs routes at mobile width; docs routes use shell.docs-subnav and docs.mobile-drawer instead. |
+| `changelog.entry-body` | CHANGELOG | 2 | 228 | `src/components/changelog/ChangelogEntry.jsx` | Every changelog index and post route (228 routes). |
 | `changelog.back-link` | CHANGELOG | 1 | 207 | `src/pages/changelog/ChangelogPost.jsx` | All 207 changelog post routes. |
-| `changelog.post-entry` | CHANGELOG | 1 | 207 | `src/components/changelog/ChangelogEntry.jsx (variant post)` | All 207 changelog post routes. |
+| `changelog.post-header` | CHANGELOG | 1 | 207 | `src/components/changelog/ChangelogEntry.jsx (variant post)` | All 207 changelog post routes. |
 | `shell.docs-subnav` | SHELL | 1 | 69 | `src/components/docs/MobileNav.jsx > MobileSubnav` | The 69 docs routes, below 768px only. |
 | `docs.sidebar` | DOCS | 1 | 69 | `src/components/docs/Sidebar.jsx` | The 69 docs routes at 768px and wider. |
 | `docs.mobile-drawer` | DOCS | 1 | 69 | `src/components/docs/MobileNav.jsx > MobileDrawer` | The 69 docs routes below 768px. |
@@ -57,12 +58,13 @@ component library or stays local to its page.
 | `docs.prev-next` | DOCS | 1 | 69 | `src/pages/docs/DocsPage.jsx > PrevNext` | All 69 docs routes. |
 | `docs.toc` | DOCS | 1 | 69 | `src/components/docs/Toc.jsx` | The 69 docs routes at 1280px and wider. |
 | `docs.search-dialog` | DOCS | 1 | 69 | `src/components/docs/Search.jsx` | All 69 docs routes. |
-| `changelog.entry-list` | CHANGELOG | 1 | 21 | `src/components/changelog/ChangelogEntry.jsx` | The 21 changelog index routes (/changelog and pages 2–21). |
+| `changelog.entry-header` | CHANGELOG | 1 | 21 | `src/components/changelog/ChangelogEntry.jsx (variant index)` | The 21 changelog index routes (/changelog and pages 2–21). |
 | `changelog.pagination` | CHANGELOG | 1 | 21 | `src/components/changelog/ChangelogPager.jsx` | The 21 changelog index routes. |
 | `hero.page-header` | HERO | 4 | 4 | `src/components/pages/PageHeader.jsx` | 4 standalone pages: enterprise, team-plan, slack and join-us. |
 | `content.prose-article` | CONTENT | 3 | 3 | `src/components/pages/Prose.jsx` | 3 standalone pages: enterprise (intro line), slack and join-us. |
 | `proof.trusted-logo-strip` | PROOF | 2 | 2 | `src/components/Logos.jsx` | 2 routes: the homepage and /pricing. |
-| `content.legal-prose` | CONTENT | 1 | 2 | `src/components/pages/LegalLayout.jsx` | 2 routes: /privacy and /terms. |
+| `content.legal-header` | CONTENT | 1 | 2 | `src/components/pages/LegalLayout.jsx` | 2 routes: /privacy and /terms. |
+| `content.legal-body` | CONTENT | 1 | 2 | `src/components/pages/LegalLayout.jsx` | 2 routes: /privacy and /terms. |
 | `shell.footer-sans` | SHELL | 1 | 1 | `src/components/Footer.jsx` | Only the homepage (1 route). |
 | `hero.home` | HERO | 1 | 1 | `src/components/Hero.jsx` | Homepage only. |
 | `hero.pricing-title` | HERO | 1 | 1 | `src/pages/Pricing.jsx` | /pricing only. |
@@ -86,9 +88,9 @@ component library or stays local to its page.
 | `conversion.enterprise-contact-form` | CONVERSION | 1 | 1 | `src/components/pages/HubSpotForm.jsx` | /enterprise only. |
 | `conversion.team-plan-form-scrollbox` | CONVERSION | 1 | 1 | `src/components/pages/HubSpotForm.jsx` | /team-plan only. |
 
-**8 shared sections** appear in more than one template and belong in a component library.
+**9 shared sections** appear in more than one template and belong in a component library.
 
-**36 single-use sections** appear in exactly one template. Building these
+**37 single-use sections** appear in exactly one template. Building these
 as "reusable" components up front would be speculative — keep them page-local
 until a second caller actually appears.
 
@@ -216,10 +218,11 @@ until a second caller actually appears.
 |---:|---|---|---|
 | 1 | SHELL | `shell.header` | shared ×11 |
 | 2 | SHELL | `shell.mobile-menu` | shared ×10 |
-| 3 | CONTENT | `content.legal-prose` | page-local |
-| 4 | SHELL | `shell.footer-mono` | shared ×10 |
-| 5 | SHELL | `shell.download-dialog` | shared ×11 |
-| 6 | SHELL | `shell.downloading-screen` | shared ×11 |
+| 3 | CONTENT | `content.legal-header` | page-local |
+| 4 | CONTENT | `content.legal-body` | page-local |
+| 5 | SHELL | `shell.footer-mono` | shared ×10 |
+| 6 | SHELL | `shell.download-dialog` | shared ×11 |
+| 7 | SHELL | `shell.downloading-screen` | shared ×11 |
 
 ### Docs page — `template.docs-page`
 
@@ -249,11 +252,12 @@ until a second caller actually appears.
 |---:|---|---|---|
 | 1 | SHELL | `shell.header` | shared ×11 |
 | 2 | SHELL | `shell.mobile-menu` | shared ×10 |
-| 3 | CHANGELOG | `changelog.entry-list` | page-local |
-| 4 | CHANGELOG | `changelog.pagination` | page-local |
-| 5 | SHELL | `shell.footer-mono` | shared ×10 |
-| 6 | SHELL | `shell.download-dialog` | shared ×11 |
-| 7 | SHELL | `shell.downloading-screen` | shared ×11 |
+| 3 | CHANGELOG | `changelog.entry-header` | page-local |
+| 4 | CHANGELOG | `changelog.entry-body` | shared ×2 |
+| 5 | CHANGELOG | `changelog.pagination` | page-local |
+| 6 | SHELL | `shell.footer-mono` | shared ×10 |
+| 7 | SHELL | `shell.download-dialog` | shared ×11 |
+| 8 | SHELL | `shell.downloading-screen` | shared ×11 |
 
 ### Changelog post — `template.changelog-post`
 
@@ -264,10 +268,11 @@ until a second caller actually appears.
 | 1 | SHELL | `shell.header` | shared ×11 |
 | 2 | SHELL | `shell.mobile-menu` | shared ×10 |
 | 3 | CHANGELOG | `changelog.back-link` | page-local |
-| 4 | CHANGELOG | `changelog.post-entry` | page-local |
-| 5 | SHELL | `shell.footer-mono` | shared ×10 |
-| 6 | SHELL | `shell.download-dialog` | shared ×11 |
-| 7 | SHELL | `shell.downloading-screen` | shared ×11 |
+| 4 | CHANGELOG | `changelog.post-header` | page-local |
+| 5 | CHANGELOG | `changelog.entry-body` | shared ×2 |
+| 6 | SHELL | `shell.footer-mono` | shared ×10 |
+| 7 | SHELL | `shell.download-dialog` | shared ×11 |
+| 8 | SHELL | `shell.downloading-screen` | shared ×11 |
 
 ## Section reference
 
@@ -379,7 +384,11 @@ _The substantive body of a standalone page: plans, FAQ, prose articles, brand as
 
 · 3 standalone pages: enterprise (intro line), slack and join-us. · appears on 3 routes · implemented by `src/components/pages/Prose.jsx`
 
-**`content.legal-prose`** — Legal document layout: the same prose article but with no page header and no top margin, its own 800-weight H1 with anchor icon, and section titles as bold paragraphs rather than headings.
+**`content.legal-header`** — Legal document header, the first two children of the prose article: the 800-weight H1 with hover anchor icon and the one-line 'Last Updated' / 'Last Modified' date. There is no PageHeader block and no top margin on these pages.
+
+· 2 routes: /privacy and /terms. · appears on 2 routes · implemented by `src/components/pages/LegalLayout.jsx`
+
+**`content.legal-body`** — Legal document body, the rest of the prose article: bold-paragraph section titles (not headings), paragraphs and lists. The original has no table of contents on these pages, so none is modelled.
 
 · 2 routes: /privacy and /terms. · appears on 2 routes · implemented by `src/components/pages/LegalLayout.jsx`
 
@@ -463,9 +472,9 @@ _Fumadocs-style documentation shell parts: sidebar, drawer, breadcrumb, body, TO
 
 _Changelog listing, pagination and single-post parts._
 
-**`changelog.entry-list`** — Up to 10 changelog articles per page; each has a sticky left meta column (mono version badge linking to the post, date) and a linked 30px title over a markdown body, separated by faint borders.
+**`changelog.entry-header`** — Index entry header, repeated once per article (ten per full page): sticky left meta column (mono version badge linking to the post, date) and the linked 30px title.
 
-· The 21 changelog index routes (/changelog and pages 2–21). · appears on 21 routes · implemented by `src/components/changelog/ChangelogEntry.jsx`
+· The 21 changelog index routes (/changelog and pages 2–21). · appears on 21 routes · implemented by `src/components/changelog/ChangelogEntry.jsx (variant index)`
 
 **`changelog.pagination`** — Two-row pager: Previous / 'Page N of 21' / Next, then page numbers showing first, last, current ±1 and ellipses.
 
@@ -475,6 +484,10 @@ _Changelog listing, pagination and single-post parts._
 
 · All 207 changelog post routes. · appears on 207 routes · implemented by `src/pages/changelog/ChangelogPost.jsx`
 
-**`changelog.post-entry`** — Single changelog article: the same meta column (unlinked badge) and markdown body as the list, with an unlinked 30px H1 and no border, pager or prev/next.
+**`changelog.post-header`** — Post header: the same meta column as the index entry (unlinked version badge, date) and an unlinked 30px H1 title; no border, pager or prev/next.
 
 · All 207 changelog post routes. · appears on 207 routes · implemented by `src/components/changelog/ChangelogEntry.jsx (variant post)`
+
+**`changelog.entry-body`** — Markdown body of a changelog entry (paragraphs, headings, lists, code, images, video) in the content column under the entry header. On the index it follows each header and is separated from the next entry by a faint border; on a post it is the end of the article.
+
+· Every changelog index and post route (228 routes). · appears on 228 routes · implemented by `src/components/changelog/ChangelogEntry.jsx`

@@ -8,8 +8,11 @@ Output lines are `PASS|FAIL|WARN [check-id] message`; exit code 1 if any FAIL.
 Always-on (self-contained) checks: JSON parse, allowlist parity, allowlistVersion parity, schema regeneration
 diff + draft-07 validity, example validation, token catalog / alias / theme recompute, motion-pattern parity,
 graph-rule vs validator parity, asset-role closure AND compliance pins (pinned values, not just enum membership),
-template integrity, manifest counts recomputed from files, entryPoints inside the repo, README/CHANGELOG counts,
-no absolute local paths.
+template integrity, section-contract shape (provenance `source` kept separate from taxonomy `semantic`), retrieval
+eligibility pins (utilities/overlays are not retrievable design compositions), the whole-page-wrapper quality gate
+(HERO >1800px warn, >3000px fail; any section >50% of a page warn, >60% fail; only reviewed prose-by-nature whitelist
+entries suppress it) run against the measured-heights ledger in measured-values.json, manifest counts recomputed from
+files, entryPoints inside the repo, README/CHANGELOG counts, no absolute local paths.
 
 Sibling-dependent checks (citations, ia.json parity, route enumeration, stack re-diff) run when the project tree
 that contains this design-repo/ folder is present and DEGRADE TO WARNINGS when it is not.
@@ -123,9 +126,13 @@ def check_schema():
         ok("schema-draft7", "schema is a valid draft-07 schema")
     except Exception as e:  # noqa: BLE001
         fail("schema-draft7", str(e)[:200])
-    ex = J("schema/example.pagespec.json")
-    errs, warns = sv.validate(ex, root=ROOT)
-    (ok if not errs else fail)("example-valid", f"example.pagespec.json: {len(errs)} errors, {len(warns)} warnings {errs[:3]}")
+    bad_ex, names = [], []
+    for ep in files("schema/example*.pagespec.json"):
+        errs, warns = sv.validate(json.load(open(ep, encoding="utf-8")), root=ROOT)
+        names.append(os.path.basename(ep))
+        if errs or warns:
+            bad_ex.append(f"{os.path.basename(ep)}: {len(errs)} errors {errs[:2]}, {len(warns)} warnings {warns[:2]}")
+    (ok if not bad_ex and len(names) >= 4 else fail)("example-valid", f"{len(names)} example PageSpecs ({', '.join(names)}): 0 errors, 0 warnings" if not bad_ex and len(names) >= 4 else f"{bad_ex or 'fewer than 4 example PageSpecs'}")
     # closed motion + additionalProperties:false everywhere in the schema
     open_objs = []
 
@@ -141,7 +148,13 @@ def check_schema():
                 walk(v, f"{path}/{i}")
 
     walk(schema_obj := json.loads(committed), "")
-    (ok if not open_objs else fail)("schema-closed", "every object with properties is additionalProperties:false" if not open_objs else f"open objects: {open_objs[:5]}")
+    contract_schema = J("schema/section-contract.schema.json")
+    try:
+        jsonschema.Draft7Validator.check_schema(contract_schema)
+    except Exception as e:  # noqa: BLE001
+        open_objs.append(f"section-contract.schema.json invalid: {str(e)[:100]}")
+    walk(contract_schema, "/contract")
+    (ok if not open_objs else fail)("schema-closed", "every object with properties is additionalProperties:false (pagespec and section-contract schemas)" if not open_objs else f"open objects: {open_objs[:5]}")
     return schema_obj
 
 
@@ -272,11 +285,11 @@ def check_graph():
                 probs.append(f"{r['id']} exception names unknown template {tid}")
     # REQUIRES_HERO exceptions must be exactly the hero-less templates (graph prose == data == validator behaviour)
     req = next(r for r in g if r["id"] == "REQUIRES_HERO")
-    heroless = sorted(t for t, d in templates.items() if not any(secs[n["section"]]["category"] == "HERO" for n in d["nodes"]))
+    heroless = sorted(t for t, d in templates.items() if not any(sv.category_of(secs[n["section"]]) == "HERO" for n in d["nodes"]))
     if sorted(req["exceptions"]) != heroless:
         probs.append(f"REQUIRES_HERO exceptions {sorted(req['exceptions'])} != actual hero-less templates {heroless}")
     for t, d in templates.items():
-        if sum(secs[n["section"]]["category"] == "HERO" for n in d["nodes"]) > 1:
+        if sum(sv.category_of(secs[n["section"]]) == "HERO" for n in d["nodes"]) > 1:
             probs.append(f"{t} has more than one hero (ONE_HERO would reject its own template)")
     (fail if probs else ok)("graph-parity", "; ".join(probs) if probs else f"{len(ids)} graph rules == RULE_IMPLS; REQUIRES_HERO exceptions == real hero-less templates")
 
@@ -378,6 +391,138 @@ def check_templates():
             probs.append(f"{sid}: allowedTemplates {s['constraints'].get('allowedTemplates')} != actual {used}")
     (fail if probs else ok)("template-integrity", "; ".join(probs[:6]) if probs else f"{len(T)} templates: nodes are structured objects, keys unique, allowedTemplates match real usage")
     return T
+
+
+
+# ---------------------------------------------------------------- 5b. section contracts, retrieval, wrapper gate
+def check_contracts():
+    """Closed shape of every contract: provenance (`source`) and taxonomy (`semantic`) are separate closed objects."""
+    probs = sv.validate_all_contracts(ROOT)
+    secs = {i: J(f"sections/{i}.json") for i in ids_in("sections")}
+    # provenance and taxonomy must not collapse into each other anywhere: no contract may reuse a source file as a semantic id
+    for i, d in secs.items():
+        if d.get("semantic", {}).get("semanticId") is not None and d.get("semantic", {}).get("semanticId") == d.get("source", {}).get("sourceId"):
+            probs.append(f"{i}: semanticId equals sourceId (taxonomy and provenance collapsed)")
+    (fail if probs else ok)("contract-shape", "; ".join(probs[:6]) if probs else
+                            f"{len(secs)} section contracts match section-contract.schema.json: closed `semantic` {{semanticId, category, iaSections}} and `source` {{sourceId, implementedBy, measuredFrom}}, semanticId == id, sourceId is a cited implementing file")
+
+
+def check_retrieval():
+    """retrievalEligible=false for dialogs/overlays/utilities. Three independent sources must agree: the code pin
+    (semantic_validate.RETRIEVAL_INELIGIBLE), the section contracts, and the allowlist; the schema branches const-lock the node field."""
+    secs = {i: J(f"sections/{i}.json") for i in ids_in("sections")}
+    al = J("tokens/llm/component-allowlist.json")
+    schema = J("schema/pagespec.schema.json")
+    probs = []
+    pin = set(sv.RETRIEVAL_INELIGIBLE)
+    if pin - set(secs):
+        probs.append(f"pinned ineligible ids with no contract: {sorted(pin - set(secs))}")
+    contract = {i for i, d in secs.items() if d["retrievalEligible"] is False}
+    if contract != pin:
+        probs.append(f"contracts mark {sorted(contract)} ineligible, code pin is {sorted(pin)}")
+    overlay = {i for i, d in secs.items() if d["slot"] == "overlay"}
+    if overlay != pin:
+        probs.append(f"overlay-slot sections {sorted(overlay)} != pinned ineligible set {sorted(pin)}")
+    if sorted(al.get("retrievalIneligibleSections", [])) != sorted(pin):
+        probs.append(f"allowlist retrievalIneligibleSections {al.get('retrievalIneligibleSections')} != code pin {sorted(pin)}")
+    if "retrievalEligible" not in schema["definitions"]["node"]["properties"] or schema["definitions"]["node"]["properties"]["retrievalEligible"].get("type") != "boolean":
+        probs.append("schema node.retrievalEligible is not a closed boolean property")
+    consts = {}
+    for br in schema["definitions"]["node"]["allOf"]:
+        consts[br["if"]["properties"]["section"]["const"]] = br["then"]["properties"].get("retrievalEligible", {}).get("const")
+    for i in secs:
+        if consts.get(i) is not sv.retrieval_pin(i):
+            probs.append(f"schema branch for {i} locks retrievalEligible={consts.get(i)!r}, pinned value is {sv.retrieval_pin(i)!r}")
+    (fail if probs else ok)("retrieval-eligibility", "; ".join(probs[:6]) if probs else
+                            f"{len(pin)} utilities ({', '.join(sorted(pin))}) are retrievalEligible=false in code pin, contracts, allowlist and schema; the other {len(secs) - len(pin)} sections are true")
+
+
+# Whole-page-wrapper gate. Thresholds are pinned HERE, not read from JSON, so editing the ledger cannot loosen them.
+GATE = {"viewportWidth": 1440, "heroWarnPx": 1800, "heroFailPx": 3000, "shareWarnPct": 50, "shareFailPct": 60}
+# Only these sections may be whitelisted for share-of-page (the body of a document is most of a document page by nature).
+PROSE_BY_NATURE = frozenset({"changelog.entry-body", "content.legal-body", "docs.prose-body", "content.prose-article", "content.pricing-faq"})
+# Sticky viewport-height side columns beside the article (not stacked with it): excluded from the SHARE rule only.
+PARALLEL_COLUMNS = frozenset({"docs.sidebar", "docs.toc"})
+NOT_RENDERED_AT_1440 = frozenset({"shell.mobile-menu", "shell.docs-subnav"})  # hidden at 1440px, so no height to measure
+
+
+def check_wrapper_gate(T):
+    mv = J("extraction/measured-values.json")
+    sh = mv.get("sectionHeights")
+    if not isinstance(sh, dict) or not sh.get("routes"):
+        fail("wrapper-gate", "extraction/measured-values.json has no sectionHeights ledger (run extraction/measure_sections.mjs --write)")
+        return
+    secs = {i: J(f"sections/{i}.json") for i in ids_in("sections")}
+    probs, warns, used = [], [], set()
+    if sh.get("viewport", {}).get("width") != GATE["viewportWidth"]:
+        probs.append(f"ledger viewport {sh.get('viewport')} is not {GATE['viewportWidth']}px wide")
+    if sh.get("gate") != {k: v for k, v in GATE.items() if k != "viewportWidth"}:
+        probs.append(f"ledger gate thresholds {sh.get('gate')} differ from the pinned thresholds {GATE}")
+    wl = mv.get("wrapperGate", {}).get("whitelist", []) if isinstance(mv.get("wrapperGate"), dict) else []
+    entries = {}
+    for e in wl:
+        k = (e.get("template"), e.get("section"))
+        if k in entries:
+            probs.append(f"duplicate whitelist entry {k}")
+        entries[k] = e
+        if len(e.get("justification", "")) < 60 or not e.get("reviewed") or not isinstance(e.get("maxPx"), int) or not isinstance(e.get("maxSharePct"), (int, float)):
+            probs.append(f"whitelist entry {k} needs justification (>=60 chars), reviewed, integer maxPx, numeric maxSharePct")
+        if e.get("section", "").split("/")[0] not in PROSE_BY_NATURE and sv.category_of(secs.get(e.get("section", "").split("/")[0], {"semantic": {"category": ""}})) != "HERO":
+            probs.append(f"whitelist entry {k}: section is neither prose-by-nature (pinned in verify_all.PROSE_BY_NATURE) nor a HERO section")
+    pc = mv.get("wrapperGate", {}).get("parallelColumns", {}) if isinstance(mv.get("wrapperGate"), dict) else {}
+    if frozenset(pc.get("sections", [])) != PARALLEL_COLUMNS or len(pc.get("justification", "")) < 60:
+        probs.append(f"wrapperGate.parallelColumns {pc.get('sections')} != pinned {sorted(PARALLEL_COLUMNS)} or lacks a justification")
+    routes = sh["routes"]
+    per_t = {}
+    for route, rec in routes.items():
+        tid = rec.get("template")
+        t = T.get(tid)
+        if not t or not sv.route_ok(route, t["routes"]):
+            probs.append(f"ledger route {route} does not belong to template {tid}")
+            continue
+        per_t[tid] = per_t.get(tid, 0) + 1
+        page = rec["pageHeight"]
+        want = {f"{n['section']}/{n['variant']}" for n in t["nodes"] if n["slot"] != "overlay" and n["section"] not in NOT_RENDERED_AT_1440}
+        if set(rec["sections"]) != want:
+            probs.append(f"{route}: measured nodes differ from template nodes: missing {sorted(want - set(rec['sections']))[:3]}, extra {sorted(set(rec['sections']) - want)[:3]}")
+        for key, val in rec["sections"].items():
+            sid = key.split("/")[0]
+            if sid not in secs:
+                continue
+            cat = sv.category_of(secs[sid])
+            for h in (val if isinstance(val, list) else [val]):
+                share = 0.0 if sid in PARALLEL_COLUMNS else 100.0 * h / page
+                e = entries.get((tid, key))
+                msgs = []
+                if cat == "HERO" and h > GATE["heroFailPx"]:
+                    msgs.append(("fail", f"HERO {key} is {h}px (>{GATE['heroFailPx']}px): a whole-page wrapper, split it"))
+                elif cat == "HERO" and h > GATE["heroWarnPx"]:
+                    msgs.append(("warn", f"HERO {key} is {h}px (>{GATE['heroWarnPx']}px)"))
+                if share > GATE["shareFailPct"]:
+                    msgs.append(("fail", f"{key} is {share:.0f}% of the page ({h}/{page}px, >{GATE['shareFailPct']}%): whole-page wrapper"))
+                elif share > GATE["shareWarnPct"]:
+                    msgs.append(("warn", f"{key} is {share:.0f}% of the page ({h}/{page}px, >{GATE['shareWarnPct']}%): single section holds the majority"))
+                if not msgs:
+                    continue
+                if e is not None:
+                    used.add((tid, key))
+                    if h > e["maxPx"] or share > e["maxSharePct"]:
+                        probs.append(f"{route}: {key} {h}px/{share:.0f}% exceeds its whitelist cap ({e['maxPx']}px/{e['maxSharePct']}%)")
+                    continue
+                for sev, m in msgs:
+                    (probs if sev == "fail" else warns).append(f"{route}: {m}")
+    for tid, t in T.items():
+        if per_t.get(tid, 0) != t["routes"]["count"]:
+            probs.append(f"{tid}: ledger covers {per_t.get(tid, 0)} routes, template has {t['routes']['count']}")
+    for k in sorted(set(entries) - used):
+        probs.append(f"stale whitelist entry {k}: no measured instance needs it (remove it)")
+    dedup = lambda xs: sorted(set(re.sub(r"^\S+: ", "", x) for x in xs))  # noqa: E731
+    if probs:
+        fail("wrapper-gate", f"{len(probs)} problems: {probs[:4]}")
+    else:
+        ok("wrapper-gate", f"{len(routes)} routes measured at {GATE['viewportWidth']}px: no HERO >{GATE['heroFailPx']}px, no non-whitelisted section >{GATE['shareFailPct']}% of a page; {len(used)} reviewed prose-by-nature whitelist entries all still needed")
+    if warns:
+        warn("wrapper-gate", f"{len(warns)} warnings, e.g. {dedup(warns)[:3]}")
 
 
 # ---------------------------------------------------------------- 6. manifest
@@ -546,6 +691,16 @@ def check_ia(T):
     multi = {k: sorted(v) for k, v in owners.items() if len(v) != 1}
     if multi:
         probs.append(f"IA section claimed by more than one contract: {multi}")
+    for sid, sc in secs.items():
+        files = {c["ref"].rsplit(":", 1)[0] for c in sc.get("source", {}).get("implementedBy", [])}
+        for m in sc["variants"].values():
+            isec = ia["sections"].get(m["iaSection"])
+            if not isec:
+                continue
+            if isec["category"] != sc.get("semantic", {}).get("category"):
+                probs.append(f"{sid}: semantic.category {sc.get('semantic', {}).get('category')} != ia.json {m['iaSection']} category {isec['category']}")
+            if re.split(r" [>(]", isec["implementedBy"])[0] not in files:
+                probs.append(f"{sid}: ia.json {m['iaSection']} implementedBy {isec['implementedBy']!r} is not among the contract's source files {sorted(files)}")
     if sum(t["routes"]["count"] for t in T.values()) != ia["meta"]["totalRoutes"]:
         probs.append("total routes != ia.meta.totalRoutes")
     if len(T) != ia["meta"]["totalTemplates"]:
@@ -554,7 +709,7 @@ def check_ia(T):
         impl = re.split(r" [>(]", s["implementedBy"])[0]
         if not os.path.isfile(os.path.join(PROJECT, impl)):
             probs.append(f"ia {sid}: implementedBy {impl} missing")
-    (fail if probs else ok)("ia-parity", "; ".join(probs[:6]) if probs else f"{len(T)} templates / {len(ia['sections'])} IA sections / {ia['meta']['totalRoutes']} routes identical to ia.json (ids, node order, counts, patterns, chrome)")
+    (fail if probs else ok)("ia-parity", "; ".join(probs[:6]) if probs else f"{len(T)} templates / {len(ia['sections'])} IA sections / {ia['meta']['totalRoutes']} routes identical to ia.json (ids, node order, counts, patterns, chrome); every contract's semantic.category and source file agree with ia.json")
     # real route enumeration, 1:1
     docs = [d["url"] for d in json.load(open(os.path.join(PROJECT, "src/content/docs/_pages.json"), encoding="utf-8"))]
     cl = json.load(open(os.path.join(PROJECT, "src/content/changelog/index.json"), encoding="utf-8"))
@@ -595,6 +750,9 @@ def main():
     check_graph()
     check_assets()
     T = check_templates()
+    check_contracts()
+    check_retrieval()
+    check_wrapper_gate(T)
     man, comp = check_manifest(tree, T)
     check_allowlist_version()
     check_docs_counts(comp)

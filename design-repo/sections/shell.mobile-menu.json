@@ -1,22 +1,29 @@
 {
   "id": "shell.mobile-menu",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.mobile-menu"
-  ],
+  "semantic": {
+    "semanticId": "shell.mobile-menu",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.mobile-menu"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Header.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Header.jsx:102",
+        "quote": "className=\"flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-muted\""
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:102",
+        "quote": "Below md: the nav is hidden and a menu button appears."
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Small-screen navigation panel with a Download row.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Header.jsx:102",
-      "quote": "className=\"flex w-full items-center justify-between rounded-md px-3 py-2 text-left text-sm transition-colors hover:bg-muted\""
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:102",
-      "quote": "Below md: the nav is hidden and a menu button appears."
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.mobile-menu"

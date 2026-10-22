@@ -44,7 +44,8 @@
         ],
         "CONTENT": [
           "template.brandkit",
-          "template.join-us"
+          "template.join-us",
+          "template.legal"
         ],
         "DOCS": [
           "template.docs-page"
@@ -53,7 +54,7 @@
           "template.home"
         ]
       },
-      "exceptionReason": "Measured real adjacencies: the four homepage feature shells, the stacked brandkit/join-us CONTENT cards, and the docs/changelog shell parts are genuinely adjacent on the original."
+      "exceptionReason": "Measured real adjacencies: the four homepage feature shells, the stacked brandkit/join-us CONTENT cards, the legal header and body that are consecutive children of one article, and the docs/changelog shell parts (including the changelog entry header and body, which alternate on the index) are genuinely adjacent on the original."
     },
     {
       "id": "ONE_PER_PAGE",
@@ -70,7 +71,7 @@
     {
       "id": "MUST_FOLLOW",
       "severity": "error",
-      "description": "constraints.mustFollow: the immediately preceding node is the named section (mobile-menu after header; pagination after entry-list).",
+      "description": "constraints.mustFollow: the immediately preceding node is the named section (mobile-menu after header; changelog.entry-body after changelog.entry-header; pagination after changelog.entry-body; content.legal-body after content.legal-header).",
       "exceptions": []
     },
     {

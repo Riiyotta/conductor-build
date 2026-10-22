@@ -1,22 +1,29 @@
 {
   "id": "hero.brandkit-header",
-  "category": "HERO",
-  "iaSections": [
-    "hero.brandkit-header"
-  ],
+  "semantic": {
+    "semanticId": "hero.brandkit-header",
+    "category": "HERO",
+    "iaSections": [
+      "hero.brandkit-header"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Brandkit.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Brandkit.jsx:162",
+        "quote": "width=\"max-w-5xl\""
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:332",
+        "quote": "### 6.1 Header block"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Brand-kit page header with eyebrow badge and short prose intro.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Brandkit.jsx:162",
-      "quote": "width=\"max-w-5xl\""
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:332",
-      "quote": "### 6.1 Header block"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "hero.brandkit-header"

@@ -110,9 +110,9 @@
         "section": {
           "enum": [
             "changelog.back-link",
-            "changelog.entry-list",
+            "changelog.entry-body",
+            "changelog.entry-header",
             "changelog.pagination",
-            "changelog.post-entry",
             "content.brandkit-about",
             "content.brandkit-asset-cards",
             "content.brandkit-download-card",
@@ -120,7 +120,8 @@
             "content.join-us-apply-card",
             "content.join-us-team-cards",
             "content.join-us-team-photo",
-            "content.legal-prose",
+            "content.legal-body",
+            "content.legal-header",
             "content.pricing-faq",
             "content.pricing-plans",
             "content.prose-article",
@@ -155,6 +156,10 @@
         "variant": {
           "type": "string"
         },
+        "retrievalEligible": {
+          "type": "boolean",
+          "description": "Optional. Default true. Const-locked per section to the contract value: false for dialogs, drawers and overlays (not design compositions)."
+        },
         "content": {
           "type": "object"
         },
@@ -180,6 +185,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -220,7 +228,7 @@
           "if": {
             "properties": {
               "section": {
-                "const": "changelog.entry-list"
+                "const": "changelog.entry-body"
               }
             },
             "required": [
@@ -234,230 +242,17 @@
                   "default"
                 ]
               },
-              "content": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "entries"
-                ],
-                "properties": {
-                  "entries": {
-                    "type": "array",
-                    "minItems": 1,
-                    "maxItems": 10,
-                    "items": {
-                      "type": "object",
-                      "additionalProperties": false,
-                      "required": [
-                        "version",
-                        "date",
-                        "title",
-                        "body",
-                        "href"
-                      ],
-                      "properties": {
-                        "version": {
-                          "type": "string",
-                          "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
-                        },
-                        "date": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "title": {
-                          "type": "string",
-                          "minLength": 1
-                        },
-                        "body": {
-                          "type": "array",
-                          "minItems": 1,
-                          "maxItems": 60,
-                          "items": {
-                            "type": "object",
-                            "additionalProperties": false,
-                            "required": [
-                              "kind"
-                            ],
-                            "properties": {
-                              "kind": {
-                                "enum": [
-                                  "paragraph",
-                                  "heading",
-                                  "list-item",
-                                  "code",
-                                  "image",
-                                  "video"
-                                ]
-                              },
-                              "text": {
-                                "type": "string",
-                                "minLength": 1
-                              },
-                              "media": {
-                                "type": "object",
-                                "additionalProperties": false,
-                                "required": [
-                                  "assetRole",
-                                  "source"
-                                ],
-                                "properties": {
-                                  "assetRole": {
-                                    "enum": [
-                                      "demo-video",
-                                      "product-screenshot"
-                                    ]
-                                  },
-                                  "source": {
-                                    "enum": [
-                                      "placeholder",
-                                      "rights-holder-supplied",
-                                      "generated-new",
-                                      "open-license-reuse"
-                                    ]
-                                  },
-                                  "alt": {
-                                    "type": "string",
-                                    "maxLength": 140
-                                  }
-                                }
-                              }
-                            }
-                          }
-                        },
-                        "href": {
-                          "type": "string",
-                          "pattern": "^(/[^\\s]*|#[^\\s]*|https://[^\\s]+|mailto:[^\\s]+)$"
-                        }
-                      }
-                    }
-                  }
-                }
-              },
-              "motion": {
-                "properties": {
-                  "patterns": {
-                    "items": {
-                      "enum": [
-                        "hover-color",
-                        "sticky-meta",
-                        "video-autoplay-loop"
-                      ]
-                    }
-                  },
-                  "reducedMotionFallback": {
-                    "const": "poster-or-first-frame"
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "section": {
-                "const": "changelog.pagination"
-              }
-            },
-            "required": [
-              "section"
-            ]
-          },
-          "then": {
-            "properties": {
-              "variant": {
-                "enum": [
-                  "default"
-                ]
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
                 "required": [
-                  "currentPage",
-                  "totalPages",
-                  "previousLabel",
-                  "nextLabel"
+                  "blocks"
                 ],
                 "properties": {
-                  "currentPage": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 21
-                  },
-                  "totalPages": {
-                    "type": "integer",
-                    "minimum": 1,
-                    "maximum": 21
-                  },
-                  "previousLabel": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "nextLabel": {
-                    "type": "string",
-                    "minLength": 1
-                  }
-                }
-              },
-              "motion": {
-                "properties": {
-                  "patterns": {
-                    "items": {
-                      "enum": [
-                        "hover-color"
-                      ]
-                    }
-                  },
-                  "reducedMotionFallback": {
-                    "const": "static-no-motion-needed"
-                  }
-                }
-              }
-            }
-          }
-        },
-        {
-          "if": {
-            "properties": {
-              "section": {
-                "const": "changelog.post-entry"
-              }
-            },
-            "required": [
-              "section"
-            ]
-          },
-          "then": {
-            "properties": {
-              "variant": {
-                "enum": [
-                  "default"
-                ]
-              },
-              "content": {
-                "type": "object",
-                "additionalProperties": false,
-                "required": [
-                  "version",
-                  "date",
-                  "title",
-                  "body"
-                ],
-                "properties": {
-                  "version": {
-                    "type": "string",
-                    "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
-                  },
-                  "date": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "title": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "body": {
+                  "blocks": {
                     "type": "array",
                     "minItems": 1,
                     "maxItems": 60,
@@ -520,13 +315,148 @@
                   "patterns": {
                     "items": {
                       "enum": [
-                        "sticky-meta",
+                        "hover-color",
                         "video-autoplay-loop"
                       ]
                     }
                   },
                   "reducedMotionFallback": {
                     "const": "poster-or-first-frame"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "changelog.entry-header"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "index",
+                  "post"
+                ]
+              },
+              "retrievalEligible": {
+                "const": true
+              },
+              "content": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "version",
+                  "date",
+                  "title"
+                ],
+                "properties": {
+                  "version": {
+                    "type": "string",
+                    "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$"
+                  },
+                  "date": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "href": {
+                    "type": "string",
+                    "pattern": "^(/[^\\s]*|#[^\\s]*|https://[^\\s]+|mailto:[^\\s]+)$"
+                  }
+                }
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "hover-color",
+                        "sticky-meta"
+                      ]
+                    }
+                  },
+                  "reducedMotionFallback": {
+                    "const": "static-no-motion-needed"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
+                "const": "changelog.pagination"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "retrievalEligible": {
+                "const": true
+              },
+              "content": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "currentPage",
+                  "totalPages",
+                  "previousLabel",
+                  "nextLabel"
+                ],
+                "properties": {
+                  "currentPage": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 21
+                  },
+                  "totalPages": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 21
+                  },
+                  "previousLabel": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "nextLabel": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "hover-color"
+                      ]
+                    }
+                  },
+                  "reducedMotionFallback": {
+                    "const": "static-no-motion-needed"
                   }
                 }
               }
@@ -550,6 +480,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -686,6 +619,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -814,6 +750,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -899,6 +838,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1007,6 +949,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1064,6 +1009,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1179,6 +1127,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1236,7 +1187,7 @@
           "if": {
             "properties": {
               "section": {
-                "const": "content.legal-prose"
+                "const": "content.legal-body"
               }
             },
             "required": [
@@ -1250,23 +1201,16 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
                 "required": [
-                  "title",
-                  "effectiveDate",
                   "sections"
                 ],
                 "properties": {
-                  "title": {
-                    "type": "string",
-                    "minLength": 1
-                  },
-                  "effectiveDate": {
-                    "type": "string",
-                    "minLength": 1
-                  },
                   "sections": {
                     "type": "array",
                     "minItems": 1,
@@ -1318,6 +1262,62 @@
           "if": {
             "properties": {
               "section": {
+                "const": "content.legal-header"
+              }
+            },
+            "required": [
+              "section"
+            ]
+          },
+          "then": {
+            "properties": {
+              "variant": {
+                "enum": [
+                  "default"
+                ]
+              },
+              "retrievalEligible": {
+                "const": true
+              },
+              "content": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": [
+                  "title",
+                  "dateLine"
+                ],
+                "properties": {
+                  "title": {
+                    "type": "string",
+                    "minLength": 1
+                  },
+                  "dateLine": {
+                    "type": "string",
+                    "minLength": 1
+                  }
+                }
+              },
+              "motion": {
+                "properties": {
+                  "patterns": {
+                    "items": {
+                      "enum": [
+                        "hover-color"
+                      ]
+                    }
+                  },
+                  "reducedMotionFallback": {
+                    "const": "static-no-motion-needed"
+                  }
+                }
+              }
+            }
+          }
+        },
+        {
+          "if": {
+            "properties": {
+              "section": {
                 "const": "content.pricing-faq"
               }
             },
@@ -1331,6 +1331,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1403,6 +1406,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1518,6 +1524,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1616,6 +1625,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1701,6 +1713,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1799,6 +1814,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -1904,6 +1922,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -1956,6 +1977,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": false
               },
               "content": {
                 "type": "object",
@@ -2032,6 +2056,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2083,6 +2110,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -2161,6 +2191,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -2272,6 +2305,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": false
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2324,6 +2360,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -2415,6 +2454,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2486,6 +2528,9 @@
                   "cloud-sandbox",
                   "multiplayer"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -2649,6 +2694,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2711,6 +2759,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -2929,6 +2980,9 @@
                   "max-w-3xl"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -2982,6 +3036,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3029,6 +3086,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -3110,6 +3170,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -3267,6 +3330,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3373,6 +3439,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3430,6 +3499,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": false
               },
               "content": {
                 "type": "object",
@@ -3606,6 +3678,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": false
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3686,6 +3761,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",
@@ -3797,6 +3875,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3907,6 +3988,9 @@
                   "default"
                 ]
               },
+              "retrievalEligible": {
+                "const": true
+              },
               "content": {
                 "type": "object",
                 "additionalProperties": false,
@@ -3984,6 +4068,9 @@
                 "enum": [
                   "default"
                 ]
+              },
+              "retrievalEligible": {
+                "const": true
               },
               "content": {
                 "type": "object",

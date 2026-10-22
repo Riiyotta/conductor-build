@@ -11,6 +11,10 @@ Layers (all run, errors and warnings are collected together):
   3. Content contracts from sections/*.json: maxWords on every text field, asset-role compliance pins.
   4. Motion: patterns allowed for the (section, variant), reducedMotionFallback equals the contract.
   5. compatibility/graph.json rules, honouring severity ("error" fails, "warn" is reported).
+  6. Retrieval eligibility: a node's optional retrievalEligible must equal the code-pinned value for its section.
+
+Also validate_contract()/validate_all_contracts(): the closed shape of every sections/*.json (schema/section-contract.schema.json),
+provenance (`source`) kept separate from taxonomy (`semantic`), and the retrieval-eligibility pins.
 
 Repo root is derived from __file__ (never an absolute path).
 """
@@ -42,6 +46,14 @@ PINNED_POLICY_ALLOWED = {
     "must-not-reuse-live-endpoint": {"allowedTargets": ["local-only-no-submit", "deployer-configured", "opens-download-dialog"]},
 }
 
+# Utilities that are not design compositions: dialogs, drawers and full-screen overlays. A retrieval layer must not offer
+# them as page-composition examples, so their contracts carry retrievalEligible=false. This set lives in CODE on purpose
+# (like COMPLIANCE_PINS): editing a contract or the allowlist cannot flip it silently, verify_all.py checks all three agree.
+# Every section whose slot is "overlay" must be in this set, and nothing else may be.
+RETRIEVAL_INELIGIBLE = frozenset({"shell.download-dialog", "shell.downloading-screen", "docs.mobile-drawer", "docs.search-dialog"})
+
+CATEGORIES = ("SHELL", "HERO", "PROOF", "FEATURES", "CONTENT", "CONVERSION", "DOCS", "CHANGELOG")
+
 _cache = {}
 
 
@@ -67,6 +79,50 @@ def _sections(root):
             out[d["id"]] = d
         _cache[key] = out
     return _cache[key]
+
+
+def category_of(section):
+    return section.get("semantic", {}).get("category")  # None if the block is missing; validate_contract reports that
+
+
+def retrieval_pin(section_id):
+    """The pinned retrievalEligible value for a section id (independent of any JSON file)."""
+    return section_id not in RETRIEVAL_INELIGIBLE
+
+
+def validate_contract(doc, root=ROOT):
+    """Errors for one section contract (parsed JSON). Codes: CONTRACT_SCHEMA, SEMANTIC_ID, SEMANTIC_IA, SOURCE_ID, RETRIEVAL_PIN."""
+    import jsonschema
+
+    errs = []
+    schema = _load(root, "schema/section-contract.schema.json")
+    for e in sorted(jsonschema.Draft7Validator(schema).iter_errors(doc), key=lambda e: list(map(str, e.absolute_path))):
+        errs.append(f"CONTRACT_SCHEMA {'/'.join(map(str, e.absolute_path)) or '<root>'}: {e.message[:160]}")
+    if errs or not isinstance(doc, dict):
+        return errs
+    sid = doc["id"]
+    if doc["semantic"]["semanticId"] != sid:
+        errs.append(f"SEMANTIC_ID {sid}: semantic.semanticId {doc['semantic']['semanticId']!r} must equal the contract id")
+    ia = sorted({v["iaSection"] for v in doc["variants"].values()})
+    if sorted(doc["semantic"]["iaSections"]) != ia:
+        errs.append(f"SEMANTIC_IA {sid}: semantic.iaSections {sorted(doc['semantic']['iaSections'])} != variant iaSections {ia}")
+    files = {c["ref"].rsplit(":", 1)[0] for c in doc["source"]["implementedBy"]}
+    if doc["source"]["sourceId"] not in files:
+        errs.append(f"SOURCE_ID {sid}: source.sourceId {doc['source']['sourceId']!r} is not a file cited in source.implementedBy {sorted(files)}")
+    if doc["retrievalEligible"] != retrieval_pin(sid):
+        errs.append(f"RETRIEVAL_PIN {sid}: retrievalEligible is {doc['retrievalEligible']!r}, pinned value is {retrieval_pin(sid)!r}")
+    if doc["slot"] == "overlay" and sid not in RETRIEVAL_INELIGIBLE:
+        errs.append(f"RETRIEVAL_PIN {sid}: slot is overlay but the id is not in the pinned RETRIEVAL_INELIGIBLE set")
+    return errs
+
+
+def validate_all_contracts(root=ROOT):
+    out = []
+    for p in sorted(glob.glob(os.path.join(root, "sections", "*.json"))):
+        with open(p, encoding="utf-8") as fh:
+            doc = json.load(fh)
+        out += [f"{os.path.basename(p)}: {e}" for e in validate_contract(doc, root)]
+    return out
 
 
 def words(text):
@@ -133,7 +189,7 @@ def walk_field(f, v, path, roles_doc, errs):
 # ------------------------------------------------------------------ template cross-reference
 def match_template(nodes, tnodes):
     """Greedy ordered match on (section, variant). Returns error strings."""
-    errs, j = [], 0
+    errs, j, seen = [], 0, set()
     keys = [(n["section"], n["variant"]) for n in tnodes]
     for i, n in enumerate(nodes):
         k = (n.get("section"), n.get("variant"))
@@ -152,11 +208,13 @@ def match_template(nodes, tnodes):
                 errs.append(f"TEMPLATE_EXTRA nodes[{i}] {k}: not in the declared template's node list")
             continue
         for skipped in range(j, found):
-            if tnodes[skipped]["required"]:
+            # a repeatable node already matched earlier is not "missing" just because the next node follows it
+            if tnodes[skipped]["required"] and skipped not in seen:
                 errs.append(f"TEMPLATE_MISSING required node {keys[skipped]} missing before nodes[{i}]")
+        seen.add(found)
         j = found if tnodes[found]["repeatable"] else found + 1
     for x in range(j, len(keys)):
-        if tnodes[x]["required"]:
+        if tnodes[x]["required"] and x not in seen:
             errs.append(f"TEMPLATE_MISSING required node {keys[x]} missing")
     return errs
 
@@ -178,7 +236,7 @@ class Ctx:
 
     def cat(self, n):
         s = self.sec(n)
-        return s["category"] if s else None
+        return category_of(s) if s else None
 
     def slot(self, n):
         s = self.sec(n)
@@ -331,6 +389,8 @@ def validate(spec, root=ROOT):
         s = sections.get(n.get("section"))
         if not s:
             continue
+        if "retrievalEligible" in n and n["retrievalEligible"] is not retrieval_pin(n["section"]):
+            errs.append(f"RETRIEVAL_PIN nodes[{i}]<{n['section']}>: retrievalEligible {n['retrievalEligible']!r} contradicts the pinned value {retrieval_pin(n['section'])!r}")
         walk_content(s["content"], n.get("content"), f"nodes[{i}]<{n['section']}>.content", roles_doc, errs)
         m = n.get("motion")
         if isinstance(m, dict):

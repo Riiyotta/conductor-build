@@ -1,22 +1,29 @@
 {
   "id": "docs.prev-next",
-  "category": "DOCS",
-  "iaSections": [
-    "docs.prev-next"
-  ],
+  "semantic": {
+    "semanticId": "docs.prev-next",
+    "category": "DOCS",
+    "iaSections": [
+      "docs.prev-next"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/docs/DocsPage.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/docs/DocsPage.jsx:47",
+        "quote": "function PrevNext({ previous, next }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "src/pages/docs/DocsPage.jsx:48",
+        "quote": "Rendered even when empty"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Continue reading: previous/next page cards (grid renders even when empty).",
-  "implementedBy": [
-    {
-      "ref": "src/pages/docs/DocsPage.jsx:47",
-      "quote": "function PrevNext({ previous, next }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "src/pages/docs/DocsPage.jsx:48",
-      "quote": "Rendered even when empty"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "docs.prev-next"

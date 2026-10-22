@@ -1,22 +1,33 @@
 {
   "id": "conversion.team-plan-form-scrollbox",
-  "category": "CONVERSION",
-  "iaSections": [
-    "conversion.team-plan-form-scrollbox"
-  ],
+  "semantic": {
+    "semanticId": "conversion.team-plan-form-scrollbox",
+    "category": "CONVERSION",
+    "iaSections": [
+      "conversion.team-plan-form-scrollbox"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/TeamPlan.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/TeamPlan.jsx:23",
+        "quote": "<div className=\"h-[450px] overflow-y-auto\">"
+      },
+      {
+        "ref": "src/components/pages/HubSpotForm.jsx:207",
+        "quote": "export default function HubSpotForm({ variant = 'enterprise', formId, className = '' }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:242",
+        "quote": "**The form lives in a 450px-tall scroll box**"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Capture a team-plan request (same fields) inside a clipped scroll box.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/TeamPlan.jsx:23",
-      "quote": "<div className=\"h-[450px] overflow-y-auto\">"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:242",
-      "quote": "**The form lives in a 450px-tall scroll box**"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "conversion.team-plan-form-scrollbox"

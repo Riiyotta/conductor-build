@@ -1,26 +1,33 @@
 {
   "id": "shell.header",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.header"
-  ],
+  "semantic": {
+    "semanticId": "shell.header",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.header"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Header.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Header.jsx:62",
+        "quote": "onClick={openDownload}"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:94",
+        "quote": "## 1. Header (sticky)"
+      },
+      {
+        "ref": "CLONE_SPEC_PAGES.md:36",
+        "quote": "**Active nav state** (new)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Persistent orientation and the single always-visible download entry point.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Header.jsx:62",
-      "quote": "onClick={openDownload}"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:94",
-      "quote": "## 1. Header (sticky)"
-    },
-    {
-      "ref": "CLONE_SPEC_PAGES.md:36",
-      "quote": "**Active nav state** (new)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.header"

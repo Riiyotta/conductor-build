@@ -344,6 +344,29 @@
         "sections/conversion.enterprise-contact-form.json",
         "sections/conversion.team-plan-form-scrollbox.json"
       ]
+    },
+    {
+      "id": "prose-article-enterprise-wrapper-height",
+      "kind": "review-recheck",
+      "specClaim": {
+        "ref": "CLONE_SPEC_PAGES.md:110",
+        "quote": "| Prose article | slack, join-us, enterprise (intro line)"
+      },
+      "corrected": "The ~1,280px figure for /enterprise is the article WRAPPER, which also contains the logo grid and the HubSpot form. Measured per node at 1440px, content.prose-article on /enterprise is only the 28px 'Trusted by builders at' label (the intro is the hero.page-header lead), proof.enterprise-logo-grid is 145px and conversion.enterprise-contact-form is 734px, so no node there exceeds 46% of the 1613px page. On /join-us the prose-article node is 887px (26% of 3377px) because the apply card, team photo and team cards that share the wrapper are their own nodes. /slack (63%) is the only prose-article page above 60% and is whitelisted as a single prose body.",
+      "evidence": [
+        {
+          "ref": "src/pages/Enterprise.jsx:33",
+          "quote": "<Prose className=\"mt-10\">"
+        },
+        {
+          "ref": "src/pages/Enterprise.jsx:34",
+          "quote": "<p>Trusted by builders at</p>"
+        }
+      ],
+      "affectsFiles": [
+        "sections/content.prose-article.json",
+        "extraction/measure_sections.mjs"
+      ]
     }
   ],
   "facts": {
@@ -502,6 +525,4110 @@
     "Live data (100k+ figure, latest changelog cards, team list, legal dates) will drift from the original; only structure is encoded.",
     "5 changelog images 404 on the live site too (CLONE_SPEC_DOCS.md 7.6); ten older posts render literal escaped <video> text (7.11). Neither is modelled.",
     "The sitemap itself is not stored in the project; ia.json is the authoritative route source, and verify_all.py re-derives routes from src/content when present.",
-    "ia.json's own validate.mjs prints soft notes that scope text for changelog.entry-list says [2] but computes 21 routes; hard invariants pass. Not a contradiction in this repo (21 is used)."
-  ]
+    "ia.json's own validate.mjs prints soft notes that scope text for changelog.entry-header says [2] but computes 21 routes; hard invariants pass. Not a contradiction in this repo (21 is used)."
+  ],
+  "sectionHeights": {
+    "viewport": {
+      "width": 1440,
+      "height": 900
+    },
+    "measuredFrom": "built clone served by vite preview, Chromium via Playwright, media requests aborted; see the header of extraction/measure_sections.mjs for the method",
+    "gate": {
+      "heroWarnPx": 1800,
+      "heroFailPx": 3000,
+      "shareWarnPct": 50,
+      "shareFailPct": 60
+    },
+    "gateNote": "Thresholds are ALSO pinned in extraction/verify_all.py (GATE); verify_all fails if this block disagrees. A HERO-category section taller than heroWarnPx warns and taller than heroFailPx fails; any single section instance holding more than shareWarnPct of its page warns and more than shareFailPct fails, unless a reviewed entry in wrapperGate.whitelist covers it. Heights are one number per node, or an array (one number per instance) for nodes that repeat on a page. Out-of-flow nodes (overlays) and nodes hidden at 1440px (shell.mobile-menu, shell.docs-subnav) are not measured. Share = node height / pageHeight.",
+    "routes": {
+      "/": {
+        "template": "template.home",
+        "pageHeight": 6121,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-sans/default": 333,
+          "hero.home/default": 1368,
+          "proof.trusted-logo-strip/default": 248,
+          "features.feature-shell/multiplayer": 640,
+          "features.feature-shell/cloud-sandbox": 684,
+          "features.feature-shell/byok": 684,
+          "features.feature-shell/anywhere": 613,
+          "proof.testimonials/default": 480,
+          "content.changelog-preview/default": 502,
+          "conversion.be-like-this-guy/default": 512
+        }
+      },
+      "/pricing": {
+        "template": "template.pricing",
+        "pageHeight": 3086,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.pricing-title/default": 40,
+          "content.pricing-plans/default": 412,
+          "proof.trusted-logo-strip/default": 248,
+          "content.pricing-faq/default": 1708
+        }
+      },
+      "/enterprise": {
+        "template": "template.enterprise",
+        "pageHeight": 1613,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.page-header/max-w-3xl": 104,
+          "content.prose-article/default": 28,
+          "proof.enterprise-logo-grid/default": 145,
+          "conversion.enterprise-contact-form/default": 734
+        }
+      },
+      "/team-plan": {
+        "template": "template.team-plan",
+        "pageHeight": 1176,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.page-header/max-w-2xl": 104,
+          "conversion.team-plan-form-scrollbox/default": 450
+        }
+      },
+      "/slack": {
+        "template": "template.prose-page",
+        "pageHeight": 1975,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.page-header/max-w-3xl": 104,
+          "content.prose-article/default": 1249
+        }
+      },
+      "/join-us": {
+        "template": "template.join-us",
+        "pageHeight": 3377,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.page-header/max-w-3xl": 104,
+          "content.prose-article/default": 887,
+          "content.join-us-apply-card/default": 74,
+          "content.join-us-team-photo/default": 432,
+          "content.join-us-team-cards/default": 1078
+        }
+      },
+      "/brandkit": {
+        "template": "template.brandkit",
+        "pageHeight": 3099,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "hero.brandkit-header/default": 209,
+          "content.brandkit-download-card/default": 90,
+          "content.brandkit-asset-cards/default": 846,
+          "content.brandkit-about/default": 1244
+        }
+      },
+      "/privacy": {
+        "template": "template.legal",
+        "pageHeight": 12070,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "content.legal-header/default": 120,
+          "content.legal-body/default": 11368
+        }
+      },
+      "/terms": {
+        "template": "template.legal",
+        "pageHeight": 16758,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "content.legal-header/default": 120,
+          "content.legal-body/default": 16036
+        }
+      },
+      "/docs": {
+        "template": "template.docs-page",
+        "pageHeight": 2238,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1562,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/api": {
+        "template": "template.docs-page",
+        "pageHeight": 9914,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 9239,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/api/mcp": {
+        "template": "template.docs-page",
+        "pageHeight": 5657,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 4982,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud": {
+        "template": "template.docs-page",
+        "pageHeight": 3510,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2834,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/cloud-computer": {
+        "template": "template.docs-page",
+        "pageHeight": 3757,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 3053,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/collaboration": {
+        "template": "template.docs-page",
+        "pageHeight": 2128,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1452,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/environment-variables": {
+        "template": "template.docs-page",
+        "pageHeight": 4274,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 139,
+          "docs.prose-body/default": 3555,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/faq": {
+        "template": "template.docs-page",
+        "pageHeight": 3376,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2700,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/getting-started": {
+        "template": "template.docs-page",
+        "pageHeight": 2551,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1875,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/cloud/working-with-cloud-workspaces": {
+        "template": "template.docs-page",
+        "pageHeight": 2236,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1560,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/agent-modes": {
+        "template": "template.docs-page",
+        "pageHeight": 4377,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 3674,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/git-worktrees": {
+        "template": "template.docs-page",
+        "pageHeight": 3960,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 3256,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/parallel-agents": {
+        "template": "template.docs-page",
+        "pageHeight": 3277,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2601,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/testing": {
+        "template": "template.docs-page",
+        "pageHeight": 1624,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 948,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/workflow": {
+        "template": "template.docs-page",
+        "pageHeight": 3108,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2432,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/concepts/workspaces-and-branches": {
+        "template": "template.docs-page",
+        "pageHeight": 4637,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 3933,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/configure-your-project": {
+        "template": "template.docs-page",
+        "pageHeight": 4425,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3749,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/faq": {
+        "template": "template.docs-page",
+        "pageHeight": 4275,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3600,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/first-workspace": {
+        "template": "template.docs-page",
+        "pageHeight": 3717,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 3014,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/configure-mcp-servers": {
+        "template": "template.docs-page",
+        "pageHeight": 5312,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 4609,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/configure-settings": {
+        "template": "template.docs-page",
+        "pageHeight": 6686,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 6010,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/git-worktrees/run-claude-code-with-git-worktrees": {
+        "template": "template.docs-page",
+        "pageHeight": 3442,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 2738,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/git-worktrees/run-codex-with-git-worktrees": {
+        "template": "template.docs-page",
+        "pageHeight": 3150,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 2446,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/issue-to-pr": {
+        "template": "template.docs-page",
+        "pageHeight": 3458,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2782,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/migrate-from-cursor": {
+        "template": "template.docs-page",
+        "pageHeight": 4729,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 4026,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/parallel-agents/run-multiple-claude-code-sessions": {
+        "template": "template.docs-page",
+        "pageHeight": 4147,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 167,
+          "docs.prose-body/default": 3399,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/parallel-agents/run-multiple-codex-sessions": {
+        "template": "template.docs-page",
+        "pageHeight": 4271,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 167,
+          "docs.prose-body/default": 3503,
+          "docs.prev-next/default": 102,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/parallel-agents/run-multiple-cursor-sessions": {
+        "template": "template.docs-page",
+        "pageHeight": 4170,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 167,
+          "docs.prose-body/default": 3423,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/providers": {
+        "template": "template.docs-page",
+        "pageHeight": 4190,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3515,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/repositories/linking-multiple-directories": {
+        "template": "template.docs-page",
+        "pageHeight": 1328,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 632,
+          "docs.prev-next/default": 102,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/repositories/monorepos": {
+        "template": "template.docs-page",
+        "pageHeight": 2039,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1363,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/review-and-merge": {
+        "template": "template.docs-page",
+        "pageHeight": 2308,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1632,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/guides/use-files-to-copy": {
+        "template": "template.docs-page",
+        "pageHeight": 4049,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3373,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/installation": {
+        "template": "template.docs-page",
+        "pageHeight": 1615,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 939,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/agent-behavior": {
+        "template": "template.docs-page",
+        "pageHeight": 2283,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1607,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/big-terminal-mode": {
+        "template": "template.docs-page",
+        "pageHeight": 2391,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1715,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/checkpoints": {
+        "template": "template.docs-page",
+        "pageHeight": 1387,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 711,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/checks": {
+        "template": "template.docs-page",
+        "pageHeight": 1740,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1064,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/cities": {
+        "template": "template.docs-page",
+        "pageHeight": 4057,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3381,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/conductor-json": {
+        "template": "template.docs-page",
+        "pageHeight": 3497,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2904,
+          "docs.prev-next/default": 0,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/deep-links": {
+        "template": "template.docs-page",
+        "pageHeight": 3558,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2882,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/diff-viewer": {
+        "template": "template.docs-page",
+        "pageHeight": 2052,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1376,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/environment-variables": {
+        "template": "template.docs-page",
+        "pageHeight": 2806,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2130,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/files-to-copy": {
+        "template": "template.docs-page",
+        "pageHeight": 5284,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 4609,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/harnesses": {
+        "template": "template.docs-page",
+        "pageHeight": 2911,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2235,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/harnesses/claude-code": {
+        "template": "template.docs-page",
+        "pageHeight": 2061,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1386,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/harnesses/codex": {
+        "template": "template.docs-page",
+        "pageHeight": 1595,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 919,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/harnesses/cursor": {
+        "template": "template.docs-page",
+        "pageHeight": 1879,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1203,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/harnesses/opencode": {
+        "template": "template.docs-page",
+        "pageHeight": 2541,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1865,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/keyboard-shortcuts": {
+        "template": "template.docs-page",
+        "pageHeight": 7956,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 7252,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/mcp": {
+        "template": "template.docs-page",
+        "pageHeight": 5882,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 5178,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/privacy": {
+        "template": "template.docs-page",
+        "pageHeight": 3060,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2384,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/remote-control": {
+        "template": "template.docs-page",
+        "pageHeight": 2134,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1540,
+          "docs.prev-next/default": 0,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/scripts": {
+        "template": "template.docs-page",
+        "pageHeight": 6792,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 6117,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/scripts/run": {
+        "template": "template.docs-page",
+        "pageHeight": 1290,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 696,
+          "docs.prev-next/default": 0,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/scripts/setup": {
+        "template": "template.docs-page",
+        "pageHeight": 1290,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 696,
+          "docs.prev-next/default": 0,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/scripts/share-with-teammates": {
+        "template": "template.docs-page",
+        "pageHeight": 2972,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 167,
+          "docs.prose-body/default": 2225,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/scripts/spotlight-testing": {
+        "template": "template.docs-page",
+        "pageHeight": 4077,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 3402,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/security-and-permissions": {
+        "template": "template.docs-page",
+        "pageHeight": 2000,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1324,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/settings": {
+        "template": "template.docs-page",
+        "pageHeight": 3444,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2769,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/settings/example": {
+        "template": "template.docs-page",
+        "pageHeight": 2148,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1473,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/settings/managed": {
+        "template": "template.docs-page",
+        "pageHeight": 2175,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1499,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/settings/reference": {
+        "template": "template.docs-page",
+        "pageHeight": 7161,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 6485,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/settings/user-project": {
+        "template": "template.docs-page",
+        "pageHeight": 5880,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 5205,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/shells": {
+        "template": "template.docs-page",
+        "pageHeight": 2090,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 1414,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/slash-commands": {
+        "template": "template.docs-page",
+        "pageHeight": 1323,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 647,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/todos": {
+        "template": "template.docs-page",
+        "pageHeight": 1290,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 614,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/reference/worktreeinclude": {
+        "template": "template.docs-page",
+        "pageHeight": 2855,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 96,
+          "docs.prose-body/default": 2179,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/docs/troubleshooting/issues": {
+        "template": "template.docs-page",
+        "pageHeight": 7305,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "docs.sidebar/default": 836,
+          "docs.breadcrumb/default": 20,
+          "docs.page-title/default": 124,
+          "docs.prose-body/default": 6602,
+          "docs.prev-next/default": 82,
+          "docs.toc/default": 836
+        }
+      },
+      "/changelog": {
+        "template": "template.changelog-index",
+        "pageHeight": 14587,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            2764,
+            3118,
+            578,
+            3094,
+            98,
+            64,
+            138,
+            138,
+            98,
+            1912
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/2": {
+        "template": "template.changelog-index",
+        "pageHeight": 22833,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            3168,
+            4175,
+            98,
+            2154,
+            162,
+            2910,
+            2902,
+            1468,
+            138,
+            3074
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/3": {
+        "template": "template.changelog-index",
+        "pageHeight": 21228,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1128,
+            5091,
+            354,
+            4918,
+            2424,
+            1482,
+            1804,
+            122,
+            138,
+            1182
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/4": {
+        "template": "template.changelog-index",
+        "pageHeight": 13181,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1040,
+            1218,
+            652,
+            1378,
+            1072,
+            630,
+            620,
+            632,
+            2590,
+            764
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/5": {
+        "template": "template.changelog-index",
+        "pageHeight": 20189,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1784,
+            4366,
+            1972,
+            366,
+            512,
+            1414,
+            1036,
+            1810,
+            2404,
+            1916
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/6": {
+        "template": "template.changelog-index",
+        "pageHeight": 22147,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            4895,
+            3533,
+            2698,
+            470,
+            246,
+            1888,
+            1710,
+            1906,
+            1584,
+            632
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/7": {
+        "template": "template.changelog-index",
+        "pageHeight": 12029,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1961,
+            943,
+            2696,
+            344,
+            548,
+            630,
+            320,
+            684,
+            670,
+            624
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/8": {
+        "template": "template.changelog-index",
+        "pageHeight": 9085,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            368,
+            24,
+            24,
+            1404,
+            910,
+            1415,
+            803,
+            280,
+            694,
+            578
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/9": {
+        "template": "template.changelog-index",
+        "pageHeight": 10597,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1204,
+            24,
+            1516,
+            1932,
+            938,
+            890,
+            406,
+            346,
+            418,
+            338
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/10": {
+        "template": "template.changelog-index",
+        "pageHeight": 11743,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            96,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            24,
+            2424,
+            48,
+            795,
+            2363,
+            668,
+            386,
+            738,
+            944,
+            732
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/11": {
+        "template": "template.changelog-index",
+        "pageHeight": 10520,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            906,
+            1118,
+            484,
+            1017,
+            1556,
+            1336,
+            752,
+            48,
+            24,
+            694
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/12": {
+        "template": "template.changelog-index",
+        "pageHeight": 12042,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            96,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            732,
+            1660,
+            1989,
+            2610,
+            48,
+            330,
+            670,
+            638,
+            376,
+            368
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/13": {
+        "template": "template.changelog-index",
+        "pageHeight": 8667,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            96,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1032,
+            352,
+            224,
+            604,
+            445,
+            1005,
+            905,
+            580,
+            458,
+            440
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/14": {
+        "template": "template.changelog-index",
+        "pageHeight": 9845,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            96,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            96
+          ],
+          "changelog.entry-body/default": [
+            874,
+            1162,
+            2420,
+            954,
+            196,
+            128,
+            632,
+            182,
+            182,
+            458
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/15": {
+        "template": "template.changelog-index",
+        "pageHeight": 12445,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1146,
+            1734,
+            581,
+            973,
+            1869,
+            1428,
+            772,
+            718,
+            368,
+            272
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/16": {
+        "template": "template.changelog-index",
+        "pageHeight": 8974,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            970,
+            1877,
+            758,
+            256,
+            272,
+            240,
+            908,
+            368,
+            420,
+            320
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/17": {
+        "template": "template.changelog-index",
+        "pageHeight": 7002,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            322,
+            500,
+            272,
+            851,
+            288,
+            288,
+            1200,
+            314,
+            80,
+            302
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/18": {
+        "template": "template.changelog-index",
+        "pageHeight": 10716,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            2056,
+            785,
+            1177,
+            320,
+            733,
+            1384,
+            438,
+            474,
+            362,
+            378
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/19": {
+        "template": "template.changelog-index",
+        "pageHeight": 12179,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            842,
+            678,
+            899,
+            304,
+            976,
+            3494,
+            652,
+            450,
+            886,
+            414
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/20": {
+        "template": "template.changelog-index",
+        "pageHeight": 13078,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            960,
+            1380,
+            724,
+            3227,
+            524,
+            470,
+            272,
+            776,
+            1192,
+            968
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/page/21": {
+        "template": "template.changelog-index",
+        "pageHeight": 7440,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.entry-header/index": [
+            60,
+            60,
+            60,
+            60,
+            60,
+            60,
+            60
+          ],
+          "changelog.entry-body/default": [
+            1173,
+            1242,
+            767,
+            810,
+            476,
+            604,
+            326
+          ],
+          "changelog.pagination/default": 105
+        }
+      },
+      "/changelog/0.91.0-a-mostly-boring-update": {
+        "template": "template.changelog-post",
+        "pageHeight": 3474,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2764
+        }
+      },
+      "/changelog/0.90.0-conductor-for-ios": {
+        "template": "template.changelog-post",
+        "pageHeight": 3828,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3118
+        }
+      },
+      "/changelog/0.89.1-gpt-6-1-sol": {
+        "template": "template.changelog-post",
+        "pageHeight": 1684,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 974
+        }
+      },
+      "/changelog/0.89.0-sign-in-with-chatgpt": {
+        "template": "template.changelog-post",
+        "pageHeight": 4284,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3574
+        }
+      },
+      "/changelog/0.87.6-claude-sonnet-5-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1288,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 578
+        }
+      },
+      "/changelog/0.87.5-model-search": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 64
+        }
+      },
+      "/changelog/0.87.3-gpt-6-sol-and-gpt-6-luna": {
+        "template": "template.changelog-post",
+        "pageHeight": 1300,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 590
+        }
+      },
+      "/changelog/0.87.2-claude-opus-5-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1291,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 581
+        }
+      },
+      "/changelog/0.87.1-grok-4-7": {
+        "template": "template.changelog-post",
+        "pageHeight": 1185,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 475
+        }
+      },
+      "/changelog/0.87.0-search-across-files-opencode-2-0": {
+        "template": "template.changelog-post",
+        "pageHeight": 3249,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2539
+        }
+      },
+      "/changelog/0.86.0-share-your-loadouts": {
+        "template": "template.changelog-post",
+        "pageHeight": 3878,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3168
+        }
+      },
+      "/changelog/0.85.0-sections-routines-and-a-new-model-picker": {
+        "template": "template.changelog-post",
+        "pageHeight": 4885,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4175
+        }
+      },
+      "/changelog/0.84.2-gpt-6-astra": {
+        "template": "template.changelog-post",
+        "pageHeight": 1212,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 502
+        }
+      },
+      "/changelog/0.84.0-edit-files-directly-in-diffs": {
+        "template": "template.changelog-post",
+        "pageHeight": 4147,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3437
+        }
+      },
+      "/changelog/0.83.2-claude-fable-5-1": {
+        "template": "template.changelog-post",
+        "pageHeight": 1352,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 642
+        }
+      },
+      "/changelog/0.83.0-auto-port-forwarding": {
+        "template": "template.changelog-post",
+        "pageHeight": 4087,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3377
+        }
+      },
+      "/changelog/0.82.0-conductor-mcp": {
+        "template": "template.changelog-post",
+        "pageHeight": 4999,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4289
+        }
+      },
+      "/changelog/0.81.0-cloud-polish-2": {
+        "template": "template.changelog-post",
+        "pageHeight": 2178,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1468
+        }
+      },
+      "/changelog/0.80.1-grok-4-6": {
+        "template": "template.changelog-post",
+        "pageHeight": 1264,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 554
+        }
+      },
+      "/changelog/0.80.0-stacks": {
+        "template": "template.changelog-post",
+        "pageHeight": 5155,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4445
+        }
+      },
+      "/changelog/0.79.0-cloud-polish-1": {
+        "template": "template.changelog-post",
+        "pageHeight": 1838,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1128
+        }
+      },
+      "/changelog/0.78.0-introducing-conductor-cloud": {
+        "template": "template.changelog-post",
+        "pageHeight": 5801,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 5091
+        }
+      },
+      "/changelog/0.77.2-claude-opus-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1468,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 758
+        }
+      },
+      "/changelog/0.77.0-early-access-multiplayer-api-background-tasks-performance": {
+        "template": "template.changelog-post",
+        "pageHeight": 7166,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 6456
+        }
+      },
+      "/changelog/0.76.0-bug-squashathon": {
+        "template": "template.changelog-post",
+        "pageHeight": 4094,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3384
+        }
+      },
+      "/changelog/0.75.0-polish": {
+        "template": "template.changelog-post",
+        "pageHeight": 3178,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2468
+        }
+      },
+      "/changelog/0.74.0-lots-of-little-things": {
+        "template": "template.changelog-post",
+        "pageHeight": 2514,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1804
+        }
+      },
+      "/changelog/0.73.3-gpt-5-6": {
+        "template": "template.changelog-post",
+        "pageHeight": 1256,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 546
+        }
+      },
+      "/changelog/0.73.2-grok-4-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1266,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 556
+        }
+      },
+      "/changelog/0.73.0-pr-page": {
+        "template": "template.changelog-post",
+        "pageHeight": 2345,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1635
+        }
+      },
+      "/changelog/0.72.0-polish-and-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1750,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1040
+        }
+      },
+      "/changelog/0.71.0-workspace-and-chat-links": {
+        "template": "template.changelog-post",
+        "pageHeight": 1928,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1218
+        }
+      },
+      "/changelog/0.70.1-claude-sonnet-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1362,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 652
+        }
+      },
+      "/changelog/0.70.0-multiple-run-scripts": {
+        "template": "template.changelog-post",
+        "pageHeight": 2088,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1378
+        }
+      },
+      "/changelog/0.69.0-opencode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1782,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1072
+        }
+      },
+      "/changelog/0.68.0-markdown-frontmatter": {
+        "template": "template.changelog-post",
+        "pageHeight": 1774,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1064
+        }
+      },
+      "/changelog/0.67.0-fixes-and-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1330,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 620
+        }
+      },
+      "/changelog/0.66.0-create-workspace-from-issue": {
+        "template": "template.changelog-post",
+        "pageHeight": 1342,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 632
+        }
+      },
+      "/changelog/0.65.0-codex-goal-support": {
+        "template": "template.changelog-post",
+        "pageHeight": 3554,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2844
+        }
+      },
+      "/changelog/0.64.0-claude-fable-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 1474,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 764
+        }
+      },
+      "/changelog/0.63.0-cursor-support-dispatcher": {
+        "template": "template.changelog-post",
+        "pageHeight": 2494,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1784
+        }
+      },
+      "/changelog/0.62.0-repo-settings-browser-preview": {
+        "template": "template.changelog-post",
+        "pageHeight": 5076,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4366
+        }
+      },
+      "/changelog/0.61.0-ultracode-git-improve": {
+        "template": "template.changelog-post",
+        "pageHeight": 3258,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2548
+        }
+      },
+      "/changelog/0.59.0-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1356,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 622
+        }
+      },
+      "/changelog/0.58.0-polish": {
+        "template": "template.changelog-post",
+        "pageHeight": 1222,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 512
+        }
+      },
+      "/changelog/0.57.0-sync-agent-configs": {
+        "template": "template.changelog-post",
+        "pageHeight": 2522,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1812
+        }
+      },
+      "/changelog/0.56.0-settings-scrolls": {
+        "template": "template.changelog-post",
+        "pageHeight": 2626,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1916
+        }
+      },
+      "/changelog/0.55.0-per-repo-spotlight-html-previews": {
+        "template": "template.changelog-post",
+        "pageHeight": 2934,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2224
+        }
+      },
+      "/changelog/0.54.0-new-queue-diff-diffs": {
+        "template": "template.changelog-post",
+        "pageHeight": 6455,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 5745
+        }
+      },
+      "/changelog/0.52.0-sounds-colors": {
+        "template": "template.changelog-post",
+        "pageHeight": 3310,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2600
+        }
+      },
+      "/changelog/0.51.0-codex-is-more-beautiful": {
+        "template": "template.changelog-post",
+        "pageHeight": 5605,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4895
+        }
+      },
+      "/changelog/0.50.0-steering": {
+        "template": "template.changelog-post",
+        "pageHeight": 5203,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4493
+        }
+      },
+      "/changelog/0.49.0-conductor-allegro-gpt-5-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 3730,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3020
+        }
+      },
+      "/changelog/0.48.5-effort": {
+        "template": "template.changelog-post",
+        "pageHeight": 1424,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 714
+        }
+      },
+      "/changelog/0.48.2-claude-opus-4-7": {
+        "template": "template.changelog-post",
+        "pageHeight": 1150,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 440
+        }
+      },
+      "/changelog/0.48.0-big-terminal-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 5471,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 4761
+        }
+      },
+      "/changelog/0.46.0-bug-fixes-instant-archiving-terminal": {
+        "template": "template.changelog-post",
+        "pageHeight": 2900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2190
+        }
+      },
+      "/changelog/0.45.0-file-previews-codex-personalities": {
+        "template": "template.changelog-post",
+        "pageHeight": 4094,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3384
+        }
+      },
+      "/changelog/0.44.0-new-sidebar-rebuilt-composer-codex-checkpoints": {
+        "template": "template.changelog-post",
+        "pageHeight": 3519,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2809
+        }
+      },
+      "/changelog/0.43.0-codex-skills-plan-mode-fast-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 2047,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1337
+        }
+      },
+      "/changelog/0.41.0-tool-approval-codex-plan-mode-beta": {
+        "template": "template.changelog-post",
+        "pageHeight": 2671,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1961
+        }
+      },
+      "/changelog/0.40.1-fast-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1653,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 943
+        }
+      },
+      "/changelog/0.39.0-insta-summarize-command-palette-opus-4-6": {
+        "template": "template.changelog-post",
+        "pageHeight": 3406,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2696
+        }
+      },
+      "/changelog/0.38.5-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1054,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 344
+        }
+      },
+      "/changelog/0.38.4-direnv-support-opus-4-6-1m": {
+        "template": "template.changelog-post",
+        "pageHeight": 1979,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1245
+        }
+      },
+      "/changelog/0.38.3-multiline-comments": {
+        "template": "template.changelog-post",
+        "pageHeight": 1770,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1060
+        }
+      },
+      "/changelog/0.38.1-0.38.2-new-terminal-perf-issues": {
+        "template": "template.changelog-post",
+        "pageHeight": 1030,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 320
+        }
+      },
+      "/changelog/0.38.0-gpt-5-4": {
+        "template": "template.changelog-post",
+        "pageHeight": 2222,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1512
+        }
+      },
+      "/changelog/0.37.1-polish-and-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1860,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1150
+        }
+      },
+      "/changelog/0.37.0-manual-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1334,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 624
+        }
+      },
+      "/changelog/0.36.9-performance-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1078,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 368
+        }
+      },
+      "/changelog/0.36.7-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 24
+        }
+      },
+      "/changelog/0.36.6-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 24
+        }
+      },
+      "/changelog/0.36.5-open-from-linear-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 2114,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1404
+        }
+      },
+      "/changelog/0.36.4-next-workspace": {
+        "template": "template.changelog-post",
+        "pageHeight": 1620,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 910
+        }
+      },
+      "/changelog/0.36.3-submit-a-prompt-sdk-memory-leaks": {
+        "template": "template.changelog-post",
+        "pageHeight": 2125,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1415
+        }
+      },
+      "/changelog/0.36.2-model-picker-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1513,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 803
+        }
+      },
+      "/changelog/0.36.1-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 990,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 280
+        }
+      },
+      "/changelog/0.36.0-sonnet-4-6-pierre-diffs": {
+        "template": "template.changelog-post",
+        "pageHeight": 2712,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2002
+        }
+      },
+      "/changelog/0.35.3-reliability-and-performance": {
+        "template": "template.changelog-post",
+        "pageHeight": 1442,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 732
+        }
+      },
+      "/changelog/0.35.2-group-workspaces-by-repo-gpt-5-3-codex-spark": {
+        "template": "template.changelog-post",
+        "pageHeight": 1914,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1204
+        }
+      },
+      "/changelog/0.35.1-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 24
+        }
+      },
+      "/changelog/0.35.0-workspace-status": {
+        "template": "template.changelog-post",
+        "pageHeight": 2226,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1516
+        }
+      },
+      "/changelog/0.34.2-chat-summaries-re-run-actions-latex": {
+        "template": "template.changelog-post",
+        "pageHeight": 2642,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1932
+        }
+      },
+      "/changelog/0.34.1-editable-pr-titles-and-descriptions": {
+        "template": "template.changelog-post",
+        "pageHeight": 1648,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 938
+        }
+      },
+      "/changelog/0.34.0-opus-4-6-and-gpt-5-3-codex": {
+        "template": "template.changelog-post",
+        "pageHeight": 1600,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 890
+        }
+      },
+      "/changelog/0.33.5-better-archiving": {
+        "template": "template.changelog-post",
+        "pageHeight": 1596,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 886
+        }
+      },
+      "/changelog/0.33.4-git-panel-grouping-and-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1536,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 826
+        }
+      },
+      "/changelog/0.33.3-performance-improvements-file-context-menu": {
+        "template": "template.changelog-post",
+        "pageHeight": 1608,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 898
+        }
+      },
+      "/changelog/0.33.2-view-github-actions-in-conductor": {
+        "template": "template.changelog-post",
+        "pageHeight": 1528,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 818
+        }
+      },
+      "/changelog/0.33.1-slash-command-bug-fix": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 24
+        }
+      },
+      "/changelog/0.33.0-tasks-typography": {
+        "template": "template.changelog-post",
+        "pageHeight": 3134,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2424
+        }
+      },
+      "/changelog/0.32.2-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 48
+        }
+      },
+      "/changelog/0.32.1-rerun-setup-scripts": {
+        "template": "template.changelog-post",
+        "pageHeight": 1505,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 795
+        }
+      },
+      "/changelog/0.32.0-github-issues-graphite-stacks-continue-chats-table-of-contents": {
+        "template": "template.changelog-post",
+        "pageHeight": 3109,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 96,
+          "changelog.entry-body/default": 2363
+        }
+      },
+      "/changelog/0.31.3-askuserquestion-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1378,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 668
+        }
+      },
+      "/changelog/0.31.2-general-agent-preferences": {
+        "template": "template.changelog-post",
+        "pageHeight": 1410,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 700
+        }
+      },
+      "/changelog/0.31.1-checks-tab": {
+        "template": "template.changelog-post",
+        "pageHeight": 1928,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1218
+        }
+      },
+      "/changelog/0.31.0-search-chats-add-scripts-in-the-ui-and-view-setup-script-logs": {
+        "template": "template.changelog-post",
+        "pageHeight": 3574,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2864
+        }
+      },
+      "/changelog/0.30.0-bug-fixes-claude-code-for-chrome-hand-off-plans": {
+        "template": "template.changelog-post",
+        "pageHeight": 2043,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1333
+        }
+      },
+      "/changelog/0.29.5-bug-fixes-claude-can-now-read-your-terminal": {
+        "template": "template.changelog-post",
+        "pageHeight": 1616,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 906
+        }
+      },
+      "/changelog/0.29.4-pr-checks-new-shortcuts": {
+        "template": "template.changelog-post",
+        "pageHeight": 1828,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1118
+        }
+      },
+      "/changelog/0.29.3-composer-improvements-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1194,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 484
+        }
+      },
+      "/changelog/0.29.2-vercel-deployments-simplified-thinking-levels": {
+        "template": "template.changelog-post",
+        "pageHeight": 1727,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1017
+        }
+      },
+      "/changelog/0.29.1-customize-prompts-mark-files-as-viewed": {
+        "template": "template.changelog-post",
+        "pageHeight": 2266,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1556
+        }
+      },
+      "/changelog/0.29.0-claude-can-now-comment-on-your-code": {
+        "template": "template.changelog-post",
+        "pageHeight": 2347,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1637
+        }
+      },
+      "/changelog/0.28.7-change-target-branch": {
+        "template": "template.changelog-post",
+        "pageHeight": 1850,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1140
+        }
+      },
+      "/changelog/0.28.6-bug-fix": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 48
+        }
+      },
+      "/changelog/0.28.5-bug-fix": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 24
+        }
+      },
+      "/changelog/0.28.4-todos": {
+        "template": "template.changelog-post",
+        "pageHeight": 2493,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1783
+        }
+      },
+      "/changelog/0.28.3-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1442,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 732
+        }
+      },
+      "/changelog/0.28.2-bug-fixes-legendary-cities-an-experiment": {
+        "template": "template.changelog-post",
+        "pageHeight": 2370,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1660
+        }
+      },
+      "/changelog/0.28.1-context-directory-set-working-directories": {
+        "template": "template.changelog-post",
+        "pageHeight": 2699,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1989
+        }
+      },
+      "/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more": {
+        "template": "template.changelog-post",
+        "pageHeight": 4034,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 96,
+          "changelog.entry-body/default": 3288
+        }
+      },
+      "/changelog/0.27.2-onboarding-bug-fix": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 48
+        }
+      },
+      "/changelog/0.27.1-clickable-file-mentions": {
+        "template": "template.changelog-post",
+        "pageHeight": 1139,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 429
+        }
+      },
+      "/changelog/0.27.0-notes-tab-gpt-5-2-codex-more-fonts": {
+        "template": "template.changelog-post",
+        "pageHeight": 2489,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1779
+        }
+      },
+      "/changelog/0.26.0-search-workspaces-view-files-from-chat": {
+        "template": "template.changelog-post",
+        "pageHeight": 2010,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1300
+        }
+      },
+      "/changelog/0.25.13-performance-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1086,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 376
+        }
+      },
+      "/changelog/0.25.12-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1078,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 368
+        }
+      },
+      "/changelog/0.25.11-fetch-comments-from-github-mark-workspaces-as-unread": {
+        "template": "template.changelog-post",
+        "pageHeight": 1742,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1032
+        }
+      },
+      "/changelog/0.25.10-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1062,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 352
+        }
+      },
+      "/changelog/0.25.9-onboarding-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 934,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 224
+        }
+      },
+      "/changelog/0.25.8-gpt-5-2": {
+        "template": "template.changelog-post",
+        "pageHeight": 1314,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 604
+        }
+      },
+      "/changelog/0.25.7-env-bug-fix-vercel-ci-status-checks": {
+        "template": "template.changelog-post",
+        "pageHeight": 1155,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 445
+        }
+      },
+      "/changelog/0.25.6-multiple-git-repos-fork-workspaces": {
+        "template": "template.changelog-post",
+        "pageHeight": 1715,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1005
+        }
+      },
+      "/changelog/0.25.5-approve-plans-with-feedback-perf-improvements-gh-token-support": {
+        "template": "template.changelog-post",
+        "pageHeight": 1911,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 96,
+          "changelog.entry-body/default": 1165
+        }
+      },
+      "/changelog/0.25.4-sync-pr-comments-from-github": {
+        "template": "template.changelog-post",
+        "pageHeight": 1949,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1239
+        }
+      },
+      "/changelog/0.25.3-pinned-workspaces": {
+        "template": "template.changelog-post",
+        "pageHeight": 1377,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 667
+        }
+      },
+      "/changelog/0.25.2-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1150,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 440
+        }
+      },
+      "/changelog/0.25.1-conductor-wrapped": {
+        "template": "template.changelog-post",
+        "pageHeight": 1584,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 874
+        }
+      },
+      "/changelog/0.25.0-workspace-storage-improvements-ai-response-metadata-and-slash-commands": {
+        "template": "template.changelog-post",
+        "pageHeight": 1908,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 96,
+          "changelog.entry-body/default": 1162
+        }
+      },
+      "/changelog/0.24.0-improved-codex-quick-start": {
+        "template": "template.changelog-post",
+        "pageHeight": 3130,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2420
+        }
+      },
+      "/changelog/0.23.3-repo-details": {
+        "template": "template.changelog-post",
+        "pageHeight": 1664,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 954
+        }
+      },
+      "/changelog/0.23.2-checkpointing-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 906,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 196
+        }
+      },
+      "/changelog/0.23.1-opus-4-5-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 128
+        }
+      },
+      "/changelog/0.23.0-opus-4-5-and-better-scrolling": {
+        "template": "template.changelog-post",
+        "pageHeight": 2104,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1394
+        }
+      },
+      "/changelog/0.22.8-onboarding-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1372,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 662
+        }
+      },
+      "/changelog/0.22.7-send-plans-to-new-chats": {
+        "template": "template.changelog-post",
+        "pageHeight": 1372,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 662
+        }
+      },
+      "/changelog/0.22.6-conversation-summaries-codex-diffs-and-custom-review-models": {
+        "template": "template.changelog-post",
+        "pageHeight": 2387,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 96,
+          "changelog.entry-body/default": 1641
+        }
+      },
+      "/changelog/0.22.5-gpt-5-1-codex-max-improved-diff-viewer": {
+        "template": "template.changelog-post",
+        "pageHeight": 1856,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1146
+        }
+      },
+      "/changelog/0.22.4-expand-terminal-env-vars-and-github-enterprise": {
+        "template": "template.changelog-post",
+        "pageHeight": 2444,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1734
+        }
+      },
+      "/changelog/0.22.2-codex-cancellation": {
+        "template": "template.changelog-post",
+        "pageHeight": 1291,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 581
+        }
+      },
+      "/changelog/0.22.1-gpt-5-1": {
+        "template": "template.changelog-post",
+        "pageHeight": 1683,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 973
+        }
+      },
+      "/changelog/0.22.0-code-review-and-historical-diffs": {
+        "template": "template.changelog-post",
+        "pageHeight": 2579,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1869
+        }
+      },
+      "/changelog/0.21.0-plan-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 2138,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1428
+        }
+      },
+      "/changelog/0.20.0-file-picker-and-chat-titles": {
+        "template": "template.changelog-post",
+        "pageHeight": 2193,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1483
+        }
+      },
+      "/changelog/0.19.0-checkpoints": {
+        "template": "template.changelog-post",
+        "pageHeight": 2356,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1646
+        }
+      },
+      "/changelog/0.18.4-better-create-pr-prompt": {
+        "template": "template.changelog-post",
+        "pageHeight": 1710,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1000
+        }
+      },
+      "/changelog/0.18.3-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 982,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 272
+        }
+      },
+      "/changelog/0.18.0-codex": {
+        "template": "template.changelog-post",
+        "pageHeight": 1680,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 970
+        }
+      },
+      "/changelog/0.17.5-tab-beautification": {
+        "template": "template.changelog-post",
+        "pageHeight": 2587,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1877
+        }
+      },
+      "/changelog/0.17.4-git-status-in-sidebar": {
+        "template": "template.changelog-post",
+        "pageHeight": 1468,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 758
+        }
+      },
+      "/changelog/0.17.3-performance-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 966,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 256
+        }
+      },
+      "/changelog/0.17.2-misc-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 982,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 272
+        }
+      },
+      "/changelog/0.17.1-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 950,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 240
+        }
+      },
+      "/changelog/0.17.0-multiple-chats": {
+        "template": "template.changelog-post",
+        "pageHeight": 1618,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 908
+        }
+      },
+      "/changelog/0.16.1-diff-viewer-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1078,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 368
+        }
+      },
+      "/changelog/0.16.0-diff-viewer-file-explorer": {
+        "template": "template.changelog-post",
+        "pageHeight": 2043,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1333
+        }
+      },
+      "/changelog/0.15.2-create-workspace-from-pr": {
+        "template": "template.changelog-post",
+        "pageHeight": 1030,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 320
+        }
+      },
+      "/changelog/0.15.1-claude-s-thinking": {
+        "template": "template.changelog-post",
+        "pageHeight": 1032,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 322
+        }
+      },
+      "/changelog/0.15.0-linear": {
+        "template": "template.changelog-post",
+        "pageHeight": 1210,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 500
+        }
+      },
+      "/changelog/0.14.7-git-diff-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 982,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 272
+        }
+      },
+      "/changelog/0.14.6-markdown-preview": {
+        "template": "template.changelog-post",
+        "pageHeight": 1561,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 851
+        }
+      },
+      "/changelog/0.14.5-zoom-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 998,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 288
+        }
+      },
+      "/changelog/0.14.3-performance-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 998,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 288
+        }
+      },
+      "/changelog/0.14.1-new-diff-viewer": {
+        "template": "template.changelog-post",
+        "pageHeight": 1910,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1200
+        }
+      },
+      "/changelog/0.14.0-command-palette": {
+        "template": "template.changelog-post",
+        "pageHeight": 1048,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 338
+        }
+      },
+      "/changelog/0.13.8-fixes-for-fish-users": {
+        "template": "template.changelog-post",
+        "pageHeight": 900,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 80
+        }
+      },
+      "/changelog/0.13.6-run-on-bedrock-vertex-or-custom-provider": {
+        "template": "template.changelog-post",
+        "pageHeight": 1492,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 782
+        }
+      },
+      "/changelog/0.13.2-sonnet-4-5-new-workspace-page": {
+        "template": "template.changelog-post",
+        "pageHeight": 2766,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2056
+        }
+      },
+      "/changelog/0.12.1-improved-plan-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1495,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 785
+        }
+      },
+      "/changelog/0.12.0-forward-failing-checks-to-claude": {
+        "template": "template.changelog-post",
+        "pageHeight": 1911,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1177
+        }
+      },
+      "/changelog/0.11.6-improved-cancelling": {
+        "template": "template.changelog-post",
+        "pageHeight": 1030,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 320
+        }
+      },
+      "/changelog/0.11.4-the-return-of-big-terminal-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1443,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 733
+        }
+      },
+      "/changelog/0.11.3-new-onboarding": {
+        "template": "template.changelog-post",
+        "pageHeight": 2094,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1384
+        }
+      },
+      "/changelog/0.11.0-conductor-json": {
+        "template": "template.changelog-post",
+        "pageHeight": 1610,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 900
+        }
+      },
+      "/changelog/0.10.5-terminal-performance-pt-2": {
+        "template": "template.changelog-post",
+        "pageHeight": 1637,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 927
+        }
+      },
+      "/changelog/0.10.3-terminal-performance": {
+        "template": "template.changelog-post",
+        "pageHeight": 1552,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 842
+        }
+      },
+      "/changelog/0.10.2-toggle-big-terminal-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1398,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 688
+        }
+      },
+      "/changelog/0.10.1-checkout-prs-in-conductor": {
+        "template": "template.changelog-post",
+        "pageHeight": 1552,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 842
+        }
+      },
+      "/changelog/0.10.0-code-review": {
+        "template": "template.changelog-post",
+        "pageHeight": 1388,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 678
+        }
+      },
+      "/changelog/0.9.3-new-diff-review-panel-faster-claude": {
+        "template": "template.changelog-post",
+        "pageHeight": 1609,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 899
+        }
+      },
+      "/changelog/0.9.2-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1014,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 304
+        }
+      },
+      "/changelog/0.9.1-open-dev-scripts-and-more-performant-long-chats": {
+        "template": "template.changelog-post",
+        "pageHeight": 1686,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 976
+        }
+      },
+      "/changelog/0.9.0-run-script-hooks-and-custom-fonts": {
+        "template": "template.changelog-post",
+        "pageHeight": 4204,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3494
+        }
+      },
+      "/changelog/0.8.2-performance-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1362,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 652
+        }
+      },
+      "/changelog/0.8.1-suggested-git-actions": {
+        "template": "template.changelog-post",
+        "pageHeight": 1640,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 930
+        }
+      },
+      "/changelog/0.8.0-integrate-with-linear-faster-claude": {
+        "template": "template.changelog-post",
+        "pageHeight": 2935,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 2225
+        }
+      },
+      "/changelog/0.7.3-plan-mode": {
+        "template": "template.changelog-post",
+        "pageHeight": 1328,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 618
+        }
+      },
+      "/changelog/0.7.2-add-terminal-context-to-chat": {
+        "template": "template.changelog-post",
+        "pageHeight": 1670,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 960
+        }
+      },
+      "/changelog/0.7.0-we-no-longer-burn-your-cpu-hopefully": {
+        "template": "template.changelog-post",
+        "pageHeight": 2090,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1380
+        }
+      },
+      "/changelog/0.6.1-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 1434,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 724
+        }
+      },
+      "/changelog/0.6.0-a-new-look": {
+        "template": "template.changelog-post",
+        "pageHeight": 3937,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 3227
+        }
+      },
+      "/changelog/0.5.0-gpt-5": {
+        "template": "template.changelog-post",
+        "pageHeight": 2100,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1390
+        }
+      },
+      "/changelog/0.3.2-opus-4-1": {
+        "template": "template.changelog-post",
+        "pageHeight": 1558,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 848
+        }
+      },
+      "/changelog/0.3.1-bug-fixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 982,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 272
+        }
+      },
+      "/changelog/0.3.0-git-diff-view": {
+        "template": "template.changelog-post",
+        "pageHeight": 2411,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1701
+        }
+      },
+      "/changelog/0.2.2-bugfixes": {
+        "template": "template.changelog-post",
+        "pageHeight": 2623,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1913
+        }
+      },
+      "/changelog/0.2.0-local-repositories-agents": {
+        "template": "template.changelog-post",
+        "pageHeight": 2551,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1841
+        }
+      },
+      "/changelog/0.1.1-slash-commands-custom-providers": {
+        "template": "template.changelog-post",
+        "pageHeight": 1883,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1173
+        }
+      },
+      "/changelog/0.1.0-mcps-message-queues": {
+        "template": "template.changelog-post",
+        "pageHeight": 1952,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1242
+        }
+      },
+      "/changelog/0.0.21-fine-grained-github-permissions": {
+        "template": "template.changelog-post",
+        "pageHeight": 1501,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 767
+        }
+      },
+      "/changelog/0.0.20-attachments": {
+        "template": "template.changelog-post",
+        "pageHeight": 1520,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 810
+        }
+      },
+      "/changelog/0.0.19-misc-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1186,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 476
+        }
+      },
+      "/changelog/0.0.17-github-integration": {
+        "template": "template.changelog-post",
+        "pageHeight": 2248,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 1538
+        }
+      },
+      "/changelog/0.0.16-terminal-improvements": {
+        "template": "template.changelog-post",
+        "pageHeight": 1516,
+        "sections": {
+          "shell.header/default": 57,
+          "shell.footer-mono/default": 333,
+          "changelog.back-link/default": 20,
+          "changelog.entry-header/post": 60,
+          "changelog.entry-body/default": 806
+        }
+      }
+    }
+  },
+  "wrapperGate": {
+    "description": "Whole-page-wrapper quality gate: a section contract must describe a section, not a page. Run by verify_all.py check [wrapper-gate] against sectionHeights.",
+    "parallelColumns": {
+      "sections": [
+        "docs.sidebar",
+        "docs.toc"
+      ],
+      "justification": "Sticky viewport-height side columns (836px) that sit beside the article rather than stacked with it; on short docs pages 836px is over 60% of the page height but the column is not a wrapper around the page. Excluded from the share rule only (pinned in verify_all.PARALLEL_COLUMNS); the HERO height rule still applies to them."
+    },
+    "whitelist": [
+      {
+        "template": "template.legal",
+        "section": "content.legal-body/default",
+        "maxPx": 16100,
+        "maxSharePct": 96,
+        "reviewed": "2026-10-22",
+        "justification": "The body of a legal document is the page: /privacy (11368px) and /terms (16036px) are one continuous run of bold-titled paragraphs with no distinct sub-parts to split into (no table of contents exists on either page). The header (title and date line) is already its own node."
+      },
+      {
+        "template": "template.docs-page",
+        "section": "docs.prose-body/default",
+        "maxPx": 9300,
+        "maxSharePct": 94,
+        "reviewed": "2026-10-22",
+        "justification": "The markdown body of a documentation page; the breadcrumb, title, prev/next pager, sidebar and TOC are already separate nodes. Long reference pages (/docs/api is 9239px) are prose by nature and cannot be split without inventing section boundaries the original does not have."
+      },
+      {
+        "template": "template.changelog-post",
+        "section": "changelog.entry-body/default",
+        "maxPx": 6500,
+        "maxSharePct": 91,
+        "reviewed": "2026-10-22",
+        "justification": "The release-notes body of a single post page (up to 6456px for 0.77.0). The header (version, date, title) and the back link are already separate nodes; a post body is one markdown run with no distinct sub-parts to split into."
+      },
+      {
+        "template": "template.prose-page",
+        "section": "content.prose-article/default",
+        "maxPx": 1300,
+        "maxSharePct": 64,
+        "reviewed": "2026-10-22",
+        "justification": "/slack is a short document page (1975px): its article (intro, screenshot, two headed prose runs) is the whole page body under an already-separate hero.page-header. The render shows no distinct header or footer part inside the article, so it stays one body (63% of the page)."
+      },
+      {
+        "template": "template.pricing",
+        "section": "content.pricing-faq/default",
+        "maxPx": 1750,
+        "maxSharePct": 56,
+        "reviewed": "2026-10-22",
+        "justification": "A static 14-question FAQ list (1708px, 55% of /pricing) rendered as one definition list that is not an accordion; plans (412px) and the logo strip (248px) are already separate nodes, and splitting the list would invent boundaries the original does not have."
+      }
+    ]
+  }
 }

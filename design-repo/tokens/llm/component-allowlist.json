@@ -1,6 +1,6 @@
 {
   "allowlistVersion": "1.0.0",
-  "$description": "Closed list of what a generator may instantiate or set. Ids must match contract files 1:1 (verify_all.py parity check).",
+  "$description": "Closed list of what a generator may instantiate or set. Ids must match contract files 1:1 (verify_all.py parity check). retrievalIneligibleSections lists the sections (dialogs, drawers, overlays: not design compositions) a retrieval layer must not offer as composition examples; it is pinned independently in semantic_validate.RETRIEVAL_INELIGIBLE.",
   "primitives": [
     "avatar",
     "badge",
@@ -36,9 +36,9 @@
   ],
   "sections": [
     "changelog.back-link",
-    "changelog.entry-list",
+    "changelog.entry-body",
+    "changelog.entry-header",
     "changelog.pagination",
-    "changelog.post-entry",
     "content.brandkit-about",
     "content.brandkit-asset-cards",
     "content.brandkit-download-card",
@@ -46,7 +46,8 @@
     "content.join-us-apply-card",
     "content.join-us-team-cards",
     "content.join-us-team-photo",
-    "content.legal-prose",
+    "content.legal-body",
+    "content.legal-header",
     "content.pricing-faq",
     "content.pricing-plans",
     "content.prose-article",
@@ -81,13 +82,14 @@
     "changelog.back-link": [
       "default"
     ],
-    "changelog.entry-list": [
+    "changelog.entry-body": [
       "default"
+    ],
+    "changelog.entry-header": [
+      "index",
+      "post"
     ],
     "changelog.pagination": [
-      "default"
-    ],
-    "changelog.post-entry": [
       "default"
     ],
     "content.brandkit-about": [
@@ -111,7 +113,10 @@
     "content.join-us-team-photo": [
       "default"
     ],
-    "content.legal-prose": [
+    "content.legal-body": [
+      "default"
+    ],
+    "content.legal-header": [
       "default"
     ],
     "content.pricing-faq": [
@@ -206,10 +211,17 @@
       "default"
     ]
   },
+  "retrievalIneligibleSections": [
+    "docs.mobile-drawer",
+    "docs.search-dialog",
+    "shell.download-dialog",
+    "shell.downloading-screen"
+  ],
   "nodeSettableProperties": [
     "type",
     "section",
     "variant",
+    "retrievalEligible",
     "content",
     "motion"
   ],

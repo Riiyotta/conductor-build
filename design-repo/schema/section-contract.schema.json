@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "section-contract.schema.json",
+  "title": "Section contract (sections/*.json)",
+  "description": "Hand-maintained. Closed shape of one section contract. Provenance (`source`: where in the replica's code and specs the section was read from) and taxonomy (`semantic`: what the section means in the IA) are separate closed objects so a source file can never be mistaken for a semantic id, and vice versa. Cross-field rules (semanticId equals id, sourceId is one of the implementedBy files, retrieval pins) live in semantic_validate.validate_contract.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "semantic", "source", "retrievalEligible", "purpose", "variants", "slot", "content", "constraints", "motion", "responsive", "contentPolicy", "quirks", "assetRoles"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^[a-z]+\\.[a-z0-9-]+$" },
+    "semantic": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["semanticId", "category", "iaSections"],
+      "properties": {
+        "semanticId": { "type": "string", "pattern": "^[a-z]+\\.[a-z0-9-]+$" },
+        "category": { "enum": ["SHELL", "HERO", "PROOF", "FEATURES", "CONTENT", "CONVERSION", "DOCS", "CHANGELOG"] },
+        "iaSections": { "type": "array", "minItems": 1, "uniqueItems": true, "items": { "type": "string", "pattern": "^[a-z]+\\.[a-z0-9-]+$" } }
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["sourceId", "implementedBy", "measuredFrom"],
+      "properties": {
+        "sourceId": { "type": "string", "pattern": "^src/[A-Za-z0-9_./-]+\\.(jsx?|css)$" },
+        "implementedBy": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/citation" } },
+        "measuredFrom": { "type": "array", "minItems": 1, "items": { "$ref": "#/definitions/citation" } }
+      }
+    },
+    "retrievalEligible": { "type": "boolean", "description": "false for dialogs, overlays and other utilities that are not design compositions; a retrieval layer must not offer them as page-composition examples. Pinned in semantic_validate.RETRIEVAL_INELIGIBLE." },
+    "purpose": { "type": "string", "minLength": 1 },
+    "variants": { "type": "object", "minProperties": 1 },
+    "slot": { "enum": ["flow", "chrome", "overlay"] },
+    "content": { "type": "object" },
+    "constraints": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowedTemplates"],
+      "properties": {
+        "onePerPage": { "type": "boolean" },
+        "mustFollow": { "type": "string" },
+        "mustFollowNav": { "type": "boolean" },
+        "mustPrecedeFooter": { "type": "boolean" },
+        "mustBeLastFlow": { "type": "boolean" },
+        "mustBeFirst": { "type": "boolean" },
+        "maxPerPage": { "type": "integer", "minimum": 1 },
+        "uniqueVariantPerPage": { "type": "boolean" },
+        "allowedTemplates": { "type": "array", "minItems": 1, "items": { "type": "string", "pattern": "^template\\.[a-z0-9-]+$" } }
+      }
+    },
+    "motion": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["allowedPatterns", "defaultPatterns", "reducedMotionFallback", "evidence"],
+      "properties": {
+        "allowedPatterns": { "type": "array", "items": { "type": "string" } },
+        "defaultPatterns": { "type": "array", "items": { "type": "string" } },
+        "variantPatterns": { "type": "object" },
+        "reducedMotionFallback": { "type": "string" },
+        "evidence": { "type": "array", "items": { "$ref": "#/definitions/citation" } }
+      }
+    },
+    "responsive": { "type": "array" },
+    "contentPolicy": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["fabricationRisk", "allowedProvenance"],
+      "properties": {
+        "fabricationRisk": { "type": "boolean" },
+        "allowedProvenance": { "type": "array", "items": { "type": "string" } },
+        "note": { "type": "string" }
+      }
+    },
+    "quirks": { "type": "array", "items": { "type": "string" } },
+    "assetRoles": { "type": "array", "items": { "type": "string" } }
+  },
+  "definitions": {
+    "citation": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["ref", "quote"],
+      "properties": {
+        "ref": { "type": "string", "pattern": "^[A-Za-z0-9_./-]+:[0-9]+(-[0-9]+)?$" },
+        "quote": { "type": "string", "minLength": 1 }
+      }
+    }
+  }
+}

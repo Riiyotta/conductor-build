@@ -1,22 +1,29 @@
 {
   "id": "shell.docs-subnav",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.docs-subnav"
-  ],
+  "semantic": {
+    "semanticId": "shell.docs-subnav",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.docs-subnav"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/docs/MobileNav.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/docs/MobileNav.jsx:22",
+        "quote": "export function MobileSubnav({ onOpenSidebar }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:102",
+        "quote": "**<768:** the marketing header is hidden and `header#nd-subnav` (Fumadocs) replaces it:"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Docs-only small-screen top bar: brand, search and sidebar toggles.",
-  "implementedBy": [
-    {
-      "ref": "src/components/docs/MobileNav.jsx:22",
-      "quote": "export function MobileSubnav({ onOpenSidebar }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:102",
-      "quote": "**<768:** the marketing header is hidden and `header#nd-subnav` (Fumadocs) replaces it:"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.docs-subnav"

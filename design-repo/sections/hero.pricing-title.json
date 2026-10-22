@@ -1,22 +1,29 @@
 {
   "id": "hero.pricing-title",
-  "category": "HERO",
-  "iaSections": [
-    "hero.pricing-title"
-  ],
+  "semantic": {
+    "semanticId": "hero.pricing-title",
+    "category": "HERO",
+    "iaSections": [
+      "hero.pricing-title"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Pricing.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Pricing.jsx:259",
+        "quote": "export default function Pricing() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:123",
+        "quote": "1. **H1 \"Pricing\"**: centered"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Single centered page title for the pricing page.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Pricing.jsx:259",
-      "quote": "export default function Pricing() {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:123",
-      "quote": "1. **H1 \"Pricing\"**: centered"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "hero.pricing-title"

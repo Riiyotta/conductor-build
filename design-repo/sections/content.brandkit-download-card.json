@@ -1,22 +1,29 @@
 {
   "id": "content.brandkit-download-card",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.brandkit-download-card"
-  ],
+  "semantic": {
+    "semanticId": "content.brandkit-download-card",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.brandkit-download-card"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Brandkit.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Brandkit.jsx:157",
+        "quote": "export default function Brandkit() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:338",
+        "quote": "### 6.2 Download card (y=394, 836x90)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "One-click download of the full brand asset pack.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Brandkit.jsx:157",
-      "quote": "export default function Brandkit() {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:338",
-      "quote": "### 6.2 Download card (y=394, 836x90)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.brandkit-download-card"

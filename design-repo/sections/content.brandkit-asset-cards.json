@@ -1,22 +1,29 @@
 {
   "id": "content.brandkit-asset-cards",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.brandkit-asset-cards"
-  ],
+  "semantic": {
+    "semanticId": "content.brandkit-asset-cards",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.brandkit-asset-cards"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Brandkit.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Brandkit.jsx:106",
+        "quote": "function AssetCard({ a }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:346",
+        "quote": "### 6.3 Asset cards"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Preview each logo file on its intended background with per-format downloads.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Brandkit.jsx:106",
-      "quote": "function AssetCard({ a }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:346",
-      "quote": "### 6.3 Asset cards"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.brandkit-asset-cards"

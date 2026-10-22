@@ -1,26 +1,33 @@
 {
   "id": "proof.trusted-logo-strip",
-  "category": "PROOF",
-  "iaSections": [
-    "proof.trusted-logo-strip"
-  ],
+  "semantic": {
+    "semanticId": "proof.trusted-logo-strip",
+    "category": "PROOF",
+    "iaSections": [
+      "proof.trusted-logo-strip"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Logos.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Logos.jsx:39",
+        "quote": "{ threshold: 0.4 },"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:133",
+        "quote": "## 3. \"Trusted by\" logo strip"
+      },
+      {
+        "ref": "CLONE_SPEC.md:322",
+        "quote": "| M5 | \"100k+\" counter |"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Scale proof: user count plus customer logos.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Logos.jsx:39",
-      "quote": "{ threshold: 0.4 },"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:133",
-      "quote": "## 3. \"Trusted by\" logo strip"
-    },
-    {
-      "ref": "CLONE_SPEC.md:322",
-      "quote": "| M5 | \"100k+\" counter |"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "proof.trusted-logo-strip"

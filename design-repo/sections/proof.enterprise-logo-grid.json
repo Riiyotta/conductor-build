@@ -1,22 +1,29 @@
 {
   "id": "proof.enterprise-logo-grid",
-  "category": "PROOF",
-  "iaSections": [
-    "proof.enterprise-logo-grid"
-  ],
+  "semantic": {
+    "semanticId": "proof.enterprise-logo-grid",
+    "category": "PROOF",
+    "iaSections": [
+      "proof.enterprise-logo-grid"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Enterprise.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Enterprise.jsx:15",
+        "quote": "/assets/pages/enterprise/life360.png"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:207",
+        "quote": "This grid differs from the homepage strip"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Customer logo grid inside the enterprise pitch (no counter).",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Enterprise.jsx:15",
-      "quote": "/assets/pages/enterprise/life360.png"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:207",
-      "quote": "This grid differs from the homepage strip"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "proof.enterprise-logo-grid"

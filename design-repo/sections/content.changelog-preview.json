@@ -1,22 +1,29 @@
 {
   "id": "content.changelog-preview",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.changelog-preview"
-  ],
+  "semantic": {
+    "semanticId": "content.changelog-preview",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.changelog-preview"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Changelog.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Changelog.jsx:13",
+        "quote": "export default function Changelog() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:253",
+        "quote": "## 9. Changelog"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Show shipping velocity: latest releases and a link to the full changelog.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Changelog.jsx:13",
-      "quote": "export default function Changelog() {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:253",
-      "quote": "## 9. Changelog"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.changelog-preview"

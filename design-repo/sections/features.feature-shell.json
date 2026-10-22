@@ -1,41 +1,64 @@
 {
   "id": "features.feature-shell",
-  "category": "FEATURES",
-  "iaSections": [
-    "features.multiplayer",
-    "features.cloud-sandbox",
-    "features.byok",
-    "features.anywhere"
-  ],
+  "semantic": {
+    "semanticId": "features.feature-shell",
+    "category": "FEATURES",
+    "iaSections": [
+      "features.multiplayer",
+      "features.cloud-sandbox",
+      "features.byok",
+      "features.anywhere"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/FeatureShell.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/FeatureShell.jsx:2",
+        "quote": "export default function FeatureShell({ title, titleExtra, body, demo, children }) {"
+      },
+      {
+        "ref": "src/components/Multiplayer.jsx:185",
+        "quote": "export default function Multiplayer() {"
+      },
+      {
+        "ref": "src/components/Sandbox.jsx:246",
+        "quote": "export default function Sandbox() {"
+      },
+      {
+        "ref": "src/components/Orchestration.jsx:131",
+        "quote": "export default function Orchestration() {"
+      },
+      {
+        "ref": "src/components/Anywhere.jsx:8",
+        "quote": "export default function Anywhere() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:148",
+        "quote": "## 4–7. Feature sections (4 identical shells)"
+      },
+      {
+        "ref": "src/components/Multiplayer.jsx:2",
+        "quote": "import FeatureShell from './FeatureShell.jsx'"
+      },
+      {
+        "ref": "src/components/Sandbox.jsx:2",
+        "quote": "import FeatureShell from './FeatureShell.jsx'"
+      },
+      {
+        "ref": "src/components/Orchestration.jsx:2",
+        "quote": "import FeatureShell from './FeatureShell.jsx'"
+      },
+      {
+        "ref": "src/components/Anywhere.jsx:1",
+        "quote": "import FeatureShell from './FeatureShell.jsx'"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "One product capability: title, short body and a live demo or image. Grouped as one type because all four homepage feature sections render through the same FeatureShell component with identical geometry.",
-  "implementedBy": [
-    {
-      "ref": "src/components/FeatureShell.jsx:2",
-      "quote": "export default function FeatureShell({ title, titleExtra, body, demo, children }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:148",
-      "quote": "## 4–7. Feature sections (4 identical shells)"
-    },
-    {
-      "ref": "src/components/Multiplayer.jsx:2",
-      "quote": "import FeatureShell from './FeatureShell.jsx'"
-    },
-    {
-      "ref": "src/components/Sandbox.jsx:2",
-      "quote": "import FeatureShell from './FeatureShell.jsx'"
-    },
-    {
-      "ref": "src/components/Orchestration.jsx:2",
-      "quote": "import FeatureShell from './FeatureShell.jsx'"
-    },
-    {
-      "ref": "src/components/Anywhere.jsx:1",
-      "quote": "import FeatureShell from './FeatureShell.jsx'"
-    }
-  ],
   "variants": {
     "multiplayer": {
       "iaSection": "features.multiplayer",

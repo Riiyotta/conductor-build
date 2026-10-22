@@ -1,0 +1,153 @@
+{
+  "id": "changelog.entry-header",
+  "semantic": {
+    "semanticId": "changelog.entry-header",
+    "category": "CHANGELOG",
+    "iaSections": [
+      "changelog.entry-header",
+      "changelog.post-header"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/changelog/ChangelogEntry.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/changelog/ChangelogEntry.jsx:43",
+        "quote": "<h1 className=\"mb-6 text-3xl font-semibold text-foreground\">{post.title}</h1>"
+      },
+      {
+        "ref": "src/components/changelog/ChangelogEntry.jsx:38",
+        "quote": "className=\"mb-6 block text-2xl font-semibold text-foreground hover:underline sm:text-3xl\""
+      },
+      {
+        "ref": "src/components/changelog/ChangelogEntry.jsx:22",
+        "quote": "md:absolute md:inset-y-0 md:left-[-12rem]"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:444",
+        "quote": "### 5.2 Entry (index article and post article)"
+      },
+      {
+        "ref": "CLONE_SPEC_DOCS.md:450",
+        "quote": "- **Meta column:**"
+      },
+      {
+        "ref": "CLONE_SPEC_DOCS.md:460",
+        "quote": "  - **Title:**"
+      }
+    ]
+  },
+  "retrievalEligible": true,
+  "purpose": "Header of one changelog entry: the meta column (version badge, date) and the title. On the index it repeats once per article (ten on a full page) with a linked badge and linked title; on a post page it is the single unlinked H1. Split out of the former whole-article sections so that body copy is its own node.",
+  "variants": {
+    "index": {
+      "iaSection": "changelog.entry-header"
+    },
+    "post": {
+      "iaSection": "changelog.post-header"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "version": {
+      "type": "pattern",
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+$",
+      "required": true
+    },
+    "date": {
+      "type": "text",
+      "maxWords": 4,
+      "required": true,
+      "observedMaxWords": 3
+    },
+    "title": {
+      "type": "text",
+      "maxWords": 14,
+      "required": true,
+      "observedMaxWords": 12
+    },
+    "href": {
+      "type": "url",
+      "required": false
+    }
+  },
+  "constraints": {
+    "allowedTemplates": [
+      "template.changelog-index",
+      "template.changelog-post"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color",
+      "sticky-meta"
+    ],
+    "defaultPatterns": [
+      "sticky-meta"
+    ],
+    "variantPatterns": {
+      "index": [
+        "hover-color",
+        "sticky-meta"
+      ],
+      "post": [
+        "sticky-meta"
+      ]
+    },
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:507",
+        "quote": "### 5.6 Motion (changelog)"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "meta",
+          "value": "stacked above title"
+        },
+        {
+          "property": "title",
+          "value": "24px/32px (index); 30px/36px on a post"
+        }
+      ]
+    },
+    {
+      "minWidth": 640,
+      "changes": [
+        {
+          "property": "title",
+          "value": "30px/36px"
+        }
+      ]
+    },
+    {
+      "minWidth": 768,
+      "changes": [
+        {
+          "property": "meta",
+          "value": "absolute left -192px, sticky top 96px; adds no flow height"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Release notes are factual claims about shipped software: never invent releases; never copy Conductor's changelog text."
+  },
+  "quirks": [
+    "href is required in practice on the index variant (badge and title link to the post) and absent on the post variant; the closed content schema cannot express per-variant requiredness, so it is optional here.",
+    "Not onePerPage: the index template repeats it per article; the post template lists it once and non-repeatable, which is what rejects a second header there."
+  ],
+  "assetRoles": []
+}

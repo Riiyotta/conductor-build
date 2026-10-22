@@ -1,22 +1,29 @@
 {
   "id": "shell.downloading-screen",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.downloading-screen"
-  ],
+  "semantic": {
+    "semanticId": "shell.downloading-screen",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.downloading-screen"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/DownloadDialog.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/DownloadDialog.jsx:221",
+        "quote": "'Downloading conductor.dmg...',"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "ia.json:61",
+        "quote": "Full-screen black terminal-style overlay shown after any download click"
+      }
+    ]
+  },
+  "retrievalEligible": false,
   "purpose": "Full-screen terminal confirmation after a download click.",
-  "implementedBy": [
-    {
-      "ref": "src/components/DownloadDialog.jsx:221",
-      "quote": "'Downloading conductor.dmg...',"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "ia.json:61",
-      "quote": "Full-screen black terminal-style overlay shown after any download click"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.downloading-screen"

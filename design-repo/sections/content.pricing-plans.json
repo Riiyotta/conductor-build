@@ -1,22 +1,29 @@
 {
   "id": "content.pricing-plans",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.pricing-plans"
-  ],
+  "semantic": {
+    "semanticId": "content.pricing-plans",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.pricing-plans"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Pricing.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Pricing.jsx:85",
+        "quote": "function PlanCard({ plan }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:135",
+        "quote": "### 1.2 Plan card"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Let a visitor compare plans and act on one.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Pricing.jsx:85",
-      "quote": "function PlanCard({ plan }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:135",
-      "quote": "### 1.2 Plan card"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.pricing-plans"

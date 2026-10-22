@@ -81,6 +81,7 @@ def build():
             "if": {"properties": {"section": {"const": sid}}, "required": ["section"]},
             "then": {"properties": {
                 "variant": {"enum": sorted(s["variants"])},
+                "retrievalEligible": {"const": s["retrievalEligible"]},
                 "content": fields_schema(s["content"], roles_doc),
                 "motion": {"properties": {"patterns": {"items": {"enum": allowed}},
                                           "reducedMotionFallback": {"const": m["reducedMotionFallback"]}}},
@@ -116,6 +117,7 @@ def build():
                     "type": {"enum": ["section"]},
                     "section": {"enum": sorted(sections)},
                     "variant": {"type": "string"},
+                    "retrievalEligible": {"type": "boolean", "description": "Optional. Default true. Const-locked per section to the contract value: false for dialogs, drawers and overlays (not design compositions)."},
                     "content": {"type": "object"},
                     "motion": {"$ref": "#/definitions/motion"},
                 },

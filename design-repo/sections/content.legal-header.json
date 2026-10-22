@@ -1,0 +1,98 @@
+{
+  "id": "content.legal-header",
+  "semantic": {
+    "semanticId": "content.legal-header",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.legal-header"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/pages/LegalLayout.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/pages/LegalLayout.jsx:6",
+        "quote": "export default function LegalLayout({ title, description, children }) {"
+      },
+      {
+        "ref": "src/pages/Privacy.jsx:12",
+        "quote": "<ProseHeading as=\"h1\" id=\"privacy-notice\">Privacy Notice</ProseHeading>"
+      },
+      {
+        "ref": "src/pages/Privacy.jsx:13",
+        "quote": "<p><strong>Last Updated</strong>: June 12, 2026</p>"
+      },
+      {
+        "ref": "src/pages/Terms.jsx:14",
+        "quote": "<p><em>Last Modified: March 30, 2026</em></p>"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:406",
+        "quote": "- The h1 (anchor pattern) is at y=153 [121]"
+      },
+      {
+        "ref": "CLONE_SPEC_PAGES.md:408",
+        "quote": "The only interactive pieces are the h1 anchor icon"
+      }
+    ]
+  },
+  "retrievalEligible": true,
+  "purpose": "Legal document header: the H1 with its hover anchor icon and the single date line (Last Updated / Last Modified). The first two children of the article; there is no PageHeader block.",
+  "variants": {
+    "default": {
+      "iaSection": "content.legal-header"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "title": {
+      "type": "text",
+      "maxWords": 6,
+      "required": true,
+      "observedMaxWords": 4
+    },
+    "dateLine": {
+      "type": "text",
+      "maxWords": 8,
+      "required": true,
+      "observedMaxWords": 5
+    }
+  },
+  "constraints": {
+    "onePerPage": true,
+    "mustFollowNav": true,
+    "allowedTemplates": [
+      "template.legal"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "static-no-motion-needed",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:408",
+        "quote": "The only interactive pieces are the h1 anchor icon"
+      }
+    ]
+  },
+  "responsive": [],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Legal text must come from counsel; never generate or copy Conductor's legal terms."
+  },
+  "quirks": [
+    "No PageHeader and no top margin; the H1 is part of the article."
+  ],
+  "assetRoles": []
+}

@@ -1,22 +1,29 @@
 {
   "id": "conversion.be-like-this-guy",
-  "category": "CONVERSION",
-  "iaSections": [
-    "conversion.be-like-this-guy"
-  ],
+  "semantic": {
+    "semanticId": "conversion.be-like-this-guy",
+    "category": "CONVERSION",
+    "iaSections": [
+      "conversion.be-like-this-guy"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/CTA.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/CTA.jsx:11",
+        "quote": "/assets/img/conductor-orchestra.webp"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:268",
+        "quote": "## 10. CTA: \"Be like this guy.\""
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Closing download CTA over a full-bleed image.",
-  "implementedBy": [
-    {
-      "ref": "src/components/CTA.jsx:11",
-      "quote": "/assets/img/conductor-orchestra.webp"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:268",
-      "quote": "## 10. CTA: \"Be like this guy.\""
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "conversion.be-like-this-guy"

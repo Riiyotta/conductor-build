@@ -1,26 +1,33 @@
 {
   "id": "proof.testimonials",
-  "category": "PROOF",
-  "iaSections": [
-    "proof.testimonials"
-  ],
+  "semantic": {
+    "semanticId": "proof.testimonials",
+    "category": "PROOF",
+    "iaSections": [
+      "proof.testimonials"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/Testimonials.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/Testimonials.jsx:146",
+        "quote": "export default function Testimonials() {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:231",
+        "quote": "## 8. Testimonials"
+      },
+      {
+        "ref": "CLONE_SPEC.md:321",
+        "quote": "| M4 | Testimonial cards |"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Peer validation from named builders.",
-  "implementedBy": [
-    {
-      "ref": "src/components/Testimonials.jsx:146",
-      "quote": "export default function Testimonials() {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:231",
-      "quote": "## 8. Testimonials"
-    },
-    {
-      "ref": "CLONE_SPEC.md:321",
-      "quote": "| M4 | Testimonial cards |"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "proof.testimonials"

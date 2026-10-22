@@ -1,41 +1,36 @@
 {
-  "id": "content.legal-prose",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.legal-prose"
-  ],
-  "purpose": "Legal document body with its own H1; section titles are bold paragraphs, not headings.",
-  "implementedBy": [
-    {
-      "ref": "src/components/pages/LegalLayout.jsx:6",
-      "quote": "export default function LegalLayout({ title, description, children }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:407",
-      "quote": "**Section titles are bold paragraphs (`<p><strong>…</strong></p>`), not headings.**"
-    }
-  ],
+  "id": "content.legal-body",
+  "semantic": {
+    "semanticId": "content.legal-body",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.legal-body"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/pages/LegalLayout.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/pages/LegalLayout.jsx:10",
+        "quote": "<Prose>{children}</Prose>"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:407",
+        "quote": "**Section titles are bold paragraphs (`<p><strong>…</strong></p>`), not headings.**"
+      }
+    ]
+  },
+  "retrievalEligible": true,
+  "purpose": "Legal document body: bold-paragraph section titles with their paragraphs and lists. No table of contents exists on /privacy or /terms in the original or the clone, so none is modelled.",
   "variants": {
     "default": {
-      "iaSection": "content.legal-prose"
+      "iaSection": "content.legal-body"
     }
   },
   "slot": "flow",
   "content": {
-    "title": {
-      "type": "text",
-      "maxWords": 6,
-      "required": true,
-      "observedMaxWords": 4
-    },
-    "effectiveDate": {
-      "type": "text",
-      "maxWords": 6,
-      "required": true,
-      "observedMaxWords": 4
-    },
     "sections": {
       "type": "list",
       "items": {
@@ -69,7 +64,7 @@
   },
   "constraints": {
     "onePerPage": true,
-    "mustFollowNav": true,
+    "mustFollow": "content.legal-header",
     "allowedTemplates": [
       "template.legal"
     ]
@@ -99,7 +94,8 @@
     "note": "Legal text must come from counsel; never generate or copy Conductor's legal terms."
   },
   "quirks": [
-    "No PageHeader and no top margin; titles are <p><strong>, never h2."
+    "Section titles are <p><strong>, never h2.",
+    "Prose by nature: holds most of the page height on /privacy and /terms (see wrapperGate.whitelist in extraction/measured-values.json)."
   ],
   "assetRoles": []
 }

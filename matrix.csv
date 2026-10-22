@@ -4,8 +4,9 @@ shell.download-dialog,SHELL,11,306,x,x,x,x,x,x,x,x,x,x,x
 shell.downloading-screen,SHELL,11,306,x,x,x,x,x,x,x,x,x,x,x
 shell.footer-mono,SHELL,10,305,,x,x,x,x,x,x,x,x,x,x
 shell.mobile-menu,SHELL,10,237,x,x,x,x,x,x,x,x,,x,x
+changelog.entry-body,CHANGELOG,2,228,,,,,,,,,,x,x
 changelog.back-link,CHANGELOG,1,207,,,,,,,,,,,x
-changelog.post-entry,CHANGELOG,1,207,,,,,,,,,,,x
+changelog.post-header,CHANGELOG,1,207,,,,,,,,,,,x
 shell.docs-subnav,SHELL,1,69,,,,,,,,,x,,
 docs.sidebar,DOCS,1,69,,,,,,,,,x,,
 docs.mobile-drawer,DOCS,1,69,,,,,,,,,x,,
@@ -15,12 +16,13 @@ docs.prose-body,DOCS,1,69,,,,,,,,,x,,
 docs.prev-next,DOCS,1,69,,,,,,,,,x,,
 docs.toc,DOCS,1,69,,,,,,,,,x,,
 docs.search-dialog,DOCS,1,69,,,,,,,,,x,,
-changelog.entry-list,CHANGELOG,1,21,,,,,,,,,,x,
+changelog.entry-header,CHANGELOG,1,21,,,,,,,,,,x,
 changelog.pagination,CHANGELOG,1,21,,,,,,,,,,x,
 hero.page-header,HERO,4,4,,,x,x,x,x,,,,,
 content.prose-article,CONTENT,3,3,,,x,,x,x,,,,,
 proof.trusted-logo-strip,PROOF,2,2,x,x,,,,,,,,,
-content.legal-prose,CONTENT,1,2,,,,,,,,x,,,
+content.legal-header,CONTENT,1,2,,,,,,,,x,,,
+content.legal-body,CONTENT,1,2,,,,,,,,x,,,
 shell.footer-sans,SHELL,1,1,x,,,,,,,,,,
 hero.home,HERO,1,1,x,,,,,,,,,,
 hero.pricing-title,HERO,1,1,,x,,,,,,,,,

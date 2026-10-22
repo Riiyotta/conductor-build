@@ -1,22 +1,29 @@
 {
   "id": "content.pricing-faq",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.pricing-faq"
-  ],
+  "semantic": {
+    "semanticId": "content.pricing-faq",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.pricing-faq"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Pricing.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Pricing.jsx:277",
+        "quote": "<section aria-label=\"Pricing FAQ\" className=\"px-8 pt-8 text-sm sm:pt-10\">"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:156",
+        "quote": "### 1.3 FAQ (static, **not an accordion**; no toggles, no buttons)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Answer pricing objections in place (static list, not an accordion).",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Pricing.jsx:277",
-      "quote": "<section aria-label=\"Pricing FAQ\" className=\"px-8 pt-8 text-sm sm:pt-10\">"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:156",
-      "quote": "### 1.3 FAQ (static, **not an accordion**; no toggles, no buttons)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.pricing-faq"

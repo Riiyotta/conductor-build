@@ -1,22 +1,29 @@
 {
   "id": "content.join-us-apply-card",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.join-us-apply-card"
-  ],
+  "semantic": {
+    "semanticId": "content.join-us-apply-card",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.join-us-apply-card"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/JoinUs.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/JoinUs.jsx:176",
+        "quote": "/assets/pages/join-us/icon-arrow-up-right.svg"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:281",
+        "quote": "2. **Apply card**"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Single dashed call-to-apply card linking to the jobs board.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/JoinUs.jsx:176",
-      "quote": "/assets/pages/join-us/icon-arrow-up-right.svg"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:281",
-      "quote": "2. **Apply card**"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.join-us-apply-card"

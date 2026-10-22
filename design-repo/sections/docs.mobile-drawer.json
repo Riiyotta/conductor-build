@@ -1,22 +1,29 @@
 {
   "id": "docs.mobile-drawer",
-  "category": "DOCS",
-  "iaSections": [
-    "docs.mobile-drawer"
-  ],
+  "semantic": {
+    "semanticId": "docs.mobile-drawer",
+    "category": "DOCS",
+    "iaSections": [
+      "docs.mobile-drawer"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/docs/MobileNav.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/docs/MobileNav.jsx:46",
+        "quote": "export function MobileDrawer({ state, onClose, root, activeUrl }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:209",
+        "quote": "### 1.6 Mobile drawer (`aside#nd-sidebar-mobile`, <768)"
+      }
+    ]
+  },
+  "retrievalEligible": false,
   "purpose": "Small-screen slide-in copy of the docs navigation.",
-  "implementedBy": [
-    {
-      "ref": "src/components/docs/MobileNav.jsx:46",
-      "quote": "export function MobileDrawer({ state, onClose, root, activeUrl }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:209",
-      "quote": "### 1.6 Mobile drawer (`aside#nd-sidebar-mobile`, <768)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "docs.mobile-drawer"

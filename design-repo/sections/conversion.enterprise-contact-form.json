@@ -1,26 +1,37 @@
 {
   "id": "conversion.enterprise-contact-form",
-  "category": "CONVERSION",
-  "iaSections": [
-    "conversion.enterprise-contact-form"
-  ],
+  "semantic": {
+    "semanticId": "conversion.enterprise-contact-form",
+    "category": "CONVERSION",
+    "iaSections": [
+      "conversion.enterprise-contact-form"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Enterprise.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Enterprise.jsx:45",
+        "quote": "<HubSpotForm variant=\"enterprise\""
+      },
+      {
+        "ref": "src/components/pages/HubSpotForm.jsx:207",
+        "quote": "export default function HubSpotForm({ variant = 'enterprise', formId, className = '' }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:213",
+        "quote": "### 2.2 HubSpot form (enterprise)"
+      },
+      {
+        "ref": "src/components/pages/HubSpotForm.jsx:7",
+        "quote": "NOTE: this form intentionally does NOT post to HubSpot or any other endpoint."
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Capture an enterprise sales lead.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Enterprise.jsx:45",
-      "quote": "<HubSpotForm variant=\"enterprise\""
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:213",
-      "quote": "### 2.2 HubSpot form (enterprise)"
-    },
-    {
-      "ref": "src/components/pages/HubSpotForm.jsx:7",
-      "quote": "NOTE: this form intentionally does NOT post to HubSpot or any other endpoint."
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "conversion.enterprise-contact-form"

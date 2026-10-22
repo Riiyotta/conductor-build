@@ -1,22 +1,29 @@
 {
   "id": "content.brandkit-about",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.brandkit-about"
-  ],
+  "semantic": {
+    "semanticId": "content.brandkit-about",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.brandkit-about"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/Brandkit.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/Brandkit.jsx:135",
+        "quote": "function OfficialLink({ l }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:367",
+        "quote": "### 6.4 \"About Conductor\""
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Canonical product description, facts and official links for press and agents.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/Brandkit.jsx:135",
-      "quote": "function OfficialLink({ l }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:367",
-      "quote": "### 6.4 \"About Conductor\""
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.brandkit-about"

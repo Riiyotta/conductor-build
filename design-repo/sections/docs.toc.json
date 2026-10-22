@@ -1,22 +1,29 @@
 {
   "id": "docs.toc",
-  "category": "DOCS",
-  "iaSections": [
-    "docs.toc"
-  ],
+  "semantic": {
+    "semanticId": "docs.toc",
+    "category": "DOCS",
+    "iaSections": [
+      "docs.toc"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/docs/Toc.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/docs/Toc.jsx:45",
+        "quote": "export default function Toc({ items }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:187",
+        "quote": "### 1.5 Right TOC (`#nd-toc`, Fumadocs \"clerk\" style; xl+ only)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "On-this-page navigation with scroll-spy.",
-  "implementedBy": [
-    {
-      "ref": "src/components/docs/Toc.jsx:45",
-      "quote": "export default function Toc({ items }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:187",
-      "quote": "### 1.5 Right TOC (`#nd-toc`, Fumadocs \"clerk\" style; xl+ only)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "docs.toc"

@@ -1,22 +1,29 @@
 {
   "id": "content.join-us-team-cards",
-  "category": "CONTENT",
-  "iaSections": [
-    "content.join-us-team-cards"
-  ],
+  "semantic": {
+    "semanticId": "content.join-us-team-cards",
+    "category": "CONTENT",
+    "iaSections": [
+      "content.join-us-team-cards"
+    ]
+  },
+  "source": {
+    "sourceId": "src/pages/JoinUs.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/pages/JoinUs.jsx:114",
+        "quote": "function TeamCard({ person }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_PAGES.md:295",
+        "quote": "### 5.2 Team card"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Introduce team members with role and short bio.",
-  "implementedBy": [
-    {
-      "ref": "src/pages/JoinUs.jsx:114",
-      "quote": "function TeamCard({ person }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_PAGES.md:295",
-      "quote": "### 5.2 Team card"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "content.join-us-team-cards"

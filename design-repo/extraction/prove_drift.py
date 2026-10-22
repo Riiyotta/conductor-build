@@ -4,7 +4,8 @@
   python3 extraction/prove_drift.py
 
 For every case: copy this repo to a scratch dir, inject ONE piece of drift, run the scratch copy's own
-verify_all.py, and require exit code 1 with `FAIL [<expected-check>]`. Finally confirm the unmodified real repo
+verify_all.py, and require exit code 1 with `FAIL [<expected-check>]` (or, for warn cases, exit code 0 with
+`WARN [<expected-check>]`). Finally confirm the unmodified real repo
 still passes. Cases that need the sibling source project (citations, ia.json parity, route enumeration, stack
 re-diff) get the project's top-level entries symlinked into the scratch parent; if the sibling tree is absent they
 are reported as SKIPPED, not passed.
@@ -122,7 +123,64 @@ def _route_regex(root):
 
 
 def _readme_counts(root):
-    sub_text(root, "README.md", "sectionContracts=41", "sectionContracts=40")
+    sub_text(root, "README.md", "sectionContracts=42", "sectionContracts=40")
+
+
+def ledger(root, fn):
+    edit(root, "extraction/measured-values.json", fn)
+
+
+def hs(d, route, key, value):
+    d["sectionHeights"]["routes"][route]["sections"][key] = value
+
+
+def whitelist(d):
+    return d["wrapperGate"]["whitelist"]
+
+
+def _wl_remove(section):
+    return lambda root: ledger(root, lambda d: d["wrapperGate"].__setitem__("whitelist", [e for e in whitelist(d) if e["section"] != section]))
+
+
+def _wl_cap(root):
+    def f(d):
+        for e in whitelist(d):
+            if e["section"] == "content.legal-body/default":
+                e["maxPx"] = 1000
+    ledger(root, f)
+
+
+def _wl_stale(root):
+    ledger(root, lambda d: whitelist(d).append({"template": "template.brandkit", "section": "content.brandkit-about/default", "maxPx": 5000, "maxSharePct": 99, "reviewed": "2026-10-22", "justification": "A deliberately unneeded entry: nothing measured exceeds any threshold here, so it must be reported as stale."}))
+
+
+def _wl_wrong_section(root):
+    ledger(root, lambda d: whitelist(d).append({"template": "template.enterprise", "section": "conversion.enterprise-contact-form/default", "maxPx": 5000, "maxSharePct": 99, "reviewed": "2026-10-22", "justification": "A contact form is not prose by nature, so this whitelist entry must be refused outright."}))
+
+
+def _drop_node(root):
+    ledger(root, lambda d: d["sectionHeights"]["routes"]["/changelog/0.91.0-a-mostly-boring-update"]["sections"].pop("changelog.entry-body/default"))
+
+
+def _drop_route(root):
+    ledger(root, lambda d: d["sectionHeights"]["routes"].pop("/privacy"))
+
+
+def _gate_loosened(root):
+    ledger(root, lambda d: d["sectionHeights"]["gate"].__setitem__("shareFailPct", 95))
+
+
+def _retro_post(root):
+    """The original bug: one whole-article section on a post page (header node swallowing the article)."""
+    ledger(root, lambda d: hs(d, "/changelog/0.91.0-a-mostly-boring-update", "changelog.entry-header/post", 2824))
+
+
+def _contract(section, fn):
+    return lambda root: edit(root, f"sections/{section}.json", fn)
+
+
+def _example_gap(root):
+    edit(root, "schema/example.legal.pagespec.json", lambda d: d["nodes"].pop(2))
 
 
 CASES = [
@@ -150,6 +208,39 @@ CASES = [
     ("template node order differs from ia.json", "ia-parity", _ia_order, True),
     ("template route regex no longer covers every real route", "route-coverage", _route_regex, True),
     ("stated framework major differs from package.json", "stack-rediff", lambda r: edit(r, "registry.manifest.json", lambda d: d["sourceStack"].__setitem__("react", "19")), True),
+    # ---- contract shape: provenance vs taxonomy
+    ("provenance leaked into taxonomy (sourceId inside semantic)", "contract-shape", _contract("hero.home", lambda d: d["semantic"].__setitem__("sourceId", "src/components/Hero.jsx")), False),
+    ("taxonomy leaked into provenance (category inside source)", "contract-shape", _contract("hero.home", lambda d: d["source"].__setitem__("category", "HERO")), False),
+    ("sourceId points at a file the contract does not cite", "contract-shape", _contract("hero.home", lambda d: d["source"].__setitem__("sourceId", "src/components/Footer.jsx")), False),
+    ("source block dropped from a contract", "contract-shape", _contract("shell.header", lambda d: d.pop("source")), False),
+    ("semantic block dropped from a contract", "contract-shape", _contract("shell.header", lambda d: d.pop("semantic")), False),
+    # ---- retrieval eligibility
+    ("download dialog contract flipped to retrievalEligible=true", "retrieval-eligibility", _contract("shell.download-dialog", lambda d: d.__setitem__("retrievalEligible", True)), False),
+    ("downloading screen contract flipped to retrievalEligible=true", "retrieval-eligibility", _contract("shell.downloading-screen", lambda d: d.__setitem__("retrievalEligible", True)), False),
+    ("a composition (hero.home) flipped to retrievalEligible=false", "retrieval-eligibility", _contract("hero.home", lambda d: d.__setitem__("retrievalEligible", False)), False),
+    ("allowlist retrievalIneligibleSections loses the downloading screen", "retrieval-eligibility", lambda r: edit(r, "tokens/llm/component-allowlist.json", lambda d: d["retrievalIneligibleSections"].remove("shell.downloading-screen")), False),
+    ("schema branch locks retrievalEligible=true for the download dialog", "retrieval-eligibility", lambda r: edit(r, "schema/pagespec.schema.json", lambda d: [b["then"]["properties"]["retrievalEligible"].__setitem__("const", True) for b in d["definitions"]["node"]["allOf"] if b["if"]["properties"]["section"]["const"] == "shell.download-dialog"]), False),
+    # ---- whole-page-wrapper gate
+    ("HERO section measured at 3500px (>3000)", "wrapper-gate", lambda r: ledger(r, lambda d: hs(d, "/", "hero.home/default", 3500)), False),
+    ("original bug reintroduced: one changelog section swallows the whole post (81% of page)", "wrapper-gate", _retro_post, False),
+    ("non-whitelisted section above 60% of its page (brandkit about at 2000/3099)", "wrapper-gate", lambda r: ledger(r, lambda d: hs(d, "/brandkit", "content.brandkit-about/default", 2000)), False),
+    ("legal body whitelist entry removed (94% of /privacy)", "wrapper-gate", _wl_remove("content.legal-body/default"), False),
+    ("whitelist cap exceeded (legal body grew past its recorded maxPx)", "wrapper-gate", _wl_cap, False),
+    ("stale whitelist entry nothing needs", "wrapper-gate", _wl_stale, False),
+    ("whitelist entry for a section that is not prose by nature", "wrapper-gate", _wl_wrong_section, False),
+    ("measured node dropped from a route to dodge the gate", "wrapper-gate", _drop_node, False),
+    ("route missing from the measured ledger", "wrapper-gate", _drop_route, False),
+    ("ledger gate thresholds loosened in JSON", "wrapper-gate", _gate_loosened, False),
+    ("ledger removed entirely", "wrapper-gate", lambda r: ledger(r, lambda d: d.pop("sectionHeights")), False),
+    # ---- decomposition stays wired everywhere
+    ("example PageSpec for legal loses its body node", "example-valid", _example_gap, False),
+    ("semantic category of a contract differs from ia.json", "ia-parity", _contract("changelog.entry-body", lambda d: d["semantic"].__setitem__("category", "CONTENT")), True),
+]
+
+# warn-severity cases: exit 0, and the check must report WARN
+WARN_CASES = [
+    ("HERO section measured at 2000px (>1800, <3000)", "wrapper-gate", lambda r: ledger(r, lambda d: hs(d, "/", "hero.home/default", 2000)), False),
+    ("section holding 55% of its page, not whitelisted (brandkit about 1700/3099)", "wrapper-gate", lambda r: ledger(r, lambda d: hs(d, "/brandkit", "content.brandkit-about/default", 1700)), False),
 ]
 
 
@@ -172,6 +263,17 @@ def run_verify(dst):
 
 def main():
     bad = skipped = proved = 0
+    for name, check, fn, needs in WARN_CASES:
+        tmp, dst = scratch()
+        try:
+            fn(dst)
+            rc, out = run_verify(dst)
+            hit = rc == 0 and f"WARN [{check}]" in out
+            print(f"{'CAUGHT ' if hit else 'MISSED '}  {name}  -> expected WARN [{check}] and exit 0")
+            proved += hit
+            bad += not hit
+        finally:
+            shutil.rmtree(tmp, ignore_errors=True)
     for name, check, fn, needs in CASES:
         if needs and not HAVE_SIBLINGS:
             print(f"SKIPPED  {name} (needs sibling source project)")
@@ -199,7 +301,7 @@ def main():
             bad += 1
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
-    print(f"\ndrift cases caught: {proved}/{len(CASES) - skipped}  (skipped {skipped}); failures: {bad}")
+    print(f"\ndrift cases caught: {proved}/{len(CASES) + len(WARN_CASES) - skipped}  (skipped {skipped}); failures: {bad}")
     return 1 if bad else 0
 
 

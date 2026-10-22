@@ -1,22 +1,29 @@
 {
   "id": "docs.prose-body",
-  "category": "DOCS",
-  "iaSections": [
-    "docs.prose-body"
-  ],
+  "semantic": {
+    "semanticId": "docs.prose-body",
+    "category": "DOCS",
+    "iaSections": [
+      "docs.prose-body"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/docs/Body.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/docs/Body.jsx:91",
+        "quote": "export function Nodes({ nodes }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:278",
+        "quote": "## 3. Docs MDX components (all measured at 1440 unless noted)"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "The documentation content itself, as typed MDX-style blocks.",
-  "implementedBy": [
-    {
-      "ref": "src/components/docs/Body.jsx:91",
-      "quote": "export function Nodes({ nodes }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:278",
-      "quote": "## 3. Docs MDX components (all measured at 1440 unless noted)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "docs.prose-body"

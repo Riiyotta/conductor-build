@@ -1,26 +1,33 @@
 {
   "id": "shell.download-dialog",
-  "category": "SHELL",
-  "iaSections": [
-    "shell.download-dialog"
-  ],
+  "semantic": {
+    "semanticId": "shell.download-dialog",
+    "category": "SHELL",
+    "iaSections": [
+      "shell.download-dialog"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/DownloadDialog.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/DownloadDialog.jsx:84",
+        "quote": "function DownloadDialog({ onClose, onDownload }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC.md:294",
+        "quote": "## 11b. Download dialog"
+      },
+      {
+        "ref": "src/components/DownloadDialog.jsx:19",
+        "quote": "Net effect: the dialog appears and disappears instantly"
+      }
+    ]
+  },
+  "retrievalEligible": false,
   "purpose": "Choose and start the Mac download (Apple silicon primary, Intel fallback, Windows/Linux waitlist).",
-  "implementedBy": [
-    {
-      "ref": "src/components/DownloadDialog.jsx:84",
-      "quote": "function DownloadDialog({ onClose, onDownload }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC.md:294",
-      "quote": "## 11b. Download dialog"
-    },
-    {
-      "ref": "src/components/DownloadDialog.jsx:19",
-      "quote": "Net effect: the dialog appears and disappears instantly"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "shell.download-dialog"

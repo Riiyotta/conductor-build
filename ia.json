@@ -152,9 +152,15 @@
       "scope": "3 standalone pages: enterprise (intro line), slack and join-us.",
       "implementedBy": "src/components/pages/Prose.jsx"
     },
-    "content.legal-prose": {
+    "content.legal-header": {
       "category": "CONTENT",
-      "description": "Legal document layout: the same prose article but with no page header and no top margin, its own 800-weight H1 with anchor icon, and section titles as bold paragraphs rather than headings.",
+      "description": "Legal document header, the first two children of the prose article: the 800-weight H1 with hover anchor icon and the one-line 'Last Updated' / 'Last Modified' date. There is no PageHeader block and no top margin on these pages.",
+      "scope": "2 routes: /privacy and /terms.",
+      "implementedBy": "src/components/pages/LegalLayout.jsx"
+    },
+    "content.legal-body": {
+      "category": "CONTENT",
+      "description": "Legal document body, the rest of the prose article: bold-paragraph section titles (not headings), paragraphs and lists. The original has no table of contents on these pages, so none is modelled.",
       "scope": "2 routes: /privacy and /terms.",
       "implementedBy": "src/components/pages/LegalLayout.jsx"
     },
@@ -260,11 +266,11 @@
       "scope": "All 69 docs routes.",
       "implementedBy": "src/components/docs/Search.jsx"
     },
-    "changelog.entry-list": {
+    "changelog.entry-header": {
       "category": "CHANGELOG",
-      "description": "Up to 10 changelog articles per page; each has a sticky left meta column (mono version badge linking to the post, date) and a linked 30px title over a markdown body, separated by faint borders.",
+      "description": "Index entry header, repeated once per article (ten per full page): sticky left meta column (mono version badge linking to the post, date) and the linked 30px title.",
       "scope": "The 21 changelog index routes (/changelog and pages 2–21).",
-      "implementedBy": "src/components/changelog/ChangelogEntry.jsx"
+      "implementedBy": "src/components/changelog/ChangelogEntry.jsx (variant index)"
     },
     "changelog.pagination": {
       "category": "CHANGELOG",
@@ -278,11 +284,17 @@
       "scope": "All 207 changelog post routes.",
       "implementedBy": "src/pages/changelog/ChangelogPost.jsx"
     },
-    "changelog.post-entry": {
+    "changelog.post-header": {
       "category": "CHANGELOG",
-      "description": "Single changelog article: the same meta column (unlinked badge) and markdown body as the list, with an unlinked 30px H1 and no border, pager or prev/next.",
+      "description": "Post header: the same meta column as the index entry (unlinked version badge, date) and an unlinked 30px H1 title; no border, pager or prev/next.",
       "scope": "All 207 changelog post routes.",
       "implementedBy": "src/components/changelog/ChangelogEntry.jsx (variant post)"
+    },
+    "changelog.entry-body": {
+      "category": "CHANGELOG",
+      "description": "Markdown body of a changelog entry (paragraphs, headings, lists, code, images, video) in the content column under the entry header. On the index it follows each header and is separated from the next entry by a faint border; on a post it is the end of the article.",
+      "scope": "Every changelog index and post route (228 routes).",
+      "implementedBy": "src/components/changelog/ChangelogEntry.jsx"
     }
   },
   "templates": [
@@ -431,7 +443,8 @@
       "sections": [
         "shell.header",
         "shell.mobile-menu",
-        "content.legal-prose",
+        "content.legal-header",
+        "content.legal-body",
         "shell.footer-mono",
         "shell.download-dialog",
         "shell.downloading-screen"
@@ -481,7 +494,8 @@
       "sections": [
         "shell.header",
         "shell.mobile-menu",
-        "changelog.entry-list",
+        "changelog.entry-header",
+        "changelog.entry-body",
         "changelog.pagination",
         "shell.footer-mono",
         "shell.download-dialog",
@@ -505,7 +519,8 @@
         "shell.header",
         "shell.mobile-menu",
         "changelog.back-link",
-        "changelog.post-entry",
+        "changelog.post-header",
+        "changelog.entry-body",
         "shell.footer-mono",
         "shell.download-dialog",
         "shell.downloading-screen"

@@ -1,22 +1,29 @@
 {
   "id": "docs.search-dialog",
-  "category": "DOCS",
-  "iaSections": [
-    "docs.search-dialog"
-  ],
+  "semantic": {
+    "semanticId": "docs.search-dialog",
+    "category": "DOCS",
+    "iaSections": [
+      "docs.search-dialog"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/docs/Search.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/docs/Search.jsx:93",
+        "quote": "function SearchDialog({ state, onClose }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:226",
+        "quote": "### 1.7 Search (⌘K / Ctrl-K, the search button, or the subnav search icon)"
+      }
+    ]
+  },
+  "retrievalEligible": false,
   "purpose": "Keyboard-first search over the docs.",
-  "implementedBy": [
-    {
-      "ref": "src/components/docs/Search.jsx:93",
-      "quote": "function SearchDialog({ state, onClose }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:226",
-      "quote": "### 1.7 Search (⌘K / Ctrl-K, the search button, or the subnav search icon)"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "docs.search-dialog"

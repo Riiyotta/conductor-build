@@ -1,0 +1,130 @@
+{
+  "id": "changelog.entry-body",
+  "semantic": {
+    "semanticId": "changelog.entry-body",
+    "category": "CHANGELOG",
+    "iaSections": [
+      "changelog.entry-body"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/changelog/ChangelogEntry.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/changelog/ChangelogEntry.jsx:46",
+        "quote": "<div className=\"contents\" dangerouslySetInnerHTML={{ __html: html }} />"
+      },
+      {
+        "ref": "src/components/changelog/ChangelogEntry.jsx:34",
+        "quote": "<div className=\"min-w-0\">"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:463",
+        "quote": "  - **Body** (markdown rendered with per-tag classes"
+      },
+      {
+        "ref": "CLONE_SPEC_DOCS.md:503",
+        "quote": "- Media frames are full width: 358 with 340 media."
+      }
+    ]
+  },
+  "retrievalEligible": true,
+  "purpose": "Rendered markdown body of one changelog entry in the content column under the entry header. Repeats once per article on the index (separated from the next entry by a faint border) and ends the article on a post page.",
+  "variants": {
+    "default": {
+      "iaSection": "changelog.entry-body"
+    }
+  },
+  "slot": "flow",
+  "content": {
+    "blocks": {
+      "type": "list",
+      "items": {
+        "type": "object",
+        "fields": {
+          "kind": {
+            "type": "enum",
+            "values": [
+              "paragraph",
+              "heading",
+              "list-item",
+              "code",
+              "image",
+              "video"
+            ],
+            "required": true
+          },
+          "text": {
+            "type": "text",
+            "maxWords": 80,
+            "required": false,
+            "observedMaxWords": 75
+          },
+          "media": {
+            "type": "media",
+            "roles": [
+              "product-screenshot",
+              "demo-video"
+            ],
+            "required": false
+          }
+        },
+        "required": true
+      },
+      "minItems": 1,
+      "maxItems": 60,
+      "required": true
+    }
+  },
+  "constraints": {
+    "mustFollow": "changelog.entry-header",
+    "allowedTemplates": [
+      "template.changelog-index",
+      "template.changelog-post"
+    ]
+  },
+  "motion": {
+    "allowedPatterns": [
+      "hover-color",
+      "video-autoplay-loop"
+    ],
+    "defaultPatterns": [
+      "hover-color"
+    ],
+    "reducedMotionFallback": "poster-or-first-frame",
+    "evidence": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:507",
+        "quote": "### 5.6 Motion (changelog)"
+      }
+    ]
+  },
+  "responsive": [
+    {
+      "minWidth": 0,
+      "changes": [
+        {
+          "property": "media frame",
+          "value": "full width, 358px frame with 340px media at 390px"
+        }
+      ]
+    }
+  ],
+  "contentPolicy": {
+    "fabricationRisk": true,
+    "allowedProvenance": [
+      "placeholder",
+      "rights-holder-supplied"
+    ],
+    "note": "Release notes are factual claims about shipped software: never invent releases; never copy Conductor's changelog text."
+  },
+  "quirks": [
+    "Prose by nature: on a post page this node holds most of the page height (see wrapperGate.whitelist in extraction/measured-values.json)."
+  ],
+  "assetRoles": [
+    "demo-video",
+    "product-screenshot"
+  ]
+}

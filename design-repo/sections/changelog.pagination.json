@@ -1,22 +1,29 @@
 {
   "id": "changelog.pagination",
-  "category": "CHANGELOG",
-  "iaSections": [
-    "changelog.pagination"
-  ],
+  "semantic": {
+    "semanticId": "changelog.pagination",
+    "category": "CHANGELOG",
+    "iaSections": [
+      "changelog.pagination"
+    ]
+  },
+  "source": {
+    "sourceId": "src/components/changelog/ChangelogPager.jsx",
+    "implementedBy": [
+      {
+        "ref": "src/components/changelog/ChangelogPager.jsx:39",
+        "quote": "export default function ChangelogPager({ page }) {"
+      }
+    ],
+    "measuredFrom": [
+      {
+        "ref": "CLONE_SPEC_DOCS.md:478",
+        "quote": "### 5.3 Index pagination"
+      }
+    ]
+  },
+  "retrievalEligible": true,
   "purpose": "Move between the 21 changelog pages.",
-  "implementedBy": [
-    {
-      "ref": "src/components/changelog/ChangelogPager.jsx:39",
-      "quote": "export default function ChangelogPager({ page }) {"
-    }
-  ],
-  "measuredFrom": [
-    {
-      "ref": "CLONE_SPEC_DOCS.md:478",
-      "quote": "### 5.3 Index pagination"
-    }
-  ],
   "variants": {
     "default": {
       "iaSection": "changelog.pagination"
@@ -51,7 +58,7 @@
   },
   "constraints": {
     "onePerPage": true,
-    "mustFollow": "changelog.entry-list",
+    "mustFollow": "changelog.entry-body",
     "allowedTemplates": [
       "template.changelog-index"
     ]

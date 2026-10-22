@@ -32,6 +32,10 @@ def load(rel, root=ROOT):
 
 
 EXAMPLE = load("schema/example.pagespec.json")
+EX_LEGAL = load("schema/example.legal.pagespec.json")
+EX_POST = load("schema/example.changelog-post.pagespec.json")
+EX_INDEX = load("schema/example.changelog-index.pagespec.json")
+BASES = {"home": EXAMPLE, "legal": EX_LEGAL, "post": EX_POST, "index": EX_INDEX}
 
 
 def N(spec, section, variant=None):
@@ -161,6 +165,90 @@ SPEC_MUTATIONS = [
     ("runtime", "brand-mark open-license-reuse", "ASSET_PIN", lambda s: set_(s, "hero.home", ["content", "wordmark", "source"], "open-license-reuse")),
     ("runtime", "product-screenshot generated-new", "ASSET_PIN", lambda s: set_(s, "hero.home", ["content", "screenshot", "source"], "generated-new")),
     ("runtime", "motion pattern allowed globally but not for this variant", "MOTION", lambda s: set_(s, "features.feature-shell", ["motion", "patterns"], ["demo-loop-on-view"], variant="anywhere")),
+    # ---- retrieval eligibility (closed boolean, const-locked per section, pinned independently in code)
+    ("schema", "download dialog node claims retrievalEligible=true (contract and pin say false)", "SCHEMA", lambda s: N(s, "shell.download-dialog").__setitem__("retrievalEligible", True)),
+    ("schema", "downloading screen node claims retrievalEligible=true", "SCHEMA", lambda s: N(s, "shell.downloading-screen").__setitem__("retrievalEligible", True)),
+    ("schema", "hero node claims retrievalEligible=false (contract and pin say true)", "SCHEMA", lambda s: N(s, "hero.home").__setitem__("retrievalEligible", False)),
+    ("schema", "retrievalEligible as a string instead of a boolean", "SCHEMA", lambda s: N(s, "hero.home").__setitem__("retrievalEligible", "true")),
+    ("runtime", "semantic layer rejects a retrievalEligible that contradicts the code pin even beyond the schema", "RETRIEVAL_PIN", lambda s: N(s, "shell.download-dialog").__setitem__("retrievalEligible", True)),
+]
+
+# Decomposition: legal header/body and changelog entry header/body replaced the three whole-page sections.
+# (base example, layer, name, expected code, mutate)
+def _swap_nodes(a, b):
+    def f(s):
+        i, j = idx(s, a[0], a[1]), idx(s, b[0], b[1])
+        s["nodes"][i], s["nodes"][j] = s["nodes"][j], s["nodes"][i]
+    return f
+
+
+def _dup_node(sec, var):
+    return lambda s: s["nodes"].insert(idx(s, sec, var) + 1, copy.deepcopy(N(s, sec, var)))
+
+
+def _rename(sec, var, new_sec, new_var=None):
+    def f(s):
+        n = N(s, sec, var)
+        n["section"] = new_sec
+        if new_var:
+            n["variant"] = new_var
+    return f
+
+
+DECOMP_MUTATIONS = [
+    ("legal", "structural", "legal body before legal header", "MUST_FOLLOW", _swap_nodes(("content.legal-header", "default"), ("content.legal-body", "default"))),
+    ("legal", "structural", "legal header removed (body alone)", "TEMPLATE_MISSING", lambda s: s["nodes"].pop(idx(s, "content.legal-header"))),
+    ("legal", "structural", "legal body removed (header alone)", "TEMPLATE_MISSING", lambda s: s["nodes"].pop(idx(s, "content.legal-body"))),
+    ("legal", "structural", "second legal header (onePerPage)", "ONE_PER_PAGE", _dup_node("content.legal-header", "default")),
+    ("legal", "schema", "retired whole-page id content.legal-prose is not a section", "SCHEMA", _rename("content.legal-header", "default", "content.legal-prose")),
+    ("legal", "schema", "legal header uses the retired effectiveDate field name", "SCHEMA", lambda s: set_(s, "content.legal-header", ["content", "effectiveDate"], "x")),
+    ("legal", "runtime", "legal header date line over its word budget", "MAXWORDS", lambda s: set_(s, "content.legal-header", ["content", "dateLine"], _words(12))),
+    ("legal", "structural", "legal sections on the post template", "SECTION_ALLOWED_IN_TEMPLATE", lambda s: (s.__setitem__("template", "template.changelog-post"), s.__setitem__("route", "/changelog/0.91.0-a-mostly-boring-update"))),
+    ("post", "schema", "retired whole-page id changelog.post-entry is not a section", "SCHEMA", _rename("changelog.entry-header", "post", "changelog.post-entry", "default")),
+    ("post", "structural", "second entry header on a post (template node is non-repeatable)", "TEMPLATE_ORDER", _dup_node("changelog.entry-header", "post")),
+    ("post", "structural", "post entry body removed", "TEMPLATE_MISSING", lambda s: s["nodes"].pop(idx(s, "changelog.entry-body"))),
+    ("post", "structural", "index-variant header on a post template", "TEMPLATE_EXTRA", lambda s: N(s, "changelog.entry-header").__setitem__("variant", "index")),
+    ("post", "structural", "post body ahead of its header", "MUST_FOLLOW", _swap_nodes(("changelog.entry-header", "post"), ("changelog.entry-body", "default"))),
+    ("post", "runtime", "entry body paragraph over its word budget", "MAXWORDS", lambda s: set_(s, "changelog.entry-body", ["content", "blocks", 0, "text"], _words(120))),
+    ("post", "runtime", "changelog screenshot generated-new (pinned role)", "ASSET_PIN", lambda s: set_(s, "changelog.entry-body", ["content", "blocks", 4, "media", "source"], "generated-new")),
+    ("post", "runtime", "index-only hover-color on a post header (variantPatterns)", "MOTION", lambda s: set_(s, "changelog.entry-header", ["motion", "patterns"], ["hover-color"], variant="post")),
+    ("index", "structural", "pagination ahead of the last entry body", "MUST_FOLLOW", _swap_nodes(("changelog.pagination", "default"), ("changelog.entry-body", "default"))),
+    ("index", "structural", "index entry body before its header", "MUST_FOLLOW", lambda s: s["nodes"].insert(idx(s, "changelog.entry-header") , s["nodes"].pop(idx(s, "changelog.entry-body")))),
+    ("index", "structural", "post-variant header on the index template", "TEMPLATE_EXTRA", lambda s: N(s, "changelog.entry-header").__setitem__("variant", "post")),
+    ("index", "structural", "pagination removed", "TEMPLATE_MISSING", lambda s: s["nodes"].pop(idx(s, "changelog.pagination"))),
+]
+
+# Contract-level: take a REAL contract, break one thing, require validate_contract to reject it with the code.
+def _c(section):
+    return copy.deepcopy(load(f"sections/{section}.json"))
+
+
+def _cm(section, fn):
+    d = _c(section)
+    fn(d)
+    return d
+
+
+CONTRACT_MUTATIONS = [
+    ("provenance leaks into taxonomy: sourceId inside semantic", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["semantic"].__setitem__("sourceId", "src/components/Hero.jsx"))),
+    ("taxonomy leaks into provenance: category inside source", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["source"].__setitem__("category", "HERO"))),
+    ("taxonomy leaks into provenance: semanticId inside source", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["source"].__setitem__("semanticId", "hero.home"))),
+    ("source block missing", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d.pop("source"))),
+    ("semantic block missing", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d.pop("semantic"))),
+    ("legacy top-level category re-added beside semantic", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d.__setitem__("category", "HERO"))),
+    ("category outside the closed set", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["semantic"].__setitem__("category", "LEGAL"))),
+    ("sourceId is not a path (a taxonomy-style id)", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["source"].__setitem__("sourceId", "hero.home"))),
+    ("sourceId names a file that is not cited in implementedBy", "SOURCE_ID", lambda: _cm("hero.home", lambda d: d["source"].__setitem__("sourceId", "src/components/Footer.jsx"))),
+    ("semanticId differs from the contract id", "SEMANTIC_ID", lambda: _cm("hero.home", lambda d: d["semantic"].__setitem__("semanticId", "hero.main"))),
+    ("semantic.iaSections differs from the variants' iaSections", "SEMANTIC_IA", lambda: _cm("hero.home", lambda d: d["semantic"].__setitem__("iaSections", ["hero.other"]))),
+    ("citation without a quote", "CONTRACT_SCHEMA", lambda: _cm("hero.home", lambda d: d["source"]["implementedBy"][0].pop("quote"))),
+    ("retrievalEligible missing", "CONTRACT_SCHEMA", lambda: _cm("shell.download-dialog", lambda d: d.pop("retrievalEligible"))),
+    ("retrievalEligible is a string", "CONTRACT_SCHEMA", lambda: _cm("shell.download-dialog", lambda d: d.__setitem__("retrievalEligible", "false"))),
+    ("download dialog flipped to retrievalEligible=true (pinned false)", "RETRIEVAL_PIN", lambda: _cm("shell.download-dialog", lambda d: d.__setitem__("retrievalEligible", True))),
+    ("downloading screen flipped to retrievalEligible=true (pinned false)", "RETRIEVAL_PIN", lambda: _cm("shell.downloading-screen", lambda d: d.__setitem__("retrievalEligible", True))),
+    ("docs search dialog flipped to retrievalEligible=true (pinned false)", "RETRIEVAL_PIN", lambda: _cm("docs.search-dialog", lambda d: d.__setitem__("retrievalEligible", True))),
+    ("a design composition (hero.home) flipped to retrievalEligible=false", "RETRIEVAL_PIN", lambda: _cm("hero.home", lambda d: d.__setitem__("retrievalEligible", False))),
+    ("a new overlay-slot section not in the pinned ineligible set", "RETRIEVAL_PIN", lambda: _cm("hero.home", lambda d: d.__setitem__("slot", "overlay"))),
 ]
 
 # --------------------------------------------------------------------------- warn-severity (must be a WARNING, never an error)
@@ -259,8 +347,8 @@ def control_for(tid, root=ROOT):
 
 
 def case_counts():
-    return {"mutations": len(SPEC_MUTATIONS) + len(WARN_MUTATIONS) + len(REPO_MUTATIONS),
-            "controls": 1 + len(load("templates/templates.json")["templates"])}
+    return {"mutations": len(SPEC_MUTATIONS) + len(DECOMP_MUTATIONS) + len(CONTRACT_MUTATIONS) + len(WARN_MUTATIONS) + len(REPO_MUTATIONS),
+            "controls": len(BASES) + len(load("templates/templates.json")["templates"])}
 
 
 def _has(items, code):
@@ -281,6 +369,22 @@ def run():
         ok = _has(errs, code)
         rejected += ok
         print(f"  [{'REJECTED' if ok else 'MISSED  '}] {layer:10s} {name}  (expect {code}; got {sorted({e.split()[0] for e in errs})})")
+        if not ok:
+            bad.append(name)
+    for base, layer, name, code, fn in DECOMP_MUTATIONS:
+        s = copy.deepcopy(BASES[base])
+        fn(s)
+        errs, _ = sv.validate(s)
+        ok = _has(errs, code)
+        rejected += ok
+        print(f"  [{'REJECTED' if ok else 'MISSED  '}] {layer:10s} [{base}] {name}  (expect {code}; got {sorted({e.split()[0] for e in errs})})")
+        if not ok:
+            bad.append(name)
+    for name, code, make in CONTRACT_MUTATIONS:
+        errs = sv.validate_contract(make())
+        ok = _has(errs, code)
+        rejected += ok
+        print(f"  [{'REJECTED' if ok else 'MISSED  '}] contract   {name}  (expect {code}; got {sorted({e.split()[0] for e in errs})})")
         if not ok:
             bad.append(name)
     for layer, name, code, fn in WARN_MUTATIONS:
@@ -316,7 +420,7 @@ def run():
     passed = 0
     hero_exc = load("compatibility/graph.json")["rules"]
     hero_exc = next(r for r in hero_exc if r["id"] == "REQUIRES_HERO")["exceptions"]
-    controls = [("example.pagespec.json", copy.deepcopy(EXAMPLE))]
+    controls = [(f"example PageSpec [{k}]", copy.deepcopy(v)) for k, v in BASES.items()]
     for tid in load("templates/templates.json")["templates"]:
         controls.append((f"generated control {tid}", control_for(tid)))
     for name, spec in controls:
