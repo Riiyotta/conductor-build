@@ -1,6 +1,6 @@
 {
-  "version": "1.0.0",
-  "$description": "Closed asset-role vocabulary, defined from real JSX usage sites (grep of /assets/ paths and live endpoints). Conductor (Melty Labs) is a real, live company: generated output must never reproduce its customer logos, real people's photos or likenesses, real testimonials, its trademarks, or its proprietary docs/changelog text.",
+  "version": "2.0.0",
+  "$description": "Closed asset-role vocabulary, defined from real JSX usage sites (grep of /assets/ paths and live endpoints). Conductor (Melty Labs) is a real, live company: generated output must never reproduce its customer logos, real people's photos or likenesses, real testimonials, its trademarks, or its proprietary docs/changelog text. Every role also carries `availability` by PageSpec `mode`: `reference` pages document the source and may carry placeholders for its roles; `generated` pages are new pages for ANY OTHER brand and may use generation-safe roles only.",
   "mediaSources": [
     "placeholder",
     "rights-holder-supplied",
@@ -50,6 +50,14 @@
         "deployer-configured",
         "opens-download-dialog"
       ]
+    },
+    "placeholder-endpoint-only": {
+      "meaning": "A generated page's own endpoint slot: never a live URL; the deployer configures the real one.",
+      "allowedTargets": [
+        "local-only-no-submit",
+        "deployer-configured",
+        "opens-download-dialog"
+      ]
     }
   },
   "roles": {
@@ -71,6 +79,12 @@
           "ref": "src/components/Sandbox.jsx:147",
           "quote": "/assets/img/demos/conductor-app-icon.png"
         }
+      ],
+      "origin": "source",
+      "availability": "reference-only",
+      "generatedModeGuidance": "Conductor's logomark, wordmark and app icon are the source brand. A generated page is a different brand: it carries the fictional brand's own placeholder mark, never this one or a lookalike.",
+      "generationSafeSubstitutes": [
+        "brand-placeholder"
       ]
     },
     "customer-logo": {
@@ -91,6 +105,12 @@
           "ref": "src/components/Testimonials.jsx:11",
           "quote": "/assets/img/logos/yc.png"
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "The eleven observed customer marks are third-party trademarks and imply endorsement. A generated page shows only explicit placeholder slots or logos its owner is permitted to show.",
+      "generationSafeSubstitutes": [
+        "customer-logo-placeholder"
       ]
     },
     "vendor-mark": {
@@ -119,6 +139,12 @@
           "ref": "src/components/Icon.jsx:20",
           "quote": "/assets/svg/verified-badge.svg"
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "Apple, OpenAI, Anthropic and X marks are third-party trademarks; use a neutral generic icon.",
+      "generationSafeSubstitutes": [
+        "icon"
       ]
     },
     "person-avatar": {
@@ -143,6 +169,12 @@
           "ref": "src/components/Multiplayer.jsx:10",
           "quote": "/assets/img/demos/"
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "Photos of real testimonial authors, team members and composers. A generated page uses neutral placeholder avatars only.",
+      "generationSafeSubstitutes": [
+        "avatar-placeholder"
       ]
     },
     "team-photo": {
@@ -155,6 +187,12 @@
           "ref": "src/pages/JoinUs.jsx:214",
           "quote": "/assets/pages/join-us/about.webp"
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "A photo of real Conductor employees. A generated page uses a neutral placeholder.",
+      "generationSafeSubstitutes": [
+        "avatar-placeholder"
       ]
     },
     "product-screenshot": {
@@ -175,6 +213,12 @@
           "ref": "src/pages/Slack.jsx:26",
           "quote": "/assets/pages/slack/slack-search.png"
         }
+      ],
+      "origin": "source",
+      "availability": "reference-only",
+      "generatedModeGuidance": "Conductor's own product UI. A generated page shows a placeholder or its own product capture.",
+      "generationSafeSubstitutes": [
+        "screenshot-placeholder"
       ]
     },
     "demo-video": {
@@ -187,6 +231,12 @@
           "ref": "src/components/Sandbox.jsx:238",
           "quote": "/assets/video/cmdn.mp4"
         }
+      ],
+      "origin": "source",
+      "availability": "reference-only",
+      "generatedModeGuidance": "Conductor's product video and its docs/changelog media. A generated page reserves a poster placeholder.",
+      "generationSafeSubstitutes": [
+        "video-placeholder"
       ]
     },
     "decorative-background": {
@@ -203,6 +253,12 @@
           "ref": "src/components/CTA.jsx:11",
           "quote": "/assets/img/conductor-orchestra.webp"
         }
+      ],
+      "origin": "source",
+      "availability": "reference-only",
+      "generatedModeGuidance": "The hero sky and orchestra photograph are source artwork. A generated page generates its own background.",
+      "generationSafeSubstitutes": [
+        "background-generated"
       ]
     },
     "ui-animation": {
@@ -219,6 +275,12 @@
           "ref": "src/components/Icon.jsx:23",
           "quote": "/assets/img/animations/working.webp"
         }
+      ],
+      "origin": "source",
+      "availability": "reference-only",
+      "generatedModeGuidance": "Conductor's animated masks (typing, working, logo reveal). A generated page makes its own.",
+      "generationSafeSubstitutes": [
+        "animation-generated"
       ]
     },
     "icon": {
@@ -239,7 +301,10 @@
           "ref": "src/components/ArrowLink.jsx:2",
           "quote": "lucide lucide-arrow-right"
         }
-      ]
+      ],
+      "origin": "source",
+      "availability": "generation-safe",
+      "generatedModeGuidance": "lucide icons (ISC licence) and generic glyphs may be used with the licence notice; the third-party brand marks listed under vendor-mark may not."
     },
     "form-endpoint": {
       "kind": "endpoint",
@@ -263,6 +328,12 @@
           "ref": "CLONE_SPEC_PAGES.md:210",
           "quote": "HubSpot injects a borderless"
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "The live HubSpot portal/forms and the Google Form belong to Conductor. A generated page uses a placeholder endpoint slot.",
+      "generationSafeSubstitutes": [
+        "endpoint-placeholder"
       ]
     },
     "download-endpoint": {
@@ -279,7 +350,123 @@
           "ref": "src/components/DownloadDialog.jsx:11",
           "quote": "const INTEL_URL ="
         }
+      ],
+      "origin": "source",
+      "availability": "blocked-for-generation",
+      "generatedModeGuidance": "The vendor CDN that serves Conductor builds. A generated page uses a placeholder endpoint slot.",
+      "generationSafeSubstitutes": [
+        "endpoint-placeholder"
       ]
+    },
+    "brand-placeholder": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Original; generate a new plain geometric monogram or text wordmark.",
+      "guidance": "Make it clearly not Conductor's: no conductor's baton, no orchestra motif, no lowercase 'c' glyph lookalike, no animated reveal copied from the source.",
+      "description": "A neutral mark for the generated page's own (fictional or user-supplied) brand.",
+      "generatedModeGuidance": "Make it clearly not Conductor's: no conductor's baton, no orchestra motif, no lowercase 'c' glyph lookalike, no animated reveal copied from the source."
+    },
+    "customer-logo-placeholder": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "placeholder-only",
+      "availability": "generation-safe",
+      "licensing": "No third-party mark.",
+      "guidance": "Render a labelled placeholder box. Never draw a real company's mark; use a real logo only when its owner supplies it.",
+      "description": "An explicit empty logo slot for the generated brand's own customers.",
+      "generatedModeGuidance": "Render a labelled placeholder box. Never draw a real company's mark; use a real logo only when its owner supplies it."
+    },
+    "avatar-placeholder": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "placeholder-only",
+      "availability": "generation-safe",
+      "licensing": "No real person's likeness.",
+      "guidance": "Never use or generate a photo attributed to a real person; never reuse a source author or team member.",
+      "description": "A neutral person placeholder (initials or silhouette).",
+      "generatedModeGuidance": "Never use or generate a photo attributed to a real person; never reuse a source author or team member."
+    },
+    "screenshot-placeholder": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "placeholder-only",
+      "availability": "generation-safe",
+      "licensing": "No source UI.",
+      "guidance": "Show a labelled empty frame, or the deployer's own capture. Never reproduce Conductor's UI, panels or demo content.",
+      "description": "A placeholder frame for the generated brand's own product capture.",
+      "generatedModeGuidance": "Show a labelled empty frame, or the deployer's own capture. Never reproduce Conductor's UI, panels or demo content."
+    },
+    "video-placeholder": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "placeholder-only",
+      "availability": "generation-safe",
+      "licensing": "No source footage.",
+      "guidance": "Reserve the slot with a poster; the deployer supplies the video.",
+      "description": "A poster placeholder for the generated brand's own video.",
+      "generatedModeGuidance": "Reserve the slot with a poster; the deployer supplies the video."
+    },
+    "background-generated": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Original artwork.",
+      "guidance": "Generate new abstract artwork; do not trace or restyle the source's sky or orchestra images.",
+      "description": "A newly generated decorative background for the generated brand.",
+      "generatedModeGuidance": "Generate new abstract artwork; do not trace or restyle the source's sky or orchestra images."
+    },
+    "animation-generated": {
+      "kind": "media",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Original animation.",
+      "guidance": "Create a new animation; do not recreate the source's typing, working or logo-reveal masks.",
+      "description": "A newly made micro-animation for the generated brand.",
+      "generatedModeGuidance": "Create a new animation; do not recreate the source's typing, working or logo-reveal masks."
+    },
+    "endpoint-placeholder": {
+      "kind": "endpoint",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "placeholder-endpoint-only",
+      "availability": "generation-safe",
+      "licensing": "No live URL.",
+      "guidance": "Use local-only-no-submit, deployer-configured or opens-download-dialog; real URLs are configured by the deployer outside the PageSpec.",
+      "description": "A placeholder for a generated page's own form or download endpoint.",
+      "generatedModeGuidance": "Use local-only-no-submit, deployer-configured or opens-download-dialog; real URLs are configured by the deployer outside the PageSpec."
+    },
+    "fictional-brand": {
+      "kind": "content-rule",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Not an asset: a rule about content.",
+      "guidance": "Name the brand yourself (or use the user's); it must not match sourceBrand.patterns.brand.",
+      "description": "The generated page's brand is a fictional or user-supplied name that is not the source's.",
+      "generatedModeGuidance": "Name the brand yourself (or use the user's); it must not match sourceBrand.patterns.brand."
+    },
+    "original-copy": {
+      "kind": "content-rule",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Not an asset: a rule about content.",
+      "guidance": "Never copy, paraphrase closely or lightly edit source marketing copy; it must not match sourceBrand.patterns.cta or .copy. Testimonials need real, consenting authors or an explicit placeholder; legal text comes from counsel.",
+      "description": "All headings, taglines, quotes, release notes and docs text are newly written.",
+      "generatedModeGuidance": "Never copy, paraphrase closely or lightly edit source marketing copy; it must not match sourceBrand.patterns.cta or .copy. Testimonials need real, consenting authors or an explicit placeholder; legal text comes from counsel."
+    },
+    "placeholder-url": {
+      "kind": "content-rule",
+      "origin": "generation-safe-addition",
+      "generationPolicy": "may-generate-new",
+      "availability": "generation-safe",
+      "licensing": "Not an asset: a rule about content.",
+      "guidance": "Use https://*.example, https://*.invalid, example.com/org/net, or relative paths; never a source URL (sourceBrand.patterns.url).",
+      "description": "Every absolute URL is a placeholder on a reserved domain.",
+      "generatedModeGuidance": "Use https://*.example, https://*.invalid, example.com/org/net, or relative paths; never a source URL (sourceBrand.patterns.url)."
     }
   },
   "compliancePinsDocumented": {
@@ -297,6 +484,936 @@
     "testimonials": "Never fabricate a testimonial or attribute a quote to a real person without consent.",
     "people": "Never fabricate team members or reuse real bios.",
     "docsAndChangelog": "Never copy Conductor's docs or changelog text; never invent releases.",
-    "legal": "Legal text comes from counsel only."
+    "legal": "Legal text comes from counsel only.",
+    "generatedMode": "In mode `generated` the page must not contain the source brand, CTA text, marketing copy, URLs or protected assets (sourceBrand.patterns) and may only use generation-safe asset roles."
+  },
+  "availabilityValues": {
+    "reference-only": "The source's own proprietary asset. Allowed (as a placeholder) in mode `reference`, rejected in mode `generated`; a generation-safe substitute is named.",
+    "blocked-for-generation": "Third-party marks, real people or live endpoints. Rejected in mode `generated` with no way to reproduce them; a generation-safe substitute is named.",
+    "generation-safe": "May appear in a mode `generated` page (new brand, original copy, placeholder or newly generated asset)."
+  },
+  "modes": {
+    "reference": "A page that documents or reproduces the source (Conductor / Melty Labs) itself. Source copy, brand name and the roles observed on the source are allowed; assets stay governed by their generationPolicy pins.",
+    "generated": "A new page for a DIFFERENT brand built from this design system. No source brand name, CTA, marketing copy, URL or protected asset; only generation-safe roles; absolute URLs only on reserved domains (*.example, *.invalid, example.com/org/net)."
+  },
+  "sourceBrand": {
+    "names": [
+      "Conductor",
+      "Conductor Cloud",
+      "Conductor API",
+      "conductor.build",
+      "conductor_build",
+      "Melty",
+      "Melty Labs",
+      "Melty, Inc.",
+      "meltylabs",
+      "melty.sh"
+    ],
+    "reservedUrlHosts": [
+      "*.example",
+      "*.invalid",
+      "example.com",
+      "example.org",
+      "example.net"
+    ],
+    "normalization": "Before matching, each string is NFKC-normalised, zero-width characters are removed, curly quotes become straight quotes and runs of whitespace collapse to one space. Patterns are matched case-insensitively with re.search.",
+    "reviewStatus": "UNREVIEWED. Every pattern was derived by a model from literals found in the clone's src/ tree (each carries its file:line evidence and the literals it must match); no human has reviewed the set. It is exact-text and regex matching: a paraphrase, translation or homoglyph spelling passes, and ordinary words inside the brand (the substring `conductor`) are blocked on purpose.",
+    "patterns": {
+      "brand": {
+        "codes": null,
+        "patterns": [
+          {
+            "id": "brand-conductor",
+            "pattern": "conductor",
+            "description": "The product/company name Conductor in any spelling or compound: Conductor, Conductor Cloud, conductor.build, conductor_build, @conductor_build, conductorbuild, conductor-json, CONDUCTOR_PORT. Substring match on purpose: the word is the brand.",
+            "mustMatch": [
+              "Get Conductor",
+              "Conductor Cloud runs on isolated microVMs",
+              "https://x.com/conductor_build",
+              "Conductor provides the variables below",
+              "https://trust.conductor.build",
+              "conductor-brandkit.zip",
+              "https://www.reddit.com/r/conductorbuild"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:89",
+                "quote": "Get Conductor"
+              },
+              {
+                "ref": "src/components/Sandbox.jsx:250",
+                "quote": "Conductor Cloud runs on isolated microVMs"
+              },
+              {
+                "ref": "src/components/Footer.jsx:34",
+                "quote": "https://x.com/conductor_build"
+              },
+              {
+                "ref": "src/content/docs/_search-index.json:410",
+                "quote": "Conductor provides the variables below"
+              },
+              {
+                "ref": "src/components/Footer.jsx:85",
+                "quote": "https://trust.conductor.build"
+              },
+              {
+                "ref": "src/pages/Brandkit.jsx:194",
+                "quote": "conductor-brandkit.zip"
+              },
+              {
+                "ref": "src/components/Footer.jsx:36",
+                "quote": "https://www.reddit.com/r/conductorbuild"
+              }
+            ]
+          },
+          {
+            "id": "brand-melty",
+            "pattern": "\\bmelty\\b|melty[\\s_-]*labs|meltylabs|melty\\.sh",
+            "description": "The company name Melty / Melty Labs / Melty, Inc., its GitHub org and mail domain.",
+            "mustMatch": [
+              "Melty, Inc.",
+              "https://meltylabs.t3.storage.dev/conductor-docs/ConductorDiffExplainer.mp4",
+              "founders@melty.sh"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Privacy.jsx:14",
+                "quote": "Melty, Inc."
+              },
+              {
+                "ref": "src/content/media-manifest.json:150",
+                "quote": "https://meltylabs.t3.storage.dev/conductor-docs/ConductorDiffExplainer.mp4"
+              },
+              {
+                "ref": "src/content/changelog/0.1.0-mcps-message-queues.json:30",
+                "quote": "founders@melty.sh"
+              }
+            ]
+          },
+          {
+            "id": "brand-bundle-id",
+            "pattern": "com\\.conductor\\.app",
+            "description": "The macOS application bundle identifier.",
+            "mustMatch": [
+              "com.conductor.app"
+            ],
+            "evidence": [
+              {
+                "ref": "src/content/docs/_search-index.json:1073",
+                "quote": "com.conductor.app"
+              }
+            ]
+          }
+        ],
+        "mustNotMatch": [
+          "Fernlake",
+          "Fernlake Relay",
+          "fernlake.example",
+          "orchestrate your tasks",
+          "the conduct of the team",
+          "Placeholder Company",
+          "meltdown",
+          "melt the ice"
+        ],
+        "code": "GENERATED_MODE_SOURCE_BRAND"
+      },
+      "cta": {
+        "codes": null,
+        "patterns": [
+          {
+            "id": "cta-verb-brand",
+            "pattern": "\\b(?:get|try|download|join|install|open|start|launch|use|meet)\\s+conductor\\b",
+            "description": "Brand-verb call-to-action labels: Get Conductor, Try Conductor, Download Conductor, Join Conductor.",
+            "mustMatch": [
+              "Get Conductor",
+              "Try Conductor.",
+              "Download Conductor",
+              "title=\"Join Conductor\"",
+              "Download Conductor</Link>"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:89",
+                "quote": "Get Conductor"
+              },
+              {
+                "ref": "src/components/CTA.jsx:23",
+                "quote": "Try Conductor."
+              },
+              {
+                "ref": "src/components/DownloadDialog.jsx:150",
+                "quote": "Download Conductor"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:159",
+                "quote": "title=\"Join Conductor\""
+              },
+              {
+                "ref": "src/pages/Slack.jsx:32",
+                "quote": "Download Conductor</Link>"
+              }
+            ]
+          },
+          {
+            "id": "cta-download-for-mac",
+            "pattern": "\\bdownload\\s+for\\s+mac\\b",
+            "description": "The download dialog's primary button label.",
+            "mustMatch": [
+              "Download for Mac"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/DownloadDialog.jsx:27",
+                "quote": "Download for Mac"
+              }
+            ]
+          },
+          {
+            "id": "cta-download-intel",
+            "pattern": "download\\s+for\\s+intel[\\s-]*based\\s+macs?",
+            "description": "The download dialog's fallback link label.",
+            "mustMatch": [
+              "Download for Intel-based Macs"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/DownloadDialog.jsx:190",
+                "quote": "Download for Intel-based Macs"
+              }
+            ]
+          },
+          {
+            "id": "cta-waitlist",
+            "pattern": "join\\s+windows\\s*/\\s*linux\\s+waitlist",
+            "description": "The download dialog's waitlist button label.",
+            "mustMatch": [
+              "Join Windows/Linux waitlist"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/DownloadDialog.jsx:183",
+                "quote": "Join Windows/Linux waitlist"
+              }
+            ]
+          },
+          {
+            "id": "cta-brand-assets",
+            "pattern": "conductor\\s+brand\\s+assets|brand\\s+kit\\s+download",
+            "description": "Brand-kit page heading and download card title.",
+            "mustMatch": [
+              "Brand kit download",
+              "title=\"Conductor brand assets\""
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Brandkit.jsx:188",
+                "quote": "Brand kit download"
+              },
+              {
+                "ref": "src/pages/Brandkit.jsx:168",
+                "quote": "title=\"Conductor brand assets\""
+              }
+            ]
+          }
+        ],
+        "mustNotMatch": [
+          "Get Fernlake",
+          "Try Fernlake",
+          "Download the Fernlake app",
+          "Download for macOS",
+          "Join the Fernlake waitlist",
+          "Download now",
+          "Get started"
+        ],
+        "code": "GENERATED_MODE_SOURCE_CTA"
+      },
+      "copy": {
+        "codes": null,
+        "patterns": [
+          {
+            "id": "copy-hero-headline",
+            "pattern": "run\\s+a\\s+team\\s+of\\s+coding\\s+agents",
+            "description": "Home hero heading.",
+            "mustMatch": [
+              "Run a team of coding agents"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:39",
+                "quote": "Run a team of coding agents"
+              }
+            ]
+          },
+          {
+            "id": "copy-hero-quote",
+            "pattern": "going\\s+from\\s+typing\\s+with\\s+two\\s+fingers",
+            "description": "Home hero customer quote.",
+            "mustMatch": [
+              "feels like going from typing with two fingers to having eight arms"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:95",
+                "quote": "feels like going from typing with two fingers to having eight arms"
+              }
+            ]
+          },
+          {
+            "id": "copy-cta-heading",
+            "pattern": "be\\s+like\\s+this\\s+guy",
+            "description": "Home closing CTA heading.",
+            "mustMatch": [
+              "Be like this guy."
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/CTA.jsx:4",
+                "quote": "Be like this guy."
+              }
+            ]
+          },
+          {
+            "id": "copy-feature-cloud",
+            "pattern": "a\\s+cloud\\s+sandbox\\s+for\\s+every\\s+agent|sandboxes\\s+spin\\s+up\\s+in\\s+seconds",
+            "description": "Cloud-sandbox feature title and body.",
+            "mustMatch": [
+              "A cloud sandbox for every agent.",
+              "Sandboxes spin up in seconds so your agents can run for hours."
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Sandbox.jsx:7",
+                "quote": "A cloud sandbox for every agent."
+              },
+              {
+                "ref": "src/components/Sandbox.jsx:250",
+                "quote": "Sandboxes spin up in seconds so your agents can run for hours."
+              }
+            ]
+          },
+          {
+            "id": "copy-feature-anywhere",
+            "pattern": "conduct\\s+from\\s+anywhere|from\\s+the\\s+desktop\\s+app,\\s+mobile,\\s+or\\s+your\\s+own\\s+integrations",
+            "description": "Anywhere feature title and body.",
+            "mustMatch": [
+              "Conduct from anywhere.",
+              "Conduct from the desktop app, mobile, or your own integrations"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Anywhere.jsx:4",
+                "quote": "Conduct from anywhere."
+              },
+              {
+                "ref": "src/components/Anywhere.jsx:13",
+                "quote": "Conduct from the desktop app, mobile, or your own integrations"
+              }
+            ]
+          },
+          {
+            "id": "copy-feature-byok",
+            "pattern": "bring\\s+your\\s+own\\s+subscriptions\\s+and\\s+keys",
+            "description": "Bring-your-own-keys feature title.",
+            "mustMatch": [
+              "Bring your own subscriptions and keys."
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Orchestration.jsx:6",
+                "quote": "Bring your own subscriptions and keys."
+              }
+            ]
+          },
+          {
+            "id": "copy-feature-multiplayer",
+            "pattern": "has\\s+entered\\s+the\\s+chat|prompt\\s+agents\\s+together\\s+in\\s+real-?time",
+            "description": "Multiplayer feature title and body.",
+            "mustMatch": [
+              "Ludwig has entered the chat.",
+              "prompt agents together in real-time."
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Multiplayer.jsx:6",
+                "quote": "Ludwig has entered the chat."
+              },
+              {
+                "ref": "src/components/Multiplayer.jsx:199",
+                "quote": "prompt agents together in real-time."
+              }
+            ]
+          },
+          {
+            "id": "copy-testimonial-quotes",
+            "pattern": "so\\s+much\\s+more\\s+productive\\s+and\\s+i\\s+don'?t\\s+have\\s+to\\s+keep\\s+my\\s+macbook|as\\s+big\\s+of\\s+a\\s+productivity\\s+boost\\s+as\\s+anthropic|i\\s+have\\s+a\\s+build\\s+tool\\s+that\\s+works\\s+the\\s+way\\s+i\\s+want|i\\s+can'?t\\s+imagine\\s+building\\s+without|speed\\s+and\\s+fury\\s+with\\s+which",
+            "description": "Real testimonial and third-party quote texts (home testimonials, changelog preview quote).",
+            "mustMatch": [
+              "so much more productive and I don't have to keep my Macbook",
+              "as big of a productivity boost as Anthropic",
+              "I have a build tool that works the way I want it to",
+              "I can't imagine building without",
+              "The speed and fury with which"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Testimonials.jsx:8",
+                "quote": "so much more productive and I don't have to keep my Macbook"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:17",
+                "quote": "as big of a productivity boost as Anthropic"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:25",
+                "quote": "I have a build tool that works the way I want it to"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:34",
+                "quote": "I can't imagine building without"
+              },
+              {
+                "ref": "src/components/Changelog.jsx:26",
+                "quote": "The speed and fury with which"
+              }
+            ]
+          },
+          {
+            "id": "copy-testimonial-authors",
+            "pattern": "\\b(?:garry\\s+tan|josh\\s+pigford|brandon\\s+leonardo|cole\\s+bemis|brian\\s+lovin|guillermo\\s+rauch)\\b",
+            "description": "Names of the real people quoted as testimonial authors.",
+            "mustMatch": [
+              "Garry Tan",
+              "Josh Pigford",
+              "Brandon Leonardo",
+              "Cole Bemis",
+              "Brian Lovin",
+              "Guillermo Rauch"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Testimonials.jsx:9",
+                "quote": "Garry Tan"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:18",
+                "quote": "Josh Pigford"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:26",
+                "quote": "Brandon Leonardo"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:35",
+                "quote": "Cole Bemis"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:43",
+                "quote": "Brian Lovin"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:52",
+                "quote": "Guillermo Rauch"
+              }
+            ]
+          },
+          {
+            "id": "copy-team-names",
+            "pattern": "\\b(?:charlie\\s+holtz|jackson\\s+de\\s+campos|guillaume\\s+sabran|lewis\\s+ellis|tywen\\s+kelly|kaden\\s+hyatt|sam\\s+lehman)\\b",
+            "description": "Names of the real team members on the Join Us page.",
+            "mustMatch": [
+              "Charlie Holtz",
+              "Jackson de Campos",
+              "Guillaume Sabran",
+              "Lewis Ellis",
+              "Tywen Kelly",
+              "Kaden Hyatt",
+              "Sam Lehman"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/JoinUs.jsx:18",
+                "quote": "Charlie Holtz"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:38",
+                "quote": "Jackson de Campos"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:53",
+                "quote": "Guillaume Sabran"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:60",
+                "quote": "Lewis Ellis"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:71",
+                "quote": "Tywen Kelly"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:85",
+                "quote": "Kaden Hyatt"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:97",
+                "quote": "Sam Lehman"
+              }
+            ]
+          },
+          {
+            "id": "copy-pricing",
+            "pattern": "live\\s+collaboration\\s+for\\s+teams\\s+of\\s+any\\s+size|a\\s+bunch\\s+of\\s+cloud\\s+workspace\\s+hours",
+            "description": "Pricing plan feature bullets.",
+            "mustMatch": [
+              "Live collaboration for teams of any size",
+              "a bunch of cloud workspace hours"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Pricing.jsx:47",
+                "quote": "Live collaboration for teams of any size"
+              },
+              {
+                "ref": "src/pages/Pricing.jsx:35",
+                "quote": "a bunch of cloud workspace hours"
+              }
+            ]
+          },
+          {
+            "id": "copy-join-us",
+            "pattern": "full-time\\s+ai-managers|elite\\s+sports\\s+team|grown\\s+10x\\s+since\\s+january",
+            "description": "Join Us page prose.",
+            "mustMatch": [
+              "full-time AI-managers",
+              "elite sports team",
+              "grown 10x since January"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/JoinUs.jsx:188",
+                "quote": "full-time AI-managers"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:221",
+                "quote": "elite sports team"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:164",
+                "quote": "grown 10x since January"
+              }
+            ]
+          },
+          {
+            "id": "copy-brandkit-description",
+            "pattern": "each\\s+workspace\\s+gets\\s+its\\s+own\\s+branch|mac\\s+app\\s+for\\s+running\\s+(?:coding|claude)",
+            "description": "Brand-kit page description paragraphs.",
+            "mustMatch": [
+              "Each workspace gets its own branch",
+              "Mac app for running coding agents"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Brandkit.jsx:65",
+                "quote": "Each workspace gets its own branch"
+              },
+              {
+                "ref": "src/pages/Brandkit.jsx:64",
+                "quote": "Mac app for running coding agents"
+              }
+            ]
+          },
+          {
+            "id": "copy-slack-page",
+            "pattern": "search\\s+messages,\\s+read",
+            "description": "Slack integration page prose.",
+            "mustMatch": [
+              "search messages, read"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Slack.jsx:22",
+                "quote": "search messages, read"
+              }
+            ]
+          },
+          {
+            "id": "copy-changelog-entries",
+            "pattern": "a\\s+\\(mostly\\)\\s+boring\\s+update|gpt-6\\.1\\s+sol|brought\\s+back\\s+big\\s+terminal\\s+mode|see\\s+claude'?s\\s+thinking|right\\s+click\\s+to\\s+copy\\s+a\\s+link\\s+to\\s+a\\s+workspace\\s+or\\s+chat|we\\s+spent\\s+this\\s+release\\s+polishing",
+            "description": "Real changelog entry titles and summary sentences (home preview cards and src/content/changelog).",
+            "mustMatch": [
+              "A (mostly) boring update",
+              "GPT-6.1 Sol",
+              "We've brought back big terminal mode",
+              "You can now see Claude's thinking",
+              "You can now right click to copy a link to a workspace or chat",
+              "We spent this release polishing"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Changelog.jsx:5",
+                "quote": "A (mostly) boring update"
+              },
+              {
+                "ref": "src/components/Changelog.jsx:7",
+                "quote": "GPT-6.1 Sol"
+              },
+              {
+                "ref": "src/content/changelog/0.11.4-the-return-of-big-terminal-mode.json:10",
+                "quote": "We've brought back big terminal mode"
+              },
+              {
+                "ref": "src/content/changelog/0.15.1-claude-s-thinking.json:10",
+                "quote": "You can now see Claude's thinking"
+              },
+              {
+                "ref": "src/content/changelog/0.71.0-workspace-and-chat-links.json:10",
+                "quote": "You can now right click to copy a link to a workspace or chat"
+              },
+              {
+                "ref": "src/content/changelog/0.91.0-a-mostly-boring-update.json:10",
+                "quote": "We spent this release polishing"
+              }
+            ]
+          },
+          {
+            "id": "copy-docs",
+            "pattern": "import\\s+a\\s+repository,\\s+configure\\s+it,\\s+and\\s+start\\s+agent\\s+work",
+            "description": "Real docs page description text (src/content/docs).",
+            "mustMatch": [
+              "Import a repository, configure it, and start agent work"
+            ],
+            "evidence": [
+              {
+                "ref": "src/content/docs/first-workspace.json:5",
+                "quote": "Import a repository, configure it, and start agent work"
+              }
+            ]
+          },
+          {
+            "id": "copy-legal",
+            "pattern": "we\\s+act\\s+as\\s+a\\s+processor\\s+on\\s+behalf\\s+of\\s+our\\s+customers\\s+for\\s+all\\s+data\\s+processed",
+            "description": "Privacy notice sentence.",
+            "mustMatch": [
+              "We act as a processor on behalf of our customers for all data processed"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Privacy.jsx:20",
+                "quote": "We act as a processor on behalf of our customers for all data processed"
+              }
+            ]
+          }
+        ],
+        "mustNotMatch": [
+          "Plan, review and ship with a crew of helpers",
+          "Placeholder testimonial text",
+          "A calmer way to hand off routine work",
+          "Release notes for the Fernlake desktop app",
+          "Last Updated: Month D, YYYY"
+        ],
+        "code": "GENERATED_MODE_SOURCE_COPY"
+      },
+      "url": {
+        "codes": null,
+        "patterns": [
+          {
+            "id": "url-conductor-hosts",
+            "pattern": "conductor\\.build|conductor-build\\.notion\\.site|conductor-marketing\\.t3\\.tigrisfiles\\.io|meltylabs\\.t3\\.storage\\.dev",
+            "description": "Conductor's own domains: marketing site, app, API, schema host, trust centre, docs bucket, media bucket.",
+            "mustMatch": [
+              "https://trust.conductor.build",
+              "https://app.conductor.build/pro",
+              "https://api.conductor.build/v0",
+              "https://conductor-build.notion.site/",
+              "conductor-marketing.t3.tigrisfiles.io",
+              "https://meltylabs.t3.storage.dev/"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Footer.jsx:85",
+                "quote": "https://trust.conductor.build"
+              },
+              {
+                "ref": "src/pages/Pricing.jsx:32",
+                "quote": "https://app.conductor.build/pro"
+              },
+              {
+                "ref": "src/content/docs/api.json:195",
+                "quote": "https://api.conductor.build/v0"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:225",
+                "quote": "https://conductor-build.notion.site/"
+              },
+              {
+                "ref": "src/content/changelog/0.28.0-workspaces-page-claude-s-context-interactive-planning-keyboard-nav-and-more.json:46",
+                "quote": "conductor-marketing.t3.tigrisfiles.io"
+              },
+              {
+                "ref": "src/content/media-manifest.json:150",
+                "quote": "https://meltylabs.t3.storage.dev/"
+              }
+            ]
+          },
+          {
+            "id": "url-download-cdn",
+            "pattern": "crabnebula",
+            "description": "The vendor CDN that serves Conductor builds.",
+            "mustMatch": [
+              "https://cdn.crabnebula.app/download/melty/conductor/latest/platform/dmg-aarch64",
+              "https://cdn.crabnebula.app/download/melty/conductor/latest/platform/dmg-x86_64"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/DownloadDialog.jsx:10",
+                "quote": "https://cdn.crabnebula.app/download/melty/conductor/latest/platform/dmg-aarch64"
+              },
+              {
+                "ref": "src/components/DownloadDialog.jsx:11",
+                "quote": "https://cdn.crabnebula.app/download/melty/conductor/latest/platform/dmg-x86_64"
+              }
+            ]
+          },
+          {
+            "id": "url-forms",
+            "pattern": "hsforms|hubspot|246368856|f1df7d97-c440-4b74-8f51-b020c9616e2f|a7817add-03f3-49dc-9ffc-16c10009e49a|docs\\.google\\.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM",
+            "description": "Live form endpoints: HubSpot portal and form ids, the Windows/Linux waitlist Google Form.",
+            "mustMatch": [
+              "f1df7d97-c440-4b74-8f51-b020c9616e2f",
+              "a7817add-03f3-49dc-9ffc-16c10009e49a",
+              "https://js-na2.hsforms.net/forms/embed/246368856.js",
+              "https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM"
+            ],
+            "evidence": [
+              {
+                "ref": "src/pages/Enterprise.jsx:45",
+                "quote": "f1df7d97-c440-4b74-8f51-b020c9616e2f"
+              },
+              {
+                "ref": "src/pages/TeamPlan.jsx:26",
+                "quote": "a7817add-03f3-49dc-9ffc-16c10009e49a"
+              },
+              {
+                "ref": "CLONE_SPEC_PAGES.md:209",
+                "quote": "https://js-na2.hsforms.net/forms/embed/246368856.js"
+              },
+              {
+                "ref": "src/components/DownloadDialog.jsx:178",
+                "quote": "https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM"
+              }
+            ]
+          },
+          {
+            "id": "url-community",
+            "pattern": "discord\\.gg/RSrYmstWzy|x\\.com/conductor_build|youtube\\.com/@conductor_build|reddit\\.com/r/conductorbuild",
+            "description": "Conductor's community and social URLs.",
+            "mustMatch": [
+              "https://discord.gg/RSrYmstWzy",
+              "https://x.com/conductor_build",
+              "https://www.youtube.com/@conductor_build",
+              "https://www.reddit.com/r/conductorbuild"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Footer.jsx:37",
+                "quote": "https://discord.gg/RSrYmstWzy"
+              },
+              {
+                "ref": "src/components/Footer.jsx:34",
+                "quote": "https://x.com/conductor_build"
+              },
+              {
+                "ref": "src/components/Footer.jsx:35",
+                "quote": "https://www.youtube.com/@conductor_build"
+              },
+              {
+                "ref": "src/components/Footer.jsx:36",
+                "quote": "https://www.reddit.com/r/conductorbuild"
+              }
+            ]
+          },
+          {
+            "id": "url-testimonial-posts",
+            "pattern": "x\\.com/(?:garrytan|shpigford|shiftb|rauchg|brian_lovin|kennyliu)\\b",
+            "description": "Real people's post URLs used by testimonials and the changelog quote.",
+            "mustMatch": [
+              "https://x.com/garrytan/status/2092062231488061584",
+              "https://x.com/Shpigford/status/2054717330978914719",
+              "https://x.com/shiftb",
+              "https://x.com/rauchg",
+              "https://x.com/brian_lovin",
+              "https://x.com/kennyliu/status/1950364590841483673"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Testimonials.jsx:14",
+                "quote": "https://x.com/garrytan/status/2092062231488061584"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:22",
+                "quote": "https://x.com/Shpigford/status/2054717330978914719"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:31",
+                "quote": "https://x.com/shiftb"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:56",
+                "quote": "https://x.com/rauchg"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:48",
+                "quote": "https://x.com/brian_lovin"
+              },
+              {
+                "ref": "src/components/Changelog.jsx:21",
+                "quote": "https://x.com/kennyliu/status/1950364590841483673"
+              }
+            ]
+          },
+          {
+            "id": "url-source-uploads",
+            "pattern": "github\\.com/user-attachments/assets/",
+            "description": "Source-uploaded media on GitHub.",
+            "mustMatch": [
+              "https://github.com/user-attachments/assets/632ab731"
+            ],
+            "evidence": [
+              {
+                "ref": "src/content/media-manifest.json:2418",
+                "quote": "https://github.com/user-attachments/assets/632ab731"
+              }
+            ]
+          }
+        ],
+        "mustNotMatch": [
+          "https://app.fernlake.example/start",
+          "https://fernlake.example/docs",
+          "/docs/getting-started",
+          "https://example.com/x",
+          "mailto:hello@fernlake.example",
+          "https://downloads.fernlake.example/latest"
+        ],
+        "code": "GENERATED_MODE_SOURCE_URL"
+      },
+      "asset": {
+        "codes": null,
+        "patterns": [
+          {
+            "id": "asset-source-paths",
+            "pattern": "(?:^|/)assets/(?:img|svg|video|pages|changelog|docs)/",
+            "description": "The clone's own asset tree (logos, screenshots, videos, page art, changelog media).",
+            "mustMatch": [
+              "/assets/img/homepage-hero-background.webp",
+              "/assets/svg/conductor-logomark.svg",
+              "/assets/video/cmdn.mp4",
+              "/assets/pages/slack/slack-search.png",
+              "/assets/changelog/media/0.0.16/"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:52",
+                "quote": "/assets/img/homepage-hero-background.webp"
+              },
+              {
+                "ref": "src/components/Icon.jsx:21",
+                "quote": "/assets/svg/conductor-logomark.svg"
+              },
+              {
+                "ref": "src/components/Sandbox.jsx:238",
+                "quote": "/assets/video/cmdn.mp4"
+              },
+              {
+                "ref": "src/pages/Slack.jsx:26",
+                "quote": "/assets/pages/slack/slack-search.png"
+              },
+              {
+                "ref": "src/content/changelog/0.0.16-terminal-improvements.json:13",
+                "quote": "/assets/changelog/media/0.0.16/"
+              }
+            ]
+          },
+          {
+            "id": "asset-named-files",
+            "pattern": "homepage-hero-background|conductor-orchestra|conductor-app-hero|conductor-app-icon|conductor-mobile-dock|cmdn\\.mp4|slack-search\\.(?:png|webp)|join-us/about\\.webp|animations/(?:typing|working|conductor-logo)|conductor-brandkit|conductor-(?:logomark|wordmark)",
+            "description": "Protected source media filenames: brand marks, hero art, product screenshots, demo video, team photo, brand-kit archive.",
+            "mustMatch": [
+              "homepage-hero-background.webp",
+              "conductor-orchestra.webp",
+              "conductor-app-hero-light.webp",
+              "/assets/video/cmdn.mp4",
+              "/assets/pages/join-us/about.webp",
+              "/assets/img/animations/typing.webp",
+              "conductor-brandkit.zip",
+              "/assets/svg/conductor-logomark.svg",
+              "/assets/img/animations/conductor-logo.webp"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:52",
+                "quote": "homepage-hero-background.webp"
+              },
+              {
+                "ref": "src/components/CTA.jsx:11",
+                "quote": "conductor-orchestra.webp"
+              },
+              {
+                "ref": "src/components/Hero.jsx:116",
+                "quote": "conductor-app-hero-light.webp"
+              },
+              {
+                "ref": "src/components/Sandbox.jsx:238",
+                "quote": "/assets/video/cmdn.mp4"
+              },
+              {
+                "ref": "src/pages/JoinUs.jsx:214",
+                "quote": "/assets/pages/join-us/about.webp"
+              },
+              {
+                "ref": "src/components/Icon.jsx:22",
+                "quote": "/assets/img/animations/typing.webp"
+              },
+              {
+                "ref": "src/pages/Brandkit.jsx:194",
+                "quote": "conductor-brandkit.zip"
+              },
+              {
+                "ref": "src/components/Icon.jsx:21",
+                "quote": "/assets/svg/conductor-logomark.svg"
+              },
+              {
+                "ref": "src/components/Hero.jsx:68",
+                "quote": "/assets/img/animations/conductor-logo.webp"
+              }
+            ]
+          },
+          {
+            "id": "asset-testimonial-photos",
+            "pattern": "assets/img/testimonials/|assets/pages/join-us/",
+            "description": "Photos of real people (testimonial authors, team).",
+            "mustMatch": [
+              "/assets/img/testimonials/frank.jpg",
+              "/assets/img/testimonials/garry.jpg"
+            ],
+            "evidence": [
+              {
+                "ref": "src/components/Hero.jsx:99",
+                "quote": "/assets/img/testimonials/frank.jpg"
+              },
+              {
+                "ref": "src/components/Testimonials.jsx:13",
+                "quote": "/assets/img/testimonials/garry.jpg"
+              }
+            ]
+          }
+        ],
+        "mustNotMatch": [
+          "/docs/assets-overview",
+          "/changelog/0.0.1-placeholder",
+          "https://cdn.fernlake.example/media/hero.webp"
+        ],
+        "code": "GENERATED_MODE_PROTECTED_ASSET"
+      }
+    }
   }
 }

@@ -44,7 +44,10 @@
       "roles": [
         "brand-mark"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "brand-placeholder"
+      ]
     },
     "headingLead": {
       "type": "text",
@@ -106,7 +109,10 @@
           "roles": [
             "person-avatar"
           ],
-          "required": true
+          "required": true,
+          "generatedRoles": [
+            "avatar-placeholder"
+          ]
         }
       },
       "required": true
@@ -116,14 +122,20 @@
       "roles": [
         "decorative-background"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "background-generated"
+      ]
     },
     "screenshot": {
       "type": "media",
       "roles": [
         "product-screenshot"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "screenshot-placeholder"
+      ]
     }
   },
   "constraints": {
@@ -211,5 +223,11 @@
     "decorative-background",
     "person-avatar",
     "product-screenshot"
+  ],
+  "generatedAssetRoles": [
+    "avatar-placeholder",
+    "background-generated",
+    "brand-placeholder",
+    "screenshot-placeholder"
   ]
 }

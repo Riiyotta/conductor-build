@@ -237,6 +237,123 @@ CASES = [
     ("semantic category of a contract differs from ia.json", "ia-parity", _contract("changelog.entry-body", lambda d: d["semantic"].__setitem__("category", "CONTENT")), True),
 ]
 
+# ---- generation context: mode, availability pins, generatedRoles, sourceBrand.patterns, generation-safe examples
+def reg(root, fn):
+    edit(root, "assets/asset-roles.json", fn)
+
+
+def _avail(role, value):
+    return lambda root: reg(root, lambda d: d["roles"][role].__setitem__("availability", value))
+
+
+def _subs(role, value):
+    return lambda root: reg(root, lambda d: d["roles"][role].__setitem__("generationSafeSubstitutes", value))
+
+
+def _gen_example(name, fn):
+    def go(root):
+        edit(root, f"schema/examples/generated.template.{name}.pagespec.json", fn)
+    return go
+
+
+def _node(d, section, variant=None):
+    return next(n for n in d["nodes"] if n["section"] == section and (variant is None or n["variant"] == variant))
+
+
+def _ref_example(fn, name="example.pagespec.json"):
+    return lambda root: edit(root, f"schema/{name}", fn)
+
+
+def _pat(cat, pid, fn):
+    def go(root):
+        def f(d):
+            for p in d["sourceBrand"]["patterns"][cat]["patterns"]:
+                if p["id"] == pid:
+                    fn(p)
+        reg(root, f)
+    return go
+
+
+def _sub_py(old, new):
+    return lambda root: sub_text(root, "schema/semantic_validate.py", old, new)
+
+
+def _del_pat(cat, pid):
+    return lambda root: reg(root, lambda d: d["sourceBrand"]["patterns"][cat].__setitem__("patterns", [p for p in d["sourceBrand"]["patterns"][cat]["patterns"] if p["id"] != pid]))
+
+
+def _schema_mode_not_required(root):
+    edit(root, "schema/pagespec.schema.json", lambda d: d["required"].remove("mode"))
+
+
+def _schema_mode_enum(root):
+    edit(root, "schema/pagespec.schema.json", lambda d: d["properties"]["mode"]["enum"].append("production"))
+
+
+def _rm_gen_example(root):
+    os.remove(os.path.join(root, "schema/examples/generated.template.home.pagespec.json"))
+
+
+def _drop_generated_roles(root):
+    def f(d):
+        d["content"]["background"].pop("generatedRoles")
+        d["generatedAssetRoles"] = [x for x in d["generatedAssetRoles"] if x != "background-generated"]
+    edit(root, "sections/hero.home.json", f)
+    edit(root, "sections/conversion.be-like-this-guy.json", lambda d: (d["content"]["background"].pop("generatedRoles"), d.pop("generatedAssetRoles")))
+
+
+GEN_CASES = [
+    ("availability: brand-mark (the source's logo) flipped to generation-safe", "asset-availability", _avail("brand-mark", "generation-safe"), False),
+    ("availability: product-screenshot flipped to generation-safe", "asset-availability", _avail("product-screenshot", "generation-safe"), False),
+    ("availability: customer-logo (blocked) flipped to generation-safe", "asset-availability", _avail("customer-logo", "generation-safe"), False),
+    ("availability: form-endpoint (blocked) flipped to generation-safe", "asset-availability", _avail("form-endpoint", "generation-safe"), False),
+    ("availability: person-avatar blocked-for-generation -> reference-only (different valid value)", "asset-availability", _avail("person-avatar", "reference-only"), False),
+    ("availability: a generation-safe placeholder role quietly made reference-only", "asset-availability", _avail("brand-placeholder", "reference-only"), False),
+    ("availability: value outside the closed set", "asset-availability", _avail("brand-mark", "public"), False),
+    ("availability: reference-only role loses its generation-safe substitutes", "asset-availability", _subs("brand-mark", []), False),
+    ("availability: substitute points at a blocked role", "asset-availability", _subs("brand-mark", ["customer-logo"]), False),
+    ("availability: generation-safe role starts listing substitutes", "asset-availability", lambda r: reg(r, lambda d: d["roles"]["brand-placeholder"].__setitem__("generationSafeSubstitutes", ["avatar-placeholder"])), False),
+    ("availability: semantic_validate.PINNED_AVAILABILITY edited (brand-mark -> generation-safe) so code and verify pin disagree", "asset-availability", _sub_py('"brand-mark": "reference-only", "product-screenshot"', '"brand-mark": "generation-safe", "product-screenshot"'), False),
+    ("availability: registry role added without a pinned availability", "asset-availability", lambda r: reg(r, lambda d: d["roles"].__setitem__("new-role", dict(d["roles"]["icon"]))), False),
+    ("generatedRoles: hero wordmark allows brand-mark (reference role) for generated pages", "asset-availability", lambda r: edit(r, "sections/hero.home.json", lambda d: d["content"]["wordmark"]["generatedRoles"].append("brand-mark")), False),
+    ("generatedRoles: hero wordmark has none", "asset-availability", lambda r: edit(r, "sections/hero.home.json", lambda d: d["content"]["wordmark"].pop("generatedRoles")), False),
+    ("generatedRoles: section-level generatedAssetRoles no longer derived from the fields", "asset-availability", lambda r: edit(r, "sections/hero.home.json", lambda d: d["generatedAssetRoles"].append("video-placeholder")), False),
+    ("generatedRoles: a role of the wrong kind (endpoint-placeholder on a media field)", "asset-availability", lambda r: edit(r, "sections/hero.home.json", lambda d: d["content"]["wordmark"]["generatedRoles"].append("endpoint-placeholder")), False),
+    ("generatedRoles: background-generated allowed by no section (dead role)", "asset-availability", _drop_generated_roles, False),
+    ("mode: schema no longer requires `mode`", "mode-schema", _schema_mode_not_required, False),
+    ("mode: enum widened with 'production'", "mode-schema", _schema_mode_enum, False),
+    ("mode: asset-roles.json no longer documents the generated mode", "mode-schema", lambda r: reg(r, lambda d: d["modes"].pop("generated")), False),
+    ("mode: reference example loses its mode", "mode-schema", _ref_example(lambda d: d.pop("mode")), False),
+    ("mode: reference example claims to be generated", "mode-schema", _ref_example(lambda d: d.__setitem__("mode", "generated")), False),
+    ("mode: manifest pageSpecVersion differs from the schema const", "manifest-integrity", lambda r: edit(r, "registry.manifest.json", lambda d: d.__setitem__("pageSpecVersion", "1.0.0")), False),
+    ("examples: generated example claims to be reference", "generated-examples", _gen_example("home", lambda d: d.__setitem__("mode", "reference")), False),
+    ("examples: generated example carries the source brand (hero heading)", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"].__setitem__("headingLead", "Meet Conductor")), False),
+    ("examples: generated example carries source CTA text", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"]["primaryCta"].__setitem__("label", "Get Conductor")), False),
+    ("examples: generated example carries source marketing copy", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"].__setitem__("headingLead", "Run a team of coding agents")), False),
+    ("examples: generated example links to a source URL", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"]["primaryCta"].__setitem__("href", "https://app.conductor.build/pro")), False),
+    ("examples: generated example uses a non-reserved host", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"]["primaryCta"].__setitem__("href", "https://acme.com/")), False),
+    ("examples: generated example reuses the source's brand-mark role", "generated-examples", _gen_example("home", lambda d: _node(d, "hero.home")["content"]["wordmark"].__setitem__("assetRole", "brand-mark")), False),
+    ("examples: generated example reuses the live download endpoint role", "generated-examples", _gen_example("home", lambda d: _node(d, "shell.download-dialog")["content"]["primaryAction"]["endpoint"].__setitem__("assetRole", "download-endpoint")), False),
+    ("examples: generated docs example leaks a source docs sentence", "generated-examples", _gen_example("docs-page", lambda d: _node(d, "docs.prose-body")["content"]["blocks"][0].__setitem__("text", "Import a repository, configure it, and start agent work.")), False),
+    ("examples: no generation-safe example for template.home", "generated-examples", _rm_gen_example, False),
+    ("patterns: the CTA category is emptied", "source-brand-patterns", lambda r: reg(r, lambda d: d["sourceBrand"]["patterns"]["cta"].__setitem__("patterns", [])), False),
+    ("patterns: a pinned pattern (cta-verb-brand) is removed", "source-brand-patterns", _del_pat("cta", "cta-verb-brand"), False),
+    ("patterns: a pinned URL pattern (url-download-cdn) is removed", "source-brand-patterns", _del_pat("url", "url-download-cdn"), False),
+    ("patterns: the brand pattern is changed to something that no longer matches Conductor", "source-brand-patterns", _pat("brand", "brand-conductor", lambda p: p.__setitem__("pattern", "xqzvconduct0r")), False),
+    ("patterns: the CTA verb pattern loses 'get' (Get Conductor passes)", "source-brand-patterns", _pat("cta", "cta-verb-brand", lambda p: p.__setitem__("pattern", r"\b(?:try|download|join)\s+conductor\b")), False),
+    ("patterns: the hero-headline pattern is narrowed so the real heading passes", "source-brand-patterns", _pat("copy", "copy-hero-headline", lambda p: p.__setitem__("pattern", "run a team of coding agents in space")), False),
+    ("patterns: an asset pattern widened to match everything", "source-brand-patterns", _pat("asset", "asset-source-paths", lambda p: p.__setitem__("pattern", ".*")), False),
+    ("patterns: a real literal no longer appears in the pattern's evidence", "source-brand-patterns", _pat("cta", "cta-waitlist", lambda p: p.__setitem__("evidence", [{"ref": "src/components/DownloadDialog.jsx:183", "quote": "waitlist"}])), False),
+    ("patterns: reviewStatus no longer says UNREVIEWED", "source-brand-patterns", lambda r: reg(r, lambda d: d["sourceBrand"].__setitem__("reviewStatus", "Reviewed and approved.")), False),
+    ("patterns: validator code documented differently from the validator", "source-brand-patterns", lambda r: reg(r, lambda d: d["sourceBrand"]["patterns"]["cta"].__setitem__("code", "GENERATED_MODE_SOURCE_BRAND")), False),
+    ("patterns: placeholder-host rule loosened to accept any host", "source-brand-patterns", _sub_py('RESERVED_HOST = re.compile(r"(?:^|\\.)(?:example|invalid)$|(?:^|\\.)example\\.(?:com|org|net)$", re.I)', 'RESERVED_HOST = re.compile(r".*", re.I)'), False),
+    ("patterns: evidence citation points at the wrong lines", "citation-range", _pat("cta", "cta-waitlist", lambda p: p["evidence"][0].__setitem__("ref", "src/components/DownloadDialog.jsx:1")), True),
+    ("validator stops enforcing generated mode (only the adversarial suite can see it)", "adversarial-suite", _sub_py('mode = spec.get("mode") if spec.get("mode") in MODES else None', 'mode = None'), False),
+    ("validator stops scanning generated-mode strings", "adversarial-suite", _sub_py('gen = mode == "generated" and pats is not None', 'gen = False'), False),
+    ("validator stops rejecting reference-only roles in generated mode", "adversarial-suite", _sub_py('if av in ("reference-only", "blocked-for-generation"):', 'if False:'), False),
+]
+
+
 # warn-severity cases: exit 0, and the check must report WARN
 WARN_CASES = [
     ("HERO section measured at 2000px (>1800, <3000)", "wrapper-gate", lambda r: ledger(r, lambda d: hs(d, "/", "hero.home/default", 2000)), False),
@@ -274,7 +391,7 @@ def main():
             bad += not hit
         finally:
             shutil.rmtree(tmp, ignore_errors=True)
-    for name, check, fn, needs in CASES:
+    for name, check, fn, needs in CASES + GEN_CASES:
         if needs and not HAVE_SIBLINGS:
             print(f"SKIPPED  {name} (needs sibling source project)")
             skipped += 1
@@ -301,7 +418,7 @@ def main():
             bad += 1
     finally:
         shutil.rmtree(tmp, ignore_errors=True)
-    print(f"\ndrift cases caught: {proved}/{len(CASES) + len(WARN_CASES) - skipped}  (skipped {skipped}); failures: {bad}")
+    print(f"\ndrift cases caught: {proved}/{len(CASES) + len(GEN_CASES) + len(WARN_CASES) - skipped}  (skipped {skipped}); failures: {bad}")
     return 1 if bad else 0
 
 

@@ -63,14 +63,20 @@
             "roles": [
               "person-avatar"
             ],
-            "required": true
+            "required": true,
+            "generatedRoles": [
+              "avatar-placeholder"
+            ]
           },
           "companyIcon": {
             "type": "media",
             "roles": [
               "customer-logo"
             ],
-            "required": false
+            "required": false,
+            "generatedRoles": [
+              "customer-logo-placeholder"
+            ]
           },
           "verified": {
             "type": "boolean",
@@ -191,5 +197,9 @@
   "assetRoles": [
     "customer-logo",
     "person-avatar"
+  ],
+  "generatedAssetRoles": [
+    "avatar-placeholder",
+    "customer-logo-placeholder"
   ]
 }

@@ -81,7 +81,10 @@
       "roles": [
         "form-endpoint"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "endpoint-placeholder"
+      ]
     }
   },
   "constraints": {
@@ -120,5 +123,8 @@
   ],
   "assetRoles": [
     "form-endpoint"
+  ],
+  "generatedAssetRoles": [
+    "endpoint-placeholder"
   ]
 }

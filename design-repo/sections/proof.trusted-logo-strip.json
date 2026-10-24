@@ -71,7 +71,10 @@
         "roles": [
           "customer-logo"
         ],
-        "required": true
+        "required": true,
+        "generatedRoles": [
+          "customer-logo-placeholder"
+        ]
       },
       "minItems": 8,
       "maxItems": 8,
@@ -150,5 +153,8 @@
   ],
   "assetRoles": [
     "customer-logo"
+  ],
+  "generatedAssetRoles": [
+    "customer-logo-placeholder"
   ]
 }

@@ -14,6 +14,14 @@ eligibility pins (utilities/overlays are not retrievable design compositions), t
 entries suppress it) run against the measured-heights ledger in measured-values.json, manifest counts recomputed from
 files, entryPoints inside the repo, README/CHANGELOG counts, no absolute local paths.
 
+Generation context (PageSpec `mode` reference | generated): schema requires the closed `mode` enum; asset-role `availability`
+(reference-only / generation-safe / blocked-for-generation) is PINNED in this file (PINNED_AVAILABILITY, independent of both the
+registry and semantic_validate.py) and every reference-only or blocked role names generation-safe substitutes; every media or
+endpoint field lists generation-safe `generatedRoles` (derived `generatedAssetRoles` per section); the sourceBrand.patterns
+registry is pinned (ids and must-match strings in this file), every pattern carries src/ evidence and re-matches its own real
+literals, never matches its benign list; every generation-safe example PageSpec validates in mode `generated`; the adversarial
+suite (which proves the validator rejects leakage) is re-run and must pass.
+
 Sibling-dependent checks (citations, ia.json parity, route enumeration, stack re-diff) run when the project tree
 that contains this design-repo/ folder is present and DEGRADE TO WARNINGS when it is not.
 """
@@ -31,6 +39,40 @@ import build_schema  # noqa: E402
 import semantic_validate as sv  # noqa: E402
 
 FORBIDDEN_PATH = "/Us" + "ers/"
+
+# Asset-role availability by PageSpec mode. Pinned HERE (an independent copy of semantic_validate.PINNED_AVAILABILITY): flipping a
+# role to a different-but-valid availability in the registry (the source's logo -> generation-safe) is a drift, not an edit.
+PINNED_AVAILABILITY = {
+    "brand-mark": "reference-only", "product-screenshot": "reference-only", "demo-video": "reference-only",
+    "decorative-background": "reference-only", "ui-animation": "reference-only",
+    "customer-logo": "blocked-for-generation", "vendor-mark": "blocked-for-generation", "person-avatar": "blocked-for-generation",
+    "team-photo": "blocked-for-generation", "form-endpoint": "blocked-for-generation", "download-endpoint": "blocked-for-generation",
+    "icon": "generation-safe", "brand-placeholder": "generation-safe", "customer-logo-placeholder": "generation-safe",
+    "avatar-placeholder": "generation-safe", "screenshot-placeholder": "generation-safe", "video-placeholder": "generation-safe",
+    "background-generated": "generation-safe", "animation-generated": "generation-safe", "endpoint-placeholder": "generation-safe",
+    "fictional-brand": "generation-safe", "original-copy": "generation-safe", "placeholder-url": "generation-safe",
+}
+AVAILABILITY_VALUES = ["blocked-for-generation", "generation-safe", "reference-only"]
+# sourceBrand.patterns pinned in code: the ids that must exist, and real source strings the registry must still match.
+PINNED_PATTERN_IDS = {
+    "brand": {"brand-conductor", "brand-melty", "brand-bundle-id"},
+    "cta": {"cta-verb-brand", "cta-download-for-mac", "cta-download-intel", "cta-waitlist", "cta-brand-assets"},
+    "copy": {"copy-hero-headline", "copy-hero-quote", "copy-cta-heading", "copy-feature-cloud", "copy-feature-anywhere", "copy-feature-byok",
+             "copy-feature-multiplayer", "copy-testimonial-quotes", "copy-testimonial-authors", "copy-team-names", "copy-pricing", "copy-join-us",
+             "copy-brandkit-description", "copy-slack-page", "copy-changelog-entries", "copy-docs", "copy-legal"},
+    "url": {"url-conductor-hosts", "url-download-cdn", "url-forms", "url-community", "url-testimonial-posts", "url-source-uploads"},
+    "asset": {"asset-source-paths", "asset-named-files", "asset-testimonial-photos"},
+}
+PINNED_MUST_MATCH = {
+    "brand": ["Conductor", "conductor.build", "@conductor_build", "CONDUCTOR_PORT", "Melty Labs", "Melty, Inc.", "meltylabs", "melty.sh"],
+    "cta": ["Get Conductor", "Try Conductor.", "Download Conductor", "Join Conductor", "Download for Mac", "Download for Intel-based Macs", "Join Windows/Linux waitlist"],
+    "copy": ["Run a team of coding agents", "feels like going from typing with two fingers to having eight arms", "Be like this guy.", "A cloud sandbox for every agent.",
+             "Conduct from anywhere.", "Bring your own subscriptions and keys.", "Garry Tan", "Charlie Holtz", "A (mostly) boring update"],
+    "url": ["https://conductor.build/docs", "https://app.conductor.build/pro", "https://cdn.crabnebula.app/download/melty/conductor/latest/platform/dmg-aarch64",
+            "https://js-na2.hsforms.net/forms/embed/246368856.js", "https://docs.google.com/forms/d/1jPQsC8oLNIyjHW3WOsUxK2XNm0Z-BAzdooZuMs9cbFM/edit",
+            "https://discord.gg/RSrYmstWzy", "mailto:humans@conductor.build", "https://x.com/conductor_build"],
+    "asset": ["/assets/img/homepage-hero-background.webp", "/assets/video/cmdn.mp4", "conductor-brandkit.zip"],
+}
 RESULTS = []
 
 
@@ -301,9 +343,11 @@ def check_assets():
     for r, d in roles.items():
         if d["generationPolicy"] not in pols:
             probs.append(f"{r}: policy {d['generationPolicy']!r} not in the closed policy set")
-        for k in ("licensing", "guidance", "usageSites", "kind"):
+        for k in ("licensing", "guidance", "kind") + (("usageSites",) if d.get("origin") == "source" else ()):
             if not d.get(k):
                 probs.append(f"{r}: missing {k}")
+        if d.get("origin") not in ("source", "generation-safe-addition"):
+            probs.append(f"{r}: origin must be 'source' or 'generation-safe-addition'")
     # PINNED values, not just membership
     for r, want in sv.COMPLIANCE_PINS.items():
         got = roles.get(r, {}).get("generationPolicy")
@@ -360,6 +404,216 @@ def check_assets():
             probs.append(f"asset-roles.json no longer mentions {must!r} in its prohibitions")
     (fail if probs else ok)("asset-role-pins", "; ".join(probs[:6]) if probs else
                             f"{len(roles)} roles closed over {len(pols)} policies; {len(sv.COMPLIANCE_PINS)} compliance pins equal their pinned values (live form + download endpoints, logos, people, trademarks, screenshots)")
+
+
+# ---------------------------------------------------------------- 5c. generation context (mode), availability, source brand
+def _fields_with_media(fields, path=""):
+    for k, f in fields.items():
+        if f["type"] in ("media", "endpoint"):
+            yield f"{path}{k}", f
+        elif f["type"] == "object":
+            yield from _fields_with_media(f["fields"], f"{path}{k}.")
+        elif f["type"] == "list":
+            yield from _fields_with_media({k + "[]": f["items"]}, path)
+
+
+def check_mode_schema(schema):
+    probs = []
+    m = schema["properties"].get("mode", {})
+    if "mode" not in schema.get("required", []):
+        probs.append("schema does not require `mode`")
+    if m.get("enum") != ["reference", "generated"]:
+        probs.append(f"schema mode enum must be exactly ['reference', 'generated'], found {m.get('enum')}")
+    modes = J("assets/asset-roles.json").get("modes", {})
+    if sorted(modes) != ["generated", "reference"]:
+        probs.append(f"asset-roles.json `modes` documents {sorted(modes)}, expected ['generated', 'reference']")
+    if "mode" not in J("tokens/llm/component-allowlist.json")["pageSpecTopLevelProperties"]:
+        probs.append("allowlist pageSpecTopLevelProperties lacks mode")
+    if sv.MODES != ("reference", "generated"):
+        probs.append(f"semantic_validate.MODES is {sv.MODES}")
+    const = schema["properties"]["pageSpecVersion"]["const"]
+    if const != build_schema.PAGESPEC_VERSION or not const.startswith("2."):
+        probs.append(f"pageSpecVersion const {const!r} must equal build_schema.PAGESPEC_VERSION {build_schema.PAGESPEC_VERSION!r} and be 2.x (mode made it PageSpec-breaking)")
+    bad_ref = []
+    for ep in files("schema/example*.pagespec.json"):
+        d = json.load(open(ep, encoding="utf-8"))
+        if d.get("mode") != "reference" or d.get("pageSpecVersion") != const:
+            bad_ref.append(os.path.basename(ep))
+    if bad_ref:
+        probs.append(f"reference examples must declare mode 'reference' and pageSpecVersion {const}: {bad_ref}")
+    (fail if probs else ok)("mode-schema", "; ".join(probs) if probs else f"PageSpec `mode` is a required closed enum [reference, generated], documented in asset-roles.json, pageSpecVersion {const}; every reference example declares mode reference")
+
+
+def check_availability():
+    doc = J("assets/asset-roles.json")
+    roles = doc["roles"]
+    probs = []
+    if sorted(doc.get("availabilityValues", {})) != AVAILABILITY_VALUES:
+        probs.append(f"availabilityValues documents {sorted(doc.get('availabilityValues', {}))}")
+    if PINNED_AVAILABILITY != sv.PINNED_AVAILABILITY:
+        diff = sorted(k for k in set(PINNED_AVAILABILITY) | set(sv.PINNED_AVAILABILITY) if PINNED_AVAILABILITY.get(k) != sv.PINNED_AVAILABILITY.get(k))
+        probs.append(f"PINNED_AVAILABILITY in verify_all.py and semantic_validate.py disagree on {diff}")
+    for r, d in roles.items():
+        av = d.get("availability")
+        if av not in AVAILABILITY_VALUES:
+            probs.append(f"{r}: availability {av!r} is not one of {AVAILABILITY_VALUES}")
+        if not d.get("generatedModeGuidance"):
+            probs.append(f"{r}: missing generatedModeGuidance")
+        if r not in PINNED_AVAILABILITY:
+            probs.append(f"{r}: no pinned availability in verify_all.py")
+    for r, want in PINNED_AVAILABILITY.items():
+        if r not in roles:
+            probs.append(f"pinned role {r} is missing from the registry")
+        elif roles[r].get("availability") != want:
+            probs.append(f"PIN availability {r}: asset-roles.json has {roles[r].get('availability')!r}, pinned value is {want!r}")
+    for r, d in roles.items():
+        subs = d.get("generationSafeSubstitutes", [])
+        if d.get("availability") in ("reference-only", "blocked-for-generation"):
+            if not subs:
+                probs.append(f"{r} is {d.get('availability')} but names no generationSafeSubstitutes")
+            for x in subs:
+                if x not in roles or PINNED_AVAILABILITY.get(x) != "generation-safe":
+                    probs.append(f"{r}: substitute {x!r} is not a generation-safe role")
+        elif subs:
+            probs.append(f"{r} is generation-safe but lists substitutes")
+    for want in ("fictional-brand", "original-copy", "placeholder-url"):
+        if roles.get(want, {}).get("kind") != "content-rule":
+            probs.append(f"generation-safe content rule role {want} missing or wrong kind")
+    # sections: generatedRoles per media/endpoint field, derived generatedAssetRoles, disjoint, generation-safe, consistent with substitutes
+    used_fields = set()
+    gen_allowed = set()
+    for sid in ids_in("sections"):
+        c = J(f"sections/{sid}.json")
+        derived = set()
+        for name, f in _fields_with_media(c["content"]):
+            g = f.get("generatedRoles")
+            if not g:
+                probs.append(f"sections/{sid}.json {name}: media/endpoint field has no generatedRoles (a generated page could not fill it)")
+                continue
+            derived |= set(g)
+            used_fields |= set(f["roles"])
+            if set(g) & set(f["roles"]):
+                probs.append(f"sections/{sid}.json {name}: generatedRoles overlaps roles (the reference and generated role sets must be disjoint)")
+            for x in g:
+                if PINNED_AVAILABILITY.get(x) != "generation-safe" or x not in roles:
+                    probs.append(f"sections/{sid}.json {name}: generatedRoles lists {x!r}, which is not a pinned generation-safe role")
+                elif roles[x].get("kind") != f["type"]:
+                    probs.append(f"sections/{sid}.json {name}: generated role {x!r} is kind {roles[x].get('kind')!r} but the field is {f['type']}")
+            allowed_subs = {x for r in f["roles"] for x in roles.get(r, {}).get("generationSafeSubstitutes", [])}
+            if not set(g) <= allowed_subs:
+                probs.append(f"sections/{sid}.json {name}: generatedRoles {sorted(set(g) - allowed_subs)} are not substitutes of the field's reference roles")
+            for r in f["roles"]:
+                if not set(roles.get(r, {}).get("generationSafeSubstitutes", [])) & set(g):
+                    probs.append(f"sections/{sid}.json {name}: reference role {r} has no generation-safe substitute among the field's generatedRoles")
+        have = c.get("generatedAssetRoles")
+        if derived and sorted(have or []) != sorted(derived):
+            probs.append(f"sections/{sid}.json: generatedAssetRoles {have} != derived {sorted(derived)}")
+        if not derived and have is not None:
+            probs.append(f"sections/{sid}.json: has generatedAssetRoles but no media/endpoint field")
+        gen_allowed |= derived
+    for r, d in roles.items():
+        if d.get("origin") == "generation-safe-addition" and d.get("kind") in ("media", "endpoint"):
+            replaces = [x for x, dd in roles.items() if r in dd.get("generationSafeSubstitutes", [])]
+            if any(x in used_fields for x in replaces) and r not in gen_allowed:
+                probs.append(f"generation-safe role {r} replaces a role used by a field but no section's generatedRoles allows it (a dead role)")
+            if not replaces:
+                probs.append(f"generation-safe role {r} is not a substitute of any protected role")
+    (fail if probs else ok)("asset-availability", "; ".join(probs[:6]) if probs else
+                            f"{len(PINNED_AVAILABILITY)} roles: availability pinned in code (verify_all.py == semantic_validate.py == registry); every reference-only or blocked role has generation-safe substitutes; every media/endpoint field has disjoint generation-safe generatedRoles and every section's generatedAssetRoles is derived")
+
+
+def _norm(t):
+    return re.sub(r"\s+", " ", t)
+
+
+def check_source_brand():
+    doc = J("assets/asset-roles.json")
+    sb = doc.get("sourceBrand", {})
+    cats = sb.get("patterns", {})
+    probs = []
+    if sorted(cats) != sorted(PINNED_PATTERN_IDS):
+        probs.append(f"sourceBrand.patterns categories {sorted(cats)} != {sorted(PINNED_PATTERN_IDS)}")
+    total = 0
+    for cat, want_ids in PINNED_PATTERN_IDS.items():
+        c = cats.get(cat, {})
+        if c.get("code") != sv.SOURCE_CODES[cat]:
+            probs.append(f"{cat}: documented code {c.get('code')!r} != validator code {sv.SOURCE_CODES[cat]!r}")
+        pats = c.get("patterns", [])
+        ids = [p.get("id") for p in pats]
+        if len(ids) != len(set(ids)):
+            probs.append(f"{cat}: duplicate pattern ids")
+        for missing in sorted(want_ids - set(ids)):
+            probs.append(f"{cat}: pinned pattern {missing!r} was removed from the registry")
+        compiled = []
+        for p in pats:
+            total += 1
+            try:
+                rx = re.compile(p["pattern"], re.I)
+            except (re.error, KeyError) as e:
+                probs.append(f"{cat}/{p.get('id')}: pattern does not compile ({e})")
+                continue
+            compiled.append(rx)
+            if not p.get("evidence") or not p.get("mustMatch") or not p.get("description"):
+                probs.append(f"{cat}/{p['id']}: needs description, mustMatch and evidence")
+                continue
+            quotes = _norm(" ".join(e["quote"] for e in p["evidence"]))
+            for lit in p["mustMatch"]:
+                if not rx.search(sv.norm_text(lit)):
+                    probs.append(f"{cat}/{p['id']}: pattern no longer matches its own real literal {lit!r}")
+                if _norm(lit) not in quotes:
+                    probs.append(f"{cat}/{p['id']}: literal {lit!r} is not in any of the pattern's evidence quotes")
+        if not c.get("mustNotMatch"):
+            probs.append(f"{cat}: mustNotMatch list is empty")
+        for b in c.get("mustNotMatch", []):
+            if any(rx.search(sv.norm_text(b)) for rx in compiled):
+                probs.append(f"{cat}: a pattern matches the benign string {b!r} (too broad)")
+        for lit in PINNED_MUST_MATCH[cat]:
+            if not any(rx.search(sv.norm_text(lit)) for rx in compiled):
+                probs.append(f"{cat}: registry no longer matches the pinned real source string {lit!r}")
+    brand_rx = [re.compile(p["pattern"], re.I) for p in cats.get("brand", {}).get("patterns", [])]
+    for nm in sb.get("names", []):
+        if not any(rx.search(nm) for rx in brand_rx):
+            probs.append(f"sourceBrand name {nm!r} is not matched by any brand pattern (prose and code disagree)")
+    if "UNREVIEWED" not in sb.get("reviewStatus", ""):
+        probs.append("sourceBrand.reviewStatus must state that the patterns are UNREVIEWED by a human")
+    # the placeholder-host rule itself
+    for host, want in (("https://app.fernlake.example/x", True), ("https://x.invalid/", True), ("https://example.com/x", True), ("mailto:a@fernlake.example", True),
+                       ("https://example.com.evil.net/x", False), ("https://acme.com/", False), ("mailto:a@acme.com", False)):
+        errs = []
+        sv.scan_generated(host, "t", {}, errs, is_url=True)
+        if bool(errs) == want:
+            probs.append(f"placeholder-host rule wrong for {host!r}")
+    (fail if probs else ok)("source-brand-patterns", "; ".join(probs[:6]) if probs else
+                            f"{total} source patterns in {len(cats)} categories (brand, cta, copy, url, asset): pinned ids present, each compiles, re-matches its real src literals (which sit in its evidence), matches every pinned source string, matches no benign string; placeholder-host rule behaves; reviewStatus says UNREVIEWED")
+
+
+def check_generated_examples():
+    probs, names, tpls = [], [], set()
+    for gp in files("schema/examples/generated.*.pagespec.json"):
+        d = json.load(open(gp, encoding="utf-8"))
+        n = os.path.basename(gp)
+        names.append(n)
+        tpls.add(d.get("template"))
+        if d.get("mode") != "generated":
+            probs.append(f"{n}: must declare mode 'generated', found {d.get('mode')!r}")
+        if n != f"generated.{d.get('template')}.pagespec.json":
+            probs.append(f"{n}: file name does not match its template {d.get('template')}")
+        errs, warns = sv.validate(d, root=ROOT)
+        if errs or warns:
+            probs.append(f"{n}: {len(errs)} errors {errs[:2]}, {len(warns)} warnings {warns[:2]}")
+    if "template.home" not in tpls:
+        probs.append("no generation-safe example for template.home")
+    if not tpls & {"template.legal", "template.docs-page", "template.changelog-post", "template.changelog-index"}:
+        probs.append("no generation-safe example for a docs, changelog or legal template")
+    (fail if probs else ok)("generated-examples", "; ".join(probs[:5]) if probs else
+                            f"{len(names)} generation-safe example PageSpecs ({', '.join(names)}): mode generated, 0 errors, 0 warnings (fictional brand, original copy, placeholder assets and URLs)")
+
+
+def check_adversarial_suite():
+    import subprocess
+    p = subprocess.run([sys.executable, os.path.join(ROOT, "schema", "tests", "adversarial_test.py")], capture_output=True, text=True, env=dict(os.environ, PYTHONDONTWRITEBYTECODE="1"))
+    tail = [ln for ln in p.stdout.splitlines() if ln.startswith(("mutations rejected", "controls passed", "RESULT"))]
+    (ok if p.returncode == 0 else fail)("adversarial-suite", "adversarial suite passes: " + "; ".join(tail) if p.returncode == 0 else "adversarial suite FAILED (the validator is not rejecting something it must): " + "; ".join(tail) + " " + p.stderr[-200:])
 
 
 def check_templates():
@@ -749,6 +1003,10 @@ def main():
     check_motion()
     check_graph()
     check_assets()
+    check_mode_schema(schema)
+    check_availability()
+    check_source_brand()
+    check_generated_examples()
     T = check_templates()
     check_contracts()
     check_retrieval()
@@ -760,6 +1018,7 @@ def main():
     check_citations()
     check_ia(T)
     check_stack(man)
+    check_adversarial_suite()
     f = sum(1 for r in RESULTS if r[0] == "FAIL")
     w = sum(1 for r in RESULTS if r[0] == "WARN")
     print(f"\nSUMMARY: {sum(1 for r in RESULTS if r[0] == 'PASS')} pass, {w} warn, {f} fail")

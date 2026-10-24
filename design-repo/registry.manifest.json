@@ -1,9 +1,9 @@
 {
   "repositoryId": "conductor-build-clone-design-repo",
-  "repositoryVersion": "0.2.0",
-  "pageSpecVersion": "1.0.0",
+  "repositoryVersion": "0.3.0",
+  "pageSpecVersion": "2.0.0",
   "allowlistVersion": "1.0.0",
-  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails the run if it differs from tokens/llm/component-allowlist.json. pageSpecVersion is checked only against the const in schema/pagespec.schema.json. repositoryVersion is a hand-maintained documentation marker that nothing verifies; do not read it as an enforcement guarantee.",
+  "versionFieldNote": "allowlistVersion is MACHINE-CHECKED: extraction/verify_all.py fails the run if it differs from tokens/llm/component-allowlist.json. pageSpecVersion is checked only against the const in schema/pagespec.schema.json (2.0.0: the PageSpec `mode` field became required). repositoryVersion is a hand-maintained documentation marker that nothing verifies; do not read it as an enforcement guarantee.",
   "status": "design-review-pending",
   "productionApproved": false,
   "defaultTheme": "light",
@@ -22,7 +22,7 @@
   },
   "licensing": {
     "sourceIsRealCompany": true,
-    "summary": "This repo encodes structure and contracts only. It ships no logos, photos, testimonials, brand files, docs text or changelog text, and its asset-role contract forbids a generator from reproducing real customer logos, real people's photos or likenesses, real testimonials, Conductor's trademarks, or Conductor's proprietary docs/changelog text, and from reusing the live HubSpot/Google Form endpoints or the vendor download CDN. Treat the repo as private until the owner has reviewed it; nothing here grants any licence to the source company's marks or content."
+    "summary": "This repo encodes structure and contracts only. It ships no logos, photos, brand files or page-length text (the only source text it holds is short blocklist fragments, real names and URLs in assets/asset-roles.json `sourceBrand.patterns`, there so a generated page can be checked against them), and its asset-role contract forbids a generator from reproducing real customer logos, real people's photos or likenesses, real testimonials, Conductor's trademarks, or Conductor's proprietary docs/changelog text, and from reusing the live HubSpot/Google Form endpoints or the vendor download CDN. Treat the repo as private until the owner has reviewed it; nothing here grants any licence to the source company's marks or content. PageSpec `mode` separates documenting the source (`reference`) from composing a page for another brand (`generated`): generated pages may not carry the Conductor / Melty name, its CTA text, marketing, testimonial, changelog or docs copy, its URLs or endpoints, or any reference-only or blocked asset role (assets/asset-roles.json `availability`, `sourceBrand.patterns`). The sourceBrand patterns were derived by a model from src/ and have not been reviewed by a human."
   },
   "outOfIaSpecialRoutes": [
     "404 terminal page (src/pages/NotFound.jsx): not in the sitemap, not counted in routes"
@@ -36,9 +36,9 @@
     "templates": 11,
     "routes": 306,
     "graphRules": 13,
-    "assetRoles": 12,
-    "adversarialMutations": 95,
-    "adversarialControls": 15
+    "assetRoles": 23,
+    "adversarialMutations": 212,
+    "adversarialControls": 30
   },
   "entryPoints": {
     "schema": [
@@ -52,6 +52,12 @@
     ],
     "example": [
       "schema/example.pagespec.json"
+    ],
+    "generatedExamples": [
+      "schema/examples/generated.template.changelog-post.pagespec.json",
+      "schema/examples/generated.template.docs-page.pagespec.json",
+      "schema/examples/generated.template.home.pagespec.json",
+      "schema/examples/generated.template.legal.pagespec.json"
     ],
     "semanticValidator": [
       "schema/semantic_validate.py"

@@ -36,7 +36,10 @@
       "roles": [
         "team-photo"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "avatar-placeholder"
+      ]
     }
   },
   "constraints": {
@@ -72,5 +75,8 @@
   "quirks": [],
   "assetRoles": [
     "team-photo"
+  ],
+  "generatedAssetRoles": [
+    "avatar-placeholder"
   ]
 }

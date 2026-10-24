@@ -122,7 +122,10 @@
         "roles": [
           "person-avatar"
         ],
-        "required": true
+        "required": true,
+        "generatedRoles": [
+          "avatar-placeholder"
+        ]
       },
       "minItems": 0,
       "maxItems": 3,
@@ -147,7 +150,11 @@
             "product-screenshot",
             "demo-video"
           ],
-          "required": false
+          "required": false,
+          "generatedRoles": [
+            "screenshot-placeholder",
+            "video-placeholder"
+          ]
         }
       },
       "required": true
@@ -293,5 +300,10 @@
     "demo-video",
     "person-avatar",
     "product-screenshot"
+  ],
+  "generatedAssetRoles": [
+    "avatar-placeholder",
+    "screenshot-placeholder",
+    "video-placeholder"
   ]
 }

@@ -1,5 +1,6 @@
 {
-  "pageSpecVersion": "1.0.0",
+  "pageSpecVersion": "2.0.0",
+  "mode": "reference",
   "template": "template.changelog-post",
   "route": "/changelog/0.91.0-a-mostly-boring-update",
   "nodes": [

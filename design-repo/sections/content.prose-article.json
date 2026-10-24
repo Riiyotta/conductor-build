@@ -58,7 +58,10 @@
             "roles": [
               "product-screenshot"
             ],
-            "required": false
+            "required": false,
+            "generatedRoles": [
+              "screenshot-placeholder"
+            ]
           }
         },
         "required": true
@@ -125,5 +128,8 @@
   ],
   "assetRoles": [
     "product-screenshot"
+  ],
+  "generatedAssetRoles": [
+    "screenshot-placeholder"
   ]
 }

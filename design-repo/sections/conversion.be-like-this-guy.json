@@ -54,7 +54,10 @@
       "roles": [
         "decorative-background"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "background-generated"
+      ]
     }
   },
   "constraints": {
@@ -127,5 +130,8 @@
   "quirks": [],
   "assetRoles": [
     "decorative-background"
+  ],
+  "generatedAssetRoles": [
+    "background-generated"
   ]
 }

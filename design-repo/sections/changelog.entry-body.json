@@ -68,7 +68,11 @@
               "product-screenshot",
               "demo-video"
             ],
-            "required": false
+            "required": false,
+            "generatedRoles": [
+              "screenshot-placeholder",
+              "video-placeholder"
+            ]
           }
         },
         "required": true
@@ -126,5 +130,9 @@
   "assetRoles": [
     "demo-video",
     "product-screenshot"
+  ],
+  "generatedAssetRoles": [
+    "screenshot-placeholder",
+    "video-placeholder"
   ]
 }

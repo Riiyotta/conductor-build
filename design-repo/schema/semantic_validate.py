@@ -12,6 +12,18 @@ Layers (all run, errors and warnings are collected together):
   4. Motion: patterns allowed for the (section, variant), reducedMotionFallback equals the contract.
   5. compatibility/graph.json rules, honouring severity ("error" fails, "warn" is reported).
   6. Retrieval eligibility: a node's optional retrievalEligible must equal the code-pinned value for its section.
+  7. Generation context `mode`:
+       reference  the page documents the source site: the roles listed in a field's `roles` apply, source copy is fine.
+       generated  a NEW page for any other brand. Rejected: a reference-only or blocked-for-generation asset role
+                  (GENERATED_MODE_REFERENCE_ASSET), a role that is not one of the field's generation-safe `generatedRoles`
+                  (GENERATED_MODE_ROLE), and any string (text, URL, alt text, route) matching assets/asset-roles.json
+                  `sourceBrand.patterns`: brand name (GENERATED_MODE_SOURCE_BRAND), CTA text (GENERATED_MODE_SOURCE_CTA),
+                  marketing/testimonial/changelog/docs copy (GENERATED_MODE_SOURCE_COPY), source URLs and endpoints
+                  (GENERATED_MODE_SOURCE_URL), protected asset files (GENERATED_MODE_PROTECTED_ASSET). Absolute URLs must
+                  be on a reserved domain (GENERATED_MODE_URL_HOST). Role availability is pinned in CODE
+                  (PINNED_AVAILABILITY) so editing the registry cannot make a protected role usable
+                  (ASSET_AVAILABILITY_DRIFT). If a pattern category is empty the validator fails closed
+                  (GENERATED_MODE_PATTERNS_MISSING).
 
 Also validate_contract()/validate_all_contracts(): the closed shape of every sections/*.json (schema/section-contract.schema.json),
 provenance (`source`) kept separate from taxonomy (`semantic`), and the retrieval-eligibility pins.
@@ -23,6 +35,7 @@ import json
 import os
 import re
 import sys
+import unicodedata
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
@@ -38,6 +51,26 @@ COMPLIANCE_PINS = {
     "form-endpoint": "must-not-reuse-live-endpoint",
     "download-endpoint": "must-not-reuse-live-endpoint",
 }
+
+# Availability of every asset role by PageSpec `mode` (assets/asset-roles.json `availability`). Pinned in CODE like COMPLIANCE_PINS:
+# verify_all.py keeps its own independent copy and fails if the registry, this table or that copy disagree.
+PINNED_AVAILABILITY = {
+    "brand-mark": "reference-only", "product-screenshot": "reference-only", "demo-video": "reference-only",
+    "decorative-background": "reference-only", "ui-animation": "reference-only",
+    "customer-logo": "blocked-for-generation", "vendor-mark": "blocked-for-generation", "person-avatar": "blocked-for-generation",
+    "team-photo": "blocked-for-generation", "form-endpoint": "blocked-for-generation", "download-endpoint": "blocked-for-generation",
+    "icon": "generation-safe", "brand-placeholder": "generation-safe", "customer-logo-placeholder": "generation-safe",
+    "avatar-placeholder": "generation-safe", "screenshot-placeholder": "generation-safe", "video-placeholder": "generation-safe",
+    "background-generated": "generation-safe", "animation-generated": "generation-safe", "endpoint-placeholder": "generation-safe",
+    "fictional-brand": "generation-safe", "original-copy": "generation-safe", "placeholder-url": "generation-safe",
+}
+MODES = ("reference", "generated")
+# error code per sourceBrand.patterns category (verify_all.py checks the registry documents the same codes)
+SOURCE_CODES = {"brand": "GENERATED_MODE_SOURCE_BRAND", "cta": "GENERATED_MODE_SOURCE_CTA", "copy": "GENERATED_MODE_SOURCE_COPY",
+                "url": "GENERATED_MODE_SOURCE_URL", "asset": "GENERATED_MODE_PROTECTED_ASSET"}
+# Reserved / documentation hosts (RFC 2606): the only absolute URL hosts a generated page may use.
+RESERVED_HOST = re.compile(r"(?:^|\.)(?:example|invalid)$|(?:^|\.)example\.(?:com|org|net)$", re.I)
+URL_HOST = re.compile(r"^(?:https://([^/:?#\s]+)|mailto:[^@\s]+@([^?\s>]+))", re.I)
 
 # The allowed sources/targets of the two pinned policies are also code, so loosening assets/asset-roles.json
 # cannot relax them (verify_all.py fails if the JSON disagrees).
@@ -129,6 +162,47 @@ def words(text):
     return len(text.split())
 
 
+def norm_text(t):
+    """Normalisation applied before sourceBrand patterns: NFKC, zero-width removal, straight quotes, collapsed whitespace."""
+    t = unicodedata.normalize("NFKC", t)
+    t = re.sub("[\u200b-\u200f\u2060\ufeff]", "", t)
+    t = t.replace("\u2018", "'").replace("\u2019", "'").replace("\u201c", '"').replace("\u201d", '"')
+    return re.sub(r"\s+", " ", t)
+
+
+def source_patterns(root=ROOT):
+    """{category: [(pattern id, compiled regex)]} from assets/asset-roles.json sourceBrand.patterns (cached per root)."""
+    key = (root, "sourceBrand")
+    if key not in _cache:
+        pats = _load(root, "assets/asset-roles.json").get("sourceBrand", {}).get("patterns", {})
+        out = {}
+        for cat in SOURCE_CODES:
+            out[cat] = [(p["id"], re.compile(p["pattern"], re.I)) for p in pats.get(cat, {}).get("patterns", [])]
+        _cache[key] = out
+    return _cache[key]
+
+
+def availability_of(role, roles_doc):
+    """Pinned availability (code) wins over the registry; the registry must agree (ASSET_AVAILABILITY_DRIFT)."""
+    return PINNED_AVAILABILITY.get(role) or roles_doc["roles"].get(role, {}).get("availability")
+
+
+def scan_generated(text, where, pats, errs, is_url=False):
+    """Mode `generated`: one error per sourceBrand category that matches `text`, plus the placeholder-host rule for URLs."""
+    n = norm_text(text)
+    for cat, code in SOURCE_CODES.items():
+        for pid, rx in pats.get(cat, []):
+            m = rx.search(n)
+            if m:
+                errs.append(f"{code} {where}: matches source pattern {pid!r} ({m.group(0)!r}); a generated page must be new copy for another brand")
+                break
+    if is_url:
+        m = URL_HOST.match(text.strip())
+        host = (m.group(1) or m.group(2)) if m else None
+        if host and not RESERVED_HOST.search(host):
+            errs.append(f"GENERATED_MODE_URL_HOST {where}: absolute URL host {host!r} is not a reserved placeholder domain (*.example, *.invalid, example.com/org/net)")
+
+
 # ------------------------------------------------------------------ content contracts
 def _policy_of(role, roles_doc):
     doc = roles_doc["roles"].get(role)
@@ -144,25 +218,56 @@ def _pin_drift(role, path, roles_doc, errs):
         errs.append(f"ASSET_PIN_DRIFT {path}: asset-roles.json says {role}={roles_doc['roles'].get(role, {}).get('generationPolicy')!r}, pin is {COMPLIANCE_PINS[role]!r}")
 
 
-def walk_content(fields, value, path, roles_doc, errs):
+def _avail_drift(role, path, roles_doc, errs):
+    if role in PINNED_AVAILABILITY and roles_doc["roles"].get(role, {}).get("availability") != PINNED_AVAILABILITY[role]:
+        errs.append(f"ASSET_AVAILABILITY_DRIFT {path}: asset-roles.json says {role}={roles_doc['roles'].get(role, {}).get('availability')!r}, pin is {PINNED_AVAILABILITY[role]!r}")
+
+
+def _role_ok(role, f, path, roles_doc, errs, mode):
+    """Role admissibility for a media/endpoint field in the given mode. True if the pin checks should continue."""
+    if mode == "generated":
+        _avail_drift(role, path, roles_doc, errs)
+        av = availability_of(role, roles_doc)
+        if av in ("reference-only", "blocked-for-generation"):
+            subs = ", ".join(roles_doc["roles"].get(role, {}).get("generationSafeSubstitutes", [])) or "none: omit it"
+            errs.append(f"GENERATED_MODE_REFERENCE_ASSET {path}: role {role!r} is {av} and cannot appear in a generated page (use: {subs})")
+            return False
+        if role not in f.get("generatedRoles", []):
+            errs.append(f"GENERATED_MODE_ROLE {path}: role {role!r} is not a generation-safe role of this field (allowed {f.get('generatedRoles', [])})")
+            return False
+        return True
+    if role not in f["roles"]:
+        extra = " (a generation-safe role: only valid in mode `generated`)" if role in f.get("generatedRoles", []) else ""
+        errs.append(f"ASSET_ROLE {path}: role {role!r} not allowed here (allowed {f['roles']}){extra}")
+        return False
+    return True
+
+
+def walk_content(fields, value, path, roles_doc, errs, mode="reference", pats=None):
     if not isinstance(value, dict):
         return
     for name, f in fields.items():
         if name not in value:
             continue
-        walk_field(f, value[name], f"{path}.{name}", roles_doc, errs)
+        walk_field(f, value[name], f"{path}.{name}", roles_doc, errs, mode, pats)
 
 
-def walk_field(f, v, path, roles_doc, errs):
+def walk_field(f, v, path, roles_doc, errs, mode="reference", pats=None):
     t = f["type"]
+    gen = mode == "generated" and pats is not None
     if t == "text" and isinstance(v, str):
         n = words(v)
         if n > f["maxWords"]:
             errs.append(f"MAXWORDS {path}: {n} words > maxWords {f['maxWords']}")
+        if gen:
+            scan_generated(v, path, pats, errs)
+    elif t in ("url", "pattern") and isinstance(v, str) and gen:
+        scan_generated(v, path, pats, errs, is_url=(t == "url"))
     elif t == "media" and isinstance(v, dict):
         role, src = v.get("assetRole"), v.get("source")
-        if role not in f["roles"]:
-            errs.append(f"ASSET_ROLE {path}: role {role!r} not allowed here (allowed {f['roles']})")
+        if gen and isinstance(v.get("alt"), str):
+            scan_generated(v["alt"], f"{path}.alt", pats, errs)
+        if not _role_ok(role, f, path, roles_doc, errs, mode):
             return
         pol = _policy_of(role, roles_doc)
         allowed = _allowed(pol, "allowedSources", roles_doc)
@@ -171,8 +276,7 @@ def walk_field(f, v, path, roles_doc, errs):
             errs.append(f"ASSET_PIN {path}: role {role!r} is pinned {pol!r}; source {src!r} not allowed (allowed {allowed})")
     elif t == "endpoint" and isinstance(v, dict):
         role, tgt = v.get("assetRole"), v.get("target")
-        if role not in f["roles"]:
-            errs.append(f"ASSET_ROLE {path}: role {role!r} not allowed here")
+        if not _role_ok(role, f, path, roles_doc, errs, mode):
             return
         pol = _policy_of(role, roles_doc)
         allowed = _allowed(pol, "allowedTargets", roles_doc)
@@ -180,10 +284,10 @@ def walk_field(f, v, path, roles_doc, errs):
         if tgt not in allowed:
             errs.append(f"ASSET_PIN {path}: endpoint role {role!r} is pinned {pol!r}; target {tgt!r} not allowed (allowed {allowed})")
     elif t == "object":
-        walk_content(f["fields"], v, path, roles_doc, errs)
+        walk_content(f["fields"], v, path, roles_doc, errs, mode, pats)
     elif t == "list" and isinstance(v, list):
         for i, item in enumerate(v):
-            walk_field(f["items"], item, f"{path}[{i}]", roles_doc, errs)
+            walk_field(f["items"], item, f"{path}[{i}]", roles_doc, errs, mode, pats)
 
 
 # ------------------------------------------------------------------ template cross-reference
@@ -382,6 +486,15 @@ def validate(spec, root=ROOT):
     roles_doc = _load(root, "assets/asset-roles.json")
     graph = _load(root, "compatibility/graph.json")
     nodes = [n for n in spec["nodes"] if isinstance(n, dict)]
+    mode = spec.get("mode") if spec.get("mode") in MODES else None
+    pats = None
+    if mode == "generated":
+        pats = source_patterns(root)
+        for cat, code in SOURCE_CODES.items():
+            if not pats.get(cat):
+                errs.append(f"GENERATED_MODE_PATTERNS_MISSING: sourceBrand.patterns.{cat} is empty, so {code} cannot be enforced (failing closed)")
+        if isinstance(spec.get("route"), str):
+            scan_generated(spec["route"], "route", pats, errs)
 
     errs += match_template(nodes, t["nodes"])
 
@@ -391,7 +504,7 @@ def validate(spec, root=ROOT):
             continue
         if "retrievalEligible" in n and n["retrievalEligible"] is not retrieval_pin(n["section"]):
             errs.append(f"RETRIEVAL_PIN nodes[{i}]<{n['section']}>: retrievalEligible {n['retrievalEligible']!r} contradicts the pinned value {retrieval_pin(n['section'])!r}")
-        walk_content(s["content"], n.get("content"), f"nodes[{i}]<{n['section']}>.content", roles_doc, errs)
+        walk_content(s["content"], n.get("content"), f"nodes[{i}]<{n['section']}>.content", roles_doc, errs, mode or "reference", pats)
         m = n.get("motion")
         if isinstance(m, dict):
             mc = s["motion"]

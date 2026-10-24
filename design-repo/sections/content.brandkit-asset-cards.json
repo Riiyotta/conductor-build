@@ -53,7 +53,10 @@
             "roles": [
               "brand-mark"
             ],
-            "required": true
+            "required": true,
+            "generatedRoles": [
+              "brand-placeholder"
+            ]
           },
           "previewSurface": {
             "type": "enum",
@@ -148,5 +151,8 @@
   "quirks": [],
   "assetRoles": [
     "brand-mark"
+  ],
+  "generatedAssetRoles": [
+    "brand-placeholder"
   ]
 }

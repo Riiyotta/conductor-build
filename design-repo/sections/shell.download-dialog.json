@@ -67,7 +67,10 @@
           "roles": [
             "download-endpoint"
           ],
-          "required": true
+          "required": true,
+          "generatedRoles": [
+            "endpoint-placeholder"
+          ]
         }
       },
       "required": true
@@ -86,7 +89,10 @@
           "roles": [
             "form-endpoint"
           ],
-          "required": true
+          "required": true,
+          "generatedRoles": [
+            "endpoint-placeholder"
+          ]
         }
       },
       "required": true
@@ -111,7 +117,10 @@
           "roles": [
             "download-endpoint"
           ],
-          "required": true
+          "required": true,
+          "generatedRoles": [
+            "endpoint-placeholder"
+          ]
         }
       },
       "required": true
@@ -167,5 +176,8 @@
   "assetRoles": [
     "download-endpoint",
     "form-endpoint"
+  ],
+  "generatedAssetRoles": [
+    "endpoint-placeholder"
   ]
 }

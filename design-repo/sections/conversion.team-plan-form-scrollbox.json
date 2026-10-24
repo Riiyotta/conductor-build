@@ -77,7 +77,10 @@
       "roles": [
         "form-endpoint"
       ],
-      "required": true
+      "required": true,
+      "generatedRoles": [
+        "endpoint-placeholder"
+      ]
     },
     "scrollBoxHeight": {
       "type": "enum",
@@ -123,5 +126,8 @@
   ],
   "assetRoles": [
     "form-endpoint"
+  ],
+  "generatedAssetRoles": [
+    "endpoint-placeholder"
   ]
 }

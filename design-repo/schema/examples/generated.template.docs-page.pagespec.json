@@ -1,0 +1,402 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "template": "template.docs-page",
+  "route": "/docs/first-board",
+  "nodes": [
+    {
+      "type": "section",
+      "section": "shell.header",
+      "variant": "default",
+      "content": {
+        "navLinks": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Teams",
+            "href": "/teams"
+          },
+          {
+            "label": "About",
+            "href": "/about"
+          }
+        ],
+        "activeLabel": "Docs",
+        "downloadLabel": "Get app"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "instant-hover",
+          "scroll-mask-nav"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.docs-subnav",
+      "variant": "default",
+      "content": {
+        "brandLabel": "Fernlake",
+        "searchLabel": "Search",
+        "sidebarLabel": "Guide menu"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.sidebar",
+      "variant": "default",
+      "content": {
+        "roots": [
+          "Guide"
+        ],
+        "searchLabel": "Search",
+        "tree": [
+          {
+            "kind": "folder",
+            "label": "Get started"
+          },
+          {
+            "kind": "page",
+            "label": "Create your first board",
+            "href": "/docs/first-board"
+          },
+          {
+            "kind": "page",
+            "label": "Invite your team",
+            "href": "/docs/invite-your-team"
+          },
+          {
+            "kind": "separator",
+            "label": "Reference"
+          },
+          {
+            "kind": "page",
+            "label": "Keyboard shortcuts",
+            "href": "/docs/keyboard-shortcuts"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "folder-collapse",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.mobile-drawer",
+      "variant": "default",
+      "content": {
+        "tree": [
+          {
+            "kind": "folder",
+            "label": "Get started"
+          },
+          {
+            "kind": "page",
+            "label": "Create your first board",
+            "href": "/docs/first-board"
+          },
+          {
+            "kind": "page",
+            "label": "Invite your team",
+            "href": "/docs/invite-your-team"
+          },
+          {
+            "kind": "separator",
+            "label": "Reference"
+          },
+          {
+            "kind": "page",
+            "label": "Keyboard shortcuts",
+            "href": "/docs/keyboard-shortcuts"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "drawer-slide",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.breadcrumb",
+      "variant": "default",
+      "content": {
+        "items": [
+          "Get started",
+          "Create your first board"
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.page-title",
+      "variant": "default",
+      "content": {
+        "title": "Create your first board"
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.prose-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "A board is the shared place where a task, its notes and its history live together."
+          },
+          {
+            "kind": "heading",
+            "text": "Add a task"
+          },
+          {
+            "kind": "paragraph",
+            "text": "Choose New task, give it a short name and press Enter. The task appears in the first column."
+          },
+          {
+            "kind": "image",
+            "media": {
+              "assetRole": "screenshot-placeholder",
+              "source": "placeholder",
+              "alt": "Placeholder frame for a board capture"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "none"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.prev-next",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "direction": "next",
+            "title": "Invite your team",
+            "description": "Share a board with a colleague.",
+            "href": "/docs/invite-your-team"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.toc",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "depth": 2,
+            "title": "Add a task"
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "scroll-spy"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "docs.search-dialog",
+      "variant": "default",
+      "content": {
+        "placeholder": "Search the guide",
+        "shortcutHint": "Esc"
+      },
+      "motion": {
+        "patterns": [
+          "search-dialog-fade"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.footer-mono",
+      "variant": "default",
+      "content": {
+        "columns": [
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Teams",
+                "href": "/teams"
+              },
+              {
+                "label": "About",
+                "href": "/about"
+              }
+            ]
+          },
+          {
+            "heading": "Resources",
+            "links": [
+              {
+                "label": "Docs",
+                "href": "/docs"
+              },
+              {
+                "label": "Changelog",
+                "href": "/changelog"
+              },
+              {
+                "label": "Press",
+                "href": "/press"
+              }
+            ]
+          },
+          {
+            "heading": "Legal",
+            "links": [
+              {
+                "label": "Privacy",
+                "href": "/privacy"
+              },
+              {
+                "label": "Terms",
+                "href": "/terms"
+              }
+            ]
+          },
+          {
+            "heading": "Connect",
+            "links": [
+              {
+                "label": "X",
+                "href": "https://social.fernlake.example/fernlake"
+              },
+              {
+                "label": "Discord",
+                "href": "https://chat.fernlake.example/join"
+              }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Fernlake Labs",
+        "complianceLink": {
+          "label": "Trust center",
+          "href": "https://trust.fernlake.example/"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.download-dialog",
+      "variant": "default",
+      "content": {
+        "title": "Get the Fernlake app",
+        "description": "Pick the installer that matches your computer.",
+        "primaryAction": {
+          "label": "Install on Apple silicon",
+          "sublabel": "M-series chips",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "deployer-configured"
+          }
+        },
+        "waitlistAction": {
+          "label": "Notify me about other systems",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "local-only-no-submit"
+          }
+        },
+        "footnote": "Using an older processor?",
+        "fallbackAction": {
+          "label": "Install for older chips",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "deployer-configured"
+          }
+        }
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.downloading-screen",
+      "variant": "default",
+      "content": {
+        "lines": [
+          "Fetching the installer...",
+          "FERNLAKE INSTALLER REQUESTED"
+        ],
+        "brandMark": {
+          "assetRole": "brand-placeholder",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter-terminal"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    }
+  ],
+  "mode": "generated"
+}

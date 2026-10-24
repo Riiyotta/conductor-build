@@ -1,0 +1,290 @@
+{
+  "pageSpecVersion": "2.0.0",
+  "mode": "generated",
+  "template": "template.changelog-post",
+  "route": "/changelog/0.0.1-calmer-boards",
+  "nodes": [
+    {
+      "type": "section",
+      "section": "shell.header",
+      "variant": "default",
+      "content": {
+        "navLinks": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Teams",
+            "href": "/teams"
+          },
+          {
+            "label": "About",
+            "href": "/about"
+          }
+        ],
+        "activeLabel": "Docs",
+        "downloadLabel": "Get app"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color",
+          "instant-hover",
+          "scroll-mask-nav"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.mobile-menu",
+      "variant": "default",
+      "content": {
+        "items": [
+          {
+            "label": "Changelog",
+            "href": "/changelog"
+          },
+          {
+            "label": "Docs",
+            "href": "/docs"
+          },
+          {
+            "label": "Pricing",
+            "href": "/pricing"
+          },
+          {
+            "label": "Teams",
+            "href": "/teams"
+          },
+          {
+            "label": "About",
+            "href": "/about"
+          }
+        ],
+        "downloadLabel": "Get app"
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.back-link",
+      "variant": "default",
+      "content": {
+        "label": "Back to changelog",
+        "href": "/changelog"
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-header",
+      "variant": "post",
+      "content": {
+        "version": "0.0.1",
+        "date": "Month D, YYYY",
+        "title": "Calmer boards and faster search"
+      },
+      "motion": {
+        "patterns": [
+          "sticky-meta"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "changelog.entry-body",
+      "variant": "default",
+      "content": {
+        "blocks": [
+          {
+            "kind": "paragraph",
+            "text": "This release makes shared boards quieter and search quicker on large workspaces."
+          },
+          {
+            "kind": "heading",
+            "text": "Improvements"
+          },
+          {
+            "kind": "list-item",
+            "text": "Boards collapse finished tasks into a single line."
+          },
+          {
+            "kind": "list-item",
+            "text": "Search results appear while you are still typing."
+          },
+          {
+            "kind": "image",
+            "media": {
+              "assetRole": "screenshot-placeholder",
+              "source": "placeholder",
+              "alt": "Placeholder frame for a product capture"
+            }
+          }
+        ]
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "poster-or-first-frame"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.footer-mono",
+      "variant": "default",
+      "content": {
+        "columns": [
+          {
+            "heading": "Company",
+            "links": [
+              {
+                "label": "Teams",
+                "href": "/teams"
+              },
+              {
+                "label": "About",
+                "href": "/about"
+              }
+            ]
+          },
+          {
+            "heading": "Resources",
+            "links": [
+              {
+                "label": "Docs",
+                "href": "/docs"
+              },
+              {
+                "label": "Changelog",
+                "href": "/changelog"
+              },
+              {
+                "label": "Press",
+                "href": "/press"
+              }
+            ]
+          },
+          {
+            "heading": "Legal",
+            "links": [
+              {
+                "label": "Privacy",
+                "href": "/privacy"
+              },
+              {
+                "label": "Terms",
+                "href": "/terms"
+              }
+            ]
+          },
+          {
+            "heading": "Connect",
+            "links": [
+              {
+                "label": "X",
+                "href": "https://social.fernlake.example/fernlake"
+              },
+              {
+                "label": "Discord",
+                "href": "https://chat.fernlake.example/join"
+              }
+            ]
+          }
+        ],
+        "copyright": "© 2026 Fernlake Labs",
+        "complianceLink": {
+          "label": "Trust center",
+          "href": "https://trust.fernlake.example/"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.download-dialog",
+      "variant": "default",
+      "content": {
+        "title": "Get the Fernlake app",
+        "description": "Pick the installer that matches your computer.",
+        "primaryAction": {
+          "label": "Install on Apple silicon",
+          "sublabel": "M-series chips",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "deployer-configured"
+          }
+        },
+        "waitlistAction": {
+          "label": "Notify me about other systems",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "local-only-no-submit"
+          }
+        },
+        "footnote": "Using an older processor?",
+        "fallbackAction": {
+          "label": "Install for older chips",
+          "endpoint": {
+            "assetRole": "endpoint-placeholder",
+            "target": "deployer-configured"
+          }
+        }
+      },
+      "motion": {
+        "patterns": [
+          "instant-toggle",
+          "hover-color"
+        ],
+        "reducedMotionFallback": "static-no-motion-needed"
+      }
+    },
+    {
+      "type": "section",
+      "section": "shell.downloading-screen",
+      "variant": "default",
+      "content": {
+        "lines": [
+          "Fetching the installer...",
+          "FERNLAKE INSTALLER REQUESTED"
+        ],
+        "brandMark": {
+          "assetRole": "brand-placeholder",
+          "source": "placeholder"
+        }
+      },
+      "motion": {
+        "patterns": [
+          "typewriter-terminal"
+        ],
+        "reducedMotionFallback": "final-state-no-motion"
+      }
+    }
+  ]
+}
